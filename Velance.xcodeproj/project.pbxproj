@@ -22,6 +22,10 @@
 		7CC36A5426EC7194007573DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Home.storyboard */; };
 		7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* HomeViewController.swift */; };
 		7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5726EC8561007573DD /* UIButton+Extension.swift */; };
+		7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */; };
+		7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */; };
+		7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */; };
+		7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		7CC36A5326EC7194007573DD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7CC36A5526EC7272007573DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7CC36A5726EC8561007573DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeViewController.swift; sourceTree = "<group>"; };
+		7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDetailViewController.swift; sourceTree = "<group>"; };
+		7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseReasonViewController.swift; sourceTree = "<group>"; };
+		7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		7CC36A2526EC5ED8007573DD /* Velance */ = {
 			isa = PBXGroup;
 			children = (
+				7CC36A5926EC8A23007573DD /* Main */,
 				7CC36A3D26EC6378007573DD /* UserRegister */,
 				7CC36A3E26EC637D007573DD /* Home */,
 				7CC36A3F26EC63B8007573DD /* Shopping */,
@@ -120,6 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
+				7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */,
+				7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */,
+				7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */,
+				7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */,
 			);
 			path = UserRegister;
 			sourceTree = "<group>";
@@ -127,8 +140,6 @@
 		7CC36A3E26EC637D007573DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7CC36A2C26EC5ED8007573DD /* Main.storyboard */,
-				7CC36A2A26EC5ED8007573DD /* MainViewController.swift */,
 				7CC36A5326EC7194007573DD /* Home.storyboard */,
 				7CC36A5526EC7272007573DD /* HomeViewController.swift */,
 			);
@@ -172,6 +183,15 @@
 				7CC36A5726EC8561007573DD /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CC36A5926EC8A23007573DD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A2C26EC5ED8007573DD /* Main.storyboard */,
+				7CC36A2A26EC5ED8007573DD /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
+				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
@@ -256,6 +277,9 @@
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
+				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
+				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
+				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

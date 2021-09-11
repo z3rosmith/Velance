@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var homeTabButton: UIButton!
     @IBOutlet weak var shoppingTabButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -22,21 +21,16 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addHomeVC()
+        changeToHomeVC()
     }
     
     @IBAction func pressedHomeButton(_ sender: UIButton) {
-        homeTabButton.isSelected = true
-        shoppingTabButton.isSelected = false
-        addHomeVC()
+        changeToHomeVC()
     }
     
     @IBAction func pressedShoppingButton(_ sender: UIButton) {
-        shoppingTabButton.isSelected = true
-        homeTabButton.isSelected = false
-        addShoppingVC()
+        changeToShoppingVC()
     }
-    
 }
 
 //MARK: - UI Configuration
@@ -58,7 +52,6 @@ extension MainViewController {
     
     private func configureTabButtons() {
         
-
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_unselected), for: .normal)
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .selected)
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .highlighted)
@@ -82,20 +75,22 @@ extension MainViewController {
         shoppingTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         shoppingTabButton.alignTextBelow()
         
-        
-        
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
     }
     
 
-    private func addHomeVC() {
+    private func changeToHomeVC() {
+        homeTabButton.isSelected = true
+        shoppingTabButton.isSelected = false
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { fatalError() }
         add(vc, frame: containerView.frame)
     }
     
-    private func addShoppingVC() {
+    private func changeToShoppingVC() {
+        shoppingTabButton.isSelected = true
+        homeTabButton.isSelected = false
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         add(vc, frame: containerView.frame)
