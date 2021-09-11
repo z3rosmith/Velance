@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7CC36A2726EC5ED8007573DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2626EC5ED8007573DD /* AppDelegate.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* ViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
 		7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2F26EC5EDB007573DD /* Assets.xcassets */; };
 		7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A3126EC5EDB007573DD /* LaunchScreen.storyboard */; };
+		7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A4026EC63D8007573DD /* UserRegister.storyboard */; };
+		7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A4526EC6437007573DD /* Shopping.storyboard */; };
+		7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4826EC647E007573DD /* AppDelegate.swift */; };
+		7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4A26EC648D007573DD /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CC36A2626EC5ED8007573DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CC36A2D26EC5ED8007573DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CC36A2F26EC5EDB007573DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC36A3226EC5EDB007573DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC36A3426EC5EDB007573DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CC36A4026EC63D8007573DD /* UserRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserRegister.storyboard; sourceTree = "<group>"; };
+		7CC36A4526EC6437007573DD /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		7CC36A4826EC647E007573DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7CC36A4A26EC648D007573DD /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,90 @@
 		7CC36A2526EC5ED8007573DD /* Velance */ = {
 			isa = PBXGroup;
 			children = (
-				7CC36A2626EC5ED8007573DD /* AppDelegate.swift */,
+				7CC36A3D26EC6378007573DD /* UserRegister */,
+				7CC36A3E26EC637D007573DD /* Home */,
+				7CC36A3F26EC63B8007573DD /* Shopping */,
+				7CC36A3C26EC6366007573DD /* Views */,
+				7CC36A3B26EC6360007573DD /* Network Group */,
+				7CC36A3A26EC6358007573DD /* Model */,
 				7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */,
-				7CC36A2A26EC5ED8007573DD /* ViewController.swift */,
-				7CC36A2C26EC5ED8007573DD /* Main.storyboard */,
+				7CC36A4826EC647E007573DD /* AppDelegate.swift */,
 				7CC36A2F26EC5EDB007573DD /* Assets.xcassets */,
 				7CC36A3126EC5EDB007573DD /* LaunchScreen.storyboard */,
 				7CC36A3426EC5EDB007573DD /* Info.plist */,
 			);
 			path = Velance;
+			sourceTree = "<group>";
+		};
+		7CC36A3A26EC6358007573DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CC36A3B26EC6360007573DD /* Network Group */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A4A26EC648D007573DD /* UserManager.swift */,
+			);
+			path = "Network Group";
+			sourceTree = "<group>";
+		};
+		7CC36A3C26EC6366007573DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A4426EC6427007573DD /* UIViews */,
+				7CC36A4326EC641E007573DD /* UITableView Cells */,
+				7CC36A4226EC6416007573DD /* UICollectionView Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CC36A3D26EC6378007573DD /* UserRegister */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
+			);
+			path = UserRegister;
+			sourceTree = "<group>";
+		};
+		7CC36A3E26EC637D007573DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A2C26EC5ED8007573DD /* Main.storyboard */,
+				7CC36A2A26EC5ED8007573DD /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7CC36A3F26EC63B8007573DD /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A4526EC6437007573DD /* Shopping.storyboard */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		7CC36A4226EC6416007573DD /* UICollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UICollectionView Cells";
+			sourceTree = "<group>";
+		};
+		7CC36A4326EC641E007573DD /* UITableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UITableView Cells";
+			sourceTree = "<group>";
+		};
+		7CC36A4426EC6427007573DD /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +207,8 @@
 			files = (
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
+				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* ViewController.swift in Sources */,
-				7CC36A2726EC5ED8007573DD /* AppDelegate.swift in Sources */,
+				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
