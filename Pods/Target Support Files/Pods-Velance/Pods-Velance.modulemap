@@ -1,0 +1,6 @@
+framework module Pods_Velance {
+  umbrella header "Pods-Velance-umbrella.h"
+
+  export *
+  module * { export * }
+}

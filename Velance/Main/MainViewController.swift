@@ -40,8 +40,6 @@ extension MainViewController {
     private func configure() {
         
         view.backgroundColor = UIColor(named: Color.appBackgroundColor)
-
-        
         configureTabView()
         configureTabButtons()
     }
