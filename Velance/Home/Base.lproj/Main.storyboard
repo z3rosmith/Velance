@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pa-cWO" userLabel="Tab View">
+                                <rect key="frame" x="5" y="794" width="404" height="72"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Gh-lXJ">
+                                        <rect key="frame" x="94" y="19.5" width="216" height="33"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JfV-Jr-pHi">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Ai-9ay" userLabel="Home Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="33" id="AoH-PE-egh"/>
+                                                            <constraint firstAttribute="height" constant="33" id="CKC-ZX-fD5"/>
+                                                        </constraints>
+                                                        <state key="normal" image="home_selected"/>
+                                                        <connections>
+                                                            <action selector="pressedHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T4s-01-Ahc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4cr-WC-QbS">
+                                                <rect key="frame" x="183" y="0.0" width="33" height="33"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-bL-xyT" userLabel="Shop Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="33" id="R70-VO-dLF"/>
+                                                            <constraint firstAttribute="width" constant="33" id="fVK-YL-l8T"/>
+                                                        </constraints>
+                                                        <state key="normal" image="shopping_selected"/>
+                                                        <connections>
+                                                            <action selector="pressedShoppingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkw-Vu-wec"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2tj-Gh-lXJ" firstAttribute="centerX" secondItem="Hm3-pa-cWO" secondAttribute="centerX" id="4Re-uB-evG"/>
+                                    <constraint firstAttribute="height" constant="72" id="GsJ-pf-AA8"/>
+                                    <constraint firstItem="2tj-Gh-lXJ" firstAttribute="centerY" secondItem="Hm3-pa-cWO" secondAttribute="centerY" id="Yq5-Ea-PcJ"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-o3-Mp9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="745"/>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Hm3-pa-cWO" secondAttribute="bottom" constant="30" id="HA8-4A-cYn"/>
+                            <constraint firstItem="4Wc-o3-Mp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kn5-uw-zr9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wc-o3-Mp9" secondAttribute="trailing" id="Xso-Sx-gjo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hm3-pa-cWO" secondAttribute="trailing" constant="5" id="Xzp-o8-cvN"/>
+                            <constraint firstItem="Hm3-pa-cWO" firstAttribute="top" secondItem="4Wc-o3-Mp9" secondAttribute="bottom" constant="5" id="Yvc-3u-tbC"/>
+                            <constraint firstItem="4Wc-o3-Mp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAR-To-9j7"/>
+                            <constraint firstItem="Hm3-pa-cWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="ZL9-fc-1d7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="4Wc-o3-Mp9" id="Q5g-nb-3aU"/>
+                        <outlet property="homeTabButton" destination="yz7-Ai-9ay" id="fky-bD-E2B"/>
+                        <outlet property="shoppingTabButton" destination="XiP-bL-xyT" id="Wip-Xy-rhc"/>
+                        <outlet property="tabView" destination="Hm3-pa-cWO" id="7ar-jz-frl"/>
+                    </connections>
+                </viewController>
             </objects>
+            <point key="canvasLocation" x="-39.130434782608695" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_selected" width="33" height="33"/>
+        <image name="shopping_selected" width="30" height="30"/>
+        <namedColor name="AppBackgroundColor">
+            <color white="0.96092796325683594" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

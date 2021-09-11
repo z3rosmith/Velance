@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
-		7CC36A2B26EC5ED8007573DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* ViewController.swift */; };
+		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
 		7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2F26EC5EDB007573DD /* Assets.xcassets */; };
 		7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A3126EC5EDB007573DD /* LaunchScreen.storyboard */; };
@@ -16,12 +16,18 @@
 		7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A4526EC6437007573DD /* Shopping.storyboard */; };
 		7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4826EC647E007573DD /* AppDelegate.swift */; };
 		7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4A26EC648D007573DD /* UserManager.swift */; };
+		7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4C26EC65D7007573DD /* Constants.swift */; };
+		7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */; };
+		7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */; };
+		7CC36A5426EC7194007573DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Home.storyboard */; };
+		7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* HomeViewController.swift */; };
+		7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5726EC8561007573DD /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CC36A2A26EC5ED8007573DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7CC36A2D26EC5ED8007573DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CC36A2F26EC5EDB007573DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC36A3226EC5EDB007573DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +36,12 @@
 		7CC36A4526EC6437007573DD /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		7CC36A4826EC647E007573DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC36A4A26EC648D007573DD /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		7CC36A4C26EC65D7007573DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		7CC36A5326EC7194007573DD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7CC36A5526EC7272007573DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7CC36A5726EC8561007573DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,8 @@
 				7CC36A3C26EC6366007573DD /* Views */,
 				7CC36A3B26EC6360007573DD /* Network Group */,
 				7CC36A3A26EC6358007573DD /* Model */,
+				7CC36A5026EC70AD007573DD /* Extensions */,
+				7CC36A4C26EC65D7007573DD /* Constants.swift */,
 				7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */,
 				7CC36A4826EC647E007573DD /* AppDelegate.swift */,
 				7CC36A2F26EC5EDB007573DD /* Assets.xcassets */,
@@ -114,7 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A2C26EC5ED8007573DD /* Main.storyboard */,
-				7CC36A2A26EC5ED8007573DD /* ViewController.swift */,
+				7CC36A2A26EC5ED8007573DD /* MainViewController.swift */,
+				7CC36A5326EC7194007573DD /* Home.storyboard */,
+				7CC36A5526EC7272007573DD /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -123,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A4526EC6437007573DD /* Shopping.storyboard */,
+				7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -146,6 +163,15 @@
 			children = (
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		7CC36A5026EC70AD007573DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */,
+				7CC36A5726EC8561007573DD /* UIButton+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +234,7 @@
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 			);
@@ -220,9 +247,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
-				7CC36A2B26EC5ED8007573DD /* ViewController.swift in Sources */,
+				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
+				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
+				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
+				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
+				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
