@@ -5,6 +5,12 @@ struct StoryboardID {
     static let mainVC                       = "MainViewController"
     static let homeVC                       = "HomeViewController"
     static let shoppingVC                   = "ShoppingViewController"
+    
+    // User Register
+    static let chooseTypeVC                 = "ChooseTypeViewController"
+    static let chooseDetailVC               = "ChooseDetailViewController"
+    static let chooseReasonVC               = "ChooseReasonViewController"
+    static let analyzingVC                  = "AnalyzingViewController"
 }
 
 struct Color {

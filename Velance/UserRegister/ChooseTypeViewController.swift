@@ -22,14 +22,17 @@ class ChooseTypeViewController: UIViewController {
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
         
+        guard let vc = storyboard?.instantiateViewController(
+                identifier: StoryboardID.chooseDetailVC
+        ) as? ChooseDetailViewController else { fatalError() }
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func pressedVeganType(_ sender: UIButton) {
         buttonViews[selectedIndex].backgroundColor = UIColor(named: Color.appTintColor)
         selectedIndex = sender.tag
         buttonViews[selectedIndex].backgroundColor = #colorLiteral(red: 0.5058823529, green: 0.7254901961, blue: 0.2235294118, alpha: 1)
-        
         
     }
     
