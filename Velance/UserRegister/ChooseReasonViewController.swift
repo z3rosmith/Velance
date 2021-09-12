@@ -13,6 +13,7 @@ class ChooseReasonViewController: UIViewController {
     @IBOutlet var reasonButtons: [UIButton]!
     
     private var selectedReasonIndex: Int = 0
+    private var didSelectReason: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,17 @@ class ChooseReasonViewController: UIViewController {
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
         
+        if !didSelectReason {
+            presentVLAlert(title: "앱 사용 이유 선택", message: "앱을 사용하는 이유를 하나 선택해주세요.", buttonTitle: "확인")
+            return
+        }
+        
+        UserRegisterValues.shared.reason = selectedReasonIndex
     }
     
     @IBAction func pressedReasonButton(_ sender: UIButton) {
+        
+        didSelectReason = true
         
         reasonButtons[selectedReasonIndex].backgroundColor = UIColor(named: Colors.appTintColor)
         reasonButtons[selectedReasonIndex].setTitleColor(UIColor(named: Colors.buttonSelectedColor), for: .normal)

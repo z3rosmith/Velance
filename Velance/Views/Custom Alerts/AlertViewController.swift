@@ -38,7 +38,7 @@ class AlertViewController: UIViewController {
         
         view.addSubview(containerView)
         containerView.backgroundColor = .systemBackground
-        containerView.layer.cornerRadius = 16
+        containerView.layer.cornerRadius = 10
         containerView.layer.borderWidth = 2
         containerView.layer.borderColor = UIColor.white.cgColor
         containerView.translatesAutoresizingMaskIntoConstraints = false

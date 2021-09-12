@@ -20,6 +20,7 @@ class ChooseDetailViewController: UIViewController {
     @IBOutlet var genderButtons: [UIButton]!
     
     private var selectedGenderIndex: Int = 0
+    private var didSelectGender: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,15 @@ class ChooseDetailViewController: UIViewController {
     }
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
+        
+        if !didSelectGender {
+            presentVLAlert(title: "성별 선택", message: "성별을 선택해주세요.", buttonTitle: "확인")
+            return
+        }
+        
+        UserRegisterValues.shared.height = Int(heightSlider.value)
+        UserRegisterValues.shared.weight = Int(weightSlider.value)
+        UserRegisterValues.shared.gender = selectedGenderIndex
         
         guard let vc = storyboard?.instantiateViewController(
             identifier: StoryboardID.chooseReasonVC
@@ -51,6 +61,9 @@ class ChooseDetailViewController: UIViewController {
     }
     
     @IBAction func pressedGenderButton(_ sender: UIButton) {
+        
+        didSelectGender = true
+        
         genderButtons[selectedGenderIndex].backgroundColor = UIColor(named: Colors.appTintColor)
         genderButtons[selectedGenderIndex].setTitleColor(UIColor(named: Colors.buttonSelectedColor), for: .normal)
         

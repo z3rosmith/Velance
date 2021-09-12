@@ -11,7 +11,7 @@ struct UserRegisterValues {
     
     private init() {}
     
-    static let shared = UserRegisterValues()
+    static var shared = UserRegisterValues()
     
     var userID: String = ""
     var userPassword: String = ""
