@@ -45,7 +45,7 @@
                                         <state key="normal" image="left button"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채식 유형을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mh-pS-EcI">
-                                        <rect key="frame" x="94.5" y="58" width="225" height="27"/>
+                                        <rect key="frame" x="75" y="58" width="264" height="27"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -54,7 +54,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="yvZ-yk-0rX" secondAttribute="bottom" constant="15" id="BHy-GD-M4k"/>
+                                    <constraint firstItem="4mh-pS-EcI" firstAttribute="leading" secondItem="yvZ-yk-0rX" secondAttribute="trailing" constant="20" id="HXS-4a-vut"/>
                                     <constraint firstAttribute="bottom" secondItem="mDm-mF-qSX" secondAttribute="bottom" constant="15" id="IGa-HL-VZX"/>
+                                    <constraint firstItem="mDm-mF-qSX" firstAttribute="leading" secondItem="4mh-pS-EcI" secondAttribute="trailing" constant="20" id="NVX-2i-lx4"/>
                                     <constraint firstAttribute="trailing" secondItem="mDm-mF-qSX" secondAttribute="trailing" constant="30" id="SHl-eB-Ekz"/>
                                     <constraint firstAttribute="height" constant="100" id="X3p-zx-Cmb"/>
                                     <constraint firstItem="4mh-pS-EcI" firstAttribute="centerX" secondItem="cj0-EJ-hEx" secondAttribute="centerX" id="YbY-aV-7KA"/>
@@ -303,6 +305,11 @@
                         <outletCollection property="buttonViews" destination="PrP-W5-Bzi" collectionClass="NSMutableArray" id="xyI-vm-VEP"/>
                         <outletCollection property="buttonViews" destination="bv1-w5-Kez" collectionClass="NSMutableArray" id="plE-st-D0f"/>
                         <outletCollection property="buttonViews" destination="n6U-XI-V3Y" collectionClass="NSMutableArray" id="9ET-Sc-L1w"/>
+                        <outletCollection property="buttons" destination="aE5-tA-hzy" collectionClass="NSMutableArray" id="8SO-cO-20d"/>
+                        <outletCollection property="buttons" destination="HRV-6j-Wnu" collectionClass="NSMutableArray" id="tSQ-SH-str"/>
+                        <outletCollection property="buttons" destination="fZI-7S-1dd" collectionClass="NSMutableArray" id="pwd-N0-hFh"/>
+                        <outletCollection property="buttons" destination="KWk-mc-Fi1" collectionClass="NSMutableArray" id="xhg-3W-Odh"/>
+                        <outletCollection property="buttons" destination="hsB-Xe-KAr" collectionClass="NSMutableArray" id="ovq-DQ-f5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,7 +356,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키, 몸무게, 성별을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H32-ED-Bcb">
-                                        <rect key="frame" x="68" y="58" width="278" height="27"/>
+                                        <rect key="frame" x="75" y="58" width="264" height="27"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -358,6 +365,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="xZZ-AJ-Mfp" firstAttribute="leading" secondItem="tCx-Dw-cn7" secondAttribute="leading" constant="30" id="3AP-5D-Awr"/>
+                                    <constraint firstItem="H32-ED-Bcb" firstAttribute="leading" secondItem="xZZ-AJ-Mfp" secondAttribute="trailing" constant="20" id="Bl1-XW-vvS"/>
                                     <constraint firstAttribute="trailing" secondItem="S04-OM-BdC" secondAttribute="trailing" constant="30" id="CCX-Wk-42L"/>
                                     <constraint firstItem="H32-ED-Bcb" firstAttribute="centerX" secondItem="tCx-Dw-cn7" secondAttribute="centerX" id="Gzc-61-nHg"/>
                                     <constraint firstItem="eX1-0E-FPq" firstAttribute="centerX" secondItem="tCx-Dw-cn7" secondAttribute="centerX" id="MPD-bB-wbG"/>
@@ -366,6 +374,7 @@
                                     <constraint firstItem="eX1-0E-FPq" firstAttribute="top" secondItem="tCx-Dw-cn7" secondAttribute="top" constant="15" id="ncp-kx-ImH"/>
                                     <constraint firstAttribute="bottom" secondItem="xZZ-AJ-Mfp" secondAttribute="bottom" constant="15" id="oIh-an-rlK"/>
                                     <constraint firstAttribute="bottom" secondItem="S04-OM-BdC" secondAttribute="bottom" constant="15" id="qPM-dd-VWb"/>
+                                    <constraint firstItem="S04-OM-BdC" firstAttribute="leading" secondItem="H32-ED-Bcb" secondAttribute="trailing" constant="20" id="wqN-gW-Ipf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-P4-P7z" userLabel="Bottom View">
@@ -558,7 +567,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱을 사용하는 이유가 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-t2-hfb">
-                                        <rect key="frame" x="61" y="58" width="292.5" height="27"/>
+                                        <rect key="frame" x="75" y="58" width="264" height="27"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -566,6 +575,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Kmo-w5-S5i" firstAttribute="leading" secondItem="hZ6-t2-hfb" secondAttribute="trailing" constant="20" id="EFi-WU-8By"/>
                                     <constraint firstItem="hZ6-t2-hfb" firstAttribute="centerX" secondItem="ShA-fG-VUL" secondAttribute="centerX" id="Gen-gf-3Ei"/>
                                     <constraint firstItem="061-cV-7MZ" firstAttribute="top" secondItem="ShA-fG-VUL" secondAttribute="top" constant="15" id="KBb-VT-IJO"/>
                                     <constraint firstItem="mFP-T3-Lfl" firstAttribute="leading" secondItem="ShA-fG-VUL" secondAttribute="leading" constant="30" id="NI1-h7-p8p"/>
@@ -575,6 +585,7 @@
                                     <constraint firstAttribute="bottom" secondItem="mFP-T3-Lfl" secondAttribute="bottom" constant="15" id="dkr-Fm-rPK"/>
                                     <constraint firstAttribute="height" constant="100" id="fxU-ek-LNg"/>
                                     <constraint firstItem="061-cV-7MZ" firstAttribute="centerX" secondItem="ShA-fG-VUL" secondAttribute="centerX" id="wk9-Qq-Wlc"/>
+                                    <constraint firstItem="hZ6-t2-hfb" firstAttribute="leading" secondItem="mFP-T3-Lfl" secondAttribute="trailing" constant="20" id="yh8-6D-Iif"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-Qm-ZKZ" userLabel="Bottom View">

@@ -11,6 +11,7 @@ class ChooseTypeViewController: UIViewController {
 
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet var buttonViews: [UIView]!
+    @IBOutlet var buttons: [UIButton]!
     
     private var selectedIndex: Int = 0
 
@@ -30,9 +31,13 @@ class ChooseTypeViewController: UIViewController {
     }
     
     @IBAction func pressedVeganType(_ sender: UIButton) {
-        buttonViews[selectedIndex].backgroundColor = UIColor(named: Color.appTintColor)
+        buttonViews[selectedIndex].backgroundColor = UIColor(named: Colors.appTintColor)
+        buttons[selectedIndex].setImage(UIImage(named: Images.veganTypesUnselected[selectedIndex]), for: .normal)
+        
         selectedIndex = sender.tag
-        buttonViews[selectedIndex].backgroundColor = #colorLiteral(red: 0.5058823529, green: 0.7254901961, blue: 0.2235294118, alpha: 1)
+        
+        buttonViews[selectedIndex].backgroundColor = UIColor(named: Colors.buttonSelectedColor)
+        buttons[selectedIndex].setImage(UIImage(named: Images.veganTypesSelected[selectedIndex]), for: .normal)
         
     }
 }

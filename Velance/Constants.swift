@@ -13,11 +13,12 @@ struct StoryboardID {
     static let analyzingVC                  = "AnalyzingViewController"
 }
 
-struct Color {
+struct Colors {
     
     static let appDefaultColor              = "AppDefaultColor"
     static let appBackgroundColor           = "AppBackgroundColor"
     static let appTintColor                 = "AppTintColor"
+    static let buttonSelectedColor          = "ButtonSelectedColor"
     
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"
@@ -41,5 +42,12 @@ struct Images {
     static let lacto            = "lacto"
     static let lacto_ovo        = "lactoovo"
     static let pesco            = "pesco"
+    static let veganTypesUnselected = [vegan, ovo, lacto, lacto_ovo, pesco]
     
+    static let vegan_selected       = "vegan_selected"
+    static let ovo_selected         = "ovo_selected"
+    static let lacto_selected       = "lacto_selected"
+    static let lacto_ovo_selected   = "lactoovo_selected"
+    static let pesco_selected       = "pesco_selected"
+    static let veganTypesSelected = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
 }
