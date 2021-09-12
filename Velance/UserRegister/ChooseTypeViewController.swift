@@ -35,10 +35,6 @@ class ChooseTypeViewController: UIViewController {
         buttonViews[selectedIndex].backgroundColor = #colorLiteral(red: 0.5058823529, green: 0.7254901961, blue: 0.2235294118, alpha: 1)
         
     }
-    
-    
-    
-
 }
 
 //MARK: - UI Configuration

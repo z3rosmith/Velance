@@ -9,6 +9,8 @@ import UIKit
 
 class ChooseDetailViewController: UIViewController {
     
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
     
@@ -30,7 +32,11 @@ class ChooseDetailViewController: UIViewController {
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
         
+        guard let vc = storyboard?.instantiateViewController(
+            identifier: StoryboardID.chooseReasonVC
+        ) as? ChooseReasonViewController else { fatalError() }
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func heightSliderValueChanged(_ sender: UISlider) {
@@ -59,12 +65,15 @@ class ChooseDetailViewController: UIViewController {
 extension ChooseDetailViewController {
     
     private func configure() {
-        
         configureGenderButtons()
     }
     
+    private func configureBottomView() {
+        bottomView.layer.cornerRadius = 30
+        bottomView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
     private func configureGenderButtons() {
-        
         genderButtons.forEach { button in
             button.layer.cornerRadius = button.frame.height / 2
         }

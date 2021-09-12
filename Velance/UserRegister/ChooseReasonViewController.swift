@@ -9,21 +9,51 @@ import UIKit
 
 class ChooseReasonViewController: UIViewController {
 
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet var reasonButtons: [UIButton]!
+    
+    private var selectedReasonIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configure()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func pressedPreviousButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
-    */
+    
+    @IBAction func pressedNextButton(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func pressedReasonButton(_ sender: UIButton) {
+        
+        reasonButtons[selectedReasonIndex].backgroundColor = UIColor(named: Color.appTintColor)
+        selectedReasonIndex = sender.tag
+        reasonButtons[selectedReasonIndex].backgroundColor = #colorLiteral(red: 0.5058823529, green: 0.7254901961, blue: 0.2235294118, alpha: 1)
+    }
 
+}
+
+//MARK: - UI Configuration
+
+extension ChooseReasonViewController {
+    
+    private func configure() {
+        configureBottomView()
+        configureReasonButtons()
+    }
+    
+    private func configureBottomView() {
+        bottomView.layer.cornerRadius = 30
+        bottomView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    private func configureReasonButtons() {
+        reasonButtons.forEach { button in
+            button.layer.cornerRadius = button.frame.height / 2
+        }
+    }
 }

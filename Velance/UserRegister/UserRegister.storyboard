@@ -504,6 +504,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="z5g-P4-P7z" id="48D-pP-9FL"/>
                         <outlet property="heightLabel" destination="IVM-dc-C15" id="RLs-nx-vz1"/>
                         <outlet property="heightSlider" destination="pNC-3i-GGZ" id="3RH-QR-fFQ"/>
                         <outlet property="weightLabel" destination="eZr-tm-cLv" id="AlQ-c7-r4j"/>
@@ -516,6 +517,151 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEA-bO-z0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1428.985507246377" y="87.723214285714278"/>
+        </scene>
+        <!--Choose Reason View Controller-->
+        <scene sceneID="Ykj-wk-H0e">
+            <objects>
+                <viewController storyboardIdentifier="ChooseReasonViewController" id="4YB-yA-ygg" customClass="ChooseReasonViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ws2-UL-nIh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShA-fG-VUL" userLabel="Upper View">
+                                <rect key="frame" x="0.0" y="54" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 3." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="061-cV-7MZ">
+                                        <rect key="frame" x="162.5" y="15" width="89" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmo-w5-S5i" userLabel="Next Button">
+                                        <rect key="frame" x="359" y="60" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Gwe-QS-Rxy"/>
+                                            <constraint firstAttribute="width" constant="25" id="OG8-xI-9Kb"/>
+                                        </constraints>
+                                        <state key="normal" image="right button"/>
+                                        <connections>
+                                            <action selector="pressedNextButton:" destination="4YB-yA-ygg" eventType="touchUpInside" id="KJm-ZL-LvX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFP-T3-Lfl" userLabel="Previous Button">
+                                        <rect key="frame" x="30" y="60" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="aHT-UF-DMf"/>
+                                            <constraint firstAttribute="width" constant="25" id="quJ-XD-UeD"/>
+                                        </constraints>
+                                        <state key="normal" image="left button"/>
+                                        <connections>
+                                            <action selector="pressedPreviousButton:" destination="4YB-yA-ygg" eventType="touchUpInside" id="4p1-zR-9xf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱을 사용하는 이유가 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-t2-hfb">
+                                        <rect key="frame" x="61" y="58" width="292.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hZ6-t2-hfb" firstAttribute="centerX" secondItem="ShA-fG-VUL" secondAttribute="centerX" id="Gen-gf-3Ei"/>
+                                    <constraint firstItem="061-cV-7MZ" firstAttribute="top" secondItem="ShA-fG-VUL" secondAttribute="top" constant="15" id="KBb-VT-IJO"/>
+                                    <constraint firstItem="mFP-T3-Lfl" firstAttribute="leading" secondItem="ShA-fG-VUL" secondAttribute="leading" constant="30" id="NI1-h7-p8p"/>
+                                    <constraint firstAttribute="bottom" secondItem="hZ6-t2-hfb" secondAttribute="bottom" constant="15" id="Tdg-Sf-cKa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kmo-w5-S5i" secondAttribute="trailing" constant="30" id="Xhz-MT-Lzz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kmo-w5-S5i" secondAttribute="bottom" constant="15" id="dLd-50-aI4"/>
+                                    <constraint firstAttribute="bottom" secondItem="mFP-T3-Lfl" secondAttribute="bottom" constant="15" id="dkr-Fm-rPK"/>
+                                    <constraint firstAttribute="height" constant="100" id="fxU-ek-LNg"/>
+                                    <constraint firstItem="061-cV-7MZ" firstAttribute="centerX" secondItem="ShA-fG-VUL" secondAttribute="centerX" id="wk9-Qq-Wlc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-Qm-ZKZ" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="184" width="414" height="712"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T7-YA-vP3">
+                                        <rect key="frame" x="30" y="200" width="354" height="50"/>
+                                        <color key="backgroundColor" name="AppTintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xYo-WI-NX6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <state key="normal" title="체중 감량을 위해서">
+                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedGenderButton:" destination="dyH-3z-eY5" eventType="touchUpInside" id="y79-6s-Wgx"/>
+                                            <action selector="pressedReasonButton:" destination="4YB-yA-ygg" eventType="touchUpInside" id="dAe-gw-fm1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOh-Lg-CPe">
+                                        <rect key="frame" x="30" y="300" width="354" height="50"/>
+                                        <color key="backgroundColor" name="AppTintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Zfa-Me-Gyb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <state key="normal" title="균형 잡힌 식단을 위해서">
+                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedGenderButton:" destination="dyH-3z-eY5" eventType="touchUpInside" id="BhF-Fi-fd7"/>
+                                            <action selector="pressedReasonButton:" destination="4YB-yA-ygg" eventType="touchUpInside" id="Lr3-Va-VJO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L4-Eq-laT">
+                                        <rect key="frame" x="30" y="400" width="354" height="50"/>
+                                        <color key="backgroundColor" name="AppTintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="soW-OA-XWB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <state key="normal" title="운동을 위한 식단 조절이 필요해서">
+                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedGenderButton:" destination="dyH-3z-eY5" eventType="touchUpInside" id="qqk-FD-WC2"/>
+                                            <action selector="pressedReasonButton:" destination="4YB-yA-ygg" eventType="touchUpInside" id="0Gr-vT-5UI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4T7-YA-vP3" firstAttribute="leading" secondItem="Fub-Qm-ZKZ" secondAttribute="leading" constant="30" id="3E2-ye-zsH"/>
+                                    <constraint firstItem="MOh-Lg-CPe" firstAttribute="leading" secondItem="Fub-Qm-ZKZ" secondAttribute="leading" constant="30" id="DT3-yc-enA"/>
+                                    <constraint firstItem="4L4-Eq-laT" firstAttribute="leading" secondItem="Fub-Qm-ZKZ" secondAttribute="leading" constant="30" id="XKh-Qo-n5a"/>
+                                    <constraint firstItem="4L4-Eq-laT" firstAttribute="top" secondItem="MOh-Lg-CPe" secondAttribute="bottom" constant="50" id="cXh-hV-CCq"/>
+                                    <constraint firstItem="MOh-Lg-CPe" firstAttribute="top" secondItem="4T7-YA-vP3" secondAttribute="bottom" constant="50" id="kBC-wQ-tTU"/>
+                                    <constraint firstItem="4T7-YA-vP3" firstAttribute="top" secondItem="Fub-Qm-ZKZ" secondAttribute="top" constant="200" id="rGR-y0-y4c"/>
+                                    <constraint firstAttribute="trailing" secondItem="4L4-Eq-laT" secondAttribute="trailing" constant="30" id="yIJ-MJ-9ln"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOh-Lg-CPe" secondAttribute="trailing" constant="30" id="yUu-BU-hrC"/>
+                                    <constraint firstAttribute="trailing" secondItem="4T7-YA-vP3" secondAttribute="trailing" constant="30" id="zFy-Ga-yGn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LGF-BM-qRX"/>
+                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <constraints>
+                            <constraint firstItem="ShA-fG-VUL" firstAttribute="top" secondItem="LGF-BM-qRX" secondAttribute="top" constant="10" id="1Ey-ej-CGg"/>
+                            <constraint firstItem="Fub-Qm-ZKZ" firstAttribute="top" secondItem="ShA-fG-VUL" secondAttribute="bottom" constant="30" id="LMR-P2-VmL"/>
+                            <constraint firstItem="Fub-Qm-ZKZ" firstAttribute="leading" secondItem="LGF-BM-qRX" secondAttribute="leading" id="P8G-yt-3fE"/>
+                            <constraint firstItem="ShA-fG-VUL" firstAttribute="leading" secondItem="LGF-BM-qRX" secondAttribute="leading" id="dLC-5V-diw"/>
+                            <constraint firstItem="ShA-fG-VUL" firstAttribute="trailing" secondItem="LGF-BM-qRX" secondAttribute="trailing" id="qwb-n8-b5G"/>
+                            <constraint firstAttribute="bottom" secondItem="Fub-Qm-ZKZ" secondAttribute="bottom" id="sjY-iQ-ENg"/>
+                            <constraint firstItem="LGF-BM-qRX" firstAttribute="trailing" secondItem="Fub-Qm-ZKZ" secondAttribute="trailing" id="t9g-kd-KMZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="Fub-Qm-ZKZ" id="Tbh-SC-etH"/>
+                        <outletCollection property="reasonButtons" destination="4T7-YA-vP3" collectionClass="NSMutableArray" id="0El-mI-wvA"/>
+                        <outletCollection property="reasonButtons" destination="MOh-Lg-CPe" collectionClass="NSMutableArray" id="eOB-fV-Igo"/>
+                        <outletCollection property="reasonButtons" destination="4L4-Eq-laT" collectionClass="NSMutableArray" id="hpb-zm-2q2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJA-fc-gbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2136" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gMo-vb-xXk">
