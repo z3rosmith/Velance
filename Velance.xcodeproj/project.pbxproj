@@ -28,6 +28,10 @@
 		7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */; };
 		7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */; };
 		7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */; };
+		7CC36A9326EE3F2D007573DD /* VMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8F26EE3F2C007573DD /* VMTitleLabel.swift */; };
+		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
+		7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */; };
+		7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9226EE3F2D007573DD /* VLButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseReasonViewController.swift; sourceTree = "<group>"; };
 		7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingViewController.swift; sourceTree = "<group>"; };
 		7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterValues.swift; sourceTree = "<group>"; };
+		7CC36A8F26EE3F2C007573DD /* VMTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMTitleLabel.swift; sourceTree = "<group>"; };
+		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLBodyLabel.swift; sourceTree = "<group>"; };
+		7CC36A9226EE3F2D007573DD /* VLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLButton.swift; sourceTree = "<group>"; };
 		AE20086C63AF53ABBB3FE514 /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +153,7 @@
 		7CC36A3C26EC6366007573DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7CC36A8E26EE3F1E007573DD /* Custom Alerts */,
 				7CC36A4426EC6427007573DD /* UIViews */,
 				7CC36A4326EC641E007573DD /* UITableView Cells */,
 				7CC36A4226EC6416007573DD /* UICollectionView Cells */,
@@ -219,6 +228,17 @@
 				7CC36A2A26EC5ED8007573DD /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7CC36A8E26EE3F1E007573DD /* Custom Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A9026EE3F2C007573DD /* AlertViewController.swift */,
+				7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */,
+				7CC36A9226EE3F2D007573DD /* VLButton.swift */,
+				7CC36A8F26EE3F2C007573DD /* VMTitleLabel.swift */,
+			);
+			path = "Custom Alerts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,16 +358,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
+				7CC36A9326EE3F2D007573DD /* VMTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
+				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
+				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
 				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,

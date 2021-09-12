@@ -14,6 +14,7 @@ class ChooseTypeViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     
     private var selectedIndex: Int = 0
+    private var didChooseVeganType: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class ChooseTypeViewController: UIViewController {
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
         
+        if !didChooseVeganType {
+            presentVLAlert(title: "채식 유형 선택", message: "채식 유형을 선택해주세요!", buttonTitle: "확인")
+        }
+        
         guard let vc = storyboard?.instantiateViewController(
                 identifier: StoryboardID.chooseDetailVC
         ) as? ChooseDetailViewController else { fatalError() }
@@ -31,6 +36,9 @@ class ChooseTypeViewController: UIViewController {
     }
     
     @IBAction func pressedVeganType(_ sender: UIButton) {
+        
+        didChooseVeganType = true
+        
         buttonViews[selectedIndex].backgroundColor = UIColor(named: Colors.appTintColor)
         buttons[selectedIndex].setImage(UIImage(named: Images.veganTypesUnselected[selectedIndex]), for: .normal)
         
