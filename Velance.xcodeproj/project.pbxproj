@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
+		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
+		7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		7CC36A4226EC6416007573DD /* UICollectionView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */,
+				7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */,
 			);
 			path = "UICollectionView Cells";
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
+				7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
@@ -368,6 +375,7 @@
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
