@@ -1,6 +1,6 @@
 import UIKit
 
-class VMTitleLabel: UILabel {
+class VLTitleLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

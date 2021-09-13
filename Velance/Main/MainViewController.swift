@@ -81,14 +81,17 @@ extension MainViewController {
     private func changeToHomeVC() {
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
+        remove()
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { fatalError() }
         add(vc, frame: containerView.frame)
+    
     }
     
     private func changeToShoppingVC() {
         shoppingTabButton.isSelected = true
         homeTabButton.isSelected = false
+        remove()
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         add(vc, frame: containerView.frame)

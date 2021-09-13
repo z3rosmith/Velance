@@ -3,7 +3,7 @@ import UIKit
 class AlertViewController: UIViewController {
     
     let containerView   = UIView()
-    let titleLabel      = VMTitleLabel(textAlignment: .center, fontSize: 20)
+    let titleLabel      = VLTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel    = VLBodyLabel(textAlignment: .center)
     let actionButton    = VLButton(backgroundColor: UIColor(named: Colors.appDefaultColor)!, title: "확인")
 
