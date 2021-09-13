@@ -81,6 +81,7 @@ class ChooseDetailViewController: UIViewController {
 extension ChooseDetailViewController {
     
     private func configure() {
+        configureBottomView()
         configureGenderButtons()
     }
     

@@ -12,7 +12,6 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
-        
     }
   
     @objc private func pressedAddCartButton() {
@@ -32,11 +31,11 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     private func configureItemContentView() {
         itemContentView.layer.borderWidth = 0.5
         itemContentView.layer.borderColor = UIColor.lightGray.cgColor
-        itemContentView.layer.cornerRadius = 10
+        itemContentView.layer.cornerRadius = 15
     }
     
     private func configureItemImageView() {
-        itemImageView.layer.cornerRadius = 10
+        itemImageView.layer.cornerRadius = 15
     }
     
     private func configureItemTitleLabel() {

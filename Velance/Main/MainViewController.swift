@@ -61,7 +61,6 @@ extension MainViewController {
         homeTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         homeTabButton.alignTextBelow()
         
-  
         shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_unselected), for: .normal)
         shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_selected), for: .selected)
         shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_selected), for: .highlighted)
@@ -81,7 +80,6 @@ extension MainViewController {
     private func changeToHomeVC() {
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
-        remove()
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { fatalError() }
         add(vc, frame: containerView.frame)
@@ -91,7 +89,6 @@ extension MainViewController {
     private func changeToShoppingVC() {
         shoppingTabButton.isSelected = true
         homeTabButton.isSelected = false
-        remove()
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         add(vc, frame: containerView.frame)

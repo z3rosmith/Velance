@@ -701,7 +701,7 @@
         <image name="right button" width="13" height="19"/>
         <image name="vegan" width="75" height="75"/>
         <namedColor name="AppBackgroundColor">
-            <color white="0.96092796325683594" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color white="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AppDefaultColor">
             <color red="0.45100000500679016" green="0.72200000286102295" blue="0.093999996781349182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

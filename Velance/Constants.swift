@@ -23,9 +23,18 @@ struct Colors {
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"
     static let tabBarUnselectedColor        = "TabBarUnselectedColor"
-    
-    
 
+}
+
+struct CellID {
+    
+    static let shoppingTableViewCell            = "shoppingTVC"
+    static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
+}
+
+struct XIB_ID {
+    
+    static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
 }
 
 struct Images {
