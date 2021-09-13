@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WeJ-gu-U8p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLt-6f-ZFO" userLabel="Upper Stack View">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-P5-eo4" userLabel="Left Select View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-P5-eo4" userLabel="Left Segment View">
                                         <rect key="frame" x="0.0" y="0.0" width="218" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 식품" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd7-yy-2IV">
@@ -31,7 +31,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Zd7-yy-2IV" secondAttribute="trailing" constant="20" id="7Oi-OI-KMV"/>
                                             <constraint firstItem="Zd7-yy-2IV" firstAttribute="top" secondItem="hHM-P5-eo4" secondAttribute="top" id="EMI-b5-PJN"/>
@@ -39,13 +39,13 @@
                                             <constraint firstAttribute="bottom" secondItem="Zd7-yy-2IV" secondAttribute="bottom" id="rUY-fa-69x"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRg-MA-7VQ" userLabel="Right Select View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRg-MA-7VQ" userLabel="Right Segment View">
                                         <rect key="frame" x="218" y="0.0" width="196" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB0-C4-WXk">
                                                 <rect key="frame" x="20" y="0.0" width="156" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -58,7 +58,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <color key="backgroundColor" name="AppDefaultColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eRg-MA-7VQ" secondAttribute="trailing" id="0he-aE-ObL"/>
                                     <constraint firstItem="hHM-P5-eo4" firstAttribute="leading" secondItem="aLt-6f-ZFO" secondAttribute="leading" id="7ib-c4-mE0"/>
@@ -105,16 +105,28 @@
                                                     </cells>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egl-Lv-nnH">
-                                                    <rect key="frame" x="20" y="21" width="41.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="20" y="21" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPF-xY-lG2">
+                                                    <rect key="frame" x="357" y="21" width="37" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <state key="normal" title="더보기">
+                                                        <color key="titleColor" name="AppDefaultColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressedSeeMoreButton:" destination="BmI-Ue-Ig4" eventType="touchUpInside" id="QRi-mq-Q6k"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" name="AppBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="h96-B5-r8m" secondAttribute="trailing" id="0em-Yb-Fkv"/>
+                                                <constraint firstItem="OPF-xY-lG2" firstAttribute="trailing" secondItem="8pd-3k-lfk" secondAttribute="trailingMargin" id="Aea-iO-zLJ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="h96-B5-r8m" secondAttribute="bottom" id="K3D-ev-rxd"/>
+                                                <constraint firstItem="OPF-xY-lG2" firstAttribute="top" secondItem="8pd-3k-lfk" secondAttribute="topMargin" constant="10" id="fbp-0d-Hq0"/>
                                                 <constraint firstItem="h96-B5-r8m" firstAttribute="leading" secondItem="8pd-3k-lfk" secondAttribute="leadingMargin" id="k1v-GP-svp"/>
                                                 <constraint firstItem="egl-Lv-nnH" firstAttribute="leading" secondItem="8pd-3k-lfk" secondAttribute="leadingMargin" id="mEa-Mh-nWY"/>
                                                 <constraint firstItem="h96-B5-r8m" firstAttribute="top" secondItem="egl-Lv-nnH" secondAttribute="bottom" constant="5" id="uEI-1n-JSG"/>
@@ -125,13 +137,14 @@
                                         <connections>
                                             <outlet property="itemCollectionView" destination="h96-B5-r8m" id="ezF-Rg-1WW"/>
                                             <outlet property="sectionTitleLabel" destination="egl-Lv-nnH" id="aCx-iP-jh5"/>
+                                            <outlet property="seeMoreButton" destination="OPF-xY-lG2" id="TZt-X6-Ig9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                        <color key="backgroundColor" name="AppDefaultColor"/>
                         <constraints>
                             <constraint firstItem="aLt-6f-ZFO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GOT-xX-t5c"/>
                             <constraint firstAttribute="trailing" secondItem="aLt-6f-ZFO" secondAttribute="trailing" id="OMv-kC-SEl"/>
@@ -143,9 +156,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Velance 몰" id="9Y6-HO-kx4">
-                        <barButtonItem key="rightBarButtonItem" image="cart" id="h1y-bh-lL2"/>
+                        <barButtonItem key="rightBarButtonItem" image="cart" id="h1y-bh-lL2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftSegmentLabel" destination="Zd7-yy-2IV" id="p2L-VI-g4i"/>
+                        <outlet property="leftSegmentView" destination="hHM-P5-eo4" id="Udx-i0-HMI"/>
+                        <outlet property="rightSegmentLabel" destination="GB0-C4-WXk" id="fh0-UE-QAR"/>
+                        <outlet property="rightSegmentView" destination="eRg-MA-7VQ" id="xzG-nB-FQf"/>
                         <outlet property="shoppingTableView" destination="KU5-or-prk" id="3NN-CY-sf5"/>
                     </connections>
                 </viewController>
@@ -161,7 +180,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVo-uw-qxs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="AppDefaultColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,6 +206,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

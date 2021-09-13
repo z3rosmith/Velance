@@ -3,7 +3,15 @@ import SDWebImage
 
 class ShoppingViewController: UIViewController {
     
+    @IBOutlet weak var leftSegmentView: UIView!
+    @IBOutlet weak var leftSegmentLabel: UILabel!
+    
+    @IBOutlet weak var rightSegmentView: UIView!
+    @IBOutlet weak var rightSegmentLabel: UILabel!
+    
     @IBOutlet weak var shoppingTableView: UITableView!
+    
+    private let segmentViewCornerRadius: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +41,8 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         ) as? ShoppingTableViewCell
         else { return UITableViewCell() }
         
-        cell.sectionTitleLabel.text = String(indexPath.row)
+        cell.sectionTitleLabel.text = "\(indexPath.row)이 풍부한 식품 추천"
         cell.itemCollectionView.reloadData()
-      
         
         return cell
     }
@@ -55,7 +62,11 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
 extension ShoppingViewController {
     
     private func configure() {
+   
+        
+        navigationController?.navigationBar.barTintColor = UIColor(named: Colors.appDefaultColor)
         configureTableView()
+        configureSegmentViews()
     }
     
     private func configureTableView() {
@@ -68,6 +79,31 @@ extension ShoppingViewController {
             action: #selector(refreshPage),
             for: .valueChanged
         )
+    }
+    
+    private func configureSegmentViews() {
+        leftSegmentView.layer.cornerRadius = segmentViewCornerRadius
+        leftSegmentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        rightSegmentView.layer.cornerRadius = segmentViewCornerRadius
+        rightSegmentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMaxYCorner]
+        
+        
+        
+        
+        let leftTap = UIGestureRecognizer(target: self, action: #selector(pressedLeftSegmentView(_:)))
+        let rightTap = UIGestureRecognizer(target: self, action: #selector(pressedRightSegmentView(_:)))
+        
+        leftSegmentView.addGestureRecognizer(leftTap)
+        rightSegmentView.addGestureRecognizer(rightTap)
+    }
+    
+    @objc private func pressedLeftSegmentView(_ gesture: UITapGestureRecognizer) {
+        
+        
+    }
+    
+    @objc private func pressedRightSegmentView(_ gesture: UITapGestureRecognizer) {
         
     }
     

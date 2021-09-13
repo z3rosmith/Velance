@@ -4,7 +4,7 @@ class ShoppingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sectionTitleLabel: UILabel!
     @IBOutlet weak var itemCollectionView: UICollectionView!
-    
+    @IBOutlet weak var seeMoreButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +19,11 @@ class ShoppingTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
+    }
+    
+    
+    @IBAction func pressedSeeMoreButton(_ sender: UIButton) {
+        
     }
     
 
@@ -47,10 +52,11 @@ extension ShoppingTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         ) as? ShoppingItemCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.itemTitleLabel.text = String(indexPath.row)
-        cell.itemDetailLabel.text = String(indexPath.row)
-        cell.itemPriceLabel.text = String(indexPath.row)
         
+        cell.itemTitleLabel.text = "[\(indexPath.row)] 비건 소세지"
+        cell.itemDetailLabel.text = "\(indexPath.row)팩, 200g"
+        cell.itemPriceLabel.text = "10,000원 [\(indexPath.row)]"
+        cell.itemImageView.image = UIImage(named: "image_test")
         
         return cell
     }

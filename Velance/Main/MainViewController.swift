@@ -91,6 +91,8 @@ extension MainViewController {
         homeTabButton.isSelected = false
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
-        add(vc, frame: containerView.frame)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        add(navController, frame: containerView.frame)
     }
 }
