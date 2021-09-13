@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class ShoppingViewController: UIViewController {
     
@@ -9,6 +10,10 @@ class ShoppingViewController: UIViewController {
         configure()
     }
     
+    
+    @objc private func refreshPage() {
+        
+    }
 
 }
 
@@ -17,7 +22,7 @@ class ShoppingViewController: UIViewController {
 extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
         
     }
     
@@ -26,9 +31,11 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: CellID.shoppingTableViewCell,
                 for: indexPath
         ) as? ShoppingTableViewCell
-        else { fatalError() }
+        else { return UITableViewCell() }
         
-
+        cell.sectionTitleLabel.text = String(indexPath.row)
+        cell.itemCollectionView.reloadData()
+      
         
         return cell
     }
@@ -55,6 +62,13 @@ extension ShoppingViewController {
         shoppingTableView.delegate = self
         shoppingTableView.dataSource = self
         shoppingTableView.separatorColor = .clear
+        shoppingTableView.refreshControl = UIRefreshControl()
+        shoppingTableView.refreshControl?.addTarget(
+            self,
+            action: #selector(refreshPage),
+            for: .valueChanged
+        )
+        
     }
     
 }

@@ -2,12 +2,13 @@ import UIKit
 
 class ShoppingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sectionTitleLabel: UILabel!
     @IBOutlet weak var itemCollectionView: UICollectionView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configure()
+        configureCollectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -15,11 +16,12 @@ class ShoppingTableViewCell: UITableViewCell {
 
     }
     
-    private func configure() {
-        configureCollectionView()
-        
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
     }
     
+
     private func configureCollectionView() {
         itemCollectionView.delegate = self
         itemCollectionView.dataSource = self
@@ -43,7 +45,12 @@ extension ShoppingTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
                 withReuseIdentifier: CellID.shoppingItemCollectionViewCell,
                 for: indexPath
         ) as? ShoppingItemCollectionViewCell
-        else { fatalError() }
+        else { return UICollectionViewCell() }
+        
+        cell.itemTitleLabel.text = String(indexPath.row)
+        cell.itemDetailLabel.text = String(indexPath.row)
+        cell.itemPriceLabel.text = String(indexPath.row)
+        
         
         return cell
     }

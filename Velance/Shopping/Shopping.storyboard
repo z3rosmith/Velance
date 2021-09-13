@@ -124,6 +124,7 @@
                                         <color key="backgroundColor" name="AppBackgroundColor"/>
                                         <connections>
                                             <outlet property="itemCollectionView" destination="h96-B5-r8m" id="ezF-Rg-1WW"/>
+                                            <outlet property="sectionTitleLabel" destination="egl-Lv-nnH" id="aCx-iP-jh5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
