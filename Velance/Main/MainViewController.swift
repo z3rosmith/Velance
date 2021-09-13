@@ -39,7 +39,7 @@ extension MainViewController {
     
     private func configure() {
         
-        view.backgroundColor = UIColor(named: Color.appBackgroundColor)
+        view.backgroundColor = UIColor(named: Colors.appBackgroundColor)
         configureTabView()
         configureTabButtons()
     }
@@ -55,9 +55,9 @@ extension MainViewController {
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .highlighted)
         
         homeTabButton.setTitle("기록", for: .normal)
-        homeTabButton.setTitleColor(UIColor(named: Color.tabBarUnselectedColor), for: .normal)
-        homeTabButton.setTitleColor(UIColor(named: Color.tabBarSelectedColor), for: .selected)
-        homeTabButton.setTitleColor(UIColor(named: Color.tabBarSelectedColor), for: .highlighted)
+        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarUnselectedColor), for: .normal)
+        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .selected)
+        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .highlighted)
         homeTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         homeTabButton.alignTextBelow()
         
@@ -67,9 +67,9 @@ extension MainViewController {
         shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_selected), for: .highlighted)
         
         shoppingTabButton.setTitle("쇼핑", for: .normal)
-        shoppingTabButton.setTitleColor(UIColor(named: Color.tabBarUnselectedColor), for: .normal)
-        shoppingTabButton.setTitleColor(UIColor(named: Color.tabBarSelectedColor), for: .selected)
-        shoppingTabButton.setTitleColor(UIColor(named: Color.tabBarSelectedColor), for: .highlighted)
+        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarUnselectedColor), for: .normal)
+        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .selected)
+        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .highlighted)
         shoppingTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         shoppingTabButton.alignTextBelow()
         
@@ -81,14 +81,17 @@ extension MainViewController {
     private func changeToHomeVC() {
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
+        remove()
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { fatalError() }
         add(vc, frame: containerView.frame)
+    
     }
     
     private func changeToShoppingVC() {
         shoppingTabButton.isSelected = true
         homeTabButton.isSelected = false
+        remove()
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         add(vc, frame: containerView.frame)
