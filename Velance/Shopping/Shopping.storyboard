@@ -18,20 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLt-6f-ZFO" userLabel="Upper Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aLt-6f-ZFO" userLabel="Upper Stack View">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-P5-eo4" userLabel="Left Segment View">
-                                        <rect key="frame" x="0.0" y="0.0" width="218" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 식품" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd7-yy-2IV">
-                                                <rect key="frame" x="20" y="0.0" width="178" height="60"/>
+                                                <rect key="frame" x="20" y="0.0" width="167" height="60"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Zd7-yy-2IV" secondAttribute="trailing" constant="20" id="7Oi-OI-KMV"/>
                                             <constraint firstItem="Zd7-yy-2IV" firstAttribute="top" secondItem="hHM-P5-eo4" secondAttribute="top" id="EMI-b5-PJN"/>
@@ -40,10 +41,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRg-MA-7VQ" userLabel="Right Segment View">
-                                        <rect key="frame" x="218" y="0.0" width="196" height="60"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB0-C4-WXk">
-                                                <rect key="frame" x="20" y="0.0" width="156" height="60"/>
+                                                <rect key="frame" x="20" y="0.0" width="167" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -63,7 +64,6 @@
                                     <constraint firstAttribute="trailing" secondItem="eRg-MA-7VQ" secondAttribute="trailing" id="0he-aE-ObL"/>
                                     <constraint firstItem="hHM-P5-eo4" firstAttribute="leading" secondItem="aLt-6f-ZFO" secondAttribute="leading" id="7ib-c4-mE0"/>
                                     <constraint firstAttribute="height" constant="60" id="FMn-AD-O1J"/>
-                                    <constraint firstItem="eRg-MA-7VQ" firstAttribute="leading" secondItem="aLt-6f-ZFO" secondAttribute="leading" constant="218" id="Ljb-47-ygA"/>
                                     <constraint firstAttribute="bottom" secondItem="hHM-P5-eo4" secondAttribute="bottom" id="N1U-x4-0s8"/>
                                     <constraint firstItem="hHM-P5-eo4" firstAttribute="top" secondItem="aLt-6f-ZFO" secondAttribute="top" id="VWS-Cy-o5I"/>
                                     <constraint firstAttribute="bottom" secondItem="eRg-MA-7VQ" secondAttribute="bottom" id="ba6-Ow-wUw"/>
@@ -206,9 +206,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

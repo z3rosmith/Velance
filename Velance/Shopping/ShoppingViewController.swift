@@ -62,8 +62,6 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
 extension ShoppingViewController {
     
     private func configure() {
-   
-        
         navigationController?.navigationBar.barTintColor = UIColor(named: Colors.appDefaultColor)
         configureTableView()
         configureSegmentViews()
@@ -82,29 +80,41 @@ extension ShoppingViewController {
     }
     
     private func configureSegmentViews() {
-        leftSegmentView.layer.cornerRadius = segmentViewCornerRadius
-        leftSegmentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        rightSegmentView.layer.cornerRadius = segmentViewCornerRadius
-        rightSegmentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMaxYCorner]
-        
+        [leftSegmentView,rightSegmentView].forEach { view in
+            view?.layer.cornerRadius = segmentViewCornerRadius
+            view?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
         
         
         
-        let leftTap = UIGestureRecognizer(target: self, action: #selector(pressedLeftSegmentView(_:)))
-        let rightTap = UIGestureRecognizer(target: self, action: #selector(pressedRightSegmentView(_:)))
+        let leftTap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressedLeftSegmentView(_:))
+        )
+        let rightTap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressedRightSegmentView(_:))
+        )
         
         leftSegmentView.addGestureRecognizer(leftTap)
         rightSegmentView.addGestureRecognizer(rightTap)
     }
     
     @objc private func pressedLeftSegmentView(_ gesture: UITapGestureRecognizer) {
+        rightSegmentView.backgroundColor = .systemGray2
+        rightSegmentLabel.textColor = .white
         
+        leftSegmentView.backgroundColor = .white
+        leftSegmentLabel.textColor = .darkGray
         
     }
     
     @objc private func pressedRightSegmentView(_ gesture: UITapGestureRecognizer) {
+        leftSegmentView.backgroundColor = .systemGray2
+        leftSegmentLabel.textColor = .white
         
+        rightSegmentView.backgroundColor = .white
+        rightSegmentLabel.textColor = .darkGray
     }
     
 }

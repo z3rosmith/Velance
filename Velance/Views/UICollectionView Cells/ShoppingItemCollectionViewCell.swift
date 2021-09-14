@@ -39,7 +39,7 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     
     private func configureItemContentView() {
         itemContentView.layer.borderWidth = 0.5
-        itemContentView.layer.borderColor = UIColor.lightGray.cgColor
+        itemContentView.layer.borderColor = UIColor.systemGray4.cgColor
         itemContentView.layer.cornerRadius = 15
     }
     
