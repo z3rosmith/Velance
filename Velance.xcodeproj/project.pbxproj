@@ -11,6 +11,8 @@
 		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
 		7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */; };
 		7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */; };
+		7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D226F0819700893CCD /* VLBottomView.swift */; };
+		7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D426F081AB00893CCD /* VLBottomView.xib */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		7C8EC8D226F0819700893CCD /* VLBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLBottomView.swift; sourceTree = "<group>"; };
+		7C8EC8D426F081AB00893CCD /* VLBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VLBottomView.xib; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		7CC36A4426EC6427007573DD /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EC8D226F0819700893CCD /* VLBottomView.swift */,
+				7C8EC8D426F081AB00893CCD /* VLBottomView.xib */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
+				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
@@ -386,6 +393,7 @@
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
+				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
 				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 			);
