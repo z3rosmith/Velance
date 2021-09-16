@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
+		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
+		7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */; };
 		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
 		7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */; };
 		7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */,
+				7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */,
+				7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */,
 				7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */,
 			);
 			path = "UICollectionView Cells";
@@ -320,6 +326,7 @@
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
@@ -379,6 +386,7 @@
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
+				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,

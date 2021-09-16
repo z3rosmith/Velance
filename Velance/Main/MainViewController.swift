@@ -93,6 +93,8 @@ extension MainViewController {
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         let navController = UINavigationController(rootViewController: vc)
         navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navController.navigationBar.shadowImage = UIImage()
         add(navController, frame: containerView.frame)
     }
 }

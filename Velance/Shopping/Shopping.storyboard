@@ -13,19 +13,24 @@
         <!--Recipe Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ShoppingViewController" id="Y6W-OH-hqX" userLabel="Recipe Detail View Controller" customClass="ShoppingViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" userLabel="Recipe Detail View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCR-5G-CEn" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="87" y="446" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCR-5G-CEn" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppDefaultColor"/>
+                        <constraints>
+                            <constraint firstItem="aCR-5G-CEn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="48" id="8Je-As-wAy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aCR-5G-CEn" secondAttribute="trailing" id="Jhg-fz-jAh"/>
+                            <constraint firstItem="aCR-5G-CEn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gBL-hs-Cti"/>
+                            <constraint firstAttribute="bottom" secondItem="aCR-5G-CEn" secondAttribute="bottom" id="kGf-cU-Sq7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Velance 몰" id="9Y6-HO-kx4">
                         <barButtonItem key="rightBarButtonItem" image="cart" id="h1y-bh-lL2">
@@ -35,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871.01449275362324" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1713" y="84"/>
         </scene>
         <!--Shopping View Controller-->
         <scene sceneID="jxe-Xa-sJ3">
@@ -46,13 +51,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rGb-8v-VkF" userLabel="Upper Stack View">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au9-l8-89R" userLabel="Left Segment View">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 식품" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO3-60-dCb">
-                                                <rect key="frame" x="20" y="0.0" width="167" height="60"/>
+                                                <rect key="frame" x="20" y="0.0" width="167" height="48"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,10 +73,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMV-cI-UhA" userLabel="Right Segment View">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="60"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신을 위한 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t9-Qi-pbq">
-                                                <rect key="frame" x="20" y="0.0" width="167" height="60"/>
+                                                <rect key="frame" x="20" y="0.0" width="167" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -92,13 +97,13 @@
                                     <constraint firstAttribute="bottom" secondItem="kMV-cI-UhA" secondAttribute="bottom" id="JuU-Hs-ESL"/>
                                     <constraint firstItem="kMV-cI-UhA" firstAttribute="top" secondItem="rGb-8v-VkF" secondAttribute="top" id="Oz8-LN-8aF"/>
                                     <constraint firstItem="Au9-l8-89R" firstAttribute="top" secondItem="rGb-8v-VkF" secondAttribute="top" id="XNM-8t-Ptt"/>
-                                    <constraint firstAttribute="height" constant="60" id="cLC-Hf-Ic5"/>
+                                    <constraint firstAttribute="height" constant="48" id="cLC-Hf-Ic5"/>
                                     <constraint firstAttribute="bottom" secondItem="Au9-l8-89R" secondAttribute="bottom" id="wTU-Dp-XOo"/>
                                     <constraint firstItem="Au9-l8-89R" firstAttribute="leading" secondItem="rGb-8v-VkF" secondAttribute="leading" id="y2O-6r-N3P"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M1c-V4-1qJ">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="726"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="AppBackgroundColor"/>
                                 <prototypes>
@@ -197,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxs-W4-SXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="84"/>
+            <point key="canvasLocation" x="874" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O0z-F6-0AH">
@@ -215,7 +220,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Vgw-HK-YSy"/>
+                        <segue destination="Euy-UH-V0F" kind="relationship" relationship="rootViewController" id="N4y-Vy-uiv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4g-G6-X9W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

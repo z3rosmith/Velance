@@ -66,7 +66,7 @@
                                     <constraint firstItem="yvZ-yk-0rX" firstAttribute="leading" secondItem="cj0-EJ-hEx" secondAttribute="leading" constant="30" id="zId-Hn-1gN"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-az-PLH" userLabel="Bottom View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-az-PLH" userLabel="Bottom View" customClass="VLBottomView" customModule="Velance">
                                 <rect key="frame" x="0.0" y="184" width="414" height="712"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfu-gy-N7W" userLabel="Type View">
@@ -377,7 +377,7 @@
                                     <constraint firstItem="S04-OM-BdC" firstAttribute="leading" secondItem="H32-ED-Bcb" secondAttribute="trailing" constant="20" id="wqN-gW-Ipf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-P4-P7z" userLabel="Bottom View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-P4-P7z" userLabel="Bottom View" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="184" width="414" height="712"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="169" minValue="140" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-3i-GGZ">
@@ -588,7 +588,7 @@
                                     <constraint firstItem="hZ6-t2-hfb" firstAttribute="leading" secondItem="mFP-T3-Lfl" secondAttribute="trailing" constant="20" id="yh8-6D-Iif"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-Qm-ZKZ" userLabel="Bottom View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-Qm-ZKZ" userLabel="Bottom View" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="184" width="414" height="712"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T7-YA-vP3">
