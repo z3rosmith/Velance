@@ -29,12 +29,16 @@ struct Colors {
 struct CellID {
     
     static let shoppingTableViewCell            = "shoppingTVC"
+    static let recipeTableViewCell              = "recipeTVC"
+    
     static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
+    static let recipeCollectionViewCell         = "recipeCVC"
 }
 
 struct XIB_ID {
     
     static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
+    static let recipeCollectionViewCell         = "RecipeCollectionViewCell"
 }
 
 struct Images {

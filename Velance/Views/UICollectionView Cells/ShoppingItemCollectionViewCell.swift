@@ -8,11 +8,12 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemDetailLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var shoppingCartButton: UIButton!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
+      
+        
     }
     
     override func prepareForReuse() {

@@ -13,11 +13,40 @@ class ShoppingViewController: UIViewController {
     
     private let segmentViewCornerRadius: CGFloat = 20
     
+    private let viewModel = ShoppingViewModel()
+    
+    private var selectedIndex: Int = 0 {
+        didSet {
+            shoppingTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+}
+
+//MARK: - Methods
+
+extension ShoppingViewController {
     
     @objc private func refreshPage() {
         
@@ -35,18 +64,40 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: CellID.shoppingTableViewCell,
-                for: indexPath
+        let cell = selectedIndex == 0 ? configureShoppingTableViewCell(for: indexPath) : configureRecipeTableViewCell(for: indexPath)
+        
+        
+
+        return cell
+    }
+    
+    func configureShoppingTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = shoppingTableView.dequeueReusableCell(
+            withIdentifier: CellID.shoppingTableViewCell,
+            for: indexPath
         ) as? ShoppingTableViewCell
         else { return UITableViewCell() }
         
         cell.sectionTitleLabel.text = "\(indexPath.row)이 풍부한 식품 추천"
-        cell.itemCollectionView.reloadData()
         
         return cell
     }
     
+    func configureRecipeTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = shoppingTableView.dequeueReusableCell(
+            withIdentifier: CellID.recipeTableViewCell,
+            for: indexPath
+        ) as? RecipeTableViewCell
+        else { return UITableViewCell() }
+        
+        
+        cell.sectionTitleLabel.text = "\(indexPath.row)이 풍부한 레시피 추천"
+        
+        
+        return cell
+    }
+    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
@@ -70,7 +121,7 @@ extension ShoppingViewController {
     private func configureTableView() {
         shoppingTableView.delegate = self
         shoppingTableView.dataSource = self
-        shoppingTableView.separatorColor = .clear
+        shoppingTableView.separatorStyle = .none
         shoppingTableView.refreshControl = UIRefreshControl()
         shoppingTableView.refreshControl?.addTarget(
             self,
@@ -84,8 +135,6 @@ extension ShoppingViewController {
             view?.layer.cornerRadius = segmentViewCornerRadius
             view?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         }
-        
-        
         
         let leftTap = UITapGestureRecognizer(
             target: self,
@@ -107,6 +156,7 @@ extension ShoppingViewController {
         leftSegmentView.backgroundColor = .white
         leftSegmentLabel.textColor = .darkGray
         
+        selectedIndex = 0
     }
     
     @objc private func pressedRightSegmentView(_ gesture: UITapGestureRecognizer) {
@@ -115,6 +165,8 @@ extension ShoppingViewController {
         
         rightSegmentView.backgroundColor = .white
         rightSegmentLabel.textColor = .darkGray
+        
+        selectedIndex = 1
     }
     
 }

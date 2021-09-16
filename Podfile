@@ -14,5 +14,6 @@ target 'Velance' do
   pod 'SnackBar.swift'
   pod 'SDWebImage', '~> 5.0'
   pod 'lottie-ios'
+  pod "youtube-ios-player-helper", "~> 1.0.3"
 
 end

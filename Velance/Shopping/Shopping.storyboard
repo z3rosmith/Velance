@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCR-5G-CEn" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXf-Ng-Mya" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppDefaultColor"/>
                         <constraints>
-                            <constraint firstItem="aCR-5G-CEn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="48" id="8Je-As-wAy"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aCR-5G-CEn" secondAttribute="trailing" id="Jhg-fz-jAh"/>
-                            <constraint firstItem="aCR-5G-CEn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gBL-hs-Cti"/>
-                            <constraint firstAttribute="bottom" secondItem="aCR-5G-CEn" secondAttribute="bottom" id="kGf-cU-Sq7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BXf-Ng-Mya" secondAttribute="trailing" id="7Wp-p8-drb"/>
+                            <constraint firstItem="BXf-Ng-Mya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ftn-VD-EdF"/>
+                            <constraint firstItem="BXf-Ng-Mya" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Qur-Y8-2tE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BXf-Ng-Mya" secondAttribute="bottom" id="YxY-GW-p9K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Velance 몰" id="9Y6-HO-kx4">
@@ -107,7 +107,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="AppBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingTVC" rowHeight="253" id="91b-LK-TLI" customClass="ShoppingTableViewCell" customModule="Velance" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingTVC" rowHeight="253" id="91b-LK-TLI" userLabel="Shopping Table View Cell" customClass="ShoppingTableViewCell" customModule="Velance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="253"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="91b-LK-TLI" id="CAc-zG-UzF">
@@ -172,6 +172,71 @@
                                             <outlet property="seeMoreButton" destination="nWq-uE-PCr" id="Mu1-lP-C1g"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeTVC" rowHeight="253" id="zLy-aW-3gs" customClass="RecipeTableViewCell" customModule="Velance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="277.5" width="414" height="253"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zLy-aW-3gs" id="Nca-r8-Cil">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-Lk-J18" userLabel="Recipe Collection View">
+                                                    <rect key="frame" x="20" y="46.5" width="374" height="195.5"/>
+                                                    <color key="backgroundColor" name="AppBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abt-k4-Ciu">
+                                                        <size key="itemSize" width="147" height="196"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="recipeCVC" id="9Gy-oC-Qmo" customClass="RecipeCollectionViewCell" customModule="Velance" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="-0.5" width="147" height="196"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kam-XI-BXU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="196"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" name="AppBackgroundColor"/>
+                                                            <size key="customSize" width="147" height="196"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRK-sY-nRG">
+                                                    <rect key="frame" x="20" y="21" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-GI-gkj">
+                                                    <rect key="frame" x="357" y="21" width="37" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <state key="normal" title="더보기">
+                                                        <color key="titleColor" name="AppDefaultColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressedSeeMoreButton:" destination="zLy-aW-3gs" eventType="touchUpInside" id="tgV-FF-omG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="AppBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="wRK-sY-nRG" firstAttribute="top" secondItem="Nca-r8-Cil" secondAttribute="topMargin" constant="10" id="7Rz-e8-kx1"/>
+                                                <constraint firstItem="wRK-sY-nRG" firstAttribute="leading" secondItem="Nca-r8-Cil" secondAttribute="leadingMargin" id="B8x-YQ-qES"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6wG-Lk-J18" secondAttribute="trailing" id="Kir-FN-RT1"/>
+                                                <constraint firstItem="6wG-Lk-J18" firstAttribute="top" secondItem="wRK-sY-nRG" secondAttribute="bottom" constant="5" id="LG3-UI-Om1"/>
+                                                <constraint firstItem="Nie-GI-gkj" firstAttribute="top" secondItem="Nca-r8-Cil" secondAttribute="topMargin" constant="10" id="RXM-Fd-Jfv"/>
+                                                <constraint firstItem="Nie-GI-gkj" firstAttribute="trailing" secondItem="Nca-r8-Cil" secondAttribute="trailingMargin" id="TyO-Xt-gPe"/>
+                                                <constraint firstItem="6wG-Lk-J18" firstAttribute="leading" secondItem="Nca-r8-Cil" secondAttribute="leadingMargin" id="ebm-sP-hn5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6wG-Lk-J18" secondAttribute="bottom" id="rSY-Ei-Rwm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="recipeCollectionView" destination="6wG-Lk-J18" id="YtS-8K-dNt"/>
+                                            <outlet property="sectionTitleLabel" destination="wRK-sY-nRG" id="uzF-df-AVG"/>
+                                            <outlet property="seeMoreButton" destination="Nie-GI-gkj" id="Qbm-kR-oMY"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -188,6 +253,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Velance 몰" id="FFY-gp-i5t">
+                        <barButtonItem key="backBarButtonItem" title=" " id="112-nV-CpL"/>
                         <barButtonItem key="rightBarButtonItem" image="cart" id="dY1-zb-7W3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -198,6 +264,7 @@
                         <outlet property="rightSegmentLabel" destination="9t9-Qi-pbq" id="eLS-qB-3VH"/>
                         <outlet property="rightSegmentView" destination="kMV-cI-UhA" id="yV2-H8-8SL"/>
                         <outlet property="shoppingTableView" destination="M1c-V4-1qJ" id="Qm9-83-W9d"/>
+                        <segue destination="Y6W-OH-hqX" kind="show" id="YwJ-3q-Loq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxs-W4-SXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
