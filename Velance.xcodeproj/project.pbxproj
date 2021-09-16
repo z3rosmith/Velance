@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
+		7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */; };
 		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
 		7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */; };
 		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				7CC36A4526EC6437007573DD /* Shopping.storyboard */,
 				7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */,
 				7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */,
+				7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				7CFC946126F2D4C5008042C5 /* RecipeTableViewCell.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
+				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,

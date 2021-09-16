@@ -11,6 +11,9 @@ struct StoryboardID {
     static let chooseDetailVC               = "ChooseDetailViewController"
     static let chooseReasonVC               = "ChooseReasonViewController"
     static let analyzingVC                  = "AnalyzingViewController"
+    
+    // Shopping
+    static let recipeDetailVC               = "RecipeDetailViewController"
 }
 
 struct Colors {

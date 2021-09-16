@@ -1,41 +1,26 @@
 import UIKit
+import youtube_ios_player_helper
 
-class ShoppingTableViewCell: UITableViewCell {
+class RecipeDetailViewController: UIViewController {
 
-    @IBOutlet weak var sectionTitleLabel: UILabel!
-    @IBOutlet weak var itemCollectionView: UICollectionView!
-    @IBOutlet weak var seeMoreButton: UIButton!
+    @IBOutlet weak var playerView: YTPlayerView!
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var estimatedCookTimeLabel: UILabel!
+    @IBOutlet weak var foodCategoryLabel: UILabel!
+    @IBOutlet weak var ingredientsCollectionView: UICollectionView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureCollectionView()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configure()
     }
 }
 
-//MARK: - Methods
+//MARK: -  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
-extension ShoppingTableViewCell {
-    
-    
-    @IBAction func pressedSeeMoreButton(_ sender: UIButton) {
-        
-    }
-}
-
-//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension ShoppingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension RecipeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,12 +31,12 @@ extension ShoppingTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         else { return UICollectionViewCell() }
         
         
-        cell.itemTitleLabel.text = "[\(indexPath.row)] 비건 소세지"
+        cell.itemTitleLabel.text = "[\(indexPath.row)] 요리 재료"
         cell.itemDetailLabel.text = "\(indexPath.row)팩, 200g"
         cell.itemPriceLabel.text = "10,000원 [\(indexPath.row)]"
         cell.itemImageView.image = UIImage(named: "image_test")
-        
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -63,19 +48,31 @@ extension ShoppingTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 
 //MARK: - UI Configuration
 
-extension ShoppingTableViewCell {
+extension RecipeDetailViewController {
+    
+    private func configure() {
+        configureYouTubePlayer()
+        configureCollectionView()
+    }
+    
+    private func configureYouTubePlayer() {
+        playerView.load(withVideoId: "NFXpPRKfpmA")
+    }
     
     private func configureCollectionView() {
-        itemCollectionView.delegate = self
-        itemCollectionView.dataSource = self
+        ingredientsCollectionView.delegate = self
+        ingredientsCollectionView.dataSource = self
         
         let nibName = UINib(
             nibName: XIB_ID.shoppingItemCollectionViewCell,
             bundle: nil
         )
-        itemCollectionView.register(
+        ingredientsCollectionView.register(
             nibName,
             forCellWithReuseIdentifier: CellID.shoppingItemCollectionViewCell
         )
+        
+        
     }
+    
 }

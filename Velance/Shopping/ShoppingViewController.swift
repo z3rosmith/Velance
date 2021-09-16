@@ -36,7 +36,7 @@ class ShoppingViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -51,23 +51,32 @@ extension ShoppingViewController {
     @objc private func refreshPage() {
         
     }
-
+    
 }
 
+extension ShoppingViewController: RecipeTableViewCellDelegate {
+    
+    func didTapRecipeTableViewCell(with title: String) {
+        guard let vc = storyboard?.instantiateViewController(
+            identifier: StoryboardID.recipeDetailVC
+        ) as? RecipeDetailViewController else { fatalError() }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 //MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = selectedIndex == 0 ? configureShoppingTableViewCell(for: indexPath) : configureRecipeTableViewCell(for: indexPath)
         
         
-
+        
         return cell
     }
     
@@ -90,14 +99,13 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         ) as? RecipeTableViewCell
         else { return UITableViewCell() }
         
-        
+        cell.delegate = self
         cell.sectionTitleLabel.text = "\(indexPath.row)이 풍부한 레시피 추천"
-        
         
         return cell
     }
     
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }

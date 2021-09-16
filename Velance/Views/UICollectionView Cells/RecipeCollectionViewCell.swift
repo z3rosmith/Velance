@@ -1,5 +1,8 @@
-
 import UIKit
+
+protocol RecipeCollectionViewCellDelegate: AnyObject {
+    func didTapRecipeCVC(with title: String, cell: RecipeCollectionViewCell)
+}
 
 class RecipeCollectionViewCell: UICollectionViewCell {
     
@@ -8,6 +11,8 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemEstimatedCookTimeLabel: UILabel!
     @IBOutlet weak var itemRecipeButton: UIButton!
+    
+    weak var delegate: RecipeCollectionViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +27,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func pressedSeeRecipeButton() {
-        
+        delegate?.didTapRecipeCVC(with: itemTitleLabel.text!, cell: self)
     }
     
     private func configure() {

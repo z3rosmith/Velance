@@ -27,6 +27,8 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     @objc private func pressedAddCartButton() {
         
         
+        
+        
     }
 
     private func configure() {
