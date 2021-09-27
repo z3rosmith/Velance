@@ -78,15 +78,12 @@
                                     <constraint firstItem="Hm3-pa-cWO" firstAttribute="leading" secondItem="DfF-qk-tB4" secondAttribute="leading" constant="5" id="gXw-mb-qUr"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-o3-Mp9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="789"/>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="AppDefaultColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Hm3-pa-cWO" secondAttribute="bottom" constant="30" id="HA8-4A-cYn"/>
-                            <constraint firstItem="4Wc-o3-Mp9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kn5-uw-zr9"/>
+                            <constraint firstItem="DfF-qk-tB4" firstAttribute="top" secondItem="4Wc-o3-Mp9" secondAttribute="bottom" id="AuE-3P-s24"/>
+                            <constraint firstItem="4Wc-o3-Mp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kn5-uw-zr9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wc-o3-Mp9" secondAttribute="trailing" id="Xso-Sx-gjo"/>
                             <constraint firstItem="4Wc-o3-Mp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAR-To-9j7"/>
                             <constraint firstAttribute="bottom" secondItem="DfF-qk-tB4" secondAttribute="bottom" id="dKK-3V-C0R"/>
