@@ -11,8 +11,15 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tabView: UIView!
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint! {
+        didSet {
+            LayoutConstants.tabContainerViewHeight = bottomViewHeight.constant
+        }
+    }
     @IBOutlet weak var homeTabButton: UIButton!
     @IBOutlet weak var shoppingTabButton: UIButton!
+    
+    private var currentVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +45,6 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     private func configure() {
-        
-        view.backgroundColor = UIColor(named: Colors.appBackgroundColor)
         configureTabView()
         configureTabButtons()
     }
@@ -49,7 +54,6 @@ extension MainViewController {
     }
     
     private func configureTabButtons() {
-        
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_unselected), for: .normal)
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .selected)
         homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .highlighted)
@@ -81,19 +85,20 @@ extension MainViewController {
     private func changeToHomeVC() {
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
-        remove()
+        currentVC?.remove()
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { fatalError() }
+        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { return }
         add(vc, frame: containerView.frame)
-    
+        currentVC = vc
     }
     
     private func changeToShoppingVC() {
         shoppingTabButton.isSelected = true
         homeTabButton.isSelected = false
-        remove()
+        currentVC?.remove()
         let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
         add(vc, frame: containerView.frame)
+        currentVC = vc
     }
 }
