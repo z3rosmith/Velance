@@ -35,8 +35,8 @@
 		7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4C26EC65D7007573DD /* Constants.swift */; };
 		7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */; };
 		7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */; };
-		7CC36A5426EC7194007573DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Home.storyboard */; };
-		7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* HomeViewController.swift */; };
+		7CC36A5426EC7194007573DD /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Record.storyboard */; };
+		7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* RecordViewController.swift */; };
 		7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5726EC8561007573DD /* UIButton+Extension.swift */; };
 		7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */; };
 		7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */; };
@@ -83,8 +83,8 @@
 		7CC36A4C26EC65D7007573DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		7CC36A5326EC7194007573DD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		7CC36A5526EC7272007573DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7CC36A5326EC7194007573DD /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
+		7CC36A5526EC7272007573DD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7CC36A5726EC8561007573DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeViewController.swift; sourceTree = "<group>"; };
 		7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDetailViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			children = (
 				7CC36A5926EC8A23007573DD /* Main */,
 				7CC36A3D26EC6378007573DD /* UserRegister */,
-				7CC36A3E26EC637D007573DD /* Home */,
+				7CC36A3E26EC637D007573DD /* Record */,
 				7CC36A3F26EC63B8007573DD /* Shopping */,
 				7CC36A3C26EC6366007573DD /* Views */,
 				7CC36A3B26EC6360007573DD /* Network Group */,
@@ -234,17 +234,17 @@
 			path = UserRegister;
 			sourceTree = "<group>";
 		};
-		7CC36A3E26EC637D007573DD /* Home */ = {
+		7CC36A3E26EC637D007573DD /* Record */ = {
 			isa = PBXGroup;
 			children = (
 				3C6B700B26F3251A001FD7BB /* MealView */,
 				3CD5012226F22E3D009B450F /* NutrientView */,
 				3C6B700626F31CC6001FD7BB /* NutrientView2 */,
-				7CC36A5326EC7194007573DD /* Home.storyboard */,
-				7CC36A5526EC7272007573DD /* HomeViewController.swift */,
+				7CC36A5326EC7194007573DD /* Record.storyboard */,
+				7CC36A5526EC7272007573DD /* RecordViewController.swift */,
 				3CAE4FE826EF200F00865767 /* SecondViewController.swift */,
 			);
-			path = Home;
+			path = Record;
 			sourceTree = "<group>";
 		};
 		7CC36A3F26EC63B8007573DD /* Shopping */ = {
@@ -384,7 +384,7 @@
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
-				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
+				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 			);
@@ -451,7 +451,7 @@
 				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
-				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
+				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,

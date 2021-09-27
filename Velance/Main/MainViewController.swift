@@ -78,8 +78,8 @@ extension MainViewController {
         homeTabButton.isSelected = true
         shoppingTabButton.isSelected = false
         currentVC?.remove()
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? HomeViewController else { return }
+        let storyboard = UIStoryboard(name: "Record", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? RecordViewController else { return }
         add(vc, frame: containerView.frame)
         currentVC = vc
     }

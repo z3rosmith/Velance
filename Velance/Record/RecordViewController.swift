@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class RecordViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topClearViewHeight: NSLayoutConstraint!
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
 //    }
 }
 
-extension HomeViewController {
+extension RecordViewController {
     
     private func setupUI() {
         configureBottomView()

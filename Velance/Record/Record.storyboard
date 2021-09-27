@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Record View Controller-->
         <scene sceneID="Xvn-JO-nmX">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="EIg-MO-ZHf" customClass="HomeViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordViewController" id="EIg-MO-ZHf" customClass="RecordViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jmz-xO-LIN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

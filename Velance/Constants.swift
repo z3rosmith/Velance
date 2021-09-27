@@ -4,7 +4,7 @@ import UIKit
 struct StoryboardID {
     
     static let mainVC                       = "MainViewController"
-    static let homeVC                       = "HomeViewController"
+    static let homeVC                       = "RecordViewController"
     static let shoppingVC                   = "ShoppingViewController"
     
     // User Register
