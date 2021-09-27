@@ -7,14 +7,31 @@
 
 import UIKit
 
+@IBDesignable
 class MealView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mealNameLabel: UILabel!
+    @IBOutlet weak var calorieLabel: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+    
+    private func initialize() {
+        let bundle = Bundle(for: MealView.self)
+        let view = bundle.loadNibNamed("MealView", owner: self, options: nil)?.first as! UIView
+        view.frame = self.bounds
+        addSubview(view)
+        
+        view.layer.cornerRadius = 15
+        plusButton.layer.cornerRadius = 20
+    }
 }
