@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ShoppingItemCollectionViewCell" customModule="Velance" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="165" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-3O-CN6" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="220"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1oz-kw-naO">
+                                <rect key="frame" x="10" y="10" width="145" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="BiV-xS-Sti"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[베지가든] 한입 쏙 완자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tSL-Od-lZj">
+                                <rect key="frame" x="10" y="135" width="145" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1팩, 217g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D26-HV-NIo">
+                                <rect key="frame" x="10" y="157" width="145" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,980원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-e5-6IA">
+                                <rect key="frame" x="10" y="193" width="61" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r30-e4-4CI">
+                                <rect key="frame" x="125" y="187" width="30" height="30"/>
+                                <color key="backgroundColor" name="AppDefaultColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sna-11-tTn"/>
+                                    <constraint firstAttribute="width" constant="30" id="dEg-Mk-Ltv"/>
+                                </constraints>
+                                <state key="normal" image="cart"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tSL-Od-lZj" firstAttribute="top" secondItem="1oz-kw-naO" secondAttribute="bottom" constant="5" id="1FZ-cu-U1p"/>
+                            <constraint firstAttribute="width" constant="165" id="2kR-85-Y33"/>
+                            <constraint firstItem="OGA-e5-6IA" firstAttribute="top" secondItem="D26-HV-NIo" secondAttribute="bottom" constant="20" id="DPN-9c-197"/>
+                            <constraint firstItem="r30-e4-4CI" firstAttribute="top" secondItem="D26-HV-NIo" secondAttribute="bottom" constant="14" id="FKV-Kz-xT3"/>
+                            <constraint firstItem="tSL-Od-lZj" firstAttribute="leading" secondItem="yBr-3O-CN6" secondAttribute="leading" constant="10" id="FcO-Vx-OID"/>
+                            <constraint firstAttribute="trailing" secondItem="r30-e4-4CI" secondAttribute="trailing" constant="10" id="Lb1-gD-Oay"/>
+                            <constraint firstAttribute="trailing" secondItem="tSL-Od-lZj" secondAttribute="trailing" constant="10" id="Ne4-CE-mo6"/>
+                            <constraint firstItem="1oz-kw-naO" firstAttribute="top" secondItem="yBr-3O-CN6" secondAttribute="top" constant="10" id="Und-ZH-sFi"/>
+                            <constraint firstItem="OGA-e5-6IA" firstAttribute="leading" secondItem="yBr-3O-CN6" secondAttribute="leading" constant="10" id="cTy-rW-BGB"/>
+                            <constraint firstItem="1oz-kw-naO" firstAttribute="leading" secondItem="yBr-3O-CN6" secondAttribute="leading" constant="10" id="drl-NE-2Vq"/>
+                            <constraint firstAttribute="trailing" secondItem="D26-HV-NIo" secondAttribute="trailing" constant="10" id="jYD-fr-LAR"/>
+                            <constraint firstItem="D26-HV-NIo" firstAttribute="top" secondItem="tSL-Od-lZj" secondAttribute="bottom" constant="5" id="jgU-Gz-obN"/>
+                            <constraint firstItem="D26-HV-NIo" firstAttribute="leading" secondItem="yBr-3O-CN6" secondAttribute="leading" constant="10" id="oAG-nB-7ra"/>
+                            <constraint firstAttribute="trailing" secondItem="1oz-kw-naO" secondAttribute="trailing" constant="10" id="ySl-cQ-pvL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="AppBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yBr-3O-CN6" secondAttribute="bottom" id="5KI-Pu-ybw"/>
+                <constraint firstItem="yBr-3O-CN6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HTX-jF-nnO"/>
+                <constraint firstAttribute="trailing" secondItem="yBr-3O-CN6" secondAttribute="trailing" id="nGM-0m-Vhn"/>
+                <constraint firstItem="yBr-3O-CN6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rnC-hQ-o3r"/>
+            </constraints>
+            <size key="customSize" width="165" height="250"/>
+            <connections>
+                <outlet property="itemContentView" destination="yBr-3O-CN6" id="a1N-tA-Kmp"/>
+                <outlet property="itemDetailLabel" destination="D26-HV-NIo" id="mxK-tr-5A1"/>
+                <outlet property="itemImageView" destination="1oz-kw-naO" id="iYr-HV-cSR"/>
+                <outlet property="itemPriceLabel" destination="OGA-e5-6IA" id="6AD-Al-5Cb"/>
+                <outlet property="itemTitleLabel" destination="tSL-Od-lZj" id="T7c-Ma-oAK"/>
+                <outlet property="shoppingCartButton" destination="r30-e4-4CI" id="3ej-Kw-xch"/>
+            </connections>
+            <point key="canvasLocation" x="76.08695652173914" y="170.75892857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cart" width="24" height="24"/>
+        <namedColor name="AppBackgroundColor">
+            <color white="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="AppDefaultColor">
+            <color red="0.45100000500679016" green="0.72200000286102295" blue="0.093999996781349182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

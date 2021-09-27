@@ -1,15 +1,8 @@
-//
-//  ChooseTypeViewController.swift
-//  Velance
-//
-//  Created by Kevin Kim on 2021/09/11.
-//
-
 import UIKit
 
 class ChooseTypeViewController: UIViewController {
 
-    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomView: VLBottomView!
     @IBOutlet var buttonViews: [UIView]!
     @IBOutlet var buttons: [UIButton]!
     
@@ -23,7 +16,6 @@ class ChooseTypeViewController: UIViewController {
     
     
     @IBAction func pressedNextButton(_ sender: UIButton) {
-        
         if !didSelectVeganType {
             presentVLAlert(title: "채식 유형 선택", message: "채식 유형을 선택해주세요!", buttonTitle: "확인")
             return
@@ -39,7 +31,6 @@ class ChooseTypeViewController: UIViewController {
     }
     
     @IBAction func pressedVeganType(_ sender: UIButton) {
-        
         didSelectVeganType = true
         
         buttonViews[selectedIndex].backgroundColor = UIColor(named: Colors.appTintColor)
@@ -58,7 +49,7 @@ class ChooseTypeViewController: UIViewController {
 extension ChooseTypeViewController {
     
     private func configure() {
-        configureBottomView()
+//        configureBottomView()
         configureButtonViews()
     }
     

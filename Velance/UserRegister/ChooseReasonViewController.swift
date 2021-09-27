@@ -9,7 +9,7 @@ import UIKit
 
 class ChooseReasonViewController: UIViewController {
 
-    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomView: VLBottomView!
     @IBOutlet var reasonButtons: [UIButton]!
     
     private var selectedReasonIndex: Int = 0
@@ -55,7 +55,7 @@ class ChooseReasonViewController: UIViewController {
 extension ChooseReasonViewController {
     
     private func configure() {
-        configureBottomView()
+//        configureBottomView()
         configureReasonButtons()
     }
     

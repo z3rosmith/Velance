@@ -9,7 +9,7 @@ import UIKit
 
 class ChooseDetailViewController: UIViewController {
     
-    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomView: VLBottomView!
     
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
@@ -81,6 +81,7 @@ class ChooseDetailViewController: UIViewController {
 extension ChooseDetailViewController {
     
     private func configure() {
+//        configureBottomView()
         configureGenderButtons()
     }
     

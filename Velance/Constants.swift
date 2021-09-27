@@ -11,6 +11,9 @@ struct StoryboardID {
     static let chooseDetailVC               = "ChooseDetailViewController"
     static let chooseReasonVC               = "ChooseReasonViewController"
     static let analyzingVC                  = "AnalyzingViewController"
+    
+    // Shopping
+    static let recipeDetailVC               = "RecipeDetailViewController"
 }
 
 struct Colors {
@@ -23,9 +26,22 @@ struct Colors {
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"
     static let tabBarUnselectedColor        = "TabBarUnselectedColor"
-    
-    
 
+}
+
+struct CellID {
+    
+    static let shoppingTableViewCell            = "shoppingTVC"
+    static let recipeTableViewCell              = "recipeTVC"
+    
+    static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
+    static let recipeCollectionViewCell         = "recipeCVC"
+}
+
+struct XIB_ID {
+    
+    static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
+    static let recipeCollectionViewCell         = "RecipeCollectionViewCell"
 }
 
 struct Images {

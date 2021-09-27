@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
+		7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */; };
+		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
+		7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */; };
+		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
+		7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */; };
+		7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */; };
+		7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D226F0819700893CCD /* VLBottomView.swift */; };
+		7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D426F081AB00893CCD /* VLBottomView.xib */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -32,11 +40,21 @@
 		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
 		7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */; };
 		7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9226EE3F2D007573DD /* VLButton.swift */; };
+		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
+		7CFC946126F2D4C5008042C5 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC946026F2D4C5008042C5 /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
+		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		7C8EC8D226F0819700893CCD /* VLBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLBottomView.swift; sourceTree = "<group>"; };
+		7C8EC8D426F081AB00893CCD /* VLBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VLBottomView.xib; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +81,8 @@
 		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLBodyLabel.swift; sourceTree = "<group>"; };
 		7CC36A9226EE3F2D007573DD /* VLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLButton.swift; sourceTree = "<group>"; };
+		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
+		7CFC946026F2D4C5008042C5 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		AE20086C63AF53ABBB3FE514 /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +207,8 @@
 			children = (
 				7CC36A4526EC6437007573DD /* Shopping.storyboard */,
 				7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */,
+				7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */,
+				7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -194,6 +216,10 @@
 		7CC36A4226EC6416007573DD /* UICollectionView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */,
+				7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */,
+				7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */,
+				7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */,
 			);
 			path = "UICollectionView Cells";
 			sourceTree = "<group>";
@@ -201,6 +227,8 @@
 		7CC36A4326EC641E007573DD /* UITableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */,
+				7CFC946026F2D4C5008042C5 /* RecipeTableViewCell.swift */,
 			);
 			path = "UITableView Cells";
 			sourceTree = "<group>";
@@ -208,6 +236,8 @@
 		7CC36A4426EC6427007573DD /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EC8D226F0819700893CCD /* VLBottomView.swift */,
+				7C8EC8D426F081AB00893CCD /* VLBottomView.xib */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -301,8 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
+				7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
+				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
@@ -362,18 +395,25 @@
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
+				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
+				7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */,
+				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
+				7CFC946126F2D4C5008042C5 /* RecipeTableViewCell.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
+				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
+				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
 				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 			);
