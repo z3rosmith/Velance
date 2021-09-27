@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct StoryboardID {
     
@@ -46,6 +47,12 @@ struct XIB_ID {
 
 struct Images {
     
+    // MealView Images
+    
+    static let mealViewImageBreakfast           = "breakfast"
+    static let mealViewImageLunch               = "lunch"
+    static let mealViewImageDinner              = "dinner"
+    
     // Tab Bar Icons
     static let homeTabBarIcon_selected         = "home_selected"
     static let homeTabBarIcon_unselected       = "home_unselected"
@@ -66,4 +73,8 @@ struct Images {
     static let lacto_ovo_selected   = "lactoovo_selected"
     static let pesco_selected       = "pesco_selected"
     static let veganTypesSelected = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
+}
+
+struct LayoutConstants {
+    static var tabContainerViewHeight: CGFloat       = 0.0
 }
