@@ -1,10 +1,3 @@
-//
-//  SecondViewController.swift
-//  Velance
-//
-//  Created by Jinyoung Kim on 2021/09/13.
-//
-
 import UIKit
 
 class SecondViewController: UIViewController {

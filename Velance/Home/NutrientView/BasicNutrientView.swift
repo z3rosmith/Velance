@@ -1,10 +1,3 @@
-//
-//  BasicNutrientView.swift
-//  Velance
-//
-//  Created by Jinyoung Kim on 2021/09/15.
-//
-
 import UIKit
 
 @IBDesignable
