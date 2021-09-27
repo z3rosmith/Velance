@@ -57,7 +57,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureItemRecipeButton() {
-        itemRecipeButton.layer.cornerRadius = 12
+        itemRecipeButton.layer.cornerRadius = 6
         itemRecipeButton.addBounceAnimation()
         itemRecipeButton.addTarget(
             self,

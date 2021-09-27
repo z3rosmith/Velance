@@ -22,20 +22,20 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWq-se-kHq" customClass="YTPlayerView">
-                                        <rect key="frame" x="24" y="30" width="366" height="250"/>
+                                        <rect key="frame" x="24" y="30" width="366" height="230"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="oyf-Xc-iMr"/>
+                                            <constraint firstAttribute="height" constant="230" id="oyf-Xc-iMr"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건 템페 강정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gk-V3-ij3">
-                                        <rect key="frame" x="122.5" y="300" width="169" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <rect key="frame" x="131" y="280" width="152" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gUt-AE-fSa">
-                                        <rect key="frame" x="106" y="351" width="202" height="21.5"/>
+                                        <rect key="frame" x="106" y="324.5" width="202" height="21.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예상 조리 시간 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3t-qR-gh0">
                                                 <rect key="frame" x="0.0" y="0.0" width="112" height="21.5"/>
@@ -58,14 +58,17 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필요한 재료들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-Lq-eH8">
-                                        <rect key="frame" x="24" y="406.5" width="98" height="21.5"/>
+                                        <rect key="frame" x="24" y="366" width="98" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8nR-W9-Isc" userLabel="Ingredients Collection View">
-                                        <rect key="frame" x="24" y="448" width="366" height="306"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="24" y="403.5" width="366" height="240"/>
+                                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="Rmt-Gx-gWk"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mle-D0-yGp">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -79,17 +82,16 @@
                                 <constraints>
                                     <constraint firstItem="gUt-AE-fSa" firstAttribute="centerX" secondItem="BXf-Ng-Mya" secondAttribute="centerX" id="0He-yj-6uJ"/>
                                     <constraint firstItem="RWq-se-kHq" firstAttribute="top" secondItem="BXf-Ng-Mya" secondAttribute="top" constant="30" id="278-FL-LFh"/>
-                                    <constraint firstItem="8nR-W9-Isc" firstAttribute="top" secondItem="bcL-Lq-eH8" secondAttribute="bottom" constant="20" id="BxX-Fk-yYH"/>
+                                    <constraint firstItem="8nR-W9-Isc" firstAttribute="top" secondItem="bcL-Lq-eH8" secondAttribute="bottom" constant="16" id="BxX-Fk-yYH"/>
                                     <constraint firstItem="RWq-se-kHq" firstAttribute="leading" secondItem="BXf-Ng-Mya" secondAttribute="leading" constant="24" id="IYK-ay-5VW"/>
                                     <constraint firstItem="8nR-W9-Isc" firstAttribute="leading" secondItem="BXf-Ng-Mya" secondAttribute="leading" constant="24" id="NcX-rt-Hfg"/>
-                                    <constraint firstItem="bcL-Lq-eH8" firstAttribute="top" secondItem="gUt-AE-fSa" secondAttribute="bottom" constant="34" id="OXF-ua-3fL"/>
+                                    <constraint firstItem="bcL-Lq-eH8" firstAttribute="top" secondItem="gUt-AE-fSa" secondAttribute="bottom" constant="20" id="OXF-ua-3fL"/>
                                     <constraint firstAttribute="trailing" secondItem="8nR-W9-Isc" secondAttribute="trailing" constant="24" id="SrV-d3-fny"/>
-                                    <constraint firstItem="gUt-AE-fSa" firstAttribute="top" secondItem="8gk-V3-ij3" secondAttribute="bottom" constant="15" id="UHS-Ky-y0d"/>
+                                    <constraint firstItem="gUt-AE-fSa" firstAttribute="top" secondItem="8gk-V3-ij3" secondAttribute="bottom" constant="12" id="UHS-Ky-y0d"/>
                                     <constraint firstAttribute="trailing" secondItem="RWq-se-kHq" secondAttribute="trailing" constant="24" id="dwI-dG-eW6"/>
                                     <constraint firstItem="8gk-V3-ij3" firstAttribute="top" secondItem="RWq-se-kHq" secondAttribute="bottom" constant="20" id="kg2-n3-Dep"/>
                                     <constraint firstItem="bcL-Lq-eH8" firstAttribute="leading" secondItem="BXf-Ng-Mya" secondAttribute="leading" constant="24" id="oig-d3-imI"/>
                                     <constraint firstItem="8gk-V3-ij3" firstAttribute="centerX" secondItem="BXf-Ng-Mya" secondAttribute="centerX" id="wPO-El-Lxc"/>
-                                    <constraint firstAttribute="bottom" secondItem="8nR-W9-Isc" secondAttribute="bottom" constant="20" id="yU6-Ke-OZJ"/>
                                 </constraints>
                             </view>
                         </subviews>

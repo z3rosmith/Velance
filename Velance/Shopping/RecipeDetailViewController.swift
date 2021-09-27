@@ -51,6 +51,7 @@ extension RecipeDetailViewController: UICollectionViewDelegate, UICollectionView
 extension RecipeDetailViewController {
     
     private func configure() {
+        
         configureYouTubePlayer()
         configureCollectionView()
     }
@@ -71,7 +72,6 @@ extension RecipeDetailViewController {
             nibName,
             forCellWithReuseIdentifier: CellID.shoppingItemCollectionViewCell
         )
-        
         
     }
     
