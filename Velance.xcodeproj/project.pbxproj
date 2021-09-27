@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */; };
+		3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */; };
+		3C6B700D26F32550001FD7BB /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700C26F32550001FD7BB /* MealView.xib */; };
+		3C6B700F26F32566001FD7BB /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700E26F32566001FD7BB /* MealView.swift */; };
+		3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE4FE826EF200F00865767 /* SecondViewController.swift */; };
+		3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD5012526F22E9B009B450F /* BasicNutrientView.xib */; };
+		3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5012726F22FA8009B450F /* BasicNutrientView.swift */; };
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
@@ -36,6 +43,13 @@
 
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalNutrientView.xib; sourceTree = "<group>"; };
+		3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalNutrientView.swift; sourceTree = "<group>"; };
+		3C6B700C26F32550001FD7BB /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
+		3C6B700E26F32566001FD7BB /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		3CAE4FE826EF200F00865767 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3CD5012526F22E9B009B450F /* BasicNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicNutrientView.xib; sourceTree = "<group>"; };
+		3CD5012726F22FA8009B450F /* BasicNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNutrientView.swift; sourceTree = "<group>"; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +107,33 @@
 				51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3C6B700626F31CC6001FD7BB /* NutrientView2 */ = {
+			isa = PBXGroup;
+			children = (
+				3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */,
+				3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */,
+			);
+			path = NutrientView2;
+			sourceTree = "<group>";
+		};
+		3C6B700B26F3251A001FD7BB /* MealView */ = {
+			isa = PBXGroup;
+			children = (
+				3C6B700C26F32550001FD7BB /* MealView.xib */,
+				3C6B700E26F32566001FD7BB /* MealView.swift */,
+			);
+			path = MealView;
+			sourceTree = "<group>";
+		};
+		3CD5012226F22E3D009B450F /* NutrientView */ = {
+			isa = PBXGroup;
+			children = (
+				3CD5012526F22E9B009B450F /* BasicNutrientView.xib */,
+				3CD5012726F22FA8009B450F /* BasicNutrientView.swift */,
+			);
+			path = NutrientView;
 			sourceTree = "<group>";
 		};
 		7CC36A1A26EC5ED8007573DD = {
@@ -176,8 +217,12 @@
 		7CC36A3E26EC637D007573DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3C6B700B26F3251A001FD7BB /* MealView */,
+				3CD5012226F22E3D009B450F /* NutrientView */,
+				3C6B700626F31CC6001FD7BB /* NutrientView2 */,
 				7CC36A5326EC7194007573DD /* Home.storyboard */,
 				7CC36A5526EC7272007573DD /* HomeViewController.swift */,
+				3CAE4FE826EF200F00865767 /* SecondViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -300,8 +345,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */,
+				3C6B700D26F32550001FD7BB /* MealView.xib in Resources */,
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
+				3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7CC36A5426EC7194007573DD /* Home.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
@@ -359,10 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
+				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
+				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
+				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* HomeViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
@@ -374,6 +425,7 @@
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
+				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
 				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 			);
@@ -524,7 +576,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,7 +585,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,7 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +605,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
