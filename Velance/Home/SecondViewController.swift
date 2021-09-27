@@ -9,21 +9,28 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
+    var bottomHeight: CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let bottomHeight = bottomHeight {
+            bottomViewHeight.constant = bottomHeight
+        }
+        
+        configureBottomView()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tap(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
     }
-    */
+}
 
+extension SecondViewController {
+    private func configureBottomView() {
+        bottomView.layer.cornerRadius = 30
+        bottomView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
 }
