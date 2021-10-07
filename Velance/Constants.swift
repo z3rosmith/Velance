@@ -1,6 +1,12 @@
 import Foundation
 import UIKit
 
+struct StoryboardName {
+    
+    static let main         = "Main"
+    static let userRegister = "UserRegister"
+}
+
 struct StoryboardID {
     
     static let mainVC                       = "MainViewController"
@@ -8,10 +14,10 @@ struct StoryboardID {
     static let shoppingVC                   = "ShoppingViewController"
     
     // User Register
+    static let idPasswordInputVC            = "IdPasswordInputViewController"
     static let chooseTypeVC                 = "ChooseTypeViewController"
-    static let chooseDetailVC               = "ChooseDetailViewController"
-    static let chooseReasonVC               = "ChooseReasonViewController"
-    static let analyzingVC                  = "AnalyzingViewController"
+    static let chooseInterestVC             = "ChooseInterestViewController"
+
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"
@@ -60,11 +66,11 @@ struct Images {
     static let shopTabBarIcon_unselected       = "shopping_unselected"
     
     // Vegan Types
-    static let vegan            = "vegan"
-    static let ovo              = "ovo"
-    static let lacto            = "lacto"
-    static let lacto_ovo        = "lactoovo"
-    static let pesco            = "pesco"
+    static let vegan                = "vegan"
+    static let ovo                  = "ovo"
+    static let lacto                = "lacto"
+    static let lacto_ovo            = "lactoovo"
+    static let pesco                = "pesco"
     static let veganTypesUnselected = [vegan, ovo, lacto, lacto_ovo, pesco]
     
     static let vegan_selected       = "vegan_selected"
@@ -72,7 +78,7 @@ struct Images {
     static let lacto_selected       = "lacto_selected"
     static let lacto_ovo_selected   = "lactoovo_selected"
     static let pesco_selected       = "pesco_selected"
-    static let veganTypesSelected = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
+    static let veganTypesSelected   = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
 }
 
 struct LayoutConstants {

@@ -37,3 +37,18 @@ extension UIViewController {
         }
     }
 }
+
+//MARK: - Navigation Bar Related
+
+extension UIViewController {
+    
+    func setNavBarBackButtonItemTitle(to title: String = "") {
+        let backBarButtonItem = UIBarButtonItem(
+            title: title,
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        navigationItem.backBarButtonItem = backBarButtonItem
+    }
+}

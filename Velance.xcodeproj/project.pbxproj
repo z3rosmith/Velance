@@ -23,6 +23,9 @@
 		7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */; };
 		7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D226F0819700893CCD /* VLBottomView.swift */; };
 		7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D426F081AB00893CCD /* VLBottomView.xib */; };
+		7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */; };
+		7C8ED250270EA8ED00693521 /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */; };
+		7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED253270EA9A100693521 /* Storyboarded.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -41,7 +44,6 @@
 		7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */; };
 		7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */; };
 		7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */; };
-		7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */; };
 		7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */; };
 		7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */; };
 		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
@@ -69,6 +71,9 @@
 		7C8EC8C826EF218500893CCD /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		7C8EC8D226F0819700893CCD /* VLBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLBottomView.swift; sourceTree = "<group>"; };
 		7C8EC8D426F081AB00893CCD /* VLBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VLBottomView.xib; sourceTree = "<group>"; };
+		7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPasswordInputViewController.swift; sourceTree = "<group>"; };
+		7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
+		7C8ED253270EA9A100693521 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeViewController.swift; sourceTree = "<group>"; };
 		7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDetailViewController.swift; sourceTree = "<group>"; };
 		7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseReasonViewController.swift; sourceTree = "<group>"; };
-		7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingViewController.swift; sourceTree = "<group>"; };
 		7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterValues.swift; sourceTree = "<group>"; };
 		7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLTitleLabel.swift; sourceTree = "<group>"; };
 		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,14 @@
 			path = NutrientView;
 			sourceTree = "<group>";
 		};
+		7C8ED252270EA98A00693521 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C8ED253270EA9A100693521 /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		7CC36A1A26EC5ED8007573DD = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 				7CC36A3B26EC6360007573DD /* Network Group */,
 				7CC36A3A26EC6358007573DD /* Model */,
 				7CC36A5026EC70AD007573DD /* Extensions */,
+				7C8ED252270EA98A00693521 /* Protocols */,
 				7CC36A4C26EC65D7007573DD /* Constants.swift */,
 				7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */,
 				7CC36A4826EC647E007573DD /* AppDelegate.swift */,
@@ -226,10 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
+				7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */,
+				7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */,
 				7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */,
 				7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */,
 				7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */,
-				7CC36A6026EC8A9E007573DD /* AnalyzingViewController.swift */,
 			);
 			path = UserRegister;
 			sourceTree = "<group>";
@@ -439,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
@@ -453,6 +468,7 @@
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
+				7C8ED250270EA8ED00693521 /* ChooseInterestViewController.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
@@ -461,9 +477,9 @@
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
+				7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
-				7CC36A6126EC8A9E007573DD /* AnalyzingViewController.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
@@ -616,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				INFOPLIST_FILE = Velance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -636,7 +652,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				INFOPLIST_FILE = Velance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
