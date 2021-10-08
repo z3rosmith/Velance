@@ -1,6 +1,6 @@
 import UIKit
 
-class VLTypeOptionButton: UIButton {
+class VLGradientButton: UIButton {
 
     private lazy var gradient: CAGradientLayer = {
         let buttonGradient = CAGradientLayer()
@@ -18,11 +18,8 @@ class VLTypeOptionButton: UIButton {
         didSet{
             if self.isSelected {
                 self.layer.insertSublayer(self.gradient, at: 0)
-                setTitleColor(.white, for: .normal)
             } else {
                 self.gradient.removeFromSuperlayer()
-                setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
-
             }
         }
     }
@@ -45,7 +42,6 @@ class VLTypeOptionButton: UIButton {
     
     func configure() {
         layer.borderWidth = 0.3
-        layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
         layer.cornerRadius = frame.height / 2
         titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
         titleLabel?.adjustsFontSizeToFitWidth = true

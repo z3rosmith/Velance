@@ -3,7 +3,7 @@ import UIKit
 class TestableVC: UIViewController {
 
     
-    @IBOutlet weak var typeButton: VLTypeOptionButton!
+    @IBOutlet weak var typeButton: VLGradientButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

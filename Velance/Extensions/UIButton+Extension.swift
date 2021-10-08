@@ -101,16 +101,17 @@ extension UIButton {
         }
     }
     
-    func applyGradient(with colors: [UIColor]) {
+    func addGradientLayer(with colors: [UIColor]) -> CAGradientLayer {
         
-        let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.frame = bounds
-        gradientLayer.colors = colors.map { $0.cgColor }
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        layer.insertSublayer(gradientLayer, at: 0)
-        clipsToBounds = true
+        let buttonGradient = CAGradientLayer()
+        buttonGradient.frame = self.bounds
+        buttonGradient.cornerRadius = buttonGradient.frame.height / 2
+        buttonGradient.colors = colors.compactMap { $0.cgColor }
+//        buttonGradient.colors = [UIColor(named: Colors.ovalButtonGradientLeft)!.cgColor, UIColor(named: Colors.ovalButtonGradientRight)!.cgColor]
+        buttonGradient.startPoint = CGPoint(x: 1.0, y: 0.0)
+        buttonGradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        buttonGradient.frame = self.bounds
+        return buttonGradient
     }
     
     func removeGradient(_ view: UIView, layerIndex index: Int) {

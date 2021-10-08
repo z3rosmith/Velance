@@ -7,14 +7,15 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     @IBOutlet weak var veganTypeGuideLabel: UILabel!
     @IBOutlet var veganButtonOuterViews: [UIView]!
     @IBOutlet var veganTypeButtons: [UIButton]!
+    @IBOutlet weak var notChooseVeganTypeButton: VLGradientButton!
     
     // 나의 입맛
     @IBOutlet weak var myTasteTypeView: UIView!
-    @IBOutlet var tasteOptionButtons: [VLTypeOptionButton]!
+    @IBOutlet var tasteOptionButtons: [VLGradientButton]!
     
     // 나의 관심사
     @IBOutlet weak var myInterestView: UIView!
-    @IBOutlet var interestOptionButtons: [VLTypeOptionButton]!
+    @IBOutlet var interestOptionButtons: [VLGradientButton]!
     
     //MARK: - Constants
     
@@ -24,7 +25,6 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
         static let borderWidth: CGFloat = 0.3
         static let guideStringFontSize: CGFloat = 14
     }
-
     
     static var storyboardName: String {
         StoryboardName.userRegister
@@ -35,6 +35,7 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
+
 }
 
 //MARK: - IBActions
@@ -42,6 +43,10 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
 extension ChooseInterestViewController {
     
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
+        notChooseVeganTypeButton.isSelected = false
+        notChooseVeganTypeButton.setTitleColor(.darkGray, for: .normal)
+        notChooseVeganTypeButton.layer.borderColor = UIColor.systemGray3.cgColor
+        
         veganTypeButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
         veganTypeButtons.forEach { button in
@@ -55,8 +60,34 @@ extension ChooseInterestViewController {
         }
     }
     
+    @IBAction func pressedNotChooseVeganTypeButton(_ sender: UIButton) {
+        
+        veganTypeButtons.forEach { button in
+            veganButtonOuterViews[button.tag].backgroundColor = .white
+            button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag]), for: .normal)
+        }
+        
+        switch sender.isSelected {
+        case true:
+            sender.isSelected = !sender.isSelected
+            sender.setTitleColor(.darkGray, for: .normal)
+            sender.layer.borderColor = UIColor.systemGray3.cgColor
+        case false:
+            sender.isSelected = !sender.isSelected
+            sender.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     @IBAction func pressedTasteOptionButton(_ sender: UIButton) {
-        sender.isSelected = sender.isSelected ? !sender.isSelected : !sender.isSelected
+        
+        switch sender.isSelected {
+        case true:
+            sender.isSelected = !sender.isSelected
+            sender.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
+        case false:
+            sender.isSelected = !sender.isSelected
+            sender.setTitleColor(.white, for: .normal)
+        }
     }
 }
 
@@ -68,19 +99,18 @@ extension ChooseInterestViewController {
         title = "회원가입"
         configureLabels()
         configureUIViews()
-        configureButtonOuterViews()
+        configureVeganButtonOuterViews()
+        configureNotChooseVeganTypeButton()
         configureTasteOptionButtons()
         configureInterestOptionButtons()
         
     }
     
     private func configureLabels() {
-
         veganTypeGuideLabel.attributedText = NSMutableAttributedString()
             .normal("채식 타입을 고를 수 있습니다!\n원치 않을 경우에는 ")
             .bold("선택하지 않으셔도")
             .normal(" 됩니다.")
-
     }
     
     private func configureUIViews() {
@@ -90,7 +120,7 @@ extension ChooseInterestViewController {
         }
     }
     
-    private func configureButtonOuterViews() {
+    private func configureVeganButtonOuterViews() {
         veganButtonOuterViews.forEach { view in
             view.layer.cornerRadius = view.frame.height / 2
             view.layer.borderWidth = Metrics.borderWidth
@@ -98,13 +128,19 @@ extension ChooseInterestViewController {
         }
     }
     
-
+    private func configureNotChooseVeganTypeButton() {
+        notChooseVeganTypeButton.layer.cornerRadius = notChooseVeganTypeButton.frame.height / 2
+        notChooseVeganTypeButton.layer.borderWidth = 1
+        notChooseVeganTypeButton.layer.borderColor = UIColor.systemGray3.cgColor
+        notChooseVeganTypeButton.backgroundColor = UIColor.systemGray6
+    }
     
     private func configureTasteOptionButtons() {
         var index: Int = 0
         tasteOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.tasteOption[index], for: .normal)
+            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
     }
@@ -114,6 +150,7 @@ extension ChooseInterestViewController {
         interestOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.interestOptions[index], for: .normal)
+            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
     }
