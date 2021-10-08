@@ -100,4 +100,35 @@ extension UIButton {
             }
         }
     }
+    
+    func applyGradient(with colors: [UIColor]) {
+        
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        layer.insertSublayer(gradientLayer, at: 0)
+        clipsToBounds = true
+    }
+    
+    func removeGradient(_ view: UIView, layerIndex index: Int) {
+     
+        guard let sublayers = view.layer.sublayers else {
+            print("The view does not have any sublayers.")
+            return
+        }
+        if sublayers.count > index {
+            view.layer.sublayers!.remove(at: index)
+        } else {
+            print("There are not enough sublayers to remove that index.")
+        }
+        
+        
+  
+    }
+
 }
+
+

@@ -26,6 +26,8 @@
 		7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */; };
 		7C8ED250270EA8ED00693521 /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */; };
 		7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED253270EA9A100693521 /* Storyboarded.swift */; };
+		7C97195A270F3028003E193D /* TestableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C971959270F3028003E193D /* TestableVC.swift */; };
+		7C97195D27100635003E193D /* VLTypeOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLTypeOptionButton.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPasswordInputViewController.swift; sourceTree = "<group>"; };
 		7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C8ED253270EA9A100693521 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		7C971959270F3028003E193D /* TestableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableVC.swift; sourceTree = "<group>"; };
+		7C97195C27100635003E193D /* VLTypeOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTypeOptionButton.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7C97195B27100617003E193D /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				7C97195C27100635003E193D /* VLTypeOptionButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		7CC36A1A26EC5ED8007573DD = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +239,7 @@
 		7CC36A3C26EC6366007573DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C97195B27100617003E193D /* UIButton */,
 				7CC36A8E26EE3F1E007573DD /* Custom Alerts */,
 				7CC36A4426EC6427007573DD /* UIViews */,
 				7CC36A4326EC641E007573DD /* UITableView Cells */,
@@ -243,6 +256,7 @@
 				7C8ED24F270EA8ED00693521 /* ChooseInterestViewController.swift */,
 				7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */,
 				7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */,
+				7C971959270F3028003E193D /* TestableVC.swift */,
 				7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */,
 			);
 			path = UserRegister;
@@ -460,6 +474,7 @@
 				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
+				7C97195D27100635003E193D /* VLTypeOptionButton.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */,
@@ -471,6 +486,7 @@
 				7C8ED250270EA8ED00693521 /* ChooseInterestViewController.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* RecipeTableViewCell.swift in Sources */,

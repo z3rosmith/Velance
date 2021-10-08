@@ -33,7 +33,10 @@ struct Colors {
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"
     static let tabBarUnselectedColor        = "TabBarUnselectedColor"
-
+    
+    // Button Colors
+    static let ovalButtonGradientLeft       = "OvalButtonGradientLeft"
+    static let ovalButtonGradientRight      = "OvalButtonGradientRight"
 }
 
 struct CellID {
@@ -79,6 +82,10 @@ struct Images {
     static let lacto_ovo_selected   = "lactoovo_selected"
     static let pesco_selected       = "pesco_selected"
     static let veganTypesSelected   = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
+    
+    // Buttons
+    static let circleButtonSelected     = "CircleButtonSelected"
+    static let ovalButtonSelected       = "OvalButtonSelected"
 }
 
 struct LayoutConstants {
