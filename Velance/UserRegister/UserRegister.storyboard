@@ -813,10 +813,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-oN-lsH" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="936"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-JR-PAk">
-                                        <rect key="frame" x="0.0" y="12" width="414" height="944"/>
+                                        <rect key="frame" x="0.0" y="12" width="414" height="924"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-NR-Npv" userLabel="Content View">
                                                 <rect key="frame" x="0.0" y="24" width="414" height="868"/>
@@ -1332,7 +1332,7 @@
                                                                 <rect key="frame" x="16" y="105.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-r1-UTP" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1343,7 +1343,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-Uc-zqx" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1354,7 +1354,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n15-Gm-lq3" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1365,7 +1365,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-jS-GOj" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1373,6 +1373,17 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="msg-Xh-4cF"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-N3-7Xj" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="PVC-a2-eRc"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1383,8 +1394,8 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-pA-v4t">
                                                                 <rect key="frame" x="16" y="148.5" width="350" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-4B-JZc" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-4B-JZc" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1394,8 +1405,8 @@
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="a0a-RK-nkR"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-QQ-eHV" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-QQ-eHV" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1405,8 +1416,8 @@
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="GSw-LK-m5v"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-sL-fek" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-sL-fek" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1417,7 +1428,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-Ny-DQy" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1425,6 +1436,17 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="BbP-X4-qXM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-SK-ApU" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pCD-QM-8B6"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1436,7 +1458,7 @@
                                                                 <rect key="frame" x="16" y="191.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG2-nK-Ryn" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1447,7 +1469,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-g0-XZH" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1458,7 +1480,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4p-cW-3Av" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1469,7 +1491,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-44-CyY" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1477,6 +1499,18 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Dum-jC-KeV"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-fD-4d7" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="5oi-ae-Uaa"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1554,7 +1588,7 @@
                             <constraint firstAttribute="bottom" secondItem="MBB-oN-lsH" secondAttribute="bottom" id="3PS-I6-Al5"/>
                             <constraint firstItem="8kN-BU-fIk" firstAttribute="trailing" secondItem="MBB-oN-lsH" secondAttribute="trailing" id="YN3-Pw-pea"/>
                             <constraint firstItem="MBB-oN-lsH" firstAttribute="leading" secondItem="8kN-BU-fIk" secondAttribute="leading" id="ZKW-Ei-rAs"/>
-                            <constraint firstItem="MBB-oN-lsH" firstAttribute="top" secondItem="8kN-BU-fIk" secondAttribute="top" id="e6J-Lh-baN"/>
+                            <constraint firstItem="MBB-oN-lsH" firstAttribute="top" secondItem="8kN-BU-fIk" secondAttribute="top" constant="20" id="e6J-Lh-baN"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
@@ -1562,6 +1596,7 @@
                         <outlet property="myInterestView" destination="ANz-bk-NLE" id="9lc-Bh-t2x"/>
                         <outlet property="myTasteTypeView" destination="IQy-CL-KAK" id="aBh-S1-mK2"/>
                         <outlet property="myVeganTypeView" destination="fhO-AL-OqI" id="rgy-uP-vKc"/>
+                        <outlet property="veganTypeGuideLabel" destination="OaH-1q-3QR" id="UuD-I4-Rb2"/>
                         <outletCollection property="veganButtonOuterViews" destination="PiC-6B-x58" collectionClass="NSMutableArray" id="bID-W1-bd4"/>
                         <outletCollection property="veganButtonOuterViews" destination="BcN-H5-ZcE" collectionClass="NSMutableArray" id="P66-TJ-1aD"/>
                         <outletCollection property="veganButtonOuterViews" destination="Twz-vk-oys" collectionClass="NSMutableArray" id="X4x-hY-N0c"/>
@@ -1584,48 +1619,41 @@
                         <outletCollection property="tasteOptionButtons" destination="WCF-xS-q0v" collectionClass="NSMutableArray" id="Gdv-od-8KY"/>
                         <outletCollection property="tasteOptionButtons" destination="X58-bV-aCM" collectionClass="NSMutableArray" id="uYk-0B-8cm"/>
                         <outletCollection property="tasteOptionButtons" destination="lGb-GE-gxD" collectionClass="NSMutableArray" id="4uD-GC-7Ic"/>
+                        <outletCollection property="interestOptionButtons" destination="l6r-r1-UTP" collectionClass="NSMutableArray" id="t4k-AC-uMX"/>
+                        <outletCollection property="interestOptionButtons" destination="cwd-Uc-zqx" collectionClass="NSMutableArray" id="Uyz-4d-MIg"/>
+                        <outletCollection property="interestOptionButtons" destination="n15-Gm-lq3" collectionClass="NSMutableArray" id="2Sl-VR-FNJ"/>
+                        <outletCollection property="interestOptionButtons" destination="4Xw-jS-GOj" collectionClass="NSMutableArray" id="MZf-im-2lt"/>
+                        <outletCollection property="interestOptionButtons" destination="edr-N3-7Xj" collectionClass="NSMutableArray" id="Y6e-Na-rnI"/>
+                        <outletCollection property="interestOptionButtons" destination="pGl-4B-JZc" collectionClass="NSMutableArray" id="Bnx-X3-Zls"/>
+                        <outletCollection property="interestOptionButtons" destination="Hqb-QQ-eHV" collectionClass="NSMutableArray" id="taK-QB-q8P"/>
+                        <outletCollection property="interestOptionButtons" destination="1KI-sL-fek" collectionClass="NSMutableArray" id="YXW-1I-gue"/>
+                        <outletCollection property="interestOptionButtons" destination="Gnw-Ny-DQy" collectionClass="NSMutableArray" id="j4p-Nf-UXx"/>
+                        <outletCollection property="interestOptionButtons" destination="2hK-SK-ApU" collectionClass="NSMutableArray" id="46e-nk-6Ql"/>
+                        <outletCollection property="interestOptionButtons" destination="RG2-nK-Ryn" collectionClass="NSMutableArray" id="ARB-eT-Oni"/>
+                        <outletCollection property="interestOptionButtons" destination="2H9-g0-XZH" collectionClass="NSMutableArray" id="m8j-cQ-pz4"/>
+                        <outletCollection property="interestOptionButtons" destination="G4p-cW-3Av" collectionClass="NSMutableArray" id="b3S-fM-Iee"/>
+                        <outletCollection property="interestOptionButtons" destination="IyZ-44-CyY" collectionClass="NSMutableArray" id="4LV-Qh-0Yz"/>
+                        <outletCollection property="interestOptionButtons" destination="d1Z-fD-4d7" collectionClass="NSMutableArray" id="S6v-Af-15w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igz-xF-ocv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="122"/>
         </scene>
-        <!--TestableVC-->
-        <scene sceneID="HAm-aG-HdA">
+        <!--View Controller-->
+        <scene sceneID="6b7-m5-Is0">
             <objects>
-                <viewController id="rxA-3O-pcq" customClass="TestableVC" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uCw-x5-laR">
+                <viewController id="7AP-kg-iuc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZSs-GB-Zlw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAp-iv-Yfe" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Duf-E1-vLC"/>
-                                    <constraint firstAttribute="height" constant="200" id="e0U-Yf-z3T"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="pressedBtn:" destination="rxA-3O-pcq" eventType="touchUpInside" id="lZ2-xc-zoi"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="nqD-B2-JaS"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cAp-iv-Yfe" firstAttribute="centerX" secondItem="uCw-x5-laR" secondAttribute="centerX" id="ALh-0S-Qdw"/>
-                            <constraint firstItem="cAp-iv-Yfe" firstAttribute="centerY" secondItem="uCw-x5-laR" secondAttribute="centerY" id="CKQ-6h-TXO"/>
-                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ik-hE-iJU"/>
+                        <color key="backgroundColor" name="AppDefaultColor"/>
                     </view>
-                    <connections>
-                        <outlet property="typeButton" destination="cAp-iv-Yfe" id="rev-tn-wXQ"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IlR-ad-b4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgZ-ww-OJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735" y="138"/>
+            <point key="canvasLocation" x="2128" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M4b-gG-o4D">

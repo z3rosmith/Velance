@@ -47,10 +47,11 @@ class VLTypeOptionButton: UIButton {
         layer.borderWidth = 0.3
         layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
         layer.cornerRadius = frame.height / 2
-        titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
         titleLabel?.adjustsFontSizeToFitWidth = true
-        titleLabel?.minimumScaleFactor = 0.8
+        titleLabel?.minimumScaleFactor = 0.1
         titleLabel?.lineBreakMode = .byTruncatingTail
+        
     }
 
 }
