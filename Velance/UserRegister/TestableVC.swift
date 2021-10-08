@@ -7,7 +7,7 @@ class TestableVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        typeButton.isSelected = false
+    
     }
     
     @IBAction func pressedBtn(_ sender: UIButton) {

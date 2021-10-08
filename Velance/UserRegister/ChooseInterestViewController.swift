@@ -2,13 +2,21 @@ import UIKit
 
 class ChooseInterestViewController: UIViewController, Storyboarded {
     
+    // 나의 채식
     @IBOutlet weak var myVeganTypeView: UIView!
-    @IBOutlet weak var myTasteTypeView: UIView!
     @IBOutlet var veganButtonOuterViews: [UIView]!
     @IBOutlet var veganTypeButtons: [UIButton]!
-    @IBOutlet var tasteOptionButtons: [UIButton]!
-
     
+    // 나의 입맛
+    @IBOutlet weak var myTasteTypeView: UIView!
+    @IBOutlet var tasteOptionButtons: [VLTypeOptionButton]!
+    
+    // 나의 관심사
+    @IBOutlet weak var myInterestView: UIView!
+    
+    private var selectedVeganTypeIndex: Int = 0
+
+
     fileprivate struct UserOptions {
         
         static let veganType: [String] = ["비건", "오보", "락토", "락토/오보", "페스코"]
@@ -18,7 +26,7 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
                                             "한식풍의", "이국적인", "탕류",
                                             "구이류", "볶음류", "면류", "빵/디저트"]
     }
-    
+
     
     static var storyboardName: String {
         StoryboardName.userRegister
@@ -43,29 +51,21 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
 extension ChooseInterestViewController {
     
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
-        
-        print("✏️ tag: \(sender.tag)")
+        veganTypeButtons.forEach { $0.isSelected = false }
+        sender.isSelected = true
+        veganTypeButtons.forEach { button in
+            if button.isSelected {
+                veganButtonOuterViews[button.tag].backgroundColor = UIColor(named: Colors.appDefaultColor)
+                button.setImage(UIImage(named: Images.veganTypesSelected[button.tag]), for: .normal)
+            } else {
+                veganButtonOuterViews[button.tag].backgroundColor = .white
+                button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag]), for: .normal)
+            }
+        }
     }
     
     @IBAction func pressedTasteOptionButton(_ sender: UIButton) {
-        
-        switch sender.isSelected {
-        case true:
-            sender.isSelected = !sender.isSelected
-//            sender.removeGradient(sender, layerIndex: 1)
-            sender.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
-
-        case false:
-            sender.isSelected = !sender.isSelected
-            sender.applyGradient(with: [UIColor(named: Colors.ovalButtonGradientLeft)!,
-                                        UIColor(named: Colors.ovalButtonGradientRight)!])
-            sender.setTitleColor(.white, for: .normal)
-
-            
-        }
-        
-   
-
+        sender.isSelected = sender.isSelected ? !sender.isSelected : !sender.isSelected
     }
 
 }
@@ -82,7 +82,7 @@ extension ChooseInterestViewController {
     }
     
     private func configureUIViews() {
-        [myVeganTypeView, myTasteTypeView].forEach { view in
+        [myVeganTypeView, myTasteTypeView, myInterestView].forEach { view in
             view?.backgroundColor = .white
             view?.layer.cornerRadius = 15
         }
@@ -98,16 +98,7 @@ extension ChooseInterestViewController {
     
     private func configureTasteOptionButtons() {
         tasteOptionButtons.forEach { button in
-            button.layer.borderWidth = 0.3
-            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
-            button.layer.cornerRadius = button.frame.height / 2
             button.setTitle(UserOptions.tasteOption[button.tag], for: .normal)
-          
-            button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
-            button.titleLabel?.minimumScaleFactor = 0.8
-            button.titleLabel?.lineBreakMode = .byTruncatingTail
-            button.isSelected = false
         }
         
     }

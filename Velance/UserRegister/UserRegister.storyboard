@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rxA-3O-pcq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c76-8J-vlh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -816,13 +816,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="956"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-JR-PAk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="956"/>
+                                        <rect key="frame" x="0.0" y="12" width="414" height="944"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-NR-Npv" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="24" width="414" height="956"/>
+                                                <rect key="frame" x="0.0" y="24" width="414" height="868"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooj-ed-2AX" userLabel="RegisterView">
-                                                        <rect key="frame" x="16" y="890" width="382" height="58"/>
+                                                        <rect key="frame" x="16" y="794" width="382" height="58"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="GRj-ac-UrM" userLabel="Register Button Image">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="58"/>
@@ -846,7 +846,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhO-AL-OqI" userLabel="Vegan Type View">
-                                                        <rect key="frame" x="16" y="16" width="382" height="180"/>
+                                                        <rect key="frame" x="16" y="16" width="382" height="230"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 채식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUp-ZI-vkn">
                                                                 <rect key="frame" x="16" y="16" width="74" height="24"/>
@@ -861,17 +861,17 @@
                                                                     <constraint firstAttribute="height" constant="4" id="oIH-ZA-Z1b"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-qM-4YH" userLabel="Vegan Type Stack View">
-                                                                <rect key="frame" x="29" y="64" width="324" height="90"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-qM-4YH" userLabel="Vegan Type Stack View">
+                                                                <rect key="frame" x="16" y="105.5" width="350" height="90"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csr-CU-k33" userLabel="Type View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="90"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="90"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiC-6B-x58" userLabel="Button View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="61"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jis-Mx-lBt" userLabel="Vegan">
-                                                                                        <rect key="frame" x="12.5" y="14.5" width="35" height="35"/>
+                                                                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="35" id="0Pe-rB-Rw8"/>
                                                                                             <constraint firstAttribute="width" constant="35" id="g2i-l8-aVl"/>
@@ -886,11 +886,10 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="Jis-Mx-lBt" firstAttribute="centerY" secondItem="PiC-6B-x58" secondAttribute="centerY" id="rOT-y2-Glr"/>
                                                                                     <constraint firstItem="Jis-Mx-lBt" firstAttribute="centerX" secondItem="PiC-6B-x58" secondAttribute="centerX" id="sVu-eP-bdX"/>
-                                                                                    <constraint firstAttribute="height" constant="64" id="uI3-zc-Fqp"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9B-el-Lgr">
-                                                                                <rect key="frame" x="18" y="69" width="24.5" height="17"/>
+                                                                                <rect key="frame" x="20.5" y="73" width="24.5" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" name="TabBarSelectedColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -898,23 +897,23 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="t9B-el-Lgr" secondAttribute="bottom" constant="4" id="SNX-vj-4cJ"/>
-                                                                            <constraint firstAttribute="width" constant="60" id="TIL-w2-brx"/>
+                                                                            <constraint firstItem="t9B-el-Lgr" firstAttribute="top" secondItem="PiC-6B-x58" secondAttribute="bottom" constant="12" id="L8L-xK-gcZ"/>
                                                                             <constraint firstItem="t9B-el-Lgr" firstAttribute="centerX" secondItem="Csr-CU-k33" secondAttribute="centerX" id="YR1-Sx-fFt"/>
                                                                             <constraint firstAttribute="trailing" secondItem="PiC-6B-x58" secondAttribute="trailing" id="be8-4l-MXo"/>
                                                                             <constraint firstItem="PiC-6B-x58" firstAttribute="top" secondItem="Csr-CU-k33" secondAttribute="top" id="haf-fI-Cn0"/>
                                                                             <constraint firstItem="PiC-6B-x58" firstAttribute="leading" secondItem="Csr-CU-k33" secondAttribute="leading" id="ilo-s2-vW8"/>
                                                                             <constraint firstAttribute="height" constant="90" id="t6F-iX-yPB"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="t9B-el-Lgr" secondAttribute="bottom" id="xex-ac-Log"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0e-sv-hpW" userLabel="Type View">
-                                                                        <rect key="frame" x="66" y="0.0" width="60" height="90"/>
+                                                                        <rect key="frame" x="71" y="0.0" width="65.5" height="90"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcN-H5-ZcE" userLabel="Button View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="61"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkM-Tl-xil" userLabel="Ovo">
-                                                                                        <rect key="frame" x="12.5" y="14.5" width="35" height="35"/>
+                                                                                        <rect key="frame" x="15.5" y="13" width="35" height="35"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="35" id="adf-Se-346"/>
                                                                                             <constraint firstAttribute="height" constant="35" id="is9-2i-PhQ"/>
@@ -928,12 +927,11 @@
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="tkM-Tl-xil" firstAttribute="centerY" secondItem="BcN-H5-ZcE" secondAttribute="centerY" id="Xab-3G-rbn"/>
-                                                                                    <constraint firstAttribute="height" constant="64" id="uhe-gR-O05"/>
                                                                                     <constraint firstItem="tkM-Tl-xil" firstAttribute="centerX" secondItem="BcN-H5-ZcE" secondAttribute="centerX" id="v9c-lr-uEG"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlM-2Z-zWA">
-                                                                                <rect key="frame" x="18" y="69" width="24.5" height="17"/>
+                                                                                <rect key="frame" x="20.5" y="73" width="24.5" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" name="TabBarSelectedColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -941,23 +939,23 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="SlM-2Z-zWA" secondAttribute="bottom" constant="4" id="B5g-5K-Ewk"/>
+                                                                            <constraint firstItem="SlM-2Z-zWA" firstAttribute="top" secondItem="BcN-H5-ZcE" secondAttribute="bottom" constant="12" id="0BC-sk-TZt"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="SlM-2Z-zWA" secondAttribute="bottom" id="B5g-5K-Ewk"/>
                                                                             <constraint firstItem="BcN-H5-ZcE" firstAttribute="top" secondItem="R0e-sv-hpW" secondAttribute="top" id="GKg-0J-UZP"/>
                                                                             <constraint firstAttribute="trailing" secondItem="BcN-H5-ZcE" secondAttribute="trailing" id="GMt-qJ-3xy"/>
                                                                             <constraint firstAttribute="height" constant="90" id="Ice-IL-G40"/>
-                                                                            <constraint firstAttribute="width" constant="60" id="kCv-G5-hJE"/>
                                                                             <constraint firstItem="SlM-2Z-zWA" firstAttribute="centerX" secondItem="R0e-sv-hpW" secondAttribute="centerX" id="n8r-yB-rkG"/>
                                                                             <constraint firstItem="BcN-H5-ZcE" firstAttribute="leading" secondItem="R0e-sv-hpW" secondAttribute="leading" id="rhc-SP-srM"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPB-FA-ScN" userLabel="Type View">
-                                                                        <rect key="frame" x="132" y="0.0" width="60" height="90"/>
+                                                                        <rect key="frame" x="142.5" y="0.0" width="65" height="90"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-vk-oys" userLabel="Button View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="61"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYw-Js-2wn" userLabel="Lacto">
-                                                                                        <rect key="frame" x="12.5" y="14.5" width="35" height="35"/>
+                                                                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="35" id="0yw-zw-S1s"/>
                                                                                             <constraint firstAttribute="width" constant="35" id="TOQ-pj-5zb"/>
@@ -972,11 +970,10 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="zYw-Js-2wn" firstAttribute="centerY" secondItem="Twz-vk-oys" secondAttribute="centerY" id="a0H-tG-3ht"/>
                                                                                     <constraint firstItem="zYw-Js-2wn" firstAttribute="centerX" secondItem="Twz-vk-oys" secondAttribute="centerX" id="fLB-HW-6id"/>
-                                                                                    <constraint firstAttribute="height" constant="64" id="ffT-o0-sxR"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="락토" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haT-9W-Zwm">
-                                                                                <rect key="frame" x="18" y="69" width="24.5" height="17"/>
+                                                                                <rect key="frame" x="20.5" y="73" width="24.5" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" name="TabBarSelectedColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -984,8 +981,8 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="60" id="2L9-dh-gq7"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="haT-9W-Zwm" secondAttribute="bottom" constant="4" id="NCC-1E-UdE"/>
+                                                                            <constraint firstItem="haT-9W-Zwm" firstAttribute="top" secondItem="Twz-vk-oys" secondAttribute="bottom" constant="12" id="CJj-vZ-EZy"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="haT-9W-Zwm" secondAttribute="bottom" id="NCC-1E-UdE"/>
                                                                             <constraint firstAttribute="height" constant="90" id="Ul1-vH-ECk"/>
                                                                             <constraint firstItem="Twz-vk-oys" firstAttribute="top" secondItem="uPB-FA-ScN" secondAttribute="top" id="c5n-Gc-q5R"/>
                                                                             <constraint firstItem="haT-9W-Zwm" firstAttribute="centerX" secondItem="uPB-FA-ScN" secondAttribute="centerX" id="gvp-1b-IfP"/>
@@ -994,13 +991,13 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1k-O4-UGK" userLabel="Type View">
-                                                                        <rect key="frame" x="198" y="0.0" width="60" height="90"/>
+                                                                        <rect key="frame" x="213.5" y="0.0" width="65.5" height="90"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8P-36-C5P" userLabel="Button View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="61"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyk-CN-68n" userLabel="LactoOvo">
-                                                                                        <rect key="frame" x="12.5" y="14.5" width="35" height="35"/>
+                                                                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyk-CN-68n" userLabel="LactoOvo">
+                                                                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="35" id="L8h-Fk-gTU"/>
                                                                                             <constraint firstAttribute="height" constant="35" id="nuT-0d-avo"/>
@@ -1014,12 +1011,11 @@
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="Oyk-CN-68n" firstAttribute="centerX" secondItem="z8P-36-C5P" secondAttribute="centerX" id="Bp1-sx-2u9"/>
-                                                                                    <constraint firstAttribute="height" constant="64" id="PvK-QL-sde"/>
                                                                                     <constraint firstItem="Oyk-CN-68n" firstAttribute="centerY" secondItem="z8P-36-C5P" secondAttribute="centerY" id="lmS-Lh-UF7"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="락토/오보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx0-Ku-sTY">
-                                                                                <rect key="frame" x="3.5" y="69" width="53" height="17"/>
+                                                                                <rect key="frame" x="6" y="73" width="53" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" name="TabBarSelectedColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1028,22 +1024,22 @@
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="z8P-36-C5P" secondAttribute="trailing" id="1ni-hf-eYB"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="Sx0-Ku-sTY" secondAttribute="bottom" constant="4" id="2HF-ZX-sGV"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Sx0-Ku-sTY" secondAttribute="bottom" id="2HF-ZX-sGV"/>
                                                                             <constraint firstItem="z8P-36-C5P" firstAttribute="leading" secondItem="k1k-O4-UGK" secondAttribute="leading" id="61F-IL-asr"/>
-                                                                            <constraint firstAttribute="width" constant="60" id="76z-9c-mOM"/>
                                                                             <constraint firstItem="Sx0-Ku-sTY" firstAttribute="centerX" secondItem="k1k-O4-UGK" secondAttribute="centerX" id="H9e-7Q-ZVd"/>
                                                                             <constraint firstAttribute="height" constant="90" id="XgI-5n-jxs"/>
+                                                                            <constraint firstItem="Sx0-Ku-sTY" firstAttribute="top" secondItem="z8P-36-C5P" secondAttribute="bottom" constant="12" id="li2-Sz-9iu"/>
                                                                             <constraint firstItem="z8P-36-C5P" firstAttribute="top" secondItem="k1k-O4-UGK" secondAttribute="top" id="uNt-nn-HQ9"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHw-ld-B8Y" userLabel="Type View">
-                                                                        <rect key="frame" x="264" y="0.0" width="60" height="90"/>
+                                                                        <rect key="frame" x="285" y="0.0" width="65" height="90"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viB-N0-Rz6" userLabel="Button View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="61"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQp-e6-8YG" userLabel="Pesco">
-                                                                                        <rect key="frame" x="12.5" y="14.5" width="35" height="35"/>
+                                                                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="35" id="4gc-Nx-3xu"/>
                                                                                             <constraint firstAttribute="height" constant="35" id="q0V-GF-S6l"/>
@@ -1058,11 +1054,10 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="oQp-e6-8YG" firstAttribute="centerX" secondItem="viB-N0-Rz6" secondAttribute="centerX" id="OzY-CA-wnR"/>
                                                                                     <constraint firstItem="oQp-e6-8YG" firstAttribute="centerY" secondItem="viB-N0-Rz6" secondAttribute="centerY" id="RDK-Yb-z2h"/>
-                                                                                    <constraint firstAttribute="height" constant="64" id="Ruk-81-GtZ"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페스코" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yde-fV-D1C">
-                                                                                <rect key="frame" x="12" y="69" width="36.5" height="17"/>
+                                                                                <rect key="frame" x="14" y="73" width="36.5" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" name="TabBarSelectedColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1072,29 +1067,42 @@
                                                                         <constraints>
                                                                             <constraint firstItem="yde-fV-D1C" firstAttribute="centerX" secondItem="lHw-ld-B8Y" secondAttribute="centerX" id="L0W-bO-9Pq"/>
                                                                             <constraint firstItem="viB-N0-Rz6" firstAttribute="top" secondItem="lHw-ld-B8Y" secondAttribute="top" id="N4q-hN-eon"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="yde-fV-D1C" secondAttribute="bottom" constant="4" id="dtt-Eb-dyg"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="yde-fV-D1C" secondAttribute="bottom" id="dtt-Eb-dyg"/>
                                                                             <constraint firstAttribute="height" constant="90" id="eGi-Av-T7C"/>
                                                                             <constraint firstAttribute="trailing" secondItem="viB-N0-Rz6" secondAttribute="trailing" id="huq-ZG-xrr"/>
-                                                                            <constraint firstAttribute="width" constant="60" id="jtg-iC-dSd"/>
+                                                                            <constraint firstItem="yde-fV-D1C" firstAttribute="top" secondItem="viB-N0-Rz6" secondAttribute="bottom" constant="12" id="nb0-VH-HHt"/>
                                                                             <constraint firstItem="viB-N0-Rz6" firstAttribute="leading" secondItem="lHw-ld-B8Y" secondAttribute="leading" id="xfw-2B-lKC"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaH-1q-3QR" userLabel="당신이 좋아하는 스타일의 맛을 8가지 골라주세요!  서비스에 당신의 취향이 반영됩니다.">
+                                                                <rect key="frame" x="16" y="60" width="350" height="33.5"/>
+                                                                <string key="text">채식 타입을 고를 수 있습니다!
+원치 않을 경우에는 선택하지 않으셔도 됩니다.</string>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="lHM-qM-4YH" firstAttribute="leading" secondItem="fhO-AL-OqI" secondAttribute="leading" constant="16" id="8yj-Ch-7fj"/>
+                                                            <constraint firstItem="OaH-1q-3QR" firstAttribute="top" secondItem="x8C-3C-4Q9" secondAttribute="bottom" constant="8" id="9BQ-De-I36"/>
+                                                            <constraint firstItem="lHM-qM-4YH" firstAttribute="top" secondItem="OaH-1q-3QR" secondAttribute="bottom" constant="12" id="AkD-C3-qBo"/>
                                                             <constraint firstItem="hUp-ZI-vkn" firstAttribute="leading" secondItem="fhO-AL-OqI" secondAttribute="leading" constant="16" id="Ekb-Nn-5WS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lHM-qM-4YH" secondAttribute="trailing" constant="16" id="LnE-Qy-qOJ"/>
                                                             <constraint firstItem="lHM-qM-4YH" firstAttribute="centerX" secondItem="fhO-AL-OqI" secondAttribute="centerX" id="MIL-98-cTV"/>
                                                             <constraint firstItem="x8C-3C-4Q9" firstAttribute="top" secondItem="hUp-ZI-vkn" secondAttribute="bottom" constant="8" id="NlZ-Nr-kbC"/>
-                                                            <constraint firstItem="lHM-qM-4YH" firstAttribute="top" secondItem="x8C-3C-4Q9" secondAttribute="bottom" constant="12" id="PyK-ZE-RHd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="OaH-1q-3QR" secondAttribute="trailing" constant="16" id="XXh-qg-u7F"/>
                                                             <constraint firstItem="hUp-ZI-vkn" firstAttribute="top" secondItem="fhO-AL-OqI" secondAttribute="top" constant="16" id="YsS-fk-JhM"/>
                                                             <constraint firstItem="x8C-3C-4Q9" firstAttribute="leading" secondItem="fhO-AL-OqI" secondAttribute="leading" constant="16" id="g9e-XI-zuo"/>
-                                                            <constraint firstAttribute="height" constant="180" id="idm-uV-bjv"/>
+                                                            <constraint firstAttribute="height" constant="230" id="idm-uV-bjv"/>
+                                                            <constraint firstItem="OaH-1q-3QR" firstAttribute="leading" secondItem="fhO-AL-OqI" secondAttribute="leading" constant="16" id="mvu-WX-5WZ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQy-CL-KAK" userLabel="My Taste Type View">
-                                                        <rect key="frame" x="16" y="212" width="382" height="250"/>
+                                                        <rect key="frame" x="16" y="262" width="382" height="250"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 입맛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23h-Fc-Isz">
                                                                 <rect key="frame" x="16" y="16" width="74" height="24"/>
@@ -1120,38 +1128,46 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-jv-3A6">
                                                                 <rect key="frame" x="16" y="105.5" width="350" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-Tq-kfq">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-Tq-kfq" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="xQb-MZ-5yc"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-WE-n8w">
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-WE-n8w" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vXO-hs-2NW"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-Rm-g9z">
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-Rm-g9z" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="qSw-ve-tmR"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-Kr-WZC">
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-Kr-WZC" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="227-Kz-nga"/>
                                                                         </connections>
@@ -1164,38 +1180,46 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cNF-IX-HUi">
                                                                 <rect key="frame" x="16" y="148.5" width="350" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvl-hB-yP1">
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvl-hB-yP1" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="obV-pr-g5u"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-xf-5KF">
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-xf-5KF" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="foz-ny-hC0"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-Qr-Ds3">
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-Qr-Ds3" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="KrC-cV-3aG"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-AJ-TmG">
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-AJ-TmG" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="oXG-l4-Ja4"/>
                                                                         </connections>
@@ -1208,38 +1232,46 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qtj-nq-Mwv">
                                                                 <rect key="frame" x="16" y="191.5" width="350" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-LV-1WE">
+                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-LV-1WE" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="RTW-rX-3bq"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-xS-q0v">
+                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-xS-q0v" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="0uk-hy-NCJ"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-bV-aCM">
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-bV-aCM" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="2gt-Nr-JIH"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-GE-gxD">
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-GE-gxD" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vlv-71-xtg"/>
                                                                         </connections>
@@ -1272,17 +1304,224 @@
                                                             <constraint firstItem="ccB-jv-3A6" firstAttribute="leading" secondItem="IQy-CL-KAK" secondAttribute="leading" constant="16" id="zLR-Ej-dCl"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANz-bk-NLE" userLabel="My Interests View">
+                                                        <rect key="frame" x="16" y="528" width="382" height="250"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 관심사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyq-nB-xz0">
+                                                                <rect key="frame" x="16" y="16" width="91" height="24"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeparatorLine" translatesAutoresizingMaskIntoConstraints="NO" id="pZj-Hn-onq">
+                                                                <rect key="frame" x="16" y="48" width="40" height="4"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="4" id="JbZ-wV-6Hw"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="XE3-IT-Vyn"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-oH-GX9">
+                                                                <rect key="frame" x="16" y="60" width="350" height="33.5"/>
+                                                                <string key="text">당신은 어떤 것들에 대해 관심을 가지고 있나요?
+관심사를 나눌 수 있도록 저희가 준비하겠습니다!</string>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-93-CUI">
+                                                                <rect key="frame" x="16" y="105.5" width="350" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-r1-UTP" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Jch-mN-bGN"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-Uc-zqx" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="L9l-qW-8bk"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n15-Gm-lq3" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="ISw-7q-LfW"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-jS-GOj" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="msg-Xh-4cF"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="y2B-lC-GAQ"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-pA-v4t">
+                                                                <rect key="frame" x="16" y="148.5" width="350" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-4B-JZc" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="a0a-RK-nkR"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-QQ-eHV" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="GSw-LK-m5v"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-sL-fek" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Gum-CD-JzL"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-Ny-DQy" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="BbP-X4-qXM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="ydI-E3-HeU"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hMH-ER-kne">
+                                                                <rect key="frame" x="16" y="191.5" width="350" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG2-nK-Ryn" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pJV-O4-u2E"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-g0-XZH" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="FHM-FO-n7j"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4p-cW-3Av" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Ln5-16-k8L"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-44-CyY" customClass="VLTypeOptionButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="짭잘한">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Dum-jC-KeV"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="fo4-Bu-CaO"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hMH-ER-kne" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="2ny-dF-ufC"/>
+                                                            <constraint firstItem="tn7-pA-v4t" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="36N-jd-RyL"/>
+                                                            <constraint firstItem="GGP-oH-GX9" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="7lP-p5-Imu"/>
+                                                            <constraint firstItem="pzi-93-CUI" firstAttribute="centerX" secondItem="ANz-bk-NLE" secondAttribute="centerX" id="8ov-KP-wQ8"/>
+                                                            <constraint firstItem="fyq-nB-xz0" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="CMz-le-KO0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="pzi-93-CUI" secondAttribute="trailing" constant="16" id="Cdy-cu-k5r"/>
+                                                            <constraint firstItem="pzi-93-CUI" firstAttribute="top" secondItem="GGP-oH-GX9" secondAttribute="bottom" constant="12" id="G4w-6a-1gs"/>
+                                                            <constraint firstItem="pZj-Hn-onq" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="GVd-x6-7Rv"/>
+                                                            <constraint firstAttribute="height" constant="250" id="Ieh-z6-GDh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hMH-ER-kne" secondAttribute="trailing" constant="16" id="J9f-Am-Lte"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tn7-pA-v4t" secondAttribute="trailing" constant="16" id="QGo-i0-LWz"/>
+                                                            <constraint firstItem="hMH-ER-kne" firstAttribute="top" secondItem="tn7-pA-v4t" secondAttribute="bottom" constant="8" id="WfY-xf-R9G"/>
+                                                            <constraint firstItem="fyq-nB-xz0" firstAttribute="top" secondItem="ANz-bk-NLE" secondAttribute="top" constant="16" id="bfL-e7-Tr0"/>
+                                                            <constraint firstItem="tn7-pA-v4t" firstAttribute="top" secondItem="pzi-93-CUI" secondAttribute="bottom" constant="8" id="h1h-fv-xUL"/>
+                                                            <constraint firstItem="pzi-93-CUI" firstAttribute="leading" secondItem="ANz-bk-NLE" secondAttribute="leading" constant="16" id="o8P-de-j70"/>
+                                                            <constraint firstItem="pZj-Hn-onq" firstAttribute="top" secondItem="fyq-nB-xz0" secondAttribute="bottom" constant="8" id="p1J-cq-Tae"/>
+                                                            <constraint firstItem="GGP-oH-GX9" firstAttribute="top" secondItem="pZj-Hn-onq" secondAttribute="bottom" constant="8" id="srd-MU-9nX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="GGP-oH-GX9" secondAttribute="trailing" constant="16" id="vLV-0u-2vD"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="IQy-CL-KAK" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="05F-UR-1ba"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Ooj-ed-2AX" secondAttribute="bottom" constant="8" id="IAv-gf-tEg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ANz-bk-NLE" secondAttribute="trailing" constant="16" id="1Cx-K6-g8B"/>
+                                                    <constraint firstItem="Ooj-ed-2AX" firstAttribute="top" secondItem="ANz-bk-NLE" secondAttribute="bottom" constant="16" id="Ke1-PR-t2P"/>
                                                     <constraint firstAttribute="trailing" secondItem="IQy-CL-KAK" secondAttribute="trailing" constant="16" id="Pk1-UY-IIL"/>
                                                     <constraint firstItem="fhO-AL-OqI" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="YbE-Us-1uj"/>
+                                                    <constraint firstItem="ANz-bk-NLE" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="da7-WO-uhW"/>
                                                     <constraint firstItem="IQy-CL-KAK" firstAttribute="top" secondItem="fhO-AL-OqI" secondAttribute="bottom" constant="16" id="eft-35-pwo"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ooj-ed-2AX" secondAttribute="trailing" constant="16" id="ezy-rc-oZC"/>
                                                     <constraint firstItem="Ooj-ed-2AX" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="mft-E6-a7g"/>
                                                     <constraint firstItem="fhO-AL-OqI" firstAttribute="top" secondItem="bKt-NR-Npv" secondAttribute="top" constant="16" id="tJ0-jV-hlj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ooj-ed-2AX" secondAttribute="bottom" constant="16" id="tjH-8g-s0V"/>
+                                                    <constraint firstItem="ANz-bk-NLE" firstAttribute="top" secondItem="IQy-CL-KAK" secondAttribute="bottom" constant="16" id="wkW-CZ-oU9"/>
                                                     <constraint firstAttribute="trailing" secondItem="fhO-AL-OqI" secondAttribute="trailing" constant="16" id="xqh-UF-Myr"/>
                                                 </constraints>
                                             </view>
@@ -1302,7 +1541,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="vwS-JR-PAk" firstAttribute="top" secondItem="MBB-oN-lsH" secondAttribute="top" id="ZBX-BA-S2p"/>
+                                    <constraint firstItem="vwS-JR-PAk" firstAttribute="top" secondItem="MBB-oN-lsH" secondAttribute="top" constant="12" id="ZBX-BA-S2p"/>
                                     <constraint firstItem="vwS-JR-PAk" firstAttribute="leading" secondItem="MBB-oN-lsH" secondAttribute="leading" id="kAc-20-eS0"/>
                                     <constraint firstAttribute="trailing" secondItem="vwS-JR-PAk" secondAttribute="trailing" id="sWg-TV-fdk"/>
                                     <constraint firstAttribute="bottom" secondItem="vwS-JR-PAk" secondAttribute="bottom" id="uQm-lU-MVd"/>
@@ -1320,6 +1559,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="myInterestView" destination="ANz-bk-NLE" id="9lc-Bh-t2x"/>
                         <outlet property="myTasteTypeView" destination="IQy-CL-KAK" id="aBh-S1-mK2"/>
                         <outlet property="myVeganTypeView" destination="fhO-AL-OqI" id="rgy-uP-vKc"/>
                         <outletCollection property="veganButtonOuterViews" destination="PiC-6B-x58" collectionClass="NSMutableArray" id="bID-W1-bd4"/>
@@ -1332,18 +1572,18 @@
                         <outletCollection property="veganTypeButtons" destination="zYw-Js-2wn" collectionClass="NSMutableArray" id="9WG-Hn-kEW"/>
                         <outletCollection property="veganTypeButtons" destination="Oyk-CN-68n" collectionClass="NSMutableArray" id="Mc1-05-QY3"/>
                         <outletCollection property="veganTypeButtons" destination="oQp-e6-8YG" collectionClass="NSMutableArray" id="NCC-nH-RhS"/>
-                        <outletCollection property="tasteOptionButtons" destination="8Db-WE-n8w" collectionClass="NSMutableArray" id="DyD-Ym-XCG"/>
-                        <outletCollection property="tasteOptionButtons" destination="CSj-Rm-g9z" collectionClass="NSMutableArray" id="LXo-6N-gHR"/>
-                        <outletCollection property="tasteOptionButtons" destination="lef-Kr-WZC" collectionClass="NSMutableArray" id="etF-f3-y9h"/>
-                        <outletCollection property="tasteOptionButtons" destination="yvl-hB-yP1" collectionClass="NSMutableArray" id="zCL-hD-yBy"/>
-                        <outletCollection property="tasteOptionButtons" destination="hl5-xf-5KF" collectionClass="NSMutableArray" id="pSQ-tS-D5a"/>
-                        <outletCollection property="tasteOptionButtons" destination="dIK-Qr-Ds3" collectionClass="NSMutableArray" id="hdE-0F-gL6"/>
-                        <outletCollection property="tasteOptionButtons" destination="0Wy-AJ-TmG" collectionClass="NSMutableArray" id="d99-sF-wws"/>
-                        <outletCollection property="tasteOptionButtons" destination="dHK-LV-1WE" collectionClass="NSMutableArray" id="wKz-aF-dFn"/>
-                        <outletCollection property="tasteOptionButtons" destination="WCF-xS-q0v" collectionClass="NSMutableArray" id="FJp-Mw-qh9"/>
-                        <outletCollection property="tasteOptionButtons" destination="X58-bV-aCM" collectionClass="NSMutableArray" id="9tX-p6-BYB"/>
-                        <outletCollection property="tasteOptionButtons" destination="lGb-GE-gxD" collectionClass="NSMutableArray" id="tm3-Cc-2FA"/>
-                        <outletCollection property="tasteOptionButtons" destination="HJk-Tq-kfq" collectionClass="NSMutableArray" id="dcU-c4-95x"/>
+                        <outletCollection property="tasteOptionButtons" destination="HJk-Tq-kfq" collectionClass="NSMutableArray" id="1Q5-fd-XXr"/>
+                        <outletCollection property="tasteOptionButtons" destination="8Db-WE-n8w" collectionClass="NSMutableArray" id="0zY-gG-hPz"/>
+                        <outletCollection property="tasteOptionButtons" destination="CSj-Rm-g9z" collectionClass="NSMutableArray" id="fTA-lN-LeU"/>
+                        <outletCollection property="tasteOptionButtons" destination="lef-Kr-WZC" collectionClass="NSMutableArray" id="t1u-Ii-Ksv"/>
+                        <outletCollection property="tasteOptionButtons" destination="yvl-hB-yP1" collectionClass="NSMutableArray" id="Nv2-uo-nyS"/>
+                        <outletCollection property="tasteOptionButtons" destination="hl5-xf-5KF" collectionClass="NSMutableArray" id="9XI-P4-QzY"/>
+                        <outletCollection property="tasteOptionButtons" destination="dIK-Qr-Ds3" collectionClass="NSMutableArray" id="Bfx-vO-OoK"/>
+                        <outletCollection property="tasteOptionButtons" destination="0Wy-AJ-TmG" collectionClass="NSMutableArray" id="43L-je-eHw"/>
+                        <outletCollection property="tasteOptionButtons" destination="dHK-LV-1WE" collectionClass="NSMutableArray" id="9c7-ba-ShR"/>
+                        <outletCollection property="tasteOptionButtons" destination="WCF-xS-q0v" collectionClass="NSMutableArray" id="Gdv-od-8KY"/>
+                        <outletCollection property="tasteOptionButtons" destination="X58-bV-aCM" collectionClass="NSMutableArray" id="uYk-0B-8cm"/>
+                        <outletCollection property="tasteOptionButtons" destination="lGb-GE-gxD" collectionClass="NSMutableArray" id="4uD-GC-7Ic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igz-xF-ocv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1395,7 +1635,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ghB-kT-Whn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="AppDefaultColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

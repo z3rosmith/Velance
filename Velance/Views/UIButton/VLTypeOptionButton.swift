@@ -18,23 +18,39 @@ class VLTypeOptionButton: UIButton {
         didSet{
             if self.isSelected {
                 self.layer.insertSublayer(self.gradient, at: 0)
+                setTitleColor(.white, for: .normal)
             } else {
                 self.gradient.removeFromSuperlayer()
+                setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
+
             }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        configure()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        configure()
+    }
 
+    
+    func configure() {
+        layer.borderWidth = 0.3
+        layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
+        layer.cornerRadius = frame.height / 2
+        titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.minimumScaleFactor = 0.8
+        titleLabel?.lineBreakMode = .byTruncatingTail
     }
 
 }
