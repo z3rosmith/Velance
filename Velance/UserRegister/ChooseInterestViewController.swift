@@ -16,6 +16,11 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     // 나의 관심사
     @IBOutlet weak var myInterestView: UIView!
     @IBOutlet var interestOptionButtons: [VLGradientButton]!
+
+    // 나의 식품 특이사항
+    @IBOutlet weak var myAllergyView: UIView!
+    @IBOutlet var allergyOptionButtons: [VLGradientButton]!
+    
     
     //MARK: - Constants
     
@@ -37,10 +42,12 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     }
 
 }
-
+#warning("ButtonView 에도 터치 넣기")
 //MARK: - IBActions
 
 extension ChooseInterestViewController {
+    
+    
     
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
         notChooseVeganTypeButton.isSelected = false
@@ -103,7 +110,7 @@ extension ChooseInterestViewController {
         configureNotChooseVeganTypeButton()
         configureTasteOptionButtons()
         configureInterestOptionButtons()
-        
+        configureAllergyOptionButtons()
     }
     
     private func configureLabels() {
@@ -114,7 +121,7 @@ extension ChooseInterestViewController {
     }
     
     private func configureUIViews() {
-        [myVeganTypeView, myTasteTypeView, myInterestView].forEach { view in
+        [myVeganTypeView, myTasteTypeView, myInterestView, myAllergyView].forEach { view in
             view?.backgroundColor = .white
             view?.layer.cornerRadius = Metrics.cornerRadius
         }
@@ -150,6 +157,16 @@ extension ChooseInterestViewController {
         interestOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.interestOptions[index], for: .normal)
+            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
+            index += 1
+        }
+    }
+    
+    private func configureAllergyOptionButtons() {
+        var index: Int = 0
+        allergyOptionButtons.forEach { button in
+            button.tag = index
+            button.setTitle(UserOptions.allergyOptions[index], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
