@@ -47,8 +47,6 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
 
 extension ChooseInterestViewController {
     
-    
-    
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
         notChooseVeganTypeButton.isSelected = false
         notChooseVeganTypeButton.setTitleColor(.darkGray, for: .normal)
@@ -171,7 +169,4 @@ extension ChooseInterestViewController {
             index += 1
         }
     }
-    
-
-    
 }

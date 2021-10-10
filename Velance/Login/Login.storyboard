@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VelanceTextLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-mo-aaw">
+                                <rect key="frame" x="120.5" y="222" width="173" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Me3-FT-kqw"/>
+                                    <constraint firstAttribute="width" constant="173" id="siJ-HD-3Qx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carrot_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-Ge-rNM">
+                                <rect key="frame" x="195" y="194" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gIc-Pm-Tya"/>
+                                    <constraint firstAttribute="width" constant="45" id="r7w-po-pav"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-Vj-FZG">
+                                <rect key="frame" x="79.5" y="339" width="255" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="4BF-R0-sBd"/>
+                                    <constraint firstAttribute="height" constant="50" id="YCM-dF-Bfv"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMs-Cu-e6C">
+                                <rect key="frame" x="79.5" y="413" width="255" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="9fQ-7q-XU1"/>
+                                    <constraint firstAttribute="height" constant="50" id="Mct-yp-hc2"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAS-KD-r5e">
+                                <rect key="frame" x="79.5" y="487" width="255" height="50"/>
+                                <color key="backgroundColor" name="LoginButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AzQ-mY-dO3"/>
+                                    <constraint firstAttribute="width" constant="255" id="bGv-WL-5mh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="pressedLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="w7i-3y-gIG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oF-b9-BJG">
+                                <rect key="frame" x="79.5" y="561" width="255" height="50"/>
+                                <color key="backgroundColor" name="LoginButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WdA-uy-hi3"/>
+                                    <constraint firstAttribute="width" constant="255" id="b2C-P0-56I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="회원가입"/>
+                                <connections>
+                                    <action selector="pressedRegisterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gud-ag-KS3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <constraints>
+                            <constraint firstItem="YAS-KD-r5e" firstAttribute="top" secondItem="VMs-Cu-e6C" secondAttribute="bottom" constant="24" id="4q0-bx-jnN"/>
+                            <constraint firstItem="6wz-Vj-FZG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="793-vk-tGk"/>
+                            <constraint firstItem="VQ1-Ge-rNM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="195" id="9Me-r9-VdW"/>
+                            <constraint firstItem="VMs-Cu-e6C" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ABa-z4-TTH"/>
+                            <constraint firstItem="VQ1-Ge-rNM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="150" id="AJw-Jn-OdC"/>
+                            <constraint firstItem="7oF-b9-BJG" firstAttribute="top" secondItem="YAS-KD-r5e" secondAttribute="bottom" constant="24" id="RqP-gM-Kzd"/>
+                            <constraint firstItem="YAS-KD-r5e" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WY0-Xf-JGC"/>
+                            <constraint firstItem="ggK-mo-aaw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aZE-UC-Tkv"/>
+                            <constraint firstItem="VMs-Cu-e6C" firstAttribute="top" secondItem="6wz-Vj-FZG" secondAttribute="bottom" constant="24" id="fdz-g3-3rI"/>
+                            <constraint firstItem="6wz-Vj-FZG" firstAttribute="top" secondItem="ggK-mo-aaw" secondAttribute="bottom" constant="50" id="iSd-yn-BlS"/>
+                            <constraint firstItem="ggK-mo-aaw" firstAttribute="top" secondItem="VQ1-Ge-rNM" secondAttribute="bottom" constant="-17" id="r1P-LS-mu6"/>
+                            <constraint firstItem="7oF-b9-BJG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xdW-tV-fH6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="idTextField" destination="6wz-Vj-FZG" id="7rV-Dh-qfV"/>
+                        <outlet property="loginButton" destination="YAS-KD-r5e" id="CAH-1r-Swu"/>
+                        <outlet property="passwordTextField" destination="VMs-Cu-e6C" id="I3x-gw-NXF"/>
+                        <outlet property="registerButton" destination="7oF-b9-BJG" id="RN8-mp-0Iu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="VelanceTextLogo" width="167" height="42"/>
+        <image name="carrot_logo" width="47" height="47"/>
+        <namedColor name="AppDefaultColor">
+            <color red="0.45098039215686275" green="0.72156862745098038" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LoginButtonColor">
+            <color red="0.17599999904632568" green="0.46299999952316284" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

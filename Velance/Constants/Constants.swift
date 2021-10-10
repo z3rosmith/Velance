@@ -4,6 +4,7 @@ import UIKit
 struct StoryboardName {
     
     static let main         = "Main"
+    static let login        = "Login"
     static let userRegister = "UserRegister"
 }
 
@@ -37,6 +38,7 @@ struct Colors {
     // Button Colors
     static let ovalButtonGradientLeft       = "OvalButtonGradientLeft"
     static let ovalButtonGradientRight      = "OvalButtonGradientRight"
+    static let loginScreenButtonColor       = "LoginButtonColor"
 }
 
 struct CellID {
