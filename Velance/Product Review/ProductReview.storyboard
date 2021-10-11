@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VxT-m4-0f8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ProductReviewListViewController-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="productReviewListContainerVC" title="ProductReviewListViewController" id="Y6W-OH-hqX" userLabel="ProductReviewListViewController" customClass="ProductReviewListContainerViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-a0-6Am">
+                                <rect key="frame" x="16" y="88" width="382" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwC-Ml-Py0" customClass="SwipeMenuView" customModule="SwipeMenuViewController">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g14-Xi-wgR">
+                                        <rect key="frame" x="157" y="216" width="67" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zwC-Ml-Py0" firstAttribute="top" secondItem="NUm-a0-6Am" secondAttribute="bottom" id="4wQ-FH-6jF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zwC-Ml-Py0" secondAttribute="bottom" id="Bf1-x7-Gcy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zwC-Ml-Py0" secondAttribute="trailing" id="D5F-2L-IXO"/>
+                            <constraint firstItem="NUm-a0-6Am" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Sr4-gT-bgd"/>
+                            <constraint firstAttribute="trailing" secondItem="NUm-a0-6Am" secondAttribute="trailing" constant="16" id="WA4-zi-wGH"/>
+                            <constraint firstItem="NUm-a0-6Am" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="g4G-jG-yro"/>
+                            <constraint firstItem="zwC-Ml-Py0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mLI-a2-d9j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0He-gI-JNh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="NUm-a0-6Am" id="ukJ-y2-rO0"/>
+                        <outlet property="swipeMenuView" destination="zwC-Ml-Py0" id="r98-6P-3bQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="59.598214285714285"/>
+        </scene>
+        <!--Product Review List View Controller-->
+        <scene sceneID="Nqd-fQ-NGE">
+            <objects>
+                <viewController storyboardIdentifier="ProductReviewListViewController" id="CJc-x2-kry" customClass="ProductReviewListViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vIL-sY-oUE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="pAO-Rn-BhH">
+                                <rect key="frame" x="16" y="144" width="290" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdX-zF-Lo3">
+                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
+                                        <state key="normal" title="알러지유발식품 제외" image="square" catalog="system">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" image="checkmark.rectangle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="pressedFilterOption:" destination="CJc-x2-kry" eventType="touchUpInside" id="2wQ-ie-64X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k77-ul-MLd">
+                                        <rect key="frame" x="153.5" y="0.0" width="136.5" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="내 채식유형의 제품만" image="square" catalog="system">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" image="checkmark.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="pressedFilterOption:" destination="CJc-x2-kry" eventType="touchUpInside" id="Igb-Yj-i4X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FLb-fQ-zy1"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7z-WM-Fv1">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="R4s-sA-O6e"/>
+                                    <constraint firstAttribute="height" constant="100" id="zp6-LX-LsV"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="눌러보세요">
+                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedFilterOption:" destination="CJc-x2-kry" eventType="touchUpInside" id="v44-om-C53"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iJy-sr-9c3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pAO-Rn-BhH" firstAttribute="top" secondItem="iJy-sr-9c3" secondAttribute="top" constant="100" id="Ere-zh-Ff6"/>
+                            <constraint firstItem="s7z-WM-Fv1" firstAttribute="centerY" secondItem="vIL-sY-oUE" secondAttribute="centerY" id="LG9-eE-0Ej"/>
+                            <constraint firstItem="s7z-WM-Fv1" firstAttribute="centerX" secondItem="vIL-sY-oUE" secondAttribute="centerX" id="eZZ-zZ-RKf"/>
+                            <constraint firstItem="pAO-Rn-BhH" firstAttribute="leading" secondItem="iJy-sr-9c3" secondAttribute="leading" constant="16" id="jIk-wL-zk6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterAllergyButton" destination="RdX-zF-Lo3" id="RjY-16-tv0"/>
+                        <outlet property="filterVeganTypeButton" destination="k77-ul-MLd" id="fiA-1p-wu6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQC-97-OlA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873.913043478261" y="59.598214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rNu-6r-cMn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VxT-m4-0f8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TP8-fo-wM9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="4yA-Vy-wwU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btK-0Y-RMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <namedColor name="TabBarSelectedColor">
+            <color red="0.29411764705882354" green="0.52156862745098043" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -805,10 +805,10 @@
             </objects>
             <point key="canvasLocation" x="669.56521739130437" y="87.723214285714278"/>
         </scene>
-        <!--Choose Interest View Controller-->
+        <!--Input User Info For Register-->
         <scene sceneID="oK9-99-DOI">
             <objects>
-                <viewController storyboardIdentifier="ChooseInterestViewController" id="Y6l-8h-lQa" customClass="ChooseInterestViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputUserInfoForRegister" id="Y6l-8h-lQa" customClass="InputUserInfoForRegister" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPp-e1-LJ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

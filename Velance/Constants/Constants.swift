@@ -3,9 +3,10 @@ import UIKit
 
 struct StoryboardName {
     
-    static let main         = "Main"
-    static let login        = "Login"
-    static let userRegister = "UserRegister"
+    static let main             = "Main"
+    static let login            = "Login"
+    static let userRegister     = "UserRegister"
+    static let productReview    = "ProductReview"
 }
 
 struct StoryboardID {
@@ -17,8 +18,11 @@ struct StoryboardID {
     // User Register
     static let idPasswordInputVC            = "IdPasswordInputViewController"
     static let chooseTypeVC                 = "ChooseTypeViewController"
-    static let chooseInterestVC             = "ChooseInterestViewController"
+    static let inputUserInfoForRegister     = "InputUserInfoForRegister"
 
+    // Product Review
+    static let productReviewListContainerVC = "ProductReviewListContainerViewController"
+    static let productReviewListVC          = "ProductReviewListViewController"
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"

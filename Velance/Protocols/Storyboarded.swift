@@ -7,7 +7,7 @@ protocol Storyboarded {
 
 extension Storyboarded where Self: UIViewController {
     static var storyboardName: String {
-        "Main"
+        StoryboardName.main
     }
     
     static func instantiate() -> UIViewController {

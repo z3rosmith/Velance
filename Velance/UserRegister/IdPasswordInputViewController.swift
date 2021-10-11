@@ -25,8 +25,22 @@ class IdPasswordInputViewController: UIViewController, Storyboarded {
 extension IdPasswordInputViewController {
     
     @objc func pressedNextStepButton() {
-        let vc = ChooseInterestViewController.instantiate()
+        let vc = InputUserInfoForRegister.instantiate()
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension IdPasswordInputViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
     }
 }
 
@@ -50,6 +64,7 @@ extension IdPasswordInputViewController {
             textField.adjustsFontSizeToFitWidth = true
             textField.minimumFontSize = 12
             textField.layer.masksToBounds = true
+            textField.delegate = self
         }
         
         idTextField.attributedPlaceholder = NSAttributedString(

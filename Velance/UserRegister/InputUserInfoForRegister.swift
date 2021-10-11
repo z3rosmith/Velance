@@ -1,6 +1,6 @@
 import UIKit
 
-class ChooseInterestViewController: UIViewController, Storyboarded {
+class InputUserInfoForRegister: UIViewController, Storyboarded {
     
     // 나의 채식
     @IBOutlet weak var myVeganTypeView: UIView!
@@ -45,7 +45,7 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
 #warning("ButtonView 에도 터치 넣기")
 //MARK: - IBActions
 
-extension ChooseInterestViewController {
+extension InputUserInfoForRegister {
     
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
         notChooseVeganTypeButton.isSelected = false
@@ -98,7 +98,7 @@ extension ChooseInterestViewController {
 
 //MARK: - UI Configuration & Initialization
 
-extension ChooseInterestViewController {
+extension InputUserInfoForRegister {
     
     private func configure() {
         title = "회원가입"
