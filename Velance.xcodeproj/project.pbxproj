@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C51257B271455F4003E572D /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C51257A271455F4003E572D /* Community.storyboard */; };
+		3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51257C2714560C003E572D /* CommunityViewController.swift */; };
 		3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */; };
 		3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */; };
 		3C6B700D26F32550001FD7BB /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700C26F32550001FD7BB /* MealView.xib */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		15D9057233A5C711D0B7188D /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C51257A271455F4003E572D /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
+		3C51257C2714560C003E572D /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalNutrientView.xib; sourceTree = "<group>"; };
 		3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalNutrientView.swift; sourceTree = "<group>"; };
 		3C6B700C26F32550001FD7BB /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3C51257927144FE8003E572D /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				3C51257A271455F4003E572D /* Community.storyboard */,
+				3C51257C2714560C003E572D /* CommunityViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		3C6B700626F31CC6001FD7BB /* NutrientView2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +192,8 @@
 			children = (
 				7CC36A5926EC8A23007573DD /* Main */,
 				7CC36A3D26EC6378007573DD /* UserRegister */,
-				7CC36A3E26EC637D007573DD /* Record */,
+				3C51257927144FE8003E572D /* Community */,
+				7CC36A3E26EC637D007573DD /* Record(Unused) */,
 				7CC36A3F26EC63B8007573DD /* Shopping */,
 				7CC36A3C26EC6366007573DD /* Views */,
 				7CC36A3B26EC6360007573DD /* Network Group */,
@@ -234,7 +248,7 @@
 			path = UserRegister;
 			sourceTree = "<group>";
 		};
-		7CC36A3E26EC637D007573DD /* Record */ = {
+		7CC36A3E26EC637D007573DD /* Record(Unused) */ = {
 			isa = PBXGroup;
 			children = (
 				3C6B700B26F3251A001FD7BB /* MealView */,
@@ -244,7 +258,7 @@
 				7CC36A5526EC7272007573DD /* RecordViewController.swift */,
 				3CAE4FE826EF200F00865767 /* SecondViewController.swift */,
 			);
-			path = Record;
+			path = "Record(Unused)";
 			sourceTree = "<group>";
 		};
 		7CC36A3F26EC63B8007573DD /* Shopping */ = {
@@ -386,6 +400,7 @@
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
+				3C51257B271455F4003E572D /* Community.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +462,7 @@
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
+				3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* ShoppingTableViewCell.swift in Sources */,
 				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
