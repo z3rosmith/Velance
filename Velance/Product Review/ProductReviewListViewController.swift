@@ -1,9 +1,11 @@
 import UIKit
 
-class ProductReviewListViewController: UIViewController, Storyboarded {
+class ProductReviewListViewController: UIViewController, Storyboarded { 
     
     @IBOutlet weak var filterAllergyButton: UIButton!
     @IBOutlet weak var filterVeganTypeButton: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     static var storyboardName: String {
         StoryboardName.productReview
@@ -24,15 +26,24 @@ class ProductReviewListViewController: UIViewController, Storyboarded {
 
 extension ProductReviewListViewController {
     
-    @IBAction func pressedFilterOption(_ sender: UIButton) {
-        print("✏️ pressedFilterOption")
-        sender.isSelected.toggle()
-    }
 
-    @objc func pressedFilter() {
-        print("✏️ pressedFilter")
-        
+}
+
+extension ProductReviewListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+            
+        return cell
+    }
+    
+    
 }
 
 //MARK: - Initialization & UI Configuration
@@ -40,15 +51,21 @@ extension ProductReviewListViewController {
 extension ProductReviewListViewController {
     
     private func configure() {
-        configureFilterButtons()
+      
+        
+        tableView.dataSource = self
+
     }
     
-    private func configureFilterButtons() {
-        [filterAllergyButton, filterVeganTypeButton].forEach { button in
-            button?.addTarget(self, action: #selector(pressedFilter), for: .touchUpInside)
-        }
-        
-    }
+
+    
+//    private func configureFilterButtons() {
+//        [filterAllergyButton, filterVeganTypeButton].forEach { button in
+//            button?.isUserInteractionEnabled = true
+//            button?.addTarget(self, action: #selector(pressedFilter), for: .touchUpInside)
+//        }
+//
+//    }
     
     
 }
