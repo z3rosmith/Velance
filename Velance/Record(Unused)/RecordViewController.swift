@@ -22,6 +22,9 @@ class RecordViewController: UIViewController {
         setupGestureRecognizer()
     }
     
+    deinit {
+        print("RecordViewController deinit")
+    }
 //    @IBAction func tap(_ sender: Any) {
 //        self.bottomViewHeight.constant = 600
 //        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
