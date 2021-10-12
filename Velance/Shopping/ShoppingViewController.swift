@@ -75,8 +75,6 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = selectedIndex == 0 ? configureShoppingTableViewCell(for: indexPath) : configureRecipeTableViewCell(for: indexPath)
         
-        
-        
         return cell
     }
     
