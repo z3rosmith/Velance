@@ -9,9 +9,13 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productRatingLabel: UILabel!
     
+    fileprivate struct Metrics {
+        static let viewCornerRadius: CGFloat = 15
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        configure()
     }
     
     override func prepareForReuse() {
@@ -26,11 +30,18 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     
     private func configure() {
         configureProductContentView()
+        configureProductImageView()
         
     }
     
     private func configureProductContentView() {
-        productContentView.layer.cornerRadius = 15
-        
+        productContentView.layer.cornerRadius = Metrics.viewCornerRadius
+
+    
+    }
+    
+    private func configureProductImageView() {
+        productImageView.layer.cornerRadius = Metrics.viewCornerRadius
+        productImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
 }

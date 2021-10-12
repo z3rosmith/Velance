@@ -5,12 +5,18 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentioView: Segmentio!
+    @IBOutlet weak var similarTasteGuideLabel: UILabel!
     @IBOutlet weak var similarTasteCollectionView: UICollectionView!
     
     private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
-    fileprivate struct Metrics {
-        static let fontSize: CGFloat = 14
+    fileprivate struct Fonts {
+        
+        // Segmentio
+        static let segmentTitleFont = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        
+        // Section Title Labels
+        static let sectionTitleFont = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     
     
@@ -85,8 +91,10 @@ extension ProductReviewListContainerViewController {
         title = "제품 리뷰"
         setClearNavigationBarBackground()
         configureUISearchBar()
-        configureCollectionView()
         configureSegmentioView()
+        configureLabels()
+        configureCollectionView()
+
     }
     
     private func configureUISearchBar() {
@@ -95,32 +103,17 @@ extension ProductReviewListContainerViewController {
         searchBar.backgroundImage = UIImage()
     }
     
-    private func configureCollectionView() {
-        similarTasteCollectionView.delegate = self
-        similarTasteCollectionView.dataSource = self
-        
-        let nibName = UINib(
-            nibName: XIB_ID.productForSimilarTasteCVC,
-            bundle: nil
-        )
-        similarTasteCollectionView.register(
-            nibName,
-            forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
-        )
-    }
-    
-    
     private func configureSegmentioView() {
         
         let segmentioStates = SegmentioStates(
             defaultState: SegmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont.systemFont(ofSize: Metrics.fontSize, weight: .semibold),
+                titleFont: Fonts.segmentTitleFont,
                 titleTextColor: .lightGray
             ),
             selectedState: SegmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont.systemFont(ofSize: Metrics.fontSize, weight: .semibold),
+                titleFont: Fonts.segmentTitleFont,
                 titleTextColor: .black
             ),
             highlightedState: SegmentioState(
@@ -133,16 +126,16 @@ extension ProductReviewListContainerViewController {
         var content = [SegmentioItem]()
         
         let items: [SegmentioItem] = [
-            SegmentioItem(title: "식품", image: UIImage()),
-            SegmentioItem(title: "즉석식품", image: UIImage()),
-            SegmentioItem(title: "빵", image: UIImage()),
-            SegmentioItem(title: "초콜릿", image: UIImage()),
-            SegmentioItem(title: "식품", image: UIImage()),
-            SegmentioItem(title: "식품", image: UIImage()),
-            SegmentioItem(title: "초콜릿", image: UIImage()),
-            SegmentioItem(title: "초콜릿", image: UIImage()),
-            SegmentioItem(title: "초콜릿", image: UIImage()),
-            SegmentioItem(title: "초콜릿", image: UIImage()),
+            SegmentioItem(title: "식품", image: nil),
+            SegmentioItem(title: "즉석식품", image: nil),
+            SegmentioItem(title: "빵", image: nil),
+            SegmentioItem(title: "초콜릿", image: nil),
+            SegmentioItem(title: "식품", image: nil),
+            SegmentioItem(title: "식품", image: nil),
+            SegmentioItem(title: "초콜릿", image: nil),
+            SegmentioItem(title: "초콜릿", image: nil),
+            SegmentioItem(title: "초콜릿", image: nil),
+            SegmentioItem(title: "초콜릿", image: nil),
         ]
         content.append(contentsOf: items)
         
@@ -181,9 +174,30 @@ extension ProductReviewListContainerViewController {
         )
         
         segmentioView.selectedSegmentioIndex = 0
-  
-        
+        segmentioView.clipsToBounds = true
     }
     
+    private func configureLabels() {
 
+        similarTasteGuideLabel.font = Fonts.sectionTitleFont
+        
+    }
+
+    
+    private func configureCollectionView() {
+        similarTasteCollectionView.delegate = self
+        similarTasteCollectionView.dataSource = self
+        
+        let nibName = UINib(
+            nibName: XIB_ID.productForSimilarTasteCVC,
+            bundle: nil
+        )
+        similarTasteCollectionView.register(
+            nibName,
+            forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
+        )
+
+    }
+    
+    
 }

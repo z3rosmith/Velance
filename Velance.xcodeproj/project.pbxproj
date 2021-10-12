@@ -22,6 +22,9 @@
 		7C61456727142BE000D659C5 /* ProductReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
 		7C61456C2715428F00D659C5 /* ProductForSimilarTasteCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */; };
+		7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456E2715675200D659C5 /* PopularProductCVC.swift */; };
+		7C6145712715675200D659C5 /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456F2715675200D659C5 /* PopularProductCVC.xib */; };
+		7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61457327156AE900D659C5 /* RatingStackView.swift */; };
 		7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */; };
 		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
 		7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */; };
@@ -84,6 +87,9 @@
 		7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
 		7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductForSimilarTasteCVC.xib; sourceTree = "<group>"; };
+		7C61456E2715675200D659C5 /* PopularProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductCVC.swift; sourceTree = "<group>"; };
+		7C61456F2715675200D659C5 /* PopularProductCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
+		7C61457327156AE900D659C5 /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -213,8 +219,18 @@
 			children = (
 				7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */,
 				7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */,
+				7C61456E2715675200D659C5 /* PopularProductCVC.swift */,
+				7C61456F2715675200D659C5 /* PopularProductCVC.xib */,
 			);
 			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		7C61457227156AD600D659C5 /* Rating View */ = {
+			isa = PBXGroup;
+			children = (
+				7C61457327156AE900D659C5 /* RatingStackView.swift */,
+			);
+			path = "Rating View";
 			sourceTree = "<group>";
 		};
 		7C8ED252270EA98A00693521 /* Protocols */ = {
@@ -313,6 +329,7 @@
 		7CC36A3C26EC6366007573DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C61457227156AD600D659C5 /* Rating View */,
 				7C97195B27100617003E193D /* UIButton */,
 				7CC36A8E26EE3F1E007573DD /* Custom Alerts */,
 				7CC36A4426EC6427007573DD /* UIViews */,
@@ -493,6 +510,7 @@
 				7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				3C51257B271455F4003E572D /* Community.storyboard in Resources */,
+				7C6145712715675200D659C5 /* PopularProductCVC.xib in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 				7C91FC0627118D09000D237C /* Login.storyboard in Resources */,
 			);
@@ -571,6 +589,7 @@
 				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
@@ -580,6 +599,7 @@
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
 				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
+				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
 				7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularProductCVC" id="gTV-IL-0wX" customClass="PopularProductCVC" customModule="Velance" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yr5-xE-ukR" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udc-ZM-UVL">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Y4Z-CT-l9D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페스토/락토오보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmN-Uq-1BW">
+                                <rect key="frame" x="6" y="168" width="168" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,980원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-g6-6eI">
+                                <rect key="frame" x="6" y="216" width="64.5" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="풀무원 비건템페 비건 소세지 맛있는" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-lx-yrs">
+                                <rect key="frame" x="6" y="126" width="168" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gmN-Uq-1BW" secondAttribute="trailing" constant="6" id="1mg-oT-LVc"/>
+                            <constraint firstItem="pTZ-g6-6eI" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="5nD-kP-pmO"/>
+                            <constraint firstItem="gmN-Uq-1BW" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="Mz4-qX-wpu"/>
+                            <constraint firstItem="gmN-Uq-1BW" firstAttribute="top" secondItem="wF6-lx-yrs" secondAttribute="bottom" constant="6" id="NWB-QX-cax"/>
+                            <constraint firstItem="udc-ZM-UVL" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" id="Reh-M3-ctq"/>
+                            <constraint firstAttribute="trailing" secondItem="udc-ZM-UVL" secondAttribute="trailing" id="TCs-Qc-Q4q"/>
+                            <constraint firstItem="wF6-lx-yrs" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="U8S-qp-qPx"/>
+                            <constraint firstItem="wF6-lx-yrs" firstAttribute="top" secondItem="udc-ZM-UVL" secondAttribute="bottom" constant="6" id="axE-eX-qeg"/>
+                            <constraint firstAttribute="bottom" secondItem="pTZ-g6-6eI" secondAttribute="bottom" constant="6" id="feu-QF-cjd"/>
+                            <constraint firstItem="udc-ZM-UVL" firstAttribute="top" secondItem="Yr5-xE-ukR" secondAttribute="top" id="pcu-dV-Vqc"/>
+                            <constraint firstAttribute="trailing" secondItem="wF6-lx-yrs" secondAttribute="trailing" constant="6" id="vwm-p4-tZZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Yr5-xE-ukR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H9f-J7-7BP"/>
+                <constraint firstAttribute="bottom" secondItem="Yr5-xE-ukR" secondAttribute="bottom" id="Veh-dg-a3h"/>
+                <constraint firstAttribute="trailing" secondItem="Yr5-xE-ukR" secondAttribute="trailing" id="fA1-lb-NHE"/>
+                <constraint firstItem="Yr5-xE-ukR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sks-RN-kZu"/>
+            </constraints>
+            <size key="customSize" width="365" height="147"/>
+            <point key="canvasLocation" x="359.4202898550725" y="124.55357142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

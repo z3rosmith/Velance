@@ -55,12 +55,14 @@ struct CellID {
     
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
+    static let popularProductCVC                = "PopularProductCVC"
 }
 
 struct XIB_ID {
     
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
+    static let popularProductCVC                = "PopularProductCVC"
     
     static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
     static let recipeCollectionViewCell         = "RecipeCollectionViewCell"
@@ -101,7 +103,8 @@ struct Images {
     
     
     // Stars
-    static let singleStar               = "SingleStar"
+    static let starFilled               = "StarFilled"
+    static let starUnfilled             = "StarUnfilled"
 }
 
 struct LayoutConstants {
