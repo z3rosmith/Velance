@@ -19,80 +19,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-o3-Mp9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="742"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="748"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfF-qk-tB4" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="786" width="414" height="110"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pa-cWO" userLabel="Tab View">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pa-cWO" userLabel="Tab View">
-                                        <rect key="frame" x="5" y="5" width="404" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Gh-lXJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Gh-lXJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="70"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-Yp-DMY" userLabel="Spacing View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="70"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Ai-9ay" userLabel="Home Button">
-                                                        <rect key="frame" x="81" y="0.0" width="80.5" height="70"/>
-                                                        <state key="normal" image="home_selected"/>
-                                                        <connections>
-                                                            <action selector="pressedHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T4s-01-Ahc"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbW-BM-qjm" userLabel="Spacing View">
-                                                        <rect key="frame" x="161.5" y="0.0" width="81" height="70"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-bL-xyT" userLabel="Shop Button">
-                                                        <rect key="frame" x="242.5" y="0.0" width="80.5" height="70"/>
-                                                        <state key="normal" image="shopping_selected"/>
-                                                        <connections>
-                                                            <action selector="pressedShoppingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkw-Vu-wec"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-lm-XF7" userLabel="Spacing View">
-                                                        <rect key="frame" x="323" y="0.0" width="81" height="70"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-Yp-DMY" userLabel="Spacing View">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="70"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Ai-9ay" userLabel="Home Button">
+                                                <rect key="frame" x="83" y="0.0" width="82.5" height="70"/>
+                                                <state key="normal" image="home_selected"/>
+                                                <connections>
+                                                    <action selector="pressedHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T4s-01-Ahc"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbW-BM-qjm" userLabel="Spacing View">
+                                                <rect key="frame" x="165.5" y="0.0" width="83" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-bL-xyT" userLabel="Shop Button">
+                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="70"/>
+                                                <state key="normal" image="shopping_selected"/>
+                                                <connections>
+                                                    <action selector="pressedShoppingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkw-Vu-wec"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-lm-XF7" userLabel="Spacing View">
+                                                <rect key="frame" x="331" y="0.0" width="83" height="70"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="2tj-Gh-lXJ" firstAttribute="top" secondItem="Hm3-pa-cWO" secondAttribute="top" id="3IL-Ap-xUw"/>
-                                            <constraint firstAttribute="bottom" secondItem="2tj-Gh-lXJ" secondAttribute="bottom" id="EaI-lB-6di"/>
-                                            <constraint firstAttribute="height" constant="70" id="Frl-e1-ht8"/>
-                                            <constraint firstItem="2tj-Gh-lXJ" firstAttribute="leading" secondItem="Hm3-pa-cWO" secondAttribute="leading" id="WPs-Bh-8Gk"/>
-                                            <constraint firstAttribute="trailing" secondItem="2tj-Gh-lXJ" secondAttribute="trailing" id="sKs-EH-4PF"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="1LJ-3C-xLp"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hm3-pa-cWO" secondAttribute="trailing" constant="5" id="AN8-dK-Itd"/>
-                                    <constraint firstItem="Hm3-pa-cWO" firstAttribute="top" secondItem="DfF-qk-tB4" secondAttribute="top" constant="5" id="HsW-LX-5UM"/>
-                                    <constraint firstItem="Hm3-pa-cWO" firstAttribute="leading" secondItem="DfF-qk-tB4" secondAttribute="leading" constant="5" id="gXw-mb-qUr"/>
+                                    <constraint firstItem="2tj-Gh-lXJ" firstAttribute="top" secondItem="Hm3-pa-cWO" secondAttribute="top" id="3IL-Ap-xUw"/>
+                                    <constraint firstAttribute="bottom" secondItem="2tj-Gh-lXJ" secondAttribute="bottom" id="EaI-lB-6di"/>
+                                    <constraint firstAttribute="height" constant="70" id="Frl-e1-ht8"/>
+                                    <constraint firstItem="2tj-Gh-lXJ" firstAttribute="leading" secondItem="Hm3-pa-cWO" secondAttribute="leading" id="WPs-Bh-8Gk"/>
+                                    <constraint firstAttribute="trailing" secondItem="2tj-Gh-lXJ" secondAttribute="trailing" id="sKs-EH-4PF"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owN-pT-6tv" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <color key="backgroundColor" name="AppBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DfF-qk-tB4" firstAttribute="top" secondItem="4Wc-o3-Mp9" secondAttribute="bottom" id="AuE-3P-s24"/>
+                            <constraint firstItem="Hm3-pa-cWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DSW-wt-gui"/>
                             <constraint firstItem="4Wc-o3-Mp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kn5-uw-zr9"/>
+                            <constraint firstAttribute="bottom" secondItem="owN-pT-6tv" secondAttribute="bottom" id="L3p-EE-9Jq"/>
+                            <constraint firstAttribute="trailing" secondItem="owN-pT-6tv" secondAttribute="trailing" id="SlG-M8-naO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hm3-pa-cWO" secondAttribute="trailing" id="WLz-KL-lzN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wc-o3-Mp9" secondAttribute="trailing" id="Xso-Sx-gjo"/>
+                            <constraint firstItem="owN-pT-6tv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z1Q-1h-9Dk"/>
                             <constraint firstItem="4Wc-o3-Mp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAR-To-9j7"/>
-                            <constraint firstAttribute="bottom" secondItem="DfF-qk-tB4" secondAttribute="bottom" id="dKK-3V-C0R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DfF-qk-tB4" secondAttribute="trailing" id="fuX-Xu-r1v"/>
-                            <constraint firstItem="DfF-qk-tB4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xz2-0I-Xnl"/>
+                            <constraint firstItem="Hm3-pa-cWO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cb9-SH-VLu"/>
+                            <constraint firstItem="Hm3-pa-cWO" firstAttribute="top" secondItem="4Wc-o3-Mp9" secondAttribute="bottom" id="oe6-K6-6Lu"/>
+                            <constraint firstItem="owN-pT-6tv" firstAttribute="top" secondItem="Hm3-pa-cWO" secondAttribute="bottom" id="uwy-Db-dYD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomViewHeight" destination="1LJ-3C-xLp" id="ztU-Pz-LLg"/>
                         <outlet property="containerView" destination="4Wc-o3-Mp9" id="Q5g-nb-3aU"/>
                         <outlet property="homeTabButton" destination="yz7-Ai-9ay" id="fky-bD-E2B"/>
                         <outlet property="shoppingTabButton" destination="XiP-bL-xyT" id="Wip-Xy-rhc"/>
@@ -109,9 +104,6 @@
         <image name="shopping_selected" width="30" height="30"/>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </namedColor>
-        <namedColor name="AppDefaultColor">
-            <color red="0.45098039215686275" green="0.72156862745098038" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -4,28 +4,27 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tabView: UIView!
-    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint! {
-        didSet {
-            LayoutConstants.tabContainerViewHeight = bottomViewHeight.constant
-        }
-    }
+    
     @IBOutlet weak var homeTabButton: UIButton!
     @IBOutlet weak var shoppingTabButton: UIButton!
     
+    private var tabVCs: [UIViewController] = []
+    private var currentTabButton: UIButton?
     private var currentVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        instantiateVCs()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        changeToHomeVC()
+        changeToCommunityVC()
     }
     
     @IBAction func pressedHomeButton(_ sender: UIButton) {
-        changeToHomeVC()
+        changeToCommunityVC()
     }
     
     @IBAction func pressedShoppingButton(_ sender: UIButton) {
@@ -44,6 +43,7 @@ extension MainViewController {
     
     private func configureTabView() {
         tabView.layer.cornerRadius = tabView.frame.height / 2
+        tabView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     private func configureTabButtons() {
@@ -68,33 +68,51 @@ extension MainViewController {
         shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .highlighted)
         shoppingTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         shoppingTabButton.alignTextBelow()
-        
-        homeTabButton.isSelected = true
-        shoppingTabButton.isSelected = false
     }
     
+    private func instantiateVCs() {
+        let navControllerSettings: (UINavigationController) -> Void = { navController in
+            navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            navController.navigationBar.shadowImage = UIImage()
+        }
+        
+        let record = instantiateVC(storyboard: "Record", identifier: StoryboardID.homeVC, settings: navControllerSettings)
+        let shopping = instantiateVC(storyboard: "Shopping", identifier: StoryboardID.shoppingVC, settings: navControllerSettings)
+        
+        tabVCs = [record, shopping]
+    }
+    
+    private func instantiateVC(storyboard: String, identifier: String, settings: (UINavigationController) -> Void) -> UIViewController {
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: identifier)
+        let navController = UINavigationController(rootViewController: vc)
+        settings(navController)
+        addChild(navController)
+        vc.didMove(toParent: self)
+        
+        return navController
+    }
 
-    private func changeToHomeVC() {
-        homeTabButton.isSelected = true
-        shoppingTabButton.isSelected = false
+    private func changeToCommunityVC() {
+        currentTabButton?.isSelected = false
+        currentTabButton = homeTabButton
+        currentTabButton?.isSelected = true
+        
         currentVC?.remove()
-        let storyboard = UIStoryboard(name: "Record", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.homeVC) as? RecordViewController else { return }
+        let vc = tabVCs[0]
         add(vc, frame: containerView.frame)
         currentVC = vc
     }
     
     private func changeToShoppingVC() {
-        shoppingTabButton.isSelected = true
-        homeTabButton.isSelected = false
+        currentTabButton?.isSelected = false
+        currentTabButton = shoppingTabButton
+        currentTabButton?.isSelected = true
+        
         currentVC?.remove()
-        let storyboard = UIStoryboard(name: "Shopping", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: StoryboardID.shoppingVC) as? ShoppingViewController else { return }
-        let navController = UINavigationController(rootViewController: vc)
-        navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navController.navigationBar.shadowImage = UIImage()
-        add(navController, frame: containerView.frame)
+        let vc = tabVCs[1]
+        add(vc, frame: containerView.frame)
         currentVC = vc
     }
 }
