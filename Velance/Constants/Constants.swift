@@ -1,6 +1,14 @@
 import Foundation
 import UIKit
 
+struct StoryboardName {
+    
+    static let main             = "Main"
+    static let login            = "Login"
+    static let userRegister     = "UserRegister"
+    static let productReview    = "ProductReview"
+}
+
 struct StoryboardID {
     
     static let mainVC                       = "MainViewController"
@@ -8,10 +16,13 @@ struct StoryboardID {
     static let shoppingVC                   = "ShoppingViewController"
     
     // User Register
+    static let idPasswordInputVC            = "IdPasswordInputViewController"
     static let chooseTypeVC                 = "ChooseTypeViewController"
-    static let chooseDetailVC               = "ChooseDetailViewController"
-    static let chooseReasonVC               = "ChooseReasonViewController"
-    static let analyzingVC                  = "AnalyzingViewController"
+    static let inputUserInfoForRegister     = "InputUserInfoForRegister"
+
+    // Product Review
+    static let productReviewListContainerVC = "ProductReviewListContainerViewController"
+    static let productReviewListVC          = "ProductReviewListViewController"
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"
@@ -27,7 +38,11 @@ struct Colors {
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"
     static let tabBarUnselectedColor        = "TabBarUnselectedColor"
-
+    
+    // Button Colors
+    static let ovalButtonGradientLeft       = "OvalButtonGradientLeft"
+    static let ovalButtonGradientRight      = "OvalButtonGradientRight"
+    static let loginScreenButtonColor       = "LoginButtonColor"
 }
 
 struct CellID {
@@ -37,9 +52,15 @@ struct CellID {
     
     static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
     static let recipeCollectionViewCell         = "recipeCVC"
+    
+    // Product Review
+    static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
 }
 
 struct XIB_ID {
+    
+    // Product Review
+    static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
     
     static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
     static let recipeCollectionViewCell         = "RecipeCollectionViewCell"
@@ -60,11 +81,11 @@ struct Images {
     static let shopTabBarIcon_unselected       = "shopping_unselected"
     
     // Vegan Types
-    static let vegan            = "vegan"
-    static let ovo              = "ovo"
-    static let lacto            = "lacto"
-    static let lacto_ovo        = "lactoovo"
-    static let pesco            = "pesco"
+    static let vegan                = "vegan"
+    static let ovo                  = "ovo"
+    static let lacto                = "lacto"
+    static let lacto_ovo            = "lactoovo"
+    static let pesco                = "pesco"
     static let veganTypesUnselected = [vegan, ovo, lacto, lacto_ovo, pesco]
     
     static let vegan_selected       = "vegan_selected"
@@ -72,9 +93,18 @@ struct Images {
     static let lacto_selected       = "lacto_selected"
     static let lacto_ovo_selected   = "lactoovo_selected"
     static let pesco_selected       = "pesco_selected"
-    static let veganTypesSelected = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
+    static let veganTypesSelected   = [vegan_selected, ovo_selected, lacto_selected, lacto_ovo_selected, pesco_selected]
+    
+    // Buttons
+    static let circleButtonSelected     = "CircleButtonSelected"
+    static let ovalButtonSelected       = "OvalButtonSelected"
+    
+    
+    // Stars
+    static let singleStar               = "SingleStar"
 }
 
 struct LayoutConstants {
     static var tabContainerViewHeight: CGFloat       = 0.0
 }
+

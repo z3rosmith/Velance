@@ -37,3 +37,32 @@ extension UIViewController {
         }
     }
 }
+
+//MARK: - Navigation Bar Related
+
+extension UIViewController {
+    
+    // Navigation Bar 뒤로가기 버튼 그냥 화살표 설정 또는 타이틀 별도 지정 가능
+    func setNavBarBackButtonItemTitle(to title: String = "") {
+        let backBarButtonItem = UIBarButtonItem(
+            title: title,
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        navigationItem.backBarButtonItem = backBarButtonItem
+    }
+    
+    func setClearNavigationBarBackground() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    func setNavigationBarAppearance(to color: UIColor) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = color
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+    }
+}

@@ -15,5 +15,8 @@ target 'Velance' do
   pod 'SDWebImage', '~> 5.0'
   pod 'lottie-ios'
   pod "youtube-ios-player-helper", "~> 1.0.3"
-
+  pod "BSImagePicker", "~> 3.1"
+  pod 'ImageSlideshow', '~> 1.9.0'
+  pod "ImageSlideshow/SDWebImage"
+  pod 'Segmentio'
 end

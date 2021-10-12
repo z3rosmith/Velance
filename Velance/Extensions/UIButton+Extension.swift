@@ -100,4 +100,36 @@ extension UIButton {
             }
         }
     }
+    
+    func addGradientLayer(with colors: [UIColor]) -> CAGradientLayer {
+        
+        let buttonGradient = CAGradientLayer()
+        buttonGradient.frame = self.bounds
+        buttonGradient.cornerRadius = buttonGradient.frame.height / 2
+        buttonGradient.colors = colors.compactMap { $0.cgColor }
+//        buttonGradient.colors = [UIColor(named: Colors.ovalButtonGradientLeft)!.cgColor, UIColor(named: Colors.ovalButtonGradientRight)!.cgColor]
+        buttonGradient.startPoint = CGPoint(x: 1.0, y: 0.0)
+        buttonGradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        buttonGradient.frame = self.bounds
+        return buttonGradient
+    }
+    
+    func removeGradient(_ view: UIView, layerIndex index: Int) {
+     
+        guard let sublayers = view.layer.sublayers else {
+            print("The view does not have any sublayers.")
+            return
+        }
+        if sublayers.count > index {
+            view.layer.sublayers!.remove(at: index)
+        } else {
+            print("There are not enough sublayers to remove that index.")
+        }
+        
+        
+  
+    }
+
 }
+
+

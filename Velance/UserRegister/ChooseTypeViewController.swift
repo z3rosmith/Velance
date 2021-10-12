@@ -21,13 +21,13 @@ class ChooseTypeViewController: UIViewController {
             return
         }
         
-        UserRegisterValues.shared.veganType = selectedIndex
-        
-        guard let vc = storyboard?.instantiateViewController(
-                identifier: StoryboardID.chooseDetailVC
-        ) as? ChooseDetailViewController else { fatalError() }
-        
-        navigationController?.pushViewController(vc, animated: true)
+//        UserRegisterValues.shared.veganType = selectedIndex
+//
+//        guard let vc = storyboard?.instantiateViewController(
+//                identifier: StoryboardID.chooseDetailVC
+//        ) as? ChooseDetailViewController else { fatalError() }
+//
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func pressedVeganType(_ sender: UIButton) {
