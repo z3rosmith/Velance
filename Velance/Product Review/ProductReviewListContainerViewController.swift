@@ -5,9 +5,10 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentioView: Segmentio!
-    @IBOutlet weak var similarTasteGuideLabel: UILabel!
-    @IBOutlet weak var similarTasteCollectionView: UICollectionView!
-    @IBOutlet weak var popularProductCollectionView: UICollectionView!
+
+    
+    @IBOutlet weak var productCollectionView: UICollectionView!
+    
     
     private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
@@ -30,7 +31,9 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         configure()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
 }
 
@@ -56,66 +59,60 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
     }
-    
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell: UICollectionViewCell
-        
-        switch collectionView {
-        case similarTasteCollectionView:
-            cell = configureSimilarTasteCollectionViewCell(for: indexPath)
-        case popularProductCollectionView:
-            cell = configurePopularProductCollectionViewCell(for: indexPath)
-        default: cell = UICollectionViewCell()
-        }
+
+        let cell = configurePopularProductCollectionViewCell(for: indexPath)
+
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch collectionView {
-        case similarTasteCollectionView:
-            return CGSize(width: 280, height: 140)
-        case popularProductCollectionView:
-            let itemSpacing: CGFloat = 10 // 가로에서 cell과 cell 사이의 거리
-            let width: CGFloat = (collectionView.bounds.width - itemSpacing)/2 // 셀 하나의 너비
-            return CGSize(width: width, height: 240)
-        default: return CGSize(width: 0, height: 0)
-        }
         
+        let itemSpacing: CGFloat = 10 // 가로에서 cell과 cell 사이의 거리
+        let width: CGFloat = (collectionView.bounds.width - itemSpacing)/2 // 셀 하나의 너비
+        return CGSize(width: width, height: 240)
     }
     
 
-    
-    // Custom Configuration
-    func configureSimilarTasteCollectionViewCell(for indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = similarTasteCollectionView.dequeueReusableCell(
-            withReuseIdentifier: CellID.productForSimilarTasteCVC,
-            for: indexPath
-        ) as? ProductForSimilarTasteCVC
-        else { return UICollectionViewCell() }
-        
-        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지"
-        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
-        cell.productPriceLabel.text = "[\(indexPath.row)] 10,000원"
-        cell.productRatingLabel.text = "\(indexPath.row).3"
-        cell.productImageView.image = UIImage(named: "image_test")
-        return cell
-    }
-    
+
     func configurePopularProductCollectionViewCell(for indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = popularProductCollectionView.dequeueReusableCell(
+        guard let cell = productCollectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.popularProductCVC,
             for: indexPath
         ) as? PopularProductCVC
         else { return UICollectionViewCell() }
-        
+
         cell.productTitleLabel.text = "[\(indexPath.row)] 비건 템페가 맛있는 채식 주의 냠냠 비건 좋아"
         cell.productVeganTypeLabel.text = "[\(indexPath.row)] 락토/오보"
         cell.productPriceLabel.text = "23,000원"
         cell.ratingStackView.setStarsRating(rating: 4)
         cell.productImageView.image = UIImage(named: "image_test")
-        
+
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProductCollectionReusableView.reuseId, for: indexPath) as? ProductCollectionReusableView else { fatalError() }
+//            headerView.delegate = self
+            return headerView
+        default:
+            assert(false, "viewForSupplementaryElementOfKind ERROR")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width: CGFloat = collectionView.frame.width
+        let height: CGFloat = 240
+        return CGSize(width: width, height: height)
     }
     
 }
@@ -130,7 +127,6 @@ extension ProductReviewListContainerViewController {
         setClearNavigationBarBackground()
         configureUISearchBar()
         configureSegmentioView()
-        configureLabels()
         configureCollectionView()
 
     }
@@ -140,6 +136,32 @@ extension ProductReviewListContainerViewController {
         searchBar.placeholder = "검색하기"
         searchBar.backgroundImage = UIImage()
     }
+    
+    
+    
+    private func configureCollectionView() {
+        productCollectionView.delegate = self
+        productCollectionView.dataSource = self
+        
+
+        let nibNameSimilarTaste = UINib(
+            nibName: XIB_ID.popularProductCVC,
+            bundle: nil
+        )
+        productCollectionView.register(
+            nibNameSimilarTaste,
+            forCellWithReuseIdentifier: CellID.popularProductCVC
+        )
+        
+        productCollectionView.register(
+            ProductCollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: ProductCollectionReusableView.reuseId
+        )
+ 
+
+    }
+    
     
     private func configureSegmentioView() {
         
@@ -215,39 +237,7 @@ extension ProductReviewListContainerViewController {
         segmentioView.clipsToBounds = true
     }
     
-    private func configureLabels() {
 
-        similarTasteGuideLabel.font = Fonts.sectionTitleFont
-        
-    }
 
-    
-    private func configureCollectionView() {
-        similarTasteCollectionView.delegate = self
-        similarTasteCollectionView.dataSource = self
-        
-        let nibNameSimilarTaste = UINib(
-            nibName: XIB_ID.productForSimilarTasteCVC,
-            bundle: nil
-        )
-        similarTasteCollectionView.register(
-            nibNameSimilarTaste,
-            forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
-        )
-
-        popularProductCollectionView.delegate = self
-        popularProductCollectionView.dataSource = self
-        
-        let nibNamePopularProduct = UINib(
-            nibName: XIB_ID.popularProductCVC,
-            bundle: nil
-        )
-        popularProductCollectionView.register(
-            nibNamePopularProduct,
-            forCellWithReuseIdentifier: CellID.popularProductCVC
-        )
-        
-    }
-    
     
 }

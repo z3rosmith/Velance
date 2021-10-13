@@ -47,8 +47,8 @@ struct Colors {
 
 struct CellID {
     
-    static let shoppingTableViewCell            = "shoppingTVC"
-    static let recipeTableViewCell              = "recipeTVC"
+    static let similarTasteTableViewCell            = "similarTasteTVC"
+    static let popularProductTableViewCell          = "popularProductTVC"
     
     static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
     static let recipeCollectionViewCell         = "recipeCVC"
