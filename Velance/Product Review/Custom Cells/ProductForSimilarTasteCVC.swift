@@ -15,16 +15,17 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("✏️ awakeFromNib ")
         configure()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        productImageView.image = nil
-        productTitleLabel.text = nil
-        productVeganTypeLabel.text = nil
-        productPriceLabel.text = nil
-        productRatingLabel.text = nil
+//        productImageView.image = nil
+//        productTitleLabel.text = nil
+//        productVeganTypeLabel.text = nil
+//        productPriceLabel.text = nil
+//        productRatingLabel.text = nil
     }
 
     
@@ -36,8 +37,6 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     
     private func configureProductContentView() {
         productContentView.layer.cornerRadius = Metrics.viewCornerRadius
-
-    
     }
     
     private func configureProductImageView() {

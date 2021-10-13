@@ -42,7 +42,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="x93-mN-Yl7" userLabel="Rating Stack View">
                                 <rect key="frame" x="232" y="111" width="42" height="15"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SingleStar" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-KC-DAF">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarFilled" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-KC-DAF">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="Vbh-eN-I9R"/>
@@ -103,7 +103,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="SingleStar" width="16.5" height="15"/>
+        <image name="StarFilled" width="16.5" height="15"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

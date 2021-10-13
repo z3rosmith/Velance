@@ -69,46 +69,35 @@
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y5M-7G-ocq">
                                     <size key="itemSize" width="147" height="196"/>
-                                    <size key="headerReferenceSize" width="50" height="211"/>
+                                    <size key="headerReferenceSize" width="50" height="240"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="recipeCVC" id="VZ4-Rl-V8v" customClass="PopularProductCVC" customModule="Velance" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="211" width="147" height="196"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qNw-tI-oNR">
-                                            <rect key="frame" x="0.0" y="0.0" width="147" height="196"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" name="AppBackgroundColor"/>
-                                        <size key="customSize" width="147" height="196"/>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AQJ-fI-aR5" customClass="ProductCollectionReusableView" customModule="Velance" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ProductCollectionReusableView" id="90N-AY-JcT" customClass="ProductCollectionReusableView" customModule="Velance" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신과 입맛이 비슷한 사용자의 추천!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T71-Iu-624">
-                                            <rect key="frame" x="24" y="24" width="366" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신과 입맛이 비슷한 사용자의 추천!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-iQ-1hq">
+                                            <rect key="frame" x="14" y="14" width="386" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nnE-i3-KgT" userLabel="Similar Product Collection View">
-                                            <rect key="frame" x="8" y="60.5" width="382" height="126.5"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FYy-uS-QCd">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-V3-cum" userLabel="Similar Product Collection View">
+                                            <rect key="frame" x="16" y="40.5" width="398" height="175.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBQ-4T-gIm">
                                                 <size key="itemSize" width="128" height="128"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="unC-JA-2Fg" customClass="ProductForSimilarTasteCVC" customModule="Velance" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="-1" width="128" height="128"/>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductForSimilarTasteCVC" id="Iyk-8P-xNf" customClass="ProductForSimilarTasteCVC" customModule="Velance" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="24" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DXw-9S-3v1">
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="by2-Vm-gcF">
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionViewCellContentView>
@@ -117,17 +106,17 @@
                                         </collectionView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nnE-i3-KgT" firstAttribute="top" secondItem="T71-Iu-624" secondAttribute="bottom" constant="16" id="1LV-Mf-aGI"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="T71-Iu-624" secondAttribute="trailing" constant="16" id="3Rk-4M-Dgd"/>
-                                        <constraint firstItem="nnE-i3-KgT" firstAttribute="leading" secondItem="AQJ-fI-aR5" secondAttribute="leadingMargin" id="ZJv-Yu-vUv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="nnE-i3-KgT" secondAttribute="bottom" constant="16" id="bRg-zc-A5T"/>
-                                        <constraint firstItem="T71-Iu-624" firstAttribute="leading" secondItem="AQJ-fI-aR5" secondAttribute="leadingMargin" constant="16" id="jLh-cW-zav"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="nnE-i3-KgT" secondAttribute="trailing" constant="16" id="kGf-Xp-7sQ"/>
-                                        <constraint firstItem="T71-Iu-624" firstAttribute="top" secondItem="AQJ-fI-aR5" secondAttribute="topMargin" constant="16" id="oxf-cP-FIi"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZkL-V3-cum" secondAttribute="trailing" id="JIC-Io-7KO"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZkL-V3-cum" secondAttribute="bottom" constant="24" id="KMh-FB-N8f"/>
+                                        <constraint firstItem="ZkL-V3-cum" firstAttribute="top" secondItem="gzd-iQ-1hq" secondAttribute="bottom" constant="6" id="TgP-1q-syb"/>
+                                        <constraint firstItem="gzd-iQ-1hq" firstAttribute="top" secondItem="90N-AY-JcT" secondAttribute="topMargin" constant="6" id="XL3-X2-6zK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gzd-iQ-1hq" secondAttribute="trailing" constant="6" id="XPV-b9-v6E"/>
+                                        <constraint firstItem="gzd-iQ-1hq" firstAttribute="leading" secondItem="90N-AY-JcT" secondAttribute="leadingMargin" constant="6" id="p56-Kn-swV"/>
+                                        <constraint firstItem="ZkL-V3-cum" firstAttribute="leading" secondItem="90N-AY-JcT" secondAttribute="leading" constant="16" id="x6B-3l-lEf"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="categoryLabel" destination="T71-Iu-624" id="kKa-JJ-2ER"/>
-                                        <outlet property="similarProductCollectionView" destination="nnE-i3-KgT" id="8C7-8X-Hk0"/>
+                                        <outlet property="categoryLabel" destination="gzd-iQ-1hq" id="lvO-Ga-42Y"/>
+                                        <outlet property="similarProductCollectionView" destination="ZkL-V3-cum" id="6O8-xv-LLI"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
@@ -169,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k3q-gr-TII" userLabel="SimilarTasteCollectionView" customClass="I">
-                                <rect key="frame" x="-55" y="231" width="374" height="195.5"/>
+                                <rect key="frame" x="40" y="44" width="374" height="195.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KWW-WT-sQg">
@@ -192,7 +181,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="peO-eS-0bx" userLabel="PopularProductCollectionView">
-                                <rect key="frame" x="5" y="513" width="374" height="195.5"/>
+                                <rect key="frame" x="20" y="247" width="374" height="195.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SXt-qS-8F5">
@@ -221,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNi-gO-ceJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="26"/>
+            <point key="canvasLocation" x="1880" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rNu-6r-cMn">

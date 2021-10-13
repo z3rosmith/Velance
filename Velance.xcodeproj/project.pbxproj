@@ -17,14 +17,14 @@
 		3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD5012526F22E9B009B450F /* BasicNutrientView.xib */; };
 		3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5012726F22FA8009B450F /* BasicNutrientView.swift */; };
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
-		7C0367842716794A0031DBBE /* ProductCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0367832716794A0031DBBE /* ProductCollectionReusableView.swift */; };
+		7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */; };
+		7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */; };
 		7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456227141FFB00D659C5 /* ProductReview.storyboard */; };
 		7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */; };
 		7C61456727142BE000D659C5 /* ProductReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
 		7C61456C2715428F00D659C5 /* ProductForSimilarTasteCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */; };
 		7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456E2715675200D659C5 /* PopularProductCVC.swift */; };
-		7C6145712715675200D659C5 /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456F2715675200D659C5 /* PopularProductCVC.xib */; };
 		7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61457327156AE900D659C5 /* RatingStackView.swift */; };
 		7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */; };
 		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
@@ -83,14 +83,14 @@
 		3CD5012526F22E9B009B450F /* BasicNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicNutrientView.xib; sourceTree = "<group>"; };
 		3CD5012726F22FA8009B450F /* BasicNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNutrientView.swift; sourceTree = "<group>"; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
-		7C0367832716794A0031DBBE /* ProductCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionReusableView.swift; sourceTree = "<group>"; };
+		7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionReusableView.swift; sourceTree = "<group>"; };
+		7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
 		7C61456227141FFB00D659C5 /* ProductReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductReview.storyboard; sourceTree = "<group>"; };
 		7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListContainerViewController.swift; sourceTree = "<group>"; };
 		7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
 		7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductForSimilarTasteCVC.xib; sourceTree = "<group>"; };
 		7C61456E2715675200D659C5 /* PopularProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductCVC.swift; sourceTree = "<group>"; };
-		7C61456F2715675200D659C5 /* PopularProductCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
 		7C61457327156AE900D659C5 /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -221,9 +221,9 @@
 			children = (
 				7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */,
 				7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */,
+				7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */,
 				7C61456E2715675200D659C5 /* PopularProductCVC.swift */,
-				7C61456F2715675200D659C5 /* PopularProductCVC.xib */,
-				7C0367832716794A0031DBBE /* ProductCollectionReusableView.swift */,
+				7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				3C51257B271455F4003E572D /* Community.storyboard in Resources */,
-				7C6145712715675200D659C5 /* PopularProductCVC.xib in Resources */,
+				7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 				7C91FC0627118D09000D237C /* Login.storyboard in Resources */,
 			);
@@ -593,7 +593,7 @@
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
-				7C0367842716794A0031DBBE /* ProductCollectionReusableView.swift in Sources */,
+				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,

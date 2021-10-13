@@ -13,7 +13,6 @@ class PopularProductCVC: UICollectionViewCell {
         static let viewCornerRadius: CGFloat = 15
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()

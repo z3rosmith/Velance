@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 
 class ProductCollectionReusableView: UICollectionReusableView {
     
@@ -12,20 +11,17 @@ class ProductCollectionReusableView: UICollectionReusableView {
         static let collectionViewHeight: CGFloat = 150
         static let sectionInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
     }
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        print("✏️ override init")
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        print("✏️ required init for ProductCollectionReusableView")
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        configure()
-    }
+
     
     func configure() {
         configureLabel()
@@ -42,10 +38,20 @@ class ProductCollectionReusableView: UICollectionReusableView {
     func configureCollectionView() {
         similarProductCollectionView.dataSource = self
         similarProductCollectionView.delegate = self
+        
+        
+        let xibName = UINib(
+            nibName: XIB_ID.productForSimilarTasteCVC,
+            bundle: nil
+        )
+        
         similarProductCollectionView.register(
-            ProductForSimilarTasteCVC.self,
+            xibName,
             forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
         )
+        
+        
+
     }
     
 }
@@ -64,16 +70,15 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
             for: indexPath
         ) as? ProductForSimilarTasteCVC
         else { return UICollectionViewCell() }
-
+        
         cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지"
         cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
         cell.productPriceLabel.text = "[\(indexPath.row)] 10,000원"
         cell.productRatingLabel.text = "\(indexPath.row).3"
         cell.productImageView.image = UIImage(named: "image_test")
+        
         return cell
     }
-    
-    
 }
 
 //MARK: - UICollectionViewDelegate
@@ -87,6 +92,6 @@ extension ProductCollectionReusableView: UICollectionViewDelegate {
 extension ProductCollectionReusableView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 280, height: 140)
+        return CGSize(width: 270, height: 140)
     }
 }

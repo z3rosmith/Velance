@@ -5,8 +5,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentioView: Segmentio!
-
-    
     @IBOutlet weak var productCollectionView: UICollectionView!
     
     
@@ -64,24 +62,8 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         return 1
     }
 
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = configurePopularProductCollectionViewCell(for: indexPath)
-
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let itemSpacing: CGFloat = 10 // 가로에서 cell과 cell 사이의 거리
-        let width: CGFloat = (collectionView.bounds.width - itemSpacing)/2 // 셀 하나의 너비
-        return CGSize(width: width, height: 240)
-    }
-    
-
-
-    func configurePopularProductCollectionViewCell(for indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = productCollectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.popularProductCVC,
             for: indexPath
@@ -96,16 +78,31 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
 
         return cell
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let itemSpacing: CGFloat = 10
+        let width: CGFloat = (collectionView.bounds.width - itemSpacing) / 2
+        return CGSize(width: width, height: 240)
+    }
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProductCollectionReusableView.reuseId, for: indexPath) as? ProductCollectionReusableView else { fatalError() }
-//            headerView.delegate = self
-            return headerView
-        default:
-            assert(false, "viewForSupplementaryElementOfKind ERROR")
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "\(ProductCollectionReusableView.self)",
+                for: indexPath
+            )
+            
+            guard let productHeaderView = headerView as? ProductCollectionReusableView
+            else { return headerView }
+            
+            productHeaderView.configure()
+            return productHeaderView
+        default: assert(false, "viewForSupplementaryElementOfKind ERROR")
         }
     }
     
@@ -142,26 +139,17 @@ extension ProductReviewListContainerViewController {
     private func configureCollectionView() {
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
+       
         
-
-        let nibNameSimilarTaste = UINib(
+        let popularProductNibName = UINib(
             nibName: XIB_ID.popularProductCVC,
             bundle: nil
         )
         productCollectionView.register(
-            nibNameSimilarTaste,
+            popularProductNibName,
             forCellWithReuseIdentifier: CellID.popularProductCVC
         )
-        
-        productCollectionView.register(
-            ProductCollectionReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: ProductCollectionReusableView.reuseId
-        )
- 
-
     }
-    
     
     private func configureSegmentioView() {
         
