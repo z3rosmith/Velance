@@ -4,6 +4,7 @@ class ProductCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var similarProductCollectionView: UICollectionView!
+    @IBOutlet weak var popularProductLabel: UILabel!
     
     static let reuseId: String = "ProductCollectionReusableView"
 
@@ -21,34 +22,6 @@ class ProductCollectionReusableView: UICollectionReusableView {
         super.init(coder: coder)
         print("✏️ required init for ProductCollectionReusableView")
     }
-
-    
-    func configure() {
-        configureLabel()
-        configureCollectionView()
-    }
-    
-    func configureLabel() {
-        categoryLabel.text = "당신과 입맛이 비슷한 사용자의 추천!"
-        categoryLabel.textColor = .black
-        categoryLabel.textAlignment = .left
-        categoryLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    }
-    
-    func configureCollectionView() {
-        similarProductCollectionView.dataSource = self
-        similarProductCollectionView.delegate = self
-        
-        let xibName = UINib(
-            nibName: XIB_ID.productForSimilarTasteCVC,
-            bundle: nil
-        )
-        similarProductCollectionView.register(
-            xibName,
-            forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
-        )
-    }
-    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -90,4 +63,38 @@ extension ProductCollectionReusableView: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 280, height: 120)
     }
 
+}
+
+//MARK: - Initialization & UI Configuration
+
+extension ProductCollectionReusableView {
+    
+    func configure() {
+        configureLabel()
+        configureCollectionView()
+    }
+    
+    func configureLabel() {
+        categoryLabel.text = "당신과 입맛이 비슷한 사용자의 추천!"
+        popularProductLabel.text = "인기있는 제품"
+        [categoryLabel, popularProductLabel].forEach { label in
+            label?.textColor = .black
+            label?.textAlignment = .left
+            label?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        }
+    }
+    
+    func configureCollectionView() {
+        similarProductCollectionView.dataSource = self
+        similarProductCollectionView.delegate = self
+        
+        let xibName = UINib(
+            nibName: XIB_ID.productForSimilarTasteCVC,
+            bundle: nil
+        )
+        similarProductCollectionView.register(
+            xibName,
+            forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
+        )
+    }
 }

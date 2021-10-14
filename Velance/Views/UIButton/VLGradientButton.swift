@@ -38,16 +38,14 @@ class VLGradientButton: UIButton {
         super.layoutSubviews()
         configure()
     }
-
     
-    func configure() {
+    private func configure() {
         layer.borderWidth = 0.3
         layer.cornerRadius = frame.height / 2
         titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.1
         titleLabel?.lineBreakMode = .byTruncatingTail
-        
     }
 
 }

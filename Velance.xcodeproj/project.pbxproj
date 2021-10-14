@@ -21,7 +21,6 @@
 		7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */; };
 		7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456227141FFB00D659C5 /* ProductReview.storyboard */; };
 		7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */; };
-		7C61456727142BE000D659C5 /* ProductReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
 		7C61456C2715428F00D659C5 /* ProductForSimilarTasteCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */; };
 		7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456E2715675200D659C5 /* PopularProductCVC.swift */; };
@@ -39,6 +38,8 @@
 		7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED253270EA9A100693521 /* Storyboarded.swift */; };
 		7C91FC0627118D09000D237C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C91FC0527118D09000D237C /* Login.storyboard */; };
 		7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91FC0727118D21000D237C /* LoginViewController.swift */; };
+		7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4C2717F19300295A3F /* VLFloatingButton.swift */; };
+		7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */; };
 		7C97195A270F3028003E193D /* TestableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C971959270F3028003E193D /* TestableVC.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
@@ -87,7 +88,6 @@
 		7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
 		7C61456227141FFB00D659C5 /* ProductReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductReview.storyboard; sourceTree = "<group>"; };
 		7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListContainerViewController.swift; sourceTree = "<group>"; };
-		7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
 		7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductForSimilarTasteCVC.xib; sourceTree = "<group>"; };
 		7C61456E2715675200D659C5 /* PopularProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductCVC.swift; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		7C8ED253270EA9A100693521 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7C91FC0527118D09000D237C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7C91FC0727118D21000D237C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7C922A4C2717F19300295A3F /* VLFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFloatingButton.swift; sourceTree = "<group>"; };
+		7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
 		7C971959270F3028003E193D /* TestableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableVC.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
@@ -208,10 +210,8 @@
 		7C61456127141FD500D659C5 /* Product Review */ = {
 			isa = PBXGroup;
 			children = (
+				7C922A4B2717EFAD00295A3F /* View Controller */,
 				7C6145682715420B00D659C5 /* Custom Cells */,
-				7C61456227141FFB00D659C5 /* ProductReview.storyboard */,
-				7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */,
-				7C61456627142BE000D659C5 /* ProductReviewListViewController.swift */,
 			);
 			path = "Product Review";
 			sourceTree = "<group>";
@@ -219,8 +219,8 @@
 		7C6145682715420B00D659C5 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */,
 				7C61456A2715428F00D659C5 /* ProductForSimilarTasteCVC.xib */,
+				7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */,
 				7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */,
 				7C61456E2715675200D659C5 /* PopularProductCVC.swift */,
 				7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */,
@@ -253,10 +253,21 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		7C922A4B2717EFAD00295A3F /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C61456227141FFB00D659C5 /* ProductReview.storyboard */,
+				7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */,
+				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		7C97195B27100617003E193D /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
 				7C97195C27100635003E193D /* VLGradientButton.swift */,
+				7C922A4C2717F19300295A3F /* VLFloatingButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -577,13 +588,13 @@
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
-				7C61456727142BE000D659C5 /* ProductReviewListViewController.swift in Sources */,
 				7CF529722710513600499709 /* String+Extension.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* SimilarTasteProductTableViewCell.swift in Sources */,
 				7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */,
+				7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */,
 				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
@@ -592,6 +603,7 @@
 				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,

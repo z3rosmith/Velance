@@ -3,10 +3,13 @@ import Segmentio
 
 class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+
+    
+    @IBOutlet weak var searchBarView: UIView!
+    
     @IBOutlet weak var segmentioView: Segmentio!
     @IBOutlet weak var productCollectionView: UICollectionView!
-    
+    @IBOutlet weak var addButton: VLFloatingButton!
     
     private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
@@ -19,7 +22,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         static let sectionTitleFont = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     
-    
     static var storyboardName: String {
         StoryboardName.productReview
     }
@@ -27,10 +29,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
 
 }
@@ -44,11 +42,6 @@ extension ProductReviewListContainerViewController {
     }
 }
 
-//MARK: - UISearchBarDelegate
-
-extension ProductReviewListContainerViewController: UISearchBarDelegate {
-    
-}
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
@@ -57,14 +50,10 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
     }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let cell = productCollectionView.dequeueReusableCell(
+        guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.popularProductCVC,
             for: indexPath
         ) as? PopularProductCVC
@@ -123,15 +112,26 @@ extension ProductReviewListContainerViewController {
     private func configure() {
         title = "제품 리뷰"
         setClearNavigationBarBackground()
-        configureUISearchBar()
+        configureSearchBarView()
         configureCollectionView()
         configureSegmentioView()
     }
     
-    private func configureUISearchBar() {
-        searchBar.delegate = self
-        searchBar.placeholder = "검색하기"
-        searchBar.backgroundImage = UIImage()
+    private func configureSearchBarView() {
+        searchBarView.layer.cornerRadius = searchBarView.frame.height / 2
+        searchBarView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressedSearchBarView)
+        )
+        searchBarView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func pressedSearchBarView() {
+        navigationController?.pushViewController(
+            SearchProductViewController.instantiate(),
+            animated: false
+        )
     }
 
     
