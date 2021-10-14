@@ -21,11 +21,11 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        productImageView.image = nil
-//        productTitleLabel.text = nil
-//        productVeganTypeLabel.text = nil
-//        productPriceLabel.text = nil
-//        productRatingLabel.text = nil
+        productImageView.image = nil
+        productTitleLabel.text = nil
+        productVeganTypeLabel.text = nil
+        productPriceLabel.text = nil
+        productRatingLabel.text = nil
     }
 
     

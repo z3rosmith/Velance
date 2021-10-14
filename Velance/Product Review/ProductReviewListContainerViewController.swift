@@ -61,7 +61,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = productCollectionView.dequeueReusableCell(
@@ -80,8 +80,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let itemSpacing: CGFloat = 10
+        let itemSpacing: CGFloat = 50
         let width: CGFloat = (collectionView.bounds.width - itemSpacing) / 2
         return CGSize(width: width, height: 240)
     }
@@ -102,16 +101,18 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
             
             productHeaderView.configure()
             return productHeaderView
-        default: assert(false, "viewForSupplementaryElementOfKind ERROR")
+        default: return UICollectionReusableView()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let width: CGFloat = collectionView.frame.width
-        let height: CGFloat = 240
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: 210)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
+    }
 }
 
 
@@ -123,9 +124,8 @@ extension ProductReviewListContainerViewController {
         title = "제품 리뷰"
         setClearNavigationBarBackground()
         configureUISearchBar()
-        configureSegmentioView()
         configureCollectionView()
-
+        configureSegmentioView()
     }
     
     private func configureUISearchBar() {
@@ -133,14 +133,12 @@ extension ProductReviewListContainerViewController {
         searchBar.placeholder = "검색하기"
         searchBar.backgroundImage = UIImage()
     }
-    
-    
+
     
     private func configureCollectionView() {
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
        
-        
         let popularProductNibName = UINib(
             nibName: XIB_ID.popularProductCVC,
             bundle: nil

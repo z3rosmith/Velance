@@ -32,26 +32,21 @@ class ProductCollectionReusableView: UICollectionReusableView {
         categoryLabel.text = "당신과 입맛이 비슷한 사용자의 추천!"
         categoryLabel.textColor = .black
         categoryLabel.textAlignment = .left
-        categoryLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        categoryLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
     
     func configureCollectionView() {
         similarProductCollectionView.dataSource = self
         similarProductCollectionView.delegate = self
         
-        
         let xibName = UINib(
             nibName: XIB_ID.productForSimilarTasteCVC,
             bundle: nil
         )
-        
         similarProductCollectionView.register(
             xibName,
             forCellWithReuseIdentifier: CellID.productForSimilarTasteCVC
         )
-        
-        
-
     }
     
 }
@@ -71,9 +66,9 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         ) as? ProductForSimilarTasteCVC
         else { return UICollectionViewCell() }
         
-        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지"
+        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지가 참 맛나 이건 정말 비건비건"
         cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
-        cell.productPriceLabel.text = "[\(indexPath.row)] 10,000원"
+        cell.productPriceLabel.text = "10,000원"
         cell.productRatingLabel.text = "\(indexPath.row).3"
         cell.productImageView.image = UIImage(named: "image_test")
         
@@ -92,6 +87,7 @@ extension ProductCollectionReusableView: UICollectionViewDelegate {
 extension ProductCollectionReusableView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 270, height: 140)
+        return CGSize(width: 280, height: 120)
     }
+
 }
