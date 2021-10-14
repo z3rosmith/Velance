@@ -257,7 +257,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5Q-70-QJi" userLabel="Button View">
                                         <rect key="frame" x="42" y="296" width="330" height="58"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-TP-8cQ" userLabel="Register Button Image">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-TP-8cQ" userLabel="Done Button Image">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="58"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIG-rR-8Tx" userLabel="Done Button">
@@ -306,6 +306,7 @@
                         <outlet property="chooseOptionContainerView" destination="rx8-uM-Wfy" id="IOJ-oL-4D9"/>
                         <outlet property="containerView" destination="iXz-qD-pwp" id="02x-KK-lFF"/>
                         <outlet property="doneButton" destination="JIG-rR-8Tx" id="A1V-1b-7hN"/>
+                        <outlet property="doneButtonImageView" destination="MHH-TP-8cQ" id="1cY-Sf-EOb"/>
                         <outletCollection property="interestOptionButtons" destination="SJy-bm-9dC" collectionClass="NSMutableArray" id="PoT-kR-HBZ"/>
                         <outletCollection property="interestOptionButtons" destination="pg6-aT-Zha" collectionClass="NSMutableArray" id="xmo-mW-H2x"/>
                         <outletCollection property="interestOptionButtons" destination="Bgv-bE-Sbt" collectionClass="NSMutableArray" id="H9D-hb-sBk"/>

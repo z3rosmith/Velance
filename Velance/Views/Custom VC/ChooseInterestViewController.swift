@@ -1,12 +1,20 @@
 import UIKit
 
+protocol ChooseInterestDelegate: AnyObject {
+    func didSelectInterestOptions()
+}
+
 class ChooseInterestViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var chooseOptionContainerView: UIView!
     @IBOutlet var interestOptionButtons: [VLGradientButton]!
     
+    // 선택 완료 버튼
+    @IBOutlet weak var doneButtonImageView: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
+    
+    weak var delegate: ChooseInterestDelegate?
     
     static var storyboardName: String {
         StoryboardName.chooseInterest
@@ -34,6 +42,7 @@ extension ChooseInterestViewController {
     }
     
     @objc private func pressedDoneButton() {
+        delegate?.didSelectInterestOptions()
         dismiss(animated: true)
     }
 }
@@ -73,6 +82,13 @@ extension ChooseInterestViewController {
     
 
     private func configureDoneButton() {
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressedDoneButton)
+        )
+        doneButtonImageView.addGestureRecognizer(tapGesture)
+        
         doneButton.addTarget(
             self,
             action: #selector(pressedDoneButton),
