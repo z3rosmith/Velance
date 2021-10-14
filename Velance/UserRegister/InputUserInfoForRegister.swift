@@ -83,7 +83,7 @@ extension InputUserInfoForRegister {
         }
     }
     
-    @IBAction func pressedTasteOptionButton(_ sender: UIButton) {
+    @IBAction func pressedOptionButton(_ sender: UIButton) {
         
         switch sender.isSelected {
         case true:

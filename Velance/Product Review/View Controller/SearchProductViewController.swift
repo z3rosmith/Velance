@@ -12,10 +12,9 @@ class SearchProductViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        
     }
     
-
-
 }
 
 //MARK: - UISearchBarDelegate
@@ -75,6 +74,7 @@ extension SearchProductViewController {
     private func configureSearchBar() {
         searchBar.delegate = self
         searchBar.backgroundImage = UIImage()
+        searchBar.placeholder = "검색하기"
     }
     
     private func configureCollectionView() {

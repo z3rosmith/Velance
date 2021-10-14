@@ -13,7 +13,7 @@ class VLGradientButton: UIButton {
         buttonGradient.frame = self.bounds
         return buttonGradient
     }()
-    
+
     override var isSelected: Bool{
         didSet{
             if self.isSelected {

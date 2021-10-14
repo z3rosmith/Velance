@@ -1119,11 +1119,11 @@
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-jv-3A6">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-jv-3A6">
                                                                 <rect key="frame" x="16" y="105.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-Tq-kfq" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1134,7 +1134,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-WE-n8w" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="86" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1145,7 +1145,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-Rm-g9z" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="172" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1156,7 +1156,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-Kr-WZC" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="258" y="0.0" width="92" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1171,11 +1171,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="OAC-vY-yri"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cNF-IX-HUi">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cNF-IX-HUi">
                                                                 <rect key="frame" x="16" y="148.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvl-hB-yP1" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1186,7 +1186,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-xf-5KF" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="86" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1197,7 +1197,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-Qr-Ds3" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="172" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1208,7 +1208,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-AJ-TmG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="258" y="0.0" width="92" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1223,11 +1223,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="XWy-Gf-Ji9"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qtj-nq-Mwv">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qtj-nq-Mwv">
                                                                 <rect key="frame" x="16" y="191.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-LV-1WE" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1238,7 +1238,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-xS-q0v" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="86" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1249,7 +1249,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-bV-aCM" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="172" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1260,7 +1260,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-GE-gxD" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="258" y="0.0" width="92" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1322,11 +1322,11 @@
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-93-CUI">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-93-CUI">
                                                                 <rect key="frame" x="16" y="105.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-r1-UTP" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1337,7 +1337,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-Uc-zqx" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="69.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1348,7 +1348,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n15-Gm-lq3" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="139" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1359,7 +1359,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-jS-GOj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="208.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1370,7 +1370,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-N3-7Xj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="278" y="0.0" width="72" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1385,11 +1385,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="y2B-lC-GAQ"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-pA-v4t">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-pA-v4t">
                                                                 <rect key="frame" x="16" y="148.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-4B-JZc" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1400,7 +1400,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-QQ-eHV" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="69.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1411,7 +1411,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-sL-fek" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="139" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1422,7 +1422,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-Ny-DQy" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="208.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1433,7 +1433,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-SK-ApU" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="278" y="0.0" width="72" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1448,11 +1448,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="ydI-E3-HeU"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hMH-ER-kne">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hMH-ER-kne">
                                                                 <rect key="frame" x="16" y="191.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG2-nK-Ryn" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1463,7 +1463,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-g0-XZH" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="69.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1474,7 +1474,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4p-cW-3Av" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="139" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1485,7 +1485,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-44-CyY" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="208.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1496,7 +1496,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-fD-4d7" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="278" y="0.0" width="72" height="35"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1582,11 +1582,11 @@
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-I0-LY3">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-I0-LY3">
                                                                 <rect key="frame" x="16" y="105.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-wW-eg6" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1597,7 +1597,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-te-aXQ" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="69.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1608,7 +1608,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvb-jH-egH" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="139" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1619,7 +1619,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-be-QQb" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="208.5" y="0.0" width="64.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1630,7 +1630,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-6o-QzS" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="278" y="0.0" width="72" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1645,11 +1645,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="8kK-el-XaW"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1K8-GN-k5f">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1K8-GN-k5f">
                                                                 <rect key="frame" x="16" y="148.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHw-vj-mOb" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1660,7 +1660,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-T0-dVN" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="86" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1671,7 +1671,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-S6-Nul" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="172" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1682,7 +1682,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z37-5R-ir0" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="258" y="0.0" width="92" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1697,11 +1697,11 @@
                                                                     <constraint firstAttribute="height" constant="35" id="24Y-b6-Lon"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-NK-hav">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-NK-hav">
                                                                 <rect key="frame" x="16" y="191.5" width="350" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBY-fY-Uhe" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1712,7 +1712,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02u-T1-ca1" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="89" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="86" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1723,7 +1723,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5H9-VT-wzM" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="177.5" y="0.0" width="84" height="35"/>
+                                                                        <rect key="frame" x="172" y="0.0" width="81" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
@@ -1734,7 +1734,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI8-3g-qe8" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="266.5" y="0.0" width="83.5" height="35"/>
+                                                                        <rect key="frame" x="258" y="0.0" width="92" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">

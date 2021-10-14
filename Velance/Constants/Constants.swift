@@ -7,6 +7,9 @@ struct StoryboardName {
     static let login            = "Login"
     static let userRegister     = "UserRegister"
     static let productReview    = "ProductReview"
+    
+    // Custom
+    static let chooseInterest   = "ChooseInterest"
 }
 
 struct StoryboardID {
@@ -26,6 +29,9 @@ struct StoryboardID {
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"
+    
+    // Custom
+    static let chooseInterestVC             = "ChooseInterestViewController"
 }
 
 struct Colors {

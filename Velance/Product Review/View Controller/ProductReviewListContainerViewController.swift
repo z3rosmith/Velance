@@ -3,10 +3,7 @@ import Segmentio
 
 class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
-
-    
     @IBOutlet weak var searchBarView: UIView!
-    
     @IBOutlet weak var segmentioView: Segmentio!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var addButton: VLFloatingButton!
@@ -14,7 +11,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
     fileprivate struct Fonts {
-        
         // Segmentio
         static let segmentTitleFont = UIFont.systemFont(ofSize: 14, weight: .semibold)
         
@@ -33,13 +29,33 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
 
 }
 
-//MARK: - IBActions
+//MARK: - IBActions & Target Methods
 
 extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
     }
+    
+    @objc private func pressedSearchBarView() {
+        navigationController?.pushViewController(
+            SearchProductViewController.instantiate(),
+            animated: true
+        )
+    }
+    
+    @objc private func pressedAddButton() {
+        #warning("아래 수정 필요")
+        
+        let storyboard = UIStoryboard(name: StoryboardName.chooseInterest, bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardID.chooseInterestVC) as? ChooseInterestViewController else { return }
+         
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
+    }
+
 }
 
 
@@ -111,10 +127,13 @@ extension ProductReviewListContainerViewController {
     
     private func configure() {
         title = "제품 리뷰"
+        setNavBarBackButtonItemTitle()
         setClearNavigationBarBackground()
         configureSearchBarView()
         configureCollectionView()
         configureSegmentioView()
+        configureAddButton()
+        
     }
     
     private func configureSearchBarView() {
@@ -127,12 +146,6 @@ extension ProductReviewListContainerViewController {
         searchBarView.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func pressedSearchBarView() {
-        navigationController?.pushViewController(
-            SearchProductViewController.instantiate(),
-            animated: false
-        )
-    }
 
     
     private func configureCollectionView() {
@@ -224,6 +237,13 @@ extension ProductReviewListContainerViewController {
     }
     
 
+    private func configureAddButton() {
+        addButton.addTarget(
+            self,
+            action: #selector(pressedAddButton),
+            for: .touchUpInside
+        )
+    }
 
     
 }
