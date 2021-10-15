@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Nmh-pg-kcF"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-TZ-qsh" userLabel="PopularProductCollectionView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-TZ-qsh" userLabel="PopularProductCollectionView">
                                 <rect key="frame" x="0.0" y="228" width="414" height="668"/>
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jgE-NY-Niq"/>
@@ -128,7 +128,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-V3-cum" userLabel="Similar Product Collection View">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-V3-cum" userLabel="Similar Product Collection View">
                                             <rect key="frame" x="6" y="46.5" width="408" height="93"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBQ-4T-gIm">
