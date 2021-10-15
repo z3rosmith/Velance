@@ -19,4 +19,6 @@ target 'Velance' do
   pod 'ImageSlideshow', '~> 1.9.0'
   pod "ImageSlideshow/SDWebImage"
   pod 'Segmentio'
+  pod 'TextFieldEffects'
+  
 end

@@ -354,6 +354,54 @@
             </objects>
             <point key="canvasLocation" x="1851" y="60"/>
         </scene>
+        <!--Upload New Product View Controller-->
+        <scene sceneID="F0e-dK-3cw">
+            <objects>
+                <viewController storyboardIdentifier="UploadNewProductViewController" id="cxK-Nw-1zt" customClass="UploadNewProductViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IS5-3E-Vfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 썸네일로 사용할 사진 1개를 골라주세요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGm-df-8D8">
+                                <rect key="frame" x="16" y="70" width="334" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAH-UO-SgP">
+                                <rect key="frame" x="16" y="109" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="UhC-92-EKu"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xsd-3d-QLy"/>
+                                </constraints>
+                                <color key="tintColor" name="AppDefaultColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-4o-ZuB">
+                                <rect key="frame" x="91" y="119" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="GpD-Jf-Di2"/>
+                                    <constraint firstAttribute="width" constant="80" id="ZyE-jB-0Ag"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nj5-E2-6WY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QGm-df-8D8" firstAttribute="top" secondItem="nj5-E2-6WY" secondAttribute="top" constant="26" id="98r-9j-h5z"/>
+                            <constraint firstItem="aRw-4o-ZuB" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="26" id="JdC-dl-S9n"/>
+                            <constraint firstItem="KAH-UO-SgP" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="16" id="M8f-X6-RiH"/>
+                            <constraint firstItem="aRw-4o-ZuB" firstAttribute="leading" secondItem="KAH-UO-SgP" secondAttribute="trailing" constant="25" id="cHY-f6-DkL"/>
+                            <constraint firstItem="KAH-UO-SgP" firstAttribute="leading" secondItem="nj5-E2-6WY" secondAttribute="leading" constant="16" id="ihl-ll-kB1"/>
+                            <constraint firstItem="QGm-df-8D8" firstAttribute="leading" secondItem="nj5-E2-6WY" secondAttribute="leading" constant="16" id="sBe-oL-NpO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zra-qx-Xl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.5797101449275" y="732.58928571428567"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rNu-6r-cMn">
             <objects>
@@ -381,6 +429,9 @@
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="AppDefaultColor">
+            <color red="0.45098039215686275" green="0.72156862745098038" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

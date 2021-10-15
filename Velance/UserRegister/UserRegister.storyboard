@@ -1131,7 +1131,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vb8-eF-sXP"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="xQb-MZ-5yc"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-WE-n8w" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1143,7 +1142,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pJC-C1-hpX"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vXO-hs-2NW"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-Rm-g9z" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1155,7 +1153,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="joF-Ov-vzM"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="qSw-ve-tmR"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-Kr-WZC" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1167,7 +1164,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Jo0-r6-Qnw"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="227-Kz-nga"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1186,8 +1182,7 @@
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="C2c-wh-Lgf"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="obV-pr-g5u"/>
+                                                                            <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="h10-pG-7Mt"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-xf-5KF" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1199,7 +1194,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="5Bh-OH-CTJ"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="foz-ny-hC0"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-Qr-Ds3" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1211,7 +1205,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pZJ-bc-kK2"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="KrC-cV-3aG"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-AJ-TmG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1223,7 +1216,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vKV-of-n0h"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="oXG-l4-Ja4"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1243,7 +1235,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Zue-2F-Bnl"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="RTW-rX-3bq"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-xS-q0v" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1255,7 +1246,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Ksb-JZ-faO"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="0uk-hy-NCJ"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X58-bV-aCM" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1267,7 +1257,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="tSa-sp-wLd"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="2gt-Nr-JIH"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-GE-gxD" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1279,7 +1268,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="p9U-IW-yLb"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vlv-71-xtg"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1346,7 +1334,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vJI-bT-Ax5"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Jch-mN-bGN"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-Uc-zqx" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1358,7 +1345,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="DTX-7w-Ejd"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="L9l-qW-8bk"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n15-Gm-lq3" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1370,7 +1356,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="CZ5-7u-beE"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="ISw-7q-LfW"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-jS-GOj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1382,7 +1367,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="y76-LC-2dv"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="msg-Xh-4cF"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-N3-7Xj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1394,7 +1378,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Ghx-7b-0bg"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="PVC-a2-eRc"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1414,7 +1397,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="JjZ-v1-Wb7"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="a0a-RK-nkR"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqb-QQ-eHV" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1426,7 +1408,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="aXf-Rp-inz"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="GSw-LK-m5v"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-sL-fek" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1438,7 +1419,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="GkX-ht-Myr"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Gum-CD-JzL"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-Ny-DQy" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1450,7 +1430,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="azX-bq-ITK"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="BbP-X4-qXM"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-SK-ApU" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1462,7 +1441,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="9Xc-1K-NU6"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pCD-QM-8B6"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1482,7 +1460,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="JgZ-9N-nkU"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pJV-O4-u2E"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-g0-XZH" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1494,7 +1471,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="828-xI-7Bp"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="FHM-FO-n7j"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4p-cW-3Av" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1506,7 +1482,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vei-8k-aoA"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Ln5-16-k8L"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-44-CyY" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1518,7 +1493,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="anI-hc-fHh"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Dum-jC-KeV"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-fD-4d7" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1531,7 +1505,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pew-GQ-D3C"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="5oi-ae-Uaa"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1621,7 +1594,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="yH9-g0-Iwv"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="JbB-Lo-g4c"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-te-aXQ" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1633,7 +1605,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="naH-Pf-GdQ"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="pZ0-jp-auK"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvb-jH-egH" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1645,7 +1616,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="B50-Ls-uWL"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="xFX-Ix-Mbm"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-be-QQb" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1657,7 +1627,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="4UC-RJ-5uf"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="6X8-cq-dth"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-6o-QzS" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1669,7 +1638,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Wnr-4s-mk5"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="fxs-Q8-Fmk"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1689,7 +1657,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="CHU-Zs-t4R"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="5P1-uj-usV"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-T0-dVN" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1701,7 +1668,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="tdd-Nh-vGm"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="lz7-lY-RN6"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-S6-Nul" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1713,7 +1679,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="vZm-FD-2R9"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="JvM-8L-IId"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z37-5R-ir0" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1725,7 +1690,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="L8u-g7-Gae"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="s3m-Bj-FeF"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1745,7 +1709,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="MKi-UF-dvH"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="GKs-Iv-x1Y"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02u-T1-ca1" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1757,7 +1720,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="gbB-Rj-cfU"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="ZPG-tV-eK7"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5H9-VT-wzM" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1769,7 +1731,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="L2N-e0-gbX"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="XP2-VD-J4G"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI8-3g-qe8" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
@@ -1781,7 +1742,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="pressedOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="xpG-hD-7BW"/>
-                                                                            <action selector="pressedTasteOptionButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Yw7-aR-w53"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
