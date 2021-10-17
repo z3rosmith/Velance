@@ -19,4 +19,5 @@ target 'Velance' do
   pod 'ImageSlideshow', '~> 1.9.0'
   pod "ImageSlideshow/SDWebImage"
   pod 'Segmentio'
+  pod 'Parchment', '~> 3.0'
 end
