@@ -27,6 +27,7 @@ struct StoryboardID {
     static let productReviewListContainerVC = "ProductReviewListContainerViewController"
     static let productReviewListVC          = "ProductReviewListViewController"
     static let uploadNewProductVC           = "UploadNewProductViewController"
+    static let productReviewVC              = "ProductReviewViewController"
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"
@@ -63,6 +64,7 @@ struct CellID {
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
     static let popularProductCVC                = "PopularProductCVC"
+    static let productReviewTVC                = "ProductReviewTVC"
 }
 
 struct XIB_ID {
@@ -70,6 +72,7 @@ struct XIB_ID {
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
     static let popularProductCVC                = "PopularProductCVC"
+    static let productReviewTVC                 = "ProductReviewTableViewCell"
     
     static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
     static let recipeCollectionViewCell         = "RecipeCollectionViewCell"

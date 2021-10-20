@@ -47,13 +47,16 @@ extension ProductReviewListContainerViewController {
     @objc private func pressedAddButton() {
         #warning("아래 수정 필요")
         
-        let storyboard = UIStoryboard(name: StoryboardName.chooseInterest, bundle: nil)
+        let vc = UploadNewProductViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
         
-        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardID.chooseInterestVC) as? ChooseInterestViewController else { return }
-         
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true)
+//        let storyboard = UIStoryboard(name: StoryboardName.chooseInterest, bundle: nil)
+//
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardID.chooseInterestVC) as? ChooseInterestViewController else { return }
+//
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        present(vc, animated: true)
     }
 
 }
@@ -82,6 +85,11 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         cell.productImageView.image = UIImage(named: "image_test")
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        navigationController?.pushViewController(ProductReviewViewController.instantiate(), animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -1,6 +1,10 @@
 import UIKit
+import TextFieldEffects
 
 class UploadNewProductViewController: UIViewController, Storyboarded {
+    
+    
+    
     
     
 
@@ -15,4 +19,23 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     
 
 
+}
+
+//MARK: - IBActions & Target Methods
+
+extension UploadNewProductViewController {
+    
+    
+}
+
+
+
+//MARK: - Initialization & UI Configuration
+
+extension UploadNewProductViewController {
+    
+    private func configure() {
+        title = "새 제품 등록"
+        
+    }
 }
