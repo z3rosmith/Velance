@@ -433,93 +433,57 @@
                                         <rect key="frame" x="0.0" y="24" width="414" height="896"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 썸네일로 사용할 사진 1개를 골라주세요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGm-df-8D8">
-                                                <rect key="frame" x="16" y="25" width="333.5" height="23"/>
+                                                <rect key="frame" x="16" y="12" width="333.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채식 유형 선택" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYi-fj-Nyl">
-                                                <rect key="frame" x="16" y="273" width="108" height="23"/>
+                                                <rect key="frame" x="16" y="303" width="108" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 카테고리 선택" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyw-7j-CHx">
-                                                <rect key="frame" x="16" y="422" width="140.5" height="23"/>
+                                                <rect key="frame" x="16" y="452" width="140.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAH-UO-SgP">
-                                                <rect key="frame" x="16" y="68" width="50" height="50"/>
+                                                <rect key="frame" x="16" y="55" width="80" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="UhC-92-EKu"/>
-                                                    <constraint firstAttribute="height" constant="50" id="Xsd-3d-QLy"/>
+                                                    <constraint firstAttribute="width" constant="80" id="UhC-92-EKu"/>
+                                                    <constraint firstAttribute="height" constant="80" id="Xsd-3d-QLy"/>
                                                 </constraints>
                                                 <color key="tintColor" name="AppDefaultColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="plus" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pressedAddImageButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="HMw-qW-Mwi"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-4o-ZuB">
-                                                <rect key="frame" x="82" y="64" width="80" height="80"/>
+                                                <rect key="frame" x="112" y="55" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="GpD-Jf-Di2"/>
                                                     <constraint firstAttribute="width" constant="80" id="ZyE-jB-0Ag"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제품명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Egg-20-WoY" customClass="HoshiTextField" customModule="Velance" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="169" width="200" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="moP-Py-ynD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" name="AppDefaultColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="대략적인 가격 (원) / 구매가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWv-6M-Y7q" customClass="HoshiTextField" customModule="Velance" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="223" width="200" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="teS-48-vmd"/>
-                                                    <constraint firstAttribute="width" constant="200" id="y5X-xJ-IH8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" name="AppDefaultColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 채식 유형이 해당 식품을 먹을 수 있나요? (다중 선택 가능)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="579-a6-ul5">
-                                                <rect key="frame" x="16" y="304" width="345.5" height="17"/>
+                                                <rect key="frame" x="16" y="334" width="382" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1개만 선택 가능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0A-uJ-25S">
-                                                <rect key="frame" x="16" y="453" width="87" height="17"/>
+                                                <rect key="frame" x="16" y="483" width="87" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-N9-8or" userLabel="Choose Vegan Type View">
-                                                <rect key="frame" x="16" y="337" width="382" height="59"/>
+                                                <rect key="frame" x="16" y="367" width="382" height="59"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oGL-dP-0MW">
                                                         <rect key="frame" x="12" y="12" width="358" height="35"/>
@@ -534,6 +498,9 @@
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedVeganTypeButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="zSO-fU-sAf"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJv-2a-1SR" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="71" y="0.0" width="66" height="35"/>
@@ -542,6 +509,9 @@
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedVeganTypeButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="T3g-DY-O3A"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-lh-hMB" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="142" y="0.0" width="66" height="35"/>
@@ -550,6 +520,9 @@
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedVeganTypeButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="5kd-Xl-Ya1"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vab-8x-VN1" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="213" y="0.0" width="66" height="35"/>
@@ -558,6 +531,9 @@
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedVeganTypeButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="erP-9r-WQl"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-B6-7Cz" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                                         <rect key="frame" x="284" y="0.0" width="74" height="35"/>
@@ -566,6 +542,9 @@
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedVeganTypeButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="Tgq-Pi-HJ4"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -584,7 +563,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yz6-vV-jX2" userLabel="Choose Category View">
-                                                <rect key="frame" x="16" y="486" width="382" height="102"/>
+                                                <rect key="frame" x="16" y="516" width="382" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fom-QA-jPX">
                                                         <rect key="frame" x="12" y="12" width="358" height="78"/>
@@ -593,44 +572,37 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee1-Wg-gqi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="yTo-Dy-IGx"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx8-ca-23C" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="116.5" y="0.0" width="111.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="zoM-Yg-jTB"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFS-Iu-ikY" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="233" y="0.0" width="125" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
-                                                                    </button>
-                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXF-CX-eOy" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
-                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한">
-                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-fU-2DT" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="74" height="35"/>
-                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한">
-                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
-                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="Hcc-hh-BpF"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -641,44 +613,48 @@
                                                                 <rect key="frame" x="0.0" y="43" width="358" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-5d-vjt" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="9Ut-qc-Gne"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-gM-VUT" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="71" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="88" y="0.0" width="83" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="WiH-GL-OFH"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-LL-qHj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="142" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="176" y="0.0" width="82.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="1nE-p9-B1f"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-Zd-iyz" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="213" y="0.0" width="66" height="35"/>
+                                                                        <rect key="frame" x="263.5" y="0.0" width="94.5" height="35"/>
                                                                         <color key="tintColor" name="TabBarSelectedColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="짭잘한">
                                                                             <color key="titleColor" name="TabBarSelectedColor"/>
                                                                         </state>
-                                                                    </button>
-                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-KI-BNj" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                        <rect key="frame" x="284" y="0.0" width="74" height="35"/>
-                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="짭잘한">
-                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
-                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedProductCategoryButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="uWH-4L-AeL"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -697,56 +673,98 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM9-ru-gFv" userLabel="Done Button View">
-                                                <rect key="frame" x="24" y="604" width="366" height="58"/>
+                                                <rect key="frame" x="24" y="643" width="366" height="58"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="euU-Te-bYc" userLabel="Register Button Image">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2N-mL-Knr" userLabel="Register Button">
-                                                        <rect key="frame" x="167" y="12" width="32" height="34"/>
+                                                        <rect key="frame" x="10" y="12" width="346" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="완료"/>
+                                                        <connections>
+                                                            <action selector="pressedDoneButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="2ca-OY-rzJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="1SA-W6-NM7"/>
-                                                    <constraint firstItem="p2N-mL-Knr" firstAttribute="centerY" secondItem="OM9-ru-gFv" secondAttribute="centerY" id="4V0-E9-K03"/>
                                                     <constraint firstAttribute="trailing" secondItem="euU-Te-bYc" secondAttribute="trailing" id="7Z7-ef-BlN"/>
+                                                    <constraint firstItem="p2N-mL-Knr" firstAttribute="centerY" secondItem="OM9-ru-gFv" secondAttribute="centerY" id="9m4-cd-nUW"/>
+                                                    <constraint firstItem="p2N-mL-Knr" firstAttribute="leading" secondItem="OM9-ru-gFv" secondAttribute="leading" constant="10" id="H1i-Et-l5Y"/>
+                                                    <constraint firstItem="p2N-mL-Knr" firstAttribute="centerX" secondItem="OM9-ru-gFv" secondAttribute="centerX" id="Pca-Qf-exs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="p2N-mL-Knr" secondAttribute="trailing" constant="10" id="Xl1-8R-qoW"/>
                                                     <constraint firstItem="euU-Te-bYc" firstAttribute="top" secondItem="OM9-ru-gFv" secondAttribute="top" id="YCx-bm-772"/>
                                                     <constraint firstAttribute="bottom" secondItem="euU-Te-bYc" secondAttribute="bottom" id="Z1d-JZ-UOc"/>
-                                                    <constraint firstItem="p2N-mL-Knr" firstAttribute="centerX" secondItem="OM9-ru-gFv" secondAttribute="centerX" id="Z2h-fh-BEW"/>
                                                     <constraint firstItem="euU-Te-bYc" firstAttribute="leading" secondItem="OM9-ru-gFv" secondAttribute="leading" id="z5N-pL-pR9"/>
                                                 </constraints>
                                             </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제품명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAN-YS-Gvh" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                <rect key="frame" x="20" y="151" width="300" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Zvh-aA-fMD"/>
+                                                    <constraint firstAttribute="width" constant="300" id="yMJ-RN-Yvh"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" name="AppDefaultColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="대략적인 가격 (원)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHx-35-LIr" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                <rect key="frame" x="20" y="227" width="200" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="7Gw-33-Vzf"/>
+                                                    <constraint firstAttribute="height" constant="60" id="LIT-YM-pjg"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" name="AppDefaultColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="sYi-fj-Nyl" firstAttribute="top" secondItem="ZWv-6M-Y7q" secondAttribute="bottom" constant="16" id="0c0-gY-MBL"/>
                                             <constraint firstItem="y0A-uJ-25S" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="2he-Ew-MaK"/>
                                             <constraint firstItem="OM9-ru-gFv" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="24" id="4M7-W4-pYj"/>
-                                            <constraint firstItem="Egg-20-WoY" firstAttribute="top" secondItem="aRw-4o-ZuB" secondAttribute="bottom" constant="25" id="4kA-fq-jNl"/>
                                             <constraint firstAttribute="trailing" secondItem="65h-N9-8or" secondAttribute="trailing" constant="16" id="5Az-XW-czc"/>
                                             <constraint firstItem="65h-N9-8or" firstAttribute="top" secondItem="579-a6-ul5" secondAttribute="bottom" constant="16" id="5jE-EL-Pse"/>
                                             <constraint firstItem="579-a6-ul5" firstAttribute="top" secondItem="sYi-fj-Nyl" secondAttribute="bottom" constant="8" id="6BN-Fa-pr2"/>
+                                            <constraint firstAttribute="trailing" secondItem="579-a6-ul5" secondAttribute="trailing" constant="16" id="8qq-iA-1Ku"/>
+                                            <constraint firstItem="pHx-35-LIr" firstAttribute="top" secondItem="hAN-YS-Gvh" secondAttribute="bottom" constant="16" id="DA9-lx-vKh"/>
                                             <constraint firstItem="65h-N9-8or" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="Dez-qs-WbC"/>
-                                            <constraint firstItem="Egg-20-WoY" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="KRe-v8-fZI"/>
+                                            <constraint firstItem="OM9-ru-gFv" firstAttribute="top" secondItem="Yz6-vV-jX2" secondAttribute="bottom" constant="25" id="Iuz-QX-JoC"/>
                                             <constraint firstAttribute="trailing" secondItem="OM9-ru-gFv" secondAttribute="trailing" constant="24" id="LEX-0P-izr"/>
                                             <constraint firstItem="vyw-7j-CHx" firstAttribute="top" secondItem="65h-N9-8or" secondAttribute="bottom" constant="26" id="LUd-vt-MqX"/>
-                                            <constraint firstItem="QGm-df-8D8" firstAttribute="top" secondItem="UhX-Iy-qfj" secondAttribute="top" constant="25" id="OHF-yz-QSE"/>
-                                            <constraint firstItem="aRw-4o-ZuB" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="16" id="Q3H-fX-uk0"/>
+                                            <constraint firstItem="QGm-df-8D8" firstAttribute="top" secondItem="UhX-Iy-qfj" secondAttribute="top" constant="12" id="OHF-yz-QSE"/>
+                                            <constraint firstItem="aRw-4o-ZuB" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="20" id="Q3H-fX-uk0"/>
+                                            <constraint firstItem="sYi-fj-Nyl" firstAttribute="top" secondItem="pHx-35-LIr" secondAttribute="bottom" constant="16" id="TJb-IJ-Nbd"/>
                                             <constraint firstItem="y0A-uJ-25S" firstAttribute="top" secondItem="vyw-7j-CHx" secondAttribute="bottom" constant="8" id="WbP-Lj-j5T"/>
+                                            <constraint firstItem="pHx-35-LIr" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="20" id="Wbc-g6-ikb"/>
                                             <constraint firstItem="KAH-UO-SgP" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="20" id="XIW-fa-YiF"/>
                                             <constraint firstItem="KAH-UO-SgP" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="bIx-eZ-ZUA"/>
                                             <constraint firstItem="QGm-df-8D8" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="ccN-Jh-ZXb"/>
-                                            <constraint firstItem="ZWv-6M-Y7q" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="dL1-SK-7u3"/>
                                             <constraint firstItem="Yz6-vV-jX2" firstAttribute="top" secondItem="y0A-uJ-25S" secondAttribute="bottom" constant="16" id="dmo-Ji-FsS"/>
                                             <constraint firstItem="sYi-fj-Nyl" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="fjl-iE-wf0"/>
-                                            <constraint firstItem="ZWv-6M-Y7q" firstAttribute="top" secondItem="Egg-20-WoY" secondAttribute="bottom" constant="20" id="giO-MH-Sxz"/>
                                             <constraint firstItem="vyw-7j-CHx" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="gqV-hK-90E"/>
-                                            <constraint firstItem="OM9-ru-gFv" firstAttribute="top" secondItem="Yz6-vV-jX2" secondAttribute="bottom" constant="16" id="sXZ-rr-XHJ"/>
+                                            <constraint firstItem="hAN-YS-Gvh" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="20" id="iYT-iG-dxH"/>
+                                            <constraint firstItem="hAN-YS-Gvh" firstAttribute="top" secondItem="KAH-UO-SgP" secondAttribute="bottom" constant="16" id="jpd-5A-Zlq"/>
                                             <constraint firstItem="Yz6-vV-jX2" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="vBB-Qf-rm9"/>
                                             <constraint firstItem="579-a6-ul5" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="vn1-hR-TTb"/>
                                             <constraint firstItem="aRw-4o-ZuB" firstAttribute="leading" secondItem="KAH-UO-SgP" secondAttribute="trailing" constant="16" id="wpA-Lg-OQF"/>
@@ -776,6 +794,27 @@
                             <constraint firstAttribute="bottom" secondItem="MjB-Gs-R57" secondAttribute="bottom" id="nuB-rg-t3h"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addImageButton" destination="KAH-UO-SgP" id="PpE-1P-KQT"/>
+                        <outlet property="chooseProductCategoryView" destination="Yz6-vV-jX2" id="aS6-72-wNS"/>
+                        <outlet property="chooseVeganTypeView" destination="65h-N9-8or" id="NLf-ih-jYH"/>
+                        <outlet property="doneButton" destination="p2N-mL-Knr" id="gEN-jB-6R6"/>
+                        <outlet property="productImageView" destination="aRw-4o-ZuB" id="y7k-G2-ojU"/>
+                        <outlet property="productNameTextField" destination="hAN-YS-Gvh" id="Eya-KE-QW6"/>
+                        <outlet property="productPriceTextField" destination="pHx-35-LIr" id="EG6-w3-f2k"/>
+                        <outletCollection property="veganTypeButtons" destination="f2R-FD-UvH" collectionClass="NSMutableArray" id="HhF-YW-usy"/>
+                        <outletCollection property="veganTypeButtons" destination="pJv-2a-1SR" collectionClass="NSMutableArray" id="ruu-VN-wd1"/>
+                        <outletCollection property="veganTypeButtons" destination="sxg-lh-hMB" collectionClass="NSMutableArray" id="cwb-yZ-Gjj"/>
+                        <outletCollection property="veganTypeButtons" destination="Vab-8x-VN1" collectionClass="NSMutableArray" id="Jsz-Ty-r87"/>
+                        <outletCollection property="veganTypeButtons" destination="lTb-B6-7Cz" collectionClass="NSMutableArray" id="zRS-1J-Ync"/>
+                        <outletCollection property="productCategoryButtons" destination="Ee1-Wg-gqi" collectionClass="NSMutableArray" id="NJw-bF-dnn"/>
+                        <outletCollection property="productCategoryButtons" destination="Wx8-ca-23C" collectionClass="NSMutableArray" id="QIF-JN-tye"/>
+                        <outletCollection property="productCategoryButtons" destination="tFS-Iu-ikY" collectionClass="NSMutableArray" id="w8v-64-dSj"/>
+                        <outletCollection property="productCategoryButtons" destination="Cls-5d-vjt" collectionClass="NSMutableArray" id="1Bm-Ye-tXF"/>
+                        <outletCollection property="productCategoryButtons" destination="TZc-gM-VUT" collectionClass="NSMutableArray" id="BdU-CF-Mrg"/>
+                        <outletCollection property="productCategoryButtons" destination="hKx-LL-qHj" collectionClass="NSMutableArray" id="svv-Qt-ciu"/>
+                        <outletCollection property="productCategoryButtons" destination="dkD-Zd-iyz" collectionClass="NSMutableArray" id="J4e-R7-4eV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zra-qx-Xl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -802,11 +841,8 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Egg-20-WoY">
-            <size key="intrinsicContentSize" width="64.5" height="34"/>
-        </designable>
-        <designable name="ZWv-6M-Y7q">
-            <size key="intrinsicContentSize" width="179" height="34"/>
+        <designable name="pHx-35-LIr">
+            <size key="intrinsicContentSize" width="117" height="21"/>
         </designable>
     </designables>
     <resources>

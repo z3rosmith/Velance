@@ -18,8 +18,10 @@ class VLGradientButton: UIButton {
         didSet{
             if self.isSelected {
                 self.layer.insertSublayer(self.gradient, at: 0)
+                self.setTitleColor(.white, for: .normal)
             } else {
                 self.gradient.removeFromSuperlayer()
+                self.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
             }
         }
     }

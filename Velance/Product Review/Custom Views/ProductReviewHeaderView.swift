@@ -19,7 +19,7 @@ class ProductReviewHeaderView: UIView {
     }()
     
 
-    let ratingStackView: RatingStackView = {
+    lazy var ratingStackView: RatingStackView = {
         let stackView = RatingStackView(arrangedSubviews: [starButton,starButton,starButton,starButton,starButton])
       
         stackView.axis = .horizontal

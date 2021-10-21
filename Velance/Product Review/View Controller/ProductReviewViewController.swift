@@ -163,7 +163,7 @@ extension ProductReviewViewController {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
         
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 120))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
         
         
         
