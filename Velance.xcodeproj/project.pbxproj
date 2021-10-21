@@ -77,6 +77,10 @@
 		7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */; };
 		7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */; };
 		7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF12122721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift */; };
+		7CFF121827215A7900E6A9D3 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CFF121727215A7900E6A9D3 /* MyPage.storyboard */; };
+		7CFF121A27215A8900E6A9D3 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF121927215A8900E6A9D3 /* MyPageViewController.swift */; };
+		7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF121D27217C0D00E6A9D3 /* MyPageTableViewCell.swift */; };
+		7CFF122027217C0D00E6A9D3 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFF121E27217C0D00E6A9D3 /* MyPageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +157,10 @@
 		7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductReviewViewController.swift; sourceTree = "<group>"; };
 		7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CFF12122721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPickedImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CFF121727215A7900E6A9D3 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		7CFF121927215A8900E6A9D3 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		7CFF121D27217C0D00E6A9D3 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		7CFF121E27217C0D00E6A9D3 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
 		AE20086C63AF53ABBB3FE514 /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -508,8 +516,28 @@
 		7CFF1214272159C600E6A9D3 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				7CFF121627215A1200E6A9D3 /* Custom Cells */,
+				7CFF121527215A0800E6A9D3 /* View Controller */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		7CFF121527215A0800E6A9D3 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CFF121727215A7900E6A9D3 /* MyPage.storyboard */,
+				7CFF121927215A8900E6A9D3 /* MyPageViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		7CFF121627215A1200E6A9D3 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CFF121D27217C0D00E6A9D3 /* MyPageTableViewCell.swift */,
+				7CFF121E27217C0D00E6A9D3 /* MyPageTableViewCell.xib */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +602,7 @@
 				3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */,
 				3C6B700D26F32550001FD7BB /* MealView.xib in Resources */,
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
+				7CFF122027217C0D00E6A9D3 /* MyPageTableViewCell.xib in Resources */,
 				7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */,
 				7C61456C2715428F00D659C5 /* ProductForSimilarTasteCVC.xib in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
@@ -582,6 +611,7 @@
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
+				7CFF121827215A7900E6A9D3 /* MyPage.storyboard in Resources */,
 				7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7C37DE82271ABE0A00B4FBFB /* ProductReviewTableViewCell.xib in Resources */,
@@ -652,6 +682,7 @@
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
 				7CF529722710513600499709 /* String+Extension.swift in Sources */,
+				7CFF121A27215A8900E6A9D3 /* MyPageViewController.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */,
@@ -675,6 +706,7 @@
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
+				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,
 				7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */,

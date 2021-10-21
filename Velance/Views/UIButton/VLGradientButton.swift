@@ -18,10 +18,8 @@ class VLGradientButton: UIButton {
         didSet{
             if self.isSelected {
                 self.layer.insertSublayer(self.gradient, at: 0)
-                self.setTitleColor(.white, for: .normal)
             } else {
                 self.gradient.removeFromSuperlayer()
-                self.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
             }
         }
     }
@@ -50,6 +48,8 @@ class VLGradientButton: UIButton {
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.1
         titleLabel?.lineBreakMode = .byTruncatingTail
+        setTitleColor(.white, for: .selected)
+        setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
     }
 
 }

@@ -7,6 +7,7 @@ struct StoryboardName {
     static let login            = "Login"
     static let userRegister     = "UserRegister"
     static let productReview    = "ProductReview"
+    static let myPage           = "MyPage"
     
     // Custom
     static let chooseInterest   = "ChooseInterest"
