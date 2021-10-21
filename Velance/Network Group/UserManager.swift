@@ -3,8 +3,17 @@ import Foundation
 class UserManager {
     
     static let shared = UserManager()
+
+    func login() {
+        
+    }
     
-    private init() {}
+    func signUp() {
+        
+    }
+    
+    
+    
  
     
     

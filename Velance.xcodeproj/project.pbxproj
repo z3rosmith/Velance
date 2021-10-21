@@ -48,7 +48,6 @@
 		7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */; };
 		7C922A522718052E00295A3F /* ChooseInterest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C922A512718052E00295A3F /* ChooseInterest.storyboard */; };
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
-		7C97195A270F3028003E193D /* TestableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C971959270F3028003E193D /* TestableVC.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
@@ -66,9 +65,6 @@
 		7CC36A5426EC7194007573DD /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Record.storyboard */; };
 		7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* RecordViewController.swift */; };
 		7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5726EC8561007573DD /* UIButton+Extension.swift */; };
-		7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */; };
-		7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */; };
-		7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */; };
 		7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */; };
 		7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */; };
 		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
@@ -78,6 +74,9 @@
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
 		7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC946026F2D4C5008042C5 /* PopularProductTableViewCell.swift */; };
+		7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */; };
+		7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */; };
+		7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF12122721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,7 +122,6 @@
 		7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
 		7C922A512718052E00295A3F /* ChooseInterest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseInterest.storyboard; sourceTree = "<group>"; };
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
-		7C971959270F3028003E193D /* TestableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableVC.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,9 +141,6 @@
 		7CC36A5326EC7194007573DD /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		7CC36A5526EC7272007573DD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7CC36A5726EC8561007573DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeViewController.swift; sourceTree = "<group>"; };
-		7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDetailViewController.swift; sourceTree = "<group>"; };
-		7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseReasonViewController.swift; sourceTree = "<group>"; };
 		7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterValues.swift; sourceTree = "<group>"; };
 		7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLTitleLabel.swift; sourceTree = "<group>"; };
 		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +150,9 @@
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 		7CFC946026F2D4C5008042C5 /* PopularProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductTableViewCell.swift; sourceTree = "<group>"; };
+		7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductReviewViewController.swift; sourceTree = "<group>"; };
+		7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CFF12122721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPickedImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE20086C63AF53ABBB3FE514 /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -303,6 +301,7 @@
 				7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */,
 				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
+				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -364,6 +363,7 @@
 				7CC36A3E26EC637D007573DD /* Record(Unused) */,
 				7CC36A3F26EC63B8007573DD /* Shopping */,
 				7C61456127141FD500D659C5 /* Product Review */,
+				7CFF1214272159C600E6A9D3 /* MyPage */,
 				7CC36A3C26EC6366007573DD /* Views */,
 				7CC36A3B26EC6360007573DD /* Network Group */,
 				7CC36A3A26EC6358007573DD /* Model */,
@@ -415,10 +415,6 @@
 				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
 				7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */,
 				7C8ED24F270EA8ED00693521 /* InputUserInfoForRegister.swift */,
-				7CC36A5A26EC8A6C007573DD /* ChooseTypeViewController.swift */,
-				7CC36A5C26EC8A8A007573DD /* ChooseDetailViewController.swift */,
-				7C971959270F3028003E193D /* TestableVC.swift */,
-				7CC36A5E26EC8A90007573DD /* ChooseReasonViewController.swift */,
 			);
 			path = UserRegister;
 			sourceTree = "<group>";
@@ -454,6 +450,8 @@
 				7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */,
 				7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */,
 				7C8EC8C526EF069900893CCD /* ShoppingItemCollectionViewCell.xib */,
+				7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */,
+				7CFF12122721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift */,
 			);
 			path = "UICollectionView Cells";
 			sourceTree = "<group>";
@@ -505,6 +503,13 @@
 				7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */,
 			);
 			path = "Custom Alerts";
+			sourceTree = "<group>";
+		};
+		7CFF1214272159C600E6A9D3 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,7 +648,6 @@
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
-				7CC36A5B26EC8A6C007573DD /* ChooseTypeViewController.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
@@ -664,10 +668,11 @@
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
+				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
+				7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
-				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,
 				7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
@@ -684,9 +689,8 @@
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
-				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
+				7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */,
 				7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */,
-				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 				7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

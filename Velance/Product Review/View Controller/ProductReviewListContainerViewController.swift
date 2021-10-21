@@ -140,7 +140,6 @@ extension ProductReviewListContainerViewController {
         configureSearchBarView()
         configureCollectionView()
         configureSegmentioView()
-        configureAddButton()
         
     }
     
@@ -245,13 +244,6 @@ extension ProductReviewListContainerViewController {
     }
     
 
-    private func configureAddButton() {
-        addButton.addTarget(
-            self,
-            action: #selector(pressedAddButton),
-            for: .touchUpInside
-        )
-    }
 
     
 }

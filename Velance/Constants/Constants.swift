@@ -28,6 +28,7 @@ struct StoryboardID {
     static let productReviewListVC          = "ProductReviewListViewController"
     static let uploadNewProductVC           = "UploadNewProductViewController"
     static let productReviewVC              = "ProductReviewViewController"
+    static let newProductReviewVC           = "NewProductReviewViewController"
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"

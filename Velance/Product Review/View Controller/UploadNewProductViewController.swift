@@ -118,7 +118,7 @@ extension UploadNewProductViewController {
     private func configureProductImageView() {
         productImageView.layer.cornerRadius = 5
         productImageView.contentMode = .scaleAspectFill
-    }
+    } 
     
     private func configureTextFields() {
         
@@ -140,9 +140,7 @@ extension UploadNewProductViewController {
         var index: Int = 0
         veganTypeButtons.forEach { button in
             button.tag = index
-            button.backgroundColor = .white
             button.setTitle(UserOptions.veganType[index], for: .normal)
-            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
         
@@ -152,9 +150,7 @@ extension UploadNewProductViewController {
         var index: Int = 0
         productCategoryButtons.forEach { button in
             button.tag = index
-            button.backgroundColor = .white
             button.setTitle(UserOptions.productCategory[index], for: .normal)
-            button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
     }
