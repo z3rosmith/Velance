@@ -22,12 +22,12 @@ class ProductReviewTableViewCell: UITableViewCell {
         static let reviewImageViewHeight: CGFloat = 160
     }
     
-    
     //MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
         configureContainerView()
         configureReviewImageSlideShow()
+        configureShowMoreButton()
         
     }
     
@@ -42,6 +42,30 @@ class ProductReviewTableViewCell: UITableViewCell {
         reviewImageSlideShow.presentFullScreenController(from: currentVC ?? UIViewController())
     }
 
+    @objc private func pressedShowMoreButton() {
+        
+        let reportAction = UIAlertAction(
+            title: "사용자 신고하기",
+            style: .default
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            
+        }
+        
+        let blockAction = UIAlertAction(
+            title: "해당 사용자의 글 더 이상 보지 않기",
+            style: .default
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            
+        }
+        
+        let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
+
+        currentVC?.present(actionSheet, animated: true)
+        
+    }
+    
     //MARK: - UI Configuration
     
     func configureContainerView() {
@@ -66,7 +90,13 @@ class ProductReviewTableViewCell: UITableViewCell {
         reviewImageSlideShow.addGestureRecognizer(recognizer)
     }
     
-    
+    func configureShowMoreButton() {
+        showMoreButton.addTarget(
+            self,
+            action: #selector(pressedShowMoreButton),
+            for: .touchUpInside
+        )
+    }
     
     
 }

@@ -89,29 +89,29 @@ class ProductReviewHeaderView: UIView {
         }
         
         ratingStackView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(6)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
             make.width.equalTo(100)
         }
         
         ratingLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(6)
+            make.top.equalTo(titleLabel.snp.bottom).offset(9.3)
             make.left.equalTo(ratingStackView.snp.right).offset(6)
         }
         
         estimatedPriceGuideLabel.snp.makeConstraints { make in
-            make.top.equalTo(ratingStackView.snp.bottom).offset(6)
+            make.top.equalTo(ratingStackView.snp.bottom).offset(12)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
         }
         
         estimatedPriceLabel.snp.makeConstraints { make in
+            make.top.equalTo(ratingStackView.snp.bottom).offset(12)
             make.left.equalTo(estimatedPriceGuideLabel.snp.right).offset(4)
-            make.top.equalTo(ratingStackView.snp.bottom).offset(6)
         }
         
         reviewLabel.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
-            make.top.equalTo(estimatedPriceGuideLabel.snp.bottom).offset(16)
+            make.bottom.equalTo(self.snp.bottom).offset(-12)
         }
     }
 }

@@ -97,6 +97,10 @@ extension InputUserInfoForRegister {
     }
     
     @IBAction func pressedRegisterButton(_ sender: UIButton) {
+        
+        let vc = LoadingViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

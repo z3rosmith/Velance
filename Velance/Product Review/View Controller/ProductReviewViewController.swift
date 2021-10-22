@@ -65,7 +65,6 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CellID.productReviewTVC,
             for: indexPath
@@ -83,10 +82,6 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         topImageViewHeight.constant = Metrics.topImageViewMinHeight
