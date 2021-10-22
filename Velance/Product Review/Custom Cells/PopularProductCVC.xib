@@ -22,116 +22,129 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yr5-xE-ukR" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udc-ZM-UVL">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Y4Z-CT-l9D"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페스토/락토오보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmN-Uq-1BW">
-                                <rect key="frame" x="6" y="173.5" width="168" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-Fy-4jQ">
-                                <rect key="frame" x="6" y="206" width="168" height="20"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDp-2d-Stf" userLabel="Cell View">
+                                <rect key="frame" x="6" y="6" width="168" height="228"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,980원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-g6-6eI">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="1N1-XD-lEl" userLabel="Star Rating Stack View" customClass="RatingStackView" customModule="Velance" customModuleProvider="target">
-                                        <rect key="frame" x="80" y="0.0" width="88" height="20"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udc-ZM-UVL">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Y4Z-CT-l9D"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="gfw-Ob-jjc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-Fy-4jQ">
+                                        <rect key="frame" x="8" y="198" width="152" height="20"/>
                                         <subviews>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcy-90-s50">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="lkc-7T-Zkc"/>
-                                                    <constraint firstAttribute="width" constant="20" id="qQb-oD-ojt"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="StarFilled" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-wG-LP0">
-                                                <rect key="frame" x="17" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="2Rl-2m-jIE"/>
-                                                    <constraint firstAttribute="width" constant="20" id="fRY-j3-r0S"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="StarFilled" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL7-RU-H4a">
-                                                <rect key="frame" x="34" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="EgW-wI-JYi"/>
-                                                    <constraint firstAttribute="height" constant="20" id="k55-ra-7q4"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="StarFilled" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-3Z-W6R">
-                                                <rect key="frame" x="51" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="HjC-fq-BSa"/>
-                                                    <constraint firstAttribute="height" constant="20" id="LVV-Eu-VfO"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="StarUnfilled" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKJ-IX-7bx">
-                                                <rect key="frame" x="68" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="XdM-ie-uXS"/>
-                                                    <constraint firstAttribute="width" constant="20" id="h3a-6g-ivC"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="StarUnfilled" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
-                                                </state>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,980원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-g6-6eI">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="20"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                            </label>
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="1N1-XD-lEl" userLabel="Star Rating Stack View" customClass="RatingStackView" customModule="Velance" customModuleProvider="target">
+                                                <rect key="frame" x="64" y="0.0" width="88" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcy-90-s50">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="lkc-7T-Zkc"/>
+                                                            <constraint firstAttribute="width" constant="20" id="qQb-oD-ojt"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="StarFilled" symbolScale="default"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-wG-LP0">
+                                                        <rect key="frame" x="17" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="2Rl-2m-jIE"/>
+                                                            <constraint firstAttribute="width" constant="20" id="fRY-j3-r0S"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="StarFilled" symbolScale="default"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL7-RU-H4a">
+                                                        <rect key="frame" x="34" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="EgW-wI-JYi"/>
+                                                            <constraint firstAttribute="height" constant="20" id="k55-ra-7q4"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="StarFilled" symbolScale="default"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-3Z-W6R">
+                                                        <rect key="frame" x="51" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="HjC-fq-BSa"/>
+                                                            <constraint firstAttribute="height" constant="20" id="LVV-Eu-VfO"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="StarUnfilled" symbolScale="default"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKJ-IX-7bx">
+                                                        <rect key="frame" x="68" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="XdM-ie-uXS"/>
+                                                            <constraint firstAttribute="width" constant="20" id="h3a-6g-ivC"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="StarUnfilled" symbolScale="default"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="풀무원 비건템페 비건 소세지 맛있는" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-lx-yrs">
+                                        <rect key="frame" x="8" y="128" width="152" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페스토/락토오보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmN-Uq-1BW">
+                                        <rect key="frame" x="8" y="165.5" width="152" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="풀무원 비건템페 비건 소세지 맛있는" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-lx-yrs">
-                                <rect key="frame" x="6" y="134" width="168" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gmN-Uq-1BW" secondAttribute="trailing" constant="8" id="A23-JK-EUV"/>
+                                    <constraint firstItem="gmN-Uq-1BW" firstAttribute="leading" secondItem="wDp-2d-Stf" secondAttribute="leading" constant="8" id="EoO-qb-uQJ"/>
+                                    <constraint firstItem="wF6-lx-yrs" firstAttribute="top" secondItem="udc-ZM-UVL" secondAttribute="bottom" constant="8" id="OOk-op-Mem"/>
+                                    <constraint firstItem="gmN-Uq-1BW" firstAttribute="top" secondItem="wF6-lx-yrs" secondAttribute="bottom" constant="4" id="OrH-lm-dyH"/>
+                                    <constraint firstItem="udc-ZM-UVL" firstAttribute="top" secondItem="wDp-2d-Stf" secondAttribute="top" id="Oug-nb-Mj5"/>
+                                    <constraint firstAttribute="trailing" secondItem="wF6-lx-yrs" secondAttribute="trailing" constant="8" id="Q45-oA-Q6D"/>
+                                    <constraint firstItem="wF6-lx-yrs" firstAttribute="leading" secondItem="wDp-2d-Stf" secondAttribute="leading" constant="8" id="VEb-Dy-hJC"/>
+                                    <constraint firstAttribute="bottom" secondItem="n9X-Fy-4jQ" secondAttribute="bottom" constant="10" id="bNM-6F-VE9"/>
+                                    <constraint firstItem="udc-ZM-UVL" firstAttribute="leading" secondItem="wDp-2d-Stf" secondAttribute="leading" id="fy2-gX-oIt"/>
+                                    <constraint firstAttribute="trailing" secondItem="udc-ZM-UVL" secondAttribute="trailing" id="mpP-7S-15Q"/>
+                                    <constraint firstItem="n9X-Fy-4jQ" firstAttribute="leading" secondItem="wDp-2d-Stf" secondAttribute="leading" constant="8" id="seq-qE-nUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="n9X-Fy-4jQ" secondAttribute="trailing" constant="8" id="t2h-rX-cfr"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gmN-Uq-1BW" secondAttribute="trailing" constant="6" id="1mg-oT-LVc"/>
-                            <constraint firstAttribute="bottom" secondItem="n9X-Fy-4jQ" secondAttribute="bottom" constant="14" id="4iY-La-rXv"/>
-                            <constraint firstAttribute="trailing" secondItem="n9X-Fy-4jQ" secondAttribute="trailing" constant="6" id="HSc-bO-WuG"/>
-                            <constraint firstItem="gmN-Uq-1BW" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="Mz4-qX-wpu"/>
-                            <constraint firstItem="gmN-Uq-1BW" firstAttribute="top" secondItem="wF6-lx-yrs" secondAttribute="bottom" constant="6" id="NWB-QX-cax"/>
-                            <constraint firstItem="udc-ZM-UVL" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" id="Reh-M3-ctq"/>
-                            <constraint firstAttribute="trailing" secondItem="udc-ZM-UVL" secondAttribute="trailing" id="TCs-Qc-Q4q"/>
-                            <constraint firstItem="wF6-lx-yrs" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="U8S-qp-qPx"/>
-                            <constraint firstItem="wF6-lx-yrs" firstAttribute="top" secondItem="udc-ZM-UVL" secondAttribute="bottom" constant="14" id="axE-eX-qeg"/>
-                            <constraint firstItem="n9X-Fy-4jQ" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="gFi-VP-Mr0"/>
-                            <constraint firstItem="udc-ZM-UVL" firstAttribute="top" secondItem="Yr5-xE-ukR" secondAttribute="top" id="pcu-dV-Vqc"/>
-                            <constraint firstAttribute="trailing" secondItem="wF6-lx-yrs" secondAttribute="trailing" constant="6" id="vwm-p4-tZZ"/>
+                            <constraint firstAttribute="trailing" secondItem="wDp-2d-Stf" secondAttribute="trailing" constant="6" id="4zd-dN-7uz"/>
+                            <constraint firstAttribute="bottom" secondItem="wDp-2d-Stf" secondAttribute="bottom" constant="6" id="hEX-MT-5WR"/>
+                            <constraint firstItem="wDp-2d-Stf" firstAttribute="leading" secondItem="Yr5-xE-ukR" secondAttribute="leading" constant="6" id="ode-pU-7hl"/>
+                            <constraint firstItem="wDp-2d-Stf" firstAttribute="top" secondItem="Yr5-xE-ukR" secondAttribute="top" constant="6" id="y8X-F9-f7u"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -145,7 +158,7 @@
             </constraints>
             <size key="customSize" width="365" height="147"/>
             <connections>
-                <outlet property="productContentView" destination="Yr5-xE-ukR" id="SlE-jf-bLQ"/>
+                <outlet property="containerView" destination="wDp-2d-Stf" id="DU2-vH-50c"/>
                 <outlet property="productImageView" destination="udc-ZM-UVL" id="B1N-d4-xaf"/>
                 <outlet property="productPriceLabel" destination="pTZ-g6-6eI" id="axR-TQ-d5M"/>
                 <outlet property="productTitleLabel" destination="wF6-lx-yrs" id="ynf-ZS-YGZ"/>

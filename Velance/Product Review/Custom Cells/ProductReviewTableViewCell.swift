@@ -12,15 +12,18 @@ class ProductReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
     @IBOutlet weak var reviewImageViewHeight: NSLayoutConstraint!
     
+    weak var currentVC: UIViewController?
+    
+    //MARK: - Constants
     
     fileprivate struct Metrics {
         static let reviewImageViewHeight: CGFloat = 160
     }
     
     
+    //MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
         configureContainerView()
@@ -32,6 +35,14 @@ class ProductReviewTableViewCell: UITableViewCell {
         super.prepareForReuse()
         reviewImageViewHeight.constant = Metrics.reviewImageViewHeight
     }
+    
+    //MARK: - Target Methods
+    
+    @objc private func pressedImage() {
+        reviewImageSlideShow.presentFullScreenController(from: currentVC ?? UIViewController())
+    }
+
+    //MARK: - UI Configuration
     
     func configureContainerView() {
         containerView.layer.cornerRadius = 15
@@ -48,6 +59,14 @@ class ProductReviewTableViewCell: UITableViewCell {
         reviewImageSlideShow.layer.cornerRadius = 10
         reviewImageSlideShow.zoomEnabled = true
         
+        let recognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.pressedImage)
+        )
+        reviewImageSlideShow.addGestureRecognizer(recognizer)
     }
+    
+    
+    
     
 }

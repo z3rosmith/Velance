@@ -74,7 +74,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         var imageSources: [InputSource] = []
         imageSources.append(SDWebImageSource(url: URL(string: "https://picsum.photos/1200/1200")!))
         
-        
+        cell.currentVC = self
         cell.reviewLabel.text = "꽤 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요. 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금."
         cell.dateLabel.text = "2021.03.24"
         cell.reviewImageSlideShow.setImageInputs(imageSources)
@@ -84,7 +84,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
