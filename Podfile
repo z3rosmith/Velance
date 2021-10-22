@@ -20,5 +20,5 @@ target 'Velance' do
   pod "ImageSlideshow/SDWebImage"
   pod 'Segmentio'
   pod 'TextFieldEffects'
-  pod 'FLAnimatedImage', '~> 1.0'
+  pod 'Gifu'
 end

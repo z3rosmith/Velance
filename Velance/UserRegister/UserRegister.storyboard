@@ -1236,28 +1236,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXw-8m-dTy" customClass="SDAnimatedImageView">
-                                <rect key="frame" x="110" y="244" width="194" height="194"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-cW-nB1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXw-8m-dTy" customClass="GIFImageView" customModule="Gifu">
+                                <rect key="frame" x="130" y="244" width="154" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VXw-8m-dTy" secondAttribute="height" multiplier="1:1" id="3cX-q1-iX4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUX-4h-k9G">
-                                <rect key="frame" x="177" y="495" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-3L-WVH">
+                                <rect key="frame" x="50" y="433" width="314" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ik-hE-iJU"/>
                         <color key="backgroundColor" name="AppDefaultColor"/>
                         <constraints>
+                            <constraint firstItem="9ik-hE-iJU" firstAttribute="trailing" secondItem="Mge-3L-WVH" secondAttribute="trailing" constant="50" id="0fZ-tJ-vUj"/>
+                            <constraint firstAttribute="bottom" secondItem="dTA-cW-nB1" secondAttribute="bottom" id="4Pg-Eb-VXQ"/>
                             <constraint firstItem="VXw-8m-dTy" firstAttribute="top" secondItem="9ik-hE-iJU" secondAttribute="top" constant="200" id="4rS-RH-vNs"/>
-                            <constraint firstItem="9ik-hE-iJU" firstAttribute="trailing" secondItem="VXw-8m-dTy" secondAttribute="trailing" constant="110" id="SiO-6m-CGL"/>
-                            <constraint firstItem="VXw-8m-dTy" firstAttribute="leading" secondItem="9ik-hE-iJU" secondAttribute="leading" constant="110" id="vzZ-ry-bvp"/>
+                            <constraint firstItem="dTA-cW-nB1" firstAttribute="trailing" secondItem="9ik-hE-iJU" secondAttribute="trailing" id="RUG-Fd-TIh"/>
+                            <constraint firstItem="9ik-hE-iJU" firstAttribute="trailing" secondItem="VXw-8m-dTy" secondAttribute="trailing" constant="130" id="SiO-6m-CGL"/>
+                            <constraint firstItem="dTA-cW-nB1" firstAttribute="top" secondItem="ZSs-GB-Zlw" secondAttribute="top" id="aor-0m-zoW"/>
+                            <constraint firstItem="Mge-3L-WVH" firstAttribute="centerX" secondItem="ZSs-GB-Zlw" secondAttribute="centerX" id="cfs-CT-ev4"/>
+                            <constraint firstItem="Mge-3L-WVH" firstAttribute="top" secondItem="VXw-8m-dTy" secondAttribute="bottom" constant="35" id="eB3-3P-6un"/>
+                            <constraint firstItem="Mge-3L-WVH" firstAttribute="leading" secondItem="9ik-hE-iJU" secondAttribute="leading" constant="50" id="uzW-uO-q1e"/>
+                            <constraint firstItem="VXw-8m-dTy" firstAttribute="leading" secondItem="9ik-hE-iJU" secondAttribute="leading" constant="130" id="vzZ-ry-bvp"/>
+                            <constraint firstItem="dTA-cW-nB1" firstAttribute="leading" secondItem="9ik-hE-iJU" secondAttribute="leading" id="w5u-er-FHG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animatedLoadingImageView" destination="VXw-8m-dTy" id="gvs-Hq-pBC"/>
+                        <outlet property="loadingLabel" destination="Mge-3L-WVH" id="B5T-Bq-GJb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgZ-ww-OJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1289,6 +1303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoadingBackgroundImage" width="414" height="896"/>
         <image name="NextStepButton" width="255" height="58"/>
         <image name="RegisterButton" width="371" height="58"/>
         <image name="SeparatorLine" width="34" height="2"/>

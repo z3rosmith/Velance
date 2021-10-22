@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.4.2)
   - BSImagePicker (3.3.1)
-  - FLAnimatedImage (1.0.16)
+  - Gifu (3.3.1)
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
@@ -25,7 +25,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - BSImagePicker (~> 3.1)
-  - FLAnimatedImage (~> 1.0)
+  - Gifu
   - ImageSlideshow (~> 1.9.0)
   - ImageSlideshow/SDWebImage
   - IQKeyboardManagerSwift
@@ -42,7 +42,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - BSImagePicker
-    - FLAnimatedImage
+    - Gifu
     - ImageSlideshow
     - IQKeyboardManagerSwift
     - lottie-ios
@@ -58,7 +58,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
-  FLAnimatedImage: 8f3e854ebf9680b71f0b6e700939687fc4d82b4b
+  Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
@@ -71,6 +71,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: 2dbb85f858f79f86e378a96448d715f3ca225569
+PODFILE CHECKSUM: 880b25a600333d955f1ebee354b0a8aa2c348aff
 
 COCOAPODS: 1.10.1

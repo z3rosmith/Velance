@@ -73,6 +73,8 @@
 		7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0E9272243F5005CACF5 /* VLStarButton.swift */; };
 		7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EB27225FDB005CACF5 /* UIHelper.swift */; };
 		7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */; };
+		7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */; };
+		7CEED0F22722799B005CACF5 /* LoadingAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
@@ -156,6 +158,8 @@
 		7CEED0E9272243F5005CACF5 /* VLStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLStarButton.swift; sourceTree = "<group>"; };
 		7CEED0EB27225FDB005CACF5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LoadingAnimation.gif; path = "Image Assets/LoadingAnimation.gif"; sourceTree = SOURCE_ROOT; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 		7CC36A2526EC5ED8007573DD /* Velance */ = {
 			isa = PBXGroup;
 			children = (
+				7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */,
 				7CAEEB112710334C0049F257 /* Constants */,
 				7C91FC0427118CA5000D237C /* Login */,
 				7CC36A5926EC8A23007573DD /* Main */,
@@ -496,6 +501,7 @@
 			children = (
 				7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */,
 				7CC36A5726EC8561007573DD /* UIButton+Extension.swift */,
+				7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */,
 				7CF529712710513600499709 /* String+Extension.swift */,
 				7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */,
 			);
@@ -618,6 +624,7 @@
 				3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */,
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7CEED0F22722799B005CACF5 /* LoadingAnimation.gif in Resources */,
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
 				7CFF121827215A7900E6A9D3 /* MyPage.storyboard in Resources */,
@@ -724,6 +731,7 @@
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
+				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
 				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
 				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
