@@ -38,7 +38,7 @@ class PopularProductCVC: UICollectionViewCell {
         containerView.layer.masksToBounds = false
         containerView.layer.shadowRadius = 3
         containerView.layer.shadowOpacity = 0.3
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2.3)
         containerView.layer.shadowColor = UIColor.darkGray.cgColor
     
     }

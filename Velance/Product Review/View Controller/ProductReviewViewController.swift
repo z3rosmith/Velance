@@ -83,9 +83,10 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         topImageViewHeight.constant = Metrics.topImageViewMinHeight
@@ -183,6 +184,7 @@ extension ProductReviewViewController {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
         reviewTableView.separatorStyle = .none
+        reviewTableView.allowsSelection = false
         
         
         let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 150))

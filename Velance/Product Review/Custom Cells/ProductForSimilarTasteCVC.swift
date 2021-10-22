@@ -2,7 +2,8 @@ import UIKit
 
 class ProductForSimilarTasteCVC: UICollectionViewCell {
     
-    @IBOutlet weak var productContentView: UIView!
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productVeganTypeLabel: UILabel!
@@ -30,13 +31,19 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
 
     
     private func configure() {
-        configureProductContentView()
+        configureContainerView()
         configureProductImageView()
         
     }
     
-    private func configureProductContentView() {
-        productContentView.layer.cornerRadius = Metrics.viewCornerRadius
+    private func configureContainerView() {
+        containerView.layer.cornerRadius = Metrics.viewCornerRadius
+        containerView.clipsToBounds = true
+        containerView.layer.masksToBounds = false
+        containerView.layer.shadowRadius = 3
+        containerView.layer.shadowOpacity = 0.3
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.shadowColor = UIColor.darkGray.cgColor
     }
     
     private func configureProductImageView() {
