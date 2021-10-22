@@ -70,6 +70,8 @@
 		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
 		7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */; };
 		7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9226EE3F2D007573DD /* VLButton.swift */; };
+		7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0E9272243F5005CACF5 /* VLStarButton.swift */; };
+		7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EB27225FDB005CACF5 /* UIHelper.swift */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
@@ -150,6 +152,8 @@
 		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLBodyLabel.swift; sourceTree = "<group>"; };
 		7CC36A9226EE3F2D007573DD /* VLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLButton.swift; sourceTree = "<group>"; };
+		7CEED0E9272243F5005CACF5 /* VLStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLStarButton.swift; sourceTree = "<group>"; };
+		7CEED0EB27225FDB005CACF5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				6C49951E271FBC3400E8DB4B /* ProgressHUD.swift */,
+				7CEED0EB27225FDB005CACF5 /* UIHelper.swift */,
 			);
 			path = "UI Helper";
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			children = (
 				7C97195C27100635003E193D /* VLGradientButton.swift */,
 				7C922A4C2717F19300295A3F /* VLFloatingButton.swift */,
+				7CEED0E9272243F5005CACF5 /* VLStarButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				6C49951F271FBC3400E8DB4B /* ProgressHUD.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
+				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
@@ -701,6 +708,7 @@
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
+				7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */,
 				7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,

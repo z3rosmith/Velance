@@ -41,6 +41,7 @@ class InputUserInfoForRegister: UIViewController, Storyboarded {
         configure()
     }
 
+
 }
 #warning("ButtonView 에도 터치 넣기")
 //MARK: - IBActions
@@ -94,6 +95,10 @@ extension InputUserInfoForRegister {
             sender.setTitleColor(.white, for: .normal)
         }
     }
+    
+    @IBAction func pressedRegisterButton(_ sender: UIButton) {
+    }
+    
 }
 
 //MARK: - UI Configuration & Initialization
@@ -101,7 +106,7 @@ extension InputUserInfoForRegister {
 extension InputUserInfoForRegister {
     
     private func configure() {
-        title = "회원가입"
+        title = "내 정보 입력"
         configureLabels()
         configureUIViews()
         configureVeganButtonOuterViews()

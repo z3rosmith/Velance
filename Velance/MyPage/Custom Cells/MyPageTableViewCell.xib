@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-zZ-446">
-                                <rect key="frame" x="54" y="14" width="28" height="20"/>
+                                <rect key="frame" x="50" y="14" width="28" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                             <constraint firstAttribute="bottom" secondItem="y0A-Ba-bfG" secondAttribute="bottom" constant="16" id="6Yj-U4-qLl"/>
                             <constraint firstItem="y0A-Ba-bfG" firstAttribute="leading" secondItem="PMV-Yx-sPv" secondAttribute="leading" constant="12" id="Zpc-xI-0dP"/>
                             <constraint firstItem="IZ2-zZ-446" firstAttribute="centerY" secondItem="PMV-Yx-sPv" secondAttribute="centerY" id="aHY-ZD-7Of"/>
-                            <constraint firstItem="IZ2-zZ-446" firstAttribute="leading" secondItem="y0A-Ba-bfG" secondAttribute="trailing" constant="26" id="hAJ-aQ-1Ds"/>
+                            <constraint firstItem="IZ2-zZ-446" firstAttribute="leading" secondItem="y0A-Ba-bfG" secondAttribute="trailing" constant="22" id="hAJ-aQ-1Ds"/>
                             <constraint firstItem="y0A-Ba-bfG" firstAttribute="top" secondItem="PMV-Yx-sPv" secondAttribute="top" constant="16" id="psK-PT-Qc5"/>
                         </constraints>
                     </view>

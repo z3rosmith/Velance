@@ -1,4 +1,6 @@
 import UIKit
+import ImageSlideshow
+import SDWebImage
 
 class ProductReviewViewController: UIViewController, Storyboarded {
     
@@ -6,11 +8,10 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var dragIndicator: UIView!
     @IBOutlet weak var reviewTableView: UITableView!
-       
-
+    
     
     //MARK: - Constants
-
+    
     fileprivate struct Metrics {
         
         static let topImageViewMaxHeight: CGFloat = 300
@@ -23,21 +24,33 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         StoryboardName.productReview
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
+        bottomView.backgroundColor = .white
     }
     
-
-
+    
+    
 }
 
 //MARK: - IBActions & Target Methods
 
 extension ProductReviewViewController {
     
+    @objc private func pressedOptionsBarButtonItem() {
+        
+        let reportAction = UIAlertAction(
+            title: "잘못된 정보 수정 요청",
+            style: .default
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            
+        }
+        let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
+        present(actionSheet, animated: true)
+    }
 }
 
 
@@ -50,10 +63,6 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         return 20
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
@@ -62,16 +71,26 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
             for: indexPath
         ) as? ProductReviewTableViewCell else { return ProductReviewTableViewCell() }
         
-
+        var imageSources: [InputSource] = []
+        imageSources.append(SDWebImageSource(url: URL(string: "https://picsum.photos/1200/1200")!))
+        
+        
+        cell.reviewLabel.text = "꽤 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요. 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금."
+        cell.dateLabel.text = "2021.03.24"
+        cell.reviewImageSlideShow.setImageInputs(imageSources)
         
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         topImageViewHeight.constant = Metrics.topImageViewMinHeight
         
-        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         })
     }
@@ -79,9 +98,9 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if scrollView.contentOffset.y <= 0 {
-
+            
             topImageViewHeight.constant = Metrics.topImageViewMaxHeight
-            UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             })
             
@@ -143,6 +162,7 @@ extension ProductReviewViewController {
         configureDragIndicator()
         configurePanGestureRecognizer()
         configureTableView()
+        addOptionsBarButtonItem()
     }
     
     private func configureDragIndicator() {
@@ -162,13 +182,14 @@ extension ProductReviewViewController {
     private func configureTableView() {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
-        
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
-        
+        reviewTableView.separatorStyle = .none
         
         
-        headerView.backgroundColor = .orange
-
+        let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 150))
+        
+        headerView.configure(productName: "[무빙 마운틴] 비건 소세지 맛있는 소시지 ", rating: 3, price: 30000)
+        
+        
         let panGesture = UIPanGestureRecognizer(
             target: self,
             action: #selector(viewPanned(_:))
@@ -189,9 +210,19 @@ extension ProductReviewViewController {
             reviewTableViewCell,
             forCellReuseIdentifier: CellID.productReviewTVC
         )
-
+        
         reviewTableView.rowHeight = UITableView.automaticDimension
         reviewTableView.estimatedRowHeight = 350
+    }
+    
+    private func addOptionsBarButtonItem() {
+        let optionsBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "ellipsis"),
+            style: .plain,
+            target: self,
+            action: #selector(pressedOptionsBarButtonItem)
+        )
+        navigationItem.rightBarButtonItem = optionsBarButtonItem
     }
     
     
