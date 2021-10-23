@@ -9,8 +9,6 @@ import Foundation
 
 struct UserRegisterValues {
     
-    private init() {}
-    
     static var shared = UserRegisterValues()
     
     var userID: String = ""

@@ -43,7 +43,6 @@ class InputUserInfoForRegister: UIViewController, Storyboarded {
 
 
 }
-#warning("ButtonView 에도 터치 넣기")
 //MARK: - IBActions
 
 extension InputUserInfoForRegister {
@@ -150,7 +149,7 @@ extension InputUserInfoForRegister {
     }
     
     private func configureTasteOptionButtons() {
-        var index: Int = 0
+        var index: Int = 1
         tasteOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.tasteOption[index], for: .normal)
@@ -160,7 +159,7 @@ extension InputUserInfoForRegister {
     }
     
     private func configureInterestOptionButtons() {
-        var index: Int = 0
+        var index: Int = 1
         interestOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.interestOptions[index], for: .normal)
@@ -170,7 +169,7 @@ extension InputUserInfoForRegister {
     }
     
     private func configureAllergyOptionButtons() {
-        var index: Int = 0
+        var index: Int = 1
         allergyOptionButtons.forEach { button in
             button.tag = index
             button.setTitle(UserOptions.allergyOptions[index], for: .normal)

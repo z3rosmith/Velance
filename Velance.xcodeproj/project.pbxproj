@@ -75,6 +75,8 @@
 		7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */; };
 		7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */; };
 		7CEED0F22722799B005CACF5 /* LoadingAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */; };
+		7CEED0F4272285F8005CACF5 /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0F3272285F7005CACF5 /* ReportManager.swift */; };
+		7CEED0F92723DDF5005CACF5 /* UserRegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0F82723DDF5005CACF5 /* UserRegisterDTO.swift */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
@@ -160,6 +162,8 @@
 		7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LoadingAnimation.gif; path = "Image Assets/LoadingAnimation.gif"; sourceTree = SOURCE_ROOT; };
+		7CEED0F3272285F7005CACF5 /* ReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
+		7CEED0F82723DDF5005CACF5 /* UserRegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterDTO.swift; sourceTree = "<group>"; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -403,7 +407,8 @@
 		7CC36A3A26EC6358007573DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */,
+				7CEED0F62723DD48005CACF5 /* ResponseDTOs */,
+				7CEED0F52723DD3C005CACF5 /* RequestDTOs */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A4A26EC648D007573DD /* UserManager.swift */,
+				7CEED0F3272285F7005CACF5 /* ReportManager.swift */,
 			);
 			path = "Network Group";
 			sourceTree = "<group>";
@@ -526,6 +532,30 @@
 				7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */,
 			);
 			path = "Custom Alerts";
+			sourceTree = "<group>";
+		};
+		7CEED0F52723DD3C005CACF5 /* RequestDTOs */ = {
+			isa = PBXGroup;
+			children = (
+				7CEED0F72723DD53005CACF5 /* User Register */,
+			);
+			path = RequestDTOs;
+			sourceTree = "<group>";
+		};
+		7CEED0F62723DD48005CACF5 /* ResponseDTOs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResponseDTOs;
+			sourceTree = "<group>";
+		};
+		7CEED0F72723DD53005CACF5 /* User Register */ = {
+			isa = PBXGroup;
+			children = (
+				7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */,
+				7CEED0F82723DDF5005CACF5 /* UserRegisterDTO.swift */,
+			);
+			path = "User Register";
 			sourceTree = "<group>";
 		};
 		7CFF1214272159C600E6A9D3 /* MyPage */ = {
@@ -737,11 +767,13 @@
 				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
 				7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
+				7CEED0F92723DDF5005CACF5 /* UserRegisterDTO.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */,
 				7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */,
+				7CEED0F4272285F8005CACF5 /* ReportManager.swift in Sources */,
 				7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */,
 				7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */,
 			);
