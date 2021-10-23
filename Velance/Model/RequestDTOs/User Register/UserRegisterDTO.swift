@@ -1,26 +1,20 @@
 import Foundation
+import Alamofire
 
 struct UserRegisterDTO {
 
-    let username: String
-    let displayName: String
-    let password: String
-    
-    let vegetarianTypeId: String
-    let tasteTypeIds: [String]
-    let interestTypeIds: [String]
-    var allergyTypeIds: [String]?
+    var parameters: Parameters = [:]
     
     init(username: String, displayName: String, password: String, vegetarianTypeId: String, tasteTypeIds: [String], interestTypeIds: [String], allergyTypeIds: [String]?) {
-
-        self.username = username
-        self.displayName = displayName
-        self.password = password
         
-        self.vegetarianTypeId = vegetarianTypeId
-        self.tasteTypeIds = tasteTypeIds
-        self.interestTypeIds = interestTypeIds
-        self.allergyTypeIds = allergyTypeIds
+        parameters["user_name"] = username
+        parameters["display_name"] = displayName
+        parameters["password"] = password
+        
+        parameters["vegetarian_type_id"] = vegetarianTypeId
+        parameters["taste_type_ids"] = tasteTypeIds
+        parameters["interest_type_ids"] = interestTypeIds
+        parameters["allergy_type_ids"] = allergyTypeIds
     }
     
     

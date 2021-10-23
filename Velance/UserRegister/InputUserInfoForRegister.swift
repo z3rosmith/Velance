@@ -2,6 +2,9 @@ import UIKit
 
 class InputUserInfoForRegister: UIViewController, Storyboarded {
     
+    
+    //MARK: - IBOutlets
+    
     // 나의 채식
     @IBOutlet weak var myVeganTypeView: UIView!
     @IBOutlet weak var veganTypeGuideLabel: UILabel!
@@ -34,13 +37,20 @@ class InputUserInfoForRegister: UIViewController, Storyboarded {
     static var storyboardName: String {
         StoryboardName.userRegister
     }
+    
+    
+    //MARK: - Properties
+    
+    private var veganTypeId: String = ""
+    private var tasteTypeIds: [String] = []
+    private var interestTypeIds: [String] = []
+    private var allergyTypeIds: [String] = []
 
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
-
 
 }
 //MARK: - IBActions
@@ -53,14 +63,17 @@ extension InputUserInfoForRegister {
         notChooseVeganTypeButton.layer.borderColor = UIColor.systemGray3.cgColor
         
         veganTypeButtons.forEach { $0.isSelected = false }
+        
         sender.isSelected = true
+        veganTypeId = String(sender.tag)
+        
         veganTypeButtons.forEach { button in
             if button.isSelected {
-                veganButtonOuterViews[button.tag].backgroundColor = UIColor(named: Colors.appDefaultColor)
-                button.setImage(UIImage(named: Images.veganTypesSelected[button.tag]), for: .normal)
+                veganButtonOuterViews[button.tag - 1].backgroundColor = UIColor(named: Colors.appDefaultColor)
+                button.setImage(UIImage(named: Images.veganTypesSelected[button.tag - 1]), for: .normal)
             } else {
-                veganButtonOuterViews[button.tag].backgroundColor = .white
-                button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag]), for: .normal)
+                veganButtonOuterViews[button.tag - 1].backgroundColor = .white
+                button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag - 1]), for: .normal)
             }
         }
     }
@@ -68,8 +81,8 @@ extension InputUserInfoForRegister {
     @IBAction func pressedNotChooseVeganTypeButton(_ sender: UIButton) {
         
         veganTypeButtons.forEach { button in
-            veganButtonOuterViews[button.tag].backgroundColor = .white
-            button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag]), for: .normal)
+            veganButtonOuterViews[button.tag - 1].backgroundColor = .white
+            button.setImage(UIImage(named: Images.veganTypesUnselected[button.tag - 1]), for: .normal)
         }
         
         switch sender.isSelected {
@@ -97,9 +110,50 @@ extension InputUserInfoForRegister {
     
     @IBAction func pressedRegisterButton(_ sender: UIButton) {
         
+        tasteTypeIds.removeAll()
+        interestTypeIds.removeAll()
+        allergyTypeIds.removeAll()
+        
+        tasteOptionButtons.forEach { button in
+            if button.isSelected {
+                tasteTypeIds.append(String(button.tag))
+            }
+        }
+        
+        interestOptionButtons.forEach { button in
+            if button.isSelected {
+                interestTypeIds.append(String(button.tag))
+            }
+        }
+        allergyOptionButtons.forEach { button in
+            if button.isSelected {
+                allergyTypeIds.append(String(button.tag))
+            }
+        }
+        
+        // Validation
+        
+        if tasteTypeIds.count < 5 {
+            showSimpleBottomAlert(with: "나의 입맛을 5가지 이상 골라주세요.")
+            return
+        } else if interestOptionButtons.count < 3 {
+            showSimpleBottomAlert(with: "나의 관심사를 3가지 이상 골라주세요.")
+            return
+        }
+
+        UserRegisterValues.shared.vegetarianTypeId = veganTypeId
+        UserRegisterValues.shared.tasteTypeIds = tasteTypeIds
+        UserRegisterValues.shared.interestTypeIds = interestTypeIds
+        UserRegisterValues.shared.allergyTypeIds = allergyTypeIds
+        
+        
+        print("✏️ veganTypeId: \(UserRegisterValues.shared.vegetarianTypeId)")
+        print("✏️ tasteTypeIds: \(UserRegisterValues.shared.tasteTypeIds)")
+        print("✏️ interestTypeIds: \(UserRegisterValues.shared.interestTypeIds)")
+        print("✏️ allergyTypeIds: \(UserRegisterValues.shared.allergyTypeIds)")
+        
         let vc = LoadingViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
 }
@@ -152,7 +206,7 @@ extension InputUserInfoForRegister {
         var index: Int = 1
         tasteOptionButtons.forEach { button in
             button.tag = index
-            button.setTitle(UserOptions.tasteOption[index], for: .normal)
+            button.setTitle(UserOptions.tasteOption[index - 1], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
@@ -162,7 +216,7 @@ extension InputUserInfoForRegister {
         var index: Int = 1
         interestOptionButtons.forEach { button in
             button.tag = index
-            button.setTitle(UserOptions.interestOptions[index], for: .normal)
+            button.setTitle(UserOptions.interestOptions[index - 1], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
@@ -172,7 +226,7 @@ extension InputUserInfoForRegister {
         var index: Int = 1
         allergyOptionButtons.forEach { button in
             button.tag = index
-            button.setTitle(UserOptions.allergyOptions[index], for: .normal)
+            button.setTitle(UserOptions.allergyOptions[index - 1], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }

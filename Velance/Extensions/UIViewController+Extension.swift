@@ -1,4 +1,5 @@
 import UIKit
+import SnackBar_swift
 
 extension UIViewController {
     
@@ -51,5 +52,28 @@ extension UIViewController {
         appearance.backgroundColor = color
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+    }
+}
+
+extension UIViewController {
+    // SnackBar 라이브러리의 message 띄우기
+    func showSimpleBottomAlert(with message: String) {
+        SnackBar.make(in: self.view,
+                      message: message,
+                      duration: .lengthLong).show()
+    }
+    
+    // SnackBar 라이브러리의 액션이 추가된 message 띄우기
+    func showSimpleBottomAlertWithAction(message: String,
+                                         buttonTitle: String,
+                                         action: (() -> Void)? = nil) {
+        SnackBar.make(in: self.view,
+                      message: message,
+                      duration: .lengthLong).setAction(
+                        with: buttonTitle,
+                        action: {
+                            action?()
+                        }).show()
+
     }
 }

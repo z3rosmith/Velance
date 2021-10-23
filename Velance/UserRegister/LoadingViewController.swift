@@ -16,6 +16,9 @@ class LoadingViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        registerUser()
+        
+        
         animatedLoadingImageView.animate(withGIFNamed: "LoadingAnimation")
 
         loadingLabel.attributedText = NSMutableAttributedString()
@@ -26,6 +29,33 @@ class LoadingViewController: UIViewController, Storyboarded {
         
     }
 
+    
+    func registerUser() {
+        
+        let model = UserRegisterDTO(
+            username:           UserRegisterValues.shared.username,
+            displayName:        UserRegisterValues.shared.displayName,
+            password:           UserRegisterValues.shared.password,
+            vegetarianTypeId:   UserRegisterValues.shared.vegetarianTypeId,
+            tasteTypeIds:       UserRegisterValues.shared.tasteTypeIds,
+            interestTypeIds:    UserRegisterValues.shared.interestTypeIds,
+            allergyTypeIds:     UserRegisterValues.shared.allergyTypeIds
+        )
+        
+        UserManager.shared.register(with: model) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    self.presentVLAlert(title: "성공!", message: "회원가입에 성공했어요!", buttonTitle: "확인")
+                }
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+        
+        
+    }
 
 
 }

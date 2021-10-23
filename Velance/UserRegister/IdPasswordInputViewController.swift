@@ -25,8 +25,38 @@ class IdPasswordInputViewController: UIViewController, Storyboarded {
 extension IdPasswordInputViewController {
     
     @objc func pressedNextStepButton() {
+        
+        if !validateUserInput() { return }
+        
+        UserRegisterValues.shared.username = idTextField.text!
+        UserRegisterValues.shared.displayName = idTextField.text!
+        UserRegisterValues.shared.password = passwordTextField.text!
+        
         let vc = InputUserInfoForRegister.instantiate()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func validateUserInput() -> Bool {
+        
+        guard
+            let id = idTextField.text,
+            let pw = passwordTextField.text,
+            let checkPw = checkPasswordTextField.text else {
+                showSimpleBottomAlert(with: "빈 칸이 없는지 확인해주세요.")
+                return false
+            }
+        
+        if id.count < 5, id.count > 15 {
+            showSimpleBottomAlert(with: "아이디는 5자 이상, 15자 이하로 설정해주세요.")
+            return false
+        }
+        
+        if pw != checkPw {
+            showSimpleBottomAlert(with: "비밀번호가 일치하지 않아요.")
+            return false
+        }
+        
+        return true
     }
 }
 
@@ -90,7 +120,6 @@ extension IdPasswordInputViewController {
                 action: #selector(pressedNextStepButton),
                 for: .touchUpInside
             )
-            
         }
         nextStepButton.setTitle("다음 단계로 넘어가기", for: .normal)
     }

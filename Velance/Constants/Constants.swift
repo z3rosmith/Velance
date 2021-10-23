@@ -1,6 +1,11 @@
 import Foundation
 import UIKit
 
+struct API {
+    
+    static let baseUrl = "http://222.104.199.114:5100/api/"
+}
+
 struct StoryboardName {
     
     static let main             = "Main"
