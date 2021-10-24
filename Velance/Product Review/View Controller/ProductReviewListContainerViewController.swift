@@ -61,7 +61,11 @@ extension ProductReviewListContainerViewController {
 //        vc.modalTransitionStyle = .crossDissolve
 //        present(vc, animated: true)
     }
-
+    
+    @objc private func refreshCollectionView() {
+        viewModel.resetValues()
+        viewModel.fetchProductList()
+    }
 }
 
 //MARK: - ProductReviewListDelegate
@@ -69,10 +73,12 @@ extension ProductReviewListContainerViewController {
 extension ProductReviewListContainerViewController: ProductReviewListDelegate {
     
     func didFetchProductList() {
+        productCollectionView.refreshControl?.endRefreshing()
         productCollectionView.reloadData()
     }
     
     func failedFetchingProductList(with error: NetworkError) {
+        productCollectionView.refreshControl?.endRefreshing()
         showSimpleBottomAlert(with: error.errorDescription)
     }
 }
@@ -108,12 +114,10 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
             ,
             options: .continueInBackground
         )
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         navigationController?.pushViewController(ProductReviewViewController.instantiate(), animated: true)
     }
 
@@ -185,6 +189,12 @@ extension ProductReviewListContainerViewController {
     private func configureCollectionView() {
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
+        productCollectionView.refreshControl = UIRefreshControl()
+        productCollectionView.refreshControl?.addTarget(
+            self,
+            action: #selector(refreshCollectionView),
+            for: .valueChanged
+        )
        
         let popularProductNibName = UINib(
             nibName: XIB_ID.popularProductCVC,
@@ -197,7 +207,6 @@ extension ProductReviewListContainerViewController {
     }
     
     private func configureSegmentioView() {
-    
         segmentioView.setup(
             content: UIHelper.configureSegmentioIems(),
             style: .onlyLabel,
