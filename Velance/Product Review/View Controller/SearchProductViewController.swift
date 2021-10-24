@@ -40,7 +40,7 @@ extension SearchProductViewController: UICollectionViewDelegate, UICollectionVie
         else { return UICollectionViewCell() }
 
         cell.productTitleLabel.text = "[\(indexPath.row)] 비건 템페가 맛있는 채식 주의 냠냠 비건 좋아"
-        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 락토/오보"
+       
         cell.productPriceLabel.text = "23,000원"
         cell.ratingStackView.setStarsRating(rating: 4)
         cell.productImageView.image = UIImage(named: "image_test")

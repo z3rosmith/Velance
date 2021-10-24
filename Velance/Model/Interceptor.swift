@@ -1,31 +1,34 @@
-//import Foundation
-//import Alamofire
-//import SwiftyJSON
-//
-//final class Interceptor: RequestInterceptor {
-//
-//    private var isRefreshing: Bool = false
-//    private var retryLimit = 3
-//
-//    func adapt(_ urlRequest: URLRequest,
-//               for session: Session,
-//               completion: @escaping (Result<URLRequest, Error>) -> Void) {
-//
-//        print("Interceptor - adapt() activated")
-//
-//        if !User.shared.isLoggedIn {
-//            completion(.success(urlRequest))
-//            return
-//        }
-//
-//        var request = urlRequest
-//        request.headers.update(name: "Authorization", value: User.shared.accessToken)
-//        request.timeoutInterval = 10
-//
-//        completion(.success(request))
-//    }
-//
-//    // AF.request(..).validate() 수행 후 statusCode 가 200...299 사이가 아니면 실행되는 함수
+import Foundation
+import Alamofire
+import SwiftyJSON
+
+final class Interceptor: RequestInterceptor {
+    
+    private var isRefreshing: Bool = false
+    private var retryLimit = 3
+    
+    func adapt(
+        _ urlRequest: URLRequest,
+        for session: Session,
+        completion: @escaping (Result<URLRequest, Error>) -> Void
+    ) {
+        
+        print("Interceptor - adapt() activated")
+        
+        if !User.shared.isLoggedIn {
+            completion(.success(urlRequest))
+            return
+        }
+        
+        var request = urlRequest
+        request.headers.update(name: "authorization", value: "Bearer " + User.shared.accessToken)
+        request.timeoutInterval = 10
+        
+        completion(.success(request))
+    }
+}
+    //
+    //    // AF.request(..).validate() 수행 후 statusCode 가 200...299 사이가 아니면 실행되는 함수
 //    func retry(_ request: Request,
 //               for session: Session,
 //               dueTo error: Error,

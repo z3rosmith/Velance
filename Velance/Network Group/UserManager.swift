@@ -61,10 +61,9 @@ class UserManager {
             case 200..<300:
                 do {
                     let json = try JSON(data: response.data ?? Data())
-                    print("✏️ accessToken: \(json["access_token"].stringValue)")
-                    print("✏️ userUId: \(json["user_id"].stringValue)")
                     User.shared.accessToken = json["access_token"].stringValue
                     User.shared.userUid = json["user_id"].stringValue
+                    User.shared.isLoggedIn = true
                 } catch {
                     completion(.failure(.internalError))
                 }

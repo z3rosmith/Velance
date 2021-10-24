@@ -1,5 +1,6 @@
 import UIKit
 import Segmentio
+import SDWebImage
 
 class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
@@ -7,6 +8,8 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     @IBOutlet weak var segmentioView: Segmentio!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var addButton: VLFloatingButton!
+    
+    private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
     private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
@@ -25,6 +28,7 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        viewModel.fetchProductList()
     }
 
 }
@@ -61,13 +65,26 @@ extension ProductReviewListContainerViewController {
 
 }
 
+//MARK: - ProductReviewListDelegate
+
+extension ProductReviewListContainerViewController: ProductReviewListDelegate {
+    
+    func didFetchProductList() {
+        productCollectionView.reloadData()
+    }
+    
+    func failedFetchingProductList(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+    }
+}
+
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension ProductReviewListContainerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return viewModel.productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,13 +94,22 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
             for: indexPath
         ) as? PopularProductCVC
         else { return UICollectionViewCell() }
-
-        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 템페가 맛있는 채식 주의 냠냠 비건 좋아"
-        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 락토/오보"
-        cell.productPriceLabel.text = "23,000원"
-        cell.ratingStackView.setStarsRating(rating: 4)
-        cell.productImageView.image = UIImage(named: "image_test")
-
+        
+        let productData = viewModel.productList[indexPath.row]
+        
+        cell.productTitleLabel.text = productData.name
+        cell.productPriceLabel.text = "\(productData.price)원"
+        cell.ratingStackView.setStarsRating(rating: Int(productData.rating))
+        
+        cell.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        
+        cell.productImageView.sd_setImage(
+            with: URL(string: productData.fileFolder.files[0].path)!,
+            placeholderImage: UIImage(named: "image_test")
+            ,
+            options: .continueInBackground
+        )
+        
         return cell
     }
     
@@ -135,6 +161,9 @@ extension ProductReviewListContainerViewController {
     
     private func configure() {
         title = "제품 리뷰"
+        
+        viewModel.delegate = self
+        
         setNavBarBackButtonItemTitle()
         setClearNavigationBarBackground()
         configureSearchBarView()
@@ -152,7 +181,6 @@ extension ProductReviewListContainerViewController {
         )
         searchBarView.addGestureRecognizer(tapGesture)
     }
-    
 
     
     private func configureCollectionView() {
@@ -242,8 +270,4 @@ extension ProductReviewListContainerViewController {
         segmentioView.selectedSegmentioIndex = 0
         segmentioView.clipsToBounds = true
     }
-    
-
-
-    
 }

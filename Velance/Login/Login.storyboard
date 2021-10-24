@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Wd-25-CRh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,21 +18,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VelanceTextLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-mo-aaw">
-                                <rect key="frame" x="120.5" y="222" width="173" height="67"/>
+                                <rect key="frame" x="120.5" y="266" width="173" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="Me3-FT-kqw"/>
                                     <constraint firstAttribute="width" constant="173" id="siJ-HD-3Qx"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carrot_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-Ge-rNM">
-                                <rect key="frame" x="195" y="194" width="45" height="45"/>
+                                <rect key="frame" x="195" y="238" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gIc-Pm-Tya"/>
                                     <constraint firstAttribute="width" constant="45" id="r7w-po-pav"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-Vj-FZG">
-                                <rect key="frame" x="79.5" y="339" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="383" width="255" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="4BF-R0-sBd"/>
@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMs-Cu-e6C">
-                                <rect key="frame" x="79.5" y="413" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="457" width="255" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="9fQ-7q-XU1"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAS-KD-r5e">
-                                <rect key="frame" x="79.5" y="487" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="531" width="255" height="50"/>
                                 <color key="backgroundColor" name="LoginButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AzQ-mY-dO3"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oF-b9-BJG">
-                                <rect key="frame" x="79.5" y="561" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="605" width="255" height="50"/>
                                 <color key="backgroundColor" name="LoginButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WdA-uy-hi3"/>
@@ -99,6 +99,7 @@
                             <constraint firstItem="7oF-b9-BJG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xdW-tV-fH6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yWP-L0-A3Q"/>
                     <connections>
                         <outlet property="idTextField" destination="6wz-Vj-FZG" id="7rV-Dh-qfV"/>
                         <outlet property="loginButton" destination="YAS-KD-r5e" id="CAH-1r-Swu"/>
@@ -107,6 +108,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E72-Rr-eyF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Wd-25-CRh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wZT-gh-B2C">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Fs3-Wc-U6A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zse-5z-BDx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75"/>
         </scene>

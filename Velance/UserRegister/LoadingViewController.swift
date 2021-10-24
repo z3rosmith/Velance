@@ -62,7 +62,8 @@ class LoadingViewController: UIViewController, Storyboarded {
             switch result {
             case .success:
                 print("✏️ 로그인 성공")
-                self.navigateToHome()
+                
+                self.presentHomeVC()
                 #warning("여기서 navigate 해야함")
             case .failure(let error):
                 self.showSimpleBottomAlert(with: error.errorDescription)
@@ -72,7 +73,7 @@ class LoadingViewController: UIViewController, Storyboarded {
     }
     
     #warning("아래 수정 필요 -> 홈화면으로 가야함")
-    func navigateToHome() {
+    func presentHomeVC() {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let vc = ProductReviewListContainerViewController.instantiate()
