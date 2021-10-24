@@ -8,10 +8,7 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var productNameTextField: HoshiTextField!
     @IBOutlet weak var productPriceTextField: HoshiTextField!
-    
-    @IBOutlet weak var chooseVeganTypeView: UIView!
-    @IBOutlet var veganTypeButtons: [VLGradientButton]!
-    
+
     @IBOutlet weak var chooseProductCategoryView: UIView!
     @IBOutlet var productCategoryButtons: [VLGradientButton]!
     
@@ -25,6 +22,13 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         return imagePicker
     }()
     
+    //MARK: - NewProductDTO Properties
+    var productCategoryId: Int?
+    var productName: String?
+    var productPrice: Int?
+    var productImageData: Data?
+    
+    
     static var storyboardName: String {
         StoryboardName.productReview
     }
@@ -32,9 +36,6 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        
-
-
     }
     
 
@@ -48,30 +49,61 @@ extension UploadNewProductViewController {
         present(imagePicker, animated: true)
     }
     
-    @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
-        switch sender.isSelected {
-        case true:
-            sender.isSelected = !sender.isSelected
-            sender.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
-        case false:
-            sender.isSelected = !sender.isSelected
-            sender.setTitleColor(.white, for: .normal)
-        }
-    }
-    
+
     @IBAction func pressedProductCategoryButton(_ sender: UIButton) {
         productCategoryButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
+        productCategoryId = sender.tag
     }
-    
     
     @IBAction func pressedDoneButton(_ sender: UIButton) {
-        print("✏️ pressedDoneButton")
+        
+        guard let imageData = productImageData else {
+            showSimpleBottomAlert(with: "제품 썸네일로 사용할 사진 1개를 골라주세요!")
+            return
+        }
+        
+        guard
+            let productName = productNameTextField.text,
+            let productPrice = productPriceTextField.text,
+            productName.count > 2,
+            productName.count > 2
+        else {
+            showSimpleBottomAlert(with: "빈칸이 없는지 확인해주세요.")
+            return
+        }
+        
+        guard let productCategoryId = productCategoryId else {
+            showSimpleBottomAlert(with: "제품 카테고리를 1개 선택해주세요")
+            return
+        }
+        
+        let model = NewProductDTO(
+            productCategoryId: productCategoryId,
+            name: productName,
+            price: Int(productPrice) ?? 0,
+            file: imageData
+        )
+        
+        showProgressBar()
+        ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
+            guard let self = self else { return }
+            dismissProgressBar()
+            switch result {
+            case .success:
+                self.showSimpleBottomAlert(with: "새 제품 등록에 성공하셨어요.🎉")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+  
+        
+     
     }
-    
-    
 }
-
 
 //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
@@ -83,6 +115,7 @@ extension UploadNewProductViewController: UIImagePickerControllerDelegate, UINav
             dismiss(animated: true) {
                 DispatchQueue.main.async {
                     self.productImageView.image = originalImage
+                    self.productImageData = originalImage.jpegData(compressionQuality: 1.0)
                 }
             }
         }
@@ -104,7 +137,6 @@ extension UploadNewProductViewController {
         configureProductImageView()
         configureTextFields()
         configureUIViews()
-        configureVeganTypeGradientButtons()
         configureProductCategoryGradientButtons()
         
     }
@@ -121,12 +153,12 @@ extension UploadNewProductViewController {
     } 
     
     private func configureTextFields() {
-        
+
     }
     
     private func configureUIViews() {
         
-        [chooseVeganTypeView, chooseProductCategoryView].forEach { view in
+        [chooseProductCategoryView].forEach { view in
             guard let view = view else { return }
             view.layer.cornerRadius = 15
             view.layer.borderWidth = 0.3
@@ -135,22 +167,13 @@ extension UploadNewProductViewController {
             
         }
     }
-    
-    private func configureVeganTypeGradientButtons() {
-        var index: Int = 0
-        veganTypeButtons.forEach { button in
-            button.tag = index
-            button.setTitle(UserOptions.veganType[index], for: .normal)
-            index += 1
-        }
-        
-    }
+
     
     private func configureProductCategoryGradientButtons() {
-        var index: Int = 0
+        var index: Int = 1
         productCategoryButtons.forEach { button in
             button.tag = index
-            button.setTitle(UserOptions.productCategory[index], for: .normal)
+            button.setTitle(UserOptions.productCategory[index - 1], for: .normal)
             index += 1
         }
     }

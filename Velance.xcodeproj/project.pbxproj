@@ -79,6 +79,7 @@
 		7CCBB55327253DA6002EFB58 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55227253DA6002EFB58 /* File.swift */; };
 		7CCBB55527253DBB002EFB58 /* UserDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55427253DBB002EFB58 /* UserDisplayModel.swift */; };
 		7CCBB55727253DCB002EFB58 /* FileFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55627253DCB002EFB58 /* FileFolder.swift */; };
+		7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55927255D06002EFB58 /* NewProductDTO.swift */; };
 		7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0E9272243F5005CACF5 /* VLStarButton.swift */; };
 		7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EB27225FDB005CACF5 /* UIHelper.swift */; };
 		7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */; };
@@ -182,6 +183,7 @@
 		7CCBB55227253DA6002EFB58 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		7CCBB55427253DBB002EFB58 /* UserDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayModel.swift; sourceTree = "<group>"; };
 		7CCBB55627253DCB002EFB58 /* FileFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFolder.swift; sourceTree = "<group>"; };
+		7CCBB55927255D06002EFB58 /* NewProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductDTO.swift; sourceTree = "<group>"; };
 		7CEED0E9272243F5005CACF5 /* VLStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLStarButton.swift; sourceTree = "<group>"; };
 		7CEED0EB27225FDB005CACF5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -619,9 +621,18 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		7CCBB55827255CE7002EFB58 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				7CCBB55927255D06002EFB58 /* NewProductDTO.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		7CEED0F52723DD3C005CACF5 /* RequestDTOs */ = {
 			isa = PBXGroup;
 			children = (
+				7CCBB55827255CE7002EFB58 /* Product */,
 				7CEED0F72723DD53005CACF5 /* User Register */,
 			);
 			path = RequestDTOs;
@@ -820,6 +831,7 @@
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
+				7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,

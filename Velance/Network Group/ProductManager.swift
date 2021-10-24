@@ -9,7 +9,9 @@ class ProductManager {
     let interceptor = Interceptor()
     
     //MARK: - End Points
-    let getProductUrl       = "\(API.baseUrl)product"
+    
+    let productAPIBaseUrl   = "\(API.baseUrl)product"
+    
     
     func getProducts(
         page: Int,
@@ -26,7 +28,7 @@ class ProductManager {
         ]
         
         AF.request(
-            getProductUrl,
+            productAPIBaseUrl,
             method: .get,
             parameters: parameters,
             encoding: URLEncoding.queryString,
@@ -49,7 +51,48 @@ class ProductManager {
                 }
                 
             }
-    
-        
     }
+    
+    //MARK: - 새 제품 등록
+    func uploadNewProduct(
+        with model: NewProductDTO,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+            multipartFormData.append(Data(String(model.productCategoryId).utf8),withName: "product_category_id")
+            multipartFormData.append(Data(model.name.utf8),withName: "name")
+            multipartFormData.append(Data(String(model.price).utf8),withName: "price")
+            multipartFormData.append(
+                model.file,
+                withName: "files",
+                fileName: "\(UUID().uuidString).jpeg",
+                mimeType: "image/jpeg"
+            )
+        },
+                  to: productAPIBaseUrl,
+                  method: .post,
+                  interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                
+                switch response.result {
+                case .success:
+                    print("✏️ ProductManager - uploadNewProduct SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                    print("❗️ ProductManager - uploadNewProduct error: \(error.errorDescription)")
+                }
+            }
+    }
+    
+    
+    
+    
+    
+    
+    
 }

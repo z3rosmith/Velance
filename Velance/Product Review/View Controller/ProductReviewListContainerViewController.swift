@@ -38,8 +38,9 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
-    }
     
+    }
+
     @objc private func pressedSearchBarView() {
         navigationController?.pushViewController(
             SearchProductViewController.instantiate(),
@@ -48,18 +49,8 @@ extension ProductReviewListContainerViewController {
     }
     
     @objc private func pressedAddButton() {
-        #warning("아래 수정 필요")
-        
         let vc = UploadNewProductViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
-        
-//        let storyboard = UIStoryboard(name: StoryboardName.chooseInterest, bundle: nil)
-//
-//        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardID.chooseInterestVC) as? ChooseInterestViewController else { return }
-//
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//        present(vc, animated: true)
     }
     
     @objc private func refreshCollectionView() {
@@ -124,7 +115,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSpacing: CGFloat = 50
         let width: CGFloat = (collectionView.bounds.width - itemSpacing) / 2
-        return CGSize(width: width, height: 240)
+        return CGSize(width: width, height: 220)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

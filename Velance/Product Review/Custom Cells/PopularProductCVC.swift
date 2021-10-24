@@ -44,7 +44,7 @@ class PopularProductCVC: UICollectionViewCell {
     private func configureProductImageView() {
         productImageView.layer.cornerRadius = Metrics.viewCornerRadius
         productImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        productImageView.contentMode = .scaleAspectFit
+        productImageView.contentMode = .scaleAspectFill
     }
     
     
