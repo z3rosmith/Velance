@@ -16,7 +16,12 @@ class ProductReviewListViewModel {
     
     var productList: [ProductListResponseDTO] = []
     
-    var selectedProductCategory = 1
+    var selectedProductCategory = 1 {
+        didSet {
+            productList.removeAll()
+            fetchProductList()
+        }
+    }
     
     var isFetchingData: Bool = false
     
