@@ -1,6 +1,5 @@
 import UIKit
 import Gifu
-import SnapKit
 
 class LoadingViewController: UIViewController, Storyboarded {
     
@@ -15,20 +14,18 @@ class LoadingViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        registerUser()
-        
-        
+        setNavBarBackButtonItemTitle(to: "")
+        configureUI()
         animatedLoadingImageView.animate(withGIFNamed: "LoadingAnimation")
-
+        registerUser()
+    }
+    
+    func configureUI() {
         loadingLabel.attributedText = NSMutableAttributedString()
             .normal("당신에게 ", with: labelFont)
             .bold("딱 필요한\n비건 서비스를 ", with: .systemFont(ofSize: 23, weight: .bold))
             .normal("제작 중입니다...", with: labelFont)
-        
-        
     }
-
     
     func registerUser() {
         
@@ -46,16 +43,44 @@ class LoadingViewController: UIViewController, Storyboarded {
             guard let self = self else { return }
             switch result {
             case .success:
-                DispatchQueue.main.async {
-                    self.presentVLAlert(title: "성공!", message: "회원가입에 성공했어요!", buttonTitle: "확인")
-                }
+                print("✏️ 회원 가입 성공!")
+                self.login()
             case .failure(let error):
                 self.showSimpleBottomAlert(with: error.errorDescription)
             }
         }
         
+    }
+    
+    func login() {
+        
+        UserManager.shared.login(
+            username: UserRegisterValues.shared.username,
+            password: UserRegisterValues.shared.password
+        ) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                print("✏️ 로그인 성공")
+                self.navigateToHome()
+                #warning("여기서 navigate 해야함")
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
         
     }
+    
+    #warning("아래 수정 필요 -> 홈화면으로 가야함")
+    func navigateToHome() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let vc = ProductReviewListContainerViewController.instantiate()
+            let navController = UINavigationController(rootViewController: vc)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
+        }
 
-
+    }
+    
+    
 }

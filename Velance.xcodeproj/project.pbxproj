@@ -70,6 +70,9 @@
 		7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9026EE3F2C007573DD /* AlertViewController.swift */; };
 		7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */; };
 		7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A9226EE3F2D007573DD /* VLButton.swift */; };
+		7CCBB542272519D7002EFB58 /* UserAllergyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB541272519D7002EFB58 /* UserAllergyGroup.swift */; };
+		7CCBB54427251A5C002EFB58 /* RegisterResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB54327251A5C002EFB58 /* RegisterResponseDTO.swift */; };
+		7CCBB54727251ADF002EFB58 /* VegetarianType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB54627251ADF002EFB58 /* VegetarianType.swift */; };
 		7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0E9272243F5005CACF5 /* VLStarButton.swift */; };
 		7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EB27225FDB005CACF5 /* UIHelper.swift */; };
 		7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */; };
@@ -80,6 +83,10 @@
 		7CEED0FB2723F7F5005CACF5 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0FA2723F7F5005CACF5 /* Interceptor.swift */; };
 		7CEED0FE2723F824005CACF5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0FD2723F824005CACF5 /* NetworkError.swift */; };
 		7CEED1002723FBDD005CACF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0FF2723FBDD005CACF5 /* User.swift */; };
+		7CEED10227240209005CACF5 /* LoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10127240209005CACF5 /* LoginResponseDTO.swift */; };
+		7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */; };
+		7CEED10627245158005CACF5 /* UserTasteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10527245158005CACF5 /* UserTasteGroup.swift */; };
+		7CEED10827245470005CACF5 /* UserInterestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10727245470005CACF5 /* UserInterestGroup.swift */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
@@ -160,6 +167,9 @@
 		7CC36A9026EE3F2C007573DD /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		7CC36A9126EE3F2D007573DD /* VLBodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLBodyLabel.swift; sourceTree = "<group>"; };
 		7CC36A9226EE3F2D007573DD /* VLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLButton.swift; sourceTree = "<group>"; };
+		7CCBB541272519D7002EFB58 /* UserAllergyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllergyGroup.swift; sourceTree = "<group>"; };
+		7CCBB54327251A5C002EFB58 /* RegisterResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseDTO.swift; sourceTree = "<group>"; };
+		7CCBB54627251ADF002EFB58 /* VegetarianType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetarianType.swift; sourceTree = "<group>"; };
 		7CEED0E9272243F5005CACF5 /* VLStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLStarButton.swift; sourceTree = "<group>"; };
 		7CEED0EB27225FDB005CACF5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +180,10 @@
 		7CEED0FA2723F7F5005CACF5 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		7CEED0FD2723F824005CACF5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7CEED0FF2723FBDD005CACF5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7CEED10127240209005CACF5 /* LoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDTO.swift; sourceTree = "<group>"; };
+		7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		7CEED10527245158005CACF5 /* UserTasteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTasteGroup.swift; sourceTree = "<group>"; };
+		7CEED10727245470005CACF5 /* UserInterestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterestGroup.swift; sourceTree = "<group>"; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -359,6 +373,7 @@
 			children = (
 				7CC36A4C26EC65D7007573DD /* Constants.swift */,
 				7CAEEB122710335D0049F257 /* UserOptions.swift */,
+				7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -414,6 +429,7 @@
 		7CC36A3A26EC6358007573DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7CCBB54527251AC8002EFB58 /* User Type & Groups */,
 				7CEED0F62723DD48005CACF5 /* ResponseDTOs */,
 				7CEED0F52723DD3C005CACF5 /* RequestDTOs */,
 				7CEED0FA2723F7F5005CACF5 /* Interceptor.swift */,
@@ -543,6 +559,17 @@
 			path = "Custom Alerts";
 			sourceTree = "<group>";
 		};
+		7CCBB54527251AC8002EFB58 /* User Type & Groups */ = {
+			isa = PBXGroup;
+			children = (
+				7CEED10727245470005CACF5 /* UserInterestGroup.swift */,
+				7CCBB541272519D7002EFB58 /* UserAllergyGroup.swift */,
+				7CEED10527245158005CACF5 /* UserTasteGroup.swift */,
+				7CCBB54627251ADF002EFB58 /* VegetarianType.swift */,
+			);
+			path = "User Type & Groups";
+			sourceTree = "<group>";
+		};
 		7CEED0F52723DD3C005CACF5 /* RequestDTOs */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +581,8 @@
 		7CEED0F62723DD48005CACF5 /* ResponseDTOs */ = {
 			isa = PBXGroup;
 			children = (
+				7CEED10127240209005CACF5 /* LoginResponseDTO.swift */,
+				7CCBB54327251A5C002EFB58 /* RegisterResponseDTO.swift */,
 			);
 			path = ResponseDTOs;
 			sourceTree = "<group>";
@@ -749,6 +778,7 @@
 				7CF529722710513600499709 /* String+Extension.swift in Sources */,
 				7CFF121A27215A8900E6A9D3 /* MyPageViewController.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
+				7CEED10227240209005CACF5 /* LoginResponseDTO.swift in Sources */,
 				7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */,
 				3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* SimilarTasteProductTableViewCell.swift in Sources */,
@@ -760,13 +790,16 @@
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
+				7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */,
 				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
+				7CEED10627245158005CACF5 /* UserTasteGroup.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
 				7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */,
+				7CEED10827245470005CACF5 /* UserInterestGroup.swift in Sources */,
 				7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
@@ -775,6 +808,7 @@
 				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,
+				7CCBB54427251A5C002EFB58 /* RegisterResponseDTO.swift in Sources */,
 				7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */,
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
@@ -784,12 +818,14 @@
 				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
 				7CEED1002723FBDD005CACF5 /* User.swift in Sources */,
 				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
+				7CCBB54727251ADF002EFB58 /* VegetarianType.swift in Sources */,
 				7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CEED0F92723DDF5005CACF5 /* UserRegisterDTO.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
+				7CCBB542272519D7002EFB58 /* UserAllergyGroup.swift in Sources */,
 				7CEED0FB2723F7F5005CACF5 /* Interceptor.swift in Sources */,
 				7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */,
 				7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */,

@@ -146,12 +146,6 @@ extension InputUserInfoForRegister {
         UserRegisterValues.shared.interestTypeIds = interestTypeIds
         UserRegisterValues.shared.allergyTypeIds = allergyTypeIds
         
-        
-        print("✏️ veganTypeId: \(UserRegisterValues.shared.vegetarianTypeId)")
-        print("✏️ tasteTypeIds: \(UserRegisterValues.shared.tasteTypeIds)")
-        print("✏️ interestTypeIds: \(UserRegisterValues.shared.interestTypeIds)")
-        print("✏️ allergyTypeIds: \(UserRegisterValues.shared.allergyTypeIds)")
-        
         let vc = LoadingViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }

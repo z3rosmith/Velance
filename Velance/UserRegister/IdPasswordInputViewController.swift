@@ -37,7 +37,6 @@ extension IdPasswordInputViewController {
     }
     
     private func validateUserInput() -> Bool {
-        
         guard
             let id = idTextField.text,
             let pw = passwordTextField.text,
@@ -46,16 +45,20 @@ extension IdPasswordInputViewController {
                 return false
             }
         
-        if id.count < 5, id.count > 15 {
+        if id.count < 5 || id.count > 15 {
             showSimpleBottomAlert(with: "아이디는 5자 이상, 15자 이하로 설정해주세요.")
             return false
         }
-        
+    
+        if pw.count < 5 || pw.count > 15 {
+            showSimpleBottomAlert(with: "비밀번호는 5자 이상, 15자 이하로 설정해주세요.")
+            return false
+        }
+    
         if pw != checkPw {
             showSimpleBottomAlert(with: "비밀번호가 일치하지 않아요.")
             return false
         }
-        
         return true
     }
 }
@@ -109,6 +112,9 @@ extension IdPasswordInputViewController {
             string: "비밀번호 재입력",
             attributes: [.foregroundColor: UIColor.white]
         )
+        
+        passwordTextField.isSecureTextEntry = true
+        checkPasswordTextField.isSecureTextEntry = true
     }
     
     private func configureButtons() {
