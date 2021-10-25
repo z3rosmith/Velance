@@ -43,6 +43,7 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     func setUpViewModel() {
         viewModel = ProductReviewViewModel(
             productManager: ProductManager(),
+            reportManager: ReportManager(),
             productId: productId ?? 1
         )
         viewModel?.delegate = self
@@ -55,7 +56,6 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        viewModel?.fetchReviewList()
     }
     
 }
@@ -67,14 +67,41 @@ extension ProductReviewViewController {
     @objc private func pressedOptionsBarButtonItem() {
         
         let reportAction = UIAlertAction(
-            title: "잘못된 정보 수정 요청",
+            title: "신고하기",
             style: .default
-        ) { [weak self] _ in
-            guard let self = self else { return }
-            
-        }
+        ) { [weak self] _ in self?.presentReportReviewActionSheet() }
         let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
         present(actionSheet, animated: true)
+    }
+    
+    private func presentReportReviewActionSheet() {
+        
+        let incorrectProductPicture = UIAlertAction(
+            title: ReportType.Product.incorrectProductPicture.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Product.incorrectProductPicture)
+        }
+        
+        let inappropriateProductPicture = UIAlertAction(
+            title: ReportType.Product.inappropriateProductPicture.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Product.inappropriateProductPicture)
+        }
+        
+        let incorrectPrice = UIAlertAction(
+            title: ReportType.Product.incorrectPrice.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Product.incorrectPrice)
+        }
+        let actionSheet = UIHelper.createActionSheet(with: [incorrectProductPicture, inappropriateProductPicture, incorrectPrice], title: "신고 사유 선택")
+        present(actionSheet, animated: true)
+    }
+    
+    private func report(reportType: ReportType.Product) {
+        viewModel?.reportProduct(type: reportType)
     }
     
     @objc private func pressedAddReviewButton() {
@@ -98,6 +125,14 @@ extension ProductReviewViewController: ProductReviewDelegate {
         showSimpleBottomAlert(with: error.errorDescription)
         reviewTableView.tableFooterView = nil
         reviewTableView.refreshControl?.endRefreshing()
+    }
+    
+    func didReportProduct() {
+        showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func failedReportingProduct(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
     }
 }
 

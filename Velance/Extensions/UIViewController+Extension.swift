@@ -69,6 +69,7 @@ extension UIViewController {
             style: .default
         )
         alertController.addAction(okAction)
+        alertController.view.tintColor = .black
         present(alertController, animated: true)
     }
     
@@ -95,7 +96,7 @@ extension UIViewController {
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
-
+        alertController.view.tintColor = .black
         present(alertController, animated: true, completion: nil)
     }
     

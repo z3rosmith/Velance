@@ -75,7 +75,7 @@ extension UploadNewProductViewController {
             return
         }
         
-        presentAlertWithConfirmAction(title: "", message: "해당 제품을 새로 등록하시겠습니까?") { [weak self] selectedOk in
+        presentAlertWithConfirmAction(title: "해당 제품을 새로 등록하시겠습니까?", message: "") { [weak self] selectedOk in
             guard let self = self else { return }
             if selectedOk {
                 let model = NewProductDTO(
@@ -83,7 +83,7 @@ extension UploadNewProductViewController {
                     name: productName,
                     price: Int(productPrice) ?? 0,
                     file: imageData
-                )
+                ) 
                 showProgressBar()
                 ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
                     guard let self = self else { return }

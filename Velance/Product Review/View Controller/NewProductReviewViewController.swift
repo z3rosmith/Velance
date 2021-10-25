@@ -48,7 +48,7 @@ extension NewProductReviewViewController {
             return
         }
         
-        presentAlertWithConfirmAction(title: "", message: "리뷰를 등록하시겠습니까?") { [weak self] selectedOk in
+        presentAlertWithConfirmAction(title: "리뷰를 등록하시겠습니까?", message: "") { [weak self] selectedOk in
             guard let self = self else { return }
             if selectedOk {
                 let model = NewReviewDTO(

@@ -49,6 +49,7 @@ extension SceneDelegate {
         #warning("추후 수정 필요 -> 피드 화면으로 가야함 (커뮤니티 탭")
         let vc = ProductReviewListContainerViewController.instantiate()
         let navController = UINavigationController(rootViewController: vc)
+        navController.navigationBar.tintColor = .black
         return navController
     }
     
