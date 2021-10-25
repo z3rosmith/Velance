@@ -13,7 +13,7 @@ class ProductManager {
     let productAPIBaseUrl           = "\(API.baseUrl)product"
     let productReviewAPIBaseUrl     = "\(API.baseUrl)review"
     
-    
+    //MARK: - 제품 목록 가져오기
     func getProducts(
         page: Int,
         productCategoryId: Int,
@@ -109,7 +109,6 @@ class ProductManager {
                     mimeType: "image/jpeg"
                 )
             }
-            
         },
                   to: productReviewAPIBaseUrl + "/\(model.productId)",
                   method: .post,
@@ -128,11 +127,42 @@ class ProductManager {
                     print("❗️ ProductManager - uploadNewReview error: \(error.errorDescription)")
                 }
             }
-        
-        
     }
     
-    
+    //MARK: - 제품 리뷰 가져오기
+    func getProductReviews(
+        page: Int,
+        productId: Int,
+        completion: @escaping ((Result<[ProductReviewResponseDTO], NetworkError>) -> Void)
+    ) {
+        
+        let url = productReviewAPIBaseUrl + "/\(productId)?cursor=\(page)"
+        
+        AF.request(
+            url,
+            method: .get,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(_):
+                    print("✏️ ProductManager - getProductReviews SUCCESS")
+                    do {
+                        let decodedData = try JSONDecoder().decode([ProductReviewResponseDTO].self, from: response.data!)
+                        completion(.success(decodedData))
+                    } catch {
+                        print("❗️ ProductManager - getProductReviews Decoding ERROR: \(error)")
+                        completion(.failure(.internalError))
+                    }
+                    
+                case .failure(_):
+                    let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                    print("❗️ ProductManager - getProductReviews failure with error: \(error.errorDescription)")
+                    completion(.failure(error))
+                }
+            }
+    }
     
     
     

@@ -12,10 +12,7 @@ class UIHelper {
         )
         actionSheet.view.tintColor = .black
         
-        
-        actions.forEach { alertAction in
-            actionSheet.addAction(alertAction)
-        }
+        actions.forEach {actionSheet.addAction($0) }
         
         let cancelAction = UIAlertAction(
             title: "취소",
@@ -99,4 +96,16 @@ class UIHelper {
         return options
     }
     
+    static func createSpinnerFooterView(in view: UIView) -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: view.frame.size.width,
+                                              height: 100))
+        
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
+    }
 }

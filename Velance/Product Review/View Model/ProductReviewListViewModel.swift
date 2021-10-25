@@ -24,8 +24,6 @@ class ProductReviewListViewModel {
     }
     
     var isFetchingData: Bool = false
-    
-    
     var pageIndex: Int = 0
     
     
@@ -51,19 +49,15 @@ class ProductReviewListViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let productList):
-                
                 self.productList.append(contentsOf: productList)
                 self.isFetchingData = false
                 self.delegate?.didFetchProductList()
             case .failure(let error):
-                
-
                 self.isFetchingData = false
                 self.delegate?.failedFetchingProductList(with: error)
             }
         }
     }
-    
     
     func resetValues() {
         productList.removeAll()

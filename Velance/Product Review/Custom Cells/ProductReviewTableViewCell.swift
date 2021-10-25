@@ -28,6 +28,7 @@ class ProductReviewTableViewCell: UITableViewCell {
         configureContainerView()
         configureReviewImageSlideShow()
         configureShowMoreButton()
+        configureProfileImageView()
         
     }
     
@@ -80,7 +81,6 @@ class ProductReviewTableViewCell: UITableViewCell {
     
     func configureReviewImageSlideShow() {
         reviewImageSlideShow.contentScaleMode = .scaleAspectFill
-        reviewImageSlideShow.layer.cornerRadius = 10
         reviewImageSlideShow.zoomEnabled = true
         
         let recognizer = UITapGestureRecognizer(
@@ -98,5 +98,9 @@ class ProductReviewTableViewCell: UITableViewCell {
         )
     }
     
-    
+    func configureProfileImageView() {
+
+        profileImageView.layer.borderColor = UIColor.darkGray.cgColor
+        profileImageView.contentMode = .scaleAspectFit
+    }
 }

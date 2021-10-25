@@ -1,6 +1,6 @@
 import Foundation
 
-struct ProductListResponseDTO: Codable {
+struct ProductListResponseDTO: Decodable {
     
     let productId: Int
     let name: String

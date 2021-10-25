@@ -17,6 +17,7 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     var rating: Int?
     var price: Int?
     
+    private var viewModel: ProductReviewViewModel?
     //MARK: - Constants
     
     fileprivate struct Metrics {
@@ -34,8 +35,27 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViewModel()
         configure()
         bottomView.backgroundColor = .white
+    }
+    
+    func setUpViewModel() {
+        viewModel = ProductReviewViewModel(
+            productManager: ProductManager(),
+            productId: productId ?? 1
+        )
+        viewModel?.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchReviewList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        viewModel?.fetchReviewList()
     }
     
 }
@@ -64,12 +84,29 @@ extension ProductReviewViewController {
     }
 }
 
+//MARK: - ProductReviewDelegate
+
+extension ProductReviewViewController: ProductReviewDelegate {
+    
+    func didFetchReviewList() {
+        reviewTableView.reloadData()
+        reviewTableView.tableFooterView = nil
+        reviewTableView.refreshControl?.endRefreshing()
+    }
+    
+    func failedFetchingReviewList(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+        reviewTableView.tableFooterView = nil
+        reviewTableView.refreshControl?.endRefreshing()
+    }
+}
+
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel?.reviewList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,14 +116,29 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
             for: indexPath
         ) as? ProductReviewTableViewCell else { return ProductReviewTableViewCell() }
         
-        var imageSources: [InputSource] = []
-        imageSources.append(SDWebImageSource(url: URL(string: "https://picsum.photos/1200/1200")!))
+        guard let reviewData = viewModel?.reviewList[indexPath.row] else {
+            return ProductReviewTableViewCell()
+        }
         
         cell.currentVC = self
-        cell.reviewLabel.text = "꽤 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요. 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금 나가서 매번 사기에는 부담스러워요 괜찮았습니다! 다만 가격이 조금."
-        cell.dateLabel.text = "2021.03.24"
-        cell.reviewImageSlideShow.setImageInputs(imageSources)
+        cell.reviewLabel.text = reviewData.contents
+        cell.ratingView.setStarsRating(rating: reviewData.rating)
+        cell.nicknameLabel.text = reviewData.user.displayName
         
+        cell.profileImageView.sd_setImage(
+            with: URL(string: reviewData.user.fileFolder?.files[0].path ?? ""),
+            placeholderImage: UIImage(systemName: "person"),
+            options: .continueInBackground
+        )
+
+        var imageSources: [InputSource] = []
+        for file in reviewData.fileFolder.files {
+            imageSources.append(SDWebImageSource(url: URL(string: file.path)!))
+        }
+        cell.reviewImageSlideShow.setImageInputs(imageSources)
+
+        cell.dateLabel.text = reviewData.createdAt
+
         
         return cell
     }
@@ -102,14 +154,26 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if scrollView.contentOffset.y <= 0 {
-            
+        let position = scrollView.contentOffset.y
+        
+        if position <= 0 {
             topImageViewHeight.constant = Metrics.topImageViewMaxHeight
             UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             })
-            
         }
+    
+        if position > (reviewTableView.contentSize.height - 20 - scrollView.frame.size.height) {
+            guard let viewModel = viewModel else { return }
+            if !viewModel.isFetchingData {
+                reviewTableView.tableFooterView = UIHelper.createSpinnerFooterView(in: view)
+                viewModel.fetchReviewList()
+            }
+        }
+    }
+    
+    @objc private func refreshReviewTableView() {
+        viewModel?.refreshTableView()
     }
 }
 
@@ -218,8 +282,6 @@ extension ProductReviewViewController {
         headerView.addGestureRecognizer(panGesture)
         
         reviewTableView.tableHeaderView = headerView
-        
-        
         let reviewTableViewCell = UINib(
             nibName: XIB_ID.productReviewTVC,
             bundle: nil
@@ -230,8 +292,15 @@ extension ProductReviewViewController {
             forCellReuseIdentifier: CellID.productReviewTVC
         )
         
+        reviewTableView.refreshControl = UIRefreshControl()
+        reviewTableView.refreshControl?.addTarget(
+            self,
+            action: #selector(refreshReviewTableView),
+            for: .valueChanged
+        )
+        
         reviewTableView.rowHeight = UITableView.automaticDimension
-        reviewTableView.estimatedRowHeight = 350
+        reviewTableView.estimatedRowHeight = 450
     }
     
     private func addOptionsBarButtonItem() {
