@@ -47,6 +47,11 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+
+    }
 }
 
 //MARK: - UICollectionViewDelegate

@@ -11,11 +11,9 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
     private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
-    private var titles: [String] = ["즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
-    
     fileprivate struct Fonts {
-     
-  
+        
+        
         // Section Title Labels
         static let sectionTitleFont = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
@@ -23,13 +21,18 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     static var storyboardName: String {
         StoryboardName.productReview
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         viewModel.fetchProductList()
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismissProgressBar()
+    }
+    
 }
 
 //MARK: - IBActions & Target Methods
@@ -38,9 +41,9 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
-    
+        
     }
-
+    
     @objc private func pressedSearchBarView() {
         navigationController?.pushViewController(
             SearchProductViewController.instantiate(),
@@ -84,7 +87,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.popularProductCVC,
             for: indexPath
@@ -101,7 +104,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         
         cell.productImageView.sd_setImage(
             with: URL(string: productData.fileFolder.files[0].path)!,
-            placeholderImage: UIImage(named: "image_test")
+            placeholderImage: nil
             ,
             options: .continueInBackground
         )
@@ -109,15 +112,21 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(ProductReviewViewController.instantiate(), animated: true)
+        
+        guard  let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
+        
+        
+        
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSpacing: CGFloat = 50
         let width: CGFloat = (collectionView.bounds.width - itemSpacing) / 2
-        return CGSize(width: width, height: 220)
+        return CGSize(width: width, height: 230)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
@@ -175,7 +184,7 @@ extension ProductReviewListContainerViewController {
         )
         searchBarView.addGestureRecognizer(tapGesture)
     }
-
+    
     
     private func configureCollectionView() {
         productCollectionView.delegate = self
@@ -186,7 +195,7 @@ extension ProductReviewListContainerViewController {
             action: #selector(refreshCollectionView),
             for: .valueChanged
         )
-       
+        
         let popularProductNibName = UINib(
             nibName: XIB_ID.popularProductCVC,
             bundle: nil

@@ -182,11 +182,13 @@ extension ProductReviewViewController {
         reviewTableView.allowsSelection = false
         
         
-        let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 150))
+        let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 250))
         
-        headerView.configure(productName: "[무빙 마운틴] 비건 소세지 맛있는 소시지 ", rating: 3, price: 30000)
-        
-        
+        headerView.configure(
+            productName: "[무빙 마운틴] 비건 소세지 맛있는 소시지  비건 소세지 맛있는  비건 소세지 맛있는 ",
+            rating: 3,
+            price: 30000
+        )
         let panGesture = UIPanGestureRecognizer(
             target: self,
             action: #selector(viewPanned(_:))

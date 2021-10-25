@@ -56,6 +56,49 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    
+    // 가장 기본적인 Alert 띄우기
+    func presentSimpleAlert(title: String, message: String) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "확인",
+            style: .default
+        )
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
+    // 확인 버튼을 누를 수 있는 Alert 띄우기
+    func presentAlertWithConfirmAction(title: String, message: String, completion: @escaping ((Bool) -> Void)) {
+        
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "확인",
+            style: .default
+        ) { pressedOk in
+            completion(true)
+        }
+        let cancelAction = UIAlertAction(
+            title: "취소",
+            style: .cancel
+        ) { pressedCancel in
+            completion(false)
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // SnackBar 라이브러리의 message 띄우기
     func showSimpleBottomAlert(with message: String) {
         SnackBar.make(in: self.view,

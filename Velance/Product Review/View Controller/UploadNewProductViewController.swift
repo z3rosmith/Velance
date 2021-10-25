@@ -2,13 +2,13 @@ import UIKit
 import TextFieldEffects
 
 class UploadNewProductViewController: UIViewController, Storyboarded {
-
+    
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var productImageView: UIImageView!
     
     @IBOutlet weak var productNameTextField: HoshiTextField!
     @IBOutlet weak var productPriceTextField: HoshiTextField!
-
+    
     @IBOutlet weak var chooseProductCategoryView: UIView!
     @IBOutlet var productCategoryButtons: [VLGradientButton]!
     
@@ -38,7 +38,7 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         configure()
     }
     
-
+    
 }
 
 //MARK: - IBActions & Target Methods
@@ -49,7 +49,7 @@ extension UploadNewProductViewController {
         present(imagePicker, animated: true)
     }
     
-
+    
     @IBAction func pressedProductCategoryButton(_ sender: UIButton) {
         productCategoryButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
@@ -78,30 +78,30 @@ extension UploadNewProductViewController {
             return
         }
         
-        let model = NewProductDTO(
-            productCategoryId: productCategoryId,
-            name: productName,
-            price: Int(productPrice) ?? 0,
-            file: imageData
-        )
-        
-        showProgressBar()
-        ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
-            guard let self = self else { return }
-            dismissProgressBar()
-            switch result {
-            case .success:
-                self.showSimpleBottomAlert(with: "새 제품 등록에 성공하셨어요.🎉")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
-                    self.navigationController?.popViewController(animated: true)
+        presentAlertWithConfirmAction(title: "", message: "해당 제품을 새로 등록하시겠습니까?") { selectedOk in
+            if selectedOk {
+                let model = NewProductDTO(
+                    productCategoryId: productCategoryId,
+                    name: productName,
+                    price: Int(productPrice) ?? 0,
+                    file: imageData
+                )
+                showProgressBar()
+                ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
+                    guard let self = self else { return }
+                    dismissProgressBar()
+                    switch result {
+                    case .success:
+                        self.showSimpleBottomAlert(with: "새 제품 등록에 성공하셨어요.🎉")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    case .failure(let error):
+                        self.showSimpleBottomAlert(with: error.errorDescription)
+                    }
                 }
-            case .failure(let error):
-                self.showSimpleBottomAlert(with: error.errorDescription)
             }
         }
-  
-        
-     
     }
 }
 
@@ -110,7 +110,6 @@ extension UploadNewProductViewController {
 extension UploadNewProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         if let originalImage: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             dismiss(animated: true) {
                 DispatchQueue.main.async {
@@ -150,10 +149,10 @@ extension UploadNewProductViewController {
     private func configureProductImageView() {
         productImageView.layer.cornerRadius = 5
         productImageView.contentMode = .scaleAspectFill
-    } 
+    }
     
     private func configureTextFields() {
-
+        
     }
     
     private func configureUIViews() {
@@ -167,7 +166,7 @@ extension UploadNewProductViewController {
             
         }
     }
-
+    
     
     private func configureProductCategoryGradientButtons() {
         var index: Int = 1
