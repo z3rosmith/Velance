@@ -18,15 +18,13 @@ class ProductReviewListViewModel {
     
     var selectedProductCategory = 1 {
         didSet {
-            productList.removeAll()
+            resetValues()
             fetchProductList()
         }
     }
     
     var isFetchingData: Bool = false
-    var pageIndex: Int = 0
-    
-    
+    var cursor: Int = 0
     
     //MARK: - Initialization
     
@@ -41,7 +39,7 @@ class ProductReviewListViewModel {
         isFetchingData = true
         
         productManager?.getProducts(
-            page: pageIndex,
+            page: cursor,
             productCategoryId: selectedProductCategory,
             onlyMyVegetarianType: onlyMyVegetarianType)
         { [weak self] result in
@@ -49,6 +47,11 @@ class ProductReviewListViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let productList):
+                if productList.isEmpty {
+                    self.delegate?.didFetchProductList()
+                    return
+                }
+                self.cursor = productList.last?.productId ?? 0
                 self.productList.append(contentsOf: productList)
                 self.isFetchingData = false
                 self.delegate?.didFetchProductList()
@@ -62,6 +65,6 @@ class ProductReviewListViewModel {
     func resetValues() {
         productList.removeAll()
         isFetchingData = false
-        pageIndex = 0
+        cursor = 0
     }
 }

@@ -23,7 +23,6 @@ class ReportManager {
         case .mall: url = reportAPIBaseUrl + "/mall"
         case .product: url = reportAPIBaseUrl + "/reply"        // 수정 필요
         }
-        
 
         AF.request(
             url,

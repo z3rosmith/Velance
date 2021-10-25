@@ -45,9 +45,7 @@ class ProductReviewViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let reviewList):
-                
                 if reviewList.isEmpty {
-                    print("✏️ ReviewList is EMPTY!")
                     self.delegate?.didFetchReviewList()
                     return
                 }

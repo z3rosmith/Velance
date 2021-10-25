@@ -156,6 +156,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         cell.currentVC = self
+        cell.delegate = self
         cell.reviewLabel.text = reviewData.contents
         cell.ratingView.setStarsRating(rating: reviewData.rating)
         cell.nicknameLabel.text = reviewData.user.displayName
@@ -211,6 +212,20 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         viewModel?.refreshTableView()
     }
 }
+
+//MARK: - ProductReviewTableViewCellDelegate
+
+extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
+
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "사용자의 게시글을 더 이상 보지 않게 설정하였어요.")
+    }
+    
+    func didReportUser() {
+        showSimpleBottomAlert(with: "신고가 완료되었어요. 벨런스 팀이 검토 후 조치를 취하도록 할게요👍")
+    }
+}
+
 
 //MARK: - UIPanGestureRecognizer Methods
 

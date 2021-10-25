@@ -16,6 +16,6 @@ extension UserDefaults {
         static let isLoggedIn       = "isLoggedIn"
         
         
-
+        static let blockedUsers     = "blockedUsers"
     }
 }

@@ -159,6 +159,15 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (productCollectionView.contentSize.height - 20 - scrollView.frame.size.height) {
+            if !viewModel.isFetchingData {
+                viewModel.fetchProductList()
+            }
+        }
+    }
 }
 
 

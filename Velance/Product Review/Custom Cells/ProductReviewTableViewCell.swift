@@ -1,6 +1,11 @@
 import UIKit
 import ImageSlideshow
 
+protocol ProductReviewTableViewCellDelegate: AnyObject {
+    func didBlockUser()
+    func didReportUser()
+}
+
 class ProductReviewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
@@ -15,6 +20,7 @@ class ProductReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewImageViewHeight: NSLayoutConstraint!
     
     weak var currentVC: UIViewController?
+    weak var delegate: ProductReviewTableViewCellDelegate?
     
     //MARK: - Constants
     
@@ -60,10 +66,16 @@ class ProductReviewTableViewCell: UITableViewCell {
             guard let self = self else { return }
             
         }
-        
         let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
 
         currentVC?.present(actionSheet, animated: true)
+    }
+    
+    func reportUser() {
+        
+    }
+    
+    func blockUser() {
         
     }
     

@@ -29,5 +29,12 @@ class User {
     }
 
     
-    
+    var blockedUserList: [String] {
+        get {
+            return UserDefaults.standard.stringArray(forKey: UserDefaults.Keys.blockedUsers) ?? [String]()
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaults.Keys.blockedUsers)
+        }
+    }
 }

@@ -1,7 +1,5 @@
 import Foundation
 
-
-
 enum ReportType {
     
     case feed(Feed)
@@ -30,7 +28,6 @@ enum ReportType {
         case incorrectMallName              = "식당 이름이 잘못되었어요."
         
     }
-    
     
     // Product
     enum Product: String {
