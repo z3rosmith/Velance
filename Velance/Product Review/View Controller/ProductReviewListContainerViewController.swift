@@ -1,6 +1,7 @@
 import UIKit
 import Segmentio
 import SDWebImage
+import SnapKit
 
 class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     
@@ -12,8 +13,7 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
     private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
     fileprivate struct Fonts {
-        
-        
+    
         // Section Title Labels
         static let sectionTitleFont = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
@@ -27,7 +27,7 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         configure()
         viewModel.fetchProductList()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         dismissProgressBar()
@@ -104,8 +104,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         
         cell.productImageView.sd_setImage(
             with: URL(string: productData.fileFolder.files[0].path)!,
-            placeholderImage: nil
-            ,
+            placeholderImage: nil,
             options: .continueInBackground
         )
         return cell
@@ -113,10 +112,15 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard  let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
+        guard let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
         
+        let productData = viewModel.productList[indexPath.row]
         
-        
+        vc.productId = productData.productId
+        vc.productThumbnailUrl = URL(string: productData.fileFolder.files[0].path)!
+        vc.productName = productData.name
+        vc.rating = Int(productData.rating)
+        vc.price = productData.price
         
         navigationController?.pushViewController(vc, animated: true)
     }

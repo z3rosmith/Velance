@@ -10,7 +10,8 @@ class ProductManager {
     
     //MARK: - End Points
     
-    let productAPIBaseUrl   = "\(API.baseUrl)product"
+    let productAPIBaseUrl           = "\(API.baseUrl)product"
+    let productReviewAPIBaseUrl     = "\(API.baseUrl)review"
     
     
     func getProducts(
@@ -89,6 +90,47 @@ class ProductManager {
             }
     }
     
+    //MARK: - 리뷰 등록
+    func uploadNewReview(
+        with model: NewReviewDTO,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+            multipartFormData.append(Data(String(model.rating).utf8),withName: "rating")
+            multipartFormData.append(Data(model.contents.utf8),withName: "contents")
+            
+            for image in model.files {
+                multipartFormData.append(
+                    image,
+                    withName: "files",
+                    fileName: "\(UUID().uuidString).jpeg",
+                    mimeType: "image/jpeg"
+                )
+            }
+            
+        },
+                  to: productReviewAPIBaseUrl + "/\(model.productId)",
+                  method: .post,
+                  interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                
+                switch response.result {
+                case .success:
+                    print("✏️ ProductManager - uploadNewReview SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                    print("❗️ ProductManager - uploadNewReview error: \(error.errorDescription)")
+                }
+            }
+        
+        
+    }
     
     
     

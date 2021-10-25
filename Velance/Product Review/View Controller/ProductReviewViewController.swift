@@ -1,20 +1,27 @@
 import UIKit
 import ImageSlideshow
 import SDWebImage
+import SnapKit
 
 class ProductReviewViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var productThumbnailImageView: UIImageView!
     @IBOutlet weak var topImageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var dragIndicator: UIView!
     @IBOutlet weak var reviewTableView: UITableView!
     
+    var productId: Int?
+    var productThumbnailUrl: URL?
+    var productName: String?
+    var rating: Int?
+    var price: Int?
     
     //MARK: - Constants
     
     fileprivate struct Metrics {
         
-        static let topImageViewMaxHeight: CGFloat = 300
+        static let topImageViewMaxHeight: CGFloat = 280
         static let topImageViewMinHeight: CGFloat = 100
         static var startingTopImageViewHeight: CGFloat = topImageViewMaxHeight
     }
@@ -30,8 +37,6 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         configure()
         bottomView.backgroundColor = .white
     }
-    
-    
     
 }
 
@@ -51,9 +56,13 @@ extension ProductReviewViewController {
         let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
         present(actionSheet, animated: true)
     }
+    
+    @objc private func pressedAddReviewButton() {
+        guard let vc = NewProductReviewViewController.instantiate() as? NewProductReviewViewController else { return }
+        vc.productId = productId ?? 0
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
-
-
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
@@ -155,10 +164,22 @@ extension ProductReviewViewController {
 extension ProductReviewViewController {
     
     private func configure() {
+        configureProductThumbnailImageView()
         configureDragIndicator()
         configurePanGestureRecognizer()
         configureTableView()
         addOptionsBarButtonItem()
+        addFloatingButton()
+
+    }
+    
+    private func configureProductThumbnailImageView() {
+        productThumbnailImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        productThumbnailImageView.sd_setImage(
+            with: productThumbnailUrl,
+            placeholderImage: nil,
+            options: .continueInBackground
+        )
     }
     
     private func configureDragIndicator() {
@@ -181,13 +202,12 @@ extension ProductReviewViewController {
         reviewTableView.separatorStyle = .none
         reviewTableView.allowsSelection = false
         
-        
         let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 250))
         
         headerView.configure(
-            productName: "[무빙 마운틴] 비건 소세지 맛있는 소시지  비건 소세지 맛있는  비건 소세지 맛있는 ",
-            rating: 3,
-            price: 30000
+            productName: self.productName ?? "로딩 중..",
+            rating: self.rating ?? 0,
+            price: self.price ?? 0
         )
         let panGesture = UIPanGestureRecognizer(
             target: self,
@@ -224,5 +244,20 @@ extension ProductReviewViewController {
         navigationItem.rightBarButtonItem = optionsBarButtonItem
     }
     
+    private func addFloatingButton() {
+        let addReviewButton = VLFloatingButton()
+        addReviewButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+        addReviewButton.addTarget(
+            self,
+            action: #selector(pressedAddReviewButton),
+            for: .touchUpInside
+        )
+        view.addSubview(addReviewButton)
+        addReviewButton.snp.makeConstraints { make in
+            make.width.height.equalTo(60)
+            make.right.equalTo(view.snp.right).offset(-25)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-35)
+        }
+    }
     
 }

@@ -94,6 +94,7 @@
 		7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */; };
 		7CEED10627245158005CACF5 /* UserTasteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10527245158005CACF5 /* UserTasteGroup.swift */; };
 		7CEED10827245470005CACF5 /* UserInterestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10727245470005CACF5 /* UserInterestGroup.swift */; };
+		7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF39244272672EC00E48EFB /* NewReviewDTO.swift */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
 		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
@@ -198,6 +199,7 @@
 		7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		7CEED10527245158005CACF5 /* UserTasteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTasteGroup.swift; sourceTree = "<group>"; };
 		7CEED10727245470005CACF5 /* UserInterestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterestGroup.swift; sourceTree = "<group>"; };
+		7CF39244272672EC00E48EFB /* NewReviewDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReviewDTO.swift; sourceTree = "<group>"; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				7CCBB55927255D06002EFB58 /* NewProductDTO.swift */,
+				7CF39244272672EC00E48EFB /* NewReviewDTO.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
+				7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */,
 				7CCBB542272519D7002EFB58 /* UserAllergyGroup.swift in Sources */,
 				7CEED0FB2723F7F5005CACF5 /* Interceptor.swift in Sources */,
 				7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */,

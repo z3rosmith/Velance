@@ -353,13 +353,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_test" translatesAutoresizingMaskIntoConstraints="NO" id="Ipm-Oh-ZFL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="vss-ye-vhC"/>
+                                    <constraint firstAttribute="height" constant="280" id="vss-ye-vhC"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-EJ-txq" userLabel="Bottom View" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="280" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="260" width="414" height="636"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csU-WV-dZj" userLabel="Drag Indicator">
                                         <rect key="frame" x="177" y="10" width="60" height="6"/>
@@ -370,7 +370,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wlg-ma-4uk">
-                                        <rect key="frame" x="0.0" y="32" width="414" height="584"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="608"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -381,7 +381,7 @@
                                     <constraint firstAttribute="bottom" secondItem="wlg-ma-4uk" secondAttribute="bottom" id="7oW-aR-igQ"/>
                                     <constraint firstItem="csU-WV-dZj" firstAttribute="centerX" secondItem="OQH-EJ-txq" secondAttribute="centerX" id="GWe-Oc-Scl"/>
                                     <constraint firstAttribute="trailing" secondItem="wlg-ma-4uk" secondAttribute="trailing" id="MG6-We-AH3"/>
-                                    <constraint firstItem="wlg-ma-4uk" firstAttribute="top" secondItem="csU-WV-dZj" secondAttribute="bottom" constant="16" id="aQD-60-dQV"/>
+                                    <constraint firstItem="wlg-ma-4uk" firstAttribute="top" secondItem="csU-WV-dZj" secondAttribute="bottom" constant="12" id="aQD-60-dQV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -400,13 +400,14 @@
                     <connections>
                         <outlet property="bottomView" destination="OQH-EJ-txq" id="w3q-xo-Xvp"/>
                         <outlet property="dragIndicator" destination="csU-WV-dZj" id="zVu-D7-egL"/>
+                        <outlet property="productThumbnailImageView" destination="Ipm-Oh-ZFL" id="Pv5-XY-DbB"/>
                         <outlet property="reviewTableView" destination="wlg-ma-4uk" id="OX1-CN-idh"/>
                         <outlet property="topImageViewHeight" destination="vss-ye-vhC" id="Ak1-La-ihU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhI-3U-xOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="60"/>
+            <point key="canvasLocation" x="2608.6956521739135" y="59.598214285714285"/>
         </scene>
         <!--Upload New Product View Controller-->
         <scene sceneID="F0e-dK-3cw">
@@ -749,6 +750,9 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="완료"/>
+                                                        <connections>
+                                                            <action selector="pressedDoneButton:" destination="oEx-8y-keF" eventType="touchUpInside" id="bqW-IY-ybL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -829,8 +833,8 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 최대 3개 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mt7-oe-GqF">
-                                                <rect key="frame" x="130" y="133" width="67.5" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 최소 1개, 최대 3개 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mt7-oe-GqF">
+                                                <rect key="frame" x="130" y="133" width="122" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
@@ -858,8 +862,8 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-Sf-83G" userLabel="Add Button">
                                                                     <rect key="frame" x="5" y="5" width="97" height="88"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="80" id="J9I-Ov-nqz"/>
-                                                                        <constraint firstAttribute="width" constant="80" id="ROS-Vu-Y8i"/>
+                                                                        <constraint firstAttribute="height" constant="65" id="J9I-Ov-nqz"/>
+                                                                        <constraint firstAttribute="width" constant="65" id="ROS-Vu-Y8i"/>
                                                                     </constraints>
                                                                     <color key="tintColor" name="AppDefaultColor"/>
                                                                     <state key="normal">
@@ -883,21 +887,21 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserPickedImageCollectionViewCell" id="PCE-Qj-gud" customClass="UserPickedImageCollectionViewCell" customModule="Velance" customModuleProvider="target">
-                                                        <rect key="frame" x="117" y="22.5" width="90" height="90"/>
+                                                        <rect key="frame" x="117" y="30" width="75" height="75"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aor-VY-fzG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nWR-9V-WDe">
-                                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                                    <rect key="frame" x="5" y="5" width="65" height="65"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="80" id="9qJ-zN-U6Y"/>
-                                                                        <constraint firstAttribute="width" constant="80" id="MfL-On-8vo"/>
+                                                                        <constraint firstAttribute="height" constant="65" id="9qJ-zN-U6Y"/>
+                                                                        <constraint firstAttribute="width" constant="65" id="MfL-On-8vo"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glU-D5-cHg" userLabel="Cancel Button">
-                                                                    <rect key="frame" x="67" y="0.0" width="23" height="23"/>
+                                                                    <rect key="frame" x="52" y="0.0" width="23" height="23"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="23" id="IkO-FS-bFt"/>
                                                                         <constraint firstAttribute="width" constant="23" id="kMk-S1-Mrb"/>

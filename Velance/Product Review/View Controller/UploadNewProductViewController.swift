@@ -37,8 +37,6 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
-    
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -48,7 +46,6 @@ extension UploadNewProductViewController {
     @IBAction func pressedAddImageButton(_ sender: UIButton) {
         present(imagePicker, animated: true)
     }
-    
     
     @IBAction func pressedProductCategoryButton(_ sender: UIButton) {
         productCategoryButtons.forEach { $0.isSelected = false }
@@ -78,7 +75,8 @@ extension UploadNewProductViewController {
             return
         }
         
-        presentAlertWithConfirmAction(title: "", message: "해당 제품을 새로 등록하시겠습니까?") { selectedOk in
+        presentAlertWithConfirmAction(title: "", message: "해당 제품을 새로 등록하시겠습니까?") { [weak self] selectedOk in
+            guard let self = self else { return }
             if selectedOk {
                 let model = NewProductDTO(
                     productCategoryId: productCategoryId,

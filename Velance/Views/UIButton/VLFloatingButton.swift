@@ -20,7 +20,5 @@ class VLFloatingButton: UIButton {
     private func configure() {
         layer.cornerRadius = frame.height / 2
         backgroundColor = UIColor(named: Colors.tabBarSelectedColor) ?? .systemGreen
-        
-        
     }
 }

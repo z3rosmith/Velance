@@ -8,15 +8,15 @@ class NewProductReviewViewController: UIViewController, Storyboarded {
     @IBOutlet weak var reviewImageCollectionView: UICollectionView!
     @IBOutlet weak var reviewTextView: UITextView!
     
-    
     //MARK: - Properties
-    var userSelectedImagesInDataFormat: [Data]?
-    
     var userSelectedImages = [UIImage]() {
         didSet { convertUIImagesToDataFormat() }
     }
     
-    
+    //MARK: - NewReviewDTO Properties
+    var productId: Int?
+    var contents: String?
+    var userSelectedImagesInDataFormat: [Data]?
     
     
     static var storyboardName: String {
@@ -28,7 +28,6 @@ class NewProductReviewViewController: UIViewController, Storyboarded {
         configure()
 
     }
-    
 
 
 }
@@ -37,6 +36,44 @@ class NewProductReviewViewController: UIViewController, Storyboarded {
 
 extension NewProductReviewViewController {
     
+    @IBAction func pressedDoneButton(_ sender: UIButton) {
+        
+        guard let imageDatas = userSelectedImagesInDataFormat else {
+            showSimpleBottomAlert(with: "제품 사진을 하나 이상 골라주세요!")
+            return
+        }
+        
+        guard let contents = contents else {
+            showSimpleBottomAlert(with: "제품에 대한 리뷰를 조금이라도 작성해주세요!")
+            return
+        }
+        
+        presentAlertWithConfirmAction(title: "", message: "리뷰를 등록하시겠습니까?") { [weak self] selectedOk in
+            guard let self = self else { return }
+            if selectedOk {
+                let model = NewReviewDTO(
+                    productId: self.productId ?? 0,
+                    rating: self.starRating.starsRating,
+                    contents: contents,
+                    files: imageDatas
+                )
+                showProgressBar()
+                ProductManager.shared.uploadNewReview(with: model) { [weak self] result in
+                    guard let self = self else { return }
+                    dismissProgressBar()
+                    switch result {
+                    case .success:
+                        self.showSimpleBottomAlert(with: "리뷰 등록에 성공하셨어요.🎉")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    case .failure(let error):
+                        self.showSimpleBottomAlert(with: error.errorDescription)
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -115,7 +152,6 @@ extension NewProductReviewViewController {
         userSelectedImagesInDataFormat?.removeAll()
         userSelectedImagesInDataFormat = userSelectedImages.map( { (image: UIImage) -> Data in
             guard let imageData = image.jpegData(compressionQuality: 1) else {
-                print("convertUIImagesToDataFormat ERROR")
                 return Data()
             }
             return imageData
@@ -142,6 +178,7 @@ extension NewProductReviewViewController: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
             return
         }
+        self.contents = textView.text
     }
 }
 
