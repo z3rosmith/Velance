@@ -80,7 +80,21 @@ extension ProductCollectionReusableView {
     }
     
     func configureLabel() {
+        
         categoryLabel.text = "당신과 입맛이 비슷한 사용자의 추천!"
+        let text = categoryLabel.text ?? ""
+        let attributedString = NSMutableAttributedString(string: text)
+        let range = (text as NSString).range(of: "입맛")
+        attributedString.addAttribute(
+            .foregroundColor,
+            value: UIColor.blue,
+            range: range
+        )
+    
+        
+        categoryLabel.attributedText = attributedString
+
+
         popularProductLabel.text = "인기있는 제품"
         [categoryLabel, popularProductLabel].forEach { label in
             label?.textColor = .black

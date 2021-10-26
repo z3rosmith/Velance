@@ -126,7 +126,9 @@
                             <constraint firstItem="jXe-0X-ae6" firstAttribute="centerX" secondItem="0x9-55-foa" secondAttribute="centerX" id="v6p-ex-ODK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zGh-BH-Zyl"/>
+                    <navigationItem key="navigationItem" id="zGh-BH-Zyl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qOD-jQ-UQc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="checkPasswordTextField" destination="SOu-w6-tCG" id="C5p-Wx-6gO"/>
                         <outlet property="idTextField" destination="X2i-RH-kpd" id="zpi-hp-EBC"/>

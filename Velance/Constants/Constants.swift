@@ -122,6 +122,8 @@ struct Images {
     // Stars
     static let starFilled               = "StarFilled"
     static let starUnfilled             = "StarUnfilled"
+    static let starFilledLarge          = "StarFilledLarge"
+    static let starUnfilledLarge        = "StarUnfilledLarge"
 }
 
 struct LayoutConstants {

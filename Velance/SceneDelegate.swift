@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let window = window else { return }
-        window.tintColor = .white
+        window.tintColor = .black
         window.rootViewController = User.shared.isLoggedIn ? createHomeScreenVC() : createLoginScreenVC()
         configureIQKeyboardManager()
     }

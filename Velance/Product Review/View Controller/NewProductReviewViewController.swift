@@ -190,6 +190,7 @@ extension NewProductReviewViewController {
     
     private func configure() {
         title = "리뷰 등록"
+        starRating.withLargeImage = true
         starRating.setStarsRating(rating: 4)
         configureReviewCollectionView()
         configureReviewTextView()

@@ -365,7 +365,7 @@ extension ProductReviewViewController {
     
     private func addFloatingButton() {
         let addReviewButton = VLFloatingButton()
-        addReviewButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
         addReviewButton.addTarget(
             self,
             action: #selector(pressedAddReviewButton),
