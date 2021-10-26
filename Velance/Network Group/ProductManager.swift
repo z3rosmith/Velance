@@ -54,6 +54,43 @@ class ProductManager {
             }
     }
     
+    //MARK: - 제품 검색
+    func searchProducts(
+        page: Int,
+        name: String,
+        completion: @escaping ((Result<[ProductListResponseDTO], NetworkError>) -> Void)
+    ) {
+        let parameters: Parameters = [
+            "request_user_id": User.shared.userUid,
+            "page": page,
+            "name": name
+        ]
+        
+        AF.request(
+            productAPIBaseUrl,
+            method: .get,
+            parameters: parameters,
+            encoding: URLEncoding.queryString,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(_):
+                    print("✏️ ProductManager - searchProducts SUCCESS")
+                    do {
+                        let decodedData = try JSONDecoder().decode([ProductListResponseDTO].self, from: response.data!)
+                        completion(.success(decodedData))
+                    } catch {
+                        print("❗️ ProductManager - searchProducts Decoding ERROR: \(error)")
+                        completion(.failure(.internalError))
+                    }
+                case .failure(_):
+                    completion(.failure(.internalError))
+                }
+            }
+    }
+    
     //MARK: - 새 제품 등록
     func uploadNewProduct(
         with model: NewProductDTO,

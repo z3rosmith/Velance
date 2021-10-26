@@ -1,10 +1,8 @@
 import Foundation
 
 protocol ProductReviewListDelegate: AnyObject {
-    
     func didFetchProductList()
     func failedFetchingProductList(with error: NetworkError)
-    
 }
 
 class ProductReviewListViewModel {
@@ -34,6 +32,7 @@ class ProductReviewListViewModel {
     
     //MARK: - Methods
     
+    //MARK: - 제품 목록 가져오기
     func fetchProductList(onlyMyVegetarianType: String = "N") {
         showProgressBar()
         isFetchingData = true
@@ -61,6 +60,35 @@ class ProductReviewListViewModel {
             }
         }
     }
+    
+    //MARK: - 제품 검색하기
+    func fetchSearchList(productName: String) {
+        showProgressBar()
+        isFetchingData = true
+        
+        productManager?.searchProducts(
+            page: cursor,
+            name: productName
+        ) { [weak self] result in
+            guard let self = self else { return }
+            dismissProgressBar()
+            switch result {
+            case .success(let searchList):
+                if searchList.isEmpty {
+                    self.delegate?.didFetchProductList()
+                    return
+                }
+                self.cursor = searchList.last?.productId ?? 0
+                self.productList.append(contentsOf: searchList)
+                self.isFetchingData = false
+                self.delegate?.didFetchProductList()
+            case .failure(let error):
+                self.isFetchingData = false
+                self.delegate?.failedFetchingProductList(with: error)
+            }
+        }
+    }
+    
     
     func resetValues() {
         productList.removeAll()

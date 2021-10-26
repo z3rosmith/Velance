@@ -101,7 +101,6 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         cell.ratingStackView.setStarsRating(rating: Int(productData.rating))
         
         cell.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        
         cell.productImageView.sd_setImage(
             with: URL(string: productData.fileFolder.files[0].path)!,
             placeholderImage: nil,

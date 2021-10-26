@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, Storyboarded {
         configure()
     }
     
-
+    
 }
 
 //MARK: - IBActions
@@ -25,9 +25,11 @@ extension LoginViewController {
     
     @IBAction func pressedLoginButton(_ sender: UIButton) {
         
-        guard let id = idTextField.text, let pw = passwordTextField.text else {
-            return
-        }
+        guard
+            let id = idTextField.text,
+            let pw = passwordTextField.text,
+            id.count > 1,
+            pw.count > 1 else { return }
         showProgressBar()
         UserManager.shared.login(
             username: id,
@@ -101,6 +103,7 @@ extension LoginViewController {
             string: "비밀번호 입력",
             attributes: [.foregroundColor: UIColor.white]
         )
+        passwordTextField.isSecureTextEntry = true
     }
     
     private func configureButtons() {
