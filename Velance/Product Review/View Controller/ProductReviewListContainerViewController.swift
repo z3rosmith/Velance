@@ -87,6 +87,8 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if viewModel.productList.count == 0 { return UICollectionViewCell() }
+        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.popularProductCVC,
             for: indexPath
