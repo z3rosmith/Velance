@@ -1,4 +1,5 @@
 import UIKit
+import SnackBar_swift
 
 extension UIViewController {
     
@@ -51,5 +52,84 @@ extension UIViewController {
         appearance.backgroundColor = color
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+    }
+}
+
+extension UIViewController {
+    
+    // 가장 기본적인 Alert 띄우기
+    func presentSimpleAlert(title: String, message: String) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "확인",
+            style: .default
+        )
+        alertController.addAction(okAction)
+        alertController.view.tintColor = .black
+        present(alertController, animated: true)
+    }
+    
+    // 확인 버튼을 누를 수 있는 Alert 띄우기
+    func presentAlertWithConfirmAction(title: String, message: String, completion: @escaping ((Bool) -> Void)) {
+        
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "확인",
+            style: .default
+        ) { pressedOk in
+            completion(true)
+        }
+        let cancelAction = UIAlertAction(
+            title: "취소",
+            style: .cancel
+        ) { pressedCancel in
+            completion(false)
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        alertController.view.tintColor = .black
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // SnackBar 라이브러리의 message 띄우기
+    func showSimpleBottomAlert(with message: String) {
+        SnackBar.make(in: self.view,
+                      message: message,
+                      duration: .lengthLong).show()
+    }
+    
+    // SnackBar 라이브러리의 액션이 추가된 message 띄우기
+    func showSimpleBottomAlertWithAction(message: String,
+                                         buttonTitle: String,
+                                         action: (() -> Void)? = nil) {
+        SnackBar.make(in: self.view,
+                      message: message,
+                      duration: .lengthLong).setAction(
+                        with: buttonTitle,
+                        action: {
+                            action?()
+                        }).show()
+
+    }
+}
+
+//MARK: - Navigation / Router
+
+extension UIViewController {
+    
+    #warning("아래 수정 필요 -> 홈화면으로 가야함")
+    func navigateToHome() {
+        let vc = ProductReviewListContainerViewController.instantiate()
+        let navController = UINavigationController(rootViewController: vc)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
     }
 }

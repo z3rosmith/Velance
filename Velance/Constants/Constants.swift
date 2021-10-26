@@ -1,12 +1,21 @@
 import Foundation
 import UIKit
 
+struct API {
+    
+    static let baseUrl = "http://222.104.199.114:5100/api/"
+}
+
 struct StoryboardName {
     
     static let main             = "Main"
     static let login            = "Login"
     static let userRegister     = "UserRegister"
     static let productReview    = "ProductReview"
+    static let myPage           = "MyPage"
+    
+    // Custom
+    static let chooseInterest   = "ChooseInterest"
 }
 
 struct StoryboardID {
@@ -23,9 +32,15 @@ struct StoryboardID {
     // Product Review
     static let productReviewListContainerVC = "ProductReviewListContainerViewController"
     static let productReviewListVC          = "ProductReviewListViewController"
+    static let uploadNewProductVC           = "UploadNewProductViewController"
+    static let productReviewVC              = "ProductReviewViewController"
+    static let newProductReviewVC           = "NewProductReviewViewController"
     
     // Shopping
     static let recipeDetailVC               = "RecipeDetailViewController"
+    
+    // Custom
+    static let chooseInterestVC             = "ChooseInterestViewController"
 }
 
 struct Colors {
@@ -47,20 +62,24 @@ struct Colors {
 
 struct CellID {
     
-    static let shoppingTableViewCell            = "shoppingTVC"
-    static let recipeTableViewCell              = "recipeTVC"
+    static let similarTasteTableViewCell            = "similarTasteTVC"
+    static let popularProductTableViewCell          = "popularProductTVC"
     
     static let shoppingItemCollectionViewCell   = "shoppingItemCVC"
     static let recipeCollectionViewCell         = "recipeCVC"
     
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
+    static let popularProductCVC                = "PopularProductCVC"
+    static let productReviewTVC                = "ProductReviewTVC"
 }
 
 struct XIB_ID {
     
     // Product Review
     static let productForSimilarTasteCVC        = "ProductForSimilarTasteCVC"
+    static let popularProductCVC                = "PopularProductCVC"
+    static let productReviewTVC                 = "ProductReviewTableViewCell"
     
     static let shoppingItemCollectionViewCell   = "ShoppingItemCollectionViewCell"
     static let recipeCollectionViewCell         = "RecipeCollectionViewCell"
@@ -101,7 +120,10 @@ struct Images {
     
     
     // Stars
-    static let singleStar               = "SingleStar"
+    static let starFilled               = "StarFilled"
+    static let starUnfilled             = "StarUnfilled"
+    static let starFilledLarge          = "StarFilledLarge"
+    static let starUnfilledLarge        = "StarUnfilledLarge"
 }
 
 struct LayoutConstants {

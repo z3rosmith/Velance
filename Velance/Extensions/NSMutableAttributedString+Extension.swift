@@ -6,19 +6,19 @@ extension NSMutableAttributedString {
     var boldFont: UIFont { return UIFont.systemFont(ofSize: fontSize, weight: .bold) }
     var normalFont: UIFont { return UIFont.systemFont(ofSize: fontSize) }
     
-    func bold(_ value: String) -> NSMutableAttributedString {
+    func bold(_ value: String, with font: UIFont? = nil) -> NSMutableAttributedString {
         
         let attributes:[NSAttributedString.Key : Any] = [
-            .font : boldFont
+            .font : font ?? boldFont
         ]
         self.append(NSAttributedString(string: value, attributes:attributes))
         return self
     }
     
-    func normal(_ value: String) -> NSMutableAttributedString {
+    func normal(_ value: String, with font: UIFont? = nil) -> NSMutableAttributedString {
         
         let attributes:[NSAttributedString.Key : Any] = [
-            .font : normalFont,
+            .font : font ?? normalFont,
         ]
         
         self.append(NSAttributedString(string: value, attributes:attributes))

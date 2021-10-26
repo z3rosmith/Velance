@@ -107,7 +107,7 @@ extension UIButton {
         buttonGradient.frame = self.bounds
         buttonGradient.cornerRadius = buttonGradient.frame.height / 2
         buttonGradient.colors = colors.compactMap { $0.cgColor }
-//        buttonGradient.colors = [UIColor(named: Colors.ovalButtonGradientLeft)!.cgColor, UIColor(named: Colors.ovalButtonGradientRight)!.cgColor]
+
         buttonGradient.startPoint = CGPoint(x: 1.0, y: 0.0)
         buttonGradient.endPoint = CGPoint(x: 0.0, y: 1.0)
         buttonGradient.frame = self.bounds

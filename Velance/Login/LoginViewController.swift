@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, Storyboarded {
         configure()
     }
     
-
+    
 }
 
 //MARK: - IBActions
@@ -25,9 +25,37 @@ extension LoginViewController {
     
     @IBAction func pressedLoginButton(_ sender: UIButton) {
         
+        guard
+            let id = idTextField.text,
+            let pw = passwordTextField.text,
+            id.count > 1,
+            pw.count > 1 else { return }
+        showProgressBar()
+        UserManager.shared.login(
+            username: id,
+            password: pw
+        ) { [weak self] result in
+            guard let self = self else { return }
+            dismissProgressBar()
+            switch result {
+            case .success:
+                print("✏️ 로그인 성공!")
+                self.navigateToHome()
+            case .failure(_):
+                self.presentVLAlert(
+                    title: "로그인 실패",
+                    message: "아이디랑 비밀번호를 다시 한 번 확인해주세요 🤔",
+                    buttonTitle: "확인"
+                )
+            }
+        }
+        
     }
     
     @IBAction func pressedRegisterButton(_ sender: UIButton) {
+        let vc = IdPasswordInputViewController.instantiate()
+        let navController = UINavigationController(rootViewController: vc)
+        navigationController?.pushViewController(vc, animated: true)
         
     }
 }
@@ -75,6 +103,7 @@ extension LoginViewController {
             string: "비밀번호 입력",
             attributes: [.foregroundColor: UIColor.white]
         )
+        passwordTextField.isSecureTextEntry = true
     }
     
     private func configureButtons() {

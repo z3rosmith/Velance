@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dcF-76-8S7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Page View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MyPageViewController" id="Y6W-OH-hqX" customClass="MyPageViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPageUpperView" translatesAutoresizingMaskIntoConstraints="NO" id="qB2-rc-xK6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="9S5-kT-1JN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채식 유형" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0Q-KF-LH1">
+                                <rect key="frame" x="26" y="166" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWf-s3-GLR">
+                                <rect key="frame" x="328" y="113" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A7K-7U-Z9h"/>
+                                    <constraint firstAttribute="width" constant="60" id="D8u-Ii-aDb"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="MyPageProfileImageButton"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="noe-P5-NcI">
+                                <rect key="frame" x="0.0" y="220" width="414" height="642"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩 중.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-x4-HXp">
+                                <rect key="frame" x="26" y="113" width="90" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="noe-P5-NcI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Uc-hX-1NJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VWf-s3-GLR" secondAttribute="trailing" constant="26" id="9qs-aw-fl0"/>
+                            <constraint firstItem="a0Q-KF-LH1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="J1F-LC-Is4"/>
+                            <constraint firstItem="noe-P5-NcI" firstAttribute="top" secondItem="qB2-rc-xK6" secondAttribute="bottom" id="Lwl-fC-q8T"/>
+                            <constraint firstItem="a0Q-KF-LH1" firstAttribute="top" secondItem="vsv-x4-HXp" secondAttribute="bottom" constant="20" id="Npq-qh-ec0"/>
+                            <constraint firstItem="vsv-x4-HXp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="NuV-jb-MZ5"/>
+                            <constraint firstItem="VWf-s3-GLR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="auI-Nw-3Gv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="noe-P5-NcI" secondAttribute="trailing" id="eoq-FH-rgs"/>
+                            <constraint firstAttribute="trailing" secondItem="qB2-rc-xK6" secondAttribute="trailing" id="g5P-Xs-cuW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="noe-P5-NcI" secondAttribute="bottom" id="j57-ZB-PVr"/>
+                            <constraint firstItem="vsv-x4-HXp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="mjz-Jf-gsi"/>
+                            <constraint firstItem="qB2-rc-xK6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ogW-nC-Cqf"/>
+                            <constraint firstItem="qB2-rc-xK6" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="wbj-eP-Gop"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xKM-sV-mEy"/>
+                    <connections>
+                        <outlet property="myPageTableView" destination="noe-P5-NcI" id="XaW-8l-DMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0RN-W9-OVL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcF-76-8S7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sya-do-aIj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="G4X-L0-iCP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KmJ-8x-sh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MyPageProfileImageButton" width="82" height="81"/>
+        <image name="MyPageUpperView" width="414" height="226"/>
+        <namedColor name="AppBackgroundColor">
+            <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>

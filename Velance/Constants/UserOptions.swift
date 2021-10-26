@@ -2,6 +2,8 @@ import Foundation
 
 struct UserOptions {
     
+    static let recipeType: [String] = ["한식", "중식", "일식", "분식", "아시안/양식", "카페/디저트"]
+    
     static let veganType: [String] = ["비건", "오보", "락토", "락토/오보", "페스코"]
     
     static let tasteOption: [String] = ["짭짤한", "매콤한", "달달한",
@@ -19,4 +21,6 @@ struct UserOptions {
     static let allergyOptions: [String] = ["우유", "난류(알)", "밀가루",
                                            "새우", "메밀", "콩류", "조개류",
                                            "견과류", "갑각류", "아황산류", "키위", "토마토", "복숭아"]
+    
+    static let productCategory: [String] = [ "즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
 }

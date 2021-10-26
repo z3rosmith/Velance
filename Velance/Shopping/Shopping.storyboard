@@ -187,7 +187,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="AppBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingTVC" rowHeight="253" id="91b-LK-TLI" userLabel="Shopping Table View Cell" customClass="ShoppingTableViewCell" customModule="Velance" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingTVC" rowHeight="253" id="91b-LK-TLI" userLabel="Shopping Table View Cell" customClass="SimilarTasteProductTableViewCell" customModule="Velance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="253"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="91b-LK-TLI" id="CAc-zG-UzF">
@@ -247,12 +247,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="AppBackgroundColor"/>
                                         <connections>
-                                            <outlet property="itemCollectionView" destination="Fe9-Sl-Z8a" id="NHC-tf-dG4"/>
                                             <outlet property="sectionTitleLabel" destination="cVT-He-gyl" id="Hau-fP-8pu"/>
                                             <outlet property="seeMoreButton" destination="nWq-uE-PCr" id="Mu1-lP-C1g"/>
+                                            <outlet property="similarTasteCollectionView" destination="Fe9-Sl-Z8a" id="NHC-tf-dG4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeTVC" rowHeight="253" id="zLy-aW-3gs" customClass="RecipeTableViewCell" customModule="Velance" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeTVC" rowHeight="253" id="zLy-aW-3gs" customClass="PopularProductTableViewCell" customModule="Velance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="297.5" width="414" height="253"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zLy-aW-3gs" id="Nca-r8-Cil">
@@ -312,7 +312,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="AppBackgroundColor"/>
                                         <connections>
-                                            <outlet property="recipeCollectionView" destination="6wG-Lk-J18" id="YtS-8K-dNt"/>
+                                            <outlet property="popularProductCollectionView" destination="6wG-Lk-J18" id="YtS-8K-dNt"/>
                                             <outlet property="sectionTitleLabel" destination="wRK-sY-nRG" id="uzF-df-AVG"/>
                                             <outlet property="seeMoreButton" destination="Nie-GI-gkj" id="Qbm-kR-oMY"/>
                                         </connections>
