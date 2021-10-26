@@ -80,6 +80,7 @@
 		7CCBB55527253DBB002EFB58 /* UserDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55427253DBB002EFB58 /* UserDisplayModel.swift */; };
 		7CCBB55727253DCB002EFB58 /* FileFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55627253DCB002EFB58 /* FileFolder.swift */; };
 		7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCBB55927255D06002EFB58 /* NewProductDTO.swift */; };
+		7CE885712727BB62008E1DB9 /* NewMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE885702727BB62008E1DB9 /* NewMallViewController.swift */; };
 		7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0E9272243F5005CACF5 /* VLStarButton.swift */; };
 		7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0EB27225FDB005CACF5 /* UIHelper.swift */; };
 		7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */; };
@@ -189,6 +190,7 @@
 		7CCBB55427253DBB002EFB58 /* UserDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayModel.swift; sourceTree = "<group>"; };
 		7CCBB55627253DCB002EFB58 /* FileFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFolder.swift; sourceTree = "<group>"; };
 		7CCBB55927255D06002EFB58 /* NewProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductDTO.swift; sourceTree = "<group>"; };
+		7CE885702727BB62008E1DB9 /* NewMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMallViewController.swift; sourceTree = "<group>"; };
 		7CEED0E9272243F5005CACF5 /* VLStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLStarButton.swift; sourceTree = "<group>"; };
 		7CEED0EB27225FDB005CACF5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
+				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				7CCBB54A27253044002EFB58 /* ProductReviewListViewModel.swift in Sources */,
 				7C8EC8C926EF218500893CCD /* SimilarTasteProductTableViewCell.swift in Sources */,
 				7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */,
+				7CE885712727BB62008E1DB9 /* NewMallViewController.swift in Sources */,
 				7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */,
 				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */,

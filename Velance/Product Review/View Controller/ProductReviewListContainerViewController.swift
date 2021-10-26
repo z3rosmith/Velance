@@ -32,7 +32,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         super.viewWillDisappear(animated)
         dismissProgressBar()
     }
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -41,7 +40,7 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
-        
+        viewModel.onlyMyVegetarianType = "Y"
     }
     
     @objc private func pressedSearchBarView() {

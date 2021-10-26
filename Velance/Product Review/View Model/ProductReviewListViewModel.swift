@@ -23,6 +23,9 @@ class ProductReviewListViewModel {
     
     var isFetchingData: Bool = false
     var cursor: Int = 0
+    var onlyMyVegetarianType: String = "N" {
+        didSet { fetchProductList() }
+    }
     
     //MARK: - Initialization
     
@@ -33,7 +36,7 @@ class ProductReviewListViewModel {
     //MARK: - Methods
     
     //MARK: - 제품 목록 가져오기
-    func fetchProductList(onlyMyVegetarianType: String = "N") {
+    func fetchProductList() {
         showProgressBar()
         isFetchingData = true
         

@@ -174,11 +174,8 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         cell.reviewImageSlideShow.setImageInputs(imageSources)
 
         cell.dateLabel.text = reviewData.createdAt
-
-        
         return cell
     }
-    
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         topImageViewHeight.constant = Metrics.topImageViewMinHeight

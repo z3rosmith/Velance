@@ -12,7 +12,7 @@ class UIHelper {
         )
         actionSheet.view.tintColor = .black
         
-        actions.forEach {actionSheet.addAction($0) }
+        actions.forEach { actionSheet.addAction($0) }
         
         let cancelAction = UIAlertAction(
             title: "취소",
