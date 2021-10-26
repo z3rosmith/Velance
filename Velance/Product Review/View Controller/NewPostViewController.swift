@@ -32,6 +32,13 @@ class NewPostViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
+
+
+}
+
+//MARK: - IBActions & Target Methods
+
+extension NewPostViewController {
     
     @IBAction func pressedFeedCategoryButton(_ sender: UIButton) {
         feedCategoryButtons.forEach { $0.isSelected = false }
@@ -54,14 +61,11 @@ class NewPostViewController: UIViewController, Storyboarded {
         
         
     }
-
-}
-
-//MARK: - IBActions & Target Methods
-
-extension NewPostViewController {
     
-    
+    @IBAction func pressedDoneButton(_ sender: UIButton) {
+        
+        
+    }
     
 }
 

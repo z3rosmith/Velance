@@ -129,6 +129,14 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         return CGSize(width: width, height: 230)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 6
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
@@ -155,7 +163,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
+        return UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
