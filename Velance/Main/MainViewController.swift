@@ -77,21 +77,20 @@ extension MainViewController {
             navController.navigationBar.shadowImage = UIImage()
         }
         
-        let record = instantiateVC(storyboard: "Record", identifier: StoryboardID.homeVC, settings: navControllerSettings)
-        let shopping = instantiateVC(storyboard: "Shopping", identifier: StoryboardID.shoppingVC, settings: navControllerSettings)
+        let community = instantiateVC(storyboard: "Community", identifier: "CommunityNavigationController", settings: navControllerSettings)
+        let shopping = instantiateVC(storyboard: "Shopping", identifier: "ShoppingNavigationController", settings: navControllerSettings)
         
-        tabVCs = [record, shopping]
+        tabVCs = [community, shopping]
     }
     
     private func instantiateVC(storyboard: String, identifier: String, settings: (UINavigationController) -> Void) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: identifier)
-        let navController = UINavigationController(rootViewController: vc)
-        settings(navController)
-        addChild(navController)
+//        settings(vc) // navControllerSettings가 필요하면 쓰고 안그러면 나중에 삭제하기
+        addChild(vc)
         vc.didMove(toParent: self)
         
-        return navController
+        return vc
     }
 
     private func changeToCommunityVC() {

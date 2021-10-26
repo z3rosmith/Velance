@@ -49,6 +49,7 @@ struct Colors {
     static let appBackgroundColor           = "AppBackgroundColor"
     static let appTintColor                 = "AppTintColor"
     static let buttonSelectedColor          = "ButtonSelectedColor"
+    static let foodCategorySelectedColor    = "FoodCategorySelectedColor"
     
     //Tab Bar Colors
     static let tabBarSelectedColor          = "TabBarSelectedColor"

@@ -13,9 +13,25 @@
 		3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */; };
 		3C6B700D26F32550001FD7BB /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700C26F32550001FD7BB /* MealView.xib */; };
 		3C6B700F26F32566001FD7BB /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700E26F32566001FD7BB /* MealView.swift */; };
+		3C86BFBB271C0DC30011EE7A /* CommunityRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */; };
 		3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE4FE826EF200F00865767 /* SecondViewController.swift */; };
+		3CAEDC012727A6D8001E4783 /* Mall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC002727A6D8001E4783 /* Mall.storyboard */; };
+		3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */; };
+		3CAEDC062727B19E001E4783 /* MallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */; };
+		3CB1532F27267C1E0063C407 /* CommunityFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */; };
+		3CB2AC69272262D70075FA97 /* VLSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB2AC68272262D70075FA97 /* VLSocialButton.swift */; };
+		3CC38425271C274700ED5077 /* CommunityCollectionReusableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC38424271C274700ED5077 /* CommunityCollectionReusableView1.swift */; };
+		3CCFE7DC271E9E33003FA1B7 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFE7DB271E9E33003FA1B7 /* CategoryCollectionViewCell.swift */; };
+		3CCFE7E1271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFE7DF271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift */; };
+		3CCFE7E2271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCFE7E0271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib */; };
+		3CD341AE2727C09900ADA745 /* SearchMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341AD2727C09900ADA745 /* SearchMallViewController.swift */; };
+		3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341AF2727C0B800ADA745 /* MallListViewController.swift */; };
+		3CD341B32727D8A300ADA745 /* CommunityCollectionReusableView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */; };
+		3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341B42727DF4600ADA745 /* CommunityImageCollectionViewCell.swift */; };
 		3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD5012526F22E9B009B450F /* BasicNutrientView.xib */; };
 		3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5012726F22FA8009B450F /* BasicNutrientView.swift */; };
+		3CDA4E9727218D4400016D3B /* CommunityFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA4E9527218D4400016D3B /* CommunityFeedCollectionViewCell.swift */; };
+		3CDA4E9827218D4400016D3B /* CommunityFeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDA4E9627218D4400016D3B /* CommunityFeedCollectionViewCell.xib */; };
 		4FBA72620C2F17F7A0AB5C9C /* Pods_Velance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D9057233A5C711D0B7188D /* Pods_Velance.framework */; };
 		6C49951F271FBC3400E8DB4B /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49951E271FBC3400E8DB4B /* ProgressHUD.swift */; };
 		7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */; };
@@ -123,9 +139,25 @@
 		3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalNutrientView.swift; sourceTree = "<group>"; };
 		3C6B700C26F32550001FD7BB /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
 		3C6B700E26F32566001FD7BB /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecipeViewController.swift; sourceTree = "<group>"; };
 		3CAE4FE826EF200F00865767 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3CAEDC002727A6D8001E4783 /* Mall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mall.storyboard; sourceTree = "<group>"; };
+		3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallTableViewCell.swift; sourceTree = "<group>"; };
+		3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MallTableViewCell.xib; sourceTree = "<group>"; };
+		3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedViewController.swift; sourceTree = "<group>"; };
+		3CB2AC68272262D70075FA97 /* VLSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLSocialButton.swift; sourceTree = "<group>"; };
+		3CC38424271C274700ED5077 /* CommunityCollectionReusableView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionReusableView1.swift; sourceTree = "<group>"; };
+		3CCFE7DB271E9E33003FA1B7 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CCFE7DF271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CCFE7E0271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarUserCollectionViewCell.xib; sourceTree = "<group>"; };
+		3CD341AD2727C09900ADA745 /* SearchMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallViewController.swift; sourceTree = "<group>"; };
+		3CD341AF2727C0B800ADA745 /* MallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallListViewController.swift; sourceTree = "<group>"; };
+		3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionReusableView2.swift; sourceTree = "<group>"; };
+		3CD341B42727DF4600ADA745 /* CommunityImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CD5012526F22E9B009B450F /* BasicNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicNutrientView.xib; sourceTree = "<group>"; };
 		3CD5012726F22FA8009B450F /* BasicNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNutrientView.swift; sourceTree = "<group>"; };
+		3CDA4E9527218D4400016D3B /* CommunityFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CDA4E9627218D4400016D3B /* CommunityFeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityFeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		51542761A4DBABA0458111E7 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
 		6C49951E271FBC3400E8DB4B /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -262,6 +294,10 @@
 			children = (
 				3C51257A271455F4003E572D /* Community.storyboard */,
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
+				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
+				3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */,
+				3CD341B12727D03000ADA745 /* Views */,
+				3CCFE7DA271E9E13003FA1B7 /* UICollectionView Cells */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -282,6 +318,48 @@
 				3C6B700E26F32566001FD7BB /* MealView.swift */,
 			);
 			path = MealView;
+			sourceTree = "<group>";
+		};
+		3CAEDBFF2727A67E001E4783 /* Mall */ = {
+			isa = PBXGroup;
+			children = (
+				3CAEDC002727A6D8001E4783 /* Mall.storyboard */,
+				3CD341AD2727C09900ADA745 /* SearchMallViewController.swift */,
+				3CD341AF2727C0B800ADA745 /* MallListViewController.swift */,
+				3CAEDC022727AEC1001E4783 /* UITableView Cells */,
+			);
+			path = Mall;
+			sourceTree = "<group>";
+		};
+		3CAEDC022727AEC1001E4783 /* UITableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */,
+				3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */,
+			);
+			path = "UITableView Cells";
+			sourceTree = "<group>";
+		};
+		3CCFE7DA271E9E13003FA1B7 /* UICollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3CCFE7DB271E9E33003FA1B7 /* CategoryCollectionViewCell.swift */,
+				3CCFE7DF271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift */,
+				3CCFE7E0271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib */,
+				3CDA4E9527218D4400016D3B /* CommunityFeedCollectionViewCell.swift */,
+				3CDA4E9627218D4400016D3B /* CommunityFeedCollectionViewCell.xib */,
+				3CD341B42727DF4600ADA745 /* CommunityImageCollectionViewCell.swift */,
+			);
+			path = "UICollectionView Cells";
+			sourceTree = "<group>";
+		};
+		3CD341B12727D03000ADA745 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CC38424271C274700ED5077 /* CommunityCollectionReusableView1.swift */,
+				3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3CD5012226F22E3D009B450F /* NutrientView */ = {
@@ -398,6 +476,7 @@
 				7C97195C27100635003E193D /* VLGradientButton.swift */,
 				7C922A4C2717F19300295A3F /* VLFloatingButton.swift */,
 				7CEED0E9272243F5005CACF5 /* VLStarButton.swift */,
+				3CB2AC68272262D70075FA97 /* VLSocialButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -440,6 +519,7 @@
 				7CC36A5926EC8A23007573DD /* Main */,
 				7CC36A3D26EC6378007573DD /* UserRegister */,
 				3C51257927144FE8003E572D /* Community */,
+				3CAEDBFF2727A67E001E4783 /* Mall */,
 				7CC36A3E26EC637D007573DD /* Record(Unused) */,
 				7CC36A3F26EC63B8007573DD /* Shopping */,
 				7C61456127141FD500D659C5 /* Product Review */,
@@ -794,12 +874,16 @@
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
 				7CEED0F22722799B005CACF5 /* LoadingAnimation.gif in Resources */,
+				3CAEDC012727A6D8001E4783 /* Mall.storyboard in Resources */,
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
+				3CAEDC062727B19E001E4783 /* MallTableViewCell.xib in Resources */,
 				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
 				7CFF121827215A7900E6A9D3 /* MyPage.storyboard in Resources */,
 				7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */,
+				3CDA4E9827218D4400016D3B /* CommunityFeedCollectionViewCell.xib in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				7C37DE82271ABE0A00B4FBFB /* ProductReviewTableViewCell.xib in Resources */,
+				3CCFE7E2271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib in Resources */,
 				3C51257B271455F4003E572D /* Community.storyboard in Resources */,
 				7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */,
 				7C922A522718052E00295A3F /* ChooseInterest.storyboard in Resources */,
@@ -867,8 +951,14 @@
 				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
 				7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */,
 				7CF392492726866F00E48EFB /* ProductReviewResponseDTO.swift in Sources */,
+				3C86BFBB271C0DC30011EE7A /* CommunityRecipeViewController.swift in Sources */,
+				3CB2AC69272262D70075FA97 /* VLSocialButton.swift in Sources */,
+				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
+				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
+				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
+				3CCFE7DC271E9E33003FA1B7 /* CategoryCollectionViewCell.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
 				7CEED0FE2723F824005CACF5 /* NetworkError.swift in Sources */,
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
@@ -905,6 +995,13 @@
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */,
+				3CD341AE2727C09900ADA745 /* SearchMallViewController.swift in Sources */,
+				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
+				3CC38425271C274700ED5077 /* CommunityCollectionReusableView1.swift in Sources */,
+				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
+				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
+				3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */,
+				7C97195A270F3028003E193D /* TestableVC.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
 				7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */,
@@ -914,6 +1011,9 @@
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,
 				7CCBB54427251A5C002EFB58 /* RegisterResponseDTO.swift in Sources */,
 				7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */,
+				3CD341B32727D8A300ADA745 /* CommunityCollectionReusableView2.swift in Sources */,
+				3CCFE7E1271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift in Sources */,
+				7CFC946126F2D4C5008042C5 /* RecipeTableViewCell.swift in Sources */,
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
@@ -931,6 +1031,7 @@
 				7CCBB55327253DA6002EFB58 /* File.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
+				3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */,
 				7CCBB542272519D7002EFB58 /* UserAllergyGroup.swift in Sources */,
@@ -939,6 +1040,10 @@
 				7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */,
 				7CEED0F4272285F8005CACF5 /* ReportManager.swift in Sources */,
 				7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */,
+				3CDA4E9727218D4400016D3B /* CommunityFeedCollectionViewCell.swift in Sources */,
+				3CB1532F27267C1E0063C407 /* CommunityFeedViewController.swift in Sources */,
+				7CC36A5F26EC8A90007573DD /* ChooseReasonViewController.swift in Sources */,
+				7CC36A5D26EC8A8A007573DD /* ChooseDetailViewController.swift in Sources */,
 				7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1088,8 +1193,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1108,8 +1214,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
