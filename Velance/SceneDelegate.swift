@@ -9,9 +9,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let window = window else { return }
-//        window.tintColor = .black
-//        window.rootViewController = User.shared.isLoggedIn ? createHomeScreenVC() : createLoginScreenVC()
-//        configureIQKeyboardManager()
+        window.tintColor = .black
+        window.rootViewController = User.shared.isLoggedIn ? createHomeScreenVC() : createLoginScreenVC()
+        configureIQKeyboardManager()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
