@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,32 +28,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Gh-lXJ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-Yp-DMY" userLabel="Spacing View">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="70"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Ai-9ay" userLabel="Home Button">
-                                                <rect key="frame" x="83" y="0.0" width="82.5" height="70"/>
-                                                <state key="normal" image="home_selected"/>
-                                                <connections>
-                                                    <action selector="pressedHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T4s-01-Ahc"/>
-                                                </connections>
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="70"/>
+                                                <state key="normal" image="Tab1comunity_active"/>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbW-BM-qjm" userLabel="Spacing View">
-                                                <rect key="frame" x="165.5" y="0.0" width="83" height="70"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-bL-xyT" userLabel="Shop Button">
-                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="70"/>
-                                                <state key="normal" image="shopping_selected"/>
-                                                <connections>
-                                                    <action selector="pressedShoppingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkw-Vu-wec"/>
-                                                </connections>
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="70"/>
+                                                <state key="normal" image="Tab2mall_active"/>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-lm-XF7" userLabel="Spacing View">
-                                                <rect key="frame" x="331" y="0.0" width="83" height="70"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-5D-Zsz">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="70"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Tab3product_active"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-Ie-bKF">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="70"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Tab4mypage_active"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -89,8 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="containerView" destination="4Wc-o3-Mp9" id="Q5g-nb-3aU"/>
-                        <outlet property="homeTabButton" destination="yz7-Ai-9ay" id="fky-bD-E2B"/>
-                        <outlet property="shoppingTabButton" destination="XiP-bL-xyT" id="Wip-Xy-rhc"/>
+                        <outlet property="tabStackView" destination="2tj-Gh-lXJ" id="th5-QW-w42"/>
                         <outlet property="tabView" destination="Hm3-pa-cWO" id="7ar-jz-frl"/>
                     </connections>
                 </viewController>
@@ -100,8 +91,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home_selected" width="33" height="33"/>
-        <image name="shopping_selected" width="30" height="30"/>
+        <image name="Tab1comunity_active" width="40" height="52"/>
+        <image name="Tab2mall_active" width="40" height="52"/>
+        <image name="Tab3product_active" width="40" height="57"/>
+        <image name="Tab4mypage_active" width="40" height="52"/>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

@@ -95,10 +95,8 @@ struct Images {
     static let mealViewImageDinner              = "dinner"
     
     // Tab Bar Icons
-    static let homeTabBarIcon_selected         = "home_selected"
-    static let homeTabBarIcon_unselected       = "home_unselected"
-    static let shopTabBarIcon_selected         = "shopping_selected"
-    static let shopTabBarIcon_unselected       = "shopping_unselected"
+    static let tabImageActive                   = ["Tab1comunity_active", "Tab2mall_active", "Tab3product_active", "Tab4mypage_active"]
+    static let tabImageInactive                 = ["Tab1comunity_inactive", "Tab2mall_inactive", "Tab3product_inactive", "Tab4mypage_inactive"]
     
     // Vegan Types
     static let vegan                = "vegan"

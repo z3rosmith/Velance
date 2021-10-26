@@ -4,9 +4,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tabView: UIView!
-    
-    @IBOutlet weak var homeTabButton: UIButton!
-    @IBOutlet weak var shoppingTabButton: UIButton!
+    @IBOutlet weak var tabStackView: UIStackView!
     
     private var tabVCs: [UIViewController] = []
     private var currentTabButton: UIButton?
@@ -20,15 +18,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        changeToCommunityVC()
-    }
-    
-    @IBAction func pressedHomeButton(_ sender: UIButton) {
-        changeToCommunityVC()
-    }
-    
-    @IBAction func pressedShoppingButton(_ sender: UIButton) {
-        changeToShoppingVC()
+        setupFirstVC(index: 0)
     }
 }
 
@@ -47,27 +37,16 @@ extension MainViewController {
     }
     
     private func configureTabButtons() {
-        homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_unselected), for: .normal)
-        homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .selected)
-        homeTabButton.setImage(UIImage(named: Images.homeTabBarIcon_selected), for: .highlighted)
         
-        homeTabButton.setTitle("기록", for: .normal)
-        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarUnselectedColor), for: .normal)
-        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .selected)
-        homeTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .highlighted)
-        homeTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        homeTabButton.alignTextBelow()
-        
-        shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_unselected), for: .normal)
-        shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_selected), for: .selected)
-        shoppingTabButton.setImage(UIImage(named: Images.shopTabBarIcon_selected), for: .highlighted)
-        
-        shoppingTabButton.setTitle("쇼핑", for: .normal)
-        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarUnselectedColor), for: .normal)
-        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .selected)
-        shoppingTabButton.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .highlighted)
-        shoppingTabButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        shoppingTabButton.alignTextBelow()
+        for (index, subview) in tabStackView.subviews.enumerated() {
+            let button = subview as! UIButton
+            
+            button.tag = index
+            button.setImage(UIImage(named: Images.tabImageInactive[index]), for: .normal)
+            button.setImage(UIImage(named: Images.tabImageActive[index]), for: .selected)
+            button.setImage(UIImage(named: Images.tabImageActive[index]), for: .highlighted)
+            button.addTarget(self, action: #selector(tabButtonTapped(_:)), for: .touchUpInside)
+        }
     }
     
     private func instantiateVCs() {
@@ -78,9 +57,11 @@ extension MainViewController {
         }
         
         let community = instantiateVC(storyboard: "Community", identifier: "CommunityNavigationController", settings: navControllerSettings)
-        let shopping = instantiateVC(storyboard: "Shopping", identifier: "ShoppingNavigationController", settings: navControllerSettings)
+        let mall = instantiateVC(storyboard: "Mall", identifier: "MallNavigationController", settings: navControllerSettings)
+        let product = instantiateVC(storyboard: "ProductReview", identifier: "ProductReviewNavigationController", settings: navControllerSettings)
+        let mypage = instantiateVC(storyboard: "MyPage", identifier: "MyPageNavigationController", settings: navControllerSettings)
         
-        tabVCs = [community, shopping]
+        tabVCs = [community, mall, product, mypage]
     }
     
     private func instantiateVC(storyboard: String, identifier: String, settings: (UINavigationController) -> Void) -> UIViewController {
@@ -92,25 +73,23 @@ extension MainViewController {
         
         return vc
     }
-
-    private func changeToCommunityVC() {
-        currentTabButton?.isSelected = false
-        currentTabButton = homeTabButton
+    
+    private func setupFirstVC(index: Int) {
+        currentTabButton = tabStackView.subviews[index] as? UIButton
         currentTabButton?.isSelected = true
         
-        currentVC?.remove()
-        let vc = tabVCs[0]
+        let vc = tabVCs[index]
         add(vc, frame: containerView.frame)
         currentVC = vc
     }
     
-    private func changeToShoppingVC() {
+    @objc private func tabButtonTapped(_ sender: UIButton) {
         currentTabButton?.isSelected = false
-        currentTabButton = shoppingTabButton
+        currentTabButton = tabStackView.subviews[sender.tag] as? UIButton
         currentTabButton?.isSelected = true
         
         currentVC?.remove()
-        let vc = tabVCs[1]
+        let vc = tabVCs[sender.tag]
         add(vc, frame: containerView.frame)
         currentVC = vc
     }
