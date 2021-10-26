@@ -13,7 +13,7 @@ class VLGradientButton: UIButton {
         buttonGradient.frame = self.bounds
         return buttonGradient
     }()
-    
+
     override var isSelected: Bool{
         didSet{
             if self.isSelected {
@@ -38,16 +38,18 @@ class VLGradientButton: UIButton {
         super.layoutSubviews()
         configure()
     }
-
     
-    func configure() {
+    private func configure() {
         layer.borderWidth = 0.3
         layer.cornerRadius = frame.height / 2
+        layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
+        backgroundColor = .white
         titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.1
         titleLabel?.lineBreakMode = .byTruncatingTail
-        
+        setTitleColor(.white, for: .selected)
+        setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
     }
 
 }
