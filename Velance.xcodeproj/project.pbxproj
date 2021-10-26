@@ -50,6 +50,7 @@
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
+		7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -158,6 +159,7 @@
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
+		7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
+				7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */,
 				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
 			);
 			path = "View Controller";
@@ -855,6 +858,7 @@
 				7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */,
 				7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */,
 				6C49951F271FBC3400E8DB4B /* ProgressHUD.swift in Sources */,
+				7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
