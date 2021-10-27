@@ -10,7 +10,6 @@ class NewMenuViewController: UIViewController, Storyboarded {
     @IBOutlet weak var menuPriceTextField: HoshiTextField!
     @IBOutlet weak var menuCautionsTextField: HoshiTextField!
     
-    
     lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -22,8 +21,8 @@ class NewMenuViewController: UIViewController, Storyboarded {
     //MARK: - NewMenuDTO Properties
     var menuImageData: Data?
     var mallId: Int?
-    
-    
+    #warning("형이 mallId 만 가져와서 VC push 하기 전에 설정해주면 됨")
+
     static var storyboardName: String {
         StoryboardName.main
     }
@@ -44,6 +43,57 @@ extension NewMenuViewController {
     }
     
     @IBAction func pressedDoneButton(_ sender: UIButton) {
+        
+        guard let menuImageData = menuImageData else {
+            showSimpleBottomAlert(with: "메뉴 썸네일로 이용할 사진 1개를 골라주세요.")
+            return
+        }
+        
+        guard
+            let menuName = menuNameTextField.text,
+            let menuPrice = menuPriceTextField.text,
+            let menuCations = menuCautionsTextField.text,
+            menuName.count > 1,
+            menuPrice.count > 1,
+            menuCations.count > 1 else {
+                showSimpleBottomAlert(with: "빈 칸이 없느지 확인해주세요.")
+                return
+            }
+
+        presentAlertWithConfirmAction(
+            title: "메뉴를 등록하시겠습니까?",
+            message: ""
+        ) { selectedOk in
+            
+            if selectedOk {
+                
+                let model = NewMenuDTO(
+                    mallId: 24975336,
+                    name: "샌드위치",
+                    price: 2000,
+                    caution: "새우가 포함되어있어요",
+                    file: menuImageData,
+                    isVegan: "Y"
+                )
+                
+                MallManager.shared.uploadNewMenu(with: model) { [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success:
+                        self.showSimpleBottomAlert(with: "메뉴 등록 성공🎉")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                    case .failure(let error):
+                        self.showSimpleBottomAlert(with: error.errorDescription)
+                    }
+                }
+                
+                
+            }
+        }
+        
     }
 }
 

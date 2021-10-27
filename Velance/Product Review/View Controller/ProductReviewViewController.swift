@@ -190,7 +190,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         
         let position = scrollView.contentOffset.y
         
-        if position <= 0 {
+        if position <= 10 {
             topImageViewHeight.constant = Metrics.topImageViewMaxHeight
             UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
@@ -322,14 +322,7 @@ extension ProductReviewViewController {
             price: self.price ?? 0,
             productAllergyGroup: productAllergyGroup
         )
-        let panGesture = UIPanGestureRecognizer(
-            target: self,
-            action: #selector(viewPanned(_:))
-        )
-        panGesture.delaysTouchesBegan = false
-        panGesture.delaysTouchesEnded = false
-        headerView.addGestureRecognizer(panGesture)
-        
+
         reviewTableView.tableHeaderView = headerView
         let reviewTableViewCell = UINib(
             nibName: XIB_ID.productReviewTVC,

@@ -14,15 +14,19 @@ class NewPostViewController: UIViewController, Storyboarded {
     @IBOutlet weak var postTextView: UITextView!
     
     //MARK: - Properties
+    
+    enum FeedCategory {
+        case recipe
+        case dailyLife
+    }
+    
+    var feedCategory: FeedCategory = .recipe
+    var recipeCategoryId: Int = 1
     var userSelectedImages = [UIImage]() {
         didSet { convertUIImagesToDataFormat() }
     }
-    
     var userSelectedImagesInDataFormat: [Data]?
-    
-    var contents: String?
-    
-    
+
     
     static var storyboardName: String {
         StoryboardName.productReview
@@ -44,12 +48,14 @@ extension NewPostViewController {
         feedCategoryButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
         
-        if sender.tag == 1 {
+        if sender.tag == 1 {        // 일상 피드를 골랐을 경우
+            feedCategory = .dailyLife
             recipeCategoryButtons.forEach {
                 $0.isSelected = false
                 $0.isUserInteractionEnabled = false
             }
-        } else {
+        } else {                    // 레시피를 골랐을 경우
+            feedCategory = .recipe
             recipeCategoryButtons.forEach { $0.isUserInteractionEnabled = true }
         }
         
@@ -58,14 +64,78 @@ extension NewPostViewController {
     @IBAction func pressedRecipeCategoryButton(_ sender: UIButton) {
         recipeCategoryButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
-        
+        recipeCategoryId = sender.tag
         
     }
     
     @IBAction func pressedDoneButton(_ sender: UIButton) {
         
+        guard let content = postTextView.text, content.count > 5 else {
+            showSimpleBottomAlert(with: "글을 5자 이상 작성해주세요.")
+            return
+        }
+        
+        guard let _ = userSelectedImagesInDataFormat else {
+            showSimpleBottomAlert(with: "사진을 1개 이상 골라주세요.")
+            return
+        }
+        
+        presentAlertWithConfirmAction(
+            title: "피드 업로드를 하시겠습니까?",
+            message: ""
+        ) { selectedOk in
+            self.feedCategory == .recipe ? self.uploadNewRecipe() : self.uploadNewDailyLife()
+        }
+    }
+    
+    func uploadNewRecipe() {
+        
+        let model = NewRecipeDTO(
+            title: "",
+            contents: postTextView.text!,
+            files: userSelectedImagesInDataFormat!,
+            recipeCategoryId: recipeCategoryId
+        )
+        
+        CommunityManager.shared.uploadRecipePost(with: model) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.showSimpleBottomAlert(with: "피드 업로드 성공🎉")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
         
     }
+    
+    func uploadNewDailyLife() {
+        
+        let model = NewDailyLifeDTO(
+            title: "",
+            contents: postTextView.text!,
+            files: userSelectedImagesInDataFormat!
+        )
+        
+        CommunityManager.shared.uploadDailyLifePost(with: model) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.showSimpleBottomAlert(with: "피드 업로드 성공🎉")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+    }
+    
     
 }
 
@@ -165,7 +235,6 @@ extension NewPostViewController: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
             return
         }
-        self.contents = textView.text
     }
 }
 
