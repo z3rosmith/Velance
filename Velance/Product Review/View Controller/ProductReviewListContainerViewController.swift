@@ -40,6 +40,7 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
+        showProgressBar()
         viewModel.onlyMyVegetarianType = "Y"
     }
     

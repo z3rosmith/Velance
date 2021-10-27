@@ -45,7 +45,7 @@ class ProductReviewListViewModel {
             productCategoryId: selectedProductCategory,
             onlyMyVegetarianType: onlyMyVegetarianType)
         { [weak self] result in
-     
+            dismissProgressBar()
             guard let self = self else { return }
             switch result {
             case .success(let productList):

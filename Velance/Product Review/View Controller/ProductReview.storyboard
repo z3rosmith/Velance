@@ -56,11 +56,24 @@
                                     <constraint firstItem="PST-b2-hd0" firstAttribute="top" secondItem="smG-IU-Uh6" secondAttribute="top" constant="4" id="ugb-YG-kzS"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="bty-sN-IhY">
-                                <rect key="frame" x="16" y="138" width="219.5" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bty-sN-IhY">
+                                <rect key="frame" x="16" y="138" width="299.5" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-YQ-fT7">
-                                        <rect key="frame" x="0.0" y="0.0" width="219.5" height="50"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-YQ-fT7">
+                                        <rect key="frame" x="0.0" y="0.0" width="299.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="나와 같은 알러지를 가진 사람들이 먹은 제품들 보기" image="square" catalog="system">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" image="checkmark.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="pressedFilterOption:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiJ-zs-UK0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-xg-gPh">
+                                        <rect key="frame" x="0.0" y="32.5" width="219.5" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -69,23 +82,23 @@
                                         </state>
                                         <state key="selected" image="checkmark.square.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="pressedFilterOption:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiJ-zs-UK0"/>
+                                            <action selector="pressedFilterOption:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LCB-XU-jUI"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="08E-NB-4lw"/>
+                                    <constraint firstAttribute="height" constant="65" id="08E-NB-4lw"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwC-Ml-Py0" customClass="Segmentio" customModule="Segmentio">
-                                <rect key="frame" x="16" y="188" width="382" height="40"/>
+                                <rect key="frame" x="16" y="203" width="398" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Nmh-pg-kcF"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-TZ-qsh" userLabel="PopularProductCollectionView">
-                                <rect key="frame" x="0.0" y="228" width="414" height="668"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="653"/>
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jgE-NY-Niq"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="9cB-0M-o7B"/>
@@ -182,7 +195,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="smG-IU-Uh6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Cdj-ca-9em"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zwC-Ml-Py0" secondAttribute="trailing" constant="16" id="D5F-2L-IXO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zwC-Ml-Py0" secondAttribute="trailing" id="D5F-2L-IXO"/>
                             <constraint firstAttribute="bottom" secondItem="LL9-TZ-qsh" secondAttribute="bottom" id="F9x-w5-S9o"/>
                             <constraint firstItem="bty-sN-IhY" firstAttribute="top" secondItem="smG-IU-Uh6" secondAttribute="bottom" id="M3l-JD-Qa2"/>
                             <constraint firstItem="LL9-TZ-qsh" firstAttribute="top" secondItem="zwC-Ml-Py0" secondAttribute="bottom" id="MBm-Ul-tMh"/>
