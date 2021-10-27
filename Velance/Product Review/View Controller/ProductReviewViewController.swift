@@ -142,7 +142,19 @@ extension ProductReviewViewController: ProductReviewDelegate {
 extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.reviewList.count ?? 0
+        
+        
+        if viewModel?.reviewList.count == 0 {
+            tableView.setEmptyMessage("no")
+            return 0
+        } else {
+            tableView.restore()
+            return viewModel?.reviewList.count ?? 0
+        }
+        
+        
+        
+//        return viewModel?.reviewList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -174,7 +186,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         }
         cell.reviewImageSlideShow.setImageInputs(imageSources)
 
-        cell.dateLabel.text = reviewData.createdAt
+        cell.dateLabel.text = reviewData.formattedDate
         return cell
     }
     

@@ -67,6 +67,7 @@ extension NewMenuViewController {
             
             if selectedOk {
                 
+                #warning("아래 mallID 변경!!")
                 let model = NewMenuDTO(
                     mallId: 24975336,
                     name: "샌드위치",
@@ -89,8 +90,6 @@ extension NewMenuViewController {
                         self.showSimpleBottomAlert(with: error.errorDescription)
                     }
                 }
-                
-                
             }
         }
         

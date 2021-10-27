@@ -45,6 +45,7 @@
 		7C60F1CD27290296001D96C2 /* NewDailyLifeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1CC27290296001D96C2 /* NewDailyLifeDTO.swift */; };
 		7C60F1D0272908DA001D96C2 /* NewMenuDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1CF272908DA001D96C2 /* NewMenuDTO.swift */; };
 		7C60F1D227290D69001D96C2 /* MallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1D127290D69001D96C2 /* MallManager.swift */; };
+		7C60F1D4272910D6001D96C2 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1D3272910D6001D96C2 /* UITableView+Extension.swift */; };
 		7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456227141FFB00D659C5 /* ProductReview.storyboard */; };
 		7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
@@ -177,6 +178,7 @@
 		7C60F1CC27290296001D96C2 /* NewDailyLifeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDailyLifeDTO.swift; sourceTree = "<group>"; };
 		7C60F1CF272908DA001D96C2 /* NewMenuDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuDTO.swift; sourceTree = "<group>"; };
 		7C60F1D127290D69001D96C2 /* MallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallManager.swift; sourceTree = "<group>"; };
+		7C60F1D3272910D6001D96C2 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		7C61456227141FFB00D659C5 /* ProductReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductReview.storyboard; sourceTree = "<group>"; };
 		7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListContainerViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 				7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */,
 				7CF529712710513600499709 /* String+Extension.swift */,
 				7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */,
+				7C60F1D3272910D6001D96C2 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -999,6 +1002,7 @@
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
 				7CF529722710513600499709 /* String+Extension.swift in Sources */,
 				7CCBB55027253BAA002EFB58 /* ProductListResponseDTO.swift in Sources */,
+				7C60F1D4272910D6001D96C2 /* UITableView+Extension.swift in Sources */,
 				7CFF121A27215A8900E6A9D3 /* MyPageViewController.swift in Sources */,
 				7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */,
 				7CEED10227240209005CACF5 /* LoginResponseDTO.swift in Sources */,
