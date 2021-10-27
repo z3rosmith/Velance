@@ -24,7 +24,7 @@ class NewMenuViewController: UIViewController, Storyboarded {
     #warning("형이 mallId 만 가져와서 VC push 하기 전에 설정해주면 됨")
 
     static var storyboardName: String {
-        StoryboardName.main
+        StoryboardName.mall
     }
 
     override func viewDidLoad() {

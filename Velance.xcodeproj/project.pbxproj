@@ -110,7 +110,6 @@
 		7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91FC0727118D21000D237C /* LoginViewController.swift */; };
 		7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4C2717F19300295A3F /* VLFloatingButton.swift */; };
 		7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */; };
-		7C922A522718052E00295A3F /* ChooseInterest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C922A512718052E00295A3F /* ChooseInterest.storyboard */; };
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
@@ -295,7 +294,6 @@
 		7C91FC0727118D21000D237C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C922A4C2717F19300295A3F /* VLFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFloatingButton.swift; sourceTree = "<group>"; };
 		7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
-		7C922A512718052E00295A3F /* ChooseInterest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseInterest.storyboard; sourceTree = "<group>"; };
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
@@ -399,6 +397,8 @@
 			isa = PBXGroup;
 			children = (
 				3C51257A271455F4003E572D /* Community.storyboard */,
+				7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */,
+				7C922A532718054B00295A3F /* ChooseInterestViewController.swift */,
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
 				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
 				3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */,
@@ -441,6 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				3CAEDC002727A6D8001E4783 /* Mall.storyboard */,
+				7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */,
+				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
 				3CD341AD2727C09900ADA745 /* SearchMallViewController.swift */,
 				3CD341AF2727C0B800ADA745 /* MallListViewController.swift */,
 				3CAEDC022727AEC1001E4783 /* UITableView Cells */,
@@ -651,20 +653,8 @@
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
-				7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */,
-				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
-				7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		7C922A502718050300295A3F /* Custom VC */ = {
-			isa = PBXGroup;
-			children = (
-				7C922A512718052E00295A3F /* ChooseInterest.storyboard */,
-				7C922A532718054B00295A3F /* ChooseInterestViewController.swift */,
-			);
-			path = "Custom VC";
 			sourceTree = "<group>";
 		};
 		7C97195B27100617003E193D /* UIButton */ = {
@@ -766,7 +756,6 @@
 		7CC36A3C26EC6366007573DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7C922A502718050300295A3F /* Custom VC */,
 				7C61457227156AD600D659C5 /* Rating View */,
 				7CC36A8E26EE3F1E007573DD /* Custom Alerts */,
 				7C97195B27100617003E193D /* UIButton */,
@@ -1132,7 +1121,6 @@
 				7C60F28B272927C2001D96C2 /* th_line.png in Resources */,
 				7C60F289272927C2001D96C2 /* map_pin_shadow@3x.png in Resources */,
 				7C60F29A272927C2001D96C2 /* map_present_background_update.png in Resources */,
-				7C922A522718052E00295A3F /* ChooseInterest.storyboard in Resources */,
 				7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */,
 				7C60F286272927C2001D96C2 /* detail_button.png in Resources */,
 				7C91FC0627118D09000D237C /* Login.storyboard in Resources */,
@@ -1450,13 +1438,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/Velance/DaumMap.embeddedframework",
 				);
-				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1465,7 +1452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/kevinkim/Desktop/Velance/Velance/Velance/BridgeHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Velance/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1478,13 +1465,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/Velance/DaumMap.embeddedframework",
 				);
-				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1493,7 +1479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/kevinkim/Desktop/Velance/Velance/Velance/BridgeHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Velance/BridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

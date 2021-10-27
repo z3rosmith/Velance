@@ -29,7 +29,7 @@ class NewPostViewController: UIViewController, Storyboarded {
 
     
     static var storyboardName: String {
-        StoryboardName.productReview
+        StoryboardName.community
     }
 
     override func viewDidLoad() {

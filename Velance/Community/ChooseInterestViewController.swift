@@ -17,7 +17,7 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     weak var delegate: ChooseInterestDelegate?
     
     static var storyboardName: String {
-        StoryboardName.chooseInterest
+        StoryboardName.community
     }
     
     override func viewDidLoad() {

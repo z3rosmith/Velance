@@ -29,7 +29,7 @@ class NewMallViewController: UIViewController, Storyboarded {
     
     
     static var storyboardName: String {
-        StoryboardName.productReview
+        StoryboardName.mall
     }
     
     override func viewDidLoad() {
