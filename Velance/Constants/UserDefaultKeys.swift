@@ -11,6 +11,7 @@ extension UserDefaults {
         static let userUid          = "userUid"                 // == user_id
         static let username         = "username"
         static let displayName      = "displayName"
+        static let vegetarianType   = "vegetarianType"
         
         
         static let isLoggedIn       = "isLoggedIn"

@@ -37,7 +37,7 @@ class ProductReviewListViewModel {
     
     //MARK: - 제품 목록 가져오기
     func fetchProductList() {
-        showProgressBar()
+    
         isFetchingData = true
         
         productManager?.getProducts(

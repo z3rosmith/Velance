@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>채식 식당 위치를 가져오기 위해서 사용자의 위치에 대한 접근 권한이 필요합니다.</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>65a7f8d9410de133e3174120bad5b8b8</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>사용자 리뷰 등록 시 사진을 함께 업로드하기 위해 사진첩에 대한 접근 권한이 필요합니다.</string>
+	<string>사용자 컨텐츠 등록 시 사진을 함께 업로드하기 위해 사진첩에 대한 접근 권한이 필요합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

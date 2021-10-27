@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserInterestGroup: Decodable {
+struct UserInterestGroups: Decodable {
     
     let userInterestGroupId: Int
     let interestType: InterestType

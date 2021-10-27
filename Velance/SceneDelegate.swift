@@ -46,11 +46,11 @@ extension SceneDelegate {
     
     // 로그인 되어 있을 시
     func createHomeScreenVC() -> UIViewController {
-        #warning("추후 수정 필요 -> 피드 화면으로 가야함 (커뮤니티 탭")
-        let vc = ProductReviewListContainerViewController.instantiate()
-        let navController = UINavigationController(rootViewController: vc)
-        navController.navigationBar.tintColor = .black
-        return navController
+        let storyboard = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(
+            withIdentifier: "MainViewController"
+        ) as? MainViewController else { return UIViewController() }
+        return vc
     }
     
     

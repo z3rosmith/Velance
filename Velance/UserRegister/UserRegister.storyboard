@@ -410,6 +410,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="pressedNotChooseVeganTypeButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="xai-vq-ygE"/>
+                                                                    <action selector="pressedVeganTypeButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="Gdr-ap-Hpp"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>

@@ -3,7 +3,7 @@ import Foundation
 struct ProductReviewResponseDTO: Decodable {
     
     let reviewId: Int
-    let createdAt: String
+    var createdAt: String
     let rating: Int
     let contents: String
     let fileFolder: FileFolder
@@ -14,6 +14,11 @@ struct ProductReviewResponseDTO: Decodable {
         case createdAt = "created_at"
         case rating, contents, fileFolder, user
     }
-    
+}
 
+extension ProductReviewResponseDTO {
+    
+    var formattedDate: String {
+        return createdAt.getFormattedDateString()
+    }
 }

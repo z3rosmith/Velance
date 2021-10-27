@@ -125,11 +125,22 @@ extension UIViewController {
 //MARK: - Navigation / Router
 
 extension UIViewController {
-    
-    #warning("아래 수정 필요 -> 홈화면으로 가야함")
+
     func navigateToHome() {
-        let vc = ProductReviewListContainerViewController.instantiate()
-        let navController = UINavigationController(rootViewController: vc)
+        let storyboard = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(
+            withIdentifier: "MainViewController"
+        ) as? MainViewController else { return }
+        
+ 
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+    }
+    
+    func popToLoginViewController() {
+        User.shared.resetAllUserInfo()
+        let loginVC = LoginViewController.instantiate()
+        let navController = UINavigationController(rootViewController: loginVC)
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
+        
     }
 }

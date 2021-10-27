@@ -129,3 +129,8 @@ struct LayoutConstants {
     static var tabContainerViewHeight: CGFloat       = 0.0
 }
 
+struct KakaoAPIKey {
+    static let App_Key                      = "65a7f8d9410de133e3174120bad5b8b8"
+    static let API_Key                      = "65a7f8d9410de133e3174120bad5b8b8"
+    static let Admin_Key                    = "55631246cbc856f459c460cc47806611"
+}

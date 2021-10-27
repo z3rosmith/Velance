@@ -7,6 +7,6 @@ struct RegisterResponseDTO: Decodable {
     let displayName: String
     let vegetarianType: VegetarianType
     let userTasteGroups: [UserTasteGroups]
-    let userInterestGroups: [UserInterestGroup]
+    let userInterestGroups: [UserInterestGroups]
     let userAllergyGroups: [UserAllergyGroup]?
 }

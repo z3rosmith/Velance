@@ -23,4 +23,27 @@ extension String {
 
         return attributedString
     }
+    
+    func getFormattedDateString() -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.locale = Locale(identifier:"ko_KR")
+        
+        guard let convertedDate = dateFormatter.date(from: self) else {
+            return "날짜 표시 에러"
+        }
+        
+        let calendar = Calendar.current
+        
+        if calendar.isDateInToday(convertedDate) {
+            return "오늘"
+        } else if calendar.isDateInYesterday(convertedDate) {
+            return "어제"
+        } else {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let finalDate = dateFormatter.string(from: convertedDate)
+            return finalDate
+        }
+    }
 }

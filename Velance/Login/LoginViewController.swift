@@ -40,6 +40,7 @@ extension LoginViewController {
             switch result {
             case .success:
                 print("✏️ 로그인 성공!")
+                
                 self.navigateToHome()
             case .failure(_):
                 self.presentVLAlert(

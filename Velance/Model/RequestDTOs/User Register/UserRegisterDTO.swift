@@ -14,7 +14,11 @@ struct UserRegisterDTO {
         parameters["vegetarian_type_id"] = vegetarianTypeId
         parameters["taste_type_ids"] = tasteTypeIds
         parameters["interest_type_ids"] = interestTypeIds
-        parameters["allergy_type_ids"] = allergyTypeIds
+        
+        if let allergyTypeIds = allergyTypeIds {
+            parameters["allergy_type_ids"] = allergyTypeIds
+        }
+        
     }
     
     

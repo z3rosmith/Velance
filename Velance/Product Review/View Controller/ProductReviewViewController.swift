@@ -16,6 +16,7 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     var productName: String?
     var rating: Int?
     var price: Int?
+    var productAllergyGroup: [ProductAllergyGroups]?
     
     private var viewModel: ProductReviewViewModel?
     //MARK: - Constants
@@ -141,7 +142,17 @@ extension ProductReviewViewController: ProductReviewDelegate {
 extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.reviewList.count ?? 0
+        
+        if viewModel?.reviewList.count == 0 {
+            tableView.setEmptyMessage("no")
+            
+            
+            return 0
+        } else {
+            tableView.restore()
+            return viewModel?.reviewList.count ?? 0
+        }
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -173,7 +184,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         }
         cell.reviewImageSlideShow.setImageInputs(imageSources)
 
-        cell.dateLabel.text = reviewData.createdAt
+        cell.dateLabel.text = reviewData.formattedDate
         return cell
     }
     
@@ -189,7 +200,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         
         let position = scrollView.contentOffset.y
         
-        if position <= 0 {
+        if position <= 10 {
             topImageViewHeight.constant = Metrics.topImageViewMaxHeight
             UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
@@ -318,16 +329,10 @@ extension ProductReviewViewController {
         headerView.configure(
             productName: self.productName ?? "로딩 중..",
             rating: self.rating ?? 0,
-            price: self.price ?? 0
+            price: self.price ?? 0,
+            productAllergyGroup: productAllergyGroup
         )
-        let panGesture = UIPanGestureRecognizer(
-            target: self,
-            action: #selector(viewPanned(_:))
-        )
-        panGesture.delaysTouchesBegan = false
-        panGesture.delaysTouchesEnded = false
-        headerView.addGestureRecognizer(panGesture)
-        
+
         reviewTableView.tableHeaderView = headerView
         let reviewTableViewCell = UINib(
             nibName: XIB_ID.productReviewTVC,

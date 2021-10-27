@@ -9,13 +9,14 @@ class UserManager {
     //MARK: - End Points
     let registerUrl     = "\(API.baseUrl)user/signup"
     let loginUrl        = "\(API.baseUrl)auth/login"
+    let fetchProfileUrl = "\(API.baseUrl)user/"
 
     
     func register(
         with model: UserRegisterDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-        
+
         AF.request(
             registerUrl,
             method: .post,
@@ -77,6 +78,36 @@ class UserManager {
         }
     }
     
+    
+    func fetchProfileInfo(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
+        
+        AF.request(
+            fetchProfileUrl + User.shared.userUid,
+            method: .get
+        ).responseData { response in
+            switch response.result {
+            case .success:
+                do {
+                    let decodedData = try JSONDecoder().decode(UserDisplayModel.self, from: response.data!)
+                
+                    User.shared.userUid = decodedData.userUid
+                    User.shared.username = decodedData.userName
+                    User.shared.displayName = decodedData.displayName
+                    User.shared.vegetarianType = decodedData.vegetarianType?.name ?? "-"
+                    
+                    completion(.success(true))
+                } catch {
+                    print("❗️ UserManager - fetchProfileInfo Decoding ERROR: \(error)")
+                    completion(.failure(.internalError))
+                }
+                completion(.success(true))
+                
+            case .failure:
+                let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 500, responseData: response.data ?? Data())
+                completion(.failure(error))
+            }
+        }
+    }
     
     
     
