@@ -16,6 +16,7 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     var productName: String?
     var rating: Int?
     var price: Int?
+    var productAllergyGroup: [ProductAllergyGroups]?
     
     private var viewModel: ProductReviewViewModel?
     //MARK: - Constants
@@ -318,7 +319,8 @@ extension ProductReviewViewController {
         headerView.configure(
             productName: self.productName ?? "로딩 중..",
             rating: self.rating ?? 0,
-            price: self.price ?? 0
+            price: self.price ?? 0,
+            productAllergyGroup: productAllergyGroup
         )
         let panGesture = UIPanGestureRecognizer(
             target: self,

@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import SwiftUI
 
 class ProductReviewHeaderView: UIView {
     
@@ -140,15 +141,28 @@ class ProductReviewHeaderView: UIView {
         return label
     }()
     
+    lazy var allergyButtonArray: [VLAllergyCheckButton] = [
+        allergyButton1, allergyButton1, allergyButton2, allergyButton3, allergyButton4,
+        allergyButton5, allergyButton6, allergyButton7, allergyButton8,
+        allergyButton9, allergyButton10, allergyButton11, allergyButton12, allergyButton13
+    ]
+    
     
     //MARK: - Configuration
     
-    func configure(productName: String, rating: Int, price: Int) {
+    func configure(productName: String, rating: Int, price: Int, productAllergyGroup: [ProductAllergyGroups]?) {
         
         titleLabel.text = productName
         ratingStackView.setStarsRating(rating: rating)
         ratingLabel.text = "\(Double(rating))"
         estimatedPriceLabel.text = "\(price) 원"
+        
+        if let productAllergyGroup = productAllergyGroup {
+            productAllergyGroup.forEach { productAllergy in
+                self.allergyButtonArray[productAllergy.allergyType.allergyTypeId].isSelected.toggle()
+            }
+        }
+        
         makeConstraints()
     }
     
@@ -205,7 +219,6 @@ class ProductReviewHeaderView: UIView {
 
 class VLAllergyCheckButton: UIButton {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -220,6 +233,7 @@ class VLAllergyCheckButton: UIButton {
         super.init(frame: .zero)
         setTitle(buttonTitle, for: .normal)
         configure()
+        
     }
     
     func configure() {
@@ -233,6 +247,5 @@ class VLAllergyCheckButton: UIButton {
         setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
         tintColor = .darkGray
         isUserInteractionEnabled = false
-
     }
 }

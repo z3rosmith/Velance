@@ -16,6 +16,9 @@ class UserManager {
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
         
+        #warning("allergy 가 잘 반영안되는 문제 해결")
+        print("✏️ model: \(model.parameters["allergy_type_ids"])")
+        
         AF.request(
             registerUrl,
             method: .post,

@@ -37,7 +37,7 @@ class ProductReviewListViewModel {
     
     //MARK: - 제품 목록 가져오기
     func fetchProductList() {
-        showProgressBar()
+    
         isFetchingData = true
         
         productManager?.getProducts(
@@ -45,7 +45,7 @@ class ProductReviewListViewModel {
             productCategoryId: selectedProductCategory,
             onlyMyVegetarianType: onlyMyVegetarianType)
         { [weak self] result in
-            dismissProgressBar()
+     
             guard let self = self else { return }
             switch result {
             case .success(let productList):

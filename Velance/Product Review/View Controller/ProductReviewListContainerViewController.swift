@@ -121,6 +121,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         vc.productName = productData.name
         vc.rating = Int(productData.rating)
         vc.price = productData.price
+        vc.productAllergyGroup = productData.productAllergyGroups
         
         navigationController?.pushViewController(vc, animated: true)
     }
