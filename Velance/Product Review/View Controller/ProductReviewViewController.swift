@@ -143,18 +143,16 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
         if viewModel?.reviewList.count == 0 {
             tableView.setEmptyMessage("no")
+            
+            
             return 0
         } else {
             tableView.restore()
             return viewModel?.reviewList.count ?? 0
         }
-        
-        
-        
-//        return viewModel?.reviewList.count ?? 0
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
