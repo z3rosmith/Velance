@@ -8,7 +8,7 @@ class CommunityCollectionReusableView2: UICollectionReusableView {
     @IBOutlet weak var editUserImageButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userCategoryLabel: UILabel!
-    @IBOutlet weak var tabListView: TagListView!
+    @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var editUserinfoButton: UIButton!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!

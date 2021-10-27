@@ -84,15 +84,15 @@ extension VLSocialButton {
         }
     }
     
+    func setTextColor(cgColor: CGColor) {
+        textLayer.foregroundColor = cgColor
+    }
+    
     func setLeftImage(image: UIImage) {
         imageLayer.contents = image.cgImage
     }
     
     func setRightText(text: String) {
         textLayer.string = text
-    }
-    
-    func setTextColor(cgColor: CGColor) {
-        textLayer.foregroundColor = cgColor
     }
 }

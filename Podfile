@@ -23,4 +23,5 @@ target 'Velance' do
   pod 'Gifu'
   pod 'Parchment', '~> 3.0'
   pod 'TagListView', '~> 1.0'
+  pod 'InputBarAccessoryView'
 end

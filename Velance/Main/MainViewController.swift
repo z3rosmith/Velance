@@ -8,7 +8,7 @@ class MainViewController: UIViewController {
     
     private var tabVCs: [UIViewController] = []
     private var currentTabButton: UIButton?
-    private var currentVC: UIViewController?
+    private weak var currentVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

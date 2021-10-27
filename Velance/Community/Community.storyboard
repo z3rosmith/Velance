@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -230,7 +230,7 @@
                                         <outlet property="editUserinfoButton" destination="WNG-Sr-OPr" id="0QP-xz-L3r"/>
                                         <outlet property="followerCountLabel" destination="5ZI-Ma-scH" id="4Xz-3B-ngJ"/>
                                         <outlet property="followingCountLabel" destination="eJX-fB-qdD" id="gvu-CQ-hhe"/>
-                                        <outlet property="tabListView" destination="fTU-lI-yPv" id="1MZ-7N-YYn"/>
+                                        <outlet property="tagListView" destination="fTU-lI-yPv" id="1MZ-7N-YYn"/>
                                         <outlet property="userCategoryLabel" destination="ed7-hH-nW5" id="5wr-gA-V0l"/>
                                         <outlet property="userImageView" destination="alV-YT-Msg" id="3kN-os-Hf2"/>
                                         <outlet property="usernameLabel" destination="4nJ-C5-qfs" id="wlm-VG-ucM"/>
@@ -254,6 +254,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zku-Ur-NZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1989.8550724637682" y="395.08928571428572"/>
+        </scene>
+        <!--Community Detail View Controller-->
+        <scene sceneID="KCM-e3-pNr">
+            <objects>
+                <viewController storyboardIdentifier="CommunityDetailViewController" id="RBh-2t-e32" customClass="CommunityDetailViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSq-Pa-Rro">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-rw-8D1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9M-jn-ZqT">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCW-mJ-eg4" customClass="VelanceInputBar" customModule="Velance" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="5" width="384" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VCW-mJ-eg4" firstAttribute="top" secondItem="k9M-jn-ZqT" secondAttribute="top" constant="5" id="EJR-Gd-S1K"/>
+                                    <constraint firstItem="VCW-mJ-eg4" firstAttribute="leading" secondItem="k9M-jn-ZqT" secondAttribute="leading" constant="15" id="EiG-UO-k8q"/>
+                                    <constraint firstAttribute="height" priority="250" constant="60" id="Jrx-Zc-zKn"/>
+                                    <constraint firstAttribute="trailing" secondItem="VCW-mJ-eg4" secondAttribute="trailing" constant="15" id="LCJ-46-Ed8"/>
+                                    <constraint firstAttribute="bottom" secondItem="VCW-mJ-eg4" secondAttribute="bottom" constant="5" id="QnJ-pg-nw1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VQh-El-MUz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VQh-El-MUz" firstAttribute="bottom" secondItem="k9M-jn-ZqT" secondAttribute="bottom" id="CBc-zn-wld"/>
+                            <constraint firstItem="k9M-jn-ZqT" firstAttribute="top" secondItem="Tqf-rw-8D1" secondAttribute="bottom" id="DMM-Bz-4oL"/>
+                            <constraint firstItem="k9M-jn-ZqT" firstAttribute="leading" secondItem="VQh-El-MUz" secondAttribute="leading" id="Uok-ad-cSt"/>
+                            <constraint firstItem="VQh-El-MUz" firstAttribute="trailing" secondItem="k9M-jn-ZqT" secondAttribute="trailing" id="dD6-Xi-wHs"/>
+                            <constraint firstItem="VQh-El-MUz" firstAttribute="trailing" secondItem="Tqf-rw-8D1" secondAttribute="trailing" id="siL-G4-T59"/>
+                            <constraint firstItem="Tqf-rw-8D1" firstAttribute="top" secondItem="VQh-El-MUz" secondAttribute="top" id="utP-dO-eOU"/>
+                            <constraint firstItem="Tqf-rw-8D1" firstAttribute="leading" secondItem="VQh-El-MUz" secondAttribute="leading" id="wDZ-IB-WVm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputBar" destination="VCW-mJ-eg4" id="cLM-lW-4gb"/>
+                        <outlet property="tableView" destination="Tqf-rw-8D1" id="1qS-Ik-RhI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dhn-HA-z6l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.9275362318845" y="115.84821428571428"/>
         </scene>
         <!--Community Recipe View Controller-->
         <scene sceneID="nt6-dK-bcp">
@@ -421,6 +472,11 @@
             <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="fTU-lI-yPv">
+            <size key="intrinsicContentSize" width="220" height="16"/>
+        </designable>
+    </designables>
     <resources>
         <image name="EditProfileButton" width="122" height="41"/>
         <image name="EditProfileLogo" width="15" height="15"/>

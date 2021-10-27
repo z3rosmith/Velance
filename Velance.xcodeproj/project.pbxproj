@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2C0B0B2729139B003A0B69 /* CommunityDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0A2729139B003A0B69 /* CommunityDetailTableHeaderView.swift */; };
+		3C2C0B0D272914ED003A0B69 /* CommunityDetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0C272914ED003A0B69 /* CommunityDetailTableHeaderView.xib */; };
+		3C2C0B0F272931E3003A0B69 /* VelanceInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */; };
 		3C51257B271455F4003E572D /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C51257A271455F4003E572D /* Community.storyboard */; };
 		3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51257C2714560C003E572D /* CommunityViewController.swift */; };
 		3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */; };
@@ -14,6 +17,9 @@
 		3C6B700D26F32550001FD7BB /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700C26F32550001FD7BB /* MealView.xib */; };
 		3C6B700F26F32566001FD7BB /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700E26F32566001FD7BB /* MealView.swift */; };
 		3C86BFBB271C0DC30011EE7A /* CommunityRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */; };
+		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
+		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
+		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
 		3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE4FE826EF200F00865767 /* SecondViewController.swift */; };
 		3CAEDC012727A6D8001E4783 /* Mall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC002727A6D8001E4783 /* Mall.storyboard */; };
 		3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */; };
@@ -177,6 +183,9 @@
 		176EEBF91672C5403CE0C95C /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 		222364E45B7EF8AE3125E949 /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FB9106D8D15F56D0F86023 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		3C2C0B0A2729139B003A0B69 /* CommunityDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableHeaderView.swift; sourceTree = "<group>"; };
+		3C2C0B0C272914ED003A0B69 /* CommunityDetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableHeaderView.xib; sourceTree = "<group>"; };
+		3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelanceInputBar.swift; sourceTree = "<group>"; };
 		3C51257A271455F4003E572D /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		3C51257C2714560C003E572D /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalNutrientView.xib; sourceTree = "<group>"; };
@@ -184,6 +193,9 @@
 		3C6B700C26F32550001FD7BB /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
 		3C6B700E26F32566001FD7BB /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecipeViewController.swift; sourceTree = "<group>"; };
+		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
+		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
+		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
 		3CAE4FE826EF200F00865767 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3CAEDC002727A6D8001E4783 /* Mall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mall.storyboard; sourceTree = "<group>"; };
 		3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallTableViewCell.swift; sourceTree = "<group>"; };
@@ -390,7 +402,9 @@
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
 				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
 				3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */,
+				3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */,
 				3CD341B12727D03000ADA745 /* Views */,
+				3CA4113627290168000E39B1 /* UITableview Cells */,
 				3CCFE7DA271E9E13003FA1B7 /* UICollectionView Cells */,
 			);
 			path = Community;
@@ -412,6 +426,15 @@
 				3C6B700E26F32566001FD7BB /* MealView.swift */,
 			);
 			path = MealView;
+			sourceTree = "<group>";
+		};
+		3CA4113627290168000E39B1 /* UITableview Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */,
+				3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */,
+			);
+			path = "UITableview Cells";
 			sourceTree = "<group>";
 		};
 		3CAEDBFF2727A67E001E4783 /* Mall */ = {
@@ -452,6 +475,9 @@
 			children = (
 				3CC38424271C274700ED5077 /* CommunityCollectionReusableView1.swift */,
 				3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */,
+				3C2C0B0A2729139B003A0B69 /* CommunityDetailTableHeaderView.swift */,
+				3C2C0B0C272914ED003A0B69 /* CommunityDetailTableHeaderView.xib */,
+				3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1094,12 +1120,14 @@
 				7C60F290272927C2001D96C2 /* map_pin_red.png in Resources */,
 				3CDA4E9827218D4400016D3B /* CommunityFeedCollectionViewCell.xib in Resources */,
 				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
+				3C2C0B0D272914ED003A0B69 /* CommunityDetailTableHeaderView.xib in Resources */,
 				7C37DE82271ABE0A00B4FBFB /* ProductReviewTableViewCell.xib in Resources */,
 				3CCFE7E2271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib in Resources */,
 				3C51257B271455F4003E572D /* Community.storyboard in Resources */,
 				7C60F282272927C2001D96C2 /* map_pinup_custom@3x.png in Resources */,
 				7C60F29B272927C2001D96C2 /* daum_th_line.png in Resources */,
 				7C60F293272927C2001D96C2 /* map_pinup_custom.png in Resources */,
+				3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */,
 				7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */,
 				7C60F28B272927C2001D96C2 /* th_line.png in Resources */,
 				7C60F289272927C2001D96C2 /* map_pin_shadow@3x.png in Resources */,
@@ -1178,11 +1206,13 @@
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
+				3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7C60F1D227290D69001D96C2 /* MallManager.swift in Sources */,
 				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				3CCFE7DC271E9E33003FA1B7 /* CategoryCollectionViewCell.swift in Sources */,
 				7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */,
+				3C2C0B0F272931E3003A0B69 /* VelanceInputBar.swift in Sources */,
 				7CEED0FE2723F824005CACF5 /* NetworkError.swift in Sources */,
 				7C60F1D0272908DA001D96C2 /* NewMenuDTO.swift in Sources */,
 				7C60F1CB2728FDAA001D96C2 /* CommunityManager.swift in Sources */,
@@ -1244,6 +1274,7 @@
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
+				3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */,
 				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CCBB54C2725382D002EFB58 /* ProductManager.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
@@ -1266,6 +1297,7 @@
 				7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */,
 				7CEED0EE27226F41005CACF5 /* LoadingViewController.swift in Sources */,
 				7CEED0F4272285F8005CACF5 /* ReportManager.swift in Sources */,
+				3C2C0B0B2729139B003A0B69 /* CommunityDetailTableHeaderView.swift in Sources */,
 				7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */,
 				3CDA4E9727218D4400016D3B /* CommunityFeedCollectionViewCell.swift in Sources */,
 				3CB1532F27267C1E0063C407 /* CommunityFeedViewController.swift in Sources */,
@@ -1424,6 +1456,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/Velance/DaumMap.embeddedframework",
 				);
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1451,6 +1484,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 					"$(PROJECT_DIR)/Velance/DaumMap.embeddedframework",
 				);
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				INFOPLIST_FILE = Velance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

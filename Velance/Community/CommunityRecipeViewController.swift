@@ -43,6 +43,19 @@ extension CommunityRecipeViewController {
     @objc private func didLikeButtonTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
     }
+    
+    @objc private func didTapCommentButton(_ sender: UIButton) {
+        print("---> tag: \(sender.tag)")
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc func textViewTapped(gestureRecognizer: UIGestureRecognizer) {
+        guard let tag = gestureRecognizer.view?.tag else { return }
+        print("---> tag: \(tag)")
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension CommunityRecipeViewController: UICollectionViewDelegate {
@@ -88,6 +101,12 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         
         cell.likeButton.tag = indexPath.item
         cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(textViewTapped(gestureRecognizer:)))
+        cell.textView.tag = indexPath.item
+        cell.textView.addGestureRecognizer(tapGR)
+        cell.commentButton.tag = indexPath.item
+        cell.commentButton.addTarget(self, action: #selector(didTapCommentButton(_:)), for: .touchUpInside)
         
         if indexPath.item == 0 {
             cell.textView.text = "오늘 방문한 수성구 비건 식당입니다!\n가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다!\n한 번 들러보시면 좋을 것 같아요 ㅎㅎ\ndddd\ndddd"
