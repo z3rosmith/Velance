@@ -39,6 +39,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView2 else { fatalError() }
             headerView.userImageView.image = UIImage(named: "userImage_test")
+//            headerView.tagListView
             return headerView
         default:
             fatalError()
