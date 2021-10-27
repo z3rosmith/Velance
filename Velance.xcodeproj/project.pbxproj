@@ -75,10 +75,13 @@
 		7C60F29C272927C2001D96C2 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C60F280272927C2001D96C2 /* map_pin_shadow.png */; };
 		7C60F29D272927C2001D96C2 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F281272927C2001D96C2 /* DaumMap.framework */; };
 		7C60F29F2729289B001D96C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F29E2729289B001D96C2 /* CoreLocation.framework */; };
-		7C60F2A1272928A2001D96C2 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A0272928A2001D96C2 /* Metal.framework */; };
 		7C60F2A3272928B1001D96C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A2272928B1001D96C2 /* QuartzCore.framework */; };
 		7C60F2A5272928B9001D96C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A4272928B9001D96C2 /* SystemConfiguration.framework */; };
 		7C60F2AA272928F5001D96C2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A9272928F5001D96C2 /* OpenGLES.framework */; };
+		7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */; };
+		7C60F2AE27293128001D96C2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A6272928CA001D96C2 /* libc++.tbd */; };
+		7C60F2AF27293130001D96C2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A8272928E6001D96C2 /* libxml2.tbd */; };
+		7C60F2B027293137001D96C2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A7272928D7001D96C2 /* libsqlite3.tbd */; };
 		7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456227141FFB00D659C5 /* ProductReview.storyboard */; };
 		7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
@@ -256,6 +259,8 @@
 		7C60F2A7272928D7001D96C2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7C60F2A8272928E6001D96C2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7C60F2A9272928F5001D96C2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKakaoMapViewController.swift; sourceTree = "<group>"; };
+		7C60F2AD27292E97001D96C2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		7C61456227141FFB00D659C5 /* ProductReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductReview.storyboard; sourceTree = "<group>"; };
 		7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListContainerViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
@@ -354,11 +359,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C60F2B027293137001D96C2 /* libsqlite3.tbd in Frameworks */,
 				7C60F2AA272928F5001D96C2 /* OpenGLES.framework in Frameworks */,
 				7C60F2A3272928B1001D96C2 /* QuartzCore.framework in Frameworks */,
+				7C60F2AE27293128001D96C2 /* libc++.tbd in Frameworks */,
 				7C60F29F2729289B001D96C2 /* CoreLocation.framework in Frameworks */,
 				7C60F29D272927C2001D96C2 /* DaumMap.framework in Frameworks */,
-				7C60F2A1272928A2001D96C2 /* Metal.framework in Frameworks */,
+				7C60F2AF27293130001D96C2 /* libxml2.tbd in Frameworks */,
 				7C60F2A5272928B9001D96C2 /* SystemConfiguration.framework in Frameworks */,
 				4AA86C08EA56FAB13DCBD7EA /* Pods_Velance.framework in Frameworks */,
 			);
@@ -616,6 +623,7 @@
 				7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */,
 				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
+				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
 				7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */,
 				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
@@ -699,6 +707,7 @@
 				7CC36A2F26EC5EDB007573DD /* Assets.xcassets */,
 				7CC36A3126EC5EDB007573DD /* LaunchScreen.storyboard */,
 				7CC36A3426EC5EDB007573DD /* Info.plist */,
+				7C60F2AD27292E97001D96C2 /* BridgeHeader.h */,
 			);
 			path = Velance;
 			sourceTree = "<group>";
@@ -1203,6 +1212,7 @@
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
+				7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */,
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
 				7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */,
@@ -1422,6 +1432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/kevinkim/Desktop/Velance/Velance/Velance/BridgeHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1448,6 +1459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.knu.hackathon.Velance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/kevinkim/Desktop/Velance/Velance/Velance/BridgeHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
