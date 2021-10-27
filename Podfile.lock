@@ -8,6 +8,9 @@ PODS:
   - ImageSlideshow/SDWebImage (1.9.2):
     - ImageSlideshow/Core
     - SDWebImage (>= 3.7)
+  - InputBarAccessoryView (5.4.0):
+    - InputBarAccessoryView/Core (= 5.4.0)
+  - InputBarAccessoryView/Core (5.4.0)
   - IQKeyboardManagerSwift (6.5.6)
   - lottie-ios (3.2.3)
   - Parchment (3.1.0)
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Gifu
   - ImageSlideshow (~> 1.9.0)
   - ImageSlideshow/SDWebImage
+  - InputBarAccessoryView
   - IQKeyboardManagerSwift
   - lottie-ios
   - Parchment (~> 3.0)
@@ -48,6 +52,7 @@ SPEC REPOS:
     - BSImagePicker
     - Gifu
     - ImageSlideshow
+    - InputBarAccessoryView
     - IQKeyboardManagerSwift
     - lottie-ios
     - Parchment
@@ -66,6 +71,7 @@ SPEC CHECKSUMS:
   BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Parchment: 6250722ed0456d68f6bae03118eda722a28486f3
@@ -79,6 +85,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: c28b04ff95d616b1557d487d857380ff188a96df
+PODFILE CHECKSUM: 7e5ec7f5560f84e415f4ec8dbf461ac68b86b80d
 
 COCOAPODS: 1.10.1
