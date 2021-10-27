@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMs-Cu-e6C">
-                                <rect key="frame" x="79.5" y="457" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="449" width="255" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="9fQ-7q-XU1"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAS-KD-r5e">
-                                <rect key="frame" x="79.5" y="531" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="515" width="255" height="50"/>
                                 <color key="backgroundColor" name="LoginButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AzQ-mY-dO3"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oF-b9-BJG">
-                                <rect key="frame" x="79.5" y="605" width="255" height="50"/>
+                                <rect key="frame" x="79.5" y="581" width="255" height="50"/>
                                 <color key="backgroundColor" name="LoginButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WdA-uy-hi3"/>
@@ -85,21 +85,23 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppDefaultColor"/>
                         <constraints>
-                            <constraint firstItem="YAS-KD-r5e" firstAttribute="top" secondItem="VMs-Cu-e6C" secondAttribute="bottom" constant="24" id="4q0-bx-jnN"/>
+                            <constraint firstItem="YAS-KD-r5e" firstAttribute="top" secondItem="VMs-Cu-e6C" secondAttribute="bottom" constant="16" id="4q0-bx-jnN"/>
                             <constraint firstItem="6wz-Vj-FZG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="793-vk-tGk"/>
                             <constraint firstItem="VQ1-Ge-rNM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="195" id="9Me-r9-VdW"/>
                             <constraint firstItem="VMs-Cu-e6C" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ABa-z4-TTH"/>
                             <constraint firstItem="VQ1-Ge-rNM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="150" id="AJw-Jn-OdC"/>
-                            <constraint firstItem="7oF-b9-BJG" firstAttribute="top" secondItem="YAS-KD-r5e" secondAttribute="bottom" constant="24" id="RqP-gM-Kzd"/>
+                            <constraint firstItem="7oF-b9-BJG" firstAttribute="top" secondItem="YAS-KD-r5e" secondAttribute="bottom" constant="16" id="RqP-gM-Kzd"/>
                             <constraint firstItem="YAS-KD-r5e" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WY0-Xf-JGC"/>
                             <constraint firstItem="ggK-mo-aaw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aZE-UC-Tkv"/>
-                            <constraint firstItem="VMs-Cu-e6C" firstAttribute="top" secondItem="6wz-Vj-FZG" secondAttribute="bottom" constant="24" id="fdz-g3-3rI"/>
+                            <constraint firstItem="VMs-Cu-e6C" firstAttribute="top" secondItem="6wz-Vj-FZG" secondAttribute="bottom" constant="16" id="fdz-g3-3rI"/>
                             <constraint firstItem="6wz-Vj-FZG" firstAttribute="top" secondItem="ggK-mo-aaw" secondAttribute="bottom" constant="50" id="iSd-yn-BlS"/>
                             <constraint firstItem="ggK-mo-aaw" firstAttribute="top" secondItem="VQ1-Ge-rNM" secondAttribute="bottom" constant="-17" id="r1P-LS-mu6"/>
                             <constraint firstItem="7oF-b9-BJG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xdW-tV-fH6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yWP-L0-A3Q"/>
+                    <navigationItem key="navigationItem" id="yWP-L0-A3Q">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Eoq-fO-2L6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="idTextField" destination="6wz-Vj-FZG" id="7rV-Dh-qfV"/>
                         <outlet property="loginButton" destination="YAS-KD-r5e" id="CAH-1r-Swu"/>
@@ -137,7 +139,7 @@
             <color red="0.45098039215686275" green="0.72156862745098038" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LoginButtonColor">
-            <color red="0.17599999904632568" green="0.46299999952316284" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17254901960784313" green="0.46274509803921571" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

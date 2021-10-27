@@ -103,7 +103,7 @@ class UserManager {
                 completion(.success(true))
                 
             case .failure:
-                let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 500, responseData: response.data ?? Data())
                 completion(.failure(error))
             }
         }

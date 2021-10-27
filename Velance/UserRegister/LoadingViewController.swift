@@ -46,7 +46,14 @@ class LoadingViewController: UIViewController, Storyboarded {
                 print("✏️ 회원 가입 성공!")
                 self.login()
             case .failure(let error):
-                self.showSimpleBottomAlert(with: error.errorDescription)
+                let message = error == .internalError
+                ? "중복된 아이디입니다. 뒤로 가서 다시 설정해주세요."
+                : "알 수 없는 오류가 발생했어요. 잠시 후 다시 시도해주세요."
+                self.presentVLAlert(
+                    title: "오류",
+                    message: message,
+                    buttonTitle: "확인"
+                )
             }
         }
         

@@ -7,11 +7,11 @@ class MyPageViewController: UIViewController, Storyboarded {
     @IBOutlet weak var myPageTableView: UITableView!
     
     fileprivate struct Images {
-        static let myPageCellImageNames: [String] = ["person.fill", "scroll.fill", "exclamationmark.triangle.fill"]
+        static let myPageCellImageNames: [String] = ["person.fill", "scroll.fill", "exclamationmark.triangle.fill", "power.circle.fill"]
     }
     
     fileprivate struct Texts {
-        static let myPageCellTitle: [String] = ["내 정보 수정", "서비스 이용약관", "개인정보 처리방침"]
+        static let myPageCellTitle: [String] = ["내 정보 수정", "서비스 이용약관", "개인정보 처리방침", "로그아웃"]
     }
     
     fileprivate struct SegueId {
@@ -57,7 +57,7 @@ extension MyPageViewController {
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,6 +87,10 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         case 1: break
         case 2: break
+        case 3:
+            presentAlertWithConfirmAction(title: "로그아웃 하시겠습니까?", message: "") { selectedOk in
+                if selectedOk { self.popToLoginViewController() }
+            }
         default: break
         }
     }

@@ -56,3 +56,24 @@ class User {
         }
     }
 }
+
+
+extension User {
+    
+    func resetAllUserInfo() {
+        
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.isLoggedIn)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.userUid)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.username)
+
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.displayName)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.vegetarianType)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.accessToken)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.refreshToken)
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.blockedUsers)
+       
+        
+        
+        
+    }
+}
