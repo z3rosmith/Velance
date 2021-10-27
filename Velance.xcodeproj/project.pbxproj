@@ -112,7 +112,7 @@
 		7CEED10227240209005CACF5 /* LoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10127240209005CACF5 /* LoginResponseDTO.swift */; };
 		7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */; };
 		7CEED10627245158005CACF5 /* UserTasteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10527245158005CACF5 /* UserTasteGroup.swift */; };
-		7CEED10827245470005CACF5 /* UserInterestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10727245470005CACF5 /* UserInterestGroup.swift */; };
+		7CEED10827245470005CACF5 /* UserInterestGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEED10727245470005CACF5 /* UserInterestGroups.swift */; };
 		7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF39244272672EC00E48EFB /* NewReviewDTO.swift */; };
 		7CF39247272685B900E48EFB /* ProductReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF39246272685B900E48EFB /* ProductReviewViewModel.swift */; };
 		7CF392492726866F00E48EFB /* ProductReviewResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF392482726866F00E48EFB /* ProductReviewResponseDTO.swift */; };
@@ -241,7 +241,7 @@
 		7CEED10127240209005CACF5 /* LoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDTO.swift; sourceTree = "<group>"; };
 		7CEED1032724439A005CACF5 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		7CEED10527245158005CACF5 /* UserTasteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTasteGroup.swift; sourceTree = "<group>"; };
-		7CEED10727245470005CACF5 /* UserInterestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterestGroup.swift; sourceTree = "<group>"; };
+		7CEED10727245470005CACF5 /* UserInterestGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterestGroups.swift; sourceTree = "<group>"; };
 		7CF39244272672EC00E48EFB /* NewReviewDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReviewDTO.swift; sourceTree = "<group>"; };
 		7CF39246272685B900E48EFB /* ProductReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewViewModel.swift; sourceTree = "<group>"; };
 		7CF392482726866F00E48EFB /* ProductReviewResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewResponseDTO.swift; sourceTree = "<group>"; };
@@ -670,7 +670,7 @@
 		7CCBB54527251AC8002EFB58 /* User Type & Groups */ = {
 			isa = PBXGroup;
 			children = (
-				7CEED10727245470005CACF5 /* UserInterestGroup.swift */,
+				7CEED10727245470005CACF5 /* UserInterestGroups.swift */,
 				7CCBB541272519D7002EFB58 /* UserAllergyGroup.swift */,
 				7CEED10527245158005CACF5 /* UserTasteGroup.swift */,
 				7CCBB54627251ADF002EFB58 /* VegetarianType.swift */,
@@ -989,7 +989,7 @@
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
 				7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */,
-				7CEED10827245470005CACF5 /* UserInterestGroup.swift in Sources */,
+				7CEED10827245470005CACF5 /* UserInterestGroups.swift in Sources */,
 				7CF3924E2726CF2300E48EFB /* ReportType.swift in Sources */,
 				7CFF12132721466900E6A9D3 /* UserPickedImageCollectionViewCell.swift in Sources */,
 				7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */,

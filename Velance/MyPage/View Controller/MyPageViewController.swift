@@ -2,6 +2,8 @@ import UIKit
 
 class MyPageViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var vegetarianTypeLabel: UILabel!
     @IBOutlet weak var myPageTableView: UITableView!
     
     fileprivate struct Images {
@@ -23,7 +25,7 @@ class MyPageViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
+        fetchUserProfileInfo()
     }
 
 }
@@ -32,6 +34,24 @@ class MyPageViewController: UIViewController, Storyboarded {
 
 extension MyPageViewController {
     
+    func fetchUserProfileInfo() {
+        
+        UserManager.shared.fetchProfileInfo { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                
+                DispatchQueue.main.async {
+                    self.nicknameLabel.text = User.shared.displayName
+                    self.vegetarianTypeLabel.text = User.shared.vegetarianType
+                }
+                
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+        
+    }
 }
 
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
