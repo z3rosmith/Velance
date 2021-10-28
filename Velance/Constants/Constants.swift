@@ -29,7 +29,7 @@ struct StoryboardID {
     // User Register
     static let idPasswordInputVC            = "IdPasswordInputViewController"
     static let chooseTypeVC                 = "ChooseTypeViewController"
-    static let inputUserInfoForRegister     = "InputUserInfoForRegister"
+    static let inputUserInfoForRegister     = "InputUserInfoForRegisterViewController"
 
     // Product Review
     static let productReviewListContainerVC = "ProductReviewListContainerViewController"

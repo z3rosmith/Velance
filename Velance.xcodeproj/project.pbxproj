@@ -88,6 +88,11 @@
 		7C60F2AE27293128001D96C2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A6272928CA001D96C2 /* libc++.tbd */; };
 		7C60F2AF27293130001D96C2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A8272928E6001D96C2 /* libxml2.tbd */; };
 		7C60F2B027293137001D96C2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A7272928D7001D96C2 /* libsqlite3.tbd */; };
+		7C60F2B227296681001D96C2 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2B127296681001D96C2 /* MallViewController.swift */; };
+		7C60F2B52729685E001D96C2 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2B32729685E001D96C2 /* MenuTableViewCell.swift */; };
+		7C60F2B62729685E001D96C2 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C60F2B42729685E001D96C2 /* MenuTableViewCell.xib */; };
+		7C60F2B827297BAF001D96C2 /* MallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2B727297BAF001D96C2 /* MallHeaderView.swift */; };
+		7C60F2BA27297BFE001D96C2 /* VLAllergyCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2B927297BFE001D96C2 /* VLAllergyCheckButton.swift */; };
 		7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C61456227141FFB00D659C5 /* ProductReview.storyboard */; };
 		7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */; };
 		7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */; };
@@ -104,7 +109,7 @@
 		7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D226F0819700893CCD /* VLBottomView.swift */; };
 		7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EC8D426F081AB00893CCD /* VLBottomView.xib */; };
 		7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */; };
-		7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24F270EA8ED00693521 /* InputUserInfoForRegister.swift */; };
+		7C8ED250270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED24F270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift */; };
 		7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8ED253270EA9A100693521 /* Storyboarded.swift */; };
 		7C91FC0627118D09000D237C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C91FC0527118D09000D237C /* Login.storyboard */; };
 		7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91FC0727118D21000D237C /* LoginViewController.swift */; };
@@ -272,6 +277,11 @@
 		7C60F2A9272928F5001D96C2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKakaoMapViewController.swift; sourceTree = "<group>"; };
 		7C60F2AD27292E97001D96C2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		7C60F2B127296681001D96C2 /* MallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
+		7C60F2B32729685E001D96C2 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		7C60F2B42729685E001D96C2 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		7C60F2B727297BAF001D96C2 /* MallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallHeaderView.swift; sourceTree = "<group>"; };
+		7C60F2B927297BFE001D96C2 /* VLAllergyCheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLAllergyCheckButton.swift; sourceTree = "<group>"; };
 		7C61456227141FFB00D659C5 /* ProductReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductReview.storyboard; sourceTree = "<group>"; };
 		7C6145642714207500D659C5 /* ProductReviewListContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewListContainerViewController.swift; sourceTree = "<group>"; };
 		7C6145692715428F00D659C5 /* ProductForSimilarTasteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductForSimilarTasteCVC.swift; sourceTree = "<group>"; };
@@ -288,7 +298,7 @@
 		7C8EC8D226F0819700893CCD /* VLBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLBottomView.swift; sourceTree = "<group>"; };
 		7C8EC8D426F081AB00893CCD /* VLBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VLBottomView.xib; sourceTree = "<group>"; };
 		7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPasswordInputViewController.swift; sourceTree = "<group>"; };
-		7C8ED24F270EA8ED00693521 /* InputUserInfoForRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUserInfoForRegister.swift; sourceTree = "<group>"; };
+		7C8ED24F270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUserInfoForRegisterViewController.swift; sourceTree = "<group>"; };
 		7C8ED253270EA9A100693521 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7C91FC0527118D09000D237C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7C91FC0727118D21000D237C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -598,7 +608,8 @@
 				7C61456E2715675200D659C5 /* PopularProductCVC.swift */,
 				7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */,
 				7C37DE80271ABE0900B4FBFB /* ProductReviewTableViewCell.xib */,
-				7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */,
+				7C60F2B32729685E001D96C2 /* MenuTableViewCell.swift */,
+				7C60F2B42729685E001D96C2 /* MenuTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -622,6 +633,8 @@
 			isa = PBXGroup;
 			children = (
 				7C72A56F27211CAE0010A812 /* ProductReviewHeaderView.swift */,
+				7C60F2B727297BAF001D96C2 /* MallHeaderView.swift */,
+				7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -653,6 +666,7 @@
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
+				7C60F2B127296681001D96C2 /* MallViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -662,6 +676,7 @@
 			children = (
 				7C97195C27100635003E193D /* VLGradientButton.swift */,
 				7C922A4C2717F19300295A3F /* VLFloatingButton.swift */,
+				7C60F2B927297BFE001D96C2 /* VLAllergyCheckButton.swift */,
 				7CEED0E9272243F5005CACF5 /* VLStarButton.swift */,
 				3CB2AC68272262D70075FA97 /* VLSocialButton.swift */,
 			);
@@ -771,7 +786,7 @@
 			children = (
 				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
 				7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */,
-				7C8ED24F270EA8ED00693521 /* InputUserInfoForRegister.swift */,
+				7C8ED24F270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift */,
 				7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */,
 			);
 			path = UserRegister;
@@ -1080,6 +1095,7 @@
 				7C60F29C272927C2001D96C2 /* map_pin_shadow.png in Resources */,
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7C60F28A272927C2001D96C2 /* copyright.png in Resources */,
+				7C60F2B62729685E001D96C2 /* MenuTableViewCell.xib in Resources */,
 				7CFF122027217C0D00E6A9D3 /* MyPageTableViewCell.xib in Resources */,
 				7C8EC8C726EF069900893CCD /* ShoppingItemCollectionViewCell.xib in Resources */,
 				7C61456C2715428F00D659C5 /* ProductForSimilarTasteCVC.xib in Resources */,
@@ -1183,6 +1199,7 @@
 				7C61456B2715428F00D659C5 /* ProductForSimilarTasteCVC.swift in Sources */,
 				7C8ED24E270EA0F400693521 /* IdPasswordInputViewController.swift in Sources */,
 				6C49951F271FBC3400E8DB4B /* ProgressHUD.swift in Sources */,
+				7C60F2BA27297BFE001D96C2 /* VLAllergyCheckButton.swift in Sources */,
 				7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
@@ -1224,10 +1241,12 @@
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
+				7C60F2B827297BAF001D96C2 /* MallHeaderView.swift in Sources */,
 				7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */,
-				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
+				7C8ED250270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift in Sources */,
 				7CEED10627245158005CACF5 /* UserTasteGroup.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
+				7C60F2B52729685E001D96C2 /* MenuTableViewCell.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
 				7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */,
@@ -1241,7 +1260,7 @@
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */,
 				3CD341AE2727C09900ADA745 /* SearchMallViewController.swift in Sources */,
-				7C8ED250270EA8ED00693521 /* InputUserInfoForRegister.swift in Sources */,
+				7C8ED250270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift in Sources */,
 				3CC38425271C274700ED5077 /* CommunityCollectionReusableView1.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
@@ -1272,6 +1291,7 @@
 				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
 				7CCBB54727251ADF002EFB58 /* VegetarianType.swift in Sources */,
 				7C8ED254270EA9A100693521 /* Storyboarded.swift in Sources */,
+				7C60F2B227296681001D96C2 /* MallViewController.swift in Sources */,
 				7CC36A9426EE3F2D007573DD /* AlertViewController.swift in Sources */,
 				7CEED0F92723DDF5005CACF5 /* UserRegisterDTO.swift in Sources */,
 				7CCBB55327253DA6002EFB58 /* File.swift in Sources */,
@@ -1438,7 +1458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -1465,7 +1485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

@@ -16,7 +16,7 @@ class MallManager {
         with model: NewMenuDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-        
+        showProgressBar()
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
             multipartFormData.append(Data(model.mallId.description.utf8),withName: "mall_id")
@@ -38,7 +38,7 @@ class MallManager {
         )
             .validate()
             .responseData { response in
-                
+                dismissProgressBar()
                 switch response.result {
                 case .success:
                     print("✏️ MallManager - uploadNewMenu SUCCESS")

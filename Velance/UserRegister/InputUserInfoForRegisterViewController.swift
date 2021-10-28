@@ -1,6 +1,6 @@
 import UIKit
 
-class InputUserInfoForRegister: UIViewController, Storyboarded {
+class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     
     
     //MARK: - IBOutlets
@@ -50,12 +50,14 @@ class InputUserInfoForRegister: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+
+ 
     }
 
 }
 //MARK: - IBActions
 
-extension InputUserInfoForRegister {
+extension InputUserInfoForRegisterViewController {
     
     @IBAction func pressedVeganTypeButton(_ sender: UIButton) {
         notChooseVeganTypeButton.isSelected = false
@@ -154,7 +156,7 @@ extension InputUserInfoForRegister {
 
 //MARK: - UI Configuration & Initialization
 
-extension InputUserInfoForRegister {
+extension InputUserInfoForRegisterViewController {
     
     private func configure() {
         title = "내 정보 입력"

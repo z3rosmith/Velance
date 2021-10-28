@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ChooseInterestDelegate: AnyObject {
-    func didSelectInterestOptions()
+    func didSelectInterestOptions(interestOptions: [Int])
 }
 
 class ChooseInterestViewController: UIViewController, Storyboarded {
@@ -13,6 +13,8 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     // 선택 완료 버튼
     @IBOutlet weak var doneButtonImageView: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
+    
+    private var interestTypeIds: [Int] = []
     
     weak var delegate: ChooseInterestDelegate?
     
@@ -42,7 +44,13 @@ extension ChooseInterestViewController {
     }
     
     @objc private func pressedDoneButton() {
-        delegate?.didSelectInterestOptions()
+        
+        interestOptionButtons.forEach { button in
+            if button.isSelected {
+                interestTypeIds.append(button.tag)
+            }
+        }
+        delegate?.didSelectInterestOptions(interestOptions: interestTypeIds)
         dismiss(animated: true)
     }
 }
@@ -65,11 +73,11 @@ extension ChooseInterestViewController {
     }
     
     private func configureInterestOptionButtons() {
-        var index: Int = 0
+        var index: Int = 1
         interestOptionButtons.forEach { button in
             button.tag = index
             button.backgroundColor = .white
-            button.setTitle(UserOptions.interestOptions[index], for: .normal)
+            button.setTitle(UserOptions.interestOptions[index - 1], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
