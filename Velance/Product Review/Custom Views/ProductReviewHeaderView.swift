@@ -72,7 +72,7 @@ class ProductReviewHeaderView: UIView {
         let label = UILabel()
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 13, weight: .medium)
-        label.text = "위 제품은 아래와 같은 알레르기를 유발할 수 있어요. 구매 전 참고 부탁드려요 :)"
+        label.text = "포함된 알러지 유발성분 정보"
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8

@@ -32,6 +32,4 @@ class MenuTableViewCell: UITableViewCell {
         menuImageView.clipsToBounds = true
     }
     
- 
-    
 }

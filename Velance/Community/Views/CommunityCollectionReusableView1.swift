@@ -96,9 +96,16 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarUserReuseIdentifier, for: indexPath) as? SimilarUserCollectionViewCell else { fatalError() }
             
-            cell.userImageView.image = UIImage(named: "userImage_test")
-            cell.usernameLabel.text = "CJ Chung"
-            cell.userStyleLabel.text = "페스코"
+            let randomIndex: Int = Int.random(in: 0..<MockData.userDisplayNameList.count)
+            
+            cell.userImageView.image = UIImage(named: MockData.mockAvatarImageName[randomIndex])
+            cell.usernameLabel.text = MockData.userDisplayNameList[randomIndex]
+            cell.userStyleLabel.text = UserOptions.veganType.randomElement()
+            
+            if indexPath.row % 2 == 0 {
+                cell.followButton.isSelected.toggle()
+            }
+            
             cell.layer.cornerRadius = 20
             
             return cell // 추후 네트워킹 해서 받아오기

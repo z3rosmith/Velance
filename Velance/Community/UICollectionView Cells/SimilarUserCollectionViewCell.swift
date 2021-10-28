@@ -11,6 +11,13 @@ class SimilarUserCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUI()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userImageView.image = nil
+        usernameLabel.text = nil
+        userStyleLabel.text = nil
+    }
 }
 
 extension SimilarUserCollectionViewCell {

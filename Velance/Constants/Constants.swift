@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 struct MockData {
-    static let userDisplayNameList: [String] = ["김영채", "강지혜", "김진영", "황보준수", "김태민", "김철수", "김영희", "최윤자", "이우진", "정원일"]
+    static let userDisplayNameList: [String] = ["김영채", "강지혜", "김진영", "황보준수", "김태민", "김철수", "김영희"]
     
     static let mockAvatarImageName: [String] = ["mockAvatar0","mockAvatar1","mockAvatar2","mockAvatar3","mockAvatar4","mockAvatar5","mockAvatar6"]
     

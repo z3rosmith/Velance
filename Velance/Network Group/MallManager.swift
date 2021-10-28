@@ -129,7 +129,7 @@ class MallManager {
                     }
                 
                 case .failure(_):
-                    let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
                     print("❗️ MallManager - getMallMenuList failure with error: \(error.errorDescription)")
                     completion(.failure(error))
                 }
