@@ -24,4 +24,5 @@ target 'Velance' do
   pod 'Parchment', '~> 3.0'
   pod 'TagListView', '~> 1.0'
   pod 'InputBarAccessoryView'
+  pod 'PanModal'
 end
