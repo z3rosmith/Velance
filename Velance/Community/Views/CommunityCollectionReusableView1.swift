@@ -3,6 +3,7 @@ import UIKit
 protocol CommunityCollectionHeaderViewDelegate: AnyObject {
     func didSelectCategoryItemAt(_ index: Int)
     func setViewOnlyFollowing(isSelected: Bool)
+    func didSelectChooseInterestButton()
 }
 
 class CommunityCollectionReusableView1: UICollectionReusableView {
@@ -35,6 +36,8 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
         viewFollowingButton.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         chooseInterestsButton.setTitle("관심사 선택하기", for: .normal)
         chooseInterestsButton.setTitle("관심사 선택됨", for: .selected)
+        
+        chooseInterestsButton.addTarget(self, action: #selector(pressedChooseInterestButton), for: .touchUpInside)
     }
     
     private func setupCollectionView() {
@@ -56,6 +59,10 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     @IBAction func viewFollowingButtonTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
         delegate?.setViewOnlyFollowing(isSelected: sender.isSelected)
+    }
+    
+    @objc private func pressedChooseInterestButton() {
+        delegate?.didSelectChooseInterestButton()
     }
 }
 

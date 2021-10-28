@@ -3,14 +3,20 @@ import ImageSlideshow
 import SDWebImage
 import SnapKit
 
-
-class MallViewController: UIViewController {
+class MallViewController: UIViewController, Storyboarded {
 
     @IBOutlet var mallThumbnailImageView: UIImageView!
     @IBOutlet var topImageViewHeight: NSLayoutConstraint!
     @IBOutlet var bottomView: VLBottomView!
     @IBOutlet var dragIndicator: UIView!
     @IBOutlet var menuTableView: UITableView!
+    
+    var mallId: Int? = 26070271
+    var mallName: String?
+    var isVegan: String? = "Y"
+    var mallAddress: String?
+    
+    private let viewModel = MallViewModel()
     
     //MARK: - Constants
     
@@ -21,19 +27,28 @@ class MallViewController: UIViewController {
         static var startingTopImageViewHeight: CGFloat = topImageViewMaxHeight
     }
     
+    static var storyboardName: String {
+        StoryboardName.mall
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         configure()
+        setupViewModel()
         bottomView.backgroundColor = .white
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchMenuList()
     }
     
     func setupViewModel() {
+        viewModel.delegate = self
+        viewModel.mallId = mallId
         
     }
-    
-
 
 }
 
@@ -43,8 +58,12 @@ extension MallViewController {
     
     // 메뉴 추가 floating button
     @objc private func pressedAddMenuButton() {
-        let vc = NewMenuViewController.instantiate()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let vc = NewMenuViewController.instantiate() as? NewMenuViewController else { return }
+        
+        if let mallId = mallId {
+            vc.mallId = mallId
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // 더보기 버튼
@@ -53,9 +72,21 @@ extension MallViewController {
     }
 }
 
-//MARK: - MallDelegate
+//MARK: - MallViewModelDelegate
 
-extension MallViewController {
+extension MallViewController: MallViewModelDelegate {
+    
+    func didFetchMenuList() {
+        menuTableView.reloadData()
+        menuTableView.tableFooterView = nil
+        menuTableView.refreshControl?.endRefreshing()
+    }
+    
+    func failedFetchingMenuList(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+        menuTableView.tableFooterView = nil
+        menuTableView.refreshControl?.endRefreshing()
+    }
     
 }
 
@@ -65,7 +96,7 @@ extension MallViewController {
 extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.menuList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,39 +105,25 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if viewModel.menuList.count == 0 { return UITableViewCell() }
+        
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: "MenuTableViewCell",
             for: indexPath
         ) as? MenuTableViewCell else { return MenuTableViewCell() }
         
-//        guard let reviewData = viewModel?.reviewList[indexPath.row] else {
-//            return ProductReviewTableViewCell()
-//        }
+        let menuData = viewModel.menuList[indexPath.row]
         
-        cell.menuImageView.image = UIImage(named: "image_test")
-        cell.menuNameLabel.text = "비건비건비건"
-        cell.menuCautionLabel.text = "주의: 새우가 포함되어있어요!"
-        cell.menuPriceLabel.text = "10000원"
         
-//        cell.currentVC = self
-//        cell.delegate = self
-//        cell.reviewLabel.text = reviewData.contents
-//        cell.ratingView.setStarsRating(rating: reviewData.rating)
-//        cell.nicknameLabel.text = reviewData.user.displayName
-//
-//        cell.profileImageView.sd_setImage(
-//            with: URL(string: reviewData.user.fileFolder?.files[0].path ?? ""),
-//            placeholderImage: UIImage(systemName: "person"),
-//            options: .continueInBackground
-//        )
-//
-//        var imageSources: [InputSource] = []
-//        for file in reviewData.fileFolder.files {
-//            imageSources.append(SDWebImageSource(url: URL(string: file.path)!))
-//        }
-//        cell.reviewImageSlideShow.setImageInputs(imageSources)
-//
-//        cell.dateLabel.text = reviewData.formattedDate
+        cell.menuImageView.sd_setImage(
+            with: URL(string: menuData.fileFolder.files[0].path),
+            placeholderImage: nil,
+            options: .continueInBackground
+        )
+        cell.menuNameLabel.text = menuData.name
+        cell.menuCautionLabel.text = "주의: " + "\(menuData.caution ?? "없음")"
+        cell.menuPriceLabel.text = "\(menuData.price)원"
+        
         return cell
     }
     
@@ -140,7 +157,7 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     @objc private func refreshMenuTableView() {
-//        viewModel?.refreshTableView()
+        viewModel.refreshTableView()
     }
     
     
@@ -203,6 +220,8 @@ extension MallViewController {
 extension MallViewController {
     
     private func configure() {
+
+        
         configureMallThumbnailImageView()
         configureDragIndicator()
         configurePanGestureRecognizer()
@@ -244,14 +263,14 @@ extension MallViewController {
         menuTableView.allowsSelection = false
         
         let headerView = MallHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
-        headerView.configure()
+        
+        headerView.configure(mallName: mallName, isVegan: isVegan, mallAddress: mallAddress)
         menuTableView.tableHeaderView = headerView
         
         let menuTableViewCell = UINib(
             nibName: "MenuTableViewCell",
             bundle: nil
         )
-        
         menuTableView.register(
             menuTableViewCell,
             forCellReuseIdentifier: "MenuTableViewCell"
@@ -263,8 +282,6 @@ extension MallViewController {
             action: #selector(refreshMenuTableView),
             for: .valueChanged
         )
-        
-    
     }
     
     private func addOptionsBarButtonItem() {

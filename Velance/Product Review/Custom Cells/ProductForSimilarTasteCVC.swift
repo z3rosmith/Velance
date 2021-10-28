@@ -6,7 +6,6 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
-    @IBOutlet weak var productVeganTypeLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productRatingLabel: UILabel!
     
@@ -24,7 +23,7 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
         super.prepareForReuse()
         productImageView.image = nil
         productTitleLabel.text = nil
-        productVeganTypeLabel.text = nil
+    
         productPriceLabel.text = nil
         productRatingLabel.text = nil
     }

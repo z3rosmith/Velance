@@ -131,6 +131,8 @@
 		7CAB8BA4272A4F6A006B5E08 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA3272A4F6A006B5E08 /* SearchListViewController.swift */; };
 		7CAB8BA6272A601A006B5E08 /* NewMallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA5272A601A006B5E08 /* NewMallDTO.swift */; };
 		7CAB8BA8272A7120006B5E08 /* SearchMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA7272A7120006B5E08 /* SearchMallViewController.swift */; };
+		7CAB8BAA272AB035006B5E08 /* MallMenuResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */; };
+		7CAB8BAC272AB381006B5E08 /* MallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
 		7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */; };
 		7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */; };
@@ -334,6 +336,8 @@
 		7CAB8BA3272A4F6A006B5E08 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		7CAB8BA5272A601A006B5E08 /* NewMallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMallDTO.swift; sourceTree = "<group>"; };
 		7CAB8BA7272A7120006B5E08 /* SearchMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallViewController.swift; sourceTree = "<group>"; };
+		7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallMenuResponseDTO.swift; sourceTree = "<group>"; };
+		7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallViewModel.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
 		7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
 		7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */,
+				7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */,
 			);
 			path = Mall;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */,
+				7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -1296,6 +1302,7 @@
 				3CB2AC69272262D70075FA97 /* VLSocialButton.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
+				7CAB8BAC272AB381006B5E08 /* MallViewModel.swift in Sources */,
 				3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */,
 				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
 				7CAB8BA0272A4B9B006B5E08 /* MapManager.swift in Sources */,
@@ -1312,6 +1319,7 @@
 				7CEED0FE2723F824005CACF5 /* NetworkError.swift in Sources */,
 				7C60F1D0272908DA001D96C2 /* NewMenuDTO.swift in Sources */,
 				7C60F1CB2728FDAA001D96C2 /* CommunityManager.swift in Sources */,
+				7CAB8BAA272AB035006B5E08 /* MallMenuResponseDTO.swift in Sources */,
 				7C97195D27100635003E193D /* VLGradientButton.swift in Sources */,
 				7CF529722710513600499709 /* String+Extension.swift in Sources */,
 				7CCBB55027253BAA002EFB58 /* ProductListResponseDTO.swift in Sources */,
@@ -1554,7 +1562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -1581,7 +1589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

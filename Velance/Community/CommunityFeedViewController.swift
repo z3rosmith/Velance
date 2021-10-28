@@ -38,7 +38,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView2 else { fatalError() }
-            headerView.userImageView.image = UIImage(named: "userImage_test")
+            headerView.userImageView.image = UIImage(named: "mockAvatar3")
 //            headerView.tagListView
             return headerView
         default:
@@ -52,7 +52,10 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityImageCollectionViewCell else { fatalError() }
-        cell.imageView.image = UIImage(named: "image_test")
+        
+        let randomIndex = Int.random(in: 0..<MockData.mockFoodImageName.count)
+        
+        cell.imageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
         return cell
     }
 }

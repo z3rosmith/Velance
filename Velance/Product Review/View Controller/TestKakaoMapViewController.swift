@@ -1,8 +1,10 @@
 import UIKit
+import SnapKit
+
 
 class TestKakaoMapViewController: UIViewController {
 
-    @IBOutlet var mapView: MTMapView!
+    var mapView: MTMapView?
     
     private let defaultLocation = MTMapPointGeo(latitude: 37.497866841186955, longitude: 127.02753316658152)
     
@@ -17,17 +19,18 @@ class TestKakaoMapViewController: UIViewController {
     }
     
     func configureMapView() {
+        
         mapView = MTMapView()
-        mapView.delegate = self
-        mapView.baseMapType = .standard
-        mapView.setMapCenter(
+        mapView?.setMapCenter(
             MTMapPoint(geoCoord: defaultLocation),
             zoomLevel: 1,
             animated: true
         )
         
-        mapView.showCurrentLocationMarker = true
-        mapView.currentLocationTrackingMode = .onWithoutHeading
+        mapView?.baseMapType = .standard
+        mapView?.showCurrentLocationMarker = true
+        mapView?.currentLocationTrackingMode = .onWithoutHeading
+        
         
         pointMarker.markerType = .customImage
         pointMarker.mapPoint = MTMapPoint(geoCoord: defaultLocation)
@@ -37,9 +40,21 @@ class TestKakaoMapViewController: UIViewController {
         pointMarker.customImageAnchorPointOffset = MTMapImageOffset(offsetX: 5, offsetY: 0)
         pointMarker.draggable = true
         
+        mapView?.delegate = self
+
+        if let mapView = mapView {
+            view.addSubview(mapView)
+        }
 
         
-        mapView.add(pointMarker)
+        mapView?.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        
+        mapView?.add(pointMarker)
+        
+        
     }
     
     func setMarkerLocationToUserCurrentLocation(mapPointGeo: MTMapPointGeo) {
@@ -57,21 +72,36 @@ extension TestKakaoMapViewController: MTMapViewDelegate {
     
     // 현재 위치 받아오기
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+        print("✏️ withAccuracy")
         let currentLocation = location?.mapPointGeo()
         if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
             print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
-            
+
 //            if !didSetUserInitialLocation {
                 let newLocation = MTMapPointGeo(latitude: latitude, longitude: longitude)
                 self.setMarkerLocationToUserCurrentLocation(mapPointGeo: newLocation)
 //            }
-            
+
         }
     }
-    
-    func mapView(_ mapView: MTMapView?, updateDeviceHeading headingAngle: MTMapRotationAngle) {
-        print("MTMapView updateDeviceHeading (\(headingAngle)) degrees")
+
+
+    func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, with accuracy: MTMapLocationAccuracy) {
+        print("✏️ with accuracy")
+        let currentLocation = location?.mapPointGeo()
+        if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
+            print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
+
+//            if !didSetUserInitialLocation {
+                let newLocation = MTMapPointGeo(latitude: latitude, longitude: longitude)
+                self.setMarkerLocationToUserCurrentLocation(mapPointGeo: newLocation)
+//            }
+
+        }
     }
+
+
+    
     
     func mapView(_ mapView: MTMapView!, draggablePOIItem poiItem: MTMapPOIItem!, movedToNewMapPoint newMapPoint: MTMapPoint!) {
     

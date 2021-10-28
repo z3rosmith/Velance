@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9cS-1H-bqS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9cS-1H-bqS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -643,7 +643,7 @@
                     <connections>
                         <outlet property="addImageButton" destination="lsj-7x-kMD" id="hro-Jz-kJB"/>
                         <outlet property="menuCautionsTextField" destination="d88-U8-viP" id="sqH-Aj-BV1"/>
-                        <outlet property="menuNameTextField" destination="sUc-dW-WSY" id="V1p-y2-H2x"/>
+                        <outlet property="menuNameTextField" destination="7iY-Li-UUn" id="iMA-iC-ncn"/>
                         <outlet property="menuPriceTextField" destination="sUc-dW-WSY" id="AHC-Gd-hyr"/>
                         <outlet property="menuThumbnailImageView" destination="b85-ET-CY0" id="8PP-Be-IEe"/>
                     </connections>
