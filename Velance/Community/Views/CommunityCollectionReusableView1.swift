@@ -1,5 +1,10 @@
 import UIKit
 
+protocol CommunityCollectionHeaderViewDelegate: AnyObject {
+    func didSelectCategoryItemAt(_ index: Int)
+    func setViewOnlyFollowing(isSelected: Bool)
+}
+
 class CommunityCollectionReusableView1: UICollectionReusableView {
     
     @IBOutlet weak var viewFollowingButton: UIButton!
@@ -17,20 +22,19 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     private let categoryReuseIdentifier = "CategoryCollectionViewCell"
     private let similarUserReuseIdentifier = "SimilarUserCollectionViewCell"
     
+    weak var delegate: CommunityCollectionHeaderViewDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
         setupCollectionView()
-        setupSimilarUserCollectionView()
     }
     
     private func setupUI() {
+        viewFollowingButton.setImage(UIImage(systemName: "square"), for: .normal)
+        viewFollowingButton.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         chooseInterestsButton.setTitle("관심사 선택하기", for: .normal)
         chooseInterestsButton.setTitle("관심사 선택됨", for: .selected)
-    }
-    
-    private func setupSimilarUserCollectionView() {
-        similarUserCollectionView.register(UINib(nibName: "SimilarUserCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: similarUserReuseIdentifier)
     }
     
     private func setupCollectionView() {
@@ -45,6 +49,13 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
             $0.showsVerticalScrollIndicator = false
             $0.showsHorizontalScrollIndicator = false
         }
+        
+        similarUserCollectionView.register(UINib(nibName: "SimilarUserCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: similarUserReuseIdentifier)
+    }
+    
+    @IBAction func viewFollowingButtonTapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        delegate?.setViewOnlyFollowing(isSelected: sender.isSelected)
     }
 }
 
@@ -95,6 +106,7 @@ extension CommunityCollectionReusableView1: UICollectionViewDelegate {
             guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
             cell.backgroundColor = UIColor(named: Colors.foodCategorySelectedColor)!
             cell.categoryLabel.textColor = UIColor(named: Colors.appBackgroundColor)!
+            delegate?.didSelectCategoryItemAt(indexPath.item)
         }
     }
     
@@ -111,7 +123,7 @@ extension CommunityCollectionReusableView1: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == categoryCollectionView {
-            return CGSize(width: 70, height: categoryCellHeight)
+            return CGSize(width: 85, height: categoryCellHeight)
         } else {
             return CGSize(width: 135, height: 185)
         }
