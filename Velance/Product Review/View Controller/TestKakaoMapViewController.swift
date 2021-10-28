@@ -19,16 +19,16 @@ class TestKakaoMapViewController: UIViewController {
     }
     
     func configureMapView() {
-        mapView.delegate = self
-        mapView.baseMapType = .standard
-        mapView.setMapCenter(
-            MTMapPoint(geoCoord: defaultLocation),
-            zoomLevel: 1,
-            animated: true
-        )
-        
-        mapView.showCurrentLocationMarker = true
-        mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
+//        mapView.delegate = self
+//        mapView.baseMapType = .standard
+//        mapView.setMapCenter(
+//            MTMapPoint(geoCoord: defaultLocation),
+//            zoomLevel: 1,
+//            animated: true
+//        )
+//        
+//        mapView.showCurrentLocationMarker = true
+//        mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
         
         
         pointMarker.markerType = .customImage

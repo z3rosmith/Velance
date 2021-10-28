@@ -13,7 +13,7 @@ class MallListViewModel {
     private var lastMallID: Int?
 }
 
-class MallViewModel {
+class MallCellViewModel {
     
     private var mall: MallResponseDTO
     
@@ -43,9 +43,9 @@ extension MallListViewModel {
         self.lastMallID = nil
     }
     
-    func mallAtIndex(_ index: Int) -> MallViewModel {
+    func mallAtIndex(_ index: Int) -> MallCellViewModel {
         let mall = self.malls[index]
-        return MallViewModel(mall)
+        return MallCellViewModel(mall)
     }
     
     func fetchMallList(mallPoint: MallPoint) {
@@ -73,7 +73,7 @@ extension MallListViewModel {
     }
 }
 
-extension MallViewModel {
+extension MallCellViewModel {
     
     var mallName: String {
         return mall.placeName
@@ -84,8 +84,27 @@ extension MallViewModel {
     }
     
     var mallAddress: String {
-        return mall.addressName
+        guard let addressName = mall.addressName else {
+            print("MallCellViewModel - mallAddress - error")
+            return "주소표시오류  "
+        }
+        return addressName
     }
     
+    var imageURL: URL? {
+        guard let files = mall.fileFolder?.files, files.count > 0 else {
+            return nil
+        }
+        do {
+            let url = try files.first?.path.asURL()
+            return url
+        } catch {
+            print("In MallCellViewModel - error converting string to url: \(error)")
+            return nil
+        }
+    }
     
+    var onlyVegan: Bool {
+        return mall.onlyVegan == "N" ? false : true
+    }
 }
