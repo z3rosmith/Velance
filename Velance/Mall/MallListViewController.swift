@@ -19,6 +19,7 @@ class MallListViewController: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        configureUI()
         viewModel.delegate = self
         viewModel.fetchMallList(mallPoint: mallPoint)
     }
@@ -31,6 +32,10 @@ extension MallListViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MallTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorStyle = .none
+    }
+    
+    private func configureUI() {
+        addMallButton.layer.cornerRadius = addMallButton.frame.height/2
     }
 }
 
@@ -49,12 +54,15 @@ extension MallListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? MallTableViewCell else { fatalError() }
-        if indexPath.row % 2 == 0 {
-            cell.semiVeganLabel.isHidden = true
-        } else {
-            cell.veganLabel.isHidden = true
-        }
-        cell.mallImageView.image = UIImage(named: "image_test")
+        let cellViewModel = viewModel.mallAtIndex(indexPath.row)
+        
+        cell.mallnameLabel.text = cellViewModel.mallName
+        cell.menuCountLabel.text = "비건 메뉴: \(cellViewModel.menuCount)개"
+        cell.mallAddressLabel.text = cellViewModel.mallAddress
+        cell.semiVeganLabel.isHidden = cellViewModel.onlyVegan
+        cell.veganLabel.isHidden = !cellViewModel.onlyVegan
+        cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: UIImage(systemName: "photo.on.rectangle"))
+        
         return cell
     }
 }

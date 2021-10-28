@@ -498,7 +498,6 @@
 		3C910FD4272A7D1600F6CE2F /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */,
 				7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */,
 				7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */,
 				3C2052B9272AB03E009BBD3B /* MallListViewModel.swift */,
@@ -1575,7 +1574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -1602,7 +1601,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

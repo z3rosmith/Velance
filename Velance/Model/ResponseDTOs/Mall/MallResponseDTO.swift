@@ -3,10 +3,11 @@ import Foundation
 struct MallResponseDTO: Decodable {
     
     let mallID: Int
-    let placeName, phone, addressName, roadAddressName: String
+    let placeName: String
+    let phone, addressName, roadAddressName: String?
     let x, y: Double
     let onlyVegan, createdAt: String
-    let fileFolder: FileFolder
+    let fileFolder: FileFolder?
     let distance, vegunMenuCount: Int
 
     enum CodingKeys: String, CodingKey {

@@ -97,6 +97,7 @@ extension SearchMallViewController: MTMapViewDelegate {
                 zoomLevel: 1,
                 animated: true
             )
+            mapView.currentLocationTrackingMode = .off
             pointMarker.mapPoint = MTMapPoint(geoCoord: currentLocation)
         }
     }
