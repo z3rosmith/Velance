@@ -37,6 +37,7 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         super.viewDidDisappear(animated)
         print("❗️ ProductReviewListVC - viewdiddisappear")
     }
+ 
     
 }
 
@@ -57,8 +58,13 @@ extension ProductReviewListContainerViewController {
         )
     }
     
-    @objc private func pressedAddButton() {
-        let vc = UploadNewProductViewController.instantiate()
+    @IBAction func pressedAddButton(_ sender: UIButton) {
+        
+//        let vc = UploadNewProductViewController.instantiate()
+//        let vc = SearchNewMallViewController.instantiate()
+//        let vc = NewMenuViewController.instantiate()
+        let vc = NewPostViewController.instantiate()
+//        let vc = MallViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -184,4 +184,22 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
         viewOnlyFollowing = isSelected
         viewModel.refreshFavoriteRestaurantList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
+    
+    func didSelectChooseInterestButton() {
+        guard let vc = ChooseInterestViewController.instantiate() as? ChooseInterestViewController else { return }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+}
+
+// 관심사 선택 Delegate
+
+extension CommunityRecipeViewController: ChooseInterestDelegate {
+    
+    func didSelectInterestOptions(interestOptions: [Int]) {
+        
+        
+    }
 }

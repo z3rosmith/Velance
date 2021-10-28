@@ -84,18 +84,9 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let storyboard = UIStoryboard(name: StoryboardName.userRegister, bundle: nil)
             guard let vc = storyboard.instantiateViewController(
-                withIdentifier: "InputUserInfoForRegister"
+                withIdentifier: "InputUserInfoForRegisterViewController"
             ) as? InputUserInfoForRegisterViewController else { return }
-//
-//            let appearance = UINavigationBarAppearance()
-//
-//            appearance.configureWithOpaqueBackground()
-//            appearance.backgroundColor = UIColor(named: Colors.appTintColor) ?? .systemGreen
-//
-//            navigationController?.navigationBar.isTranslucent = false
-//            navigationController?.navigationBar.scrollEdgeAppearance = nil
-//
-            
+
             navigationController?.pushViewController(vc, animated: true)
         case 1: break
         case 2: break

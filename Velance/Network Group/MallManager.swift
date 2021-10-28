@@ -9,7 +9,7 @@ class MallManager {
     let interceptor = Interceptor()
     
     //MARK: - End Points
-    let newMenuUrl      = "\(API.baseUrl)menu"
+    let menuUrl      = "\(API.baseUrl)menu"
     let newMallUrl      = "\(API.baseUrl)mall"
     
     //MARK: - 새로운 메뉴 등록
@@ -33,7 +33,7 @@ class MallManager {
                 mimeType: "image/jpeg"
             )
         },
-                  to: newMenuUrl,
+                  to: menuUrl,
                   method: .post,
                   interceptor: interceptor
         )
@@ -92,8 +92,49 @@ class MallManager {
                     print("❗️ MallManager - uploadNewMall error: \(error.errorDescription)")
                 }
             }
+    }
+    
+    func getMallMenuList(
+        page: Int,
+        mallId: Int,
+        completion: @escaping ((Result<[MallMenuResponseDTO], NetworkError>) -> Void)
+    ) {
         
+        let parameters: Parameters = [
+            "request_user_id": User.shared.userUid,
+            "mall_id": mallId,
+            "page": page
+        ]
+        
+        AF.request(
+            menuUrl,
+            method: .get,
+            parameters: parameters,
+            encoding: URLEncoding.queryString,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(_):
+                    print("✏️ MallManager - getMallMenuList SUCCESS")
+                    do {
+                        let decodedData = try JSONDecoder().decode([MallMenuResponseDTO].self, from: response.data!)
+                        completion(.success(decodedData))
+                        
+                    } catch {
+                        print("❗️ MallManager - getMallMenuList decoding error: \(error)")
+                        completion(.failure(.internalError))
+                    }
+                
+                case .failure(_):
+                    let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                    print("❗️ MallManager - getMallMenuList failure with error: \(error.errorDescription)")
+                    completion(.failure(error))
+                }
+            }
         
     }
+    
     
 }

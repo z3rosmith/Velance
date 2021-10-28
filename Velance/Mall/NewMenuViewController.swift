@@ -21,8 +21,7 @@ class NewMenuViewController: UIViewController, Storyboarded {
     //MARK: - NewMenuDTO Properties
     var menuImageData: Data?
     var mallId: Int?
-    #warning("형이 mallId 만 가져와서 VC push 하기 전에 설정해주면 됨")
-
+    
     static var storyboardName: String {
         StoryboardName.mall
     }
@@ -32,7 +31,6 @@ class NewMenuViewController: UIViewController, Storyboarded {
         configure()
     }
     
-
 }
 
 //MARK: - IBActions & Target Methods
@@ -52,14 +50,13 @@ extension NewMenuViewController {
         guard
             let menuName = menuNameTextField.text,
             let menuPrice = menuPriceTextField.text,
-            let menuCations = menuCautionsTextField.text,
             menuName.count > 1,
             menuPrice.count > 1,
-            menuCations.count > 1 else {
-                showSimpleBottomAlert(with: "빈 칸이 없느지 확인해주세요.")
+            let _ = mallId else {
+                showSimpleBottomAlert(with: "빈 칸이 없는지 확인해주세요.")
                 return
             }
-
+        
         presentAlertWithConfirmAction(
             title: "메뉴를 등록하시겠습니까?",
             message: ""
@@ -67,21 +64,22 @@ extension NewMenuViewController {
             
             if selectedOk {
                 
-                #warning("아래 mallID 변경!!")
                 let model = NewMenuDTO(
-                    mallId: 24975336,
+                    mallId: self.mallId!,
                     name: self.menuNameTextField.text!,
                     price: Int(self.menuPriceTextField.text!) ?? 0,
                     caution: self.menuCautionsTextField.text!,
                     file: menuImageData,
                     isVegan: "Y"
                 )
+                showProgressBar()
                 
                 MallManager.shared.uploadNewMenu(with: model) { [weak self] result in
                     guard let self = self else { return }
+                    dismissProgressBar()
                     switch result {
                     case .success:
-                        self.showSimpleBottomAlert(with: "메뉴 등록 성공🎉")
+                        self.showSimpleBottomAlert(with: "메뉴 등록 성공 🎉")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                             self.navigationController?.popViewController(animated: true)
                         }

@@ -39,12 +39,20 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         ) as? ProductForSimilarTasteCVC
         else { return UICollectionViewCell() }
         
-        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지가 참 맛나 이건 정말 비건비건"
-        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
-        cell.productPriceLabel.text = "10,000원"
-        cell.productRatingLabel.text = "\(indexPath.row).3"
-        cell.productImageView.image = UIImage(named: "image_test")
+        let randomIndex: Int = Int.random(in: 0..<MockData.mockFoodImageName.count)
+        cell.productTitleLabel.text = MockData.mockFoodName[randomIndex]
+        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
+        cell.productPriceLabel.text = "\(Int.random(in: 1..<4))0,980원"
+        cell.productRatingLabel.text = "\(Int.random(in: 2..<5)).\(Int.random(in: 2..<9))"
         
+        
+        
+//        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지가 참 맛나 이건 정말 비건비건"
+//        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
+//        cell.productPriceLabel.text = "10,000원"
+//        cell.productRatingLabel.text = "\(indexPath.row).3"
+//        cell.productImageView.image = UIImage(named: "image_test")
+//
         return cell
     }
     

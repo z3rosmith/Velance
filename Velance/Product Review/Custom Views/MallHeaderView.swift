@@ -13,7 +13,6 @@ class MallHeaderView: UIView {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "다니상점 경북대점"
         label.font = .systemFont(ofSize: 19, weight: .bold)
         label.textColor = .black
         label.numberOfLines = 2
@@ -52,7 +51,6 @@ class MallHeaderView: UIView {
     
     let addressLabel: UILabel = {
         let label = UILabel()
-        label.text = "대구시 북구 산격동 23-1"
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .darkGray
         label.textAlignment = .center
@@ -86,20 +84,21 @@ class MallHeaderView: UIView {
     
     //MARK: - Configuration
     
-    func configure() {
+    func configure(mallName: String?, isVegan: String?, mallAddress: String?) {
         
+        titleLabel.text = mallName ?? "식당 정보 표시 오류"
+        addressLabel.text = mallAddress ?? "-"
+        
+        
+        isVegan == "Y" ? addSubview(veganOnlyMallLabel) : addSubview(nonVeganMallLabel)
+        addSubview(titleLabel)
+        addSubview(addressLabel)
+        addSubview(goToMapButton)
+        addSubview(registeredMenuLabel)
         makeConstraints()
     }
     
     func makeConstraints() {
-        
-        addSubview(titleLabel)
-        addSubview(veganOnlyMallLabel)
-        addSubview(nonVeganMallLabel)
-        addSubview(addressLabel)
-        addSubview(goToMapButton)
-        addSubview(registeredMenuLabel)
-        
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(10)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
@@ -123,7 +122,6 @@ class MallHeaderView: UIView {
             make.right.equalTo(goToMapButton.snp.left).offset(6)
         }
 
-    
         registeredMenuLabel.snp.makeConstraints { make in
             make.bottom.equalTo(self.snp.bottom).offset(-10)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)

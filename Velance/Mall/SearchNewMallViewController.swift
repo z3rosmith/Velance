@@ -1,7 +1,7 @@
 import UIKit
 import PanModal
 
-class SearchNewMallViewController: UIViewController {
+class SearchNewMallViewController: UIViewController, Storyboarded {
     
     @IBOutlet var mapView: MTMapView!
     @IBOutlet var searchBar: UISearchBar!
@@ -10,6 +10,10 @@ class SearchNewMallViewController: UIViewController {
     var pointItem: MTMapPOIItem?
     
     private let viewModel = SearchMallViewModel()
+    
+    static var storyboardName: String {
+        StoryboardName.mall
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
