@@ -24,6 +24,8 @@
 		3C910FCD272A346100F6CE2F /* DailyLifeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */; };
 		3C910FCF272A34C800F6CE2F /* DailyLifeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCE272A34C800F6CE2F /* DailyLifeRequestDTO.swift */; };
 		3C910FDA272A89F200F6CE2F /* CommunityRecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */; };
+		3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */; };
+		3C95571C272B28260037B333 /* CommunityDailyLifeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */; };
 		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
 		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
 		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
@@ -223,6 +225,8 @@
 		3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeResponseDTO.swift; sourceTree = "<group>"; };
 		3C910FCE272A34C800F6CE2F /* DailyLifeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeRequestDTO.swift; sourceTree = "<group>"; };
 		3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecipeListViewModel.swift; sourceTree = "<group>"; };
+		3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDailyLifeViewController.swift; sourceTree = "<group>"; };
+		3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDailyLifeListViewModel.swift; sourceTree = "<group>"; };
 		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -450,6 +454,7 @@
 				7C922A532718054B00295A3F /* ChooseInterestViewController.swift */,
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
 				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
+				3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */,
 				3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */,
 				3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */,
 				3CD341B12727D03000ADA745 /* Views */,
@@ -481,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */,
+				3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -1379,6 +1385,7 @@
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
 				7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */,
+				3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CF3924C2726B08500E48EFB /* ReportDTO.swift in Sources */,
 				7CCBB55727253DCB002EFB58 /* FileFolder.swift in Sources */,
@@ -1423,6 +1430,7 @@
 				7CEED0F4272285F8005CACF5 /* ReportManager.swift in Sources */,
 				3C2C0B0B2729139B003A0B69 /* CommunityDetailTableHeaderView.swift in Sources */,
 				7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */,
+				3C95571C272B28260037B333 /* CommunityDailyLifeListViewModel.swift in Sources */,
 				3CDA4E9727218D4400016D3B /* CommunityFeedCollectionViewCell.swift in Sources */,
 				3CB1532F27267C1E0063C407 /* CommunityFeedViewController.swift in Sources */,
 				7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */,

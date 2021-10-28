@@ -9,8 +9,9 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var likeButton: VLSocialButton!
-    @IBOutlet weak var commentButton: VLSocialButton!
+    @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var userVegetarianTypeLabel: UILabel!
     @IBOutlet weak var recipeLabledView: UIView!
     
@@ -19,12 +20,7 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        
+        setupTextView()
     }
 }
 
@@ -43,10 +39,18 @@ extension CommunityFeedCollectionViewCell {
         textView.isSelectable = false
         textView.isScrollEnabled = false
         
-        likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
-        commentButton.setLeftImage(image: UIImage(named: "CommentLogo")!)
+//        likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
+//        commentButton.setLeftImage(image: UIImage(named: "CommentLogo")!)
         
         recipeLabledView.layer.cornerRadius = 18
+    }
+    
+    private func setupTextView() {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 10
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
+        textView.attributedText = NSAttributedString(string: textView.text, attributes: attributes)
+        textView.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
     
     @objc private func didTap() {

@@ -20,18 +20,20 @@ class MallTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        cellView.clipsToBounds = true
+        cellView.layer.masksToBounds = false
+        cellView.layer.shadowRadius = 3
+        cellView.layer.shadowOpacity = 0.3
+        cellView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cellView.layer.shadowColor = UIColor.darkGray.cgColor
         cellView.layer.cornerRadius = 15
-        cellView.layer.masksToBounds = true
+        
         semiVeganLabel.layer.cornerRadius = 5
         semiVeganLabel.layer.masksToBounds = true
         veganLabel.layer.cornerRadius = 5
         veganLabel.layer.masksToBounds = true
         
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        mallImageView.layer.cornerRadius = 15
+        mallImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
 }

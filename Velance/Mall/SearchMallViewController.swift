@@ -23,7 +23,8 @@ class SearchMallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "내 주변 채식 식당 찾기"
+
+        navigationItem.title = "내 주변 비건 식당 찾기"
         setupButtons()
         configureUI()
         configureMapView()
@@ -113,8 +114,8 @@ extension SearchMallViewController: MTMapViewDelegate {
         
         guard let address = address else { return }
         
+        currentLocation = mapCenterPoint.mapPointGeo()
         DispatchQueue.main.async {
-            self.currentLocation = mapCenterPoint.mapPointGeo()
             self.addressLabel.text = address
         }
     }

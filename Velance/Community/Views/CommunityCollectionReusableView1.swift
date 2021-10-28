@@ -6,11 +6,16 @@ protocol CommunityCollectionHeaderViewDelegate: AnyObject {
     func didSelectChooseInterestButton()
 }
 
+extension CommunityCollectionHeaderViewDelegate {
+    func didSelectCategoryItemAt(_ index: Int) {}
+    func didSelectChooseInterestButton() {}
+}
+
 class CommunityCollectionReusableView1: UICollectionReusableView {
     
     @IBOutlet weak var viewFollowingButton: UIButton!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    @IBOutlet weak var chooseInterestsButton: UIButton!
+    @IBOutlet weak var chooseInterestsButton: VLGradientButton!
     @IBOutlet weak var recommandLabel: UILabel!
     @IBOutlet weak var similarUserCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionViewHeight: NSLayoutConstraint!

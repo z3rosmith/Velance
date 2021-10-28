@@ -1,11 +1,11 @@
 import UIKit
 import ImageSlideshow
 
-class CommunityRecipeViewController: UIViewController {
+class CommunityDailyLifeViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     
-    private let viewModel = CommunityRecipeListViewModel()
+    private let viewModel = CommunityDailyLifeListViewModel()
     
     private let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
     private let headerReuseIdentifier = "CommunityCollectionReusableView1"
@@ -14,18 +14,21 @@ class CommunityRecipeViewController: UIViewController {
     private var cellHeights: [CGFloat] = []
     private let basicCellHeight: CGFloat = 575
     
-    private var recipeCategoryID: Int? = nil
+    private var interestOptions: [Int] = []
     private var viewOnlyFollowing: Bool = false
+    
+    private weak var chooseInterestButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        
         viewModel.delegate = self
-        viewModel.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.fetchPostList(interestTypeIDs: nil, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
 
-extension CommunityRecipeViewController {
+extension CommunityDailyLifeViewController {
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -60,18 +63,19 @@ extension CommunityRecipeViewController {
     }
 }
 
-extension CommunityRecipeViewController: UICollectionViewDelegate {
+extension CommunityDailyLifeViewController: UICollectionViewDelegate {
     
 }
 
-extension CommunityRecipeViewController: UICollectionViewDataSource {
+extension CommunityDailyLifeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView1 else { fatalError() }
-            headerView.chooseInterestsButton.isHidden = true
-            headerView.categoryCollectionView.isHidden = false
+            chooseInterestButton = headerView.chooseInterestsButton
+            headerView.chooseInterestsButton.isHidden = false
+            headerView.categoryCollectionView.isHidden = true
             headerView.delegate = self
             return headerView
         default:
@@ -137,7 +141,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
     }
 }
 
-extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
+extension CommunityDailyLifeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let width: CGFloat = collectionView.frame.width
@@ -164,20 +168,38 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
+extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
     }
     
-    func didSelectCategoryItemAt(_ index: Int) {
-        recipeCategoryID = index == 0 ? nil : index
-        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
-    }
-    
     func setViewOnlyFollowing(isSelected: Bool) {
         viewOnlyFollowing = isSelected
-        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+    }
+    
+    func didSelectChooseInterestButton() {
+        guard let vc = ChooseInterestViewController.instantiate() as? ChooseInterestViewController else { return }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+}
+
+// 관심사 선택 Delegate
+extension CommunityDailyLifeViewController: ChooseInterestDelegate {
+    
+    func didSelectInterestOptions(interestOptions: [Int]) {
+        self.interestOptions = interestOptions
+        guard let chooseInterestButton = chooseInterestButton else { return }
+        if interestOptions.count == 0 {
+            chooseInterestButton.isSelected = false
+        } else {
+            chooseInterestButton.isSelected = true
+        }
+        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
