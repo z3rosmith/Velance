@@ -475,6 +475,22 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		3C910FD3272A7CF100F6CE2F /* Mall */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */,
+			);
+			path = Mall;
+			sourceTree = "<group>";
+		};
+		3C910FD4272A7D1600F6CE2F /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		3CA4113627290168000E39B1 /* UITableview Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,10 +504,14 @@
 			isa = PBXGroup;
 			children = (
 				3CAEDC002727A6D8001E4783 /* Mall.storyboard */,
+				3C910FD4272A7D1600F6CE2F /* View Models */,
 				7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */,
 				7CAB8BA7272A7120006B5E08 /* SearchMallViewController.swift */,
 				7CE885702727BB62008E1DB9 /* NewMallViewController.swift */,
 				3CD341AF2727C0B800ADA745 /* MallListViewController.swift */,
+				7C60F2B127296681001D96C2 /* MallViewController.swift */,
+				7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */,
+				7CAB8BA3272A4F6A006B5E08 /* SearchListViewController.swift */,
 				3CAEDC022727AEC1001E4783 /* UITableView Cells */,
 			);
 			path = Mall;
@@ -726,11 +746,6 @@
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
-				7C60F2B127296681001D96C2 /* MallViewController.swift */,
-				7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */,
-				7CAB8BA3272A4F6A006B5E08 /* SearchListViewController.swift */,
-				7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */,
-				7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -1019,6 +1034,7 @@
 			children = (
 				7CCBB55127253D99002EFB58 /* Common */,
 				7CCBB54E27253B8C002EFB58 /* User */,
+				3C910FD3272A7CF100F6CE2F /* Mall */,
 				7CCBB54D27253B87002EFB58 /* Product */,
 				3CC2B34527296D5E00D2BBF3 /* Community */,
 			);
@@ -1538,7 +1554,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -1565,7 +1581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
