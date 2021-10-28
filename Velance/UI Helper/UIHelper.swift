@@ -24,6 +24,19 @@ class UIHelper {
         return actionSheet
     }
     
+    static func createAlertController(with actions: [UIAlertAction], title: String?, message: String?) -> UIAlertController {
+        
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.view.tintColor = .black
+        
+        actions.forEach { alert.addAction($0) }
+        return alert
+    }
+    
     static func configureSegmentioStates() -> SegmentioStates {
         
         let segmentioStates = SegmentioStates(

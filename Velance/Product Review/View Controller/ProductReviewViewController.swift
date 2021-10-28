@@ -142,17 +142,7 @@ extension ProductReviewViewController: ProductReviewDelegate {
 extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if viewModel?.reviewList.count == 0 {
-            tableView.setEmptyMessage("no")
-            
-            
-            return 0
-        } else {
-            tableView.restore()
-            return viewModel?.reviewList.count ?? 0
-        }
-    
+        return viewModel?.reviewList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -377,7 +367,7 @@ extension ProductReviewViewController {
         addReviewButton.snp.makeConstraints { make in
             make.width.height.equalTo(60)
             make.right.equalTo(view.snp.right).offset(-25)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-35)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
         }
     }
     

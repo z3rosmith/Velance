@@ -140,6 +140,7 @@ extension UIViewController {
         User.shared.resetAllUserInfo()
         let loginVC = LoginViewController.instantiate()
         let navController = UINavigationController(rootViewController: loginVC)
+        navController.navigationBar.tintColor = .white
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
         
     }

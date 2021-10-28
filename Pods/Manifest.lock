@@ -13,6 +13,7 @@ PODS:
   - InputBarAccessoryView/Core (5.4.0)
   - IQKeyboardManagerSwift (6.5.6)
   - lottie-ios (3.2.3)
+  - PanModal (1.2.7)
   - Parchment (3.1.0)
   - ProgressHUD (13.6)
   - SDWebImage (5.12.1):
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - InputBarAccessoryView
   - IQKeyboardManagerSwift
   - lottie-ios
+  - PanModal
   - Parchment (~> 3.0)
   - ProgressHUD
   - SDWebImage (~> 5.0)
@@ -55,6 +57,7 @@ SPEC REPOS:
     - InputBarAccessoryView
     - IQKeyboardManagerSwift
     - lottie-ios
+    - PanModal
     - Parchment
     - ProgressHUD
     - SDWebImage
@@ -74,6 +77,7 @@ SPEC CHECKSUMS:
   InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   Parchment: 6250722ed0456d68f6bae03118eda722a28486f3
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
@@ -85,6 +89,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: 7e5ec7f5560f84e415f4ec8dbf461ac68b86b80d
+PODFILE CHECKSUM: d967d80ad6aa2d99c7e6e9c40a209b138c3a3ba5
 
 COCOAPODS: 1.10.1

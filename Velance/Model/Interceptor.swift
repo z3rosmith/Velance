@@ -15,7 +15,8 @@ final class Interceptor: RequestInterceptor {
         
         print("Interceptor - adapt() activated")
         
-        if !User.shared.isLoggedIn {
+        if !User.shared.isLoggedIn{
+            print("❗️ Interceptor - user is not logged in!")
             completion(.success(urlRequest))
             return
         }
