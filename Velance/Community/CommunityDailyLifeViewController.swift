@@ -127,6 +127,7 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
         cell.commentButton.addTarget(self, action: #selector(didTapCommentButton(_:)), for: .touchUpInside)
         
         cell.commentButton.isSelected = true // commentButton은 항상 초록색
+        cell.recipeLabledView.isHidden = true
         
         let targetSize = CGSize(width: cell.frame.width, height: UIView.layoutFittingCompressedSize.height)
         let estimatedHeight = ceil(cell.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height)

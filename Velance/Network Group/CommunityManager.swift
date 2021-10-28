@@ -12,6 +12,7 @@ class CommunityManager {
     let newDailyLifePostUrl     = "\(API.baseUrl)daily-life"
     let newRecipePostUrl        = "\(API.baseUrl)recipe"
     let fetchRecipeListUrl      = "\(API.baseUrl)recipe"
+    let fetchDailyLifeListUrl   = "\(API.baseUrl)daily-life"
     
     //MARK: - 일상 글 올리기
     
@@ -156,7 +157,7 @@ class CommunityManager {
 //            parameters["interest_type_ids"] = array
         }
 
-        AF.request(fetchRecipeListUrl,
+        AF.request(fetchDailyLifeListUrl,
                    method: .get,
                    parameters: parameters,
                    encoding: URLEncoding.queryString,
