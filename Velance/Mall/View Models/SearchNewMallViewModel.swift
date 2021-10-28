@@ -1,13 +1,13 @@
 import Foundation
 
-protocol SearchMallViewModelDelegate: AnyObject {
+protocol SearchNewMallViewModelDelegate: AnyObject {
     func didFetchSearchResults()
     func failedFetchingSearchResults(with error: NetworkError)
 }
 
-class SearchMallViewModel {
+class SearchNewMallViewModel {
     
-    weak var delegate: SearchMallViewModelDelegate?
+    weak var delegate: SearchNewMallViewModelDelegate?
     
     let defaultLocation = MTMapPointGeo(latitude: 37.497866841186955, longitude: 127.02753316658152)
     

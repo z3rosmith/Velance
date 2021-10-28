@@ -177,11 +177,11 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
     
     func didSelectCategoryItemAt(_ index: Int) {
         recipeCategoryID = index == 0 ? nil : index
-        viewModel.refreshFavoriteRestaurantList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
     func setViewOnlyFollowing(isSelected: Bool) {
         viewOnlyFollowing = isSelected
-        viewModel.refreshFavoriteRestaurantList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
 }

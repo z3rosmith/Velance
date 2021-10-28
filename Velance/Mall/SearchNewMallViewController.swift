@@ -9,7 +9,7 @@ class SearchNewMallViewController: UIViewController {
     var mapPoint: MTMapPoint?
     var pointItem: MTMapPOIItem?
     
-    private let viewModel = SearchMallViewModel()
+    private let viewModel = SearchNewMallViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +103,7 @@ extension SearchNewMallViewController: MTMapViewDelegate {
 
 //MARK: - SearchRestaurantViewModelDelegate
 
-extension SearchNewMallViewController: SearchMallViewModelDelegate {
+extension SearchNewMallViewController: SearchNewMallViewModelDelegate {
 
     func didFetchSearchResults() {
         
