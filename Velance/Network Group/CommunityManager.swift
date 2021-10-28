@@ -141,48 +141,51 @@ class CommunityManager {
     }
     
     // MARK: - 일상 목록 받아오기
-//    func fetchDailyLifeList(with model: RecipeRequestDTO,
-//                         completion: @escaping ((Result<[RecipeResponseDTO], NetworkError>) -> Void)) {
-//
-//        var parameters: Parameters = [:]
-//        parameters["request_user_id"] = model.requestUserID
-//        parameters["cursor"] = model.cursor
-//        parameters["recipe_category_id"] = model.recipeCategoryID
-//        parameters["only_following"] = model.onlyFollowing
-//        var headers: HTTPHeaders = [:]
-//        headers["Authorization"] = User.shared.accessToken
-//
-//        AF.request(fetchRecipeListUrl,
-//                   method: .get,
-//                   parameters: parameters,
-//                   encoding: URLEncoding.queryString,
-//                   headers: headers,
-//                   interceptor: interceptor)
-//            .validate()
-//            .responseJSON { response in
-//
-//                switch response.result {
-//                case .success(let value):
-//                    do {
-//                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-//                        let decodedData = try JSONDecoder().decode([RecipeResponseDTO].self, from: dataJSON)
-//                        completion(.success(decodedData))
-//                    } catch {
-//                        print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED PROCESS DATA with error: \(error)")
-//                    }
-//                case .failure(let error):
-//                    if let jsonData = response.data {
-//                        print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
-//                    }
-//                    print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
-//                    guard let responseCode = error.responseCode else {
-//                        print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - Empty responseCode")
-//                        return
-//                    }
-//                    let customError = NetworkError.returnError(statusCode: responseCode)
-//                    print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with custom error: \(customError.errorDescription)")
-//                    completion(.failure(customError))
-//                }
-//            }
-//    }
+    func fetchDailyLifeList(with model: DailyLifeRequestDTO,
+                         completion: @escaping ((Result<[DailyLifeResponseDTO], NetworkError>) -> Void)) {
+
+        var parameters: Parameters = [:]
+        parameters["request_user_id"] = model.requestUserID
+        parameters["cursor"] = model.cursor
+        parameters["only_following"] = model.onlyFollowing
+        
+        var array: [Int] = []
+        if let interestTypeIDs = model.interestTypeIDs, interestTypeIDs.count > 0 {
+            interestTypeIDs.forEach { array.append($0) }
+            #warning("parameter array 보내는거 구현")
+//            parameters["interest_type_ids"] = array
+        }
+
+        AF.request(fetchRecipeListUrl,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decodedData = try JSONDecoder().decode([DailyLifeResponseDTO].self, from: dataJSON)
+                        completion(.success(decodedData))
+                    } catch {
+                        print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED PROCESS DATA with error: \(error)")
+                    }
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
 }

@@ -7,15 +7,12 @@ class CommunityRecipeViewController: UIViewController {
     
     private let viewModel = CommunityRecipeListViewModel()
     
-    // 레시피VC인지 일상VC인지 구분
-    var isRecipeVC: Bool = true
-    
     private let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
     private let headerReuseIdentifier = "CommunityCollectionReusableView1"
     private let cellReuseIdentifier = "CommunityFeedCollectionViewCell"
     
     private var cellHeights: [CGFloat] = []
-    private let basicCellHeight: CGFloat = 570
+    private let basicCellHeight: CGFloat = 575
     
     private var recipeCategoryID: Int? = nil
     private var viewOnlyFollowing: Bool = false
@@ -73,14 +70,9 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView1 else { fatalError() }
-            if isRecipeVC {
-                headerView.chooseInterestsButton.isHidden = true
-                headerView.categoryCollectionView.isHidden = false
-                headerView.delegate = self
-            } else {
-                headerView.chooseInterestsButton.isHidden = false
-                headerView.categoryCollectionView.isHidden = true
-            }
+            headerView.chooseInterestsButton.isHidden = true
+            headerView.categoryCollectionView.isHidden = false
+            headerView.delegate = self
             return headerView
         default:
             fatalError()
@@ -106,14 +98,18 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
             }
         }
         cell.imageSlideShow.setImageInputs(inputSources)
-        cell.likeButton.setRightText(text: "341") // 준수님이 업데이트하면 수정
-        cell.commentButton.setRightText(text: "12") // 준수님이 업데이트하면 수정
+        cell.likeButton.setTitle("\(cellViewModel.like)", for: .normal)
+        cell.commentButton.setTitle("\(cellViewModel.repliesCount)", for: .normal)
         cell.textView.text = cellViewModel.contents
         
         cell.usernameLabel.text = cellViewModel.userDisplayName
         cell.timeLabel.text = cellViewModel.feedDate
-        cell.userVegetarianTypeLabel.text = "페스코" // 준수님이 업데이트하면 수정
-//        cell.likeButton.isSelected = cellViewModel.didUserTapLike // 준수님이 업데이트하면 수정
+        cell.userVegetarianTypeLabel.text = cellViewModel.vegetarianType
+        if cellViewModel.isLike {
+            cell.likeImageView.image = UIImage(named: "ThumbLogoActive")
+        } else {
+            cell.likeImageView.image = UIImage(named: "ThumbLogoInactive")
+        }
         
         // MARK: - configure cell(no data)
         cell.parentVC = self
@@ -183,23 +179,5 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
     func setViewOnlyFollowing(isSelected: Bool) {
         viewOnlyFollowing = isSelected
         viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
-    }
-    
-    func didSelectChooseInterestButton() {
-        guard let vc = ChooseInterestViewController.instantiate() as? ChooseInterestViewController else { return }
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        vc.delegate = self
-        self.present(vc, animated: true)
-    }
-}
-
-// 관심사 선택 Delegate
-
-extension CommunityRecipeViewController: ChooseInterestDelegate {
-    
-    func didSelectInterestOptions(interestOptions: [Int]) {
-        
-        
     }
 }

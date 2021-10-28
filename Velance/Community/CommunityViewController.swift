@@ -62,15 +62,15 @@ extension CommunityViewController: PagingViewControllerDataSource {
     func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
         if index == 0 {
             guard let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "CommunityRecipeViewController") as? CommunityRecipeViewController else { fatalError() }
-            vc1.view.layoutIfNeeded() // ! 이걸 하지않으면 vc1에서 view.frame.width가 원래 width의 2배가 되어버리는 현상 발생. 오류인듯 !
+            vc1.view.layoutIfNeeded() // ! 이걸 하지않으면 vc1에서 view.frame.width가 원래 width의 2배가 되어버리는 현상 발생. Parchment 오류인듯 !
             return vc1
         } else if index == 1 {
-            guard let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "CommunityRecipeViewController") as? CommunityRecipeViewController else { fatalError() }
+            guard let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDailyLifeViewController") as? CommunityDailyLifeViewController else { fatalError() }
             vc2.view.layoutIfNeeded()
-            vc2.isRecipeVC = false
             return vc2
         } else {
             guard let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "CommunityFeedViewController") as? CommunityFeedViewController else { fatalError() }
+            vc3.view.layoutIfNeeded()
             return vc3
         }
     }

@@ -40,6 +40,7 @@ class VLGradientButton: UIButton {
     }
     
     private func configure() {
+        clipsToBounds = true
         layer.borderWidth = 0.3
         layer.cornerRadius = frame.height / 2
         layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor

@@ -116,4 +116,29 @@ extension CommunityRecipeViewModel {
         }
         return imageURLs
     }
+    
+    var repliesCount: Int {
+        return post.feed.repliesCount
+    }
+    
+    var like: Int {
+        return post.feed.like
+    }
+    
+    var vegetarianType: String {
+        guard let type = post.feed.user.vegetarianType?.name else {
+            return "선택안함"
+        }
+        return type
+    }
+    
+    var isLike: Bool {
+        guard let like = post.isLike else {
+            return false
+        }
+        if like == "Y" {
+            return true
+        }
+        return false
+    }
 }

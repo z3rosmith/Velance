@@ -35,6 +35,8 @@ extension MallListViewController {
     }
     
     private func configureUI() {
+        navigationItem.title = "식당 목록"
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "" // set back button title
         addMallButton.layer.cornerRadius = addMallButton.frame.height/2
     }
 }
@@ -42,7 +44,7 @@ extension MallListViewController {
 extension MallListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 140
     }
 }
 
@@ -57,11 +59,15 @@ extension MallListViewController: UITableViewDataSource {
         let cellViewModel = viewModel.mallAtIndex(indexPath.row)
         
         cell.mallnameLabel.text = cellViewModel.mallName
-        cell.menuCountLabel.text = "비건 메뉴: \(cellViewModel.menuCount)개"
         cell.mallAddressLabel.text = cellViewModel.mallAddress
         cell.semiVeganLabel.isHidden = cellViewModel.onlyVegan
         cell.veganLabel.isHidden = !cellViewModel.onlyVegan
         cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: UIImage(systemName: "photo.on.rectangle"))
+        
+        cell.menuCountLabel.text = "비건 메뉴: \(cellViewModel.menuCount)개"
+        let attributtedString = NSMutableAttributedString(string: cell.menuCountLabel.text!)
+        attributtedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "4D8800")!, range: (cell.menuCountLabel.text! as NSString).range(of:"\(cellViewModel.menuCount)"))
+        cell.menuCountLabel.attributedText = attributtedString
         
         return cell
     }

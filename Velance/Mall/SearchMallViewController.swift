@@ -24,6 +24,7 @@ class SearchMallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "내 주변 비건 식당 찾기"
         setupButtons()
         configureUI()
         configureMapView()
@@ -48,7 +49,7 @@ extension SearchMallViewController {
     }
     
     private func configureUI() {
-        bottomView.layer.cornerRadius = 20
+        bottomView.layer.cornerRadius = 10
         confirmButton.layer.cornerRadius = 10
     }
     
@@ -113,8 +114,8 @@ extension SearchMallViewController: MTMapViewDelegate {
         
         guard let address = address else { return }
         
+        currentLocation = mapCenterPoint.mapPointGeo()
         DispatchQueue.main.async {
-            self.currentLocation = mapCenterPoint.mapPointGeo()
             self.addressLabel.text = address
         }
     }
