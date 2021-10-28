@@ -33,12 +33,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         dismissProgressBar()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("❗️ ProductReviewListVC - viewdiddisappear")
-    }
- 
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -62,8 +56,8 @@ extension ProductReviewListContainerViewController {
         
 //        let vc = UploadNewProductViewController.instantiate()
 //        let vc = SearchNewMallViewController.instantiate()
-//        let vc = NewMenuViewController.instantiate()
-        let vc = NewPostViewController.instantiate()
+        let vc = NewMenuViewController.instantiate()
+//        let vc = NewPostViewController.instantiate()
 //        let vc = MallViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }

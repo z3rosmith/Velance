@@ -65,6 +65,21 @@ extension MallListViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cellViewModel = viewModel.mallAtIndex(indexPath.row)
+        
+        guard let mallVC = MallViewController.instantiate() as? MallViewController else { return }
+        mallVC.mallId = cellViewModel.mallId
+        mallVC.mallName = cellViewModel.mallName
+        mallVC.isVegan = cellViewModel.isVegan
+        mallVC.mallAddress = cellViewModel.mallAddress
+        mallVC.mallThumbnailUrl = cellViewModel.imageURL
+        
+        navigationController?.pushViewController(mallVC, animated: true)
+    }
 }
 
 extension MallListViewController: MallListViewModelDelegate {

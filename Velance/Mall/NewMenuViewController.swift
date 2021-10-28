@@ -51,8 +51,7 @@ extension NewMenuViewController {
             let menuName = menuNameTextField.text,
             let menuPrice = menuPriceTextField.text,
             menuName.count > 1,
-            menuPrice.count > 1,
-            let _ = mallId else {
+            menuPrice.count > 1 else {
                 showSimpleBottomAlert(with: "빈 칸이 없는지 확인해주세요.")
                 return
             }

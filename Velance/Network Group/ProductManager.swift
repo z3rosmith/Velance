@@ -21,13 +21,13 @@ class ProductManager {
         completion: @escaping ((Result<[ProductListResponseDTO], NetworkError>) -> Void)
     ) {
         
-        let parameters: Parameters = [
+        var parameters: Parameters = [
             "request_user_id": User.shared.userUid,
             "page": page,
             "product_category_id": productCategoryId,
             "only_my_vegetarian_type": onlyMyVegetarianType
         ]
-        
+
         AF.request(
             productAPIBaseUrl,
             method: .get,

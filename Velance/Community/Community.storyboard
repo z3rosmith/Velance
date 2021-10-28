@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -950,19 +950,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(택 1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pqF-TN-XDS">
-                                                <rect key="frame" x="130" y="16.5" width="33.5" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <color key="textColor" systemColor="systemGrayColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레시피 카테고리 선택" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEJ-GJ-wR3">
                                                 <rect key="frame" x="16" y="139" width="157" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 피드 분류를 레시피로 골랐을 경우 선택 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-MA-nhw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레시피 등록 시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-MA-nhw">
                                                 <rect key="frame" x="16" y="168" width="382" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -1131,7 +1125,6 @@
                                             <constraint firstItem="ZEJ-GJ-wR3" firstAttribute="top" secondItem="EYr-6h-nKG" secondAttribute="bottom" constant="20" id="6Kt-RP-uvZ"/>
                                             <constraint firstItem="fT2-VD-amy" firstAttribute="leading" secondItem="CQd-yc-v8O" secondAttribute="leading" constant="16" id="6dm-3o-G6d"/>
                                             <constraint firstItem="aCa-NR-lHv" firstAttribute="top" secondItem="LAv-d2-36E" secondAttribute="bottom" constant="16" id="GPY-pK-89w"/>
-                                            <constraint firstItem="pqF-TN-XDS" firstAttribute="leading" secondItem="fT2-VD-amy" secondAttribute="trailing" constant="6" id="KPx-BF-fQy"/>
                                             <constraint firstItem="NJI-wn-Vlj" firstAttribute="leading" secondItem="CQd-yc-v8O" secondAttribute="leading" constant="16" id="L91-ck-Vyi"/>
                                             <constraint firstItem="EYr-6h-nKG" firstAttribute="top" secondItem="fT2-VD-amy" secondAttribute="bottom" constant="16" id="Lh7-xd-sXe"/>
                                             <constraint firstItem="28Z-1U-Sqd" firstAttribute="top" secondItem="6Lg-MA-nhw" secondAttribute="bottom" constant="16" id="Lug-zt-b8L"/>
@@ -1140,7 +1133,6 @@
                                             <constraint firstItem="ord-gR-ndF" firstAttribute="leading" secondItem="7XT-Ya-yve" secondAttribute="trailing" constant="6" id="RlZ-5T-PZe"/>
                                             <constraint firstAttribute="trailing" secondItem="XTl-bo-UUT" secondAttribute="trailing" constant="24" id="Shl-GC-562"/>
                                             <constraint firstItem="aCa-NR-lHv" firstAttribute="leading" secondItem="CQd-yc-v8O" secondAttribute="leading" constant="16" id="Ts5-BI-f30"/>
-                                            <constraint firstItem="pqF-TN-XDS" firstAttribute="top" secondItem="CQd-yc-v8O" secondAttribute="top" constant="16.5" id="XOj-vR-saW"/>
                                             <constraint firstItem="LAv-d2-36E" firstAttribute="top" secondItem="NJI-wn-Vlj" secondAttribute="bottom" constant="25" id="aeR-sp-xp4"/>
                                             <constraint firstItem="ZEJ-GJ-wR3" firstAttribute="leading" secondItem="CQd-yc-v8O" secondAttribute="leading" constant="16" id="bc5-QV-nP5"/>
                                             <constraint firstItem="XTl-bo-UUT" firstAttribute="leading" secondItem="CQd-yc-v8O" secondAttribute="leading" constant="24" id="cua-yS-nqO"/>
@@ -1204,11 +1196,6 @@
             <point key="canvasLocation" x="4204" y="150"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="fTU-lI-yPv">
-            <size key="intrinsicContentSize" width="220" height="16"/>
-        </designable>
-    </designables>
     <resources>
         <image name="EditProfileButton" width="122" height="41"/>
         <image name="EditProfileLogo" width="15" height="15"/>

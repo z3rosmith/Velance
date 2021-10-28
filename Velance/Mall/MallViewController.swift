@@ -101,7 +101,7 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,8 +122,17 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
             options: .continueInBackground
         )
         cell.menuNameLabel.text = menuData.name
-        cell.menuCautionLabel.text = "주의: " + "\(menuData.caution ?? "없음")"
+        cell.menuCautionLabel.text = "\(menuData.caution ?? "없음")"
         cell.menuPriceLabel.text = "\(menuData.price)원"
+        
+        cell.likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
+        
+        if indexPath.row % 2 == 0 {
+            cell.likeButton.isSelected.toggle()
+            cell.likeButton.setRightText(text: "23")
+        } else {
+            cell.likeButton.setRightText(text: "12")
+        }
         
         return cell
     }
@@ -265,7 +274,7 @@ extension MallViewController {
         
         headerView.configure(mallName: mallName, isVegan: isVegan, mallAddress: mallAddress)
         menuTableView.tableHeaderView = headerView
-        
+
         let menuTableViewCell = UINib(
             nibName: "MenuTableViewCell",
             bundle: nil

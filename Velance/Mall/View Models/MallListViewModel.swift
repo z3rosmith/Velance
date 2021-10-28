@@ -107,4 +107,13 @@ extension MallCellViewModel {
     var onlyVegan: Bool {
         return mall.onlyVegan == "N" ? false : true
     }
+    
+    var mallId: Int {
+        return mall.mallID
+    }
+    
+    var isVegan: String {
+        return mall.onlyVegan
+    }
+
 }
