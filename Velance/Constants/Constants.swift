@@ -133,6 +133,6 @@ struct LayoutConstants {
 
 struct KakaoAPIKey {
     static let App_Key                      = "65a7f8d9410de133e3174120bad5b8b8"
-    static let API_Key                      = "65a7f8d9410de133e3174120bad5b8b8"
+    static let API_Key                      = "e85856e030fc80ac2dea11f364a9ebd8"
     static let Admin_Key                    = "55631246cbc856f459c460cc47806611"
 }

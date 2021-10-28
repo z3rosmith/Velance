@@ -22,10 +22,19 @@ class NewMallViewController: UIViewController, Storyboarded {
     
     
     //MARK: - NewMallDTO Properties
-    #warning("수정 필요 -> 지도에서 값을 가져와야함")
+#warning("수정 필요 -> 지도에서 값을 가져와야함")
     
+    var mallId: Int?
+    var placeName: String?
+    var phone: String?
+    var addressName: String?
+    var roadAddressName: String?
+    var x: Double?
+    var y: Double?
+    // -------
     var mallImageData: Data?
     var onlyVegan: String = "N"
+    var didSelectMallCategory: Bool = false
     
     
     static var storyboardName: String {
@@ -35,7 +44,11 @@ class NewMallViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
+        
+        // 이전 화면의 검색결과에서 받아온 placeName
+        if let placeName = placeName {
+            mallNameTextField.text = placeName
+        }
     }
 }
 
@@ -51,12 +64,60 @@ extension NewMallViewController {
         categoryButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
         onlyVegan = sender.tag == 0 ? "Y" : "N"
+        didSelectMallCategory = true
     }
     
     
     @IBAction func pressedDoneButton(_ sender: UIButton) {
         
         // 여기서 통신
+        guard let mallImageData = mallImageData else {
+            showSimpleBottomAlert(with: "식당 썸네일로 사용할 사진 1개를 골라주세요.")
+            return
+        }
+        
+        if !didSelectMallCategory {
+            showSimpleBottomAlert(with: "식당 종류를 하나 선택해주세요.")
+            return
+        }
+        
+        presentAlertWithConfirmAction(
+            title: "식당을 새로 등록하시겠습니까?",
+            message: ""
+        ) { [weak self] selectedOk in
+            guard let self = self else { return }
+            if selectedOk {
+                
+                guard
+                    let mallId = self.mallId,
+                    let placeName = self.placeName,
+                    let phone = self.phone,
+                    let addressName = self.addressName,
+                    let roadAddressName = self.roadAddressName,
+                    let x = self.x,
+                    let y = self.y else {
+                        self.showSimpleBottomAlert(with: "신규 식당 등록에 문제가 생겼습니다. 잠시 후 다시 시도해주세요.")
+                        return
+                    }
+                
+                let model = NewMallDTO(mallId: mallId, placeName: placeName, phone: phone, addressName: addressName, roadAddressName: roadAddressName, x: x, y: y, onlyVegan: self.onlyVegan, file: self.mallImageData!)
+                
+                MallManager.shared.uploadNewMall(with: model) { [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success:
+                        self.showSimpleBottomAlert(with: "식당 등록 성공🎉")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    case .failure(let error):
+                        self.showSimpleBottomAlert(with: error.errorDescription)
+                    }
+                }
+            }
+        }
+        
+        
     }
     
 }
@@ -108,8 +169,9 @@ extension NewMallViewController {
     }
     
     private func configureTextFields() {
-        //isUserInteractionEnabled = false 설정 추후에 적용
-        
+        mallNameTextField.placeholder = nil
+        mallNameTextField.isUserInteractionEnabled = false
+        mallNameTextField.font = .systemFont(ofSize: 18, weight: .medium)
     }
     
     private func configureUIViews() {
@@ -120,6 +182,6 @@ extension NewMallViewController {
     }
     
     private func configureCategoryButtons() {
-
+        
     }
 }

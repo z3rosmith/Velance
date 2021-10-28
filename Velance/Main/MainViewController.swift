@@ -10,6 +10,8 @@ class MainViewController: UIViewController {
     private var currentTabButton: UIButton?
     private weak var currentVC: UIViewController?
     
+    private var didSetup: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -18,7 +20,11 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupFirstVC(index: 0)
+        print("✏️ MAINVC - viewDidappear")
+        if !didSetup {
+            didSetup = true
+            setupFirstVC(index: 0)
+        }
     }
 }
 

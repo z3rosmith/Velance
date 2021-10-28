@@ -70,9 +70,9 @@ extension NewMenuViewController {
                 #warning("아래 mallID 변경!!")
                 let model = NewMenuDTO(
                     mallId: 24975336,
-                    name: "샌드위치",
-                    price: 2000,
-                    caution: "새우가 포함되어있어요",
+                    name: self.menuNameTextField.text!,
+                    price: Int(self.menuPriceTextField.text!) ?? 0,
+                    caution: self.menuCautionsTextField.text!,
                     file: menuImageData,
                     isVegan: "Y"
                 )
@@ -85,14 +85,12 @@ extension NewMenuViewController {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                             self.navigationController?.popViewController(animated: true)
                         }
-                        
                     case .failure(let error):
                         self.showSimpleBottomAlert(with: error.errorDescription)
                     }
                 }
             }
         }
-        
     }
 }
 

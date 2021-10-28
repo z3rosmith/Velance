@@ -32,6 +32,12 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         super.viewWillDisappear(animated)
         dismissProgressBar()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("❗️ ProductReviewListVC - viewdiddisappear")
+    }
+    
 }
 
 //MARK: - IBActions & Target Methods

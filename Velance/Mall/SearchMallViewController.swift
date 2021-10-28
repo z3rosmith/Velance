@@ -2,7 +2,7 @@
 //  SearchMallViewController.swift
 //  Velance
 //
-//  Created by Jinyoung Kim on 2021/10/26.
+//  Created by Kevin Kim on 2021/10/28.
 //
 
 import UIKit
