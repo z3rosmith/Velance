@@ -10,7 +10,6 @@ class VLGradientButton: UIButton {
         
         buttonGradient.startPoint = CGPoint(x: 1.0, y: 0.0)
         buttonGradient.endPoint = CGPoint(x: 0.0, y: 1.0)
-        buttonGradient.frame = self.bounds
         return buttonGradient
     }()
 
@@ -36,6 +35,7 @@ class VLGradientButton: UIButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        gradient.frame = self.bounds
         configure()
     }
     

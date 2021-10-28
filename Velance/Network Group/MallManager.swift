@@ -11,6 +11,7 @@ class MallManager {
     //MARK: - End Points
     let menuUrl      = "\(API.baseUrl)menu"
     let newMallUrl      = "\(API.baseUrl)mall"
+    let fetchMallListUrl        = "\(API.baseUrl)mall"
     
     //MARK: - 새로운 메뉴 등록
     func uploadNewMenu(
@@ -136,5 +137,45 @@ class MallManager {
         
     }
     
-    
+    func fetchMallList(with model: MallRequestDTO,
+                       completion: @escaping ((Result<[MallResponseDTO], NetworkError>) -> Void)) {
+        
+        var parameters: Parameters = [:]
+        parameters["cursor"] = model.cursor
+        parameters["x"] = model.x
+        parameters["y"] = model.y
+        parameters["radius"] = model.radius
+        
+        AF.request(fetchMallListUrl,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decodedData = try JSONDecoder().decode([MallResponseDTO].self, from: dataJSON)
+                        completion(.success(decodedData))
+                        print("✏️ MallManager MANAGER - fetchMallList - fetch SUCCESS")
+                    } catch {
+                        print("❗️ MallManager MANAGER - fetchMallList - FAILED PROCESS DATA with error: \(error)")
+                    }
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ MallManager MANAGER - fetchMallList - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ MallManager MANAGER - fetchMallList - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ MallManager MANAGER - fetchMallList - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ MallManager MANAGER - fetchMallList - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2052B6272AAB19009BBD3B /* MallRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2052B5272AAB19009BBD3B /* MallRequestDTO.swift */; };
+		3C2052B8272AAC10009BBD3B /* MallResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2052B7272AAC10009BBD3B /* MallResponseDTO.swift */; };
+		3C2052BA272AB03E009BBD3B /* MallListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2052B9272AB03E009BBD3B /* MallListViewModel.swift */; };
 		3C2C0B0B2729139B003A0B69 /* CommunityDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0A2729139B003A0B69 /* CommunityDetailTableHeaderView.swift */; };
 		3C2C0B0D272914ED003A0B69 /* CommunityDetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0C272914ED003A0B69 /* CommunityDetailTableHeaderView.xib */; };
 		3C2C0B0F272931E3003A0B69 /* VelanceInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */; };
@@ -124,7 +127,7 @@
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7CAB8B9A272A47A7006B5E08 /* SearchNewMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */; };
-		7CAB8B9C272A4AE1006B5E08 /* SearchMallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */; };
+		7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */; };
 		7CAB8B9E272A4B29006B5E08 /* SearchMallByKeywordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */; };
 		7CAB8BA0272A4B9B006B5E08 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9F272A4B9B006B5E08 /* MapManager.swift */; };
 		7CAB8BA2272A4BD5006B5E08 /* SearchMallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA1272A4BD5006B5E08 /* SearchMallDTO.swift */; };
@@ -203,6 +206,9 @@
 		176EEBF91672C5403CE0C95C /* Pods-Velance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.debug.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.debug.xcconfig"; sourceTree = "<group>"; };
 		222364E45B7EF8AE3125E949 /* Pods_Velance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Velance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FB9106D8D15F56D0F86023 /* Pods-Velance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Velance.release.xcconfig"; path = "Target Support Files/Pods-Velance/Pods-Velance.release.xcconfig"; sourceTree = "<group>"; };
+		3C2052B5272AAB19009BBD3B /* MallRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallRequestDTO.swift; sourceTree = "<group>"; };
+		3C2052B7272AAC10009BBD3B /* MallResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallResponseDTO.swift; sourceTree = "<group>"; };
+		3C2052B9272AB03E009BBD3B /* MallListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallListViewModel.swift; sourceTree = "<group>"; };
 		3C2C0B0A2729139B003A0B69 /* CommunityDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableHeaderView.swift; sourceTree = "<group>"; };
 		3C2C0B0C272914ED003A0B69 /* CommunityDetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableHeaderView.xib; sourceTree = "<group>"; };
 		3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelanceInputBar.swift; sourceTree = "<group>"; };
@@ -329,7 +335,7 @@
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewController.swift; sourceTree = "<group>"; };
-		7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallViewModel.swift; sourceTree = "<group>"; };
+		7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewModel.swift; sourceTree = "<group>"; };
 		7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallByKeywordDTO.swift; sourceTree = "<group>"; };
 		7CAB8B9F272A4B9B006B5E08 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		7CAB8BA1272A4BD5006B5E08 /* SearchMallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallDTO.swift; sourceTree = "<group>"; };
@@ -484,6 +490,7 @@
 			children = (
 				7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */,
 				7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */,
+				3C2052B7272AAC10009BBD3B /* MallResponseDTO.swift */,
 			);
 			path = Mall;
 			sourceTree = "<group>";
@@ -493,6 +500,8 @@
 			children = (
 				7CAB8B9B272A4AE1006B5E08 /* SearchMallViewModel.swift */,
 				7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */,
+				7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */,
+				3C2052B9272AB03E009BBD3B /* MallListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -611,6 +620,7 @@
 				7C60F1CF272908DA001D96C2 /* NewMenuDTO.swift */,
 				7CAB8BA5272A601A006B5E08 /* NewMallDTO.swift */,
 				7CAB8BA1272A4BD5006B5E08 /* SearchMallDTO.swift */,
+				3C2052B5272AAB19009BBD3B /* MallRequestDTO.swift */,
 			);
 			path = Mall;
 			sourceTree = "<group>";
@@ -1303,6 +1313,7 @@
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CAB8BAC272AB381006B5E08 /* MallViewModel.swift in Sources */,
+				3C2052B8272AAC10009BBD3B /* MallResponseDTO.swift in Sources */,
 				3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */,
 				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
 				7CAB8BA0272A4B9B006B5E08 /* MapManager.swift in Sources */,
@@ -1380,11 +1391,12 @@
 				3CCFE7E1271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
-				7CAB8B9C272A4AE1006B5E08 /* SearchMallViewModel.swift in Sources */,
+				7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				3CC2B34C27297AB800D2BBF3 /* RecipeCategory.swift in Sources */,
 				3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */,
+				3C2052BA272AB03E009BBD3B /* MallListViewModel.swift in Sources */,
 				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CCBB54C2725382D002EFB58 /* ProductManager.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
@@ -1401,6 +1413,7 @@
 				7CCBB55327253DA6002EFB58 /* File.swift in Sources */,
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
+				3C2052B6272AAB19009BBD3B /* MallRequestDTO.swift in Sources */,
 				3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */,

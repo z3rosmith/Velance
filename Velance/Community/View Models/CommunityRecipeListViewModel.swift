@@ -28,7 +28,7 @@ extension CommunityRecipeListViewModel {
         return posts.count
     }
     
-    func refreshFavoriteRestaurantList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
+    func refreshPostList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
         self.posts.removeAll(keepingCapacity: true)
         self.hasMore = true
         self.isFetchingData = false
@@ -36,7 +36,7 @@ extension CommunityRecipeListViewModel {
         self.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
-    func resetRestaurantList() {
+    func resetPostList() {
         self.posts.removeAll()
         self.hasMore = true
         self.isFetchingData = false

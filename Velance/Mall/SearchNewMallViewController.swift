@@ -9,7 +9,7 @@ class SearchNewMallViewController: UIViewController, Storyboarded {
     var mapPoint: MTMapPoint?
     var pointItem: MTMapPOIItem?
     
-    private let viewModel = SearchMallViewModel()
+    private let viewModel = SearchNewMallViewModel()
     
     static var storyboardName: String {
         StoryboardName.mall
@@ -107,7 +107,7 @@ extension SearchNewMallViewController: MTMapViewDelegate {
 
 //MARK: - SearchRestaurantViewModelDelegate
 
-extension SearchNewMallViewController: SearchMallViewModelDelegate {
+extension SearchNewMallViewController: SearchNewMallViewModelDelegate {
 
     func didFetchSearchResults() {
         

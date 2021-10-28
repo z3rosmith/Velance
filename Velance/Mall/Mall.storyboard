@@ -76,7 +76,7 @@
                                     <constraint firstItem="m5P-DA-U4d" firstAttribute="leading" secondItem="4JX-hZ-raP" secondAttribute="leading" constant="30" id="tYC-Ro-APx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAZ-lN-sX9" userLabel="Map View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAZ-lN-sX9" userLabel="Map View" customClass="MTMapView">
                                 <rect key="frame" x="0.0" y="158" width="414" height="704"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
@@ -142,6 +142,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j9R-px-Vb3"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="pbe-oU-OZd" id="08x-sh-pw3"/>
+                        <outlet property="bottomView" destination="9An-tr-0qE" id="IZM-zv-ooG"/>
+                        <outlet property="confirmButton" destination="k8P-zB-cKL" id="vfN-8S-i8F"/>
+                        <outlet property="mapView" destination="IAZ-lN-sX9" id="Ayg-Sx-Aab"/>
+                        <outlet property="rangeStackView" destination="m5P-DA-U4d" id="2R4-pr-V5q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
