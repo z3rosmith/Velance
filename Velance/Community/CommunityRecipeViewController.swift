@@ -5,6 +5,8 @@ class CommunityRecipeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let viewModel = CommunityRecipeListViewModel()
+    
     // 레시피VC인지 일상VC인지 구분
     var isRecipeVC: Bool = true
     
@@ -14,12 +16,15 @@ class CommunityRecipeViewController: UIViewController {
     
     private var cellHeights: [CGFloat] = []
     private let basicCellHeight: CGFloat = 570
-    private var numberOfItems: Int = 5 // 네트워킹 해서 didFetch에서 setCellHeightsArray(numberOfItems:)를 불러줘야함
+    
+    private var recipeCategoryID: Int? = nil
+    private var viewOnlyFollowing: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        setCellHeightsArray(numberOfItems: numberOfItems)
+        viewModel.delegate = self
+        viewModel.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
 
@@ -71,6 +76,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
             if isRecipeVC {
                 headerView.chooseInterestsButton.isHidden = true
                 headerView.categoryCollectionView.isHidden = false
+                headerView.delegate = self
             } else {
                 headerView.chooseInterestsButton.isHidden = false
                 headerView.categoryCollectionView.isHidden = true
@@ -82,23 +88,35 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return viewModel.numberOfPosts
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityFeedCollectionViewCell else { fatalError() }
-        cell.parentVC = self
-        cell.layer.cornerRadius = 20
-        cell.userImageView.image = UIImage(named: "userImage_test")
-        cell.imageSlideShow.setImageInputs([
-            ImageSource(image: UIImage(named: "image_test")!),
-            SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!,
-            SDWebImageSource(urlString: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg")!
-        ])
-        cell.likeButton.setRightText(text: "341")
-        cell.commentButton.setRightText(text: "12")
-        cell.commentButton.isSelected = true // commentButton은 항상 초록색
+        let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
+        // MARK: - configure cell(data)
+        cell.userImageView.image = UIImage(named: "userImage_test") // 준수님이 업데이트하면 수정
+        
+        var inputSources: [InputSource] = []
+        if let urls = cellViewModel.imageURLs {
+            let placeholderImage = UIImage(systemName: "photo.on.rectangle")
+            urls.forEach {
+                inputSources.append(SDWebImageSource(url: $0, placeholder: placeholderImage))
+            }
+        }
+        cell.imageSlideShow.setImageInputs(inputSources)
+        cell.likeButton.setRightText(text: "341") // 준수님이 업데이트하면 수정
+        cell.commentButton.setRightText(text: "12") // 준수님이 업데이트하면 수정
+        cell.textView.text = cellViewModel.contents
+        
+        cell.usernameLabel.text = cellViewModel.userDisplayName
+        cell.timeLabel.text = cellViewModel.feedDate
+        cell.userVegetarianTypeLabel.text = "페스코" // 준수님이 업데이트하면 수정
+//        cell.likeButton.isSelected = cellViewModel.didUserTapLike // 준수님이 업데이트하면 수정
+        
+        // MARK: - configure cell(no data)
+        cell.parentVC = self
         cell.likeButton.tag = indexPath.item
         cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
         
@@ -108,15 +126,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         cell.commentButton.tag = indexPath.item
         cell.commentButton.addTarget(self, action: #selector(didTapCommentButton(_:)), for: .touchUpInside)
         
-        if indexPath.item == 0 {
-            cell.textView.text = "오늘 방문한 수성구 비건 식당입니다!\n가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다!\n한 번 들러보시면 좋을 것 같아요 ㅎㅎ\ndddd\ndddd"
-        } else if indexPath.item == 1 {
-            cell.textView.text = "오늘 요리한 샌드위치 레시피입니다 :)  우유 500ml, 로메인 2장, 통밀빵 1개 정도만 있으면 되더라고요!"
-        } else if indexPath.item == 2 {
-            cell.textView.text = "ddd"
-        } else {
-            cell.textView.text = "오늘 방문한 수성구 비건 식당입니다!\n가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다!\n한 번 들러보시면 좋을 것 같아요 ㅎㅎ오늘 방문한 수성구 비건 식당입니다!\n가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다!\n한 번 들러보시면 좋을 것 같아요 ㅎㅎ오늘 방문한 수성구 비건 식당입니다!\n가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다!\n한 번 들러보시면 좋을 것 같아요 ㅎㅎ"
-        }
+        cell.commentButton.isSelected = true // commentButton은 항상 초록색
         
         let targetSize = CGSize(width: cell.frame.width, height: UIView.layoutFittingCompressedSize.height)
         let estimatedHeight = ceil(cell.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height)
@@ -155,5 +165,23 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.top
+    }
+}
+
+extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
+    
+    func didFetchPostList() {
+        setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
+        collectionView.reloadData()
+    }
+    
+    func didSelectCategoryItemAt(_ index: Int) {
+        recipeCategoryID = index == 0 ? nil : index
+        viewModel.refreshFavoriteRestaurantList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+    }
+    
+    func setViewOnlyFollowing(isSelected: Bool) {
+        viewOnlyFollowing = isSelected
+        viewModel.refreshFavoriteRestaurantList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
 }

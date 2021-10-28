@@ -11,6 +11,8 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var likeButton: VLSocialButton!
     @IBOutlet weak var commentButton: VLSocialButton!
+    @IBOutlet var userVegetarianTypeLabel: UILabel!
+    @IBOutlet weak var recipeLabledView: UIView!
     
     weak var parentVC: UIViewController?
     
@@ -18,11 +20,18 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUI()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        
+    }
 }
 
 extension CommunityFeedCollectionViewCell {
     
     private func setupUI() {
+        layer.cornerRadius = 20
         userImageView.contentMode = .scaleAspectFill
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
         imageSlideShow.contentScaleMode = .scaleAspectFill
@@ -36,6 +45,8 @@ extension CommunityFeedCollectionViewCell {
         
         likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
         commentButton.setLeftImage(image: UIImage(named: "CommentLogo")!)
+        
+        recipeLabledView.layer.cornerRadius = 18
     }
     
     @objc private func didTap() {
