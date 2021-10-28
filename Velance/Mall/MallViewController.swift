@@ -11,10 +11,11 @@ class MallViewController: UIViewController, Storyboarded {
     @IBOutlet var dragIndicator: UIView!
     @IBOutlet var menuTableView: UITableView!
     
-    var mallId: Int? = 26070271
+    var mallId: Int?
     var mallName: String?
-    var isVegan: String? = "Y"
+    var isVegan: String?
     var mallAddress: String?
+    var mallThumbnailUrl: URL?
     
     private let viewModel = MallViewModel()
     
@@ -96,7 +97,7 @@ extension MallViewController: MallViewModelDelegate {
 extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.menuList.count ?? 0
+        return viewModel.menuList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -221,7 +222,6 @@ extension MallViewController {
     
     private func configure() {
 
-        
         configureMallThumbnailImageView()
         configureDragIndicator()
         configurePanGestureRecognizer()
@@ -234,12 +234,11 @@ extension MallViewController {
     private func configureMallThumbnailImageView() {
         mallThumbnailImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         mallThumbnailImageView.image = UIImage(named: "image_test")
-        #warning("수정 필요 - 이전 목록에서 url 을 가져오고 세팅해야함")
-//        mallThumbnailImageView.sd_setImage(
-//            with: productThumbnailUrl,
-//            placeholderImage: nil,
-//            options: .continueInBackground
-//        )
+        mallThumbnailImageView.sd_setImage(
+            with: mallThumbnailUrl,
+            placeholderImage: nil,
+            options: .continueInBackground
+        )
     }
     
     private func configureDragIndicator() {
