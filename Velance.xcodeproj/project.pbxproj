@@ -20,7 +20,7 @@
 		3C910FCB272A249200F6CE2F /* RecipeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCA272A249200F6CE2F /* RecipeRequestDTO.swift */; };
 		3C910FCD272A346100F6CE2F /* DailyLifeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */; };
 		3C910FCF272A34C800F6CE2F /* DailyLifeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCE272A34C800F6CE2F /* DailyLifeRequestDTO.swift */; };
-		3C910FD2272A3B8600F6CE2F /* CommunityRecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FD1272A3B8600F6CE2F /* CommunityRecipeListViewModel.swift */; };
+		3C910FDA272A89F200F6CE2F /* CommunityRecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */; };
 		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
 		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
 		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
@@ -214,7 +214,7 @@
 		3C910FCA272A249200F6CE2F /* RecipeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestDTO.swift; sourceTree = "<group>"; };
 		3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeResponseDTO.swift; sourceTree = "<group>"; };
 		3C910FCE272A34C800F6CE2F /* DailyLifeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeRequestDTO.swift; sourceTree = "<group>"; };
-		3C910FD1272A3B8600F6CE2F /* CommunityRecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommunityRecipeListViewModel.swift; path = ../../../../../../CommunityRecipeListViewModel.swift; sourceTree = "<group>"; };
+		3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecipeListViewModel.swift; sourceTree = "<group>"; };
 		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 		3C910FD0272A3B6600F6CE2F /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C910FD1272A3B8600F6CE2F /* CommunityRecipeListViewModel.swift */,
+				3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -1289,6 +1289,7 @@
 				7CAB8BA2272A4BD5006B5E08 /* SearchMallDTO.swift in Sources */,
 				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
+				3C910FDA272A89F200F6CE2F /* CommunityRecipeListViewModel.swift in Sources */,
 				7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */,
 				7CF392492726866F00E48EFB /* ProductReviewResponseDTO.swift in Sources */,
 				3C86BFBB271C0DC30011EE7A /* CommunityRecipeViewController.swift in Sources */,
@@ -1376,7 +1377,6 @@
 				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				3CC2B34C27297AB800D2BBF3 /* RecipeCategory.swift in Sources */,
 				3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */,
-				3C910FD2272A3B8600F6CE2F /* CommunityRecipeListViewModel.swift in Sources */,
 				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CCBB54C2725382D002EFB58 /* ProductManager.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
