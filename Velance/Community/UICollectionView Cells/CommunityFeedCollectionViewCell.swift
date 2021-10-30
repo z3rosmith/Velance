@@ -47,7 +47,7 @@ extension CommunityFeedCollectionViewCell {
     
     private func setupTextView() {
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 10
+        style.lineSpacing = 6
         let attributes = [NSAttributedString.Key.paragraphStyle: style]
         textView.attributedText = NSAttributedString(string: textView.text, attributes: attributes)
         textView.font = UIFont.systemFont(ofSize: 15, weight: .medium)

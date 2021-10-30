@@ -9,7 +9,10 @@ class SearchNewMallViewModel {
     
     weak var delegate: SearchNewMallViewModelDelegate?
     
-    let defaultLocation = MTMapPointGeo(latitude: 37.497866841186955, longitude: 127.02753316658152)
+    let defaultLocation = MTMapPointGeo(latitude: 35.888949648310486,
+                                       longitude: 128.6104881544238)
+
+    // 강남역 MTMapPointGeo(latitude: 37.497866841186955, longitude: 127.02753316658152)
     
     
     /// 검색어에 검색된 문서 수

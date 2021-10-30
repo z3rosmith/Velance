@@ -22,7 +22,7 @@ class CommunityDailyLifeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+        addFloatingButton()
         viewModel.delegate = self
         viewModel.fetchPostList(interestTypeIDs: nil, viewOnlyFollowing: viewOnlyFollowing)
     }
@@ -60,6 +60,27 @@ extension CommunityDailyLifeViewController {
         print("---> tag: \(tag)")
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    private func addFloatingButton() {
+        let addReviewButton = VLFloatingButton()
+        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addReviewButton.addTarget(
+            self,
+            action: #selector(pressedAddPostButton),
+            for: .touchUpInside
+        )
+        view.addSubview(addReviewButton)
+        addReviewButton.snp.makeConstraints { make in
+            make.width.height.equalTo(60)
+            make.right.equalTo(view.snp.right).offset(-25)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
+        }
+    }
+    
+    @objc private func pressedAddPostButton() {
+        let vc = NewPostViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -171,6 +192,10 @@ extension CommunityDailyLifeViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
+    func didSelectCategoryItemAt(_ index: Int) {
+        
+    }
+    
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
@@ -194,13 +219,25 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
 extension CommunityDailyLifeViewController: ChooseInterestDelegate {
     
     func didSelectInterestOptions(interestOptions: [Int]) {
-        self.interestOptions = interestOptions
-        guard let chooseInterestButton = chooseInterestButton else { return }
-        if interestOptions.count == 0 {
-            chooseInterestButton.isSelected = false
-        } else {
-            chooseInterestButton.isSelected = true
+        
+        // 일단 화면이 변경된다는 것을 보여주기 위해 아래와 같이 야메로 짜봤다. 추후 꼭 변경이 필요함
+        showProgressBar()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            dismissProgressBar()
+            self.chooseInterestButton?.isSelected = true
+            self.viewModel.posts.reverse()
+            self.collectionView.reloadData()
         }
-        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+
+        
+//
+//        self.interestOptions = interestOptions
+//        guard let chooseInterestButton = chooseInterestButton else { return }
+//        if interestOptions.count == 0 {
+//            chooseInterestButton.isSelected = false
+//        } else {
+//            chooseInterestButton.isSelected = true
+//        }
+//        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
 }

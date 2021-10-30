@@ -41,8 +41,15 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedFilterOption(_ sender: UIButton) {
         sender.isSelected.toggle()
+       
         showProgressBar()
-        viewModel.onlyMyVegetarianType = "Y"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.reverse()
+            dismissProgressBar()
+        }
+        
+
+//        viewModel.onlyMyVegetarianType = "Y" //수정 필요!!!!!
     }
     
     @objc private func pressedSearchBarView() {
@@ -53,12 +60,7 @@ extension ProductReviewListContainerViewController {
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
-        
-//        let vc = UploadNewProductViewController.instantiate()
-//        let vc = SearchNewMallViewController.instantiate()
-        let vc = NewMenuViewController.instantiate()
-//        let vc = NewPostViewController.instantiate()
-//        let vc = MallViewController.instantiate()
+        let vc = UploadNewProductViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -157,11 +157,16 @@ class ProductReviewHeaderView: UIView {
         ratingLabel.text = "\(Double(rating))"
         estimatedPriceLabel.text = "\(price) 원"
         
-        if let productAllergyGroup = productAllergyGroup {
-            productAllergyGroup.forEach { productAllergy in
-                self.allergyButtonArray[productAllergy.allergyType.allergyTypeId].isSelected.toggle()
-            }
-        }
+        //수정 필요!!!!!
+        allergyButtonArray[3].isSelected.toggle()
+        allergyButtonArray[8].isSelected.toggle()
+        
+     
+//        if let productAllergyGroup = productAllergyGroup {
+//            productAllergyGroup.forEach { productAllergy in
+//                self.allergyButtonArray[productAllergy.allergyType.allergyTypeId].isSelected.toggle()
+//            }
+//        }
         
         makeConstraints()
     }

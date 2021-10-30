@@ -7,7 +7,7 @@ protocol CommunityDailyLifeListViewModelDelegate: AnyObject {
 /// post는 recipe의 일반적인 용어로 사용하였음
 class CommunityDailyLifeListViewModel {
     weak var delegate: CommunityDailyLifeListViewModelDelegate?
-    private var posts: [DailyLifeResponseDTO] = []
+    var posts: [DailyLifeResponseDTO] = []
     var hasMore: Bool = true
     var isFetchingData: Bool = false
     private var lastPostID: Int?

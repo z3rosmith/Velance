@@ -21,6 +21,7 @@ class ProductReviewListViewModel {
         }
     }
     
+    
     var isFetchingData: Bool = false
     var cursor: Int = 0
     var onlyMyVegetarianType: String = "N" {
@@ -34,6 +35,11 @@ class ProductReviewListViewModel {
     }
     
     //MARK: - Methods
+    
+    func reverse() {
+        self.productList.reverse()
+        delegate?.didFetchProductList()
+    }
     
     //MARK: - 제품 목록 가져오기
     func fetchProductList() {

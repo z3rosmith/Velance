@@ -20,6 +20,7 @@ class CommunityRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        addFloatingButton()
         viewModel.delegate = self
         viewModel.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
@@ -58,6 +59,27 @@ extension CommunityRecipeViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    private func addFloatingButton() {
+        let addReviewButton = VLFloatingButton()
+        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addReviewButton.addTarget(
+            self,
+            action: #selector(pressedAddPostButton),
+            for: .touchUpInside
+        )
+        view.addSubview(addReviewButton)
+        addReviewButton.snp.makeConstraints { make in
+            make.width.height.equalTo(60)
+            make.right.equalTo(view.snp.right).offset(-25)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
+        }
+    }
+    
+    @objc private func pressedAddPostButton() {
+        let vc = NewPostViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension CommunityRecipeViewController: UICollectionViewDelegate {
@@ -88,7 +110,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
-        cell.userImageView.image = UIImage(named: "userImage_test") // 준수님이 업데이트하면 수정
+        cell.userImageView.image = UIImage(named: MockData.mockAvatarImageName.randomElement() ?? "userImage_test") // 준수님이 업데이트하면 수정
         
         var inputSources: [InputSource] = []
         if let urls = cellViewModel.imageURLs {
@@ -98,8 +120,10 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
             }
         }
         cell.imageSlideShow.setImageInputs(inputSources)
-        cell.likeButton.setTitle("\(cellViewModel.like)", for: .normal)
-        cell.commentButton.setTitle("\(cellViewModel.repliesCount)", for: .normal)
+        cell.likeButton.setTitle("\(Int.random(in: 1..<10))", for: .normal)
+        cell.commentButton.setTitle("\(Int.random(in: 1..<10))", for: .normal)
+//        cell.likeButton.setTitle("\(cellViewModel.like)", for: .normal)
+//        cell.commentButton.setTitle("\(cellViewModel.repliesCount)", for: .normal)
         cell.textView.text = cellViewModel.contents
         
         cell.usernameLabel.text = cellViewModel.userDisplayName
@@ -165,6 +189,11 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
+    
+    func didSelectChooseInterestButton() {
+        
+    }
+    
     
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)

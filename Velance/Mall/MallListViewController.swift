@@ -23,6 +23,12 @@ class MallListViewController: UIViewController {
         viewModel.delegate = self
         viewModel.fetchMallList(mallPoint: mallPoint)
     }
+    
+    @IBAction func pressedAddMallButton(_ sender: UIButton) {
+        let vc = SearchNewMallViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension MallListViewController {
