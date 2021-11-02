@@ -28,6 +28,8 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     private let categoryReuseIdentifier = "CategoryCollectionViewCell"
     private let similarUserReuseIdentifier = "SimilarUserCollectionViewCell"
     
+    private var selectedIndex: Int = 0
+    
     weak var delegate: CommunityCollectionHeaderViewDelegate?
     
     override func awakeFromNib() {
@@ -59,6 +61,8 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
         }
         
         similarUserCollectionView.register(UINib(nibName: "SimilarUserCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: similarUserReuseIdentifier)
+        let indexPathForFirst = IndexPath(item: 0, section: 0)
+        categoryCollectionView.selectItem(at: indexPathForFirst, animated: false, scrollPosition: .left)
     }
     
     @IBAction func viewFollowingButtonTapped(_ sender: UIButton) {
@@ -86,15 +90,14 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryReuseIdentifier, for: indexPath) as? CategoryCollectionViewCell else { fatalError() }
             
             cell.categoryLabel.text = categories[indexPath.item]
-            cell.backgroundColor = .clear
-            cell.categoryLabel.textColor = .gray
             cell.layer.cornerRadius = categoryCellHeight/2
             
-            if indexPath.item == 0 {
-                collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .init())
-                cell.isSelected = true
+            if indexPath.item == selectedIndex {
                 cell.backgroundColor = UIColor(named: Colors.foodCategorySelectedColor)!
                 cell.categoryLabel.textColor = UIColor(named: Colors.appBackgroundColor)!
+            } else {
+                cell.backgroundColor = .clear
+                cell.categoryLabel.textColor = .gray
             }
             
             return cell
@@ -125,6 +128,7 @@ extension CommunityCollectionReusableView1: UICollectionViewDelegate {
             guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
             cell.backgroundColor = UIColor(named: Colors.foodCategorySelectedColor)!
             cell.categoryLabel.textColor = UIColor(named: Colors.appBackgroundColor)!
+            selectedIndex = indexPath.item
             delegate?.didSelectCategoryItemAt(indexPath.item)
         }
     }
