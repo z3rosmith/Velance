@@ -135,13 +135,13 @@ class ProductReviewHeaderView: UIView {
     
     let allergyStackContainerView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white       // important!
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = false
         view.layer.shadowRadius = 3
         view.layer.shadowOpacity = 0.7
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.shadowColor = UIColor.darkGray.cgColor
-        view.layer.borderWidth = 0.3
+        view.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        view.layer.shadowColor = UIColor.lightGray.cgColor
         return view
     }()
 
@@ -238,10 +238,9 @@ class ProductReviewHeaderView: UIView {
         
         // 스택뷰의 스택뷰 (열 3개짜리)
         allergyStackView.snp.makeConstraints { make in
-//            make.left.right.equalToSuperview().inset(5)
-//            make.top.bottom.equalToSuperview().inset(12)
-            make.left.right.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(5)
+            make.top.bottom.equalToSuperview().inset(12)
+
         }
         
         
