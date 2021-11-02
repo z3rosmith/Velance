@@ -3,23 +3,23 @@ import Foundation
 struct ProductListResponseDTO: Decodable {
     
     let productId: Int
+    let productListReportNumber: String?
     let name: String
     let price: Int
     let rating: Double
-    let productCategory: ProductCategory
-    let productVegetarianGroups: [ProductVegetarianGroups]            // 프론트에서 쓸 일은 없을 듯 -> 내 채식유형 필터링 할 때 사용될 예정
-    let productAllergyGroups: [ProductAllergyGroups]
-    
+    let productAllergyGroups: [ProductAllergyGroups]?
+
     let user: UserDisplayModel
     let fileFolder: FileFolder
     
     enum CodingKeys: String, CodingKey {
         case productId = "product_id"
+        case productListReportNumber = "PRDLST_REPORT_NO"
         case name, price, rating
-        case productCategory, user, fileFolder, productVegetarianGroups, productAllergyGroups
+        case user, fileFolder
+        case productAllergyGroups
     }
 }
-
 
 struct ProductVegetarianGroups: Decodable {
     

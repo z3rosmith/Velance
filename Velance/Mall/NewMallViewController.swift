@@ -22,8 +22,6 @@ class NewMallViewController: UIViewController, Storyboarded {
     
     
     //MARK: - NewMallDTO Properties
-#warning("수정 필요 -> 지도에서 값을 가져와야함")
-    
     var mallId: Int?
     var placeName: String?
     var phone: String?

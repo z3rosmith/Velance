@@ -11,7 +11,6 @@ class ChooseInterestViewController: UIViewController, Storyboarded {
     @IBOutlet var interestOptionButtons: [VLGradientButton]!
     
     // 선택 완료 버튼
-    @IBOutlet weak var doneButtonImageView: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
     
     private var interestTypeIds: [Int] = []
@@ -85,18 +84,11 @@ extension ChooseInterestViewController {
     
     private func configureChooseOptionContainerView() {
         chooseOptionContainerView.layer.cornerRadius = 15
-        chooseOptionContainerView.layer.borderWidth = 0.3
+        chooseOptionContainerView.layer.borderWidth = 0.2
     }
     
 
     private func configureDoneButton() {
-        
-        let tapGesture = UITapGestureRecognizer(
-            target: self,
-            action: #selector(pressedDoneButton)
-        )
-        doneButtonImageView.addGestureRecognizer(tapGesture)
-        
         doneButton.addTarget(
             self,
             action: #selector(pressedDoneButton),

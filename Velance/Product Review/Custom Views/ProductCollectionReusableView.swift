@@ -1,10 +1,13 @@
 import UIKit
+import SDWebImage
 
 class ProductCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var similarProductCollectionView: UICollectionView!
     @IBOutlet weak var popularProductLabel: UILabel!
+    
+    private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
     static let reuseId: String = "ProductCollectionReusableView"
 
@@ -15,12 +18,10 @@ class ProductCollectionReusableView: UICollectionReusableView {
         
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("✏️ override init")
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        print("✏️ required init for ProductCollectionReusableView")
     }
 }
 
@@ -29,30 +30,38 @@ class ProductCollectionReusableView: UICollectionReusableView {
 extension ProductCollectionReusableView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.similarTasteProductList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
         guard let cell = similarProductCollectionView.dequeueReusableCell(
             withReuseIdentifier: CellID.productForSimilarTasteCVC,
             for: indexPath
         ) as? ProductForSimilarTasteCVC
-        else { return UICollectionViewCell() }
-        
-        let randomIndex: Int = Int.random(in: 0..<MockData.mockFoodImageName.count)
-        cell.productTitleLabel.text = MockData.mockFoodName[randomIndex]
-        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
-        cell.productPriceLabel.text = "\(Int.random(in: 1..<4))0,980원"
-        cell.productRatingLabel.text = "\(Int.random(in: 2..<5)).\(Int.random(in: 2..<9))"
+        else { return ProductForSimilarTasteCVC() }
+                
+        let productData = viewModel.similarTasteProductList[indexPath.row]
+    
+        cell.productTitleLabel.text = productData.name
         
         
+        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[Int.random(in: 0..<MockData.mockFoodImageName.count)]) // 수정 필요!!
         
-//        cell.productTitleLabel.text = "[\(indexPath.row)] 비건 소세지가 참 맛나 이건 정말 비건비건"
-//        cell.productVeganTypeLabel.text = "[\(indexPath.row)] 페스코,비건"
-//        cell.productPriceLabel.text = "10,000원"
-//        cell.productRatingLabel.text = "\(indexPath.row).3"
-//        cell.productImageView.image = UIImage(named: "image_test")
-//
+    
+//        cell.productImageView.sd_setImage(with: URL(string: productData.fileFolder.files[0].path)!, completed: nil)
+        cell.productPriceLabel.text = "\(productData.price)원"
+        cell.productRatingLabel.text = String(format: "%.1f", productData.rating)
+        
+        
+        
+//        let randomIndex: Int = Int.random(in: 0..<MockData.mockFoodImageName.count)
+//        cell.productTitleLabel.text = MockData.mockFoodName[randomIndex]
+//        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
+//        cell.productPriceLabel.text = "\(Int.random(in: 1..<4))0,980원"
+//        cell.productRatingLabel.text = "\(Int.random(in: 2..<5)).\(Int.random(in: 2..<9))"
+        
+
         return cell
     }
     
@@ -60,12 +69,6 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         
 
     }
-}
-
-//MARK: - UICollectionViewDelegate
-
-extension ProductCollectionReusableView: UICollectionViewDelegate {
-    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
@@ -78,6 +81,20 @@ extension ProductCollectionReusableView: UICollectionViewDelegateFlowLayout {
 
 }
 
+//MARK: - ProductReviewListDelegate
+
+extension ProductCollectionReusableView: ProductReviewListDelegate {
+    
+    func didFetchSimilarTasteProductList() {
+        print("✏️ didFetchSimilarTasteProductList: \(viewModel.similarTasteProductList)")
+        similarProductCollectionView.reloadData()
+    }
+    
+    func failedFetchingProductList(with error: NetworkError) {
+       
+    }
+}
+
 //MARK: - Initialization & UI Configuration
 
 extension ProductCollectionReusableView {
@@ -85,6 +102,8 @@ extension ProductCollectionReusableView {
     func configure() {
         configureLabel()
         configureCollectionView()
+        viewModel.delegate = self
+        viewModel.fetchSimilarTasteProductList()
     }
     
     func configureLabel() {
@@ -98,10 +117,8 @@ extension ProductCollectionReusableView {
             value: UIColor.blue,
             range: range
         )
-    
         
         categoryLabel.attributedText = attributedString
-
 
         popularProductLabel.text = "인기있는 제품"
         [categoryLabel, popularProductLabel].forEach { label in

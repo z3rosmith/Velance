@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,19 +29,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서브웨이 대구 경북대점" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-id-v4O">
-                                <rect key="frame" x="118" y="8" width="163" height="19.5"/>
+                                <rect key="frame" x="122" y="8" width="153" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건 메뉴 포함" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y14-qk-qpg">
-                                <rect key="frame" x="291" y="8" width="68" height="22"/>
+                                <rect key="frame" x="285" y="8" width="74" height="22"/>
                                 <color key="backgroundColor" name="CDCF67"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="3ML-hB-rtl"/>
+                                    <constraint firstAttribute="width" constant="74" id="3ML-hB-rtl"/>
                                     <constraint firstAttribute="height" constant="22" id="PTT-v6-aHv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,13 +57,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구시 북구 산격동 23-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bS-2g-Z9w">
-                                <rect key="frame" x="118" y="37.5" width="119.5" height="14.5"/>
+                                <rect key="frame" x="122" y="37.5" width="119.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건 메뉴: 12개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-1Y-dkw">
-                                <rect key="frame" x="118" y="110.5" width="99.5" height="19.5"/>
+                                <rect key="frame" x="122" y="110.5" width="99.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -77,10 +77,10 @@
                             <constraint firstAttribute="trailing" secondItem="y14-qk-qpg" secondAttribute="trailing" constant="15" id="Dud-CX-t4r"/>
                             <constraint firstItem="1bS-2g-Z9w" firstAttribute="top" secondItem="z3a-id-v4O" secondAttribute="bottom" constant="10" id="HnI-hn-MhS"/>
                             <constraint firstAttribute="trailing" secondItem="NVA-fX-8sd" secondAttribute="trailing" constant="15" id="MHW-yv-WTQ"/>
-                            <constraint firstItem="1bS-2g-Z9w" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="8" id="PBQ-B4-Mw8"/>
+                            <constraint firstItem="1bS-2g-Z9w" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="12" id="PBQ-B4-Mw8"/>
                             <constraint firstAttribute="bottom" secondItem="uvD-I7-U3r" secondAttribute="bottom" id="Rhw-sg-WZe"/>
-                            <constraint firstItem="z3a-id-v4O" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="8" id="Son-ch-Jsq"/>
-                            <constraint firstItem="H3L-1Y-dkw" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="8" id="bfA-ZB-fSX"/>
+                            <constraint firstItem="z3a-id-v4O" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="12" id="Son-ch-Jsq"/>
+                            <constraint firstItem="H3L-1Y-dkw" firstAttribute="leading" secondItem="uvD-I7-U3r" secondAttribute="trailing" constant="12" id="bfA-ZB-fSX"/>
                             <constraint firstItem="uvD-I7-U3r" firstAttribute="leading" secondItem="WoN-DO-knb" secondAttribute="leading" id="cfd-Li-MWH"/>
                             <constraint firstItem="y14-qk-qpg" firstAttribute="top" secondItem="WoN-DO-knb" secondAttribute="top" constant="8" id="jsW-M8-C8v"/>
                             <constraint firstItem="y14-qk-qpg" firstAttribute="leading" secondItem="z3a-id-v4O" secondAttribute="trailing" constant="10" id="qIG-qB-LOm"/>

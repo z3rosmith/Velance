@@ -133,6 +133,18 @@ class ProductReviewHeaderView: UIView {
         return stackView
     }()
     
+    let allergyStackContainerView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 15
+        view.layer.masksToBounds = false
+        view.layer.shadowRadius = 3
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.layer.borderWidth = 0.3
+        return view
+    }()
+
     
     let reviewLabel: UILabel = {
         let label = UILabel()
@@ -163,6 +175,7 @@ class ProductReviewHeaderView: UIView {
             }
         }
         
+        
         makeConstraints()
     }
     
@@ -173,8 +186,11 @@ class ProductReviewHeaderView: UIView {
         addSubview(ratingLabel)
         addSubview(priceLabelStackView)
         addSubview(allergyGuideLabel)
-        addSubview(allergyStackView)
+        addSubview(allergyStackContainerView)
+        allergyStackContainerView.addSubview(allergyStackView)
         addSubview(reviewLabel)
+        
+        allergyStackContainerView.backgroundColor = .white
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(12)
@@ -204,16 +220,32 @@ class ProductReviewHeaderView: UIView {
             make.right.equalTo(self.snp.right).offset(-Metrics.labelPadding)
         }
         
-        allergyStackView.snp.makeConstraints { make in
-            make.top.equalTo(allergyGuideLabel.snp.bottom).offset(15)
-            make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
-            make.right.equalTo(self.snp.right).offset(-Metrics.labelPadding)
-        }
         
         reviewLabel.snp.makeConstraints { make in
-            make.top.equalTo(allergyStackView.snp.bottom).offset(10)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
+            make.bottom.equalTo(self.snp.bottom).offset(-4)
         }
+        
+ 
+
+//        // 스택 컨테이너뷰
+        allergyStackContainerView.snp.makeConstraints { make in
+            make.top.equalTo(allergyGuideLabel.snp.bottom).offset(6)
+            make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
+            make.right.equalTo(self.snp.right).offset(-Metrics.labelPadding)
+            make.bottom.equalTo(reviewLabel.snp.top).offset(-6)
+        }
+        
+        // 스택뷰의 스택뷰 (열 3개짜리)
+        allergyStackView.snp.makeConstraints { make in
+//            make.left.right.equalToSuperview().inset(5)
+//            make.top.bottom.equalToSuperview().inset(12)
+            make.left.right.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(20)
+        }
+        
+        
+
     }
 }
 

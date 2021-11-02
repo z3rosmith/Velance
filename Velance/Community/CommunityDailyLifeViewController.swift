@@ -22,7 +22,7 @@ class CommunityDailyLifeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+        addFloatingButton()
         viewModel.delegate = self
         viewModel.fetchPostList(interestTypeIDs: nil, viewOnlyFollowing: viewOnlyFollowing)
     }
@@ -60,6 +60,27 @@ extension CommunityDailyLifeViewController {
         print("---> tag: \(tag)")
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    private func addFloatingButton() {
+        let addReviewButton = VLFloatingButton()
+        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addReviewButton.addTarget(
+            self,
+            action: #selector(pressedAddPostButton),
+            for: .touchUpInside
+        )
+        view.addSubview(addReviewButton)
+        addReviewButton.snp.makeConstraints { make in
+            make.width.height.equalTo(60)
+            make.right.equalTo(view.snp.right).offset(-25)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
+        }
+    }
+    
+    @objc private func pressedAddPostButton() {
+        let vc = NewPostViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -171,6 +192,10 @@ extension CommunityDailyLifeViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
+    func didSelectCategoryItemAt(_ index: Int) {
+        
+    }
+    
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
@@ -194,6 +219,7 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
 extension CommunityDailyLifeViewController: ChooseInterestDelegate {
     
     func didSelectInterestOptions(interestOptions: [Int]) {
+
         self.interestOptions = interestOptions
         guard let chooseInterestButton = chooseInterestButton else { return }
         if interestOptions.count == 0 {

@@ -1,7 +1,6 @@
 import UIKit
 import SnapKit
 
-
 class TestKakaoMapViewController: UIViewController {
 
     var mapView: MTMapView?
@@ -15,20 +14,21 @@ class TestKakaoMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
-
+        
     }
     
     func configureMapView() {
-//        mapView.delegate = self
-//        mapView.baseMapType = .standard
-//        mapView.setMapCenter(
-//            MTMapPoint(geoCoord: defaultLocation),
-//            zoomLevel: 1,
-//            animated: true
-//        )
-//        
-//        mapView.showCurrentLocationMarker = true
-//        mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
+        mapView = MTMapView()
+        mapView?.delegate = self
+        mapView?.baseMapType = .standard
+        mapView?.setMapCenter(
+            MTMapPoint(geoCoord: defaultLocation),
+            zoomLevel: 1,
+            animated: true
+        )
+        
+        mapView?.showCurrentLocationMarker = true
+        mapView?.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
         
         
         pointMarker.markerType = .customImage

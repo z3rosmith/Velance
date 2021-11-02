@@ -139,6 +139,8 @@
 		7CAB8BAA272AB035006B5E08 /* MallMenuResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */; };
 		7CAB8BAC272AB381006B5E08 /* MallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */; };
 		7CAEEB132710335D0049F257 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEEB122710335D0049F257 /* UserOptions.swift */; };
+		7CBDF4B22730E59600E657D9 /* ChooseRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */; };
+		7CBDF4B42731037C00E657D9 /* SimilarTasteProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */; };
 		7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */; };
 		7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
@@ -349,6 +351,8 @@
 		7CAB8BA9272AB034006B5E08 /* MallMenuResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallMenuResponseDTO.swift; sourceTree = "<group>"; };
 		7CAB8BAB272AB381006B5E08 /* MallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallViewModel.swift; sourceTree = "<group>"; };
 		7CAEEB122710335D0049F257 /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
+		7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionViewController.swift; sourceTree = "<group>"; };
+		7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarTasteProductDTO.swift; sourceTree = "<group>"; };
 		7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
 		7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -767,6 +771,7 @@
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
+				7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -1005,6 +1010,7 @@
 			isa = PBXGroup;
 			children = (
 				7CCBB54F27253BAA002EFB58 /* ProductListResponseDTO.swift */,
+				7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */,
 				7CF392482726866F00E48EFB /* ProductReviewResponseDTO.swift */,
 			);
 			path = Product;
@@ -1321,6 +1327,7 @@
 				3C2052B8272AAC10009BBD3B /* MallResponseDTO.swift in Sources */,
 				3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */,
 				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
+				7CBDF4B42731037C00E657D9 /* SimilarTasteProductDTO.swift in Sources */,
 				7CAB8BA0272A4B9B006B5E08 /* MapManager.swift in Sources */,
 				3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */,
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
@@ -1395,6 +1402,7 @@
 				7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */,
 				3CD341B32727D8A300ADA745 /* CommunityCollectionReusableView2.swift in Sources */,
 				3CCFE7E1271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.swift in Sources */,
+				7CBDF4B22730E59600E657D9 /* ChooseRegionViewController.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */,
@@ -1582,7 +1590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -1609,7 +1617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

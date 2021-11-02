@@ -23,4 +23,6 @@ struct UserOptions {
                                            "견과류", "갑각류", "아황산류", "키위", "토마토", "복숭아"]
     
     static let productCategory: [String] = [ "즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
+    
+    static let regionOptions: [String] = ["서울", "부산", "대구", "대전", "인천", "울산", "광주"]
 }

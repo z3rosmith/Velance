@@ -32,17 +32,22 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         super.viewWillDisappear(animated)
         dismissProgressBar()
     }
-    
 }
 
 //MARK: - IBActions & Target Methods
 
 extension ProductReviewListContainerViewController {
     
-    @IBAction func pressedFilterOption(_ sender: UIButton) {
+    @IBAction func pressedFilterMyAllergyButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         showProgressBar()
-        viewModel.onlyMyVegetarianType = "Y"
+        viewModel.onlyMyVegetarianType = viewModel.onlyMyVegetarianType == "N" ? "Y" : "N"
+    }
+    
+    @IBAction func pressedFilterMyVegetarianTypeButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        showProgressBar()
+        viewModel.onlyMyAllergyType = viewModel.onlyMyAllergyType == "N" ? "Y" : "N"
     }
     
     @objc private func pressedSearchBarView() {
@@ -54,12 +59,14 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
         
+        //Test
+        let vc = ChooseRegionViewController.instantiate()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+        
 //        let vc = UploadNewProductViewController.instantiate()
-//        let vc = SearchNewMallViewController.instantiate()
-        let vc = NewMenuViewController.instantiate()
-//        let vc = NewPostViewController.instantiate()
-//        let vc = MallViewController.instantiate()
-        navigationController?.pushViewController(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func refreshCollectionView() {
@@ -151,13 +158,11 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            
             let headerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: "\(ProductCollectionReusableView.self)",
                 for: indexPath
             )
-            
             guard let productHeaderView = headerView as? ProductCollectionReusableView
             else { return headerView }
             
