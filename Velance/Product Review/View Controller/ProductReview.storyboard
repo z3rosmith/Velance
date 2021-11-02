@@ -69,7 +69,7 @@
                                         </state>
                                         <state key="selected" image="checkmark.square.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="pressedFilterOption:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiJ-zs-UK0"/>
+                                            <action selector="pressedFilterMyAllergyButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Aao-6t-A9f"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-xg-gPh">

@@ -314,7 +314,7 @@ extension ProductReviewViewController {
         reviewTableView.separatorStyle = .none
         reviewTableView.allowsSelection = false
         
-        let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 265))
+        let headerView = ProductReviewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 250))
         
         headerView.configure(
             productName: self.productName ?? "로딩 중..",
