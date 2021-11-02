@@ -15,7 +15,6 @@ class SearchMallViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var confirmButton: UIButton!
     
-    private let pointMarker = MTMapPOIItem()
     private var currentRadius: Double = 500
     private var currentLocation: MTMapPointGeo = MTMapPointGeo(latitude: 35.8920020620379, longitude: 128.60880797103496)
     private lazy var currentRadiusButton: UIButton = rangeStackView.subviews.first as! UIButton
@@ -66,15 +65,6 @@ extension SearchMallViewController {
             zoomLevel: 1,
             animated: true
         )
-        
-        pointMarker.markerType = .customImage
-        pointMarker.showAnimationType = .springFromGround
-        pointMarker.customImageName = "mapMarker"
-        pointMarker.markerSelectedType = .customImage
-        pointMarker.customImageAnchorPointOffset = MTMapImageOffset(offsetX: 0, offsetY: 0)
-        pointMarker.draggable = false
-        
-        mapView.add(pointMarker)
     }
     
     @objc private func didTapRadiusButton(_ sender: UIButton) {
@@ -106,14 +96,12 @@ extension SearchMallViewController: MTMapViewDelegate {
                 animated: true
             )
             mapView.currentLocationTrackingMode = .off
-            pointMarker.mapPoint = MTMapPoint(geoCoord: currentLocation)
         }
     }
     
     func mapView(_ mapView: MTMapView!, centerPointMovedTo mapCenterPoint: MTMapPoint!) {
         let currentLocation = mapCenterPoint.mapPointGeo()
         print("✏️ new latitude: \(currentLocation.latitude) and new longitude: \(currentLocation.longitude)")
-        pointMarker.mapPoint = MTMapPoint(geoCoord: currentLocation)
     }
     
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {

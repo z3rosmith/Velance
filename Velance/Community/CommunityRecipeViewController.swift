@@ -170,7 +170,7 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.frame.width - sectionInsets.left*2
+        let width: CGFloat = collectionView.frame.width - sectionInsets.left - sectionInsets.right
         let height: CGFloat = cellHeights[indexPath.item]
         return CGSize(width: width, height: height)
     }
