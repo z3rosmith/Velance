@@ -219,25 +219,14 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
 extension CommunityDailyLifeViewController: ChooseInterestDelegate {
     
     func didSelectInterestOptions(interestOptions: [Int]) {
-        
-        // 일단 화면이 변경된다는 것을 보여주기 위해 아래와 같이 야메로 짜봤다. 추후 꼭 변경이 필요함
-        showProgressBar()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            dismissProgressBar()
-            self.chooseInterestButton?.isSelected = true
-            self.viewModel.posts.reverse()
-            self.collectionView.reloadData()
-        }
 
-        
-//
-//        self.interestOptions = interestOptions
-//        guard let chooseInterestButton = chooseInterestButton else { return }
-//        if interestOptions.count == 0 {
-//            chooseInterestButton.isSelected = false
-//        } else {
-//            chooseInterestButton.isSelected = true
-//        }
-//        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+        self.interestOptions = interestOptions
+        guard let chooseInterestButton = chooseInterestButton else { return }
+        if interestOptions.count == 0 {
+            chooseInterestButton.isSelected = false
+        } else {
+            chooseInterestButton.isSelected = true
+        }
+        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
 }

@@ -3,22 +3,27 @@ import Foundation
 protocol SearchNewMallViewModelDelegate: AnyObject {
     func didFetchSearchResults()
     func failedFetchingSearchResults(with error: NetworkError)
+    func didSetCurrentLocation(location: MTMapPointGeo?)
 }
 
 class SearchNewMallViewModel {
     
     weak var delegate: SearchNewMallViewModelDelegate?
     
-    let defaultLocation = MTMapPointGeo(latitude: 35.888949648310486,
-                                       longitude: 128.6104881544238)
+    let defaultLocation = MTMapPointGeo(latitude: 37.497866841186955,
+                                       longitude: 127.02753316658152)
 
-    // 강남역 MTMapPointGeo(latitude: 37.497866841186955, longitude: 127.02753316658152)
-    
+    var currentLocation: MTMapPointGeo? {
+        didSet {
+            print("✏️ currentLocation has been set to: \(currentLocation)")
+            delegate?.didSetCurrentLocation(location: currentLocation)
+        }
+    }
     
     /// 검색어에 검색된 문서 수
     var totalCount: Int = 0
     
-    /// /// 장소명, 업체명
+    /// 장소명, 업체명
     var placeName: [String] = []
     
     var address: [String] = []
@@ -34,7 +39,12 @@ class SearchNewMallViewModel {
     func search(with keyword: String) {
         
         resetSearchResults()
-        let searchModel = SearchMallDTO(query: keyword)
+        
+        let longitude: String = currentLocation?.longitude.description ?? ""
+        let latitude: String = currentLocation?.latitude.description ?? ""
+        
+        let searchModel = SearchMallDTO(query: keyword, x: longitude, y: latitude)
+//        let searchModel = SearchMallDTO(query: keyword)
         
         MapManager.shared.searchByKeyword(with: searchModel) { [weak self] result in
             guard let self = self else { return }
@@ -79,7 +89,6 @@ class SearchNewMallViewModel {
     }
     
     func resetSearchResults() {
-        
         placeName.removeAll()
         address.removeAll()
     }

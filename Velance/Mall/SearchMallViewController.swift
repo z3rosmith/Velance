@@ -60,6 +60,13 @@ extension SearchMallViewController {
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
         
+        // 내가 추가한 부분
+        mapView.setMapCenter(
+            MTMapPoint(geoCoord: currentLocation),
+            zoomLevel: 1,
+            animated: true
+        )
+        
         pointMarker.markerType = .customImage
         pointMarker.showAnimationType = .springFromGround
         pointMarker.customImageName = "mapMarker"

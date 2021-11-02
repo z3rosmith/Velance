@@ -12,10 +12,10 @@ struct SearchMallDTO {
     let y: String = "35.888949648310486"
     
     /// 중심 좌표부터의 반경거리 - 미터 기준
-    let radius: String = "1000"
+    let radius: String = "10000"
     
     /// 사용자 검색 매장
-    var query: String
+    var query: String?
     
     init(query: String) {
         
@@ -28,10 +28,18 @@ struct SearchMallDTO {
         parameters["query"] = self.query
     }
     
-    /// API Parameters
+    // 아래가 실제 쓰이는 것
+    init(query: String, x: String, y: String) {
+        
+        /// Initialize parameters
+        parameters["x"] = x
+        parameters["y"] = y
+        parameters["radius"] = self.radius
+        parameters["query"] = query
+    }
+
     var parameters: Parameters = [:]
     
-    /// HTTP Headers
     let headers: HTTPHeaders = [
         "Authorization": "KakaoAK \(KakaoAPIKey.API_Key)"
     ]

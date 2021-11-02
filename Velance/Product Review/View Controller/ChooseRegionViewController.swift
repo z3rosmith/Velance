@@ -1,34 +1,34 @@
 import UIKit
 
-protocol ChooseInterestDelegate: AnyObject {
-    func didSelectInterestOptions(interestOptions: [Int])
+protocol ChooseRegionDelegate: AnyObject {
+    func didChooseRegion()
 }
 
-class ChooseInterestViewController: UIViewController, Storyboarded {
+class ChooseRegionViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var chooseOptionContainerView: UIView!
-    @IBOutlet var interestOptionButtons: [VLGradientButton]!
+    @IBOutlet weak var chooseRegionContainerView: UIView!
+    @IBOutlet var regionOptionButtons: [VLGradientButton]!
     
-    // 선택 완료 버튼
     @IBOutlet weak var doneButton: UIButton!
     
-    private var interestTypeIds: [Int] = []
+    private var selectedRegionTypeId: Int = 1
     
-    weak var delegate: ChooseInterestDelegate?
+    weak var delegate: ChooseRegionDelegate?
     
     static var storyboardName: String {
-        StoryboardName.community
+        StoryboardName.productReview
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+
     }
 }
+
 //MARK: - IBActions & Target Methods
 
-extension ChooseInterestViewController {
+extension ChooseRegionViewController {
     
     @IBAction func pressedOptionButton(_ sender: UIButton) {
         
@@ -43,27 +43,27 @@ extension ChooseInterestViewController {
     }
     
     @objc private func pressedDoneButton() {
-        
-        interestOptionButtons.forEach { button in
+        print("✏️ pressedDoneButton")
+        regionOptionButtons.forEach { button in
             if button.isSelected {
-                interestTypeIds.append(button.tag)
+                selectedRegionTypeId = button.tag
             }
         }
-        delegate?.didSelectInterestOptions(interestOptions: interestTypeIds)
+        delegate?.didChooseRegion()
         dismiss(animated: true)
     }
 }
 
+
 //MARK: - Initialization & Configuration
 
-extension ChooseInterestViewController {
+extension ChooseRegionViewController {
     
     private func configure() {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         configureContainerView()
-        configureInterestOptionButtons()
+        configureRegionOptionButtons()
         configureChooseOptionContainerView()
-        
         configureDoneButton()
     }
     
@@ -71,20 +71,20 @@ extension ChooseInterestViewController {
         containerView.layer.cornerRadius = 30
     }
     
-    private func configureInterestOptionButtons() {
+    private func configureRegionOptionButtons() {
         var index: Int = 1
-        interestOptionButtons.forEach { button in
+        regionOptionButtons.forEach { button in
             button.tag = index
             button.backgroundColor = .white
-            button.setTitle(UserOptions.interestOptions[index - 1], for: .normal)
+            button.setTitle(UserOptions.regionOptions[index - 1], for: .normal)
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
     }
     
     private func configureChooseOptionContainerView() {
-        chooseOptionContainerView.layer.cornerRadius = 15
-        chooseOptionContainerView.layer.borderWidth = 0.3
+        chooseRegionContainerView.layer.cornerRadius = 15
+        chooseRegionContainerView.layer.borderWidth = 0.3
     }
     
 
@@ -95,5 +95,4 @@ extension ChooseInterestViewController {
             for: .touchUpInside
         )
     }
-    
 }

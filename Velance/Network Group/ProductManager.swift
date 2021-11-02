@@ -12,6 +12,7 @@ class ProductManager {
     
     let productAPIBaseUrl           = "\(API.baseUrl)product"
     let productReviewAPIBaseUrl     = "\(API.baseUrl)review"
+    let getSimilarTasteProductUrl   = "\(API.baseUrl)product/recommend/taste/"
     
     //MARK: - 제품 목록 가져오기
     func getProducts(
@@ -21,13 +22,13 @@ class ProductManager {
         completion: @escaping ((Result<[ProductListResponseDTO], NetworkError>) -> Void)
     ) {
         
-        var parameters: Parameters = [
+        let parameters: Parameters = [
             "request_user_id": User.shared.userUid,
             "page": page,
             "product_category_id": productCategoryId,
             "only_my_vegetarian_type": onlyMyVegetarianType
         ]
-
+        
         AF.request(
             productAPIBaseUrl,
             method: .get,
@@ -53,6 +54,41 @@ class ProductManager {
                 
             }
     }
+    
+    
+    //MARK: - 나랑 입맛이 비슷한 사용자의 추천 목록 가져오기
+    func getSimilarTasteProducts(
+        completion: @escaping ((Result<[SimilarTasteProductDTO], NetworkError>) -> Void)
+    ) {
+        
+        let url = getSimilarTasteProductUrl + User.shared.userUid
+        
+        AF.request(
+            url,
+            method: .get,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    do {
+                        let decodedData = try JSONDecoder().decode([SimilarTasteProductDTO].self, from: response.data!)
+                        completion(.success(decodedData))
+                    } catch {
+                        print("❗️ ProductManager - getSimilarTasteProduct ERROR: \(error)")
+                        completion(.failure(.internalError))
+                    }
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data)
+                    
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    
     
     //MARK: - 제품 검색
     func searchProducts(

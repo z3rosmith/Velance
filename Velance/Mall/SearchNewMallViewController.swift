@@ -8,6 +8,7 @@ class SearchNewMallViewController: UIViewController, Storyboarded {
     
     var mapPoint: MTMapPoint?
     var pointItem: MTMapPOIItem?
+    var currentLocation: MTMapPointGeo?
     
     private let viewModel = SearchNewMallViewModel()
     
@@ -18,6 +19,7 @@ class SearchNewMallViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        viewModel.currentLocation = currentLocation
     }
     
 }
@@ -120,12 +122,21 @@ extension SearchNewMallViewController: SearchNewMallViewModelDelegate {
         searchModalVC.searchResultCount = viewModel.placeName.count
         searchModalVC.delegate = self
         self.presentPanModal(searchModalVC)
-//        presentPanModal(searchModalVC)
     }
     
     func failedFetchingSearchResults(with error: NetworkError) {
         print("❗️ failedFetchingSearchResults")
         showSimpleBottomAlert(with: error.errorDescription)
+    }
+    
+    func didSetCurrentLocation(location: MTMapPointGeo?) {
+        if let location = location {
+            mapView.setMapCenter(
+                MTMapPoint(geoCoord: location),
+                zoomLevel: 1,
+                animated: true
+            )
+        }
     }
 }
 
@@ -220,9 +231,6 @@ extension SearchNewMallViewController {
             zoomLevel: 1,
             animated: true
         )
-        
-        
-        
     }
 }
 

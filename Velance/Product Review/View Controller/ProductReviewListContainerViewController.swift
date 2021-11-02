@@ -32,7 +32,6 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         super.viewWillDisappear(animated)
         dismissProgressBar()
     }
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -43,13 +42,7 @@ extension ProductReviewListContainerViewController {
         sender.isSelected.toggle()
        
         showProgressBar()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.reverse()
-            dismissProgressBar()
-        }
-        
-
-//        viewModel.onlyMyVegetarianType = "Y" //수정 필요!!!!!
+        viewModel.onlyMyVegetarianType = "Y" //수정 필요!!!!!
     }
     
     @objc private func pressedSearchBarView() {
@@ -60,8 +53,15 @@ extension ProductReviewListContainerViewController {
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
-        let vc = UploadNewProductViewController.instantiate()
-        navigationController?.pushViewController(vc, animated: true)
+        
+        //Test
+        let vc = ChooseRegionViewController.instantiate()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+        
+//        let vc = UploadNewProductViewController.instantiate()
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func refreshCollectionView() {
@@ -153,13 +153,11 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            
             let headerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: "\(ProductCollectionReusableView.self)",
                 for: indexPath
             )
-            
             guard let productHeaderView = headerView as? ProductCollectionReusableView
             else { return headerView }
             

@@ -726,7 +726,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="58"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGz-Lp-6o0" userLabel="Done Button">
-                                                <rect key="frame" x="128.5" y="12" width="73" height="34"/>
+                                                <rect key="frame" x="12" y="12" width="306" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -736,11 +736,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Trx-TI-j09" firstAttribute="top" secondItem="w1X-dA-Qps" secondAttribute="top" id="AOr-71-oNy"/>
+                                            <constraint firstAttribute="trailing" secondItem="iGz-Lp-6o0" secondAttribute="trailing" constant="12" id="Acl-D5-kay"/>
                                             <constraint firstAttribute="trailing" secondItem="Trx-TI-j09" secondAttribute="trailing" id="Aib-pC-Kt2"/>
                                             <constraint firstItem="iGz-Lp-6o0" firstAttribute="centerY" secondItem="w1X-dA-Qps" secondAttribute="centerY" id="DWk-3A-cx6"/>
                                             <constraint firstAttribute="bottom" secondItem="Trx-TI-j09" secondAttribute="bottom" id="PDk-d8-raD"/>
                                             <constraint firstItem="Trx-TI-j09" firstAttribute="leading" secondItem="w1X-dA-Qps" secondAttribute="leading" id="RMR-dB-XJ9"/>
                                             <constraint firstItem="iGz-Lp-6o0" firstAttribute="centerX" secondItem="w1X-dA-Qps" secondAttribute="centerX" id="ROY-xX-VhO"/>
+                                            <constraint firstItem="iGz-Lp-6o0" firstAttribute="leading" secondItem="w1X-dA-Qps" secondAttribute="leading" constant="12" id="tYC-pn-9uO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -771,7 +773,6 @@
                         <outlet property="chooseOptionContainerView" destination="k0D-Ie-TfS" id="co6-8z-3Wg"/>
                         <outlet property="containerView" destination="pgD-5F-W36" id="B8r-xH-yRZ"/>
                         <outlet property="doneButton" destination="iGz-Lp-6o0" id="AGz-mv-PcJ"/>
-                        <outlet property="doneButtonImageView" destination="Trx-TI-j09" id="n0b-4c-MGO"/>
                         <outletCollection property="interestOptionButtons" destination="ALD-g9-qPu" collectionClass="NSMutableArray" id="nBn-A9-nOf"/>
                         <outletCollection property="interestOptionButtons" destination="enl-Ok-lVd" collectionClass="NSMutableArray" id="7q7-MB-IQT"/>
                         <outletCollection property="interestOptionButtons" destination="9ON-AI-1TT" collectionClass="NSMutableArray" id="k86-cw-rfe"/>
