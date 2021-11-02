@@ -82,7 +82,7 @@
                                         </state>
                                         <state key="selected" image="checkmark.square.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="pressedFilterOption:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LCB-XU-jUI"/>
+                                            <action selector="pressedFilterMyVegetarianTypeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Yu-Jz-InM"/>
                                         </connections>
                                     </button>
                                 </subviews>

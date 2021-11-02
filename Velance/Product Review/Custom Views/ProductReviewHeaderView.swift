@@ -138,14 +138,12 @@ class ProductReviewHeaderView: UIView {
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = false
         view.layer.shadowRadius = 3
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 10, height: 10)
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.shadowColor = UIColor.darkGray.cgColor
         view.layer.borderWidth = 0.3
         return view
     }()
-    
-    
 
     
     let reviewLabel: UILabel = {
@@ -177,6 +175,7 @@ class ProductReviewHeaderView: UIView {
             }
         }
         
+        
         makeConstraints()
     }
     
@@ -190,6 +189,8 @@ class ProductReviewHeaderView: UIView {
         addSubview(allergyStackContainerView)
         allergyStackContainerView.addSubview(allergyStackView)
         addSubview(reviewLabel)
+        
+        allergyStackContainerView.backgroundColor = .white
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(12)
@@ -237,8 +238,10 @@ class ProductReviewHeaderView: UIView {
         
         // 스택뷰의 스택뷰 (열 3개짜리)
         allergyStackView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(5)
-            make.top.bottom.equalToSuperview().inset(12)
+//            make.left.right.equalToSuperview().inset(5)
+//            make.top.bottom.equalToSuperview().inset(12)
+            make.left.right.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(20)
         }
         
         

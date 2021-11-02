@@ -38,11 +38,16 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
 
 extension ProductReviewListContainerViewController {
     
-    @IBAction func pressedFilterOption(_ sender: UIButton) {
+    @IBAction func pressedFilterMyAllergyButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-       
         showProgressBar()
-        viewModel.onlyMyVegetarianType = "Y" //수정 필요!!!!!
+        viewModel.onlyMyVegetarianType = viewModel.onlyMyVegetarianType == "N" ? "Y" : "N"
+    }
+    
+    @IBAction func pressedFilterMyVegetarianTypeButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        showProgressBar()
+        viewModel.onlyMyAllergyType = viewModel.onlyMyAllergyType == "N" ? "Y" : "N"
     }
     
     @objc private func pressedSearchBarView() {

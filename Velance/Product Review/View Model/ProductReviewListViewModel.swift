@@ -30,13 +30,20 @@ class ProductReviewListViewModel {
             fetchProductList()
         }
     }
-    
-    
+
     var isFetchingData: Bool = false
     var cursor: Int = 0
+    
+    // 알러지유발식품 제외
+    var onlyMyAllergyType: String = "N" {
+        didSet { fetchProductList() }
+    }
+    
+    // 내 채식유형이 먹은 제품들
     var onlyMyVegetarianType: String = "N" {
         didSet { fetchProductList() }
     }
+
     
     //MARK: - Initialization
     
@@ -59,8 +66,9 @@ class ProductReviewListViewModel {
         productManager?.getProducts(
             page: cursor,
             productCategoryId: selectedProductCategory,
-            onlyMyVegetarianType: onlyMyVegetarianType)
-        { [weak self] result in
+            onlyMyVegetarianType: onlyMyVegetarianType,
+            onlyMyAllergyType: onlyMyAllergyType
+        ) { [weak self] result in
             dismissProgressBar()
             guard let self = self else { return }
             switch result {

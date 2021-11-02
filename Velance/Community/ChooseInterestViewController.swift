@@ -84,7 +84,7 @@ extension ChooseInterestViewController {
     
     private func configureChooseOptionContainerView() {
         chooseOptionContainerView.layer.cornerRadius = 15
-        chooseOptionContainerView.layer.borderWidth = 0.3
+        chooseOptionContainerView.layer.borderWidth = 0.2
     }
     
 

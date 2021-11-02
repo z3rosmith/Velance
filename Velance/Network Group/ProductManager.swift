@@ -18,7 +18,8 @@ class ProductManager {
     func getProducts(
         page: Int,
         productCategoryId: Int,
-        onlyMyVegetarianType: String = "N",
+        onlyMyVegetarianType: String,
+        onlyMyAllergyType: String,
         completion: @escaping ((Result<[ProductListResponseDTO], NetworkError>) -> Void)
     ) {
         
@@ -26,7 +27,8 @@ class ProductManager {
             "request_user_id": User.shared.userUid,
             "page": page,
             "product_category_id": productCategoryId,
-            "only_my_vegetarian_type": onlyMyVegetarianType
+            "only_my_vegetarian_type": onlyMyVegetarianType,
+            "only_my_allergy_type": onlyMyAllergyType
         ]
         
         AF.request(

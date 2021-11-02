@@ -22,7 +22,7 @@ class ChooseRegionViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configure()
     }
 }
 
@@ -31,19 +31,11 @@ class ChooseRegionViewController: UIViewController, Storyboarded {
 extension ChooseRegionViewController {
     
     @IBAction func pressedOptionButton(_ sender: UIButton) {
-        
-        switch sender.isSelected {
-        case true:
-            sender.isSelected = !sender.isSelected
-            sender.setTitleColor(UIColor(named: Colors.tabBarSelectedColor), for: .normal)
-        case false:
-            sender.isSelected = !sender.isSelected
-            sender.setTitleColor(.white, for: .normal)
-        }
+        regionOptionButtons.forEach { $0.isSelected = false }
+        sender.isSelected = true
     }
     
     @objc private func pressedDoneButton() {
-        print("✏️ pressedDoneButton")
         regionOptionButtons.forEach { button in
             if button.isSelected {
                 selectedRegionTypeId = button.tag
@@ -84,7 +76,7 @@ extension ChooseRegionViewController {
     
     private func configureChooseOptionContainerView() {
         chooseRegionContainerView.layer.cornerRadius = 15
-        chooseRegionContainerView.layer.borderWidth = 0.3
+        chooseRegionContainerView.layer.borderWidth = 0.2
     }
     
 

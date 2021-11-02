@@ -60,7 +60,7 @@ extension SearchMallViewController {
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
         
-        // 내가 추가한 부분
+        // 맵 중앙 미리 지정
         mapView.setMapCenter(
             MTMapPoint(geoCoord: currentLocation),
             zoomLevel: 1,
