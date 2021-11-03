@@ -206,7 +206,7 @@ class ProductReviewHeaderView: UIView {
         }
 
         priceLabelStackView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(14)
+            make.top.equalTo(titleLabel.snp.bottom).offset(14.3)
             make.right.equalToSuperview().offset(-Metrics.labelPadding)
         }
 

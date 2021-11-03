@@ -2,8 +2,10 @@ import UIKit
 import ImageSlideshow
 
 protocol ProductReviewTableViewCellDelegate: AnyObject {
-    func didBlockUser()
-    func didReportUser()
+    func didChooseToReportUser(reviewId: Int)
+
+    
+
 }
 
 class ProductReviewTableViewCell: UITableViewCell {
@@ -17,11 +19,11 @@ class ProductReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var reviewImageViewHeight: NSLayoutConstraint!
+    var reviewId: Int?
     
     weak var currentVC: UIViewController?
     weak var delegate: ProductReviewTableViewCellDelegate?
-    
+        
     //MARK: - Constants
     
     fileprivate struct Metrics {
@@ -40,7 +42,6 @@ class ProductReviewTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        reviewImageViewHeight.constant = Metrics.reviewImageViewHeight
     }
     
     //MARK: - Target Methods
@@ -56,7 +57,8 @@ class ProductReviewTableViewCell: UITableViewCell {
             style: .default
         ) { [weak self] _ in
             guard let self = self else { return }
-            
+            guard let reviewId = reviewId else { return }
+            self.delegate?.didChooseToReportUser(reviewId: reviewId)
         }
         
         let blockAction = UIAlertAction(
@@ -86,9 +88,9 @@ class ProductReviewTableViewCell: UITableViewCell {
         containerView.clipsToBounds = true
         containerView.layer.masksToBounds = false
         containerView.layer.shadowRadius = 3
-        containerView.layer.shadowOpacity = 0.3
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        containerView.layer.shadowColor = UIColor.darkGray.cgColor
+        containerView.layer.shadowOpacity = 0.7
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        containerView.layer.shadowColor = UIColor.lightGray.cgColor
     }
     
     func configureReviewImageSlideShow() {

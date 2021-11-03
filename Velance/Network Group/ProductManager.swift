@@ -239,7 +239,33 @@ class ProductManager {
             }
     }
     
-    
+    //MARK: - 내가 쓴 리뷰 삭제하기
+    func deleteReview(
+        reviewId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        let url = productReviewAPIBaseUrl + "/\(reviewId)"
+        
+        AF.request(
+            url,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ ProductManager - deleteReview SUCCESS")
+                    completion(.success(true))
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    print("❗️ ProductManager - deleteReview ERROR")
+                    completion(.failure(error))
+                }
+                
+            }
+    }
     
     
 }

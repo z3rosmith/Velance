@@ -4,8 +4,11 @@ protocol ProductReviewDelegate: AnyObject {
     func didFetchReviewList()
     func failedFetchingReviewList(with error: NetworkError)
     
+    func didDeleteReview()
+    
     func didReportProduct()
-    func failedReportingProduct(with error: NetworkError)
+    
+    func failedUserRequest(with error: NetworkError)
 }
 
 
@@ -60,6 +63,7 @@ class ProductReviewViewModel {
         }
     }
     
+    // 제품에 문제가 있음을 신고
     func reportProduct(type: ReportType.Product) {
         
         #warning("model DTO replyId 말고 별도로 수정")
@@ -74,7 +78,20 @@ class ProductReviewViewModel {
             case .success:
                 self.delegate?.didReportProduct()
             case .failure(let error):
-                self.delegate?.failedReportingProduct(with: error)
+                self.delegate?.failedUserRequest(with: error)
+               
+            }
+        }
+    }
+    
+    
+    func deleteMyReview(reviewId: Int) {
+        
+        productManager?.deleteReview(reviewId: reviewId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success: self.delegate?.didDeleteReview()
+            case .failure(let error): self.delegate?.failedUserRequest(with: error)
             }
         }
     }

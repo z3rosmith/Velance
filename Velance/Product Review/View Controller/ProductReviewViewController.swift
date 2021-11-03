@@ -132,9 +132,16 @@ extension ProductReviewViewController: ProductReviewDelegate {
         showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
     }
     
-    func failedReportingProduct(with error: NetworkError) {
+    func didDeleteReview() {
+        showSimpleBottomAlert(with: "리뷰를 삭제했어요.")
+        reviewTableView.reloadData()
+    }
+    
+    func failedUserRequest(with error: NetworkError) {
         showSimpleBottomAlert(with: error.errorDescription)
     }
+    
+    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -158,6 +165,8 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         
         cell.currentVC = self
         cell.delegate = self
+        
+        cell.reviewId = reviewData.reviewId
         cell.reviewLabel.text = reviewData.contents
         cell.ratingView.setStarsRating(rating: reviewData.rating)
         cell.nicknameLabel.text = reviewData.user.displayName
@@ -214,14 +223,12 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
 //MARK: - ProductReviewTableViewCellDelegate
 
 extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
-
-    func didBlockUser() {
-        showSimpleBottomAlert(with: "사용자의 게시글을 더 이상 보지 않게 설정하였어요.")
-    }
     
-    func didReportUser() {
-        showSimpleBottomAlert(with: "신고가 완료되었어요. 벨런스 팀이 검토 후 조치를 취하도록 할게요👍")
+    func didChooseToReportUser(reviewId: Int) {
+        viewModel?.deleteMyReview(reviewId: reviewId)
     }
+
+
 }
 
 
@@ -357,7 +364,8 @@ extension ProductReviewViewController {
     
     private func addFloatingButton() {
         let addReviewButton = VLFloatingButton()
-        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addReviewButton.setImage(UIImage(named: "pencilIcon"), for: .normal)
+//        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
         addReviewButton.addTarget(
             self,
             action: #selector(pressedAddReviewButton),
