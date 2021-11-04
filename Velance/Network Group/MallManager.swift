@@ -9,9 +9,10 @@ class MallManager {
     let interceptor = Interceptor()
     
     //MARK: - End Points
-    let menuUrl      = "\(API.baseUrl)menu"
-    let newMallUrl      = "\(API.baseUrl)mall"
-    let fetchMallListUrl        = "\(API.baseUrl)mall"
+    let menuUrl             = "\(API.baseUrl)menu"
+    let newMallUrl          = "\(API.baseUrl)mall"
+    let fetchMallListUrl    = "\(API.baseUrl)mall"
+    let likeMenuUrl         = "\(API.baseUrl)like-menu"
     
     //MARK: - 새로운 메뉴 등록
     func uploadNewMenu(
@@ -177,5 +178,51 @@ class MallManager {
                     completion(.failure(customError))
                 }
             }
+    }
+    
+}
+
+//MARK: - 메뉴 관련 함수
+
+extension MallManager {
+    
+    func likeMenu(
+        menuId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let parameters: Parameters = [
+            "created_by": User.shared.userUid,
+            "menu_id": "\(menuId)",
+            "is_like": "Y"
+        ]
+        
+        AF.request(
+            likeMenuUrl,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ MallManager - likeMenu SUCCESS")
+                    completion(.success(true))
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    print("❗️ MallManager - likeMenu error")
+                    completion(.failure(error))
+                }
+            }
+        
+    }
+    
+    
+    
+    func cancelLikeMenu() {
+        
     }
 }

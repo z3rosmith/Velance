@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MenuTableViewCellDelegate: AnyObject {
-    // 좋아요 기능 추가?
+    func didSelectLikeButton(menuId: Int)
 }
 
 class MenuTableViewCell: UITableViewCell {
@@ -12,10 +12,14 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet var likeButton: VLSocialButton!
     @IBOutlet var menuPriceLabel: UILabel!
     
-
+    var menuId: Int?
+    
+    weak var delegate: MenuTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureImageView()
+        configureLikeButton()
     }
 
     override func prepareForReuse() {
@@ -31,5 +35,18 @@ class MenuTableViewCell: UITableViewCell {
         menuImageView.layer.cornerRadius = 5
         menuImageView.clipsToBounds = true
     }
+    
+    func configureLikeButton() {
+        likeButton.addTarget(self, action: #selector(pressedMenuLikeButton), for: .touchUpInside)
+    }
+    
+    @objc private func pressedMenuLikeButton() {
+        guard let menuId = menuId else { return }
+        delegate?.didSelectLikeButton(menuId: menuId)
+    }
+    
+    
+    
+    
     
 }

@@ -54,6 +54,16 @@ class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
  
     }
 
+    @IBAction func pressedGoSeeTermsAndServiceButton(_ sender: UIButton) {
+        let url = URL(string: NotionUrl.termsAndAgreementUrl)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func pressedGoSeePrivacyTermsButton(_ sender: UIButton) {
+        let url = URL(string: NotionUrl.privacyTermsUrl)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
 }
 //MARK: - IBActions
 

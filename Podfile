@@ -25,4 +25,5 @@ target 'Velance' do
   pod 'TagListView', '~> 1.0'
   pod 'InputBarAccessoryView'
   pod 'PanModal'
+  pod 'DropDown'
 end

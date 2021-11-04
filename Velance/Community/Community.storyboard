@@ -1281,11 +1281,6 @@
             <point key="canvasLocation" x="2832" y="-302"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="fTU-lI-yPv">
-            <size key="intrinsicContentSize" width="220" height="16"/>
-        </designable>
-    </designables>
     <resources>
         <image name="EditProfileButton" width="122" height="41"/>
         <image name="EditProfileLogo" width="15" height="15"/>

@@ -3,6 +3,9 @@ import Foundation
 protocol MallViewModelDelegate: AnyObject {
     func didFetchMenuList()
     func failedFetchingMenuList(with error: NetworkError)
+    
+    func didLikeMenu()
+    func failedUserRequest(with error: NetworkError)
 }
 
 class MallViewModel {
@@ -43,8 +46,28 @@ class MallViewModel {
                 
             }
         }
-        
     }
+    
+    //MARK: - 메뉴 좋아요
+    
+    func likeMenu(menuId: Int) {
+        
+        MallManager.shared.likeMenu(menuId: menuId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.delegate?.didLikeMenu()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+}
+
+//MARK: - Refresh & Reset Methods
+
+extension MallViewModel {
     
     func refreshTableView() {
         resetValues()
@@ -56,5 +79,4 @@ class MallViewModel {
         isFetchingData = false
         page = 0
     }
-    
 }

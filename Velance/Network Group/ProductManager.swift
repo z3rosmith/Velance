@@ -267,5 +267,10 @@ class ProductManager {
             }
     }
     
+    //MARK: - 공공데이터 API에서 제품 조회 결과값 가져오기
+
+    
+    
+    
     
 }

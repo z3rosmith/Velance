@@ -88,8 +88,12 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
             ) as? InputUserInfoForRegisterViewController else { return }
 
             navigationController?.pushViewController(vc, animated: true)
-        case 1: break
-        case 2: break
+        case 1:
+            let url = URL(string: NotionUrl.termsAndAgreementUrl)!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        case 2:
+            let url = URL(string: NotionUrl.privacyTermsUrl)!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         case 3:
             presentAlertWithConfirmAction(title: "로그아웃 하시겠습니까?", message: "") { selectedOk in
                 if selectedOk { self.popToLoginViewController() }

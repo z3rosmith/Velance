@@ -146,17 +146,17 @@
             <objects>
                 <viewController storyboardIdentifier="InputUserInfoForRegisterViewController" id="Y6l-8h-lQa" customClass="InputUserInfoForRegisterViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPp-e1-LJ4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-oN-lsH" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="1236"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="1436"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-JR-PAk">
-                                        <rect key="frame" x="0.0" y="12" width="414" height="1224"/>
+                                        <rect key="frame" x="0.0" y="12" width="414" height="1424"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-NR-Npv" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="24" width="414" height="1194"/>
+                                                <rect key="frame" x="0.0" y="24" width="414" height="1265"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhO-AL-OqI" userLabel="Vegan Type View">
                                                         <rect key="frame" x="16" y="6" width="382" height="270"/>
@@ -917,7 +917,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooj-ed-2AX" userLabel="RegisterView">
-                                                        <rect key="frame" x="16" y="1120" width="382" height="58"/>
+                                                        <rect key="frame" x="16" y="1191" width="382" height="58"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="GRj-ac-UrM" userLabel="Register Button Image">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="58"/>
@@ -1158,15 +1158,80 @@
                                                             <constraint firstAttribute="trailing" secondItem="1K8-GN-k5f" secondAttribute="trailing" constant="16" id="uCt-HM-kfn"/>
                                                         </constraints>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계속 진행함으로써" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-23-Hcu">
+                                                        <rect key="frame" x="153" y="1129" width="108" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-0b-Fg0">
+                                                        <rect key="frame" x="51" y="1147" width="312.5" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKx-aj-jet">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="32"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="이용약관">
+                                                                            <attributes>
+                                                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="pressedGoSeeTermsAndServiceButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="NxY-qo-gRp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="및" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1m-CO-3ca">
+                                                                <rect key="frame" x="79" y="0.0" width="13" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-8J-gKt">
+                                                                <rect key="frame" x="95" y="0.0" width="128" height="32"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="개인정보취급방침">
+                                                                            <attributes>
+                                                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="pressedGoSeePrivacyTermsButton:" destination="Y6l-8h-lQa" eventType="touchUpInside" id="ekV-Xu-GOq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL1-53-asw">
+                                                                <rect key="frame" x="226" y="0.0" width="86.5" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="IQy-CL-KAK" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="05F-UR-1ba"/>
                                                     <constraint firstAttribute="trailing" secondItem="ANz-bk-NLE" secondAttribute="trailing" constant="16" id="1Cx-K6-g8B"/>
+                                                    <constraint firstItem="BR7-0b-Fg0" firstAttribute="centerX" secondItem="bKt-NR-Npv" secondAttribute="centerX" id="6WI-0d-LSF"/>
                                                     <constraint firstItem="zMg-ta-Mav" firstAttribute="top" secondItem="ANz-bk-NLE" secondAttribute="bottom" constant="16" id="B85-gd-o7C"/>
-                                                    <constraint firstItem="Ooj-ed-2AX" firstAttribute="top" secondItem="zMg-ta-Mav" secondAttribute="bottom" constant="16" id="Ke1-PR-t2P"/>
                                                     <constraint firstAttribute="trailing" secondItem="IQy-CL-KAK" secondAttribute="trailing" constant="16" id="Pk1-UY-IIL"/>
+                                                    <constraint firstItem="h8e-23-Hcu" firstAttribute="top" secondItem="zMg-ta-Mav" secondAttribute="bottom" constant="25" id="R0y-O5-0QY"/>
+                                                    <constraint firstItem="Ooj-ed-2AX" firstAttribute="top" secondItem="BR7-0b-Fg0" secondAttribute="bottom" constant="12" id="YAl-MQ-dpC"/>
                                                     <constraint firstItem="fhO-AL-OqI" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="YbE-Us-1uj"/>
+                                                    <constraint firstItem="BR7-0b-Fg0" firstAttribute="top" secondItem="h8e-23-Hcu" secondAttribute="bottom" id="Zsf-QX-fcM"/>
+                                                    <constraint firstItem="h8e-23-Hcu" firstAttribute="centerX" secondItem="bKt-NR-Npv" secondAttribute="centerX" id="boo-mb-FdK"/>
                                                     <constraint firstItem="ANz-bk-NLE" firstAttribute="leading" secondItem="bKt-NR-Npv" secondAttribute="leading" constant="16" id="da7-WO-uhW"/>
                                                     <constraint firstItem="IQy-CL-KAK" firstAttribute="top" secondItem="fhO-AL-OqI" secondAttribute="bottom" constant="16" id="eft-35-pwo"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ooj-ed-2AX" secondAttribute="trailing" constant="16" id="ezy-rc-oZC"/>
@@ -1211,7 +1276,7 @@
                             <constraint firstItem="MBB-oN-lsH" firstAttribute="top" secondItem="8kN-BU-fIk" secondAttribute="top" constant="20" id="e6J-Lh-baN"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="1300"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="myAllergyView" destination="zMg-ta-Mav" id="GMF-wI-Fmy"/>
                         <outlet property="myInterestView" destination="ANz-bk-NLE" id="9lc-Bh-t2x"/>
@@ -1276,7 +1341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igz-xF-ocv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423" y="222"/>
+            <point key="canvasLocation" x="1421.7391304347827" y="221.65178571428569"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="6b7-m5-Is0">
