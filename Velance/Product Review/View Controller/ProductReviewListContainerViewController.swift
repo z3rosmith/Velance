@@ -60,13 +60,13 @@ extension ProductReviewListContainerViewController {
     @IBAction func pressedAddButton(_ sender: UIButton) {
         
         //Test
-        let vc = ChooseRegionViewController.instantiate()
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+//        let vc = ChooseRegionViewController.instantiate()
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
         
-//        let vc = UploadNewProductViewController.instantiate()
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = UploadNewProductViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func refreshCollectionView() {
@@ -88,6 +88,14 @@ extension ProductReviewListContainerViewController: ProductReviewListDelegate {
         productCollectionView.refreshControl?.endRefreshing()
         showSimpleBottomAlert(with: error.errorDescription)
     }
+}
+
+extension ProductReviewListContainerViewController: ProductCollectionReusableDelegate {
+    
+    func didSelectItem(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
@@ -165,7 +173,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
             )
             guard let productHeaderView = headerView as? ProductCollectionReusableView
             else { return headerView }
-            
+            productHeaderView.delegate = self
             productHeaderView.configure()
             return productHeaderView
         default: return UICollectionReusableView()

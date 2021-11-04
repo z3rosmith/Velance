@@ -3,9 +3,6 @@ import ImageSlideshow
 
 protocol ProductReviewTableViewCellDelegate: AnyObject {
     func didChooseToReportUser(reviewId: Int)
-
-    
-
 }
 
 class ProductReviewTableViewCell: UITableViewCell {
@@ -57,7 +54,7 @@ class ProductReviewTableViewCell: UITableViewCell {
             style: .default
         ) { [weak self] _ in
             guard let self = self else { return }
-            guard let reviewId = reviewId else { return }
+            guard let reviewId = self.reviewId else { return }
             self.delegate?.didChooseToReportUser(reviewId: reviewId)
         }
         

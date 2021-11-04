@@ -1,11 +1,17 @@
 import UIKit
 import SDWebImage
 
+protocol ProductCollectionReusableDelegate: AnyObject {
+    func didSelectItem(vc: UIViewController)
+}
+
 class ProductCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var similarProductCollectionView: UICollectionView!
     @IBOutlet weak var popularProductLabel: UILabel!
+    
+    weak var delegate: ProductCollectionReusableDelegate?
     
     private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
@@ -48,11 +54,25 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         cell.productPriceLabel.text = "\(productData.price)원"
         cell.productRatingLabel.text = String(format: "%.1f", productData.rating)
         
+
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
+        guard let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
         
+        let productData = viewModel.similarTasteProductList[indexPath.row]
+        
+        vc.productId = productData.productId
+        vc.productThumbnailUrl = URL(string: productData.fileFolder.files[0].path)!
+        vc.productName = productData.name
+        vc.rating = Int(productData.rating)
+        vc.price = productData.price
+//        vc.productAllergyGroup = productData.productAllergyGroups
+        
+        delegate?.didSelectItem(vc: vc)
 
     }
 }

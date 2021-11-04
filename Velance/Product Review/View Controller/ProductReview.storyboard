@@ -1163,7 +1163,7 @@
                                                         <rect key="frame" x="0.0" y="43" width="358" height="35"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b88-dt-ddl" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="166" height="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="35"/>
                                                                 <color key="tintColor" name="TabBarSelectedColor"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="울산">
@@ -1174,7 +1174,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9m-wd-ZeO" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
-                                                                <rect key="frame" x="171" y="0.0" width="187" height="35"/>
+                                                                <rect key="frame" x="68.5" y="0.0" width="64" height="35"/>
                                                                 <color key="tintColor" name="TabBarSelectedColor"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="광주">
@@ -1182,6 +1182,39 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="pressedOptionButton:" destination="N5K-nz-grE" eventType="touchUpInside" id="qfF-eD-nsj"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-kF-RKN" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="137.5" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="N5K-nz-grE" eventType="touchUpInside" id="AvM-Te-88y"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-lD-VN1" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="206" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="N5K-nz-grE" eventType="touchUpInside" id="KxB-UX-ldg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QI-As-jXN" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="274.5" y="0.0" width="83.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="N5K-nz-grE" eventType="touchUpInside" id="E6L-D1-mnj"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1261,6 +1294,9 @@
                         <outletCollection property="regionOptionButtons" destination="Cxe-lH-Tm7" collectionClass="NSMutableArray" id="xp9-GW-Z2G"/>
                         <outletCollection property="regionOptionButtons" destination="b88-dt-ddl" collectionClass="NSMutableArray" id="yYy-cs-spR"/>
                         <outletCollection property="regionOptionButtons" destination="T9m-wd-ZeO" collectionClass="NSMutableArray" id="Ran-MW-gsM"/>
+                        <outletCollection property="regionOptionButtons" destination="6H0-kF-RKN" collectionClass="NSMutableArray" id="Wg9-pz-iZb"/>
+                        <outletCollection property="regionOptionButtons" destination="WbA-lD-VN1" collectionClass="NSMutableArray" id="Ca0-qg-BhW"/>
+                        <outletCollection property="regionOptionButtons" destination="4QI-As-jXN" collectionClass="NSMutableArray" id="DHy-za-WB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AP5-qk-g2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
