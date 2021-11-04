@@ -70,7 +70,7 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         vc.productName = productData.name
         vc.rating = Int(productData.rating)
         vc.price = productData.price
-//        vc.productAllergyGroup = productData.productAllergyGroups
+        vc.productAllergyGroup = productData.productAllergyGroups
         
         delegate?.didSelectItem(vc: vc)
 

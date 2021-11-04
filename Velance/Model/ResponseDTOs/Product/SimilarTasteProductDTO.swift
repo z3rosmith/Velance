@@ -8,10 +8,11 @@ struct SimilarTasteProductDTO: Decodable {
     let price: Int
     let rating: Double
     let fileFolder: FileFolder
+    let productAllergyGroups: [ProductAllergyGroups]
     
     enum CodingKeys: String, CodingKey {
         case productId = "product_id"
         case productListReportNumber = "PRDLST_REPORT_NO"
-        case name, price, rating, fileFolder
+        case name, price, rating, fileFolder, productAllergyGroups
     }
 }

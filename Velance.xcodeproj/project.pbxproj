@@ -53,6 +53,7 @@
 		6C49951F271FBC3400E8DB4B /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49951E271FBC3400E8DB4B /* ProgressHUD.swift */; };
 		7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */; };
 		7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */; };
+		7C1D2A1627339F8A00E9785C /* NewDailyLifePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */; };
 		7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */; };
 		7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */; };
 		7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */; };
@@ -142,7 +143,7 @@
 		7CBDF4B22730E59600E657D9 /* ChooseRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */; };
 		7CBDF4B42731037C00E657D9 /* SimilarTasteProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */; };
 		7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */; };
-		7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */; };
+		7CBF63F02727D89C000B5F04 /* NewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF63EF2727D89C000B5F04 /* NewRecipeViewController.swift */; };
 		7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */; };
 		7CC36A2B26EC5ED8007573DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A2A26EC5ED8007573DD /* MainViewController.swift */; };
 		7CC36A2E26EC5ED8007573DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2C26EC5ED8007573DD /* Main.storyboard */; };
@@ -255,6 +256,7 @@
 		6C49951E271FBC3400E8DB4B /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionReusableView.swift; sourceTree = "<group>"; };
 		7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
+		7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDailyLifePostViewController.swift; sourceTree = "<group>"; };
 		7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewProductViewController.swift; sourceTree = "<group>"; };
 		7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewViewController.swift; sourceTree = "<group>"; };
 		7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -354,7 +356,7 @@
 		7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionViewController.swift; sourceTree = "<group>"; };
 		7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarTasteProductDTO.swift; sourceTree = "<group>"; };
 		7CBF63ED2727C81F000B5F04 /* NewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
-		7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		7CBF63EF2727D89C000B5F04 /* NewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewController.swift; sourceTree = "<group>"; };
 		7CC36A2326EC5ED8007573DD /* Velance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CC36A2A26EC5ED8007573DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -454,7 +456,7 @@
 			children = (
 				3C51257A271455F4003E572D /* Community.storyboard */,
 				3C910FD0272A3B6600F6CE2F /* View Models */,
-				7CBF63EF2727D89C000B5F04 /* NewPostViewController.swift */,
+				7CBF63EF2727D89C000B5F04 /* NewRecipeViewController.swift */,
 				7C922A532718054B00295A3F /* ChooseInterestViewController.swift */,
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
 				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
@@ -772,6 +774,7 @@
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
 				7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */,
+				7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -1391,7 +1394,7 @@
 				3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
-				7CBF63F02727D89C000B5F04 /* NewPostViewController.swift in Sources */,
+				7CBF63F02727D89C000B5F04 /* NewRecipeViewController.swift in Sources */,
 				3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CF3924C2726B08500E48EFB /* ReportDTO.swift in Sources */,
@@ -1428,6 +1431,7 @@
 				7CC36A2926EC5ED8007573DD /* SceneDelegate.swift in Sources */,
 				7C8EC8D326F0819800893CCD /* VLBottomView.swift in Sources */,
 				3C2052B6272AAB19009BBD3B /* MallRequestDTO.swift in Sources */,
+				7C1D2A1627339F8A00E9785C /* NewDailyLifePostViewController.swift in Sources */,
 				3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */,
 				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */,

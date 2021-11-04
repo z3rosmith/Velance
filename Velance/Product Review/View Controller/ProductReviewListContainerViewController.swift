@@ -65,7 +65,9 @@ extension ProductReviewListContainerViewController {
 //        vc.modalTransitionStyle = .crossDissolve
 //        self.present(vc, animated: true)
         
-        let vc = UploadNewProductViewController.instantiate()
+        let vc = NewDailyLifePostViewController.instantiate()
+        
+//        let vc = UploadNewProductViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
     

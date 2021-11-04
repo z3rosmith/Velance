@@ -79,7 +79,7 @@ extension CommunityDailyLifeViewController {
     }
     
     @objc private func pressedAddPostButton() {
-        let vc = NewPostViewController.instantiate()
+        let vc = NewRecipeViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
