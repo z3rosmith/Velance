@@ -192,10 +192,6 @@ extension CommunityDailyLifeViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
-    func didSelectCategoryItemAt(_ index: Int) {
-        
-    }
-    
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()

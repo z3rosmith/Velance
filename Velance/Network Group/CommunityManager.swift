@@ -153,8 +153,7 @@ class CommunityManager {
         var array: [Int] = []
         if let interestTypeIDs = model.interestTypeIDs, interestTypeIDs.count > 0 {
             interestTypeIDs.forEach { array.append($0) }
-            #warning("parameter array 보내는거 구현")
-//            parameters["interest_type_ids"] = array
+            parameters["interest_type_ids"] = array
         }
 
         AF.request(fetchDailyLifeListUrl,
@@ -171,6 +170,7 @@ class CommunityManager {
                         let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                         let decodedData = try JSONDecoder().decode([DailyLifeResponseDTO].self, from: dataJSON)
                         completion(.success(decodedData))
+                        print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - fetch SUCCESS")
                     } catch {
                         print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED PROCESS DATA with error: \(error)")
                     }

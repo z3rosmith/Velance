@@ -120,10 +120,8 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
             }
         }
         cell.imageSlideShow.setImageInputs(inputSources)
-        cell.likeButton.setTitle("\(Int.random(in: 1..<10))", for: .normal)
-        cell.commentButton.setTitle("\(Int.random(in: 1..<10))", for: .normal)
-//        cell.likeButton.setTitle("\(cellViewModel.like)", for: .normal)
-//        cell.commentButton.setTitle("\(cellViewModel.repliesCount)", for: .normal)
+        cell.likeButton.setTitle("\(cellViewModel.like)", for: .normal)
+        cell.commentButton.setTitle("\(cellViewModel.repliesCount)", for: .normal)
         cell.textView.text = cellViewModel.contents
         
         cell.usernameLabel.text = cellViewModel.userDisplayName
