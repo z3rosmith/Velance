@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ChooseRegionDelegate: AnyObject {
-    func didChooseRegion()
+    func didChooseRegion(region: Int)
 }
 
 class ChooseRegionViewController: UIViewController, Storyboarded {
@@ -33,15 +33,11 @@ extension ChooseRegionViewController {
     @IBAction func pressedOptionButton(_ sender: UIButton) {
         regionOptionButtons.forEach { $0.isSelected = false }
         sender.isSelected = true
+        selectedRegionTypeId = sender.tag
     }
     
     @objc private func pressedDoneButton() {
-        regionOptionButtons.forEach { button in
-            if button.isSelected {
-                selectedRegionTypeId = button.tag
-            }
-        }
-        delegate?.didChooseRegion()
+        delegate?.didChooseRegion(region: selectedRegionTypeId)
         dismiss(animated: true)
     }
 }

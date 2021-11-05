@@ -21,7 +21,6 @@ class SearchNewMallViewController: UIViewController, Storyboarded {
         configure()
         viewModel.currentLocation = currentLocation
     }
-    
 }
 
 //MARK: - Target Methods

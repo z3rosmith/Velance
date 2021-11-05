@@ -24,7 +24,6 @@ class ProductManager {
     ) {
         
         let parameters: Parameters = [
-            "request_user_id": User.shared.userUid,
             "page": page,
             "product_category_id": productCategoryId,
             "only_my_vegetarian_type": onlyMyVegetarianType,
@@ -63,10 +62,8 @@ class ProductManager {
         completion: @escaping ((Result<[SimilarTasteProductDTO], NetworkError>) -> Void)
     ) {
         
-        let url = getSimilarTasteProductUrl + User.shared.userUid
-        
         AF.request(
-            url,
+            getSimilarTasteProductUrl,
             method: .get,
             interceptor: interceptor
         )
@@ -99,7 +96,6 @@ class ProductManager {
         completion: @escaping ((Result<[ProductListResponseDTO], NetworkError>) -> Void)
     ) {
         let parameters: Parameters = [
-            "request_user_id": User.shared.userUid,
             "page": page,
             "name": name
         ]
@@ -135,7 +131,6 @@ class ProductManager {
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
             multipartFormData.append(Data(String(model.productCategoryId).utf8),withName: "product_category_id")
             multipartFormData.append(Data(model.name.utf8),withName: "name")
             multipartFormData.append(Data(String(model.price).utf8),withName: "price")
@@ -172,7 +167,6 @@ class ProductManager {
     ) {
         
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
             multipartFormData.append(Data(String(model.rating).utf8),withName: "rating")
             multipartFormData.append(Data(model.contents.utf8),withName: "contents")
             
@@ -238,6 +232,37 @@ class ProductManager {
                 }
             }
     }
+    
+    //MARK: - 내가 쓴 리뷰 삭제하기
+    func deleteReview(
+        reviewId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        let url = productReviewAPIBaseUrl + "/\(reviewId)"
+        
+        AF.request(
+            url,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ ProductManager - deleteReview SUCCESS")
+                    completion(.success(true))
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    print("❗️ ProductManager - deleteReview ERROR")
+                    completion(.failure(error))
+                }
+                
+            }
+    }
+    
+    //MARK: - 공공데이터 API에서 제품 조회 결과값 가져오기
+
     
     
     

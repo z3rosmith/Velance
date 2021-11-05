@@ -1,11 +1,17 @@
 import UIKit
 import SDWebImage
 
+protocol ProductCollectionReusableDelegate: AnyObject {
+    func didSelectItem(vc: UIViewController)
+}
+
 class ProductCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var similarProductCollectionView: UICollectionView!
     @IBOutlet weak var popularProductLabel: UILabel!
+    
+    weak var delegate: ProductCollectionReusableDelegate?
     
     private let viewModel = ProductReviewListViewModel(productManager: ProductManager())
     
@@ -44,29 +50,29 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         let productData = viewModel.similarTasteProductList[indexPath.row]
     
         cell.productTitleLabel.text = productData.name
-        
-        
-        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[Int.random(in: 0..<MockData.mockFoodImageName.count)]) // 수정 필요!!
-        
-    
-//        cell.productImageView.sd_setImage(with: URL(string: productData.fileFolder.files[0].path)!, completed: nil)
+        cell.productImageView.sd_setImage(with: URL(string: productData.fileFolder.files[0].path)!, completed: nil)
         cell.productPriceLabel.text = "\(productData.price)원"
         cell.productRatingLabel.text = String(format: "%.1f", productData.rating)
         
-        
-        
-//        let randomIndex: Int = Int.random(in: 0..<MockData.mockFoodImageName.count)
-//        cell.productTitleLabel.text = MockData.mockFoodName[randomIndex]
-//        cell.productImageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
-//        cell.productPriceLabel.text = "\(Int.random(in: 1..<4))0,980원"
-//        cell.productRatingLabel.text = "\(Int.random(in: 2..<5)).\(Int.random(in: 2..<9))"
-        
 
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
+        guard let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
         
+        let productData = viewModel.similarTasteProductList[indexPath.row]
+        
+        vc.productId = productData.productId
+        vc.productThumbnailUrl = URL(string: productData.fileFolder.files[0].path)!
+        vc.productName = productData.name
+        vc.rating = Int(productData.rating)
+        vc.price = productData.price
+        vc.productAllergyGroup = productData.productAllergyGroups
+        
+        delegate?.didSelectItem(vc: vc)
 
     }
 }

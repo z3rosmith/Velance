@@ -87,6 +87,7 @@ class UserManager {
         ).responseData { response in
             switch response.result {
             case .success:
+                print("✏️ UserManager - fetchProfileInfo SUCCESS")
                 do {
                     let decodedData = try JSONDecoder().decode(UserDisplayModel.self, from: response.data!)
                 

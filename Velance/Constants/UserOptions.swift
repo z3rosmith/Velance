@@ -24,5 +24,5 @@ struct UserOptions {
     
     static let productCategory: [String] = [ "즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     
-    static let regionOptions: [String] = ["서울", "부산", "대구", "대전", "인천", "울산", "광주"]
+    static let regionOptions: [String] = ["서울", "인천", "경기", "부산", "대구", "대전", "광주", "수원", "울산", "제주", "모든 지역"]
 }

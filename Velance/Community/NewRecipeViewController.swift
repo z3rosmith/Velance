@@ -1,11 +1,8 @@
 import UIKit
 
-class NewPostViewController: UIViewController, Storyboarded {
+class NewRecipeViewController: UIViewController, Storyboarded {
     
     //MARK: - IBOutlets
-    
-    @IBOutlet weak var feedCategoryView: UIView!
-    @IBOutlet var feedCategoryButtons: [VLGradientButton]!
     
     @IBOutlet weak var recipeCategoryView: UIView!
     @IBOutlet var recipeCategoryButtons: [VLGradientButton]!
@@ -15,12 +12,6 @@ class NewPostViewController: UIViewController, Storyboarded {
     
     //MARK: - Properties
     
-    enum FeedCategory {
-        case recipe
-        case dailyLife
-    }
-    
-    var feedCategory: FeedCategory = .recipe
     var recipeCategoryId: Int = 1
     var userSelectedImages = [UIImage]() {
         didSet { convertUIImagesToDataFormat() }
@@ -42,24 +33,7 @@ class NewPostViewController: UIViewController, Storyboarded {
 
 //MARK: - IBActions & Target Methods
 
-extension NewPostViewController {
-    
-    @IBAction func pressedFeedCategoryButton(_ sender: UIButton) {
-        feedCategoryButtons.forEach { $0.isSelected = false }
-        sender.isSelected = true
-        
-        if sender.tag == 1 {        // 일상 피드를 골랐을 경우
-            feedCategory = .dailyLife
-            recipeCategoryButtons.forEach {
-                $0.isSelected = false
-                $0.isUserInteractionEnabled = false
-            }
-        } else {                    // 레시피를 골랐을 경우
-            feedCategory = .recipe
-            recipeCategoryButtons.forEach { $0.isUserInteractionEnabled = true }
-        }
-        
-    }
+extension NewRecipeViewController {
     
     @IBAction func pressedRecipeCategoryButton(_ sender: UIButton) {
         recipeCategoryButtons.forEach { $0.isSelected = false }
@@ -84,7 +58,7 @@ extension NewPostViewController {
             title: "피드 업로드를 하시겠습니까?",
             message: ""
         ) { selectedOk in
-            self.feedCategory == .recipe ? self.uploadNewRecipe() : self.uploadNewDailyLife()
+            if selectedOk { self.uploadNewRecipe() }
         }
     }
     
@@ -112,36 +86,14 @@ extension NewPostViewController {
         }
         
     }
-    
-    func uploadNewDailyLife() {
-        
-        let model = NewDailyLifeDTO(
-            title: "",
-            contents: postTextView.text!,
-            files: userSelectedImagesInDataFormat!
-        )
-        
-        CommunityManager.shared.uploadDailyLifePost(with: model) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success:
-                self.showSimpleBottomAlert(with: "피드 업로드 성공🎉")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.navigationController?.popViewController(animated: true)
-                }
-                
-            case .failure(let error):
-                self.showSimpleBottomAlert(with: error.errorDescription)
-            }
-        }
-    }
+
     
     
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
-extension NewPostViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
+extension NewRecipeViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Add Button 이 항상 있어야하므로 + 1
         return self.userSelectedImages.count + 1
@@ -182,7 +134,7 @@ extension NewPostViewController: UICollectionViewDelegate, UICollectionViewDataS
 
 //MARK: - AddImageDelegate
 
-extension NewPostViewController: AddImageDelegate {
+extension NewRecipeViewController: AddImageDelegate {
     func didPickImagesToUpload(images: [UIImage]) {
         self.userSelectedImages = images
         postImageCollectionView.reloadData()
@@ -191,7 +143,7 @@ extension NewPostViewController: AddImageDelegate {
 
 //MARK: - UserPickedImageCellDelegate
 
-extension NewPostViewController: UserPickedImageCellDelegate {
+extension NewRecipeViewController: UserPickedImageCellDelegate {
     func didPressDeleteImageButton(at index: Int) {
 
         self.userSelectedImages.remove(at: index - 1)
@@ -202,7 +154,7 @@ extension NewPostViewController: UserPickedImageCellDelegate {
 
 //MARK: - Conversion Methods
 
-extension NewPostViewController {
+extension NewRecipeViewController {
     
     func convertUIImagesToDataFormat() {
         userSelectedImagesInDataFormat?.removeAll()
@@ -218,7 +170,7 @@ extension NewPostViewController {
 //MARK: - UITextViewDelegate
 
 
-extension NewPostViewController: UITextViewDelegate {
+extension NewRecipeViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
@@ -240,32 +192,22 @@ extension NewPostViewController: UITextViewDelegate {
 
 //MARK: - UI Configuration & Initialization
 
-extension NewPostViewController {
+extension NewRecipeViewController {
     
     private func configure() {
         title = "새 글 등록"
         configureCategoryViews()
-        configureFeedCategoryButtons()
+   
         configureRecipeCategoryButtons()
         configurePostImagesCollectionView()
         configurePostTextView()
     }
     
     private func configureCategoryViews() {
-        [feedCategoryView, recipeCategoryView].forEach { view in
-            guard let view = view else { return }
-            view.layer.cornerRadius = 15
-            view.layer.borderWidth = 0.3
-            view.layer.borderColor = UIColor.lightGray.cgColor
-            view.backgroundColor = UIColor(named: Colors.appBackgroundColor)
-            
-        }
-    }
-    
-    private func configureFeedCategoryButtons() {
-        
-        
-        
+        recipeCategoryView.layer.cornerRadius = 15
+        recipeCategoryView.layer.borderWidth = 0.3
+        recipeCategoryView.layer.borderColor = UIColor.lightGray.cgColor
+        recipeCategoryView.backgroundColor = UIColor(named: Colors.appBackgroundColor)
     }
     
     private func configureRecipeCategoryButtons() {
@@ -276,8 +218,6 @@ extension NewPostViewController {
             index += 1
         }
     }
-    
-    
     
     private func configurePostImagesCollectionView() {
         postImageCollectionView.delegate = self

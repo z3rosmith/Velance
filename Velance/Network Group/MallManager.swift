@@ -9,9 +9,10 @@ class MallManager {
     let interceptor = Interceptor()
     
     //MARK: - End Points
-    let menuUrl      = "\(API.baseUrl)menu"
-    let newMallUrl      = "\(API.baseUrl)mall"
-    let fetchMallListUrl        = "\(API.baseUrl)mall"
+    let menuUrl             = "\(API.baseUrl)menu"
+    let newMallUrl          = "\(API.baseUrl)mall"
+    let fetchMallListUrl    = "\(API.baseUrl)mall"
+    let likeMenuUrl         = "\(API.baseUrl)like-menu"
     
     //MARK: - 새로운 메뉴 등록
     func uploadNewMenu(
@@ -20,7 +21,7 @@ class MallManager {
     ) {
         showProgressBar()
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+        
             multipartFormData.append(Data(model.mallId.description.utf8),withName: "mall_id")
             multipartFormData.append(Data(model.name.utf8),withName: "name")
             multipartFormData.append(Data(model.price.description.utf8),withName: "price")
@@ -61,7 +62,7 @@ class MallManager {
         AF.upload(multipartFormData: { multipartFormData in
             
             multipartFormData.append(Data(model.mallId.description.utf8),withName: "mall_id")
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+         
             multipartFormData.append(Data(model.placeName.utf8),withName: "place_name")
             multipartFormData.append(Data(model.phone.utf8),withName: "phone")
             multipartFormData.append(Data(model.addressName.utf8),withName: "address_name")
@@ -102,7 +103,6 @@ class MallManager {
     ) {
         
         let parameters: Parameters = [
-            "request_user_id": User.shared.userUid,
             "mall_id": mallId,
             "page": page
         ]
@@ -177,5 +177,50 @@ class MallManager {
                     completion(.failure(customError))
                 }
             }
+    }
+    
+}
+
+//MARK: - 메뉴 관련 함수
+
+extension MallManager {
+    
+    func likeMenu(
+        menuId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let parameters: Parameters = [
+            "menu_id": "\(menuId)",
+            "is_like": "Y"
+        ]
+        
+        AF.request(
+            likeMenuUrl,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ MallManager - likeMenu SUCCESS")
+                    completion(.success(true))
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    print("❗️ MallManager - likeMenu error")
+                    completion(.failure(error))
+                }
+            }
+        
+    }
+    
+    
+    
+    func cancelLikeMenu() {
+        
     }
 }

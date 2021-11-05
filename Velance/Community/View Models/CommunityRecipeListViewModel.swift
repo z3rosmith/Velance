@@ -53,8 +53,7 @@ extension CommunityRecipeListViewModel {
         isFetchingData = true
         
         let onlyFollowing: String = viewOnlyFollowing ? "Y" : "N"
-        let model = RecipeRequestDTO(requestUserID: User.shared.userUid,
-                                     cursor: lastPostID,
+        let model = RecipeRequestDTO(cursor: lastPostID,
                                      recipeCategoryID: recipeCategoryID,
                                      onlyFollowing: onlyFollowing)
         

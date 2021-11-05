@@ -76,7 +76,7 @@ extension MallViewController {
 //MARK: - MallViewModelDelegate
 
 extension MallViewController: MallViewModelDelegate {
-    
+
     func didFetchMenuList() {
         menuTableView.reloadData()
         menuTableView.tableFooterView = nil
@@ -87,6 +87,14 @@ extension MallViewController: MallViewModelDelegate {
         showSimpleBottomAlert(with: error.errorDescription)
         menuTableView.tableFooterView = nil
         menuTableView.refreshControl?.endRefreshing()
+    }
+    
+    func didLikeMenu() {
+        menuTableView.reloadData()
+    }
+    
+    func failedUserRequest(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
     }
     
 }
@@ -115,7 +123,8 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         
         let menuData = viewModel.menuList[indexPath.row]
         
-        
+        cell.delegate = self
+        cell.menuId = menuData.menuId
         cell.menuImageView.sd_setImage(
             with: URL(string: menuData.fileFolder.files[0].path),
             placeholderImage: nil,
@@ -126,14 +135,12 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         cell.menuPriceLabel.text = "\(menuData.price)원"
         
         cell.likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
+    
+
+        cell.likeButton.isSelected = true
+        cell.likeButton.setRightText(text: "\(menuData.likeCount)")
         
-        if indexPath.row % 2 == 0 {
-            cell.likeButton.isSelected.toggle()
-            cell.likeButton.setRightText(text: "23")
-        } else {
-            cell.likeButton.setRightText(text: "12")
-        }
-        
+
         return cell
     }
     
@@ -169,15 +176,15 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
     @objc private func refreshMenuTableView() {
         viewModel.refreshTableView()
     }
-    
-    
 }
-
 
 //MARK: - MallMenusTableViewCellDelegate
 
-extension MallViewController {
+extension MallViewController: MenuTableViewCellDelegate {
     
+    func didSelectLikeButton(menuId: Int) {
+        viewModel.likeMenu(menuId: menuId)
+    }
 }
 
 //MARK: - UIPanGestureRecognizer Methods
@@ -304,7 +311,7 @@ extension MallViewController {
     
     private func addFloatingButton() {
         let addMenuButton = VLFloatingButton()
-        addMenuButton.setImage(UIImage(systemName: "plus")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addMenuButton.setImage(UIImage(named: "pencilIcon"), for: .normal)
         addMenuButton.addTarget(
             self,
             action: #selector(pressedAddMenuButton),
@@ -314,7 +321,7 @@ extension MallViewController {
         addMenuButton.snp.makeConstraints { make in
             make.width.height.equalTo(60)
             make.right.equalTo(view.snp.right).offset(-25)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-35)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
 }

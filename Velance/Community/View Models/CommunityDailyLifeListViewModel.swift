@@ -53,8 +53,7 @@ extension CommunityDailyLifeListViewModel {
         isFetchingData = true
         
         let onlyFollowing: String = viewOnlyFollowing ? "Y" : "N"
-        let model = DailyLifeRequestDTO(requestUserID: User.shared.userUid,
-                                        cursor: lastPostID,
+        let model = DailyLifeRequestDTO(cursor: lastPostID,
                                         interestTypeIDs: interestTypeIDs,
                                         onlyFollowing: onlyFollowing)
         

@@ -25,7 +25,8 @@ class MallListViewController: UIViewController {
     }
     
     @IBAction func pressedAddMallButton(_ sender: UIButton) {
-        let vc = SearchNewMallViewController.instantiate()
+        guard let vc = SearchNewMallViewController.instantiate() as? SearchNewMallViewController else { return }
+        vc.currentLocation = MTMapPointGeo(latitude: mallPoint.y, longitude: mallPoint.x)
         navigationController?.pushViewController(vc, animated: true)
     }
     

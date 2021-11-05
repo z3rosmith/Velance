@@ -146,3 +146,15 @@ struct KakaoAPIKey {
     static let API_Key                      = "96812c95e78a181604f1b6fb0a751398"
     static let Admin_Key                    = "55631246cbc856f459c460cc47806611"
 }
+
+struct OpenAPI {
+    static let baseURL                      = "https://openapi.foodsafetykorea.go.kr/api/6975f768355f446ea613/C002/json/1/5?PRDLST_NM="
+    static let publicAPIKey                 = "6975f768355f446ea613"
+}
+
+
+struct NotionUrl {
+    static let privacyTermsUrl              = "https://linen-twister-e2b.notion.site/524009eb747946d7ad0096bec1b43af2"
+    
+    static let termsAndAgreementUrl         = "https://linen-twister-e2b.notion.site/dc291675a5e34c1fb506c96d341635aa"
+}

@@ -28,12 +28,7 @@ class SearchListViewController: UITableViewController {
 extension SearchListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if placeName.count > 0 {
-            return placeName.count
-        } else {
-            return 1
-        }
+        return placeName.count > 0 ? placeName.count : 1
     }
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,12 +39,10 @@ extension SearchListViewController {
             withIdentifier: cellIdentifier
         ) else { return UITableViewCell() }
     
-        /// 검색된 결과가 있을 경우
         if placeName.count != 0 {
             cell.textLabel?.text = placeName[indexPath.row]
             cell.detailTextLabel?.text = address[indexPath.row]
         }
-        
         else {
             cell.textLabel?.text = "검색 결과가 없습니다.🤔"
             cell.detailTextLabel?.text = "매장명을 다시 한 번 확인해주세요."
@@ -59,12 +52,10 @@ extension SearchListViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
         if searchResultCount == 0 { return }
         delegate?.didChoosePlace(index: indexPath.row)
         dismiss(animated: true, completion: nil)
-        return
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -80,7 +71,8 @@ extension SearchListViewController: PanModalPresentable {
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(300)
+        let count = CGFloat(placeName.count)
+        return .contentHeight(80 * count)
     }
     
     var longFormHeight: PanModalHeight {

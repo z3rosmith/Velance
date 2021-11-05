@@ -59,14 +59,16 @@ extension ProductReviewListContainerViewController {
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
         
-        //Test
-        let vc = ChooseRegionViewController.instantiate()
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+        //Test -- 지역 선택하는 VC임 -> CommunityDailyLife로 옮겨야함
+//        let vc = ChooseRegionViewController.instantiate()
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
         
-//        let vc = UploadNewProductViewController.instantiate()
-//        navigationController?.pushViewController(vc, animated: true)
+//        let vc = NewDailyLifePostViewController.instantiate()
+        
+        let vc = UploadNewProductViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func refreshCollectionView() {
@@ -88,6 +90,14 @@ extension ProductReviewListContainerViewController: ProductReviewListDelegate {
         productCollectionView.refreshControl?.endRefreshing()
         showSimpleBottomAlert(with: error.errorDescription)
     }
+}
+
+extension ProductReviewListContainerViewController: ProductCollectionReusableDelegate {
+    
+    func didSelectItem(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
@@ -165,7 +175,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
             )
             guard let productHeaderView = headerView as? ProductCollectionReusableView
             else { return headerView }
-            
+            productHeaderView.delegate = self
             productHeaderView.configure()
             return productHeaderView
         default: return UICollectionReusableView()
