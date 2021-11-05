@@ -67,7 +67,7 @@ class ProductReviewViewModel {
     func reportProduct(type: ReportType.Product) {
         
         #warning("model DTO replyId 말고 별도로 수정")
-        let model = ReportDTO(createdBy: User.shared.userUid, reason: type.rawValue, mallId: productId ?? 0)
+        let model = ReportDTO(reason: type.rawValue, mallId: productId ?? 0)
         
         reportManager?.report(
             type: .product(type),

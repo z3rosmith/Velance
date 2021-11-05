@@ -3,7 +3,6 @@ import Foundation
 struct NewMallDTO: Encodable {
     
     let mallId: Int         //카카오 mall id
-    let createdBy: String
     let placeName: String
     let phone: String
     let addressName: String
@@ -15,7 +14,6 @@ struct NewMallDTO: Encodable {
     
     init(mallId: Int, placeName: String, phone: String, addressName: String, roadAddressName: String, x: Double, y: Double, onlyVegan: String, file: Data) {
         
-        self.createdBy = User.shared.userUid
         self.mallId = mallId
         self.placeName = placeName
         self.phone = phone

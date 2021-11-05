@@ -21,7 +21,7 @@ class MallManager {
     ) {
         showProgressBar()
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+        
             multipartFormData.append(Data(model.mallId.description.utf8),withName: "mall_id")
             multipartFormData.append(Data(model.name.utf8),withName: "name")
             multipartFormData.append(Data(model.price.description.utf8),withName: "price")
@@ -62,7 +62,7 @@ class MallManager {
         AF.upload(multipartFormData: { multipartFormData in
             
             multipartFormData.append(Data(model.mallId.description.utf8),withName: "mall_id")
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
+         
             multipartFormData.append(Data(model.placeName.utf8),withName: "place_name")
             multipartFormData.append(Data(model.phone.utf8),withName: "phone")
             multipartFormData.append(Data(model.addressName.utf8),withName: "address_name")
@@ -103,7 +103,6 @@ class MallManager {
     ) {
         
         let parameters: Parameters = [
-            "request_user_id": User.shared.userUid,
             "mall_id": mallId,
             "page": page
         ]
@@ -192,7 +191,6 @@ extension MallManager {
     ) {
         
         let parameters: Parameters = [
-            "created_by": User.shared.userUid,
             "menu_id": "\(menuId)",
             "is_like": "Y"
         ]

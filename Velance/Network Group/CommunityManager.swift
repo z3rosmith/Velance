@@ -23,7 +23,6 @@ class CommunityManager {
         showProgressBar()
         AF.upload(multipartFormData: { multipartFormData in
             
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
             multipartFormData.append(Data(model.title.utf8),withName: "title")
             multipartFormData.append(Data(model.contents.utf8),withName: "contents")
             
@@ -65,7 +64,6 @@ class CommunityManager {
         showProgressBar()
         AF.upload(multipartFormData: { multipartFormData in
             
-            multipartFormData.append(Data(model.createdBy.utf8),withName: "created_by")
             multipartFormData.append(Data(model.title.utf8),withName: "title")
             multipartFormData.append(Data(model.contents.utf8),withName: "contents")
             multipartFormData.append(Data(model.recipeCategoryId.description.utf8),withName: "recipe_category_id")
@@ -103,7 +101,6 @@ class CommunityManager {
                          completion: @escaping ((Result<[RecipeResponseDTO], NetworkError>) -> Void)) {
         
         var parameters: Parameters = [:]
-        parameters["request_user_id"] = model.requestUserID
         parameters["cursor"] = model.cursor
         parameters["recipe_category_id"] = model.recipeCategoryID
         parameters["only_following"] = model.onlyFollowing
@@ -146,7 +143,6 @@ class CommunityManager {
                          completion: @escaping ((Result<[DailyLifeResponseDTO], NetworkError>) -> Void)) {
 
         var parameters: Parameters = [:]
-        parameters["request_user_id"] = model.requestUserID
         parameters["cursor"] = model.cursor
         parameters["only_following"] = model.onlyFollowing
         

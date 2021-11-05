@@ -28,7 +28,8 @@ class ReportManager {
             url,
             method: .post,
             parameters: model.parameters,
-            encoding: JSONEncoding.default
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
         ).responseData { response in
             switch response.result {
             case .success:
