@@ -27,6 +27,11 @@ class SearchMallViewController: UIViewController {
         
         guard let nextVC = segue.destination as? MallListViewController else { fatalError() }
         nextVC.mallPoint = MallPoint(x: currentLocation.longitude, y: currentLocation.latitude, radius: currentRadius)
+        
+        if let address = addressLabel.text {
+            let addressSplit = address.split(separator: " ")
+            navigationItem.backButtonTitle = "\(addressSplit[0]) \(addressSplit[1])"
+        }
     }
 }
 
