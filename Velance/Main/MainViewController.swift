@@ -99,9 +99,7 @@ extension MainViewController {
             let vc = tabVCs[sender.tag]
             add(vc, frame: containerView.frame)
             currentVC = vc
-        }
-        
-        if let navCon = currentVC as? UINavigationController {
+        } else if let navCon = currentVC as? UINavigationController {
             navCon.popToRootViewController(animated: true)
         }
     }
