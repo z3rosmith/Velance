@@ -90,13 +90,19 @@ extension MainViewController {
     }
     
     @objc private func tabButtonTapped(_ sender: UIButton) {
-        currentTabButton?.isSelected = false
-        currentTabButton = tabStackView.subviews[sender.tag] as? UIButton
-        currentTabButton?.isSelected = true
+        if currentTabButton != sender {
+            currentTabButton?.isSelected = false
+            currentTabButton = tabStackView.subviews[sender.tag] as? UIButton
+            currentTabButton?.isSelected = true
+            
+            currentVC?.remove()
+            let vc = tabVCs[sender.tag]
+            add(vc, frame: containerView.frame)
+            currentVC = vc
+        }
         
-        currentVC?.remove()
-        let vc = tabVCs[sender.tag]
-        add(vc, frame: containerView.frame)
-        currentVC = vc
+        if let navCon = currentVC as? UINavigationController {
+            navCon.popToRootViewController(animated: true)
+        }
     }
 }
