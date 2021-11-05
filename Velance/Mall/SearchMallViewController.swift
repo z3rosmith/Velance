@@ -1,10 +1,3 @@
-//
-//  SearchMallViewController.swift
-//  Velance
-//
-//  Created by Kevin Kim on 2021/10/28.
-//
-
 import UIKit
 
 class SearchMallViewController: UIViewController {

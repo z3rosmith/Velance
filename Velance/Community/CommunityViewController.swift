@@ -41,7 +41,7 @@ extension CommunityViewController {
         
         pagingViewController.dataSource = self
         
-        pagingViewController.menuItemSize = .selfSizing(estimatedWidth: 40, height: 40)
+        pagingViewController.menuItemSize = .fixed(width: 110, height: 40)
         pagingViewController.indicatorOptions = .visible(
             height: 2,
             zIndex: Int.max,
