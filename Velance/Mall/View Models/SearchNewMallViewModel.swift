@@ -15,7 +15,6 @@ class SearchNewMallViewModel {
 
     var currentLocation: MTMapPointGeo? {
         didSet {
-            print("✏️ currentLocation has been set to: \(currentLocation)")
             delegate?.didSetCurrentLocation(location: currentLocation)
         }
     }

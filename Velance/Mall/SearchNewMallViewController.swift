@@ -124,7 +124,6 @@ extension SearchNewMallViewController: SearchNewMallViewModelDelegate {
     }
     
     func failedFetchingSearchResults(with error: NetworkError) {
-        print("❗️ failedFetchingSearchResults")
         showSimpleBottomAlert(with: error.errorDescription)
     }
     

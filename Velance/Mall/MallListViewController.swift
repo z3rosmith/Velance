@@ -85,6 +85,7 @@ extension MallListViewController: UITableViewDataSource {
         let cellViewModel = viewModel.mallAtIndex(indexPath.row)
         
         guard let mallVC = MallViewController.instantiate() as? MallViewController else { return }
+
         mallVC.mallId = cellViewModel.mallId
         mallVC.mallName = cellViewModel.mallName
         mallVC.isVegan = cellViewModel.isVegan

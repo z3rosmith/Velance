@@ -63,7 +63,7 @@ extension SceneDelegate {
     
 }
 
-extension SceneDelegate {
+extension SceneDelegate { 
 
     func configureIQKeyboardManager() {
         IQKeyboardManager.shared.enable = true

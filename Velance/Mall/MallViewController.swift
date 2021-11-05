@@ -279,7 +279,7 @@ extension MallViewController {
         
         let headerView = MallHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 140))
         
-        headerView.configure(mallName: mallName, isVegan: isVegan, mallAddress: mallAddress)
+        headerView.configure(mallId: mallId, mallName: mallName, isVegan: isVegan, mallAddress: mallAddress)
         menuTableView.tableHeaderView = headerView
 
         let menuTableViewCell = UINib(
