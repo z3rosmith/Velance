@@ -37,13 +37,20 @@ class MallViewController: UIViewController, Storyboarded {
         configure()
         setupViewModel()
         bottomView.backgroundColor = .white
-        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
         viewModel.fetchMenuList()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
     
     func setupViewModel() {
         viewModel.delegate = self

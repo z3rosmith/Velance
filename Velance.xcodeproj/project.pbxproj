@@ -54,6 +54,7 @@
 		7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */; };
 		7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */; };
 		7C1D2A1627339F8A00E9785C /* NewDailyLifePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */; };
+		7C1D2A182735576000E9785C /* UserInfoUpdateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D2A172735576000E9785C /* UserInfoUpdateDTO.swift */; };
 		7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */; };
 		7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */; };
 		7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */; };
@@ -257,6 +258,7 @@
 		7C03678B2716C1FF0031DBBE /* ProductCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionReusableView.swift; sourceTree = "<group>"; };
 		7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
 		7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDailyLifePostViewController.swift; sourceTree = "<group>"; };
+		7C1D2A172735576000E9785C /* UserInfoUpdateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateDTO.swift; sourceTree = "<group>"; };
 		7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewProductViewController.swift; sourceTree = "<group>"; };
 		7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewViewController.swift; sourceTree = "<group>"; };
 		7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -896,6 +898,7 @@
 				7CC36A4026EC63D8007573DD /* UserRegister.storyboard */,
 				7C8ED24D270EA0F400693521 /* IdPasswordInputViewController.swift */,
 				7C8ED24F270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift */,
+				7C1D2A172735576000E9785C /* UserInfoUpdateDTO.swift */,
 				7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */,
 			);
 			path = UserRegister;
@@ -1398,6 +1401,7 @@
 				3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,
 				7CF3924C2726B08500E48EFB /* ReportDTO.swift in Sources */,
+				7C1D2A182735576000E9785C /* UserInfoUpdateDTO.swift in Sources */,
 				7CCBB55727253DCB002EFB58 /* FileFolder.swift in Sources */,
 				7C60F1CD27290296001D96C2 /* NewDailyLifeDTO.swift in Sources */,
 				7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */,

@@ -32,7 +32,8 @@ extension IdPasswordInputViewController {
         UserRegisterValues.shared.displayName = idTextField.text!
         UserRegisterValues.shared.password = passwordTextField.text!
         
-        let vc = InputUserInfoForRegisterViewController.instantiate()
+        guard let vc = InputUserInfoForRegisterViewController.instantiate() as? InputUserInfoForRegisterViewController else { return }
+        vc.isForEditingUser = false
         navigationController?.pushViewController(vc, animated: true)
     }
     

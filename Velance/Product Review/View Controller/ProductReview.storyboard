@@ -57,11 +57,11 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bty-sN-IhY">
-                                <rect key="frame" x="16" y="138" width="346" height="65"/>
+                                <rect key="frame" x="16" y="138" width="328" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-YQ-fT7">
-                                        <rect key="frame" x="0.0" y="22.5" width="148.5" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="23.5" width="140.5" height="18.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="알러지유발식품 제외" image="square" catalog="system">
@@ -73,8 +73,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-xg-gPh">
-                                        <rect key="frame" x="161.5" y="22.5" width="184.5" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <rect key="frame" x="153.5" y="23.5" width="174.5" height="18.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="내 채식유형이 먹은 제품들" image="square" catalog="system">
@@ -176,16 +176,16 @@
                                 </collectionReusableView>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOE-q3-upm" userLabel="VLFLoatingButton" customClass="VLFloatingButton" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="328" y="778" width="60" height="60"/>
+                                <rect key="frame" x="259" y="791" width="135" height="55"/>
+                                <color key="backgroundColor" name="388203"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Q6O-LX-RSq"/>
-                                    <constraint firstAttribute="height" constant="60" id="yk2-U7-e51"/>
+                                    <constraint firstAttribute="width" constant="135" id="Q6O-LX-RSq"/>
+                                    <constraint firstAttribute="height" constant="55" id="yk2-U7-e51"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                                </state>
+                                <state key="normal" title="새 제품 제보"/>
                                 <connections>
                                     <action selector="pressedAddButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="f9B-bR-LIV"/>
                                 </connections>
@@ -200,8 +200,8 @@
                             <constraint firstItem="bty-sN-IhY" firstAttribute="top" secondItem="smG-IU-Uh6" secondAttribute="bottom" id="M3l-JD-Qa2"/>
                             <constraint firstItem="LL9-TZ-qsh" firstAttribute="top" secondItem="zwC-Ml-Py0" secondAttribute="bottom" id="MBm-Ul-tMh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LL9-TZ-qsh" secondAttribute="trailing" id="NMj-A1-wXg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cOE-q3-upm" secondAttribute="bottom" constant="24" id="XEF-qC-mya"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cOE-q3-upm" secondAttribute="trailing" constant="26" id="Y3P-eQ-F7x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cOE-q3-upm" secondAttribute="bottom" constant="16" id="XEF-qC-mya"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cOE-q3-upm" secondAttribute="trailing" constant="20" id="Y3P-eQ-F7x"/>
                             <constraint firstItem="smG-IU-Uh6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hsJ-aM-wRa"/>
                             <constraint firstItem="zwC-Ml-Py0" firstAttribute="top" secondItem="bty-sN-IhY" secondAttribute="bottom" id="lnP-Cg-Fnw"/>
                             <constraint firstItem="LL9-TZ-qsh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lsy-SO-Pkk"/>
@@ -1732,6 +1732,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="388203">
+            <color red="0.2196078431372549" green="0.50980392156862742" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

@@ -7,11 +7,11 @@ class MyPageViewController: UIViewController, Storyboarded {
     @IBOutlet weak var myPageTableView: UITableView!
     
     fileprivate struct Images {
-        static let myPageCellImageNames: [String] = ["person.fill", "scroll.fill", "exclamationmark.triangle.fill", "power.circle.fill"]
+        static let myPageCellImageNames: [String] = ["person.fill", "scroll.fill", "exclamationmark.triangle.fill", "power.circle.fill", "person.crop.circle.fill.badge.xmark"]
     }
     
     fileprivate struct Texts {
-        static let myPageCellTitle: [String] = ["내 정보 수정", "서비스 이용약관", "개인정보 처리방침", "로그아웃"]
+        static let myPageCellTitle: [String] = ["내 정보 수정", "서비스 이용약관", "개인정보 처리방침", "로그아웃", "회원 탈퇴"]
     }
     
     fileprivate struct SegueId {
@@ -50,14 +50,28 @@ extension MyPageViewController {
                 self.showSimpleBottomAlert(with: error.errorDescription)
             }
         }
-        
+    }
+    
+    func unregisterUser() {
+        showProgressBar()
+        UserManager.shared.unregisterUser { [weak self] result in
+            dismissProgressBar()
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                DispatchQueue.main.async { self.popToLoginViewController() }
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+            
+        }
     }
 }
 
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,11 +96,8 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: StoryboardName.userRegister, bundle: nil)
-            guard let vc = storyboard.instantiateViewController(
-                withIdentifier: "InputUserInfoForRegisterViewController"
-            ) as? InputUserInfoForRegisterViewController else { return }
-
+            guard let vc = InputUserInfoForRegisterViewController.instantiate() as? InputUserInfoForRegisterViewController else { return }
+            vc.isForEditingUser = true
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             let url = URL(string: NotionUrl.termsAndAgreementUrl)!
@@ -97,6 +108,10 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             presentAlertWithConfirmAction(title: "로그아웃 하시겠습니까?", message: "") { selectedOk in
                 if selectedOk { self.popToLoginViewController() }
+            }
+        case 4:
+            presentAlertWithConfirmAction(title: "정말 회원 탈퇴를 하시겠습니까?", message: "") { selectedOk in
+                if selectedOk { self.unregisterUser() }
             }
         default: break
         }

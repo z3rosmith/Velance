@@ -7,9 +7,12 @@ class UserManager {
     static let shared = UserManager()
     
     //MARK: - End Points
+    let userBaseUrl     = "\(API.baseUrl)user"
     let registerUrl     = "\(API.baseUrl)user/signup"
     let loginUrl        = "\(API.baseUrl)auth/login"
     let fetchProfileUrl = "\(API.baseUrl)user/"
+    
+    let interceptor = Interceptor()
 
     
     func register(
@@ -110,10 +113,27 @@ class UserManager {
         }
     }
     
+
     
-    
-    
-    
-    
+    func unregisterUser(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
+        
+        AF.request(
+            userBaseUrl,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ UserManager - unregisterUser SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    print("❗️ UserManager - unregisterUser ERROR")
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                }
+            }
+    }
     
 }

@@ -22,6 +22,12 @@ class MallListViewController: UIViewController {
         configureUI()
         viewModel.delegate = self
         viewModel.fetchMallList(mallPoint: mallPoint)
+        setNavBarBackButtonItemTitle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func pressedAddMallButton(_ sender: UIButton) {
