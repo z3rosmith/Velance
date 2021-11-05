@@ -724,7 +724,9 @@
                             <constraint firstItem="K4L-nY-6CR" firstAttribute="top" secondItem="0nt-0M-3VI" secondAttribute="bottom" constant="-20" id="zpb-rh-lHE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aW0-z1-g1v"/>
+                    <navigationItem key="navigationItem" id="aW0-z1-g1v">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pzp-Iy-4SB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="K4L-nY-6CR" id="sUe-mw-diU"/>
                         <outlet property="dragIndicator" destination="Cvf-fD-tuG" id="M8f-uo-xkf"/>
@@ -846,7 +848,7 @@
     </designables>
     <resources>
         <image name="RegisterButton" width="371" height="58"/>
-        <image name="mapMarker" width="51" height="51"/>
+        <image name="mapMarker" width="35" height="45"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="388203">
             <color red="0.2196078431372549" green="0.50980392156862742" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

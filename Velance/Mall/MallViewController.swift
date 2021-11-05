@@ -89,8 +89,17 @@ extension MallViewController: MallViewModelDelegate {
         menuTableView.refreshControl?.endRefreshing()
     }
     
-    func didLikeMenu() {
-        menuTableView.reloadData()
+    func didLikeMenu(at indexPath: IndexPath) {
+        
+        viewModel.menuList[indexPath.row].isLike = "Y"
+        viewModel.menuList[indexPath.row].likeCount += 1
+        menuTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func didCancelLikeMenu(at indexPath: IndexPath) {
+        viewModel.menuList[indexPath.row].isLike = nil
+        viewModel.menuList[indexPath.row].likeCount -= 1
+        menuTableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func failedUserRequest(with error: NetworkError) {
@@ -125,6 +134,8 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.delegate = self
         cell.menuId = menuData.menuId
+        cell.indexPath = indexPath
+        
         cell.menuImageView.sd_setImage(
             with: URL(string: menuData.fileFolder.files[0].path),
             placeholderImage: nil,
@@ -135,12 +146,16 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         cell.menuPriceLabel.text = "\(menuData.price)원"
         
         cell.likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
-    
-
-        cell.likeButton.isSelected = true
         cell.likeButton.setRightText(text: "\(menuData.likeCount)")
         
 
+        // 특정 메뉴에 대해 "좋아요"를 했을 때만 "Y"가 날라오고 아니면 속성 자체가 안 날라옴
+        if let _ = menuData.isLike {
+            cell.likeButton.isSelected = true
+       
+        } else {
+            cell.likeButton.isSelected = false
+        }
         return cell
     }
     
@@ -182,8 +197,12 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MallViewController: MenuTableViewCellDelegate {
     
-    func didSelectLikeButton(menuId: Int) {
-        viewModel.likeMenu(menuId: menuId)
+    func didChooseToLikeMenu(menuId: Int, indexPath: IndexPath) {
+        viewModel.likeMenu(menuId: menuId, indexPath: indexPath)
+    }
+    
+    func didChooseToCancelLikeMenu(menuId: Int, indexPath: IndexPath) {
+        viewModel.cancelLikeMenu(menuId: menuId, indexPath: indexPath)
     }
 }
 

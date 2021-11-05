@@ -189,7 +189,7 @@ extension MallManager {
         menuId: Int,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-        
+        print("✏️ menuId: \(menuId)")
         let parameters: Parameters = [
             "menu_id": "\(menuId)",
             "is_like": "Y"
@@ -215,12 +215,34 @@ extension MallManager {
                     completion(.failure(error))
                 }
             }
-        
     }
     
     
-    
-    func cancelLikeMenu() {
+    func cancelLikeMenu(
+        menuId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        print("✏️ menuId: \(menuId)")
+        let url = likeMenuUrl + "/\(menuId)"
+        
+        AF.request(
+            url,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ MallManager - cancelLikeMenu SUCCESS")
+                    completion(.success(true))
+                    
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    print("❗️ MallManager - cancelLikeMenu error")
+                    completion(.failure(error))
+                }
+            }
         
     }
 }

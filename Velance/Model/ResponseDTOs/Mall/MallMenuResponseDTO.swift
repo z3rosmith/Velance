@@ -7,9 +7,10 @@ struct MallMenuResponseDTO: Decodable {
     let price: Int
     let caution: String?
     let isVegan: String
-    let likeCount: Int
+    var likeCount: Int
     let dislikeCount: Int
     let fileFolder: FileFolder
+    var isLike: String?
     
     enum CodingKeys: String, CodingKey {
         case menuId = "menu_id"
@@ -18,5 +19,6 @@ struct MallMenuResponseDTO: Decodable {
         case likeCount = "like_count"
         case dislikeCount = "dislike_count"
         case fileFolder
+        case isLike = "is_like"
     }
 }

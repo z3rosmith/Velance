@@ -1,7 +1,8 @@
 import UIKit
 
 protocol MenuTableViewCellDelegate: AnyObject {
-    func didSelectLikeButton(menuId: Int)
+    func didChooseToLikeMenu(menuId: Int, indexPath: IndexPath)
+    func didChooseToCancelLikeMenu(menuId: Int, indexPath: IndexPath)
 }
 
 class MenuTableViewCell: UITableViewCell {
@@ -13,6 +14,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet var menuPriceLabel: UILabel!
     
     var menuId: Int?
+    var indexPath: IndexPath?
     
     weak var delegate: MenuTableViewCellDelegate?
     
@@ -41,8 +43,18 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     @objc private func pressedMenuLikeButton() {
-        guard let menuId = menuId else { return }
-        delegate?.didSelectLikeButton(menuId: menuId)
+        guard
+            let menuId = menuId,
+            let indexPath = indexPath
+        else { return }
+        
+    
+        if likeButton.isSelected {
+            delegate?.didChooseToCancelLikeMenu(menuId: menuId, indexPath: indexPath)
+        } else {
+            delegate?.didChooseToLikeMenu(menuId: menuId, indexPath: indexPath)
+       
+        }
     }
     
     
