@@ -277,7 +277,7 @@ class ProductManager {
     ) {
         
         let url = openAPISearchUrl + keyword
-        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.replacingOccurrences(of: "%20", with: "+")
         
         AF.request(
             encodedUrl,

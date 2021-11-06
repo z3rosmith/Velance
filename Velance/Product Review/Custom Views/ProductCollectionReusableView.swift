@@ -92,7 +92,6 @@ extension ProductCollectionReusableView: UICollectionViewDelegateFlowLayout {
 extension ProductCollectionReusableView: ProductReviewListDelegate {
     
     func didFetchSimilarTasteProductList() {
-        print("✏️ didFetchSimilarTasteProductList: \(viewModel.similarTasteProductList)")
         similarProductCollectionView.reloadData()
     }
     
