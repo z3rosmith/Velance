@@ -17,7 +17,7 @@ class ChooseRegionViewController: UIViewController, Storyboarded {
     weak var delegate: ChooseRegionDelegate?
     
     static var storyboardName: String {
-        StoryboardName.productReview
+        StoryboardName.community
     }
 
     override func viewDidLoad() {

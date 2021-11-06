@@ -15,7 +15,7 @@ class NewDailyLifePostViewController: UIViewController, Storyboarded {
     var userSelectedImagesInDataFormat: [Data]?
     
     static var storyboardName: String {
-        StoryboardName.productReview
+        StoryboardName.community
     }
 
     override func viewDidLoad() {

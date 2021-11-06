@@ -1280,6 +1280,658 @@
             </objects>
             <point key="canvasLocation" x="2832" y="-302"/>
         </scene>
+        <!--New Daily Life Post View Controller-->
+        <scene sceneID="Bt3-m9-7i2">
+            <objects>
+                <viewController storyboardIdentifier="NewDailyLifePostViewController" id="pLC-oL-OsZ" customClass="NewDailyLifePostViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1FD-Ew-uaq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8At-J6-wnp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="856"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ras-Zw-slV" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="807"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진 선택" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s96-0T-zkg">
+                                                <rect key="frame" x="16" y="243" width="70.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrX-hn-2VX" userLabel="Done Button View">
+                                                <rect key="frame" x="24" y="725" width="366" height="58"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="5D9-3o-1eB" userLabel="Register Button Image">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h06-r3-pSN" userLabel="Register Button">
+                                                        <rect key="frame" x="10" y="12" width="346" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="완료"/>
+                                                        <connections>
+                                                            <action selector="pressedDoneButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="1ps-5M-uRD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="h06-r3-pSN" secondAttribute="trailing" constant="10" id="2Si-x8-xap"/>
+                                                    <constraint firstItem="h06-r3-pSN" firstAttribute="leading" secondItem="mrX-hn-2VX" secondAttribute="leading" constant="10" id="3ir-sM-ZSm"/>
+                                                    <constraint firstItem="h06-r3-pSN" firstAttribute="centerY" secondItem="mrX-hn-2VX" secondAttribute="centerY" id="5G0-Rp-Xun"/>
+                                                    <constraint firstItem="5D9-3o-1eB" firstAttribute="leading" secondItem="mrX-hn-2VX" secondAttribute="leading" id="6fr-xi-WlY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5D9-3o-1eB" secondAttribute="trailing" id="7oj-OL-H1F"/>
+                                                    <constraint firstItem="5D9-3o-1eB" firstAttribute="top" secondItem="mrX-hn-2VX" secondAttribute="top" id="OdY-i0-Pgl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5D9-3o-1eB" secondAttribute="bottom" id="Qqg-ME-fHa"/>
+                                                    <constraint firstItem="h06-r3-pSN" firstAttribute="centerX" secondItem="mrX-hn-2VX" secondAttribute="centerX" id="Rh3-zw-LZx"/>
+                                                    <constraint firstAttribute="height" constant="58" id="eow-na-aSH"/>
+                                                </constraints>
+                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MuW-z9-fe5">
+                                                <rect key="frame" x="16" y="286" width="392" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="AmU-Co-HwM"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dxo-a3-4g6">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddImageButtonCollectionViewCell" id="V5Z-tc-aux" userLabel="addImageCell" customClass="AddImageButtonCollectionViewCell" customModule="Velance" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1" width="107" height="98"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LgT-Md-9Wo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="98"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzj-Iu-xDW" userLabel="Add Button">
+                                                                    <rect key="frame" x="5" y="5" width="97" height="88"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="65" id="Gef-HF-G5s"/>
+                                                                        <constraint firstAttribute="height" constant="65" id="PU9-tC-djM"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" name="AppDefaultColor"/>
+                                                                    <state key="normal">
+                                                                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="addImageButton:" destination="IKT-0d-Rce" eventType="touchUpInside" id="105-Um-ppL"/>
+                                                                        <action selector="pressedAddButton:" destination="V5Z-tc-aux" eventType="touchUpInside" id="uQ1-fM-Vfk"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="fzj-Iu-xDW" secondAttribute="bottom" constant="5" id="Ai8-xX-Sdz"/>
+                                                                <constraint firstItem="fzj-Iu-xDW" firstAttribute="top" secondItem="LgT-Md-9Wo" secondAttribute="top" constant="5" id="BQY-k8-JQG"/>
+                                                                <constraint firstItem="fzj-Iu-xDW" firstAttribute="leading" secondItem="LgT-Md-9Wo" secondAttribute="leading" constant="5" id="Eu7-Uz-21M"/>
+                                                                <constraint firstAttribute="trailing" secondItem="fzj-Iu-xDW" secondAttribute="trailing" constant="5" id="Q3Y-5j-9pa"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="107" height="98"/>
+                                                        <connections>
+                                                            <outlet property="addImageButton" destination="fzj-Iu-xDW" id="6a6-qy-vHa"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserPickedImageCollectionViewCell" id="1QN-wU-o49" customClass="UserPickedImageCollectionViewCell" customModule="Velance" customModuleProvider="target">
+                                                        <rect key="frame" x="117" y="12.5" width="75" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Sj-Lk-ZwE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cth-Iu-yOY">
+                                                                    <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="65" id="brA-67-zeG"/>
+                                                                        <constraint firstAttribute="height" constant="65" id="nZc-eD-0QP"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVN-pn-Uke" userLabel="Cancel Button">
+                                                                    <rect key="frame" x="52" y="0.0" width="23" height="23"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="23" id="EI0-Yb-vHH"/>
+                                                                        <constraint firstAttribute="width" constant="23" id="yEX-wu-ugx"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" image="xmark.circle.fill" catalog="system"/>
+                                                                    <connections>
+                                                                        <action selector="pressedCancelButton:" destination="1QN-wU-o49" eventType="touchUpInside" id="SHD-wr-hZf"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="SVN-pn-Uke" secondAttribute="trailing" id="CZY-4B-uvd"/>
+                                                                <constraint firstItem="Cth-Iu-yOY" firstAttribute="leading" secondItem="6Sj-Lk-ZwE" secondAttribute="leading" constant="5" id="E8V-dI-Bew"/>
+                                                                <constraint firstItem="SVN-pn-Uke" firstAttribute="top" secondItem="6Sj-Lk-ZwE" secondAttribute="top" id="WGq-nT-z64"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Cth-Iu-yOY" secondAttribute="bottom" constant="5" id="Z1E-0z-ofB"/>
+                                                                <constraint firstItem="Cth-Iu-yOY" firstAttribute="top" secondItem="6Sj-Lk-ZwE" secondAttribute="top" constant="5" id="aVA-Su-DrM"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Cth-Iu-yOY" secondAttribute="trailing" constant="5" id="gP8-tl-TiL"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="cancelButton" destination="SVN-pn-Uke" id="HrY-CF-Inv"/>
+                                                            <outlet property="userPickedImageView" destination="Cth-Iu-yOY" id="Rgq-uo-Xo5"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="04i-F6-Ipv">
+                                                <rect key="frame" x="16" y="450" width="382" height="250"/>
+                                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="Yhk-p7-A6N"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역 선택" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUp-EY-XYU">
+                                                <rect key="frame" x="16" y="20" width="70.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글 작성" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4j-9d-D4H">
+                                                <rect key="frame" x="16" y="411" width="54" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-Pq-866" userLabel="Choose Category View">
+                                                <rect key="frame" x="16" y="59" width="382" height="159"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5tc-U2-OLg">
+                                                        <rect key="frame" x="12" y="12" width="358" height="78"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OSj-9P-07b">
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pno-B4-Llw" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="서울">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="Snk-8A-DY3"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fum-1S-fI4" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="68.5" y="0.0" width="64" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="인천">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="nM1-gH-Zlu"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyu-C4-w6Y" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="137.5" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="경기">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="hDl-Zx-Qou"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ga-u8-gEm" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="206" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="부산">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="QC5-bt-BnE"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwR-ia-Bqi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="274.5" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="대구">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="xzh-xZ-x8H"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="sdb-hA-FFR"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Rd-4P-ZGA">
+                                                                <rect key="frame" x="0.0" y="43" width="358" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77A-CV-nly" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="대전">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="sLF-Op-DPw"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWh-lx-9uc" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="68.5" y="0.0" width="64" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="광주">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="aWE-os-d0m"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-Ee-V9w" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="137.5" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="수원">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="hCz-pm-Fde"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-eM-mZY" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="206" y="0.0" width="63.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="울산">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="yxC-rF-lPI"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-x7-dZb" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                        <rect key="frame" x="274.5" y="0.0" width="83.5" height="35"/>
+                                                                        <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="제주">
+                                                                            <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="wrl-ap-gsF"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="UlG-Yf-EvN"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xou-NL-sDT" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                        <rect key="frame" x="101" y="106" width="180" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="37" id="Tpj-r8-4vs"/>
+                                                            <constraint firstAttribute="width" constant="180" id="kFC-XQ-FjC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="모든 지역">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pressedRegionCategoryButton:" destination="pLC-oL-OsZ" eventType="touchUpInside" id="3Gn-xE-cAW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="5tc-U2-OLg" firstAttribute="top" secondItem="z4f-Pq-866" secondAttribute="top" constant="12" id="0NM-wR-1gu"/>
+                                                    <constraint firstItem="5tc-U2-OLg" firstAttribute="leading" secondItem="z4f-Pq-866" secondAttribute="leading" constant="12" id="1uF-Qq-gao"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xou-NL-sDT" secondAttribute="bottom" constant="16" id="AOp-rO-7W5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5tc-U2-OLg" secondAttribute="trailing" constant="12" id="HMO-jw-Joj"/>
+                                                    <constraint firstItem="xou-NL-sDT" firstAttribute="centerX" secondItem="z4f-Pq-866" secondAttribute="centerX" id="g9x-fd-ZMI"/>
+                                                    <constraint firstItem="xou-NL-sDT" firstAttribute="top" secondItem="5tc-U2-OLg" secondAttribute="bottom" constant="16" id="tLR-Yq-5xR"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 최소 1개, 최대 3개 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-wN-8B0">
+                                                <rect key="frame" x="92.5" y="247.5" width="122" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 어느 지역 사람들이 글을 봤으면 좋겠나요? )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RM3-p9-azf">
+                                                <rect key="frame" x="98.5" y="24" width="250" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MuW-z9-fe5" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="1kN-5d-wwc"/>
+                                            <constraint firstItem="fUp-EY-XYU" firstAttribute="top" secondItem="Ras-Zw-slV" secondAttribute="top" constant="20" id="8fK-4y-iqA"/>
+                                            <constraint firstItem="04i-F6-Ipv" firstAttribute="top" secondItem="N4j-9d-D4H" secondAttribute="bottom" constant="16" id="DhW-Hh-M3I"/>
+                                            <constraint firstItem="mrX-hn-2VX" firstAttribute="top" secondItem="04i-F6-Ipv" secondAttribute="bottom" constant="25" id="EDV-Kt-gZ2"/>
+                                            <constraint firstItem="N4j-9d-D4H" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="FaK-ru-WHX"/>
+                                            <constraint firstAttribute="trailing" secondItem="MuW-z9-fe5" secondAttribute="trailing" constant="6" id="HBW-Fj-x09"/>
+                                            <constraint firstItem="RM3-p9-azf" firstAttribute="top" secondItem="Ras-Zw-slV" secondAttribute="top" constant="24" id="NBh-9C-MVC"/>
+                                            <constraint firstItem="xXB-wN-8B0" firstAttribute="top" secondItem="z4f-Pq-866" secondAttribute="bottom" constant="29.5" id="Q2u-dF-PI7"/>
+                                            <constraint firstAttribute="trailing" secondItem="mrX-hn-2VX" secondAttribute="trailing" constant="24" id="VDD-OX-6aM"/>
+                                            <constraint firstItem="04i-F6-Ipv" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="bxL-yh-3IZ"/>
+                                            <constraint firstItem="N4j-9d-D4H" firstAttribute="top" secondItem="MuW-z9-fe5" secondAttribute="bottom" constant="25" id="dO9-3J-csn"/>
+                                            <constraint firstItem="mrX-hn-2VX" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="24" id="dbx-ub-IXW"/>
+                                            <constraint firstAttribute="trailing" secondItem="z4f-Pq-866" secondAttribute="trailing" constant="16" id="dxN-zM-8Ad"/>
+                                            <constraint firstItem="MuW-z9-fe5" firstAttribute="top" secondItem="s96-0T-zkg" secondAttribute="bottom" constant="20" id="ipo-du-k4L"/>
+                                            <constraint firstItem="s96-0T-zkg" firstAttribute="top" secondItem="z4f-Pq-866" secondAttribute="bottom" constant="25" id="j9g-yB-rVk"/>
+                                            <constraint firstAttribute="trailing" secondItem="04i-F6-Ipv" secondAttribute="trailing" constant="16" id="jRR-h0-hv2"/>
+                                            <constraint firstItem="fUp-EY-XYU" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="jkK-PN-3BP"/>
+                                            <constraint firstAttribute="bottom" secondItem="mrX-hn-2VX" secondAttribute="bottom" constant="24" id="oNw-d1-bvY"/>
+                                            <constraint firstItem="z4f-Pq-866" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="pTS-ge-HkF"/>
+                                            <constraint firstItem="RM3-p9-azf" firstAttribute="leading" secondItem="fUp-EY-XYU" secondAttribute="trailing" constant="12" id="s1z-AU-CSc"/>
+                                            <constraint firstItem="s96-0T-zkg" firstAttribute="leading" secondItem="Ras-Zw-slV" secondAttribute="leading" constant="16" id="uyg-lF-fBV"/>
+                                            <constraint firstItem="z4f-Pq-866" firstAttribute="top" secondItem="fUp-EY-XYU" secondAttribute="bottom" constant="16" id="vld-dO-U96"/>
+                                            <constraint firstItem="xXB-wN-8B0" firstAttribute="leading" secondItem="s96-0T-zkg" secondAttribute="trailing" constant="6" id="wiY-mD-e4w"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ras-Zw-slV" firstAttribute="leading" secondItem="8At-J6-wnp" secondAttribute="leading" id="3nM-sv-0C2"/>
+                                    <constraint firstItem="Ras-Zw-slV" firstAttribute="width" secondItem="8At-J6-wnp" secondAttribute="width" id="5kb-qP-Dxq"/>
+                                    <constraint firstItem="Ras-Zw-slV" firstAttribute="height" secondItem="8At-J6-wnp" secondAttribute="height" priority="250" id="9Ul-EE-Asz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ras-Zw-slV" secondAttribute="trailing" id="Ghy-3W-9iF"/>
+                                    <constraint firstItem="Ras-Zw-slV" firstAttribute="top" secondItem="8At-J6-wnp" secondAttribute="top" id="QUA-Yb-T6g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ras-Zw-slV" secondAttribute="bottom" id="ftU-Kg-Pwe"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6gq-zc-q9G"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fq2-NJ-r6f"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MiY-h1-dTP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8At-J6-wnp" secondAttribute="bottom" id="25r-5q-whK"/>
+                            <constraint firstItem="8At-J6-wnp" firstAttribute="leading" secondItem="MiY-h1-dTP" secondAttribute="leading" id="Phc-f5-7k5"/>
+                            <constraint firstItem="8At-J6-wnp" firstAttribute="top" secondItem="MiY-h1-dTP" secondAttribute="top" id="at9-9r-Gap"/>
+                            <constraint firstItem="8At-J6-wnp" firstAttribute="trailing" secondItem="MiY-h1-dTP" secondAttribute="trailing" id="fM5-3t-aqr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yA0-9s-H84"/>
+                    <size key="freeformSize" width="414" height="900"/>
+                    <connections>
+                        <outlet property="postImageCollectionView" destination="MuW-z9-fe5" id="pr3-mg-kYS"/>
+                        <outlet property="postTextView" destination="04i-F6-Ipv" id="1yn-7y-zea"/>
+                        <outlet property="regionCategoryView" destination="z4f-Pq-866" id="nXg-lP-ekf"/>
+                        <outletCollection property="regionCategoryButtons" destination="pno-B4-Llw" collectionClass="NSMutableArray" id="TaX-tb-CaC"/>
+                        <outletCollection property="regionCategoryButtons" destination="Fum-1S-fI4" collectionClass="NSMutableArray" id="WcQ-eZ-g1o"/>
+                        <outletCollection property="regionCategoryButtons" destination="Iyu-C4-w6Y" collectionClass="NSMutableArray" id="EHe-cX-K2O"/>
+                        <outletCollection property="regionCategoryButtons" destination="7ga-u8-gEm" collectionClass="NSMutableArray" id="YTb-AD-MK7"/>
+                        <outletCollection property="regionCategoryButtons" destination="jwR-ia-Bqi" collectionClass="NSMutableArray" id="UgJ-6j-549"/>
+                        <outletCollection property="regionCategoryButtons" destination="77A-CV-nly" collectionClass="NSMutableArray" id="hJj-Qu-wjq"/>
+                        <outletCollection property="regionCategoryButtons" destination="AWh-lx-9uc" collectionClass="NSMutableArray" id="Qfs-4q-Mt4"/>
+                        <outletCollection property="regionCategoryButtons" destination="MtB-Ee-V9w" collectionClass="NSMutableArray" id="4iT-vT-KU3"/>
+                        <outletCollection property="regionCategoryButtons" destination="VCu-eM-mZY" collectionClass="NSMutableArray" id="WeH-jz-zdi"/>
+                        <outletCollection property="regionCategoryButtons" destination="sC7-x7-dZb" collectionClass="NSMutableArray" id="h27-f4-VlG"/>
+                        <outletCollection property="regionCategoryButtons" destination="xou-NL-sDT" collectionClass="NSMutableArray" id="8B2-RV-klX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dO-Ed-1lZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IKT-0d-Rce" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5781" y="-621"/>
+        </scene>
+        <!--Choose Region View Controller-->
+        <scene sceneID="cBd-gJ-PPa">
+            <objects>
+                <viewController storyboardIdentifier="ChooseRegionViewController" id="XiG-KO-HVi" customClass="ChooseRegionViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.75" contentMode="scaleToFill" id="pa4-CJ-9q9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-1q-fnP" userLabel="Region View">
+                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UHS-hc-hxi">
+                                        <rect key="frame" x="16" y="30" width="382" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역을 선택해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-Ob-TpV">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeparatorLine" translatesAutoresizingMaskIntoConstraints="NO" id="3pL-am-9a9">
+                                                <rect key="frame" x="0.0" y="32" width="40" height="4"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="2LQ-Ii-xaD"/>
+                                                    <constraint firstAttribute="height" constant="4" id="Kz3-Gf-2X1"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-bx-Nbl" userLabel="Choose Region View">
+                                        <rect key="frame" x="16" y="82" width="382" height="102"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AxG-0V-nfr">
+                                                <rect key="frame" x="12" y="12" width="358" height="78"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-Zp-7Hk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="35"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPy-sn-IIL" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="서울">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="arz-al-o38"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-uN-FBU" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="68.5" y="0.0" width="64" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="부산">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="tYY-0x-aDx"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBg-mb-0xa" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="137.5" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="대구">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="2FC-VS-ObZ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8o-SM-reP" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="206" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="대전">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="hJk-pF-MFh"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRa-CM-tCt" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="274.5" y="0.0" width="83.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="인천">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="bj8-1y-8Yt"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="XnD-SU-v19"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-bn-BQk">
+                                                        <rect key="frame" x="0.0" y="43" width="358" height="35"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-mv-mUd" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="울산">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="uXY-xT-wPI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-wY-UI2" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="68.5" y="0.0" width="64" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="ogf-ov-AeL"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNh-Dq-XOI" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="137.5" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="QW9-ej-5l2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnh-qi-gSu" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="206" y="0.0" width="63.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="gqP-Ta-JeY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auB-w7-qRe" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                                                <rect key="frame" x="274.5" y="0.0" width="83.5" height="35"/>
+                                                                <color key="tintColor" name="TabBarSelectedColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="광주">
+                                                                    <color key="titleColor" name="TabBarSelectedColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedOptionButton:" destination="XiG-KO-HVi" eventType="touchUpInside" id="1zj-sG-GQY"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="Teh-ol-7rc"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="AxG-0V-nfr" secondAttribute="bottom" constant="12" id="W3c-t4-nGG"/>
+                                            <constraint firstItem="AxG-0V-nfr" firstAttribute="leading" secondItem="JLV-bx-Nbl" secondAttribute="leading" constant="12" id="mJk-ev-x6U"/>
+                                            <constraint firstAttribute="trailing" secondItem="AxG-0V-nfr" secondAttribute="trailing" constant="12" id="mPy-FB-a2c"/>
+                                            <constraint firstItem="AxG-0V-nfr" firstAttribute="top" secondItem="JLV-bx-Nbl" secondAttribute="top" constant="12" id="rgI-u6-a9J"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-TI-KGf" userLabel="Bottom Button View">
+                                        <rect key="frame" x="42" y="226" width="330" height="58"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="bSo-PR-Y3a" userLabel="Done Button Image">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="58"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jut-dA-r1d" userLabel="Done Button">
+                                                <rect key="frame" x="12" y="12" width="306" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="선택 완료!"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="bSo-PR-Y3a" firstAttribute="top" secondItem="XnH-TI-KGf" secondAttribute="top" id="00B-cD-2fK"/>
+                                            <constraint firstItem="jut-dA-r1d" firstAttribute="leading" secondItem="XnH-TI-KGf" secondAttribute="leading" constant="12" id="604-KH-rJh"/>
+                                            <constraint firstAttribute="trailing" secondItem="bSo-PR-Y3a" secondAttribute="trailing" id="G9f-qq-54L"/>
+                                            <constraint firstAttribute="trailing" secondItem="jut-dA-r1d" secondAttribute="trailing" constant="12" id="H8K-VG-qMf"/>
+                                            <constraint firstItem="jut-dA-r1d" firstAttribute="centerX" secondItem="XnH-TI-KGf" secondAttribute="centerX" id="MoJ-wq-UTl"/>
+                                            <constraint firstItem="bSo-PR-Y3a" firstAttribute="leading" secondItem="XnH-TI-KGf" secondAttribute="leading" id="OVb-dx-BXe"/>
+                                            <constraint firstItem="jut-dA-r1d" firstAttribute="centerY" secondItem="XnH-TI-KGf" secondAttribute="centerY" id="Y25-Nw-tWf"/>
+                                            <constraint firstAttribute="bottom" secondItem="bSo-PR-Y3a" secondAttribute="bottom" id="cq9-yR-IxA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UHS-hc-hxi" secondAttribute="trailing" constant="16" id="7v7-cj-eVX"/>
+                                    <constraint firstItem="UHS-hc-hxi" firstAttribute="top" secondItem="6mE-1q-fnP" secondAttribute="top" constant="30" id="8TG-Aq-0XK"/>
+                                    <constraint firstAttribute="bottom" secondItem="XnH-TI-KGf" secondAttribute="bottom" constant="16" id="9xK-xs-OdW"/>
+                                    <constraint firstItem="XnH-TI-KGf" firstAttribute="leading" secondItem="6mE-1q-fnP" secondAttribute="leading" constant="42" id="dbM-sN-5kN"/>
+                                    <constraint firstAttribute="trailing" secondItem="XnH-TI-KGf" secondAttribute="trailing" constant="42" id="g8L-aE-H80"/>
+                                    <constraint firstItem="JLV-bx-Nbl" firstAttribute="top" secondItem="UHS-hc-hxi" secondAttribute="bottom" constant="16" id="hVe-dr-vMV"/>
+                                    <constraint firstItem="JLV-bx-Nbl" firstAttribute="leading" secondItem="6mE-1q-fnP" secondAttribute="leading" constant="16" id="m3X-ZU-k86"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLV-bx-Nbl" secondAttribute="trailing" constant="16" id="ret-1o-xtM"/>
+                                    <constraint firstItem="UHS-hc-hxi" firstAttribute="leading" secondItem="6mE-1q-fnP" secondAttribute="leading" constant="16" id="wqC-a3-KEU"/>
+                                    <constraint firstAttribute="height" constant="300" id="zPn-Ni-gXv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RXx-Ec-9tW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6mE-1q-fnP" firstAttribute="leading" secondItem="RXx-Ec-9tW" secondAttribute="leading" id="3ak-Eg-bAN"/>
+                            <constraint firstItem="6mE-1q-fnP" firstAttribute="centerY" secondItem="pa4-CJ-9q9" secondAttribute="centerY" id="HcT-Yw-wy4"/>
+                            <constraint firstItem="6mE-1q-fnP" firstAttribute="trailing" secondItem="RXx-Ec-9tW" secondAttribute="trailing" id="xno-Dd-3Q6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseRegionContainerView" destination="JLV-bx-Nbl" id="h55-Um-Vja"/>
+                        <outlet property="containerView" destination="6mE-1q-fnP" id="8dA-lh-apO"/>
+                        <outlet property="doneButton" destination="jut-dA-r1d" id="9oy-ou-MkM"/>
+                        <outletCollection property="regionOptionButtons" destination="EPy-sn-IIL" collectionClass="NSMutableArray" id="vJX-Mw-6bK"/>
+                        <outletCollection property="regionOptionButtons" destination="yRq-uN-FBU" collectionClass="NSMutableArray" id="sOp-sq-7nI"/>
+                        <outletCollection property="regionOptionButtons" destination="mBg-mb-0xa" collectionClass="NSMutableArray" id="VZG-2A-pb3"/>
+                        <outletCollection property="regionOptionButtons" destination="P8o-SM-reP" collectionClass="NSMutableArray" id="vMv-84-fov"/>
+                        <outletCollection property="regionOptionButtons" destination="yRa-CM-tCt" collectionClass="NSMutableArray" id="a2W-JT-aDs"/>
+                        <outletCollection property="regionOptionButtons" destination="xPH-mv-mUd" collectionClass="NSMutableArray" id="GaC-aC-zsf"/>
+                        <outletCollection property="regionOptionButtons" destination="Ge1-wY-UI2" collectionClass="NSMutableArray" id="qhC-pt-sbU"/>
+                        <outletCollection property="regionOptionButtons" destination="SNh-Dq-XOI" collectionClass="NSMutableArray" id="HMe-WT-d95"/>
+                        <outletCollection property="regionOptionButtons" destination="gnh-qi-gSu" collectionClass="NSMutableArray" id="aHd-eB-u8V"/>
+                        <outletCollection property="regionOptionButtons" destination="auB-w7-qRe" collectionClass="NSMutableArray" id="PNE-iE-cgw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBC-B1-8uR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="871"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="fTU-lI-yPv">

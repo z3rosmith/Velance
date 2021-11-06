@@ -463,7 +463,9 @@
 				3C51257A271455F4003E572D /* Community.storyboard */,
 				3C910FD0272A3B6600F6CE2F /* View Models */,
 				7CBF63EF2727D89C000B5F04 /* NewRecipeViewController.swift */,
+				7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */,
 				7C922A532718054B00295A3F /* ChooseInterestViewController.swift */,
+				7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */,
 				3C51257C2714560C003E572D /* CommunityViewController.swift */,
 				3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */,
 				3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */,
@@ -780,8 +782,6 @@
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
 				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
-				7CBDF4B12730E59500E657D9 /* ChooseRegionViewController.swift */,
-				7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
