@@ -15,7 +15,6 @@ struct UserDisplayModel: Decodable {
         case userName = "user_name"
         case displayName = "display_name"
         case vegetarianType, fileFolder, userTasteGroups, userInterestGroups, followers, followings
-        
     }
 }
 

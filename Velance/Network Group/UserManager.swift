@@ -101,8 +101,6 @@ class UserManager {
                     print("❗️ UserManager - fetchProfileInfo Decoding ERROR: \(error)")
                     completion(.failure(.internalError))
                 }
-                completion(.success(true))
-                
             case .failure:
                 let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 500, responseData: response.data ?? Data())
                 completion(.failure(error))
@@ -110,10 +108,36 @@ class UserManager {
         }
     }
     
-    
-    
-    
-    
-    
-    
+    func fetchProfileForCommunity(userUID: String,
+                                  completion: @escaping ((Result<UserDisplayModel, NetworkError>) -> Void)) {
+        
+        AF.request(
+            fetchProfileUrl + userUID,
+            method: .get
+        ).responseData { response in
+            switch response.result {
+            case .success:
+                do {
+                    let decodedData = try JSONDecoder().decode(UserDisplayModel.self, from: response.data!)
+                    completion(.success(decodedData))
+                    print("✏️ UserManager - fetchProfileForCommunity SUCCESS")
+                } catch {
+                    print("❗️ UserManager - fetchProfileForCommunity Decoding ERROR: \(error)")
+                    completion(.failure(.internalError))
+                }
+            case .failure(let error):
+                if let jsonData = response.data {
+                    print("❗️ UserManager - fetchProfileForCommunity - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                }
+                print("❗️ UserManager - fetchProfileForCommunity - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                guard let responseCode = error.responseCode else {
+                    print("❗️ UserManager - fetchProfileForCommunity - Empty responseCode")
+                    return
+                }
+                let customError = NetworkError.returnError(statusCode: responseCode)
+                print("❗️ UserManager - fetchProfileForCommunity - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                completion(.failure(customError))
+            }
+        }
+    }
 }

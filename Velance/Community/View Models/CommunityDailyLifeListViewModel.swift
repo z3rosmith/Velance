@@ -1,11 +1,13 @@
 import Foundation
 
 protocol CommunityDailyLifeListViewModelDelegate: AnyObject {
+    
     func didFetchPostList()
 }
 
 /// post는 recipe의 일반적인 용어로 사용하였음
 class CommunityDailyLifeListViewModel {
+    
     weak var delegate: CommunityDailyLifeListViewModelDelegate?
     var posts: [DailyLifeResponseDTO] = []
     var hasMore: Bool = true

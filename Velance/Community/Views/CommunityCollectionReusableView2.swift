@@ -26,7 +26,7 @@ class CommunityCollectionReusableView2: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        configureUI()
     }
     
     override func layoutSubviews() {
@@ -37,12 +37,18 @@ class CommunityCollectionReusableView2: UICollectionReusableView {
 
 extension CommunityCollectionReusableView2 {
     
-    private func setupUI() {
+    private func configureUI() {
         contentView.layer.cornerRadius = 30
         userImageView.layer.cornerRadius = userImageView.frame.height/2
         userImageView.layer.masksToBounds = true
         editUserImageButton.layer.cornerRadius = editUserImageButton.frame.height/2
         editUserImageButton.layer.masksToBounds = true
         contentView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        tagListView.textFont = .systemFont(ofSize: 16, weight: .medium)
+        tagListView.alignment = .leading
+        tagListView.textColor = UIColor(named: "4D8800")!
+        tagListView.tagBackgroundColor = UIColor(named: "BADE8A")!
+        tagListView.cornerRadius = 10
     }
 }
