@@ -55,12 +55,8 @@ class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
- 
     }
 
-
-    
 }
 //MARK: - IBActions
 
@@ -149,14 +145,41 @@ extension InputUserInfoForRegisterViewController {
             showSimpleBottomAlert(with: "나의 관심사를 3가지 이상 골라주세요.")
             return
         }
-        isForEditingUser ? updateUserInfo() : proceedRegisterProcess()
+        
+        presentAlertWithConfirmAction(
+            title: isForEditingUser ? "회원 정보를 수정하시겠습니까?" : "회원가입 하시겠습니까?",
+            message: ""
+        ) { [weak self] selectedOk in
+            guard let self = self else { return }
+            if selectedOk {
+                self.isForEditingUser
+                ? self.updateUserInfo()
+                : self.proceedRegisterProcess()
+            }
+        }
     }
     
     private func updateUserInfo() {
         
-//        let model = UserInfoUpdateDTO()
+        let model = UserInfoUpdateDTO(
+            vegetarianTypeId: veganTypeId,
+            tasteTypeIds: tasteTypeIds,
+            interestTypeIds: interestTypeIds,
+            allergyTypeIds: allergyTypeIds
+        )
         
-    
+        UserManager.shared.updateUserInfo(with: model) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.showSimpleBottomAlert(with: "프로필 변경 성공 🎉")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
     }
     
     private func proceedRegisterProcess() {

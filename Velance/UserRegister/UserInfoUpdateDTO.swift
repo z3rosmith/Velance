@@ -17,5 +17,7 @@ struct UserInfoUpdateDTO {
         if let allergyTypeIds = allergyTypeIds {
             parameters["allergy_type_ids"] = allergyTypeIds
         }
+        
+        print("✏️ PARAMETERS: \(self.parameters)")
     }
 }

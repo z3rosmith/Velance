@@ -45,6 +45,28 @@ class UserManager {
         
     }
     
+    func updateUserInfo(
+        with model: UserInfoUpdateDTO,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+    
+        AF.request(
+            userBaseUrl,
+            method: .patch,
+            parameters: model.parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        ).responseJSON { response in
+
+            switch response.result {
+            case .success: completion(.success(true))
+            case .failure(_):
+                let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                completion(.failure(error))
+            }
+        }
+    }
+    
     
     func login(
         username: String,
