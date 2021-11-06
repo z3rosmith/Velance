@@ -135,6 +135,13 @@ class ProductManager {
             multipartFormData.append(Data(String(model.productCategoryId).utf8),withName: "product_category_id")
             multipartFormData.append(Data(model.name.utf8),withName: "name")
             multipartFormData.append(Data(String(model.price).utf8),withName: "price")
+            multipartFormData.append(Data(model.PRDLST_REPORT_NO.utf8),withName: "PRDLST_REPORT_NO")
+            
+        
+            for rawMaterial in model.RAWMTRL_NM {
+                multipartFormData.append(Data(rawMaterial.utf8),withName: "RAWMTRL_NM")
+            }
+            
             multipartFormData.append(
                 model.file,
                 withName: "files",
@@ -270,18 +277,11 @@ class ProductManager {
     ) {
         
         let url = openAPISearchUrl + keyword
-        
-        print("✏️ url: \(url)")
-        
-        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         AF.request(
-            encodedString,
+            encodedUrl,
             method: .get
-        
-
         ).responseJSON { response in
             switch response.result {
             case .success(_):

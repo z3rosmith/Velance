@@ -17,8 +17,9 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     @IBOutlet var searchOpenAPIButton: VLFloatingButton!
     @IBOutlet var openAPISearchResultLabel: UILabel!
     
-    
-    
+    private var dropDown = DropDown()
+    private var productNumberFromAPI: String?
+    private var productRawMaterialNames: String?
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -45,9 +46,6 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
-    
-    
-    
 
 }
 
@@ -94,7 +92,9 @@ extension UploadNewProductViewController {
                     productCategoryId: productCategoryId,
                     name: productName,
                     price: Int(productPrice) ?? 0,
-                    file: imageData
+                    file: imageData,
+                    productReportNumber: self.productNumberFromAPI ?? "\(Int.random(in: 1..<1000))",
+                    productRawMaterialNames: self.productRawMaterialNames ?? "없음"
                 ) 
                 showProgressBar()
                 ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
@@ -116,7 +116,7 @@ extension UploadNewProductViewController {
     
     @IBAction func pressedSearchAPIButton(_ sender: UIButton) {
         
-        guard let productName = productNameTextField.text else { return }
+        guard let productName = productNameTextField.text, productName.count > 1 else { return }
         
         searchOpenAPIButton.loadingIndicator(true)
         
@@ -124,46 +124,45 @@ extension UploadNewProductViewController {
             guard let self = self else { return }
             switch result {
             case .success(let openAPIProductDTO):
-                
+                self.dropDown.dataSource.removeAll()
                 DispatchQueue.main.async {
                     self.searchOpenAPIButton.loadingIndicator(false)
-                    let dropDown = DropDown()
-                    
-    
+
                     openAPIProductDTO.results.productList?.forEach { result in
-                        dropDown.dataSource.append(result.productName)
+                        self.dropDown.dataSource.append(result.productName)
                     }
+                
+                    self.dropDown.anchorView = self.searchOpenAPIButton
+                    self.dropDown.topOffset = CGPoint(x: 0, y:(self.dropDown.anchorView?.plainView.bounds.height)!)
+                    self.dropDown.show()
                     
-                    
-                    dropDown.anchorView = self.searchOpenAPIButton
-                    dropDown.topOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-                    	
-                    dropDown.show()
-                    
-                    
-                    self.openAPISearchResultLabel.isHidden = false
-                    self.openAPISearchResultLabel.text = "알러지 정보 조회  완료 🎉"
+                    self.dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+                        guard let self = self else { return }
+                        self.updateOpenAPISearchResultLabel(isSuccess: true, productName: item)
+                        self.productNumberFromAPI = openAPIProductDTO.results.productList?[index].productListReportNumber
+                        self.productRawMaterialNames = openAPIProductDTO.results.productList?[index].rawMaterialNames
+                    }
                 }
                 
-                
-            
             case .failure(_):
                 DispatchQueue.main.async {
                     self.searchOpenAPIButton.loadingIndicator(false)
-                    self.openAPISearchResultLabel.isHidden = false
-                    self.openAPISearchResultLabel.text = "제품 조회에 실패했어요. 알러지 정보는 못 올리지만 제품을 그대로 올릴 수 있어요 :)"
+                    self.updateOpenAPISearchResultLabel(isSuccess: false)
                 }
             }
         }
-        
-        
-        
-        
     }
     
-    private func updateOpenAPISearchResultLabel() {
+    private func updateOpenAPISearchResultLabel(isSuccess: Bool, productName: String = "") {
         
+        openAPISearchResultLabel.isHidden = false
+        
+        openAPISearchResultLabel.text = isSuccess
+        ? "\(productName) - 알러지 정보 조회 완료 🎉"
+        : "제품 조회에 실패했어요.\n알러지 정보는 못 올리지만 제품은 여전히 올릴 수 있어요 :)"
+    
     }
+    
     
 }
 
@@ -184,6 +183,15 @@ extension UploadNewProductViewController: UIImagePickerControllerDelegate, UINav
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension UploadNewProductViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        openAPISearchResultLabel.isHidden = true
     }
 }
 
@@ -214,7 +222,7 @@ extension UploadNewProductViewController {
     }
     
     private func configureTextFields() {
-        
+        productNameTextField.delegate = self
     }
     
     private func configureUIViews() {
