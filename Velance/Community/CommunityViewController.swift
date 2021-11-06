@@ -55,6 +55,7 @@ extension CommunityViewController {
 }
 
 extension CommunityViewController: PagingViewControllerDataSource {
+    
     func numberOfViewControllers(in pagingViewController: PagingViewController) -> Int {
         return 3
     }

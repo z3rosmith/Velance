@@ -38,11 +38,19 @@ extension CommunityDailyLifeViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CommunityFeedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+        
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self,
+                                                 action: #selector(didDragCollectionView), for: .valueChanged)
     }
     
     /// dynamic collection view cell height를 위해서 basicCellHeight를 numberOfItems 개수만큼 저장함
     private func setCellHeightsArray(numberOfItems: Int) {
         cellHeights = Array<CGFloat>(repeating: basicCellHeight, count: numberOfItems)
+    }
+    
+    @objc private func didDragCollectionView() {
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
     
     @objc private func didLikeButtonTapped(_ sender: UIButton) {
@@ -110,6 +118,7 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityFeedCollectionViewCell else { fatalError() }
+        if collectionView.refreshControl?.isRefreshing == true { return cell }
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
@@ -195,6 +204,7 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
     
     func setViewOnlyFollowing(isSelected: Bool) {

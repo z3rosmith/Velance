@@ -3,6 +3,8 @@ import ImageSlideshow
 
 class CommunityFeedCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -19,15 +21,14 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        configureUI()
         setupTextView()
     }
 }
 
 extension CommunityFeedCollectionViewCell {
     
-    private func setupUI() {
-        layer.cornerRadius = 20
+    private func configureUI() {
         userImageView.contentMode = .scaleAspectFill
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
         imageSlideShow.contentScaleMode = .scaleAspectFill
@@ -39,10 +40,16 @@ extension CommunityFeedCollectionViewCell {
         textView.isSelectable = false
         textView.isScrollEnabled = false
         
-//        likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
-//        commentButton.setLeftImage(image: UIImage(named: "CommentLogo")!)
-        
         recipeLabledView.layer.cornerRadius = 18
+        
+        backgroundColor = .clear
+        layer.masksToBounds = false
+        cellView.layer.masksToBounds = true
+        cellView.layer.cornerRadius = 20
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowColor = UIColor.darkGray.cgColor
     }
     
     private func setupTextView() {

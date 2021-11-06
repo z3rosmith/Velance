@@ -49,7 +49,6 @@ extension MallListViewController {
     
     private func configureUI() {
         navigationItem.title = "식당 목록"
-        self.navigationController?.navigationBar.topItem?.backButtonTitle = "" // set back button title
         addMallButton.layer.cornerRadius = addMallButton.frame.height/2
     }
 }

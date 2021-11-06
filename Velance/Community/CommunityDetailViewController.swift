@@ -28,6 +28,7 @@ class CommunityDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        // tableHeaderView Dynamic Height
         let size = tableHeaderView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         if tableHeaderView.frame.size.height != size.height {
             tableHeaderView.frame.size.height = size.height
