@@ -114,7 +114,7 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
                 cell.followButton.isSelected.toggle()
             }
             
-            cell.layer.cornerRadius = 20
+//            cell.layer.cornerRadius = 20
             
             return cell // 추후 네트워킹 해서 받아오기
         }

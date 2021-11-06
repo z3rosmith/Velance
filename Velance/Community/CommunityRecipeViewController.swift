@@ -36,11 +36,19 @@ extension CommunityRecipeViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CommunityFeedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+        
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self,
+                                                 action: #selector(didDragCollectionView), for: .valueChanged)
     }
     
     /// dynamic collection view cell height를 위해서 basicCellHeight를 numberOfItems 개수만큼 저장함
     private func setCellHeightsArray(numberOfItems: Int) {
         cellHeights = Array<CGFloat>(repeating: basicCellHeight, count: numberOfItems)
+    }
+    
+    @objc private func didDragCollectionView() {
+        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
     @objc private func didLikeButtonTapped(_ sender: UIButton) {
@@ -107,6 +115,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityFeedCollectionViewCell else { fatalError() }
+        if collectionView.refreshControl?.isRefreshing == true { return cell }
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
@@ -152,7 +161,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         // 저장된 cellHeights와 계산된 estimatedHeight가 다를 때만 reloadData()
         if cellHeights[indexPath.item] != estimatedHeight {
             cellHeights[indexPath.item] = estimatedHeight
-            collectionView.reloadData()
+            collectionView.reloadItems(at: [indexPath])
         }
         
         return cell
@@ -188,23 +197,19 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
-    func didSelectChooseInterestButton() {
-        
-    }
-    
-    
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
-    }
-    
-    func didSelectCategoryItemAt(_ index: Int) {
-        recipeCategoryID = index == 0 ? nil : index
-        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        collectionView.refreshControl?.endRefreshing()
     }
     
     func setViewOnlyFollowing(isSelected: Bool) {
         viewOnlyFollowing = isSelected
+        viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+    }
+    
+    func didSelectCategoryItemAt(_ index: Int) {
+        recipeCategoryID = index == 0 ? nil : index
         viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
