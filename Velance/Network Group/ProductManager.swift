@@ -13,6 +13,7 @@ class ProductManager {
     let productAPIBaseUrl           = "\(API.baseUrl)product"
     let productReviewAPIBaseUrl     = "\(API.baseUrl)review"
     let getSimilarTasteProductUrl   = "\(API.baseUrl)product/recommend/taste/"
+    let openAPISearchUrl            = "https://openapi.foodsafetykorea.go.kr/api/6975f768355f446ea613/C002/json/1/10/PRDLST_NM="
     
     //MARK: - 제품 목록 가져오기
     func getProducts(
@@ -134,6 +135,13 @@ class ProductManager {
             multipartFormData.append(Data(String(model.productCategoryId).utf8),withName: "product_category_id")
             multipartFormData.append(Data(model.name.utf8),withName: "name")
             multipartFormData.append(Data(String(model.price).utf8),withName: "price")
+            multipartFormData.append(Data(model.PRDLST_REPORT_NO.utf8),withName: "PRDLST_REPORT_NO")
+            
+        
+            for rawMaterial in model.RAWMTRL_NM {
+                multipartFormData.append(Data(rawMaterial.utf8),withName: "RAWMTRL_NM")
+            }
+            
             multipartFormData.append(
                 model.file,
                 withName: "files",
@@ -262,9 +270,46 @@ class ProductManager {
     }
     
     //MARK: - 공공데이터 API에서 제품 조회 결과값 가져오기
-
     
-    
-    
-    
+    func searchProductInOpenAPI(
+        keyword: String,
+        completion: @escaping ((Result<OpenAPIProductDTO, NetworkError>) -> Void)
+    ) {
+        
+        let url = openAPISearchUrl + keyword
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.replacingOccurrences(of: "%20", with: "+")
+        
+        AF.request(
+            encodedUrl,
+            method: .get
+        ).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                print("✏️ ProductManager - searchProductInOpenAPI SUCCESS")
+                do {
+                    let decodedData = try JSONDecoder().decode(OpenAPIProductDTO.self, from: response.data!)
+                    
+                    if let _ = decodedData.results.productList {
+                        completion(.success(decodedData))
+                    } else {
+                        completion(.failure(.internalError))
+                    }
+                    
+                } catch {
+                    print("❗️ ProductManager - searchProductInOpenAPI Decoding ERROR: \(error)")
+                    completion(.failure(.internalError))
+                }
+                
+            case .failure(let error):
+                print("❗️ ProductManager - searchProductInOpenAPI error: \(error)")
+                switch error {
+                case .sessionTaskFailed(error: URLError.timedOut):
+                    completion(.failure(.badRequest))
+                default:
+                    completion(.failure(.internalError))
+                    break
+                }
+            }
+        }
+    }
 }

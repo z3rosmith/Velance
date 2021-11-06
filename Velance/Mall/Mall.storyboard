@@ -176,7 +176,7 @@
                                 <color key="backgroundColor" name="AppBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnt-tG-HWc">
-                                <rect key="frame" x="259" y="777" width="135" height="55"/>
+                                <rect key="frame" x="259" y="791" width="135" height="55"/>
                                 <color key="backgroundColor" name="388203"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="D8R-3z-D2a"/>
@@ -193,7 +193,7 @@
                         <viewLayoutGuide key="safeArea" id="U0A-nl-ulN"/>
                         <color key="backgroundColor" name="AppBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="U0A-nl-ulN" firstAttribute="bottom" secondItem="nnt-tG-HWc" secondAttribute="bottom" constant="30" id="2uM-mz-f1G"/>
+                            <constraint firstItem="U0A-nl-ulN" firstAttribute="bottom" secondItem="nnt-tG-HWc" secondAttribute="bottom" constant="16" id="2uM-mz-f1G"/>
                             <constraint firstItem="U0A-nl-ulN" firstAttribute="trailing" secondItem="nnt-tG-HWc" secondAttribute="trailing" constant="20" id="GQ1-ex-fHa"/>
                             <constraint firstItem="PDJ-za-DDF" firstAttribute="leading" secondItem="U0A-nl-ulN" secondAttribute="leading" id="VzO-0x-gkd"/>
                             <constraint firstItem="U0A-nl-ulN" firstAttribute="bottom" secondItem="PDJ-za-DDF" secondAttribute="bottom" id="pcI-NH-eZn"/>
@@ -286,10 +286,10 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="식당 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgs-6M-WPx" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="16" y="25" width="300" height="60"/>
+                                                <rect key="frame" x="16" y="25" width="200" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="iBk-S2-ale"/>
-                                                    <constraint firstAttribute="width" constant="300" id="ksJ-st-jVF"/>
+                                                    <constraint firstAttribute="width" constant="200" id="ksJ-st-jVF"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -724,7 +724,9 @@
                             <constraint firstItem="K4L-nY-6CR" firstAttribute="top" secondItem="0nt-0M-3VI" secondAttribute="bottom" constant="-20" id="zpb-rh-lHE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aW0-z1-g1v"/>
+                    <navigationItem key="navigationItem" id="aW0-z1-g1v">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pzp-Iy-4SB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="K4L-nY-6CR" id="sUe-mw-diU"/>
                         <outlet property="dragIndicator" destination="Cvf-fD-tuG" id="M8f-uo-xkf"/>
@@ -746,7 +748,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LIz-Vh-gqc">
-                                <rect key="frame" x="16" y="44" width="382" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-vd-lR6">
@@ -766,8 +768,8 @@
                             <constraint firstItem="LIz-Vh-gqc" firstAttribute="top" secondItem="CcC-u0-zFM" secondAttribute="top" id="Noj-60-guF"/>
                             <constraint firstItem="CcC-u0-zFM" firstAttribute="trailing" secondItem="yVR-C5-Z4C" secondAttribute="trailing" id="QpY-gm-cC5"/>
                             <constraint firstItem="yVR-C5-Z4C" firstAttribute="top" secondItem="LIz-Vh-gqc" secondAttribute="bottom" id="UnX-EK-8Mp"/>
-                            <constraint firstItem="CcC-u0-zFM" firstAttribute="trailing" secondItem="LIz-Vh-gqc" secondAttribute="trailing" constant="16" id="ixy-mE-T0v"/>
-                            <constraint firstItem="LIz-Vh-gqc" firstAttribute="leading" secondItem="CcC-u0-zFM" secondAttribute="leading" constant="16" id="ure-Ib-wlH"/>
+                            <constraint firstItem="CcC-u0-zFM" firstAttribute="trailing" secondItem="LIz-Vh-gqc" secondAttribute="trailing" id="ixy-mE-T0v"/>
+                            <constraint firstItem="LIz-Vh-gqc" firstAttribute="leading" secondItem="CcC-u0-zFM" secondAttribute="leading" id="ure-Ib-wlH"/>
                             <constraint firstItem="yVR-C5-Z4C" firstAttribute="leading" secondItem="CcC-u0-zFM" secondAttribute="leading" id="yQh-Nc-0xN"/>
                         </constraints>
                     </view>
@@ -846,7 +848,7 @@
     </designables>
     <resources>
         <image name="RegisterButton" width="371" height="58"/>
-        <image name="mapMarker" width="51" height="51"/>
+        <image name="mapMarker" width="35" height="45"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="388203">
             <color red="0.2196078431372549" green="0.50980392156862742" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

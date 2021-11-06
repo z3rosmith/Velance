@@ -4,7 +4,8 @@ protocol MallViewModelDelegate: AnyObject {
     func didFetchMenuList()
     func failedFetchingMenuList(with error: NetworkError)
     
-    func didLikeMenu()
+    func didLikeMenu(at indexPath: IndexPath)
+    func didCancelLikeMenu(at indexPath: IndexPath)
     func failedUserRequest(with error: NetworkError)
 }
 
@@ -50,19 +51,30 @@ class MallViewModel {
     
     //MARK: - 메뉴 좋아요
     
-    func likeMenu(menuId: Int) {
+    func likeMenu(menuId: Int, indexPath: IndexPath) {
         
         MallManager.shared.likeMenu(menuId: menuId) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(_):
-                self.delegate?.didLikeMenu()
-            case .failure(let error):
-                self.delegate?.failedUserRequest(with: error)
+            case .success: self.delegate?.didLikeMenu(at: indexPath)
+            case .failure(let error):  self.delegate?.failedUserRequest(with: error)
             }
         }
     }
     
+    func cancelLikeMenu(menuId: Int, indexPath: IndexPath) {
+        
+        MallManager.shared.cancelLikeMenu(menuId: menuId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success: self.delegate?.didCancelLikeMenu(at: indexPath)
+            case .failure(let error): self.delegate?.failedUserRequest(with: error)
+            }
+        }
+        
+    }
+    
+
 }
 
 //MARK: - Refresh & Reset Methods

@@ -72,7 +72,7 @@ extension SearchListViewController: PanModalPresentable {
     
     var shortFormHeight: PanModalHeight {
         let count = CGFloat(placeName.count)
-        return .contentHeight(80 * count)
+        return .contentHeight(80 * count + 70)
     }
     
     var longFormHeight: PanModalHeight {

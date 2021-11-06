@@ -1,5 +1,6 @@
 import UIKit
 import TextFieldEffects
+import DropDown
 
 class UploadNewProductViewController: UIViewController, Storyboarded {
     
@@ -11,6 +12,14 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var chooseProductCategoryView: UIView!
     @IBOutlet var productCategoryButtons: [VLGradientButton]!
+    
+    
+    @IBOutlet var searchOpenAPIButton: VLFloatingButton!
+    @IBOutlet var openAPISearchResultLabel: UILabel!
+    
+    private var dropDown = DropDown()
+    private var productNumberFromAPI: String?
+    private var productRawMaterialNames: String?
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -37,6 +46,7 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
+
 }
 
 //MARK: - IBActions & Target Methods
@@ -82,7 +92,9 @@ extension UploadNewProductViewController {
                     productCategoryId: productCategoryId,
                     name: productName,
                     price: Int(productPrice) ?? 0,
-                    file: imageData
+                    file: imageData,
+                    productReportNumber: self.productNumberFromAPI ?? "\(Int.random(in: 1..<1000))",
+                    productRawMaterialNames: self.productRawMaterialNames ?? "없음"
                 ) 
                 showProgressBar()
                 ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in
@@ -101,6 +113,57 @@ extension UploadNewProductViewController {
             }
         }
     }
+    
+    @IBAction func pressedSearchAPIButton(_ sender: UIButton) {
+        
+        guard let productName = productNameTextField.text, productName.count > 1 else { return }
+        
+        searchOpenAPIButton.loadingIndicator(true)
+        
+        ProductManager.shared.searchProductInOpenAPI(keyword: productName) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let openAPIProductDTO):
+                self.dropDown.dataSource.removeAll()
+                DispatchQueue.main.async {
+                    self.searchOpenAPIButton.loadingIndicator(false)
+
+                    openAPIProductDTO.results.productList?.forEach { result in
+                        self.dropDown.dataSource.append(result.productName)
+                    }
+                
+                    self.dropDown.anchorView = self.searchOpenAPIButton
+                    self.dropDown.topOffset = CGPoint(x: 0, y:(self.dropDown.anchorView?.plainView.bounds.height)!)
+                    self.dropDown.show()
+                    
+                    self.dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+                        guard let self = self else { return }
+                        self.updateOpenAPISearchResultLabel(isSuccess: true, productName: item)
+                        self.productNumberFromAPI = openAPIProductDTO.results.productList?[index].productListReportNumber
+                        self.productRawMaterialNames = openAPIProductDTO.results.productList?[index].rawMaterialNames
+                    }
+                }
+                
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.searchOpenAPIButton.loadingIndicator(false)
+                    self.updateOpenAPISearchResultLabel(isSuccess: false)
+                }
+            }
+        }
+    }
+    
+    private func updateOpenAPISearchResultLabel(isSuccess: Bool, productName: String = "") {
+        
+        openAPISearchResultLabel.isHidden = false
+        
+        openAPISearchResultLabel.text = isSuccess
+        ? "\(productName) - 알러지 정보 조회 완료 🎉"
+        : "제품 조회에 실패했어요.\n알러지 정보는 못 올리지만 제품은 여전히 올릴 수 있어요 :)"
+    
+    }
+    
+    
 }
 
 //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -123,6 +186,15 @@ extension UploadNewProductViewController: UIImagePickerControllerDelegate, UINav
     }
 }
 
+//MARK: - UITextFieldDelegate
+
+extension UploadNewProductViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        openAPISearchResultLabel.isHidden = true
+    }
+}
+
 
 //MARK: - Initialization & UI Configuration
 
@@ -135,7 +207,7 @@ extension UploadNewProductViewController {
         configureTextFields()
         configureUIViews()
         configureProductCategoryGradientButtons()
-        
+        openAPISearchResultLabel.isHidden = true
     }
     
     private func configureAddImageButton() {
@@ -150,7 +222,7 @@ extension UploadNewProductViewController {
     }
     
     private func configureTextFields() {
-        
+        productNameTextField.delegate = self
     }
     
     private func configureUIViews() {

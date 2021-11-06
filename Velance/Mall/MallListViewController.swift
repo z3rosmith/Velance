@@ -22,6 +22,12 @@ class MallListViewController: UIViewController {
         configureUI()
         viewModel.delegate = self
         viewModel.fetchMallList(mallPoint: mallPoint)
+        setNavBarBackButtonItemTitle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func pressedAddMallButton(_ sender: UIButton) {
@@ -85,6 +91,7 @@ extension MallListViewController: UITableViewDataSource {
         let cellViewModel = viewModel.mallAtIndex(indexPath.row)
         
         guard let mallVC = MallViewController.instantiate() as? MallViewController else { return }
+
         mallVC.mallId = cellViewModel.mallId
         mallVC.mallName = cellViewModel.mallName
         mallVC.isVegan = cellViewModel.isVegan

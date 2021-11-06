@@ -54,6 +54,9 @@ class LoadingViewController: UIViewController, Storyboarded {
                     message: message,
                     buttonTitle: "확인"
                 )
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         }
         
@@ -69,9 +72,7 @@ class LoadingViewController: UIViewController, Storyboarded {
             switch result {
             case .success:
                 print("✏️ 로그인 성공")
-                
                 self.presentHomeVC()
-                #warning("여기서 navigate 해야함")
             case .failure(let error):
                 self.showSimpleBottomAlert(with: error.errorDescription)
             }
@@ -79,18 +80,14 @@ class LoadingViewController: UIViewController, Storyboarded {
         
     }
     
-    #warning("아래 수정 필요 -> 홈화면으로 가야함")
     func presentHomeVC() {
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             let storyboard = UIStoryboard(name: StoryboardName.main, bundle: nil)
             guard let vc = storyboard.instantiateViewController(
                 withIdentifier: "MainViewController"
             ) as? MainViewController else { return  }
-    
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
         }
-
     }
     
     

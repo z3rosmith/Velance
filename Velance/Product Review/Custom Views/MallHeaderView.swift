@@ -4,6 +4,9 @@ import SwiftUI
 
 class MallHeaderView: UIView {
     
+    //MARK: - Properties
+    var mallId: Int?
+    
     //MARK: - Constants
     fileprivate struct Metrics {
         static let labelPadding: CGFloat = 24
@@ -70,6 +73,7 @@ class MallHeaderView: UIView {
         button.setTitleColor(.lightGray, for: .highlighted)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.tintColor = UIColor(named: "4D8800") ?? .systemGreen
+        button.addTarget(self, action: #selector(openKakaoMapApp), for: .touchUpInside)
         return button
     }()
     
@@ -84,31 +88,18 @@ class MallHeaderView: UIView {
         return label
     }()
     
-    let separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        return view
-    }()
-    
-    
-    
+
     //MARK: - Configuration
     
-    func configure(mallName: String?, isVegan: String?, mallAddress: String?) {
+    func configure(mallId: Int?, mallName: String?, isVegan: String?, mallAddress: String?) {
         
+        self.mallId = mallId
         titleLabel.text = mallName ?? "식당 정보 표시 오류"
         addressLabel.text = mallAddress ?? "-"
         
         addSubview(titleLabel)
-        
-        
-//        isVegan == "Y" ? addSubview(veganOnlyMallLabel) : addSubview(nonVeganMallLabel)
-      
         addSubview(veganOnlyMallLabel)
         addSubview(nonVeganMallLabel)
-        
         
         if isVegan == "Y" {
             nonVeganMallLabel.isHidden = true
@@ -120,7 +111,6 @@ class MallHeaderView: UIView {
         addSubview(goToMapButton)
         addSubview(registeredMenuLabel)
         
-//        addSubview(separatorView)
         makeConstraints()
     }
     
@@ -157,7 +147,44 @@ class MallHeaderView: UIView {
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)
             make.right.equalTo(self.snp.right).offset(-Metrics.labelPadding)
         }
-        
+    }
+}
 
+//MARK: - Target Methods
+
+extension MallHeaderView {
+    
+    @objc private func openKakaoMapApp() {
+        guard let mallId = mallId else { return }
+        let urlString = "kakaomap://place?id=\(mallId)"
+        guard let url = URL(string: urlString) else { return }
+        
+        print("✏️ urlString: \(urlString)")
+        
+        if UIApplication.shared.canOpenURL(url) {
+            
+            self.window?.rootViewController?.presentAlertWithConfirmAction(
+                title: "카카오맵 열기",
+                message: "카카오맵으로 연결하시겠습니까?"
+            ) { selectedOk in
+                if selectedOk {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+            
+        } else {
+            
+            guard let appStoreUrl = URL(string: "https://itunes.apple.com/us/app/id304608425?mt=8") else { return }
+        
+            self.window?.rootViewController?.presentAlertWithConfirmAction(
+                title: "카카오맵 설치",
+                message: "카카오맵 설치 화면으로 이동하시겠습니까?"
+            ) { selectedOk in
+                if selectedOk {
+                    UIApplication.shared.open(appStoreUrl, options: [:], completionHandler: nil)
+                }
+            }
+            
+        }
     }
 }

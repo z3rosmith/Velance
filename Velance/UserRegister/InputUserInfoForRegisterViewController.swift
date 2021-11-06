@@ -2,7 +2,6 @@ import UIKit
 
 class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     
-    
     //MARK: - IBOutlets
     
     // 나의 채식
@@ -14,6 +13,7 @@ class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     
     // 나의 입맛
     @IBOutlet weak var myTasteTypeView: UIView!
+    @IBOutlet var tasteTypeGuideLabel: UILabel!
     @IBOutlet var tasteOptionButtons: [VLGradientButton]!
     
     // 나의 관심사
@@ -24,6 +24,11 @@ class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     @IBOutlet weak var myAllergyView: UIView!
     @IBOutlet var allergyOptionButtons: [VLGradientButton]!
     
+    @IBOutlet var termsGuideStackView: UIStackView!
+    
+    @IBOutlet var doneButton: UIButton!
+    
+    var isForEditingUser: Bool!
     
     //MARK: - Constants
     
@@ -50,20 +55,8 @@ class InputUserInfoForRegisterViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
- 
     }
 
-    @IBAction func pressedGoSeeTermsAndServiceButton(_ sender: UIButton) {
-        let url = URL(string: NotionUrl.termsAndAgreementUrl)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-    
-    @IBAction func pressedGoSeePrivacyTermsButton(_ sender: UIButton) {
-        let url = URL(string: NotionUrl.privacyTermsUrl)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-    
 }
 //MARK: - IBActions
 
@@ -120,7 +113,7 @@ extension InputUserInfoForRegisterViewController {
         }
     }
     
-    @IBAction func pressedRegisterButton(_ sender: UIButton) {
+    @IBAction func pressedDoneButton(_ sender: UIButton) {
         
         tasteTypeIds.removeAll()
         interestTypeIds.removeAll()
@@ -152,7 +145,44 @@ extension InputUserInfoForRegisterViewController {
             showSimpleBottomAlert(with: "나의 관심사를 3가지 이상 골라주세요.")
             return
         }
-
+        
+        presentAlertWithConfirmAction(
+            title: isForEditingUser ? "회원 정보를 수정하시겠습니까?" : "회원가입 하시겠습니까?",
+            message: ""
+        ) { [weak self] selectedOk in
+            guard let self = self else { return }
+            if selectedOk {
+                self.isForEditingUser
+                ? self.updateUserInfo()
+                : self.proceedRegisterProcess()
+            }
+        }
+    }
+    
+    private func updateUserInfo() {
+        
+        let model = UserInfoUpdateDTO(
+            vegetarianTypeId: veganTypeId,
+            tasteTypeIds: tasteTypeIds,
+            interestTypeIds: interestTypeIds,
+            allergyTypeIds: allergyTypeIds
+        )
+        
+        UserManager.shared.updateUserInfo(with: model) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.showSimpleBottomAlert(with: "프로필 변경 성공 🎉")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+    }
+    
+    private func proceedRegisterProcess() {
         UserRegisterValues.shared.vegetarianTypeId = veganTypeId
         UserRegisterValues.shared.tasteTypeIds = tasteTypeIds
         UserRegisterValues.shared.interestTypeIds = interestTypeIds
@@ -162,6 +192,16 @@ extension InputUserInfoForRegisterViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func pressedGoSeeTermsAndServiceButton(_ sender: UIButton) {
+        let url = URL(string: NotionUrl.termsAndAgreementUrl)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func pressedGoSeePrivacyTermsButton(_ sender: UIButton) {
+        let url = URL(string: NotionUrl.privacyTermsUrl)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
 }
 
 //MARK: - UI Configuration & Initialization
@@ -169,7 +209,7 @@ extension InputUserInfoForRegisterViewController {
 extension InputUserInfoForRegisterViewController {
     
     private func configure() {
-        title = "내 정보 입력"
+        title = isForEditingUser ? "내 정보 수정" : "내 정보 입력"
         configureLabels()
         configureUIViews()
         configureVeganButtonOuterViews()
@@ -177,6 +217,8 @@ extension InputUserInfoForRegisterViewController {
         configureTasteOptionButtons()
         configureInterestOptionButtons()
         configureAllergyOptionButtons()
+        configureDoneButton()
+        configureTermsGuideStackView()
     }
     
     private func configureLabels() {
@@ -184,6 +226,11 @@ extension InputUserInfoForRegisterViewController {
             .normal("채식 타입을 고를 수 있습니다!\n원치 않을 경우에는 ")
             .bold("선택하지 않으셔도")
             .normal(" 됩니다.")
+        
+        tasteTypeGuideLabel.attributedText = NSMutableAttributedString()
+            .normal("당신이 좋아하는 스타일의 맛을 ")
+            .bold("5가지 ")
+            .normal("골라주세요!\n서비스에 당신의 취향이 반영됩니다.")
     }
     
     private func configureUIViews() {
@@ -236,5 +283,13 @@ extension InputUserInfoForRegisterViewController {
             button.layer.borderColor = UIColor(named: Colors.appDefaultColor)?.cgColor
             index += 1
         }
+    }
+    
+    private func configureDoneButton() {
+        doneButton.setTitle(isForEditingUser ? "정보 수정 완료" : "회원가입 완료!", for: .normal)
+    }
+    
+    private func configureTermsGuideStackView() {
+        termsGuideStackView.isHidden = isForEditingUser ? true : false
     }
 }
