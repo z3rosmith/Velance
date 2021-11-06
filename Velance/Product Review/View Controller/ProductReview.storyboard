@@ -436,7 +436,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UhX-Iy-qfj" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="748.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 썸네일로 사용할 사진 1개를 골라주세요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGm-df-8D8">
                                                 <rect key="frame" x="16" y="12" width="316" height="21.5"/>
@@ -471,13 +471,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1개만 선택 가능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0A-uJ-25S">
-                                                <rect key="frame" x="16" y="367.5" width="87" height="17"/>
+                                                <rect key="frame" x="161.5" y="341" width="87" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yz6-vV-jX2" userLabel="Choose Category View">
-                                                <rect key="frame" x="16" y="404.5" width="382" height="102"/>
+                                                <rect key="frame" x="16" y="384.5" width="382" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fom-QA-jPX">
                                                         <rect key="frame" x="12" y="12" width="358" height="78"/>
@@ -587,7 +587,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM9-ru-gFv" userLabel="Done Button View">
-                                                <rect key="frame" x="24" y="531.5" width="366" height="58"/>
+                                                <rect key="frame" x="24" y="665.5" width="366" height="58"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterButton" translatesAutoresizingMaskIntoConstraints="NO" id="euU-Te-bYc" userLabel="Register Button Image">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
@@ -664,30 +664,77 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 원재료 검색" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-o8-sdi">
+                                                <rect key="frame" x="16" y="502.5" width="118" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73F-rH-Mfx">
+                                                <rect key="frame" x="16" y="532" width="382" height="48.5"/>
+                                                <string key="text">등록하시려는 제품의 원재료를 검색하여 알레르기 정보를 확인해야 해요. 
+아래 버튼을 터치하고 등록하시려는 제품이 목록에 뜨는지 조회해주세요.
+조회가 되지 않아도 올릴 수는 있지만 알러지 정보가 표시되지 않아요.</string>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKG-Vh-hxp" userLabel="VLFLoatingButton" customClass="VLFloatingButton" customModule="Velance" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="600.5" width="100" height="40"/>
+                                                <color key="backgroundColor" name="388203"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="iwa-44-qgl"/>
+                                                    <constraint firstAttribute="width" constant="100" id="neQ-rd-2tF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="제품 조회"/>
+                                                <connections>
+                                                    <action selector="pressedSearchAPIButton:" destination="cxK-Nw-1zt" eventType="touchUpInside" id="ZyN-Gp-uH0"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알러지 정보 조회 완료 🎉" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-AV-svU">
+                                                <rect key="frame" x="136" y="612.5" width="262" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="y0A-uJ-25S" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="2he-Ew-MaK"/>
+                                            <constraint firstItem="OM9-ru-gFv" firstAttribute="top" secondItem="cKG-Vh-hxp" secondAttribute="bottom" constant="25" id="24u-lp-Rfq"/>
+                                            <constraint firstItem="Yz6-vV-jX2" firstAttribute="top" secondItem="vyw-7j-CHx" secondAttribute="bottom" constant="25" id="3Dx-5N-bcE"/>
                                             <constraint firstItem="OM9-ru-gFv" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="24" id="4M7-W4-pYj"/>
+                                            <constraint firstItem="73F-rH-Mfx" firstAttribute="top" secondItem="Y5e-o8-sdi" secondAttribute="bottom" constant="8" id="CG4-0u-whu"/>
                                             <constraint firstItem="pHx-35-LIr" firstAttribute="top" secondItem="hAN-YS-Gvh" secondAttribute="bottom" constant="16" id="DA9-lx-vKh"/>
-                                            <constraint firstItem="OM9-ru-gFv" firstAttribute="top" secondItem="Yz6-vV-jX2" secondAttribute="bottom" constant="25" id="Iuz-QX-JoC"/>
+                                            <constraint firstItem="y0A-uJ-25S" firstAttribute="top" secondItem="pHx-35-LIr" secondAttribute="bottom" constant="28" id="DPK-jh-fUr"/>
+                                            <constraint firstItem="cKG-Vh-hxp" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="FOc-zs-X7z"/>
+                                            <constraint firstAttribute="trailing" secondItem="73F-rH-Mfx" secondAttribute="trailing" constant="16" id="FaD-DW-fpw"/>
                                             <constraint firstItem="o7n-nl-6wZ" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="JYe-9j-ZxP"/>
                                             <constraint firstAttribute="trailing" secondItem="OM9-ru-gFv" secondAttribute="trailing" constant="24" id="LEX-0P-izr"/>
                                             <constraint firstItem="o7n-nl-6wZ" firstAttribute="top" secondItem="KAH-UO-SgP" secondAttribute="bottom" constant="25" id="MQp-FP-53d"/>
                                             <constraint firstItem="QGm-df-8D8" firstAttribute="top" secondItem="UhX-Iy-qfj" secondAttribute="top" constant="12" id="OHF-yz-QSE"/>
+                                            <constraint firstItem="Y5e-o8-sdi" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="PEQ-BF-kqs"/>
                                             <constraint firstItem="aRw-4o-ZuB" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="20" id="Q3H-fX-uk0"/>
                                             <constraint firstItem="vyw-7j-CHx" firstAttribute="top" secondItem="pHx-35-LIr" secondAttribute="bottom" constant="25" id="WJ2-8S-4kN"/>
-                                            <constraint firstItem="y0A-uJ-25S" firstAttribute="top" secondItem="vyw-7j-CHx" secondAttribute="bottom" constant="8" id="WbP-Lj-j5T"/>
                                             <constraint firstItem="pHx-35-LIr" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="20" id="Wbc-g6-ikb"/>
                                             <constraint firstItem="KAH-UO-SgP" firstAttribute="top" secondItem="QGm-df-8D8" secondAttribute="bottom" constant="20" id="XIW-fa-YiF"/>
                                             <constraint firstItem="KAH-UO-SgP" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="bIx-eZ-ZUA"/>
                                             <constraint firstItem="QGm-df-8D8" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="ccN-Jh-ZXb"/>
-                                            <constraint firstItem="Yz6-vV-jX2" firstAttribute="top" secondItem="y0A-uJ-25S" secondAttribute="bottom" constant="20" id="dmo-Ji-FsS"/>
+                                            <constraint firstItem="73F-rH-Mfx" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="g2r-8c-Sjd"/>
                                             <constraint firstItem="vyw-7j-CHx" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="gqV-hK-90E"/>
                                             <constraint firstItem="hAN-YS-Gvh" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="20" id="iYT-iG-dxH"/>
+                                            <constraint firstItem="cKG-Vh-hxp" firstAttribute="top" secondItem="73F-rH-Mfx" secondAttribute="bottom" constant="20" id="ksn-2w-DTp"/>
+                                            <constraint firstItem="Y5e-o8-sdi" firstAttribute="top" secondItem="Yz6-vV-jX2" secondAttribute="bottom" constant="16" id="mCi-5O-xH9"/>
+                                            <constraint firstItem="bv9-AV-svU" firstAttribute="leading" secondItem="cKG-Vh-hxp" secondAttribute="trailing" constant="20" id="mXi-FX-vmU"/>
+                                            <constraint firstAttribute="trailing" secondItem="bv9-AV-svU" secondAttribute="trailing" constant="16" id="oO3-b6-Nac"/>
+                                            <constraint firstItem="y0A-uJ-25S" firstAttribute="leading" secondItem="vyw-7j-CHx" secondAttribute="trailing" constant="12" id="oZb-Z4-Gv8"/>
                                             <constraint firstItem="hAN-YS-Gvh" firstAttribute="top" secondItem="o7n-nl-6wZ" secondAttribute="bottom" constant="12" id="uua-lE-EPn"/>
                                             <constraint firstItem="Yz6-vV-jX2" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="vBB-Qf-rm9"/>
+                                            <constraint firstItem="bv9-AV-svU" firstAttribute="top" secondItem="73F-rH-Mfx" secondAttribute="bottom" constant="32" id="vEk-Ag-Qdf"/>
                                             <constraint firstItem="aRw-4o-ZuB" firstAttribute="leading" secondItem="KAH-UO-SgP" secondAttribute="trailing" constant="16" id="wpA-Lg-OQF"/>
+                                            <constraint firstAttribute="bottom" secondItem="OM9-ru-gFv" secondAttribute="bottom" constant="25" id="yFq-Ed-aaa"/>
                                             <constraint firstAttribute="trailing" secondItem="Yz6-vV-jX2" secondAttribute="trailing" constant="16" id="zKJ-P9-3Nf"/>
                                         </constraints>
                                     </view>
@@ -719,9 +766,11 @@
                         <outlet property="addImageButton" destination="KAH-UO-SgP" id="PpE-1P-KQT"/>
                         <outlet property="chooseProductCategoryView" destination="Yz6-vV-jX2" id="aS6-72-wNS"/>
                         <outlet property="doneButton" destination="p2N-mL-Knr" id="gEN-jB-6R6"/>
+                        <outlet property="openAPISearchResultLabel" destination="bv9-AV-svU" id="oTz-uz-PPC"/>
                         <outlet property="productImageView" destination="aRw-4o-ZuB" id="y7k-G2-ojU"/>
                         <outlet property="productNameTextField" destination="hAN-YS-Gvh" id="Eya-KE-QW6"/>
                         <outlet property="productPriceTextField" destination="pHx-35-LIr" id="EG6-w3-f2k"/>
+                        <outlet property="searchOpenAPIButton" destination="cKG-Vh-hxp" id="LsS-wC-2DN"/>
                         <outletCollection property="productCategoryButtons" destination="Ee1-Wg-gqi" collectionClass="NSMutableArray" id="NJw-bF-dnn"/>
                         <outletCollection property="productCategoryButtons" destination="Wx8-ca-23C" collectionClass="NSMutableArray" id="QIF-JN-tye"/>
                         <outletCollection property="productCategoryButtons" destination="tFS-Iu-ikY" collectionClass="NSMutableArray" id="w8v-64-dSj"/>

@@ -12,8 +12,8 @@ struct OpenAPIProductDTO: Decodable {
 struct OpenAPIProductResult: Decodable {
     
     let totalCount: String
-    let productList: String
-    let searchResult: [OpenAPIProductResult]
+    let productList: [OpenAPIProductList]?
+    let searchResult: OpenAPISearchResult
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -25,10 +25,11 @@ struct OpenAPIProductResult: Decodable {
 
 struct OpenAPIProductList: Decodable {
     
+    let productName: String
     let productListReportNumber: String
     let rawMaterialNames: String
     
-    let prmsDt, lcnsNo, prdlstNm: String
+    let prmsDt, lcnsNo: String
     let bsshNm, prdlstDcnm: String
 
     enum CodingKeys: String, CodingKey {
@@ -36,7 +37,7 @@ struct OpenAPIProductList: Decodable {
         case rawMaterialNames = "RAWMTRL_NM"
         case prmsDt = "PRMS_DT"
         case lcnsNo = "LCNS_NO"
-        case prdlstNm = "PRDLST_NM"
+        case productName = "PRDLST_NM"
         case bsshNm = "BSSH_NM"
         case prdlstDcnm = "PRDLST_DCNM"
     }

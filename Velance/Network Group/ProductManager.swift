@@ -263,15 +263,53 @@ class ProductManager {
     }
     
     //MARK: - 공공데이터 API에서 제품 조회 결과값 가져오기
-
+    
     func searchProductInOpenAPI(
         keyword: String,
-        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+        completion: @escaping ((Result<OpenAPIProductDTO, NetworkError>) -> Void)
     ) {
         
+        let url = openAPISearchUrl + keyword
         
+        print("✏️ url: \(url)")
+        
+        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+
+        
+        AF.request(
+            encodedString,
+            method: .get
+        
+
+        ).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                print("✏️ ProductManager - searchProductInOpenAPI SUCCESS")
+                do {
+                    let decodedData = try JSONDecoder().decode(OpenAPIProductDTO.self, from: response.data!)
+                    
+                    if let _ = decodedData.results.productList {
+                        completion(.success(decodedData))
+                    } else {
+                        completion(.failure(.internalError))
+                    }
+                    
+                } catch {
+                    print("❗️ ProductManager - searchProductInOpenAPI Decoding ERROR: \(error)")
+                    completion(.failure(.internalError))
+                }
+                
+            case .failure(let error):
+                print("❗️ ProductManager - searchProductInOpenAPI error: \(error)")
+                switch error {
+                case .sessionTaskFailed(error: URLError.timedOut):
+                    completion(.failure(.badRequest))
+                default:
+                    completion(.failure(.internalError))
+                    break
+                }
+            }
+        }
     }
-    
-    
-    
 }

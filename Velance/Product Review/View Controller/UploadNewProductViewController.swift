@@ -1,5 +1,6 @@
 import UIKit
 import TextFieldEffects
+import DropDown
 
 class UploadNewProductViewController: UIViewController, Storyboarded {
     
@@ -11,6 +12,13 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var chooseProductCategoryView: UIView!
     @IBOutlet var productCategoryButtons: [VLGradientButton]!
+    
+    
+    @IBOutlet var searchOpenAPIButton: VLFloatingButton!
+    @IBOutlet var openAPISearchResultLabel: UILabel!
+    
+    
+    
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -37,6 +45,10 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
+    
+    
+    
+
 }
 
 //MARK: - IBActions & Target Methods
@@ -101,6 +113,58 @@ extension UploadNewProductViewController {
             }
         }
     }
+    
+    @IBAction func pressedSearchAPIButton(_ sender: UIButton) {
+        
+        guard let productName = productNameTextField.text else { return }
+        
+        searchOpenAPIButton.loadingIndicator(true)
+        
+        ProductManager.shared.searchProductInOpenAPI(keyword: productName) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let openAPIProductDTO):
+                
+                DispatchQueue.main.async {
+                    self.searchOpenAPIButton.loadingIndicator(false)
+                    let dropDown = DropDown()
+                    
+    
+                    openAPIProductDTO.results.productList?.forEach { result in
+                        dropDown.dataSource.append(result.productName)
+                    }
+                    
+                    
+                    dropDown.anchorView = self.searchOpenAPIButton
+                    dropDown.topOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+                    	
+                    dropDown.show()
+                    
+                    
+                    self.openAPISearchResultLabel.isHidden = false
+                    self.openAPISearchResultLabel.text = "알러지 정보 조회  완료 🎉"
+                }
+                
+                
+            
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.searchOpenAPIButton.loadingIndicator(false)
+                    self.openAPISearchResultLabel.isHidden = false
+                    self.openAPISearchResultLabel.text = "제품 조회에 실패했어요. 알러지 정보는 못 올리지만 제품을 그대로 올릴 수 있어요 :)"
+                }
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    private func updateOpenAPISearchResultLabel() {
+        
+    }
+    
 }
 
 //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -135,7 +199,7 @@ extension UploadNewProductViewController {
         configureTextFields()
         configureUIViews()
         configureProductCategoryGradientButtons()
-        
+        openAPISearchResultLabel.isHidden = true
     }
     
     private func configureAddImageButton() {
