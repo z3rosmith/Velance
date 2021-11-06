@@ -59,6 +59,7 @@
 		7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */; };
 		7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */; };
 		7C37DE82271ABE0A00B4FBFB /* ProductReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C37DE80271ABE0900B4FBFB /* ProductReviewTableViewCell.xib */; };
+		7C5A95C4273647A500A71865 /* OpenAPIProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A95C3273647A500A71865 /* OpenAPIProductDTO.swift */; };
 		7C60F1C92728FCB0001D96C2 /* NewRecipeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1C82728FCB0001D96C2 /* NewRecipeDTO.swift */; };
 		7C60F1CB2728FDAA001D96C2 /* CommunityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1CA2728FDAA001D96C2 /* CommunityManager.swift */; };
 		7C60F1CD27290296001D96C2 /* NewDailyLifeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F1CC27290296001D96C2 /* NewDailyLifeDTO.swift */; };
@@ -263,6 +264,7 @@
 		7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewViewController.swift; sourceTree = "<group>"; };
 		7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
 		7C37DE80271ABE0900B4FBFB /* ProductReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductReviewTableViewCell.xib; sourceTree = "<group>"; };
+		7C5A95C3273647A500A71865 /* OpenAPIProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIProductDTO.swift; sourceTree = "<group>"; };
 		7C60F1C82728FCB0001D96C2 /* NewRecipeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeDTO.swift; sourceTree = "<group>"; };
 		7C60F1CA2728FDAA001D96C2 /* CommunityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManager.swift; sourceTree = "<group>"; };
 		7C60F1CC27290296001D96C2 /* NewDailyLifeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDailyLifeDTO.swift; sourceTree = "<group>"; };
@@ -1016,6 +1018,7 @@
 			isa = PBXGroup;
 			children = (
 				7CCBB54F27253BAA002EFB58 /* ProductListResponseDTO.swift */,
+				7C5A95C3273647A500A71865 /* OpenAPIProductDTO.swift */,
 				7CBDF4B32731037B00E657D9 /* SimilarTasteProductDTO.swift */,
 				7CF392482726866F00E48EFB /* ProductReviewResponseDTO.swift */,
 			);
@@ -1397,6 +1400,7 @@
 				3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */,
 				7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */,
 				7CFF121F27217C0D00E6A9D3 /* MyPageTableViewCell.swift in Sources */,
+				7C5A95C4273647A500A71865 /* OpenAPIProductDTO.swift in Sources */,
 				7CBF63F02727D89C000B5F04 /* NewRecipeViewController.swift in Sources */,
 				3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */,
 				7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */,

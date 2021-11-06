@@ -110,7 +110,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
                 if selectedOk { self.popToLoginViewController() }
             }
         case 4:
-            presentAlertWithConfirmAction(title: "정말 회원 탈퇴를 하시겠습니까?", message: "") { selectedOk in
+            presentAlertWithConfirmAction(title: "정말 회원 탈퇴를 하시겠습니까?", message: "회원 탈퇴를 하면 내가 작성한 모든 글이 사라지고, 복구할 수 없어요. 그래도 진행하시겠습니까?") { selectedOk in
                 if selectedOk { self.unregisterUser() }
             }
         default: break
