@@ -131,8 +131,13 @@ extension ProductReviewViewController: ProductReviewDelegate {
         reviewTableView.refreshControl?.endRefreshing()
     }
     
-    func didReportProduct() {
+    func didCompleteReport() {
         showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "해당 사용자를 차단했어요.")
+        reviewTableView.reloadData()
     }
     
     func didDeleteReview() {
@@ -157,7 +162,7 @@ extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
     }
     
     func didChooseToBlockUser(userId: String) {
-        
+        viewModel?.blockUser(targetUserId: userId)
     }
     
     func didChooseToDeleteMyReview(reviewId: Int) {

@@ -5,8 +5,8 @@ protocol ProductReviewDelegate: AnyObject {
     func failedFetchingReviewList(with error: NetworkError)
     
     func didDeleteReview()
-    
-    func didReportProduct()
+    func didCompleteReport()
+    func didBlockUser()
     
     func failedUserRequest(with error: NetworkError)
 }
@@ -75,7 +75,7 @@ class ProductReviewViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.delegate?.didReportProduct()
+                self.delegate?.didCompleteReport()
             case .failure(let error):
                 self.delegate?.failedUserRequest(with: error)
                
@@ -106,7 +106,7 @@ class ProductReviewViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.delegate?.didReportProduct()
+                self.delegate?.didCompleteReport()
             case .failure(let error):
                 self.delegate?.failedUserRequest(with: error)
             }
@@ -114,6 +114,20 @@ class ProductReviewViewModel {
     }
     
     
+    func blockUser(targetUserId: String) {
+        
+        reportManager?.blockUser(targetUserId: targetUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        
+        }
+        
+    }
     
     
     

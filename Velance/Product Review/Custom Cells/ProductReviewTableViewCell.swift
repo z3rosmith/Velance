@@ -63,11 +63,12 @@ class ProductReviewTableViewCell: UITableViewCell {
                 guard let self = self else { return }
                 self.currentVC?.presentAlertWithConfirmAction(
                     title: "리뷰를 삭제하시겠어요?",
-                    message: "") { selectedOk in
-                        if selectedOk {
-                            self.delegate?.didChooseToDeleteMyReview(reviewId: reviewId)
-                        }
+                    message: ""
+                ) { selectedOk in 
+                    if selectedOk {
+                        self.delegate?.didChooseToDeleteMyReview(reviewId: reviewId)
                     }
+                }
             }
             let actionSheet = UIHelper.createActionSheet(with: [deleteAction], title: nil)
             currentVC?.present(actionSheet, animated: true)
@@ -87,6 +88,14 @@ class ProductReviewTableViewCell: UITableViewCell {
                 style: .default
             ) { [weak self] _ in
                 guard let self = self else { return }
+                self.currentVC?.presentAlertWithConfirmAction(
+                    title: "해당 사용자의 글 보지 않기?",
+                    message: "해당 사용자의 게시글이 더는 보이지 않도록 설정하시겠습니까? 한 번 설정하면 해제할 수 없습니다."
+                ) { selectedOk in
+                    if selectedOk {
+                        self.delegate?.didChooseToBlockUser(userId: createdBy)
+                    }
+                }
                 
             }
             let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)

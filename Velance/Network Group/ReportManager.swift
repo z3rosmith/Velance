@@ -10,6 +10,7 @@ class ReportManager {
     //MARK: - End Points
     
     let reportAPIBaseUrl            = "\(API.baseUrl)report"
+    let blockUserUrl                = "\(API.baseUrl)user/ignore"
     
     func report(
         type: ReportType,
@@ -49,6 +50,27 @@ class ReportManager {
         targetUserId: String,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
+        
+        let parameters: Parameters = ["target_user_id": targetUserId]
+        
+        AF.request(
+            blockUserUrl,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        ).responseData { response in
+            switch response.result {
+            case .success:
+                print("✏️ ReportManager - blockUser SUCCESS")
+                completion(.success(true))
+            case .failure:
+                let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                print("❗️ ReportManager - blockUser error: \(error.errorDescription)")
+                completion(.failure(error))
+            }
+            
+        }
         
         
     }
