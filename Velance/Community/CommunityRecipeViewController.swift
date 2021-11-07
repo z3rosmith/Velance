@@ -123,7 +123,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         
         var inputSources: [InputSource] = []
         if let urls = cellViewModel.imageURLs {
-            let placeholderImage = UIImage(systemName: "photo.on.rectangle")
+            let placeholderImage = UIImage(named: "imagePlaceholder")
             urls.forEach {
                 inputSources.append(SDWebImageSource(url: $0, placeholder: placeholderImage))
             }

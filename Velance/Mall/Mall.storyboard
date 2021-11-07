@@ -34,7 +34,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="500m"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv7-u5-6IG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv7-u5-6IG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="91" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -44,7 +44,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="1km"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-3m-I2c" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-3m-I2c" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="182" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -54,7 +54,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="3km"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiZ-wl-QDi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiZ-wl-QDi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="273" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -115,7 +115,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="확인"/>
                                         <connections>
-                                            <segue destination="vpx-jx-Jpb" kind="show" id="aqc-AP-XAm"/>
+                                            <segue destination="vpx-jx-Jpb" kind="show" id="Qmo-dR-01X"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구 북구 산격동 039-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-oU-OZd">
@@ -171,7 +171,7 @@
         <!--Mall List View Controller-->
         <scene sceneID="d4k-eK-ZRn">
             <objects>
-                <viewController id="vpx-jx-Jpb" customClass="MallListViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MallListViewController" id="vpx-jx-Jpb" customClass="MallListViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVb-nr-ucG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

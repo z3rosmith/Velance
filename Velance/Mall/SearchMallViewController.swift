@@ -8,7 +8,11 @@ class SearchMallViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var confirmButton: UIButton!
     
-    private var currentRadius: Double = 500
+    private var currentRadius: Double = 500 {
+        didSet {
+            print("✏️ didSet: \(currentRadius)")
+        }
+    }
     private var currentLocation: MTMapPointGeo = MTMapPointGeo(latitude: 35.8920020620379, longitude: 128.60880797103496)
     private lazy var currentRadiusButton: UIButton = rangeStackView.subviews.first as! UIButton
     private var didCallOnce: Bool = false
@@ -25,9 +29,10 @@ class SearchMallViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+
         guard let nextVC = segue.destination as? MallListViewController else { fatalError() }
         nextVC.mallPoint = MallPoint(x: currentLocation.longitude, y: currentLocation.latitude, radius: currentRadius)
-        
+
         if let address = addressLabel.text {
             let addressSplit = address.split(separator: " ")
             navigationItem.backButtonTitle = "\(addressSplit[0]) \(addressSplit[1])"
@@ -104,7 +109,6 @@ extension SearchMallViewController: MTMapViewDelegate {
     
     func mapView(_ mapView: MTMapView!, centerPointMovedTo mapCenterPoint: MTMapPoint!) {
         let currentLocation = mapCenterPoint.mapPointGeo()
-        print("✏️ new latitude: \(currentLocation.latitude) and new longitude: \(currentLocation.longitude)")
     }
     
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
