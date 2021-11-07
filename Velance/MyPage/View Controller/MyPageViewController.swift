@@ -55,17 +55,19 @@ extension MyPageViewController {
             guard let self = self else { return }
             switch result {
             case .success(let userModel):
+                
                 DispatchQueue.main.async {
                     self.nicknameLabel.text = User.shared.displayName
                     self.vegetarianTypeLabel.text = User.shared.vegetarianType
                     
-                    self.profileImageButton.layer.masksToBounds = true
                     self.profileImageButton.sd_setImage(
                         with: URL(string: userModel.fileFolder?.files[0].path ?? ""),
                         for: .normal,
                         placeholderImage: UIImage(named: "MyPageProfileImageButton")
                     )
-                    
+                    self.profileImageButton.layer.masksToBounds = userModel.fileFolder != nil
+                    ? true
+                    : false
                 }
                 
             case .failure(let error):

@@ -99,6 +99,31 @@ class UserManager {
             }
     }
     
+    
+    // 비번 변경
+    func updateUserPassword(
+        password: String,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        let parameters: Parameters = ["newPassword": password]
+        
+        AF.request(
+            userBaseUrl,
+            method: .patch,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        ).responseJSON { response in
+            
+            switch response.result {
+            case .success: completion(.success(true))
+            case .failure(_):
+                let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func removeUserProfileImage(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(Data("Y".utf8), withName: "force")
