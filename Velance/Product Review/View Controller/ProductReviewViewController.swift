@@ -132,7 +132,7 @@ extension ProductReviewViewController: ProductReviewDelegate {
     }
     
     func didCompleteReport() {
-        showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
     }
     
     func didBlockUser() {

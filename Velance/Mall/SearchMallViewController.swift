@@ -33,6 +33,11 @@ class SearchMallViewController: UIViewController {
             navigationItem.backButtonTitle = "\(addressSplit[0]) \(addressSplit[1])"
         }
     }
+    
+    @IBAction func pressedCurrentLocationButton(_ sender: UIButton) {
+        didCallOnce = false
+        mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
+    }
 }
 
 extension SearchMallViewController {

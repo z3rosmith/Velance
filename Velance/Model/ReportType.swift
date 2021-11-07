@@ -22,7 +22,7 @@ enum ReportType {
         case violentComment                 = "욕설/비하가 댓글에 포함되어 있어요."
     }
     
-    // Mall
+    // Mall 
     enum Mall: String {
         
         case incorrectMallAddress           = "식당 주소가 잘못되었어요."
