@@ -200,7 +200,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         
         cell.profileImageView.sd_setImage(
             with: URL(string: reviewData.user.fileFolder?.files[0].path ?? ""),
-            placeholderImage: UIImage(systemName: "person"),
+            placeholderImage: UIImage(named: "avatarImage"),
             options: .continueInBackground
         )
 

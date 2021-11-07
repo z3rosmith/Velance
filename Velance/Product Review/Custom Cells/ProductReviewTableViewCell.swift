@@ -64,7 +64,7 @@ class ProductReviewTableViewCell: UITableViewCell {
                 self.currentVC?.presentAlertWithConfirmAction(
                     title: "리뷰를 삭제하시겠어요?",
                     message: ""
-                ) { selectedOk in 
+                ) { selectedOk in
                     if selectedOk {
                         self.delegate?.didChooseToDeleteMyReview(reviewId: reviewId)
                     }
@@ -176,5 +176,6 @@ class ProductReviewTableViewCell: UITableViewCell {
 
         profileImageView.layer.borderColor = UIColor.darkGray.cgColor
         profileImageView.contentMode = .scaleAspectFit
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
 }

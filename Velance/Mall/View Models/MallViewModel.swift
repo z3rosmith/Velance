@@ -3,6 +3,7 @@ import Foundation
 protocol MallViewModelDelegate: AnyObject {
     func didFetchMenuList()
     func failedFetchingMenuList(with error: NetworkError)
+    func didCompleteReport()
     
     func didLikeMenu(at indexPath: IndexPath)
     func didCancelLikeMenu(at indexPath: IndexPath)
@@ -74,6 +75,23 @@ class MallViewModel {
         
     }
     
+    func reportReview(type: ReportType.Mall) {
+        
+        let model = ReportDTO(reason: type.rawValue, mallId: mallId ?? 0)
+        
+        ReportManager.shared.report(
+            type: .mall(type),
+            model: model
+        ) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
 
 }
 

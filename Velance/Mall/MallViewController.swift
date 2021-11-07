@@ -76,7 +76,45 @@ extension MallViewController {
     
     // 더보기 버튼
     @objc private func pressedOptionsBarButtonItem() {
+        
+        let reportAction = UIAlertAction(
+            title: "신고하기",
+            style: .default
+        ) { [weak self] _ in self?.presentReportProductActionSheet() }
+        let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
+        present(actionSheet, animated: true)
+    }
+    
+    private func presentReportProductActionSheet() {
+        
+        let incorrectMallAddress = UIAlertAction(
+            title: ReportType.Mall.incorrectMallAddress.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.incorrectMallAddress)
+        }
+        
+        let incorrectMallName = UIAlertAction(
+            title: ReportType.Mall.incorrectMallName.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.incorrectMallName)
+        }
+        
+        let inappropriatePicture = UIAlertAction(
+            title: ReportType.Mall.inappropriatePicture.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.inappropriatePicture)
+        }
 
+        
+        let actionSheet = UIHelper.createActionSheet(with: [incorrectMallAddress, incorrectMallName, inappropriatePicture], title: "신고 사유 선택")
+        present(actionSheet, animated: true)
+    }
+    
+    private func report(reportType: ReportType.Mall) {
+        viewModel.reportReview(type: reportType)
     }
 }
 
@@ -113,6 +151,9 @@ extension MallViewController: MallViewModelDelegate {
         showSimpleBottomAlert(with: error.errorDescription)
     }
     
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
 }
 
 

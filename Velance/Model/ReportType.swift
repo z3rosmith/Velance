@@ -27,6 +27,7 @@ enum ReportType {
         
         case incorrectMallAddress           = "식당 주소가 잘못되었어요."
         case incorrectMallName              = "식당 이름이 잘못되었어요."
+        case inappropriatePicture           = "썸네일/메뉴 사진에 부적절한 사진이 있어요."
         
     }
     
