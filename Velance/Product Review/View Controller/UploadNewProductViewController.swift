@@ -115,7 +115,7 @@ extension UploadNewProductViewController {
     }
     
     @IBAction func pressedSearchAPIButton(_ sender: UIButton) {
-        
+        view.endEditing(true)
         guard let productName = productNameTextField.text, productName.count > 1 else { return }
         
         searchOpenAPIButton.loadingIndicator(true)
@@ -138,6 +138,7 @@ extension UploadNewProductViewController {
                     
                     self.dropDown.selectionAction = { [weak self] (index: Int, item: String) in
                         guard let self = self else { return }
+                        self.productNameTextField.text = item
                         self.updateOpenAPISearchResultLabel(isSuccess: true, productName: item)
                         self.productNumberFromAPI = openAPIProductDTO.results.productList?[index].productListReportNumber
                         self.productRawMaterialNames = openAPIProductDTO.results.productList?[index].rawMaterialNames

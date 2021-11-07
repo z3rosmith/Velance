@@ -29,14 +29,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih9-2W-U9O">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ih9-2W-U9O">
                         <rect key="frame" x="147" y="33.5" width="206" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-TO-zs4" customClass="VLSocialButton" customModule="Velance" customModuleProvider="target">
-                        <rect key="frame" x="270" y="64" width="75" height="25"/>
+                        <rect key="frame" x="278" y="64" width="75" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="M5m-y0-t57"/>
                             <constraint firstAttribute="width" constant="75" id="y0e-Rc-WiI"/>
@@ -64,7 +64,7 @@
                     <constraint firstItem="HMQ-5Z-oc1" firstAttribute="leading" secondItem="lSz-nV-KR8" secondAttribute="trailing" constant="12" id="5tj-4M-lxJ"/>
                     <constraint firstItem="lSz-nV-KR8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="6RL-PF-QgA"/>
                     <constraint firstItem="ih9-2W-U9O" firstAttribute="leading" secondItem="HMQ-5Z-oc1" secondAttribute="trailing" constant="7" id="6sX-yZ-7Wl"/>
-                    <constraint firstAttribute="trailing" secondItem="2h3-TO-zs4" secondAttribute="trailing" constant="20" id="7bL-Ph-fAF"/>
+                    <constraint firstAttribute="trailing" secondItem="2h3-TO-zs4" secondAttribute="trailing" constant="12" id="7bL-Ph-fAF"/>
                     <constraint firstItem="lSz-nV-KR8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="IQn-mu-iRq"/>
                     <constraint firstItem="pV2-1K-PEx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="KIE-JP-xAT"/>
                     <constraint firstItem="ih9-2W-U9O" firstAttribute="top" secondItem="pV2-1K-PEx" secondAttribute="bottom" constant="9" id="OEc-6u-z2w"/>

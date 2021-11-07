@@ -5,10 +5,11 @@ class NewDailyLifePostViewController: UIViewController, Storyboarded {
     @IBOutlet weak var regionCategoryView: UIView!
     @IBOutlet var regionCategoryButtons: [VLGradientButton]!
     
+    @IBOutlet var allRegionsButton: VLGradientButton!
     @IBOutlet weak var postImageCollectionView: UICollectionView!
     @IBOutlet weak var postTextView: UITextView!
     
-    var regionOptionId: Int = 1
+    var regionOptionId: [String] = []
     var userSelectedImages = [UIImage]() {
         didSet { convertUIImagesToDataFormat() }
     }
@@ -22,18 +23,25 @@ class NewDailyLifePostViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         configure()
     }
+
 }
 
 //MARK: - IBActions & Target Methods
 
 extension NewDailyLifePostViewController {
     
-    
     @IBAction func pressedRegionCategoryButton(_ sender: UIButton) {
+        allRegionsButton.isSelected = false
+        sender.isSelected.toggle()
+    }
+    
+    @IBAction func pressedAllRegionsButton(_ sender: UIButton) {
+        regionOptionId.removeAll()
         regionCategoryButtons.forEach { $0.isSelected = false }
-        sender.isSelected = true
-        regionOptionId = sender.tag
-        
+        sender.isSelected.toggle()
+        for index in 1...UserOptions.regionOptions.count {
+            regionOptionId.append(String(index))
+        }
     }
     
     @IBAction func pressedDoneButton(_ sender: UIButton) {
@@ -47,6 +55,14 @@ extension NewDailyLifePostViewController {
             showSimpleBottomAlert(with: "사진을 1개 이상 골라주세요.")
             return
         }
+        
+        regionCategoryButtons.forEach {
+            if $0.isSelected {
+                regionOptionId.append(String($0.tag))
+            }
+        }
+        
+        
         presentAlertWithConfirmAction(
             title: "피드 업로드를 하시겠습니까?",
             message: ""
