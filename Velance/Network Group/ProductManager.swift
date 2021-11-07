@@ -139,7 +139,7 @@ class ProductManager {
             
         
             for rawMaterial in model.RAWMTRL_NM {
-                multipartFormData.append(Data(rawMaterial.utf8),withName: "RAWMTRL_NM")
+                multipartFormData.append(Data(rawMaterial.utf8), withName: "RAWMTRL_NM")
             }
             
             multipartFormData.append(

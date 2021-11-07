@@ -31,6 +31,8 @@ class UploadNewProductViewController: UIViewController, Storyboarded {
         return imagePicker
     }()
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     //MARK: - NewProductDTO Properties
     var productCategoryId: Int?
     var productName: String?
@@ -118,7 +120,8 @@ extension UploadNewProductViewController {
         view.endEditing(true)
         guard let productName = productNameTextField.text, productName.count > 1 else { return }
         
-        searchOpenAPIButton.loadingIndicator(true)
+        activityIndicator.startAnimating()
+
         
         ProductManager.shared.searchProductInOpenAPI(keyword: productName) { [weak self] result in
             guard let self = self else { return }
@@ -126,8 +129,8 @@ extension UploadNewProductViewController {
             case .success(let openAPIProductDTO):
                 self.dropDown.dataSource.removeAll()
                 DispatchQueue.main.async {
-                    self.searchOpenAPIButton.loadingIndicator(false)
-
+                    self.activityIndicator.stopAnimating()
+                
                     openAPIProductDTO.results.productList?.forEach { result in
                         self.dropDown.dataSource.append(result.productName)
                     }
@@ -147,7 +150,7 @@ extension UploadNewProductViewController {
                 
             case .failure(_):
                 DispatchQueue.main.async {
-                    self.searchOpenAPIButton.loadingIndicator(false)
+                    self.activityIndicator.stopAnimating()
                     self.updateOpenAPISearchResultLabel(isSuccess: false)
                 }
             }
@@ -157,7 +160,6 @@ extension UploadNewProductViewController {
     private func updateOpenAPISearchResultLabel(isSuccess: Bool, productName: String = "") {
         
         openAPISearchResultLabel.isHidden = false
-        
         openAPISearchResultLabel.text = isSuccess
         ? "\(productName) - 알러지 정보 조회 완료 🎉"
         : "제품 조회에 실패했어요.\n알러지 정보는 못 올리지만 제품은 여전히 올릴 수 있어요 :)"
@@ -203,6 +205,7 @@ extension UploadNewProductViewController {
     
     private func configure() {
         title = "새 제품 등록"
+        activityIndicator.stopAnimating()
         configureAddImageButton()
         configureProductImageView()
         configureTextFields()

@@ -694,12 +694,16 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-iD-LcW">
+                                                <rect key="frame" x="188.5" y="318.5" width="37" height="37"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Yz6-vV-jX2" firstAttribute="top" secondItem="vyw-7j-CHx" secondAttribute="bottom" constant="25" id="3Dx-5N-bcE"/>
                                             <constraint firstAttribute="trailing" secondItem="73F-rH-Mfx" secondAttribute="trailing" constant="16" id="3XK-hd-zh4"/>
                                             <constraint firstItem="OM9-ru-gFv" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="4M7-W4-pYj"/>
+                                            <constraint firstItem="Gh7-iD-LcW" firstAttribute="centerX" secondItem="UhX-Iy-qfj" secondAttribute="centerX" id="5kg-gv-0BS"/>
                                             <constraint firstItem="y0A-uJ-25S" firstAttribute="top" secondItem="pHx-35-LIr" secondAttribute="bottom" constant="28" id="DPK-jh-fUr"/>
                                             <constraint firstItem="73F-rH-Mfx" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="Gif-D0-zaS"/>
                                             <constraint firstAttribute="trailing" secondItem="bv9-AV-svU" secondAttribute="trailing" constant="16" id="IgV-DS-bLC"/>
@@ -720,6 +724,7 @@
                                             <constraint firstItem="pHx-35-LIr" firstAttribute="top" secondItem="bv9-AV-svU" secondAttribute="bottom" constant="12" id="c8k-iG-lIx"/>
                                             <constraint firstItem="QGm-df-8D8" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="ccN-Jh-ZXb"/>
                                             <constraint firstItem="73F-rH-Mfx" firstAttribute="top" secondItem="o7n-nl-6wZ" secondAttribute="bottom" constant="8" id="gMI-i6-uBu"/>
+                                            <constraint firstItem="Gh7-iD-LcW" firstAttribute="centerY" secondItem="UhX-Iy-qfj" secondAttribute="centerY" id="gWW-Vm-gLy"/>
                                             <constraint firstItem="vyw-7j-CHx" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="gqV-hK-90E"/>
                                             <constraint firstItem="hAN-YS-Gvh" firstAttribute="leading" secondItem="UhX-Iy-qfj" secondAttribute="leading" constant="16" id="iYT-iG-dxH"/>
                                             <constraint firstItem="y0A-uJ-25S" firstAttribute="leading" secondItem="vyw-7j-CHx" secondAttribute="trailing" constant="12" id="oZb-Z4-Gv8"/>
@@ -755,6 +760,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aJe-Rw-Vef"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Gh7-iD-LcW" id="RPX-w3-eha"/>
                         <outlet property="addImageButton" destination="KAH-UO-SgP" id="PpE-1P-KQT"/>
                         <outlet property="chooseProductCategoryView" destination="Yz6-vV-jX2" id="aS6-72-wNS"/>
                         <outlet property="doneButton" destination="p2N-mL-Knr" id="gEN-jB-6R6"/>

@@ -26,6 +26,10 @@ class CommunityManager {
             multipartFormData.append(Data(model.title.utf8),withName: "title")
             multipartFormData.append(Data(model.contents.utf8),withName: "contents")
             
+            for regionIds in model.region_ids {
+                multipartFormData.append(Data(regionIds.utf8), withName: "region_ids")
+            }
+            
             for image in model.files {
                 multipartFormData.append(
                     image,
