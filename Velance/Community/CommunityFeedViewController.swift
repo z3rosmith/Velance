@@ -5,7 +5,7 @@ class CommunityFeedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-//    private let viewModel = CommunityFeedViewModel()
+    private let viewModel = CommunityFeedViewModel()
 
     private let headerReuseIdentifier = "CommunityCollectionReusableView2"
     private let cellReuseIdentifier = "CommunityImageCollectionViewCell"
@@ -31,8 +31,8 @@ extension CommunityFeedViewController {
     }
 
     private func configureViewModel() {
-//        viewModel.delegate = self
-//        viewModel.fetchProfile(userUID: User.shared.userUid)
+        viewModel.delegate = self
+        viewModel.fetchProfile(userUID: User.shared.userUid)
     }
 }
 
@@ -47,13 +47,13 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView2 else { fatalError() }
-//            headerView.tagListView.removeAllTags()
-//            headerView.tagListView.addTags(viewModel.userInterestType)
-//            headerView.userImageView.sd_setImage(with: viewModel.userImageURL, placeholderImage: UIImage(named: "mockAvatar7"))
-//            headerView.usernameLabel.text = viewModel.username
-//            headerView.userCategoryLabel.text = viewModel.userVegetarianType
-//            headerView.followerCountLabel.text = "\(viewModel.followers)"
-//            headerView.followingCountLabel.text = "\(viewModel.followings)"
+            headerView.tagListView.removeAllTags()
+            headerView.tagListView.addTags(viewModel.userInterestType)
+            headerView.userImageView.sd_setImage(with: viewModel.userImageURL, placeholderImage: UIImage(named: "mockAvatar7"))
+            headerView.usernameLabel.text = viewModel.username
+            headerView.userCategoryLabel.text = viewModel.userVegetarianType
+            headerView.followerCountLabel.text = "\(viewModel.followers)"
+            headerView.followingCountLabel.text = "\(viewModel.followings)"
             return headerView
         default:
             fatalError()
@@ -102,10 +102,10 @@ extension CommunityFeedViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
-//
-//    func didFetchProfile() {
-//        print("🙌 didFetchProfile")
-//        collectionView.reloadData()
-//    }
-//}
+extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
+
+    func didFetchProfile() {
+        print("🙌 didFetchProfile")
+        collectionView.reloadData()
+    }
+}
