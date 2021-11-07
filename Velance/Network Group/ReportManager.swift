@@ -43,4 +43,13 @@ class ReportManager {
             }
         }
     }
+    
+    
+    func blockUser(
+        targetUserId: String,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        
+    }
 }

@@ -19,6 +19,7 @@ class ProductReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     var reviewId: Int?
+    var createdBy: String?
     
     weak var currentVC: UIViewController?
     weak var delegate: ProductReviewTableViewCellDelegate?
@@ -51,25 +52,48 @@ class ProductReviewTableViewCell: UITableViewCell {
 
     @objc private func pressedShowMoreButton() {
         
-        let reportAction = UIAlertAction(
-            title: "사용자 신고하기",
-            style: .default
-        ) { [weak self] _ in
-            guard let self = self else { return }
-            self.presentReportReviewActionSheet()
-
-        }
+        guard let createdBy = createdBy, let reviewId = reviewId else { return }
         
-        let blockAction = UIAlertAction(
-            title: "해당 사용자의 글 더 이상 보지 않기",
-            style: .default
-        ) { [weak self] _ in
-            guard let self = self else { return }
+        if createdBy == User.shared.userUid {
             
-        }
-        let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
+            let deleteAction = UIAlertAction(
+                title: "내 리뷰 삭제하기",
+                style: .destructive
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.currentVC?.presentAlertWithConfirmAction(
+                    title: "리뷰를 삭제하시겠어요?",
+                    message: "") { selectedOk in
+                        if selectedOk {
+                            self.delegate?.didChooseToDeleteMyReview(reviewId: reviewId)
+                        }
+                    }
+            }
+            let actionSheet = UIHelper.createActionSheet(with: [deleteAction], title: nil)
+            currentVC?.present(actionSheet, animated: true)
+            
+        } else {
+            
+            let reportAction = UIAlertAction(
+                title: "사용자 신고하기",
+                style: .default
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.presentReportReviewActionSheet()
+            }
+            
+            let blockAction = UIAlertAction(
+                title: "해당 사용자의 글 더 이상 보지 않기",
+                style: .default
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                
+            }
+            let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
 
-        currentVC?.present(actionSheet, animated: true)
+            currentVC?.present(actionSheet, animated: true)
+        }
+      
     }
     
     private func presentReportReviewActionSheet() {

@@ -188,6 +188,7 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         cell.delegate = self
         
         cell.reviewId = reviewData.reviewId
+        cell.createdBy = reviewData.user.userUid
         cell.reviewLabel.text = reviewData.contents
         cell.ratingView.setStarsRating(rating: reviewData.rating)
         cell.nicknameLabel.text = reviewData.user.displayName

@@ -38,10 +38,10 @@ enum ReportType {
     
     }
     
+    // Product Review
     enum Review: String {
         case violentReview                 = "폭력적인 사진/글이 포함되어 있어요."
         case sexualReview                  = "선정적인 사진/글이 포함되어 있어요."
         case inappropriateReview           = "그 외 다른 이유로 부적절한 컨텐츠가 있어요."
-        
     }
 }
