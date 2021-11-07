@@ -58,15 +58,6 @@ extension ProductReviewListContainerViewController {
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
-        
-        //Test -- 지역 선택하는 VC임 -> CommunityDailyLife로 옮겨야함
-//        let vc = ChooseRegionViewController.instantiate()
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true)
-        
-//        let vc = NewDailyLifePostViewController.instantiate()
-        
         let vc = UploadNewProductViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }

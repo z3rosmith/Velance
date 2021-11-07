@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ChooseRegionDelegate: AnyObject {
-    func didChooseRegion(region: Int)
+    func didChooseRegion(region: [String])
 }
 
 class ChooseRegionViewController: UIViewController, Storyboarded {
@@ -9,10 +9,11 @@ class ChooseRegionViewController: UIViewController, Storyboarded {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var chooseRegionContainerView: UIView!
     @IBOutlet var regionOptionButtons: [VLGradientButton]!
+    @IBOutlet var allRegionsButton: VLGradientButton!
     
     @IBOutlet weak var doneButton: UIButton!
     
-    private var selectedRegionTypeId: Int = 1
+    private var selectedRegionTypeId: [Int] = []
     
     weak var delegate: ChooseRegionDelegate?
     
@@ -31,13 +32,30 @@ class ChooseRegionViewController: UIViewController, Storyboarded {
 extension ChooseRegionViewController {
     
     @IBAction func pressedOptionButton(_ sender: UIButton) {
+        allRegionsButton.isSelected = false
+        sender.isSelected.toggle()
+    }
+    
+    @IBAction func pressedAllRegionsButton(_ sender: UIButton) {
         regionOptionButtons.forEach { $0.isSelected = false }
-        sender.isSelected = true
-        selectedRegionTypeId = sender.tag
+        sender.isSelected.toggle()
+        for index in 1...UserOptions.regionOptions.count {
+            selectedRegionTypeId.append(index)
+        }
+   
+        let regionIdStringArray: [String] = selectedRegionTypeId.map { String($0) }
+        delegate?.didChooseRegion(region: regionIdStringArray)
+        dismiss(animated: true)
     }
     
     @objc private func pressedDoneButton() {
-        delegate?.didChooseRegion(region: selectedRegionTypeId)
+        regionOptionButtons.forEach {
+            if $0.isSelected {
+                selectedRegionTypeId.append($0.tag)
+            }
+        }
+        let regionIdStringArray: [String] = selectedRegionTypeId.map { String($0) }
+        delegate?.didChooseRegion(region: regionIdStringArray)
         dismiss(animated: true)
     }
 }

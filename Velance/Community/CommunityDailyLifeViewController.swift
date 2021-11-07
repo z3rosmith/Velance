@@ -72,7 +72,7 @@ extension CommunityDailyLifeViewController {
     
     private func addFloatingButton() {
         let addReviewButton = VLFloatingButton()
-        addReviewButton.setImage(UIImage(systemName: "pencil")?.withRenderingMode(.alwaysOriginal).withTintColor(.white), for: .normal)
+        addReviewButton.setImage(UIImage(named: "pencilIcon"), for: .normal)
         addReviewButton.addTarget(
             self,
             action: #selector(pressedAddPostButton),
@@ -87,7 +87,7 @@ extension CommunityDailyLifeViewController {
     }
     
     @objc private func pressedAddPostButton() {
-        let vc = NewRecipeViewController.instantiate()
+        let vc = NewDailyLifePostViewController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

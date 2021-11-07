@@ -13,7 +13,7 @@ class ProductManager {
     let productAPIBaseUrl           = "\(API.baseUrl)product"
     let productReviewAPIBaseUrl     = "\(API.baseUrl)review"
     let getSimilarTasteProductUrl   = "\(API.baseUrl)product/recommend/taste/"
-    let openAPISearchUrl            = "https://openapi.foodsafetykorea.go.kr/api/6975f768355f446ea613/C002/json/1/10/PRDLST_NM="
+    let openAPISearchUrl            = "https://openapi.foodsafetykorea.go.kr/api/6975f768355f446ea613/C002/json/1/20/PRDLST_NM="
     
     //MARK: - 제품 목록 가져오기
     func getProducts(
