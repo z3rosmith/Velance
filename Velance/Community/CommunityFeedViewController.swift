@@ -33,6 +33,7 @@ extension CommunityFeedViewController {
     private func configureViewModel() {
         viewModel.delegate = self
         viewModel.fetchProfile(userUID: User.shared.userUid)
+        viewModel.fetchUserPostList(userUID: User.shared.userUid)
     }
 }
 
@@ -61,15 +62,13 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.numberOfFeeds
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityImageCollectionViewCell else { fatalError() }
-
-        let randomIndex = Int.random(in: 0..<MockData.mockFoodImageName.count)
-
-        cell.imageView.image = UIImage(named: MockData.mockFoodImageName[randomIndex])
+        let cellViewModel = viewModel.feedAtIndex(indexPath.item)
+        cell.imageView.sd_setImage(with: cellViewModel.feedThumbnailURL, placeholderImage: UIImage(named: MockData.mockFoodImageName[0]))
         return cell
     }
 }
@@ -107,5 +106,23 @@ extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
     func didFetchProfile() {
         print("🙌 didFetchProfile")
         collectionView.reloadData()
+    }
+    
+    func didFetchUserFeedList() {
+        collectionView.reloadData()
+    }
+}
+
+extension CommunityFeedViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = collectionView.contentSize.height
+        let frameHeight = scrollView.frame.height
+        
+        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingPost {
+            // fetch more
+            viewModel.fetchUserPostList(userUID: User.shared.userUid)
+        }
     }
 }

@@ -2,10 +2,10 @@ import Foundation
 
 // MARK: - DailyLifeResponseDTO
 struct DailyLifeResponseDTO: Decodable {
-    let dailyLifeID: Int?
+    let dailyLifeID: Int
     let title, contents: String
     let fileFolder: FileFolder?
-    let feed: Feed
+    let feed: Feed?
     let isLike: String?
 
     enum CodingKeys: String, CodingKey {

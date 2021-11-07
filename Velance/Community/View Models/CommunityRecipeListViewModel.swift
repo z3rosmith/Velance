@@ -85,14 +85,14 @@ extension CommunityRecipeViewModel {
     }
     
     var userDisplayName: String {
-        return self.post.feed.user.displayName
+        return self.post.feed!.user.displayName
     }
     
     var feedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.locale = Locale(identifier:"ko_KR")
-        guard let date = dateFormatter.date(from: self.post.feed.createdAt) else {
+        guard let date = dateFormatter.date(from: self.post.feed!.createdAt) else {
             print("❗️CommunityRecipeViewModel - feedDate error")
             return "시간표시오류"
         }
@@ -119,25 +119,22 @@ extension CommunityRecipeViewModel {
     }
     
     var repliesCount: Int {
-        return post.feed.repliesCount
+        return post.feed!.repliesCount
     }
     
     var like: Int {
-        return post.feed.like
+        return post.feed!.like
     }
     
     var vegetarianType: String {
-        guard let type = post.feed.user.vegetarianType?.name else {
+        guard let type = post.feed!.user.vegetarianType?.name else {
             return "선택안함"
         }
         return type
     }
     
     var isLike: Bool {
-        guard let like = post.isLike else {
-            return false
-        }
-        if like == "Y" {
+        if let like = post.isLike, like == "Y" {
             return true
         }
         return false

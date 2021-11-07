@@ -6,7 +6,7 @@ struct RecipeResponseDTO: Decodable {
     let title, contents: String
     let fileFolder: FileFolder?
     let recipeCategory: RecipeCategory
-    let feed: Feed
+    let feed: Feed?
     let isLike: String?
 
     enum CodingKeys: String, CodingKey {
