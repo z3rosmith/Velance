@@ -186,7 +186,7 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.menuImageView.sd_setImage(
             with: URL(string: menuData.fileFolder.files[0].path),
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "placeholderImage"),
             options: .continueInBackground
         )
         cell.menuNameLabel.text = menuData.name
@@ -318,7 +318,7 @@ extension MallViewController {
         mallThumbnailImageView.image = UIImage(named: "image_test")
         mallThumbnailImageView.sd_setImage(
             with: mallThumbnailUrl,
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "placeholderImage"),
             options: .continueInBackground
         )
     }

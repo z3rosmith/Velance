@@ -200,4 +200,8 @@ extension CommunityDailyLifeViewModel {
     var userUid: String {
         return post.feed.user.userUid
     }
+    
+    var userProfileImageUrlString: String? {
+        return post.feed.user.fileFolder?.files[0].path
+    }
 }

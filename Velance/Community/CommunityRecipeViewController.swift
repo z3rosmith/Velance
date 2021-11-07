@@ -119,7 +119,12 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
-        cell.userImageView.image = UIImage(named: MockData.mockAvatarImageName.randomElement() ?? "userImage_test") // 준수님이 업데이트하면 수정
+        cell.userImageView.sd_setImage(
+            with: URL(string: cellViewModel.userProfileImageUrlString ?? ""),
+            placeholderImage: UIImage(named: "avatarImage"),
+            options: .continueInBackground
+        )
+        
         
         var inputSources: [InputSource] = []
         if let urls = cellViewModel.imageURLs {

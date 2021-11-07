@@ -124,7 +124,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         cell.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         cell.productImageView.sd_setImage(
             with: URL(string: productData.fileFolder.files[0].path)!,
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "imagePlaceholder"),
             options: .continueInBackground
         )
         return cell

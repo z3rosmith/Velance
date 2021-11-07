@@ -81,7 +81,7 @@ extension MallListViewController: UITableViewDataSource {
         cell.semiVeganLabel.isHidden = cellViewModel.onlyVegan
         cell.veganLabel.isHidden = !cellViewModel.onlyVegan
         cell.mallImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: nil)
+        cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: UIImage(named: "placeholderImage"))
         
         cell.menuCountLabel.text = "비건 메뉴: \(cellViewModel.menuCount)개"
         let attributtedString = NSMutableAttributedString(string: cell.menuCountLabel.text!)

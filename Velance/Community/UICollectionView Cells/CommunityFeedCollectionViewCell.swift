@@ -13,8 +13,8 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var timeLabel:    @IBOutlet weak var moreButton: UIButton!
-    UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var likeImageView: UIImageView!
