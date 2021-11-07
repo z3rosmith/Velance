@@ -85,7 +85,7 @@ extension NewDailyLifePostViewController {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.showSimpleBottomAlert(with: "피드 업로드 성공🎉")
+                self.showSimpleBottomAlert(with: "피드 업로드 성공 🎉")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.navigationController?.popViewController(animated: true)
                 }

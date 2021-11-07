@@ -149,7 +149,7 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
             options: .continueInBackground
         )
         cell.menuNameLabel.text = menuData.name
-        cell.menuCautionLabel.text = "\(menuData.caution ?? "없음")"
+        cell.menuCautionLabel.text = "\(menuData.caution ?? "주의사항 별도 등록되지 않음")"
         cell.menuPriceLabel.text = "\(menuData.price)원"
         
         cell.likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
@@ -159,7 +159,6 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         // 특정 메뉴에 대해 "좋아요"를 했을 때만 "Y"가 날라오고 아니면 속성 자체가 안 날라옴
         if let _ = menuData.isLike {
             cell.likeButton.isSelected = true
-       
         } else {
             cell.likeButton.isSelected = false
         }
