@@ -5,6 +5,7 @@ protocol CommunityRecipeListViewModelDelegate: AnyObject {
     func didFetchPostList()
     func didDeleteFeed()
     func didCompleteReport()
+    func didBlockUser()
     func failedUserRequest(with error: NetworkError)
 }
 
@@ -118,7 +119,7 @@ extension CommunityRecipeListViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.delegate?.didCompleteReport()
+                self.delegate?.didBlockUser()
             case .failure(let error):
                 self.delegate?.failedUserRequest(with: error)
             }

@@ -217,7 +217,7 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
     }
     
     func didDeleteFeed() {
-        showSimpleBottomAlert(with: "리뷰 삭제 완료 🎉")
+        showSimpleBottomAlert(with: "글 삭제 완료 🎉")
         collectionView.reloadData()
     }
     
@@ -227,6 +227,11 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
     
     func failedUserRequest(with error: NetworkError) {
         showSimpleBottomAlert(with: error.errorDescription)
+    }
+    
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "처리가 완료되었습니다. 피드 새로 고침을 해주세요.")
+        collectionView.reloadData()
     }
 }
 
@@ -245,4 +250,6 @@ extension CommunityRecipeViewController: CommunityFeedCVCDelegate {
     func didChooseToDeleteMyFeed(feedId: Int) {
         viewModel.deleteMyRecipeFeed(feedId: feedId)
     }
+    
+
 }
