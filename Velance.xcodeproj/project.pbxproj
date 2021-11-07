@@ -35,6 +35,7 @@
 		3CAEDC062727B19E001E4783 /* MallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */; };
 		3CB1532F27267C1E0063C407 /* CommunityFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */; };
 		3CB2AC69272262D70075FA97 /* VLSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB2AC68272262D70075FA97 /* VLSocialButton.swift */; };
+		3CC171F327379D6900EB03A8 /* CommunityFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC171F227379D6900EB03A8 /* CommunityFeedViewModel.swift */; };
 		3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2B346272979AA00D2BBF3 /* RecipeResponseDTO.swift */; };
 		3CC2B34A27297A1C00D2BBF3 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2B34927297A1C00D2BBF3 /* Feed.swift */; };
 		3CC2B34C27297AB800D2BBF3 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2B34B27297AB800D2BBF3 /* RecipeCategory.swift */; };
@@ -241,6 +242,7 @@
 		3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MallTableViewCell.xib; sourceTree = "<group>"; };
 		3CB1532E27267C1E0063C407 /* CommunityFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedViewController.swift; sourceTree = "<group>"; };
 		3CB2AC68272262D70075FA97 /* VLSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLSocialButton.swift; sourceTree = "<group>"; };
+		3CC171F227379D6900EB03A8 /* CommunityFeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedViewModel.swift; sourceTree = "<group>"; };
 		3CC2B346272979AA00D2BBF3 /* RecipeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponseDTO.swift; sourceTree = "<group>"; };
 		3CC2B34927297A1C00D2BBF3 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		3CC2B34B27297AB800D2BBF3 /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			children = (
 				3C910FD9272A89F200F6CE2F /* CommunityRecipeListViewModel.swift */,
 				3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */,
+				3CC171F227379D6900EB03A8 /* CommunityFeedViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -1383,6 +1386,7 @@
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
 				7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */,
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
+				3CC171F327379D6900EB03A8 /* CommunityFeedViewModel.swift in Sources */,
 				7CAB8B9E272A4B29006B5E08 /* SearchMallByKeywordDTO.swift in Sources */,
 				7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */,
 				7CEED0EA272243F5005CACF5 /* VLStarButton.swift in Sources */,
@@ -1602,7 +1606,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
