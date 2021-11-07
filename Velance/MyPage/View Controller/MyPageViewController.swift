@@ -1,10 +1,20 @@
 import UIKit
+import SDWebImage
 
 class MyPageViewController: UIViewController, Storyboarded {
     
+    @IBOutlet var profileImageButton: UIButton!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var vegetarianTypeLabel: UILabel!
     @IBOutlet weak var myPageTableView: UITableView!
+    
+    lazy var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .savedPhotosAlbum
+        return imagePicker
+    }()
     
     fileprivate struct Images {
         static let myPageCellImageNames: [String] = ["person.fill", "scroll.fill", "exclamationmark.triangle.fill", "power.circle.fill", "person.crop.circle.fill.badge.xmark"]
@@ -27,6 +37,11 @@ class MyPageViewController: UIViewController, Storyboarded {
         configure()
         fetchUserProfileInfo()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchUserProfileInfo()
+    }
 
 }
 
@@ -39,17 +54,83 @@ extension MyPageViewController {
         UserManager.shared.fetchProfileInfo { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success:
-                
+            case .success(let userModel):
                 DispatchQueue.main.async {
                     self.nicknameLabel.text = User.shared.displayName
                     self.vegetarianTypeLabel.text = User.shared.vegetarianType
+                    
+                    self.profileImageButton.layer.masksToBounds = true
+                    self.profileImageButton.sd_setImage(
+                        with: URL(string: userModel.fileFolder?.files[0].path ?? ""),
+                        for: .normal,
+                        placeholderImage: UIImage(named: "MyPageProfileImageButton")
+                    )
+                    
                 }
                 
             case .failure(let error):
                 self.showSimpleBottomAlert(with: error.errorDescription)
             }
         }
+    }
+    
+    @IBAction func pressedProfileImageButton(_ sender: UIButton) {
+        presentActionSheet()
+    }
+    
+    func presentActionSheet() {
+
+        let library = UIAlertAction(
+            title: "앨범에서 선택",
+            style: .default
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true)
+        }
+        let remove = UIAlertAction(
+            title: "프로필 사진 제거",
+            style: .default
+        ) { [weak self] _ in
+            self?.presentAlertWithConfirmAction(
+                title: "프로필 사진 제거",
+                message: "정말로 제거하시겠습니까?"
+            ) { selectedOk in
+                if selectedOk { self?.removeProfileImage() }
+            }
+        }
+
+        
+        let actionSheet = UIHelper.createActionSheet(with: [library, remove], title: "프로필 사진 변경" )
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
+    func removeProfileImage() {
+        UserManager.shared.removeUserProfileImage { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.showSimpleBottomAlert(with: "프로필 이미지 제거 성공 🎉")
+                self.fetchUserProfileInfo()
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+    }
+    
+    func updateProfileImage(imageData: Data) {
+        
+        UserManager.shared.updateUserProfileImage(imageData: imageData) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.showSimpleBottomAlert(with: "프로필 이미지 변경 성공 🎉")
+                self.fetchUserProfileInfo()
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+        
     }
     
     func unregisterUser() {
@@ -67,6 +148,43 @@ extension MyPageViewController {
         }
     }
 }
+
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension MyPageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let originalImage: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            dismiss(animated: true) {
+                self.presentAlertWithConfirmAction(
+                    title: "프로필 사진 변경",
+                    message: "선택하신 이미지로 프로필 사진을 변경하시겠습니까?"
+                ) { selectedOk in
+                    if selectedOk {
+                        showProgressBar()
+                        OperationQueue().addOperation {
+                            guard let imageData = originalImage.jpegData(compressionQuality: 0.9) else {
+                                return
+                            }
+                            self.updateProfileImage(imageData: imageData)
+                            dismissProgressBar()
+                        }
+                    } else {
+                        self.imagePickerControllerDidCancel(self.imagePicker)
+                    }
+                }
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -125,6 +243,7 @@ extension MyPageViewController {
     private func configure() {
         setNavBarBackButtonItemTitle()
         configureMyPageTableView()
+        configureProfileImageButton()
     }
     
     private func configureMyPageTableView() {
@@ -140,5 +259,11 @@ extension MyPageViewController {
         myPageTableView.rowHeight = UITableView.automaticDimension
         myPageTableView.estimatedRowHeight = 80
         myPageTableView.separatorStyle = .none
+    }
+    
+    private func configureProfileImageButton() {
+        profileImageButton.layer.cornerRadius = profileImageButton.frame.height / 2
+        profileImageButton.layer.masksToBounds = false
+        profileImageButton.contentMode = .scaleAspectFit
     }
 }

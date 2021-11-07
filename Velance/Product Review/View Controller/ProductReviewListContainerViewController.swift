@@ -185,6 +185,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (productCollectionView.contentSize.height - 20 - scrollView.frame.size.height) {
+
             if !viewModel.isFetchingData {
                 viewModel.fetchProductList()
             }

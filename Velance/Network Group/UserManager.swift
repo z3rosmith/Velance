@@ -13,13 +13,13 @@ class UserManager {
     let fetchProfileUrl = "\(API.baseUrl)user/"
     
     let interceptor = Interceptor()
-
+    
     
     func register(
         with model: UserRegisterDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-
+        
         AF.request(
             registerUrl,
             method: .post,
@@ -49,7 +49,7 @@ class UserManager {
         with model: UserInfoUpdateDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-    
+        
         AF.request(
             userBaseUrl,
             method: .patch,
@@ -57,7 +57,7 @@ class UserManager {
             encoding: JSONEncoding.default,
             interceptor: interceptor
         ).responseJSON { response in
-
+            
             switch response.result {
             case .success: completion(.success(true))
             case .failure(_):
@@ -65,6 +65,60 @@ class UserManager {
                 completion(.failure(error))
             }
         }
+    }
+    
+    // 프로필 이미지 업데이트는 formData 로 해야해서 별도로 설정
+    func updateUserProfileImage(
+        imageData: Data,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        AF.upload(multipartFormData: { multipartFormData in
+            
+            multipartFormData.append(
+                imageData,
+                withName: "files",
+                fileName: "\(UUID().uuidString).jpeg",
+                mimeType: "image/jpeg"
+            )
+        },
+                  to: userBaseUrl,
+                  method: .patch,
+                  interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("✏️ UserManager - updateUserProfileImage SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                    print("❗️ UserManager - updateUserProfileImage error: \(error.errorDescription)")
+                }
+            }
+    }
+    
+    func removeUserProfileImage(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(Data("Y".utf8), withName: "force")
+        },
+                  to: userBaseUrl,
+                  method: .patch,
+                  interceptor: interceptor
+        )
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("✏️ UserManager - removeUserProfileImage SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                    print("❗️ UserManager - removeUserProfileImage error: \(error.errorDescription)")
+                }
+            }
     }
     
     
@@ -104,7 +158,7 @@ class UserManager {
     }
     
     
-    func fetchProfileInfo(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
+    func fetchProfileInfo(completion: @escaping ((Result<UserDisplayModel, NetworkError>) -> Void)) {
         
         AF.request(
             fetchProfileUrl + User.shared.userUid,
@@ -115,13 +169,13 @@ class UserManager {
                 print("✏️ UserManager - fetchProfileInfo SUCCESS")
                 do {
                     let decodedData = try JSONDecoder().decode(UserDisplayModel.self, from: response.data!)
-                
+                    
                     User.shared.userUid = decodedData.userUid
                     User.shared.username = decodedData.userName
                     User.shared.displayName = decodedData.displayName
                     User.shared.vegetarianType = decodedData.vegetarianType?.name ?? "-"
                     
-                    completion(.success(true))
+                    completion(.success(decodedData))
                 } catch {
                     print("❗️ UserManager - fetchProfileInfo Decoding ERROR: \(error)")
                     completion(.failure(.internalError))
@@ -133,7 +187,7 @@ class UserManager {
         }
     }
     
-
+    
     
     func unregisterUser(completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
         
