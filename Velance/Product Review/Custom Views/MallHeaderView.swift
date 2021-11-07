@@ -100,18 +100,29 @@ class MallHeaderView: UIView {
         addSubview(titleLabel)
         addSubview(veganOnlyMallLabel)
         addSubview(nonVeganMallLabel)
-        
-        if isVegan == "Y" {
-            nonVeganMallLabel.isHidden = true
-        } else {
-            veganOnlyMallLabel.isHidden = true
-        }
-        
         addSubview(addressLabel)
         addSubview(goToMapButton)
         addSubview(registeredMenuLabel)
         
         makeConstraints()
+        
+        if isVegan == "Y" {
+            nonVeganMallLabel.isHidden = true
+            addressLabel.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
+                make.left.equalTo(veganOnlyMallLabel.snp.right).offset(8)
+                make.right.equalTo(goToMapButton.snp.left).offset(6)
+            }
+        } else {
+            veganOnlyMallLabel.isHidden = true
+            addressLabel.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
+                make.left.equalTo(nonVeganMallLabel.snp.right).offset(8)
+                make.right.equalTo(goToMapButton.snp.left).offset(6)
+            }
+        }
+
+
     }
     
     func makeConstraints() {
@@ -135,13 +146,7 @@ class MallHeaderView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
             make.right.equalTo(self.snp.right).offset(-6)
         }
-
-        addressLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
-            make.left.equalTo(nonVeganMallLabel.snp.right).offset(8)
-            make.right.equalTo(goToMapButton.snp.left).offset(6)
-        }
-
+        
         registeredMenuLabel.snp.makeConstraints { make in
             make.bottom.equalTo(self.snp.bottom).offset(-10)
             make.left.equalTo(self.snp.left).offset(Metrics.labelPadding)

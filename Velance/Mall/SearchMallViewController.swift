@@ -52,7 +52,7 @@ extension SearchMallViewController {
     
     private func configureUI() {
         bottomView.layer.cornerRadius = 10
-        confirmButton.layer.cornerRadius = 10
+        confirmButton.layer.cornerRadius = 5
     }
     
     private func configureMapView() {
