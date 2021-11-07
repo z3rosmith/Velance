@@ -41,6 +41,19 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         bottomView.backgroundColor = .white
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+        viewModel?.fetchReviewList()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    
     func setUpViewModel() {
         viewModel = ProductReviewViewModel(
             productManager: ProductManager(),
@@ -49,16 +62,6 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         )
         viewModel?.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel?.fetchReviewList()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -70,12 +73,12 @@ extension ProductReviewViewController {
         let reportAction = UIAlertAction(
             title: "신고하기",
             style: .default
-        ) { [weak self] _ in self?.presentReportReviewActionSheet() }
+        ) { [weak self] _ in self?.presentReportProductActionSheet() }
         let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
         present(actionSheet, animated: true)
     }
     
-    private func presentReportReviewActionSheet() {
+    private func presentReportProductActionSheet() {
         
         let incorrectProductPicture = UIAlertAction(
             title: ReportType.Product.incorrectProductPicture.rawValue,
@@ -142,6 +145,24 @@ extension ProductReviewViewController: ProductReviewDelegate {
     }
     
     
+}
+
+//MARK: - ProductReviewTableViewCellDelegate
+
+extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
+
+    
+    func didChooseToReportUser(type: ReportType.Review, reviewId: Int) {
+        viewModel?.reportReview(type: type, reviewId: reviewId)
+    }
+    
+    func didChooseToBlockUser(userId: String) {
+        
+    }
+    
+    func didChooseToDeleteMyReview(reviewId: Int) {
+        viewModel?.deleteMyReview(reviewId: reviewId)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -218,17 +239,6 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     @objc private func refreshReviewTableView() {
         viewModel?.refreshTableView()
     }
-}
-
-//MARK: - ProductReviewTableViewCellDelegate
-
-extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
-    
-    func didChooseToReportUser(reviewId: Int) {
-        viewModel?.deleteMyReview(reviewId: reviewId)
-    }
-
-
 }
 
 

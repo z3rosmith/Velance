@@ -16,12 +16,13 @@ class ReportManager {
         model: ReportDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-        var url: String
+        let url: String
         switch type {
         case .feed: url = reportAPIBaseUrl + "/feed"
         case .reply: url = reportAPIBaseUrl + "/reply"
         case .mall: url = reportAPIBaseUrl + "/mall"
-        case .product: url = reportAPIBaseUrl + "/reply"        // 수정 필요
+        case .product: url = reportAPIBaseUrl + "/product"
+        case .review: url = reportAPIBaseUrl + "/review"
         }
 
         AF.request(
@@ -33,6 +34,7 @@ class ReportManager {
         ).responseData { response in
             switch response.result {
             case .success:
+                print("✏️ ReportManager - report SUCCESS")
                 completion(.success(true))
             case .failure:
                 let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())

@@ -2,7 +2,9 @@ import UIKit
 import ImageSlideshow
 
 protocol ProductReviewTableViewCellDelegate: AnyObject {
-    func didChooseToReportUser(reviewId: Int)
+    func didChooseToReportUser(type: ReportType.Review, reviewId: Int)
+    func didChooseToBlockUser(userId: String)
+    func didChooseToDeleteMyReview(reviewId: Int)
 }
 
 class ProductReviewTableViewCell: UITableViewCell {
@@ -54,8 +56,8 @@ class ProductReviewTableViewCell: UITableViewCell {
             style: .default
         ) { [weak self] _ in
             guard let self = self else { return }
-            guard let reviewId = self.reviewId else { return }
-            self.delegate?.didChooseToReportUser(reviewId: reviewId)
+            self.presentReportReviewActionSheet()
+
         }
         
         let blockAction = UIAlertAction(
@@ -70,8 +72,36 @@ class ProductReviewTableViewCell: UITableViewCell {
         currentVC?.present(actionSheet, animated: true)
     }
     
-    func reportUser() {
+    private func presentReportReviewActionSheet() {
+    
+        let violentReview = UIAlertAction(
+            title: ReportType.Review.violentReview.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.reportUser(reportType: ReportType.Review.violentReview)
+        }
         
+        let sexualReview = UIAlertAction(
+            title: ReportType.Review.sexualReview.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.reportUser(reportType: ReportType.Review.sexualReview)
+        }
+        
+        let inappropriateReview = UIAlertAction(
+            title: ReportType.Review.inappropriateReview.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.reportUser(reportType: ReportType.Review.inappropriateReview)
+        }
+        
+        let actionSheet = UIHelper.createActionSheet(with: [violentReview, sexualReview, inappropriateReview], title: "신고 사유 선택")
+        currentVC?.present(actionSheet, animated: true)
+    }
+    
+    func reportUser(reportType: ReportType.Review) {
+        guard let reviewId = self.reviewId else { return }
+        self.delegate?.didChooseToReportUser(type: reportType, reviewId: reviewId)
     }
     
     func blockUser() {

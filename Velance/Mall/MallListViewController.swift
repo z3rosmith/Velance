@@ -39,7 +39,7 @@ class MallListViewController: UIViewController {
 }
 
 extension MallListViewController {
-    
+     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
