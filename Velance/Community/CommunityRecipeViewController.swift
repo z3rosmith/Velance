@@ -141,9 +141,12 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         } else {
             cell.likeImageView.image = UIImage(named: "ThumbLogoInactive")
         }
+        cell.feedId = cellViewModel.feedId
+        cell.createdUserUid = cellViewModel.userUid
         
         // MARK: - configure cell(no data)
         cell.parentVC = self
+        cell.delegate = self
         cell.likeButton.tag = indexPath.item
         cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
         
@@ -211,5 +214,35 @@ extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, C
     func didSelectCategoryItemAt(_ index: Int) {
         recipeCategoryID = index == 0 ? nil : index
         viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+    }
+    
+    func didDeleteFeed() {
+        showSimpleBottomAlert(with: "리뷰 삭제 완료 🎉")
+        collectionView.reloadData()
+    }
+    
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func failedUserRequest(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+    }
+}
+
+//MARK: - CommunityFeedCVCDelegate
+
+extension CommunityRecipeViewController: CommunityFeedCVCDelegate {
+    
+    func didChooseToReportUser(type: ReportType.Feed, feedId: Int) {
+        viewModel.reportRecipeFeed(type: type, feedId: feedId)
+    }
+    
+    func didChooseToBlockUser(userId: String) {
+        viewModel.blockUser(targetUserId: userId)
+    }
+    
+    func didChooseToDeleteMyFeed(feedId: Int) {
+        viewModel.deleteMyRecipeFeed(feedId: feedId)
     }
 }

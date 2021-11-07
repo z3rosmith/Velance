@@ -13,6 +13,7 @@ class CommunityManager {
     let newRecipePostUrl        = "\(API.baseUrl)recipe"
     let fetchRecipeListUrl      = "\(API.baseUrl)recipe"
     let fetchDailyLifeListUrl   = "\(API.baseUrl)daily-life"
+    let feedBaseUrl             = "\(API.baseUrl)feed/"
     
     //MARK: - 일상 글 올리기
     
@@ -186,6 +187,35 @@ class CommunityManager {
                     let customError = NetworkError.returnError(statusCode: responseCode)
                     print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with custom error: \(customError.errorDescription)")
                     completion(.failure(customError))
+                }
+            }
+    }
+}
+
+extension CommunityManager {
+    
+    func deleteMyFeed(
+        feedId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let url = feedBaseUrl + String(feedId)
+        
+        AF.request(
+            url,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ CommunityManager - deleteMyFeed SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    print("❗️ CommunityManager - deleteMyFeed ERROR")
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
                 }
             }
     }
