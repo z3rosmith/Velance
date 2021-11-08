@@ -19,7 +19,9 @@ enum ReportType {
     
     // Reply -> 댓글 신고 사유
     enum Reply: String {
-        case violentComment                 = "욕설/비하가 댓글에 포함되어 있어요."
+        case violentComment             = "욕설/비하가 댓글에 포함되어 있어요."
+        case sexualComment              = "선정적인 내용이 댓글에 포함되어 있어요."
+        case inappropriateComment       = "그 외 다른 이유로 부적절한 내용이 포함되어 있어요."
     }
     
     // Mall

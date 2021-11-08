@@ -4,6 +4,11 @@ protocol CommunityDetailViewModelDelegate: AnyObject {
     func didFetchDetailInfo()
     func didFetchReplies()
     func didPostReply()
+    
+    func didDeleteReply()
+    func didCompleteReport()
+    func didBlockUser()
+    func failedUserRequest(with error: NetworkError)
 }
 
 class CommunityDetailViewModel {
@@ -91,6 +96,60 @@ extension CommunityDetailViewModel {
             }
         }
     }
+    
+
+    func deleteMyDailyLifeFeed(replyId: Int) {
+        
+        CommunityManager.shared.deleteMyReply(replyId: replyId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.delegate?.didDeleteReply()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+    func reportReply(type: ReportType.Reply, replyId: Int) {
+        
+        let model = ReportDTO(reason: type.rawValue, replyId: replyId)
+        
+
+        ReportManager.shared.report(
+            type: .reply(type),
+            model: model
+        ) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+    func blockUser(targetUserId: String) {
+        
+        ReportManager.shared.blockUser(targetUserId: targetUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didBlockUser()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
     
     var numberOfReplies: Int {
         return replies.count
@@ -183,5 +242,9 @@ extension CommunityDetailReplyViewModel {
             return try? files[0].path.asURL()
         }
         return nil
+    }
+    
+    var createdBy: String {
+        return reply.user.userUid
     }
 }
