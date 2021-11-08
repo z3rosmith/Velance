@@ -4,11 +4,13 @@ protocol CommunityCollectionHeaderViewDelegate: AnyObject {
     func didSelectCategoryItemAt(_ index: Int)
     func setViewOnlyFollowing(isSelected: Bool)
     func didSelectChooseInterestButton()
+    func didSelectChooseRegionButton()
 }
 
 extension CommunityCollectionHeaderViewDelegate {
     func didSelectCategoryItemAt(_ index: Int) {}
     func didSelectChooseInterestButton() {}
+    func didSelectChooseRegionButton() {}
 }
 
 class CommunityCollectionReusableView1: UICollectionReusableView {
@@ -16,6 +18,8 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     @IBOutlet weak var viewFollowingButton: UIButton!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var chooseInterestsButton: VLGradientButton!
+  
+    @IBOutlet weak var chooseRegionButton: VLGradientButton!
     @IBOutlet weak var recommandLabel: UILabel!
     @IBOutlet weak var similarUserCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionViewHeight: NSLayoutConstraint!
@@ -40,11 +44,23 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     
     private func setupUI() {
         viewFollowingButton.setImage(UIImage(systemName: "square"), for: .normal)
-        viewFollowingButton.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
+        viewFollowingButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
+        
         chooseInterestsButton.setTitle("관심사 선택하기", for: .normal)
         chooseInterestsButton.setTitle("관심사 선택됨", for: .selected)
+        chooseInterestsButton.addTarget(
+            self,
+            action: #selector(pressedChooseInterestButton),
+            for: .touchUpInside
+        )
         
-        chooseInterestsButton.addTarget(self, action: #selector(pressedChooseInterestButton), for: .touchUpInside)
+        chooseRegionButton.setTitle("지역 선택하기", for: .normal)
+        chooseRegionButton.setTitle("지역 선택됨", for: .selected)
+        chooseRegionButton.addTarget(
+            self,
+            action: #selector(pressedChooseRegionButton),
+            for: .touchUpInside
+        )
     }
     
     private func setupCollectionView() {
@@ -72,6 +88,10 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     
     @objc private func pressedChooseInterestButton() {
         delegate?.didSelectChooseInterestButton()
+    }
+    
+    @objc private func pressedChooseRegionButton() {
+        delegate?.didSelectChooseRegionButton()
     }
 }
 

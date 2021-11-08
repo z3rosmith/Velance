@@ -100,6 +100,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView1 else { fatalError() }
+            headerView.chooseRegionButton.isHidden = true
             headerView.chooseInterestsButton.isHidden = true
             headerView.categoryCollectionView.isHidden = false
             headerView.delegate = self

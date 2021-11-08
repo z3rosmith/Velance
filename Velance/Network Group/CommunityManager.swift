@@ -157,12 +157,20 @@ class CommunityManager {
             interestTypeIDs.forEach { array.append($0) }
             parameters["interest_type_ids"] = array
         }
-
-        AF.request(fetchDailyLifeListUrl,
-                   method: .get,
-                   parameters: parameters,
-                   encoding: URLEncoding.queryString,
-                   interceptor: interceptor)
+        
+        var array2: [String] = []
+        if let regionIds = model.regionsIds, regionIds.count > 0 {
+            regionIds.forEach { array2.append($0) }
+            parameters["region_ids"] = array2
+        }
+        
+        AF.request(
+            fetchDailyLifeListUrl,
+            method: .get,
+            parameters: parameters,
+            encoding: URLEncoding.queryString,
+            interceptor: interceptor
+        )
             .validate()
             .responseJSON { response in
 

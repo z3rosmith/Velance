@@ -42,10 +42,6 @@ extension ChooseRegionViewController {
         for index in 1...UserOptions.regionOptions.count {
             selectedRegionTypeId.append(index)
         }
-   
-        let regionIdStringArray: [String] = selectedRegionTypeId.map { String($0) }
-        delegate?.didChooseRegion(region: regionIdStringArray)
-        dismiss(animated: true)
     }
     
     @objc private func pressedDoneButton() {

@@ -15,16 +15,18 @@ class CommunityDailyLifeViewController: UIViewController {
     private let basicCellHeight: CGFloat = 575
     
     private var interestOptions: [Int] = []
+    private var regionOptions: [String] = []
     private var viewOnlyFollowing: Bool = false
     
     private weak var chooseInterestButton: UIButton?
+    private weak var chooseRegionButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         addFloatingButton()
         viewModel.delegate = self
-        viewModel.fetchPostList(interestTypeIDs: nil, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.fetchPostList(interestTypeIDs: nil, regionIds: nil, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
 
@@ -50,7 +52,7 @@ extension CommunityDailyLifeViewController {
     }
     
     @objc private func didDragCollectionView() {
-        viewModel.refreshPostList(interestTypeIDs: interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, regionIds: regionOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
     
     @objc private func didLikeButtonTapped(_ sender: UIButton) {
@@ -103,6 +105,7 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView1 else { fatalError() }
             chooseInterestButton = headerView.chooseInterestsButton
+            chooseRegionButton = headerView.chooseRegionButton
             headerView.chooseInterestsButton.isHidden = false
             headerView.categoryCollectionView.isHidden = true
             headerView.delegate = self
@@ -216,11 +219,20 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
     
     func setViewOnlyFollowing(isSelected: Bool) {
         viewOnlyFollowing = isSelected
-        viewModel.refreshPostList(interestTypeIDs: interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, regionIds: regionOptions,viewOnlyFollowing: viewOnlyFollowing)
     }
     
     func didSelectChooseInterestButton() {
         guard let vc = ChooseInterestViewController.instantiate() as? ChooseInterestViewController else { return }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+    
+    func didSelectChooseRegionButton() {
+        
+        guard let vc = ChooseRegionViewController.instantiate() as? ChooseRegionViewController else { return }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.delegate = self
@@ -247,6 +259,21 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
     
 }
 
+extension CommunityDailyLifeViewController: ChooseRegionDelegate {
+    
+    func didChooseRegion(region: [String]) {
+        
+        self.regionOptions = region
+        guard let chooseRegionButton = chooseRegionButton else { return }
+        if regionOptions.count == 0 {
+            chooseRegionButton.isSelected = false
+        } else {
+            chooseRegionButton.isSelected = true
+        }
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, regionIds: regionOptions, viewOnlyFollowing: viewOnlyFollowing)
+    }
+}
+
 // 관심사 선택 Delegate
 extension CommunityDailyLifeViewController: ChooseInterestDelegate {
     
@@ -259,7 +286,7 @@ extension CommunityDailyLifeViewController: ChooseInterestDelegate {
         } else {
             chooseInterestButton.isSelected = true
         }
-        viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
+        viewModel.refreshPostList(interestTypeIDs: interestOptions, regionIds: regionOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
 }
 
