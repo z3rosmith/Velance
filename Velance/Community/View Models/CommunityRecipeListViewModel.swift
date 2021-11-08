@@ -193,14 +193,14 @@ extension CommunityRecipeViewModel {
     }
     
     var feedId: Int {
-        return post.feed.feedID
+        return post.feed?.feedID ?? 0
     }
     
     var userUid: String {
-        return post.feed.user.userUid
+        return post.feed?.user.userUid ?? ""
     }
     
     var userProfileImageUrlString: String? {
-        return post.feed.user.fileFolder?.files[0].path
+        return post.feed?.user.fileFolder?.files[0].path ?? ""
     }
 }
