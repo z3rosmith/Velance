@@ -136,6 +136,7 @@
 		7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */; };
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
+		7C9BA60E2738BC0700473BD5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA60D2738BC0700473BD5 /* UIApplication+Extension.swift */; };
 		7CAB8B9A272A47A7006B5E08 /* SearchNewMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */; };
 		7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */; };
 		7CAB8B9E272A4B29006B5E08 /* SearchMallByKeywordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */; };
@@ -356,6 +357,7 @@
 		7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
+		7C9BA60D2738BC0700473BD5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewController.swift; sourceTree = "<group>"; };
 		7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewModel.swift; sourceTree = "<group>"; };
 		7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallByKeywordDTO.swift; sourceTree = "<group>"; };
@@ -979,6 +981,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */,
+				7C9BA60D2738BC0700473BD5 /* UIApplication+Extension.swift */,
 				7CC36A5726EC8561007573DD /* UIButton+Extension.swift */,
 				7CEED0EF27227539005CACF5 /* UIImage+Extension.swift */,
 				7CF529712710513600499709 /* String+Extension.swift */,
@@ -1441,6 +1444,7 @@
 				3CC2B34C27297AB800D2BBF3 /* RecipeCategory.swift in Sources */,
 				3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */,
 				3C2052BA272AB03E009BBD3B /* MallListViewModel.swift in Sources */,
+				7C9BA60E2738BC0700473BD5 /* UIApplication+Extension.swift in Sources */,
 				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CCBB54C2725382D002EFB58 /* ProductManager.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
