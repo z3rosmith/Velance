@@ -138,16 +138,10 @@ extension CommunityFeedCellViewModel {
     var isRecipe: Bool {
         if let _ = post.recipe {
             return true
-        } else {
+        } else if let _ = post.dailyLife {
             return false
-        }
-    }
-    
-    var isDailyLife: Bool {
-        if let _ = post.dailyLife {
-            return true
         } else {
-            return false
+            return true // 사실 이 일은 일어나지 않음
         }
     }
     
@@ -156,8 +150,7 @@ extension CommunityFeedCellViewModel {
             if let files = post.recipe?.fileFolder?.files, files.count > 0 {
                 return try? files[0].path.asURL()
             }
-        }
-        if isDailyLife {
+        } else {
             if let files = post.dailyLife?.fileFolder?.files, files.count > 0 {
                 return try? files[0].path.asURL()
             }
@@ -167,11 +160,11 @@ extension CommunityFeedCellViewModel {
     
     /// isRecipe가 true인 경우에만 사용할것
     var recipeID: Int {
-        return post.recipe!.recipeID
+        return post.recipe?.recipeID ?? -1
     }
     
-    /// isDailyLife가 true인 경우에만 사용할것
+    /// isRecipe가 false인 경우에만 사용할것
     var dailyLifeID: Int {
-        return post.dailyLife!.dailyLifeID
+        return post.dailyLife?.dailyLifeID ?? -1
     }
 }

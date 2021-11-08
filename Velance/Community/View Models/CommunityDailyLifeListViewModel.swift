@@ -139,14 +139,14 @@ extension CommunityDailyLifeViewModel {
     }
     
     var userDisplayName: String {
-        return post.feed!.user.displayName
+        return post.feed?.user.displayName ?? "-"
     }
     
     var feedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.locale = Locale(identifier:"ko_KR")
-        guard let date = dateFormatter.date(from: post.feed!.createdAt) else {
+        guard let createdAt = post.feed?.createdAt, let date = dateFormatter.date(from: createdAt) else {
             print("❗️CommunityDailyLifeViewModel - feedDate error")
             return "시간표시오류"
         }
@@ -173,15 +173,15 @@ extension CommunityDailyLifeViewModel {
     }
     
     var repliesCount: Int {
-        return post.feed!.repliesCount
+        return post.feed?.repliesCount ?? 0
     }
     
     var like: Int {
-        return post.feed!.like
+        return post.feed?.like ?? 0
     }
     
     var vegetarianType: String {
-        guard let type = post.feed!.user.vegetarianType?.name else {
+        guard let type = post.feed?.user.vegetarianType?.name else {
             return "선택안함"
         }
         return type
