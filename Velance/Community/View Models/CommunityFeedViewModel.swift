@@ -11,7 +11,6 @@ class CommunityFeedViewModel {
     
     weak var delegate: CommunityFeedViewModelDelegate?
     private var userProfile: UserDisplayModel?
-    
     private var posts: [UserFeedResponseDTO] = []
     var hasMore: Bool = true
     var isFetchingPost: Bool = false

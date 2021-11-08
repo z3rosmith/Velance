@@ -112,9 +112,8 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5u-AI-hnv" userLabel="Like Button">
-                                <rect key="frame" x="55" y="438" width="30" height="30"/>
+                                <rect key="frame" x="47" y="438" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="kY4-hd-raQ"/>
                                     <constraint firstAttribute="height" constant="30" id="th3-os-taS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -124,9 +123,8 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlK-pg-GiK">
-                                <rect key="frame" x="127" y="438" width="35" height="30"/>
+                                <rect key="frame" x="124" y="438" width="35" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="FDi-BV-tkK"/>
                                     <constraint firstAttribute="height" constant="30" id="uC4-Yj-ufp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -136,7 +134,7 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CommentLogoActive" translatesAutoresizingMaskIntoConstraints="NO" id="OoT-De-cWu">
-                                <rect key="frame" x="95" y="439" width="30" height="30"/>
+                                <rect key="frame" x="87" y="439" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sZA-uv-74W"/>
                                     <constraint firstAttribute="width" constant="30" id="zn7-9m-j5U"/>
@@ -163,11 +161,11 @@
                             <constraint firstItem="T8E-pR-MdK" firstAttribute="top" secondItem="v5u-AI-hnv" secondAttribute="bottom" constant="12" id="43W-eQ-OIu"/>
                             <constraint firstItem="zfG-Ki-LTt" firstAttribute="leading" secondItem="YQY-Mz-QbR" secondAttribute="leading" constant="15" id="5N8-1p-Xha"/>
                             <constraint firstItem="OoT-De-cWu" firstAttribute="leading" secondItem="v5u-AI-hnv" secondAttribute="trailing" constant="10" id="CiS-3e-ODt"/>
-                            <constraint firstItem="v5u-AI-hnv" firstAttribute="leading" secondItem="zfG-Ki-LTt" secondAttribute="trailing" constant="10" id="KKE-bA-BRm"/>
+                            <constraint firstItem="v5u-AI-hnv" firstAttribute="leading" secondItem="zfG-Ki-LTt" secondAttribute="trailing" constant="2" id="KKE-bA-BRm"/>
                             <constraint firstItem="T8E-pR-MdK" firstAttribute="leading" secondItem="YQY-Mz-QbR" secondAttribute="leading" constant="12" id="KRa-zi-Z9l"/>
                             <constraint firstItem="v5u-AI-hnv" firstAttribute="top" secondItem="BHW-0P-WAY" secondAttribute="bottom" constant="8" symbolic="YES" id="PQd-Uf-K1l"/>
                             <constraint firstAttribute="bottom" secondItem="T8E-pR-MdK" secondAttribute="bottom" constant="15" id="WL9-VQ-OoA"/>
-                            <constraint firstItem="mlK-pg-GiK" firstAttribute="leading" secondItem="OoT-De-cWu" secondAttribute="trailing" constant="2" id="Wmn-rv-gMY"/>
+                            <constraint firstItem="mlK-pg-GiK" firstAttribute="leading" secondItem="OoT-De-cWu" secondAttribute="trailing" constant="7" id="Wmn-rv-gMY"/>
                             <constraint firstItem="zfG-Ki-LTt" firstAttribute="top" secondItem="BHW-0P-WAY" secondAttribute="bottom" constant="8" symbolic="YES" id="Wz9-oR-BaH"/>
                             <constraint firstAttribute="trailing" secondItem="T8E-pR-MdK" secondAttribute="trailing" constant="12" id="buX-MX-c2z"/>
                             <constraint firstItem="mlK-pg-GiK" firstAttribute="centerY" secondItem="v5u-AI-hnv" secondAttribute="centerY" id="cH6-wY-iEx"/>

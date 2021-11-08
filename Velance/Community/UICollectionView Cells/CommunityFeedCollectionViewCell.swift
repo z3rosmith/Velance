@@ -33,7 +33,7 @@ extension CommunityFeedCollectionViewCell {
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
         imageSlideShow.contentScaleMode = .scaleAspectFill
         
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
         imageSlideShow.addGestureRecognizer(gestureRecognizer)
         
         textView.isEditable = false
@@ -60,7 +60,7 @@ extension CommunityFeedCollectionViewCell {
         textView.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
     
-    @objc private func didTap() {
+    @objc private func didTapImage() {
         guard let parentVC = parentVC else { return }
         imageSlideShow.presentFullScreenController(from: parentVC)
     }

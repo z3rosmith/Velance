@@ -104,7 +104,6 @@ extension CommunityFeedViewController: UICollectionViewDelegateFlowLayout {
 extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
 
     func didFetchProfile() {
-        print("🙌 didFetchProfile")
         collectionView.reloadData()
     }
     
