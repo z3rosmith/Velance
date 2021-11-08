@@ -1,6 +1,10 @@
 import UIKit
 import TagListView
 
+protocol CommunityReusableDelegate: AnyObject {
+    func didChooseToEditProfileImage()
+}
+
 class CommunityCollectionReusableView2: UICollectionReusableView {
     
     @IBOutlet weak var contentView: UIView!
@@ -12,6 +16,8 @@ class CommunityCollectionReusableView2: UICollectionReusableView {
     @IBOutlet weak var editUserinfoButton: UIButton!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
+    
+    weak var delegate: CommunityReusableDelegate?
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
@@ -50,5 +56,34 @@ extension CommunityCollectionReusableView2 {
         tagListView.textColor = UIColor(named: "4D8800")!
         tagListView.tagBackgroundColor = UIColor(named: "BADE8A")!
         tagListView.cornerRadius = 10
+        
+        editUserinfoButton.addTarget(
+            self,
+            action: #selector(pressedEditUserInfoButton),
+            for: .touchUpInside
+        )
+        
+        editUserImageButton.addTarget(
+            self,
+            action: #selector(pressedEditUserImageButton),
+            for: .touchUpInside
+        )
+    }
+    
+    @objc private func pressedEditUserInfoButton() {
+        
+        if let currentVC = UIApplication.topViewController() {
+            
+            guard let editVC = InputUserInfoForRegisterViewController.instantiate() as? InputUserInfoForRegisterViewController else { return }
+            editVC.isForEditingUser = true
+            
+            let navController = UINavigationController(rootViewController: editVC)
+            navController.navigationBar.tintColor = .white
+            currentVC.present(navController, animated: true)
+        }
+    }
+    
+    @objc private func pressedEditUserImageButton() {
+        delegate?.didChooseToEditProfileImage()
     }
 }

@@ -215,6 +215,7 @@ extension InputUserInfoForRegisterViewController {
     
     private func configure() {
         title = isForEditingUser ? "내 정보 수정" : "내 정보 입력"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         configureLabels()
         configureUIViews()
         configureVeganButtonOuterViews()
@@ -233,7 +234,15 @@ extension InputUserInfoForRegisterViewController {
                 action: #selector(pressedSettingsButton)
             )
             
+            let dismissBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "xmark"),
+                style: .plain,
+                target: self,
+                action: #selector(dismissVC)
+            )
             navigationItem.rightBarButtonItem = settingsBarButtonItem
+            navigationItem.leftBarButtonItem = dismissBarButtonItem
+          
         }
         
     }

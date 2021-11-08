@@ -29,25 +29,25 @@ class CommunityFeedCellViewModel {
 extension CommunityFeedViewModel {
     
     var username: String {
-        return userProfile?.displayName ?? "error"
+        return userProfile?.displayName ?? "-"
     }
     
     var userVegetarianType: String {
-        return userProfile?.vegetarianType?.name ?? "error"
+        return userProfile?.vegetarianType?.name ?? "-"
     }
     
     var userInterestType: [String] {
         return userProfile?.userInterestGroups?.map {
             " \($0.interestType.name) "
-        } ?? ["error"]
+        } ?? ["-"]
     }
     
     var followings: Int {
-        return userProfile?.followings ?? -1
+        return userProfile?.followings ?? 0
     }
     
     var followers: Int {
-        return userProfile?.followers ?? -1
+        return userProfile?.followers ?? 0
     }
     
     var userImageURL: URL? {

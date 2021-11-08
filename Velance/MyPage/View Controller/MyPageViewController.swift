@@ -218,7 +218,9 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let vc = InputUserInfoForRegisterViewController.instantiate() as? InputUserInfoForRegisterViewController else { return }
             vc.isForEditingUser = true
-            navigationController?.pushViewController(vc, animated: true)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.navigationBar.tintColor = .white
+            present(navController, animated: true)
         case 1:
             let url = URL(string: NotionUrl.termsAndAgreementUrl)!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -132,6 +132,8 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if viewModel.productList.count == 0 { return }
+        
         guard let vc = ProductReviewViewController.instantiate() as? ProductReviewViewController else { return }
         
         let productData = viewModel.productList[indexPath.row]

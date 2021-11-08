@@ -95,8 +95,8 @@ extension UploadNewProductViewController {
                     name: productName,
                     price: Int(productPrice) ?? 0,
                     file: imageData,
-                    productReportNumber: self.productNumberFromAPI ?? "\(Int.random(in: 1..<1000))",
-                    productRawMaterialNames: self.productRawMaterialNames ?? "없음"
+                    productReportNumber: self.productNumberFromAPI ?? "\(Int.random(in: 10000...10000000))",
+                    productRawMaterialNames: self.productRawMaterialNames ?? "없음,"
                 ) 
                 showProgressBar()
                 ProductManager.shared.uploadNewProduct(with: model) { [weak self] result in

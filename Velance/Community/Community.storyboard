@@ -377,6 +377,14 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnZ-Rd-09e" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <rect key="frame" x="264" y="15" width="100.5" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="we4-nF-gFc"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="지역 선택하기"/>
+                                        </button>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-2m-L1Q">
                                             <rect key="frame" x="0.0" y="106" width="414" height="184"/>
                                             <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -415,6 +423,7 @@
                                     <color key="backgroundColor" name="AppBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="X3O-pc-EPh" firstAttribute="leading" secondItem="vqW-GP-3zY" secondAttribute="trailing" constant="5" id="1Xc-cN-CFG"/>
+                                        <constraint firstItem="MnZ-Rd-09e" firstAttribute="leading" secondItem="Att-uE-08n" secondAttribute="trailing" constant="6" id="2xg-ca-oTd"/>
                                         <constraint firstAttribute="trailing" secondItem="ObD-fN-UeW" secondAttribute="trailing" id="4gB-P3-KJC"/>
                                         <constraint firstAttribute="trailing" secondItem="X3O-pc-EPh" secondAttribute="trailing" id="6P6-LS-2ZD"/>
                                         <constraint firstItem="xdv-2m-L1Q" firstAttribute="leading" secondItem="WVO-hD-bVc" secondAttribute="leading" id="J6c-59-YNo"/>
@@ -422,6 +431,7 @@
                                         <constraint firstItem="vqW-GP-3zY" firstAttribute="leading" secondItem="WVO-hD-bVc" secondAttribute="leading" constant="30" id="Ktc-i3-KOF"/>
                                         <constraint firstItem="vqW-GP-3zY" firstAttribute="top" secondItem="WVO-hD-bVc" secondAttribute="top" constant="20" id="dSl-ol-vhj"/>
                                         <constraint firstItem="Att-uE-08n" firstAttribute="leading" secondItem="vqW-GP-3zY" secondAttribute="trailing" constant="5" id="fRg-Bi-HFT"/>
+                                        <constraint firstItem="MnZ-Rd-09e" firstAttribute="centerY" secondItem="vqW-GP-3zY" secondAttribute="centerY" id="fuI-Uy-gJD"/>
                                         <constraint firstItem="ObD-fN-UeW" firstAttribute="top" secondItem="X3O-pc-EPh" secondAttribute="bottom" constant="20" id="hk8-Gx-rfO"/>
                                         <constraint firstAttribute="bottom" secondItem="xdv-2m-L1Q" secondAttribute="bottom" constant="10" id="kAy-yk-DeN"/>
                                         <constraint firstAttribute="trailing" secondItem="xdv-2m-L1Q" secondAttribute="trailing" id="qOz-7S-UKe"/>
@@ -433,6 +443,7 @@
                                         <outlet property="categoryCollectionView" destination="X3O-pc-EPh" id="2jg-NG-Nk1"/>
                                         <outlet property="categoryCollectionViewHeight" destination="ESW-9i-Krl" id="iQc-yL-Nof"/>
                                         <outlet property="chooseInterestsButton" destination="Att-uE-08n" id="6oo-Bd-6JP"/>
+                                        <outlet property="chooseRegionButton" destination="MnZ-Rd-09e" id="5yB-jM-HFh"/>
                                         <outlet property="recommandLabel" destination="ObD-fN-UeW" id="ipZ-Xy-ZeL"/>
                                         <outlet property="similarUserCollectionView" destination="xdv-2m-L1Q" id="ZO1-ib-TTe"/>
                                         <outlet property="viewFollowingButton" destination="vqW-GP-3zY" id="Sag-Xl-M0r"/>
@@ -1234,6 +1245,14 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="관심사 선택하기"/>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-Ee-1HQ" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <rect key="frame" x="264" y="15" width="100.5" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="jB5-GO-s1P"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="지역 선택하기"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" name="AppBackgroundColor"/>
                                     <constraints>
@@ -1245,7 +1264,9 @@
                                         <constraint firstItem="mum-l0-Ph2" firstAttribute="top" secondItem="iaG-S7-DBw" secondAttribute="bottom" constant="20" id="Uz4-iC-qde"/>
                                         <constraint firstItem="lMK-y1-jXn" firstAttribute="top" secondItem="mum-l0-Ph2" secondAttribute="bottom" constant="10" id="WcL-gt-FjX"/>
                                         <constraint firstAttribute="bottom" secondItem="lMK-y1-jXn" secondAttribute="bottom" constant="10" id="ZhK-fF-gOj"/>
+                                        <constraint firstItem="wbY-Ee-1HQ" firstAttribute="leading" secondItem="ogV-do-G3T" secondAttribute="trailing" constant="6" id="aOB-fa-peM"/>
                                         <constraint firstItem="iaG-S7-DBw" firstAttribute="leading" secondItem="XSr-uL-wrR" secondAttribute="trailing" constant="5" id="bML-gF-4Yf"/>
+                                        <constraint firstItem="wbY-Ee-1HQ" firstAttribute="centerY" secondItem="XSr-uL-wrR" secondAttribute="centerY" id="cAe-QC-MCn"/>
                                         <constraint firstItem="ogV-do-G3T" firstAttribute="centerY" secondItem="XSr-uL-wrR" secondAttribute="centerY" id="kX4-3Q-0CC"/>
                                         <constraint firstAttribute="trailing" secondItem="iaG-S7-DBw" secondAttribute="trailing" id="rG6-Lj-3tv"/>
                                         <constraint firstAttribute="trailing" secondItem="lMK-y1-jXn" secondAttribute="trailing" id="tYZ-XD-aPV"/>
@@ -1256,6 +1277,7 @@
                                         <outlet property="categoryCollectionView" destination="iaG-S7-DBw" id="ayC-20-FA8"/>
                                         <outlet property="categoryCollectionViewHeight" destination="t5R-J3-jJo" id="bhP-kw-49u"/>
                                         <outlet property="chooseInterestsButton" destination="ogV-do-G3T" id="afz-iD-Cpw"/>
+                                        <outlet property="chooseRegionButton" destination="wbY-Ee-1HQ" id="2t5-lk-T6Z"/>
                                         <outlet property="recommandLabel" destination="mum-l0-Ph2" id="6Sw-GZ-g2j"/>
                                         <outlet property="similarUserCollectionView" destination="lMK-y1-jXn" id="vBg-rk-c3p"/>
                                         <outlet property="viewFollowingButton" destination="XSr-uL-wrR" id="iSU-jy-nec"/>

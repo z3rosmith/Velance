@@ -34,12 +34,12 @@ extension CommunityDailyLifeListViewModel {
         return posts.count
     }
     
-    func refreshPostList(interestTypeIDs: [Int]? = nil, viewOnlyFollowing: Bool = false) {
+    func refreshPostList(interestTypeIDs: [Int]? = nil, regionIds: [String]? = nil, viewOnlyFollowing: Bool = false) {
         self.posts.removeAll(keepingCapacity: true)
         self.hasMore = true
         self.isFetchingData = false
         self.lastPostID = nil
-        self.fetchPostList(interestTypeIDs: interestTypeIDs, viewOnlyFollowing: viewOnlyFollowing)
+        self.fetchPostList(interestTypeIDs: interestTypeIDs, regionIds: regionIds, viewOnlyFollowing: viewOnlyFollowing)
     }
     
     func resetPostList() {
@@ -55,13 +55,16 @@ extension CommunityDailyLifeListViewModel {
     }
     
     /// 최신순으로 보려면 recipeCategoryID = nil
-    func fetchPostList(interestTypeIDs: [Int]? = nil, viewOnlyFollowing: Bool = false) {
+    func fetchPostList(interestTypeIDs: [Int]? = nil, regionIds: [String]? = nil, viewOnlyFollowing: Bool = false) {
         isFetchingData = true
         
         let onlyFollowing: String = viewOnlyFollowing ? "Y" : "N"
-        let model = DailyLifeRequestDTO(cursor: lastPostID,
-                                        interestTypeIDs: interestTypeIDs,
-                                        onlyFollowing: onlyFollowing)
+        let model = DailyLifeRequestDTO(
+            cursor: lastPostID,
+            interestTypeIDs: interestTypeIDs,
+            regionIds: regionIds,
+            onlyFollowing: onlyFollowing
+        )
         
         CommunityManager.shared.fetchDailyLifeList(with: model) { [weak self] result in
             switch result {

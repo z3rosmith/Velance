@@ -77,7 +77,8 @@ class ProductReviewListViewModel {
                     self.delegate?.didFetchProductList()
                     return
                 }
-                self.cursor = productList.last?.productId ?? 0
+                self.cursor += 1
+//                self.cursor = productList.last?.productId ?? 0
                 self.productList.append(contentsOf: productList)
                 self.isFetchingData = false
                 self.delegate?.didFetchProductList()

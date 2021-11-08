@@ -10,6 +10,16 @@ class CommunityFeedViewController: UIViewController {
     private let headerReuseIdentifier = "CommunityCollectionReusableView2"
     private let cellReuseIdentifier = "CommunityImageCollectionViewCell"
     private let sectionInsets = UIEdgeInsets(top: 3.0, left: 0.0, bottom: 3.0, right: 0.0)
+    
+    lazy var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .savedPhotosAlbum
+        return imagePicker
+    }()
+    
+    
     private let itemsPerRow: CGFloat = 3
 
     override func viewDidLoad() {
@@ -28,10 +38,21 @@ extension CommunityFeedViewController {
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(
+            self,
+            action: #selector(refreshCollectionView),
+            for: .valueChanged
+        )
     }
 
     private func configureViewModel() {
         viewModel.delegate = self
+        viewModel.fetchProfile(userUID: User.shared.userUid)
+        viewModel.fetchUserPostList(userUID: User.shared.userUid)
+    }
+    
+    @objc private func refreshCollectionView() {
         viewModel.fetchProfile(userUID: User.shared.userUid)
         viewModel.fetchUserPostList(userUID: User.shared.userUid)
     }
@@ -48,9 +69,10 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as? CommunityCollectionReusableView2 else { fatalError() }
+            headerView.delegate = self
             headerView.tagListView.removeAllTags()
             headerView.tagListView.addTags(viewModel.userInterestType)
-            headerView.userImageView.sd_setImage(with: viewModel.userImageURL, placeholderImage: UIImage(named: "mockAvatar7"))
+            headerView.userImageView.sd_setImage(with: viewModel.userImageURL, placeholderImage: UIImage(named: "VelanceAvatar"))
             headerView.usernameLabel.text = viewModel.username
             headerView.userCategoryLabel.text = viewModel.userVegetarianType
             headerView.followerCountLabel.text = "\(viewModel.followers)"
@@ -105,10 +127,12 @@ extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
 
     func didFetchProfile() {
         collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
     
     func didFetchUserFeedList() {
         collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
 }
 
@@ -124,4 +148,99 @@ extension CommunityFeedViewController: UIScrollViewDelegate {
             viewModel.fetchUserPostList(userUID: User.shared.userUid)
         }
     }
+}
+
+extension CommunityFeedViewController: CommunityReusableDelegate {
+    
+    func didChooseToEditProfileImage() {
+        
+        let library = UIAlertAction(
+            title: "앨범에서 선택",
+            style: .default
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true)
+        }
+        let remove = UIAlertAction(
+            title: "프로필 사진 제거",
+            style: .default
+        ) { [weak self] _ in
+            self?.presentAlertWithConfirmAction(
+                title: "프로필 사진 제거",
+                message: "정말로 제거하시겠습니까?"
+            ) { selectedOk in
+                if selectedOk { self?.removeProfileImage() }
+            }
+        }
+
+        let actionSheet = UIHelper.createActionSheet(with: [library, remove], title: "프로필 사진 변경" )
+        present(actionSheet, animated: true, completion: nil)
+        
+    }
+    
+    
+}
+
+
+extension CommunityFeedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let originalImage: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            dismiss(animated: true) {
+                self.presentAlertWithConfirmAction(
+                    title: "프로필 사진 변경",
+                    message: "선택하신 이미지로 프로필 사진을 변경하시겠습니까?"
+                ) { selectedOk in
+                    if selectedOk {
+                        showProgressBar()
+                        OperationQueue().addOperation {
+                            guard let imageData = originalImage.jpegData(compressionQuality: 0.9) else {
+                                return
+                            }
+                            self.updateProfileImage(imageData: imageData)
+                            dismissProgressBar()
+                        }
+                    } else {
+                        self.imagePickerControllerDidCancel(self.imagePicker)
+                    }
+                }
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func removeProfileImage() {
+        UserManager.shared.removeUserProfileImage { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.showSimpleBottomAlert(with: "프로필 이미지 제거 성공 🎉")
+                self.refreshCollectionView()
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+    }
+    
+    func updateProfileImage(imageData: Data) {
+        
+        UserManager.shared.updateUserProfileImage(imageData: imageData) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.showSimpleBottomAlert(with: "프로필 이미지 변경 성공 🎉")
+                self.refreshCollectionView()
+            case .failure(let error):
+                self.showSimpleBottomAlert(with: error.errorDescription)
+            }
+        }
+        
+    }
+
+    
 }
