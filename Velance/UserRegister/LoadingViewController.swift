@@ -1,9 +1,9 @@
 import UIKit
-import Gifu
+import Lottie
 
 class LoadingViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var animatedLoadingImageView: GIFImageView!
+    @IBOutlet var animationView: AnimationView!
     @IBOutlet weak var loadingLabel: UILabel!
     
     private let labelFont: UIFont = .systemFont(ofSize: 20)
@@ -16,7 +16,15 @@ class LoadingViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setNavBarBackButtonItemTitle(to: "")
         configureUI()
-        animatedLoadingImageView.animate(withGIFNamed: "LoadingAnimation")
+
+        animationView.animation = Animation.named("loadingAnimation")
+        
+        animationView.backgroundColor = .clear
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        
+        
         registerUser()
     }
     

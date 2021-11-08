@@ -137,6 +137,7 @@
 		7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C922A532718054B00295A3F /* ChooseInterestViewController.swift */; };
 		7C97195D27100635003E193D /* VLGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97195C27100635003E193D /* VLGradientButton.swift */; };
 		7C9BA60E2738BC0700473BD5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BA60D2738BC0700473BD5 /* UIApplication+Extension.swift */; };
+		7C9BA6102738D29D00473BD5 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C9BA60F2738D29C00473BD5 /* loadingAnimation.json */; };
 		7CAB8B9A272A47A7006B5E08 /* SearchNewMallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */; };
 		7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */; };
 		7CAB8B9E272A4B29006B5E08 /* SearchMallByKeywordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */; };
@@ -358,6 +359,7 @@
 		7C922A532718054B00295A3F /* ChooseInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInterestViewController.swift; sourceTree = "<group>"; };
 		7C97195C27100635003E193D /* VLGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLGradientButton.swift; sourceTree = "<group>"; };
 		7C9BA60D2738BC0700473BD5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		7C9BA60F2738D29C00473BD5 /* loadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimation.json; sourceTree = "<group>"; };
 		7CAB8B99272A47A7006B5E08 /* SearchNewMallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewController.swift; sourceTree = "<group>"; };
 		7CAB8B9B272A4AE1006B5E08 /* SearchNewMallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewMallViewModel.swift; sourceTree = "<group>"; };
 		7CAB8B9D272A4B29006B5E08 /* SearchMallByKeywordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMallByKeywordDTO.swift; sourceTree = "<group>"; };
@@ -844,6 +846,7 @@
 			isa = PBXGroup;
 			children = (
 				7CEED0F12722799B005CACF5 /* LoadingAnimation.gif */,
+				7C9BA60F2738D29C00473BD5 /* loadingAnimation.json */,
 				7CAEEB112710334C0049F257 /* Constants */,
 				7C91FC0427118CA5000D237C /* Login */,
 				7CC36A5926EC8A23007573DD /* Main */,
@@ -1242,6 +1245,7 @@
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7C60F28F272927C2001D96C2 /* map_present_tracking.png in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
+				7C9BA6102738D29D00473BD5 /* loadingAnimation.json in Resources */,
 				7CEED0F22722799B005CACF5 /* LoadingAnimation.gif in Resources */,
 				3CAEDC012727A6D8001E4783 /* Mall.storyboard in Resources */,
 				7C60F291272927C2001D96C2 /* info_box.png in Resources */,
