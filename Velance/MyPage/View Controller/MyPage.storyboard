@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPageUpperView" translatesAutoresizingMaskIntoConstraints="NO" id="qB2-rc-xK6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="-20" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="9S5-kT-1JN"/>
                                 </constraints>
@@ -41,16 +41,16 @@
                                     <action selector="pressedProfileImageButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VTN-96-BDV"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="noe-P5-NcI">
-                                <rect key="frame" x="0.0" y="220" width="414" height="642"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩 중.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-x4-HXp">
                                 <rect key="frame" x="26" y="113" width="90" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="noe-P5-NcI">
+                                <rect key="frame" x="0.0" y="200" width="414" height="662"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppBackgroundColor"/>
@@ -66,7 +66,7 @@
                             <constraint firstAttribute="trailing" secondItem="qB2-rc-xK6" secondAttribute="trailing" id="g5P-Xs-cuW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="noe-P5-NcI" secondAttribute="bottom" id="j57-ZB-PVr"/>
                             <constraint firstItem="vsv-x4-HXp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="mjz-Jf-gsi"/>
-                            <constraint firstItem="qB2-rc-xK6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ogW-nC-Cqf"/>
+                            <constraint firstItem="qB2-rc-xK6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-20" id="ogW-nC-Cqf"/>
                             <constraint firstItem="qB2-rc-xK6" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="wbj-eP-Gop"/>
                         </constraints>
                     </view>

@@ -78,6 +78,14 @@ extension CommunityCollectionReusableView2 {
             editVC.isForEditingUser = true
             
             let navController = UINavigationController(rootViewController: editVC)
+            
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = UIColor(named: Colors.appDefaultColor)
+            navController.navigationBar.standardAppearance = appearance
+            navController.navigationBar.scrollEdgeAppearance = appearance
+   
+            
+            
             navController.navigationBar.tintColor = .white
             currentVC.present(navController, animated: true)
         }

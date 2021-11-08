@@ -34,6 +34,11 @@ extension IdPasswordInputViewController {
         
         guard let vc = InputUserInfoForRegisterViewController.instantiate() as? InputUserInfoForRegisterViewController else { return }
         vc.isForEditingUser = false
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: Colors.appDefaultColor)
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.pushViewController(vc, animated: true)
     }
     
