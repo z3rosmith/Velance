@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgZ-Bb-wuo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -198,6 +198,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-lI-yPv" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="150" y="71" width="220" height="51"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFb-85-LIg" userLabel="followButton">
+                                                    <rect key="frame" x="23.5" y="140" width="115" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="115" id="EEu-Vk-IEL"/>
+                                                        <constraint firstAttribute="height" constant="40" id="T0h-wt-gqa"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
@@ -209,10 +217,12 @@
                                                 <constraint firstItem="fTU-lI-yPv" firstAttribute="leading" secondItem="Zfk-I4-DEH" secondAttribute="trailing" constant="30" id="ToP-fx-zit"/>
                                                 <constraint firstItem="4nJ-C5-qfs" firstAttribute="leading" secondItem="Zfk-I4-DEH" secondAttribute="trailing" constant="30" id="V0O-b1-SOF"/>
                                                 <constraint firstItem="ed7-hH-nW5" firstAttribute="leading" secondItem="Zfk-I4-DEH" secondAttribute="trailing" constant="30" id="Y21-Be-gW4"/>
+                                                <constraint firstItem="RFb-85-LIg" firstAttribute="centerY" secondItem="WNG-Sr-OPr" secondAttribute="centerY" id="ZAY-t4-dPn"/>
                                                 <constraint firstItem="4nJ-C5-qfs" firstAttribute="top" secondItem="1Ot-qG-XxH" secondAttribute="top" constant="15" id="Zf6-R9-RKZ"/>
                                                 <constraint firstItem="WNG-Sr-OPr" firstAttribute="leading" secondItem="Zfk-I4-DEH" secondAttribute="leading" id="c6l-Ox-caJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="oSZ-bO-xD0" secondAttribute="bottom" constant="20" id="cb4-8I-zYM"/>
                                                 <constraint firstAttribute="trailing" secondItem="fTU-lI-yPv" secondAttribute="trailing" constant="4" id="eHb-2Q-RBX"/>
+                                                <constraint firstItem="RFb-85-LIg" firstAttribute="centerX" secondItem="WNG-Sr-OPr" secondAttribute="centerX" id="ovS-Il-Yd3"/>
                                                 <constraint firstAttribute="trailing" secondItem="oSZ-bO-xD0" secondAttribute="trailing" constant="30" id="p5O-4T-XBb"/>
                                                 <constraint firstItem="Zfk-I4-DEH" firstAttribute="leading" secondItem="1Ot-qG-XxH" secondAttribute="leading" constant="20" id="tD6-8V-Ozm"/>
                                                 <constraint firstItem="ed7-hH-nW5" firstAttribute="top" secondItem="4nJ-C5-qfs" secondAttribute="bottom" constant="8" id="xtY-Dc-bpI"/>
@@ -229,6 +239,7 @@
                                         <outlet property="contentView" destination="1Ot-qG-XxH" id="gxh-9T-Rbs"/>
                                         <outlet property="editUserImageButton" destination="ahY-dw-1V1" id="EeA-YJ-Xx4"/>
                                         <outlet property="editUserinfoButton" destination="WNG-Sr-OPr" id="0QP-xz-L3r"/>
+                                        <outlet property="followButton" destination="RFb-85-LIg" id="L9N-DI-ysz"/>
                                         <outlet property="followerCountLabel" destination="5ZI-Ma-scH" id="4Xz-3B-ngJ"/>
                                         <outlet property="followingCountLabel" destination="eJX-fB-qdD" id="gvu-CQ-hhe"/>
                                         <outlet property="tagListView" destination="fTU-lI-yPv" id="1MZ-7N-YYn"/>

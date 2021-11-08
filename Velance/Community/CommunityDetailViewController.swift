@@ -58,10 +58,12 @@ extension CommunityDetailViewController {
         tableView.register(UINib(nibName: "CommunityDetailTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didDragTableView), for: .valueChanged)
     }
     
     private func configureTableHeaderView() {
-        tableHeaderView.contentLabel.text = viewModel.conents
+        tableHeaderView.contentLabel.text = viewModel.contents
         tableHeaderView.dateLabel.text = viewModel.feedDate
         tableHeaderView.usernameLabel.text = viewModel.username
         tableHeaderView.userImageView.sd_setImage(with: viewModel.userProfileImageURL,
@@ -80,6 +82,10 @@ extension CommunityDetailViewController {
     
     private func configureViewModel() {
         viewModel.delegate = self
+        viewModel.fetchPostInfo(isRecipe: isRecipe, id: id)
+    }
+    
+    @objc private func didDragTableView() {
         viewModel.fetchPostInfo(isRecipe: isRecipe, id: id)
     }
     
@@ -102,11 +108,12 @@ extension CommunityDetailViewController: UITableViewDelegate {
 extension CommunityDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.repliesCount
+        return viewModel.numberOfReplies
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityDetailTableViewCell else { fatalError() }
+        if viewModel.numberOfReplies == 0 { return cell }
         let cellViewModel = viewModel.replyAtIndex(indexPath.row)
         cell.moreButton.tag = indexPath.row
         cell.moreButton.addTarget(self, action: #selector(didTapMoreButton(_:)), for: .touchUpInside)
@@ -119,21 +126,47 @@ extension CommunityDetailViewController: UITableViewDataSource {
     }
 }
 
+extension CommunityDetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = tableView.contentSize.height
+        let frameHeight = scrollView.frame.height
+        
+        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingReply {
+            // fetch more
+            viewModel.fetchReplies()
+        }
+    }
+}
+
 extension CommunityDetailViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         inputBar.inputTextView.resignFirstResponder()
+        guard let feedID = viewModel.feedID else {
+            print("feedID is empty")
+            return
+        }
+        viewModel.postReply(feedID: feedID, contents: text)
+        inputBar.inputTextView.text = ""
     }
 }
 
 extension CommunityDetailViewController: CommunityDetailViewModelDelegate {
+    func didPostReply() {
+        print(#function)
+        viewModel.refreshReplies()
+    }
     
     func didFetchReplies() {
         tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
     
     func didFetchDetailInfo() {
-        viewModel.fetchReplies()
+        viewModel.refreshReplies()
         configureTableHeaderView()
+        tableView.refreshControl?.endRefreshing()
     }
 }

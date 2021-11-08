@@ -3,6 +3,7 @@ import Foundation
 protocol CommunityDetailViewModelDelegate: AnyObject {
     func didFetchDetailInfo()
     func didFetchReplies()
+    func didPostReply()
 }
 
 class CommunityDetailViewModel {
@@ -51,7 +52,7 @@ extension CommunityDetailViewModel {
             return
         }
         
-        CommunityManager.shared.fetchReplies(feedID: feedID) { [weak self] result in
+        CommunityManager.shared.fetchReplies(feedID: feedID, cursor: lastReplyID) { [weak self] result in
             switch result {
             case .success(let data):
                 guard let self = self else { return }
@@ -69,12 +70,36 @@ extension CommunityDetailViewModel {
         }
     }
     
+    func refreshReplies() {
+        replies.removeAll(keepingCapacity: true)
+        hasMore = true
+        isFetchingReply = false
+        lastReplyID = nil
+        fetchReplies()
+    }
+    
+    func postReply(feedID: Int, contents: String) {
+        CommunityManager.shared.postReply(feedID: feedID, contents: contents) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didPostReply()
+                return
+            case .failure:
+                return
+            }
+        }
+    }
+    
     var numberOfReplies: Int {
         return replies.count
     }
     
-    var conents: String {
+    var contents: String {
         return post?.contents ?? "error"
+    }
+    
+    var feedID: Int? {
+        return post?.feed?.feedID
     }
     
     var feedDate: String {

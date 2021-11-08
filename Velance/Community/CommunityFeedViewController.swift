@@ -19,13 +19,15 @@ class CommunityFeedViewController: UIViewController {
         return imagePicker
     }()
     
-    
     private let itemsPerRow: CGFloat = 3
+        
+        var isMyFeed: Bool = true
+        var userUID: String = User.shared.userUid
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureViewModel()
-        configureCollectionView()
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            configureViewModel()
+            configureCollectionView()
     }
 }
 
@@ -48,13 +50,13 @@ extension CommunityFeedViewController {
 
     private func configureViewModel() {
         viewModel.delegate = self
-        viewModel.fetchProfile(userUID: User.shared.userUid)
-        viewModel.fetchUserPostList(userUID: User.shared.userUid)
+        viewModel.fetchProfile(userUID: userUID)
+        viewModel.fetchUserPostList(userUID: userUID)
     }
     
     @objc private func refreshCollectionView() {
-        viewModel.fetchProfile(userUID: User.shared.userUid)
-        viewModel.fetchUserPostList(userUID: User.shared.userUid)
+        viewModel.fetchProfile(userUID: userUID)
+        viewModel.refreshUserPostList(userUID: userUID)
     }
 }
 
@@ -77,6 +79,12 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
             headerView.userCategoryLabel.text = viewModel.userVegetarianType
             headerView.followerCountLabel.text = "\(viewModel.followers)"
             headerView.followingCountLabel.text = "\(viewModel.followings)"
+            if isMyFeed || (!isMyFeed && userUID == User.shared.userUid) {
+                headerView.followButton.isHidden = true
+            } else {
+                headerView.editUserImageButton.isHidden = true
+                headerView.editUserinfoButton.isHidden = true
+            }
             return headerView
         default:
             fatalError()
@@ -89,6 +97,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityImageCollectionViewCell else { fatalError() }
+        if viewModel.numberOfFeeds == 0 { return cell }
         let cellViewModel = viewModel.feedAtIndex(indexPath.item)
         cell.imageView.sd_setImage(with: cellViewModel.feedThumbnailURL, placeholderImage: UIImage(named: MockData.mockFoodImageName[0]))
         return cell
@@ -145,7 +154,7 @@ extension CommunityFeedViewController: UIScrollViewDelegate {
         
         if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingPost {
             // fetch more
-            viewModel.fetchUserPostList(userUID: User.shared.userUid)
+            viewModel.fetchUserPostList(userUID: userUID)
         }
     }
 }
@@ -177,14 +186,11 @@ extension CommunityFeedViewController: CommunityReusableDelegate {
         present(actionSheet, animated: true, completion: nil)
         
     }
-    
-    
 }
 
 
 extension CommunityFeedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let originalImage: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -241,6 +247,4 @@ extension CommunityFeedViewController: UIImagePickerControllerDelegate, UINaviga
         }
         
     }
-
-    
 }

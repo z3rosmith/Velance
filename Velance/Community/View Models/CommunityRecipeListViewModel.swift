@@ -35,18 +35,15 @@ extension CommunityRecipeListViewModel {
     }
     
     func refreshPostList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
-        self.posts.removeAll(keepingCapacity: true)
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastPostID = nil
-        self.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        resetPostList(keepingCapacity: true)
+        fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
-    func resetPostList() {
-        self.posts.removeAll()
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastPostID = nil
+    func resetPostList(keepingCapacity: Bool) {
+        posts.removeAll()
+        hasMore = true
+        isFetchingData = false
+        lastPostID = nil
     }
     
     func postAtIndex(_ index: Int) -> CommunityRecipeViewModel {

@@ -30,6 +30,8 @@ class CommunityDetailTableHeaderView: UIView {
         view.frame = self.bounds
         addSubview(view)
         
+        userImageView.layer.cornerRadius = userImageView.frame.height/2
+        
         imageSlideShow.contentScaleMode = .scaleAspectFill
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
         imageSlideShow.addGestureRecognizer(gestureRecognizer)
