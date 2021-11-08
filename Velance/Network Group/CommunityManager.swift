@@ -454,4 +454,31 @@ extension CommunityManager {
                 }
             }
     }
+    
+    func deleteMyReply(
+        replyId: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let url = fetchRepliesURL + "/\(replyId)"
+        
+        AF.request(
+            url,
+            method: .delete,
+            interceptor: interceptor
+        )
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("✏️ CommunityManager - deleteMyReply SUCCESS")
+                    completion(.success(true))
+                case .failure:
+                    print("❗️ CommunityManager - deleteMyReply ERROR")
+                    let error = NetworkError.returnError(statusCode: response.response?.statusCode ?? 400, responseData: response.data ?? Data())
+                    completion(.failure(error))
+                }
+            }
+        
+    }
 }

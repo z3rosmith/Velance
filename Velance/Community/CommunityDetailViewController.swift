@@ -22,7 +22,7 @@ class CommunityDetailViewController: UIViewController {
     var isRecipe: Bool!
     /// recipeID or dailyLifeID
     var id: Int!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -115,6 +115,11 @@ extension CommunityDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityDetailTableViewCell else { fatalError() }
         if viewModel.numberOfReplies == 0 { return cell }
         let cellViewModel = viewModel.replyAtIndex(indexPath.row)
+        
+        cell.delegate = self
+        cell.parentVC = self
+        cell.replyId = cellViewModel.replyID
+        cell.createdUserUid = cellViewModel.createdBy
         cell.moreButton.tag = indexPath.row
         cell.moreButton.addTarget(self, action: #selector(didTapMoreButton(_:)), for: .touchUpInside)
         cell.contentLabel.text = cellViewModel.contents
@@ -154,6 +159,7 @@ extension CommunityDetailViewController: InputBarAccessoryViewDelegate {
 }
 
 extension CommunityDetailViewController: CommunityDetailViewModelDelegate {
+
     func didPostReply() {
         print(#function)
         viewModel.refreshReplies()
@@ -169,4 +175,39 @@ extension CommunityDetailViewController: CommunityDetailViewModelDelegate {
         configureTableHeaderView()
         tableView.refreshControl?.endRefreshing()
     }
+    
+    func didDeleteReply() {
+        showSimpleBottomAlert(with: "댓글 삭제를 완료했어요 🎉")
+        viewModel.refreshReplies()
+    }
+    
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "처리가 완료되었습니다.")
+        viewModel.refreshReplies()
+    }
+    
+    func failedUserRequest(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+    }
+}
+
+extension CommunityDetailViewController: CommunityDetailTVCDelegate {
+    
+    func didChooseToReportUser(type: ReportType.Reply, replyId: Int) {
+        viewModel.reportReply(type: type, replyId: replyId)
+    }
+    
+    func didChooseToBlockUser(userId: String) {
+        viewModel.blockUser(targetUserId: userId)
+    }
+    
+    func didChooseToDeleteMyReply(replyId: Int) {
+        viewModel.deleteMyDailyLifeFeed(replyId: replyId)
+    }
+    
+    
 }
