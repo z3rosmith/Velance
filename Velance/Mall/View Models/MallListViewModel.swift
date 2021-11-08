@@ -29,22 +29,19 @@ extension MallListViewModel {
     }
     
     func refreshMallList(mallPoint: MallPoint) {
-        self.malls.removeAll(keepingCapacity: true)
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastMallID = nil
-        self.fetchMallList(mallPoint: mallPoint)
+        resetMallList(keepingCapacity: true)
+        fetchMallList(mallPoint: mallPoint)
     }
     
-    func resetMallList() {
-        self.malls.removeAll()
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastMallID = nil
+    func resetMallList(keepingCapacity: Bool) {
+        malls.removeAll()
+        hasMore = true
+        isFetchingData = false
+        lastMallID = nil
     }
     
     func mallAtIndex(_ index: Int) -> MallCellViewModel {
-        let mall = self.malls[index]
+        let mall = malls[index]
         return MallCellViewModel(mall)
     }
     

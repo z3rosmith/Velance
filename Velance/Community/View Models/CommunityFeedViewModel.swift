@@ -5,6 +5,8 @@ protocol CommunityFeedViewModelDelegate: AnyObject {
 
     func didFetchProfile()
     func didFetchUserFeedList()
+    func didFollow()
+    func didUnfollow()
 }
 
 class CommunityFeedViewModel {
@@ -15,6 +17,12 @@ class CommunityFeedViewModel {
     var hasMore: Bool = true
     var isFetchingPost: Bool = false
     private var lastPostID: Int?
+    var isFollowing: Bool = false
+    
+    func feedAtIndex(_ index: Int) -> CommunityFeedCellViewModel {
+        let feed = posts[index]
+        return CommunityFeedCellViewModel(feed)
+    }
 }
 
 class CommunityFeedCellViewModel {
@@ -27,6 +35,72 @@ class CommunityFeedCellViewModel {
 }
 
 extension CommunityFeedViewModel {
+    
+    func fetchProfile(userUID: String) {
+        UserManager.shared.fetchProfileForCommunity(userUID: userUID) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.userProfile = data
+                self?.delegate?.didFetchProfile()
+            case .failure:
+                return
+            }
+        }
+    }
+    
+    func refreshUserPostList(userUID: String) {
+        posts.removeAll(keepingCapacity: true)
+        hasMore = true
+        isFetchingPost = false
+        lastPostID = nil
+        fetchUserPostList(userUID: userUID)
+    }
+    
+    func fetchUserPostList(userUID: String) {
+        isFetchingPost = true
+        CommunityManager.shared.fetchUserFeedList(userID: userUID, cursor: lastPostID) { [weak self] result in
+            switch result {
+            case .success(let data):
+                guard let self = self else { return }
+                if data.isEmpty {
+                    self.hasMore = false
+                } else {
+                    self.lastPostID = data.last?.feedID
+                }
+                self.posts.append(contentsOf: data)
+                self.isFetchingPost = false
+                self.delegate?.didFetchUserFeedList()
+            case .failure:
+                return
+            }
+        }
+    }
+    
+    func followUser(targetUID: String) {
+        isFollowing = true
+        CommunityManager.shared.folllowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didFollow()
+            case .failure:
+                return
+            }
+            self?.isFollowing = false
+        }
+    }
+    
+    func unfollowUser(targetUID: String) {
+        isFollowing = true
+        CommunityManager.shared.unfollowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didUnfollow()
+            case .failure:
+                return
+            }
+            self?.isFollowing = false
+        }
+    }
     
     var username: String {
         return userProfile?.displayName ?? "-"
@@ -56,42 +130,6 @@ extension CommunityFeedViewModel {
     
     var numberOfFeeds: Int {
         return posts.count
-    }
-    
-    func feedAtIndex(_ index: Int) -> CommunityFeedCellViewModel {
-        let feed = posts[index]
-        return CommunityFeedCellViewModel(feed)
-    }
-    
-    func fetchProfile(userUID: String) {
-        UserManager.shared.fetchProfileForCommunity(userUID: userUID) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.userProfile = data
-                self?.delegate?.didFetchProfile()
-            case .failure:
-                return
-            }
-        }
-    }
-    
-    func fetchUserPostList(userUID: String) {
-        CommunityManager.shared.fetchUserFeedList(userID: userUID, cursor: lastPostID) { [weak self] result in
-            switch result {
-            case .success(let data):
-                guard let self = self else { return }
-                if data.isEmpty {
-                    self.hasMore = false
-                } else {
-                    self.lastPostID = data.last?.feedID
-                }
-                self.posts.append(contentsOf: data)
-                self.isFetchingPost = false
-                self.delegate?.didFetchUserFeedList()
-            case .failure:
-                return
-            }
-        }
     }
 }
 

@@ -51,11 +51,17 @@ extension MallListViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MallTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorStyle = .none
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didDragTableView), for: .valueChanged)
     }
     
     private func configureUI() {
         navigationItem.title = "식당 목록"
         addMallButton.layer.cornerRadius = addMallButton.frame.height/2
+    }
+    
+    @objc private func didDragTableView() {
+        viewModel.refreshMallList(mallPoint: mallPoint)
     }
 }
 
@@ -74,6 +80,7 @@ extension MallListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? MallTableViewCell else { fatalError() }
+        if viewModel.numberOfMalls == 0 { return cell }
         let cellViewModel = viewModel.mallAtIndex(indexPath.row)
         
         cell.mallnameLabel.text = cellViewModel.mallName
@@ -111,5 +118,20 @@ extension MallListViewController: UITableViewDataSource {
 extension MallListViewController: MallListViewModelDelegate {
     func didFetchMallList() {
         tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
+    }
+}
+
+extension MallListViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = tableView.contentSize.height
+        let frameHeight = scrollView.frame.height
+        
+        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingData {
+            // fetch more
+            viewModel.fetchMallList(mallPoint: mallPoint)
+        }
     }
 }

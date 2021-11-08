@@ -10,6 +10,7 @@ class CommunityFeedViewController: UIViewController {
     private let headerReuseIdentifier = "CommunityCollectionReusableView2"
     private let cellReuseIdentifier = "CommunityImageCollectionViewCell"
     private let sectionInsets = UIEdgeInsets(top: 3.0, left: 0.0, bottom: 3.0, right: 0.0)
+    private let itemsPerRow: CGFloat = 3
     
     lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -19,9 +20,10 @@ class CommunityFeedViewController: UIViewController {
         return imagePicker
     }()
     
+    private weak var followButton: UIButton?
     
-    private let itemsPerRow: CGFloat = 3
-
+    var userUID: String = User.shared.userUid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
@@ -48,13 +50,25 @@ extension CommunityFeedViewController {
 
     private func configureViewModel() {
         viewModel.delegate = self
-        viewModel.fetchProfile(userUID: User.shared.userUid)
-        viewModel.fetchUserPostList(userUID: User.shared.userUid)
+        viewModel.fetchProfile(userUID: userUID)
+        viewModel.fetchUserPostList(userUID: userUID)
     }
     
     @objc private func refreshCollectionView() {
-        viewModel.fetchProfile(userUID: User.shared.userUid)
-        viewModel.fetchUserPostList(userUID: User.shared.userUid)
+        viewModel.fetchProfile(userUID: userUID)
+        viewModel.refreshUserPostList(userUID: userUID)
+    }
+    
+    @objc private func didTapFollowButton(_ sender: UIButton) {
+        if !viewModel.isFollowing {
+            if sender.isSelected {
+                // 팔로우중이므로 언팔
+                viewModel.unfollowUser(targetUID: userUID)
+            } else {
+                viewModel.followUser(targetUID: userUID)
+            }
+        }
+        sender.isSelected.toggle()
     }
 }
 
@@ -77,6 +91,15 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
             headerView.userCategoryLabel.text = viewModel.userVegetarianType
             headerView.followerCountLabel.text = "\(viewModel.followers)"
             headerView.followingCountLabel.text = "\(viewModel.followings)"
+            headerView.followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+            followButton = headerView.followButton
+            
+            if userUID == User.shared.userUid {
+                headerView.followButton.isHidden = true
+            } else {
+                headerView.editUserImageButton.isHidden = true
+                headerView.editUserinfoButton.isHidden = true
+            }
             return headerView
         default:
             fatalError()
@@ -89,6 +112,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityImageCollectionViewCell else { fatalError() }
+        if viewModel.numberOfFeeds == 0 { return cell }
         let cellViewModel = viewModel.feedAtIndex(indexPath.item)
         cell.imageView.sd_setImage(with: cellViewModel.feedThumbnailURL, placeholderImage: UIImage(named: MockData.mockFoodImageName[0]))
         return cell
@@ -134,6 +158,16 @@ extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
         collectionView.reloadData()
         collectionView.refreshControl?.endRefreshing()
     }
+    
+    func didFollow() {
+        followButton?.isSelected = true
+        viewModel.fetchProfile(userUID: userUID)
+    }
+    
+    func didUnfollow() {
+        followButton?.isSelected = false
+        viewModel.fetchProfile(userUID: userUID)
+    }
 }
 
 extension CommunityFeedViewController: UIScrollViewDelegate {
@@ -145,7 +179,7 @@ extension CommunityFeedViewController: UIScrollViewDelegate {
         
         if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingPost {
             // fetch more
-            viewModel.fetchUserPostList(userUID: User.shared.userUid)
+            viewModel.fetchUserPostList(userUID: userUID)
         }
     }
 }
@@ -177,14 +211,11 @@ extension CommunityFeedViewController: CommunityReusableDelegate {
         present(actionSheet, animated: true, completion: nil)
         
     }
-    
-    
 }
 
 
 extension CommunityFeedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let originalImage: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -241,6 +272,4 @@ extension CommunityFeedViewController: UIImagePickerControllerDelegate, UINaviga
         }
         
     }
-
-    
 }

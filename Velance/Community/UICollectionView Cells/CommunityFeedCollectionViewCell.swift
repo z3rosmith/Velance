@@ -62,6 +62,9 @@ extension CommunityFeedCollectionViewCell {
         layer.shadowColor = UIColor.darkGray.cgColor
         
         moreButton.addTarget(self, action: #selector(pressedMoreButton), for: .touchUpInside)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(didTapHeaderView))
+        headerView.addGestureRecognizer(tapGR)
     }
     
     private func setupTextView() {
@@ -70,6 +73,14 @@ extension CommunityFeedCollectionViewCell {
         let attributes = [NSAttributedString.Key.paragraphStyle: style]
         textView.attributedText = NSAttributedString(string: textView.text, attributes: attributes)
         textView.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+    }
+    
+    @objc private func didTapHeaderView() {
+        guard let nextVC = parentVC?.storyboard?.instantiateViewController(withIdentifier: "CommunityFeedViewController") as? CommunityFeedViewController else { fatalError() }
+        if let userUID = createdUserUid {
+            nextVC.userUID = userUID
+        }
+        parentVC?.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func didTapImage() {

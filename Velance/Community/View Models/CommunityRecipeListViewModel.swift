@@ -13,9 +13,10 @@ protocol CommunityRecipeListViewModelDelegate: AnyObject {
 class CommunityRecipeListViewModel {
     
     weak var delegate: CommunityRecipeListViewModelDelegate?
+    
     private var posts: [RecipeResponseDTO] = []
     var hasMore: Bool = true
-    var isFetchingData: Bool = false
+    var isFetchingPost: Bool = false
     private var lastPostID: Int?
 }
 
@@ -35,18 +36,15 @@ extension CommunityRecipeListViewModel {
     }
     
     func refreshPostList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
-        self.posts.removeAll(keepingCapacity: true)
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastPostID = nil
-        self.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        resetPostList(keepingCapacity: true)
+        fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
-    func resetPostList() {
-        self.posts.removeAll()
-        self.hasMore = true
-        self.isFetchingData = false
-        self.lastPostID = nil
+    func resetPostList(keepingCapacity: Bool) {
+        posts.removeAll()
+        hasMore = true
+        isFetchingPost = false
+        lastPostID = nil
     }
     
     func postAtIndex(_ index: Int) -> CommunityRecipeViewModel {
@@ -56,7 +54,7 @@ extension CommunityRecipeListViewModel {
     
     /// 최신순으로 보려면 recipeCategoryID = nil
     func fetchPostList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
-        isFetchingData = true
+        isFetchingPost = true
         
         let onlyFollowing: String = viewOnlyFollowing ? "Y" : "N"
         let model = RecipeRequestDTO(cursor: lastPostID,
@@ -73,7 +71,7 @@ extension CommunityRecipeListViewModel {
                     self.lastPostID = data.last?.recipeID
                 }
                 self.posts.append(contentsOf: data)
-                self.isFetchingData = false
+                self.isFetchingPost = false
                 self.delegate?.didFetchPostList()
             case .failure:
                 return

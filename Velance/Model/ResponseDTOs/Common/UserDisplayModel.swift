@@ -17,5 +17,3 @@ struct UserDisplayModel: Decodable {
         case vegetarianType, fileFolder, userTasteGroups, userInterestGroups, followers, followings
     }
 }
-
-

@@ -117,7 +117,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityFeedCollectionViewCell else { fatalError() }
-        if collectionView.refreshControl?.isRefreshing == true { return cell }
+        if viewModel.numberOfPosts == 0 { return cell }
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
@@ -255,5 +255,19 @@ extension CommunityRecipeViewController: CommunityFeedCVCDelegate {
     
     func didChooseToDeleteMyFeed(feedId: Int) {
         viewModel.deleteMyRecipeFeed(feedId: feedId)
+    }
+}
+
+extension CommunityRecipeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = collectionView.contentSize.height
+        let frameHeight = scrollView.frame.height
+        
+        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingPost {
+            // fetch more
+            viewModel.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
+        }
     }
 }

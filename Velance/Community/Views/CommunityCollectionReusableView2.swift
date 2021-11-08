@@ -16,6 +16,7 @@ class CommunityCollectionReusableView2: UICollectionReusableView {
     @IBOutlet weak var editUserinfoButton: UIButton!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var followButton: UIButton!
     
     weak var delegate: CommunityReusableDelegate?
     
@@ -68,6 +69,9 @@ extension CommunityCollectionReusableView2 {
             action: #selector(pressedEditUserImageButton),
             for: .touchUpInside
         )
+        
+        followButton.setImage(UIImage(named: "NotFollowButton"), for: .normal)
+        followButton.setImage(UIImage(named: "FollowButton"), for: .selected)
     }
     
     @objc private func pressedEditUserInfoButton() {

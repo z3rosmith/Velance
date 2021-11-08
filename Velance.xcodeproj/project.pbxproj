@@ -27,6 +27,7 @@
 		3C95571A272B25A40037B333 /* CommunityDailyLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */; };
 		3C95571C272B28260037B333 /* CommunityDailyLifeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */; };
 		3C9760162738E47C006E7FCC /* ReplyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9760152738E47C006E7FCC /* ReplyResponseDTO.swift */; };
+		3C97601827393E82006E7FCC /* CommunityHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97601727393E82006E7FCC /* CommunityHeaderViewModel.swift */; };
 		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
 		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
 		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
@@ -241,6 +242,7 @@
 		3C955719272B25A40037B333 /* CommunityDailyLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDailyLifeViewController.swift; sourceTree = "<group>"; };
 		3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDailyLifeListViewModel.swift; sourceTree = "<group>"; };
 		3C9760152738E47C006E7FCC /* ReplyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyResponseDTO.swift; sourceTree = "<group>"; };
+		3C97601727393E82006E7FCC /* CommunityHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHeaderViewModel.swift; sourceTree = "<group>"; };
 		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */,
 				3CC171F227379D6900EB03A8 /* CommunityFeedViewModel.swift */,
 				3CD77A7C2737E72F00C29275 /* CommunityDetailViewModel.swift */,
+				3C97601727393E82006E7FCC /* CommunityHeaderViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -1362,6 +1365,7 @@
 				3C2052B8272AAC10009BBD3B /* MallResponseDTO.swift in Sources */,
 				3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */,
 				3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */,
+				3C97601827393E82006E7FCC /* CommunityHeaderViewModel.swift in Sources */,
 				7CBDF4B42731037C00E657D9 /* SimilarTasteProductDTO.swift in Sources */,
 				7CAB8BA0272A4B9B006B5E08 /* MapManager.swift in Sources */,
 				3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */,
@@ -1663,7 +1667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBX5GK4LT4;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
