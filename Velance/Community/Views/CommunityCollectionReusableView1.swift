@@ -36,10 +36,15 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     
     weak var delegate: CommunityCollectionHeaderViewDelegate?
     
+    private let viewModel = CommunityHeaderViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
         setupCollectionView()
+        
+        viewModel.delegate = self
+        viewModel.fetchRecommendedUser(byTaste: delegate is CommunityRecipeViewController)
     }
     
     private func setupUI() {
@@ -95,13 +100,20 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     }
 }
 
+extension CommunityCollectionReusableView1: CommunityHeaderViewModelDelegate {
+    
+    func didFetchUsers() {
+        similarUserCollectionView.reloadData()
+    }
+}
+
 extension CommunityCollectionReusableView1: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCollectionView {
             return categories.count
         } else {
-            return 5 // 추후 네트워킹 해서 받아오기
+            return viewModel.numberOfUsers
         }
     }
     
@@ -124,19 +136,14 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarUserReuseIdentifier, for: indexPath) as? SimilarUserCollectionViewCell else { fatalError() }
             
-            let randomIndex: Int = Int.random(in: 0..<MockData.userDisplayNameList.count)
+            let cellViewModel = viewModel.userAtIndex(indexPath.item)
             
-            cell.userImageView.image = UIImage(named: MockData.mockAvatarImageName[randomIndex])
-            cell.usernameLabel.text = MockData.userDisplayNameList[randomIndex]
-            cell.userStyleLabel.text = UserOptions.veganType.randomElement()
+            cell.userImageView.sd_setImage(with: cellViewModel.userProfileImageURL,
+                                           placeholderImage: UIImage(named: "avatarImage"))
+            cell.usernameLabel.text = cellViewModel.username
+            cell.userStyleLabel.text = cellViewModel.userType
             
-            if indexPath.row % 2 == 0 {
-                cell.followButton.isSelected.toggle()
-            }
-            
-//            cell.layer.cornerRadius = 20
-            
-            return cell // 추후 네트워킹 해서 받아오기
+            return cell // 팔로잉 버튼 아직..
         }
     }
 }

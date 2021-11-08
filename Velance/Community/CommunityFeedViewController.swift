@@ -10,6 +10,7 @@ class CommunityFeedViewController: UIViewController {
     private let headerReuseIdentifier = "CommunityCollectionReusableView2"
     private let cellReuseIdentifier = "CommunityImageCollectionViewCell"
     private let sectionInsets = UIEdgeInsets(top: 3.0, left: 0.0, bottom: 3.0, right: 0.0)
+    private let itemsPerRow: CGFloat = 3
     
     lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -19,15 +20,14 @@ class CommunityFeedViewController: UIViewController {
         return imagePicker
     }()
     
-    private let itemsPerRow: CGFloat = 3
-        
-        var isMyFeed: Bool = true
-        var userUID: String = User.shared.userUid
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            configureViewModel()
-            configureCollectionView()
+    private weak var followButton: UIButton?
+    
+    var userUID: String = User.shared.userUid
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureViewModel()
+        configureCollectionView()
     }
 }
 
@@ -58,6 +58,18 @@ extension CommunityFeedViewController {
         viewModel.fetchProfile(userUID: userUID)
         viewModel.refreshUserPostList(userUID: userUID)
     }
+    
+    @objc private func didTapFollowButton(_ sender: UIButton) {
+        if !viewModel.isFollowing {
+            if sender.isSelected {
+                // 팔로우중이므로 언팔
+                viewModel.unfollowUser(targetUID: userUID)
+            } else {
+                viewModel.followUser(targetUID: userUID)
+            }
+        }
+        sender.isSelected.toggle()
+    }
 }
 
 extension CommunityFeedViewController: UICollectionViewDelegate {
@@ -79,7 +91,10 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
             headerView.userCategoryLabel.text = viewModel.userVegetarianType
             headerView.followerCountLabel.text = "\(viewModel.followers)"
             headerView.followingCountLabel.text = "\(viewModel.followings)"
-            if isMyFeed || (!isMyFeed && userUID == User.shared.userUid) {
+            headerView.followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+            followButton = headerView.followButton
+            
+            if userUID == User.shared.userUid {
                 headerView.followButton.isHidden = true
             } else {
                 headerView.editUserImageButton.isHidden = true
@@ -142,6 +157,16 @@ extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
     func didFetchUserFeedList() {
         collectionView.reloadData()
         collectionView.refreshControl?.endRefreshing()
+    }
+    
+    func didFollow() {
+        followButton?.isSelected = true
+        viewModel.fetchProfile(userUID: userUID)
+    }
+    
+    func didUnfollow() {
+        followButton?.isSelected = false
+        viewModel.fetchProfile(userUID: userUID)
     }
 }
 

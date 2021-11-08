@@ -77,7 +77,6 @@ extension CommunityFeedCollectionViewCell {
     
     @objc private func didTapHeaderView() {
         guard let nextVC = parentVC?.storyboard?.instantiateViewController(withIdentifier: "CommunityFeedViewController") as? CommunityFeedViewController else { fatalError() }
-        nextVC.isMyFeed = false
         if let userUID = createdUserUid {
             nextVC.userUID = userUID
         }

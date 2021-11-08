@@ -265,7 +265,7 @@ extension CommunityRecipeViewController: UIScrollViewDelegate {
         let contentHeight = collectionView.contentSize.height
         let frameHeight = scrollView.frame.height
         
-        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingData {
+        if contentHeight > frameHeight + 100 && contentOffsetY > contentHeight - frameHeight - 100 && viewModel.hasMore && !viewModel.isFetchingPost {
             // fetch more
             viewModel.fetchPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
         }

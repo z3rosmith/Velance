@@ -13,9 +13,10 @@ protocol CommunityRecipeListViewModelDelegate: AnyObject {
 class CommunityRecipeListViewModel {
     
     weak var delegate: CommunityRecipeListViewModelDelegate?
+    
     private var posts: [RecipeResponseDTO] = []
     var hasMore: Bool = true
-    var isFetchingData: Bool = false
+    var isFetchingPost: Bool = false
     private var lastPostID: Int?
 }
 
@@ -42,7 +43,7 @@ extension CommunityRecipeListViewModel {
     func resetPostList(keepingCapacity: Bool) {
         posts.removeAll()
         hasMore = true
-        isFetchingData = false
+        isFetchingPost = false
         lastPostID = nil
     }
     
@@ -53,7 +54,7 @@ extension CommunityRecipeListViewModel {
     
     /// 최신순으로 보려면 recipeCategoryID = nil
     func fetchPostList(recipeCategoryID: Int? = nil, viewOnlyFollowing: Bool = false) {
-        isFetchingData = true
+        isFetchingPost = true
         
         let onlyFollowing: String = viewOnlyFollowing ? "Y" : "N"
         let model = RecipeRequestDTO(cursor: lastPostID,
@@ -70,7 +71,7 @@ extension CommunityRecipeListViewModel {
                     self.lastPostID = data.last?.recipeID
                 }
                 self.posts.append(contentsOf: data)
-                self.isFetchingData = false
+                self.isFetchingPost = false
                 self.delegate?.didFetchPostList()
             case .failure:
                 return

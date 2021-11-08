@@ -5,6 +5,8 @@ protocol CommunityFeedViewModelDelegate: AnyObject {
 
     func didFetchProfile()
     func didFetchUserFeedList()
+    func didFollow()
+    func didUnfollow()
 }
 
 class CommunityFeedViewModel {
@@ -15,6 +17,7 @@ class CommunityFeedViewModel {
     var hasMore: Bool = true
     var isFetchingPost: Bool = false
     private var lastPostID: Int?
+    var isFollowing: Bool = false
     
     func feedAtIndex(_ index: Int) -> CommunityFeedCellViewModel {
         let feed = posts[index]
@@ -54,6 +57,7 @@ extension CommunityFeedViewModel {
     }
     
     func fetchUserPostList(userUID: String) {
+        isFetchingPost = true
         CommunityManager.shared.fetchUserFeedList(userID: userUID, cursor: lastPostID) { [weak self] result in
             switch result {
             case .success(let data):
@@ -69,6 +73,32 @@ extension CommunityFeedViewModel {
             case .failure:
                 return
             }
+        }
+    }
+    
+    func followUser(targetUID: String) {
+        isFollowing = true
+        CommunityManager.shared.folllowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didFollow()
+            case .failure:
+                return
+            }
+            self?.isFollowing = false
+        }
+    }
+    
+    func unfollowUser(targetUID: String) {
+        isFollowing = true
+        CommunityManager.shared.unfollowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didUnfollow()
+            case .failure:
+                return
+            }
+            self?.isFollowing = false
         }
     }
     

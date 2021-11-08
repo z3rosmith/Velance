@@ -7,10 +7,12 @@ class UserManager {
     static let shared = UserManager()
     
     //MARK: - End Points
-    let userBaseUrl     = "\(API.baseUrl)user"
-    let registerUrl     = "\(API.baseUrl)user/signup"
-    let loginUrl        = "\(API.baseUrl)auth/login"
-    let fetchProfileUrl = "\(API.baseUrl)user/"
+    let userBaseUrl             = "\(API.baseUrl)user"
+    let registerUrl             = "\(API.baseUrl)user/signup"
+    let loginUrl                = "\(API.baseUrl)auth/login"
+    let fetchProfileUrl         = "\(API.baseUrl)user/"
+    let fetchRMDTasteUrl        = "\(API.baseUrl)user/recommend/taste"
+    let fetchRMDInterestUrl     = "\(API.baseUrl)user/recommend/interest"
     
     let interceptor = Interceptor()
     
@@ -263,6 +265,47 @@ class UserManager {
                 }
                 let customError = NetworkError.returnError(statusCode: responseCode)
                 print("❗️ UserManager - fetchProfileForCommunity - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                completion(.failure(customError))
+            }
+        }
+    }
+    
+    func fetchRecommendUser(byTaste: Bool,
+                            completion: @escaping ((Result<[UserDisplayModel], NetworkError>) -> Void)) {
+        
+        let url: String
+        if byTaste {
+            url = fetchRMDTasteUrl
+        } else {
+            url = fetchRMDInterestUrl
+        }
+        
+        AF.request(
+            url,
+            method: .get
+        ).responseData { response in
+            switch response.result {
+            case .success(let value):
+                do {
+                    print(String(data: value, encoding: .utf8))
+//                    let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    let decodedData = try JSONDecoder().decode([UserDisplayModel].self, from: value)
+                    completion(.success(decodedData))
+                    print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
+                } catch {
+                    print("✏️ \(String(describing: type(of: self))) - \(#function) - FAILED PROCESS DATA with error: \(error)")
+                }
+            case .failure(let error):
+                if let jsonData = response.data {
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                }
+                print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                guard let responseCode = error.responseCode else {
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                    return
+                }
+                let customError = NetworkError.returnError(statusCode: responseCode)
+                print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
                 completion(.failure(customError))
             }
         }

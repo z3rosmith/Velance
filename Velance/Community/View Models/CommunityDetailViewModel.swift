@@ -52,6 +52,8 @@ extension CommunityDetailViewModel {
             return
         }
         
+        isFetchingReply = true
+        
         CommunityManager.shared.fetchReplies(feedID: feedID, cursor: lastReplyID) { [weak self] result in
             switch result {
             case .success(let data):
