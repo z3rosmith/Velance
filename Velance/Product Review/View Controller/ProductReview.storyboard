@@ -368,13 +368,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ipm-Oh-ZFL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="vss-ye-vhC"/>
+                                    <constraint firstAttribute="height" constant="320" id="vss-ye-vhC"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-EJ-txq" userLabel="Bottom View" customClass="VLBottomView" customModule="Velance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="260" width="414" height="636"/>
+                                <rect key="frame" x="0.0" y="300" width="414" height="596"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csU-WV-dZj" userLabel="Drag Indicator">
                                         <rect key="frame" x="177" y="10" width="60" height="6"/>
@@ -385,7 +385,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wlg-ma-4uk">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="608"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>

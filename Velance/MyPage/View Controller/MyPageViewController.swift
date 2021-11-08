@@ -220,6 +220,10 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
             vc.isForEditingUser = true
             let navController = UINavigationController(rootViewController: vc)
             navController.navigationBar.tintColor = .white
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = UIColor(named: Colors.appDefaultColor)
+            navController.navigationBar.standardAppearance = appearance
+            navController.navigationBar.scrollEdgeAppearance = appearance
             present(navController, animated: true)
         case 1:
             let url = URL(string: NotionUrl.termsAndAgreementUrl)!

@@ -174,7 +174,7 @@ extension InputUserInfoForRegisterViewController {
             case .success(_):
                 self.showSimpleBottomAlert(with: "프로필 변경 성공 🎉")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true)
                 }
             case .failure(let error):
                 self.showSimpleBottomAlert(with: error.errorDescription)
@@ -215,7 +215,6 @@ extension InputUserInfoForRegisterViewController {
     
     private func configure() {
         title = isForEditingUser ? "내 정보 수정" : "내 정보 입력"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         configureLabels()
         configureUIViews()
         configureVeganButtonOuterViews()
