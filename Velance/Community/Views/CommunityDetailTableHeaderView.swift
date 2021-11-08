@@ -8,6 +8,9 @@ class CommunityDetailTableHeaderView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     
     weak var parentVC: UIViewController?
     

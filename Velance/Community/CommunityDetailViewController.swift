@@ -1,5 +1,6 @@
 import UIKit
 import InputBarAccessoryView
+import ImageSlideshow
 import SnapKit
 
 class CommunityDetailViewController: UIViewController {
@@ -14,14 +15,21 @@ class CommunityDetailViewController: UIViewController {
         return headerView
     }()
     
+    private let viewModel = CommunityDetailViewModel()
+    
     private let cellReuseIdentifier = "CommunityDetailTableViewCell"
+    
+    var isRecipe: Bool!
+    /// recipeID or dailyLifeID
+    var id: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
-        setupTableHeaderView()
+        configureTableHeaderView()
         setupInputBar()
+        configureViewModel()
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,8 +60,27 @@ extension CommunityDetailViewController {
         tableView.allowsSelection = false
     }
     
-    private func setupTableHeaderView() {
-        tableHeaderView.contentLabel.text = "오늘 방문한 수성구 비건 식당입니다! 가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다! 한 번 들러보시면 좋을 것 같아요 ㅎㅎ\n오늘 방문한 수성구 비건 식당입니다! 가격도 괜찮고 페스코 여러분께 추"
+    private func configureTableHeaderView() {
+        tableHeaderView.contentLabel.text = viewModel.conents
+        tableHeaderView.dateLabel.text = viewModel.feedDate
+        tableHeaderView.usernameLabel.text = viewModel.username
+        tableHeaderView.userImageView.sd_setImage(with: viewModel.userProfileImageURL,
+                                                  placeholderImage: UIImage(named: "avatarImage"))
+        var inputSources: [InputSource] = []
+        if let urls = viewModel.imageURLs {
+            let placeholderImage = UIImage(named: "imagePlaceholder")
+            urls.forEach {
+                inputSources.append(SDWebImageSource(url: $0, placeholder: placeholderImage))
+            }
+        }
+        tableHeaderView.imageSlideShow.setImageInputs(inputSources)
+        tableHeaderView.likeButton.setTitle("\(viewModel.likeCount)", for: .normal)
+        tableHeaderView.commentButton.setTitle("\(viewModel.repliesCount)", for: .normal)
+    }
+    
+    private func configureViewModel() {
+        viewModel.delegate = self
+        viewModel.fetchPostInfo(isRecipe: isRecipe, id: id)
     }
     
     @objc private func didTapMoreButton(_ sender: UIButton) {
@@ -75,18 +102,19 @@ extension CommunityDetailViewController: UITableViewDelegate {
 extension CommunityDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.repliesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityDetailTableViewCell else { fatalError() }
+        let cellViewModel = viewModel.replyAtIndex(indexPath.row)
         cell.moreButton.tag = indexPath.row
         cell.moreButton.addTarget(self, action: #selector(didTapMoreButton(_:)), for: .touchUpInside)
-        if indexPath.row == 0 {
-            cell.contentLabel.text = "멋지네요! 저도 방문해보고싶어요 :)"
-        } else if indexPath.row == 1 {
-            cell.contentLabel.text = "와 얼마인가요? 완전 좋아요 비건 식당이 더욱 다양해졌으면 좋겠어요"
-        }
+        cell.contentLabel.text = cellViewModel.contents
+        cell.usernameLabel.text = cellViewModel.username
+        cell.dateLabel.text = cellViewModel.replyTime
+        cell.userImageView.sd_setImage(with: cellViewModel.userProfileImageURL,
+                                       placeholderImage: UIImage(named: "avatarImage"))
         return cell
     }
 }
@@ -95,5 +123,17 @@ extension CommunityDetailViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         inputBar.inputTextView.resignFirstResponder()
+    }
+}
+
+extension CommunityDetailViewController: CommunityDetailViewModelDelegate {
+    
+    func didFetchReplies() {
+        tableView.reloadData()
+    }
+    
+    func didFetchDetailInfo() {
+        viewModel.fetchReplies()
+        configureTableHeaderView()
     }
 }

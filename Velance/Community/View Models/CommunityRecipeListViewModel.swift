@@ -132,19 +132,23 @@ extension CommunityRecipeListViewModel {
 
 extension CommunityRecipeViewModel {
     
+    var recipeID: Int {
+        return post.recipeID
+    }
+    
     var contents: String {
-        return self.post.contents
+        return post.contents
     }
     
     var userDisplayName: String {
-        return self.post.feed!.user.displayName
+        return post.feed!.user.displayName
     }
     
     var feedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.locale = Locale(identifier:"ko_KR")
-        guard let date = dateFormatter.date(from: self.post.feed!.createdAt) else {
+        guard let date = dateFormatter.date(from: post.feed!.createdAt) else {
             print("❗️CommunityRecipeViewModel - feedDate error")
             return "시간표시오류"
         }
@@ -153,7 +157,7 @@ extension CommunityRecipeViewModel {
     }
     
     var imageURLs: [URL]? {
-        guard let files = self.post.fileFolder?.files, files.count > 0 else {
+        guard let files = post.fileFolder?.files, files.count > 0 else {
             return nil
         }
         let imageURLs: [URL] = files.map {

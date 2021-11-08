@@ -10,9 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityDetailTableHeaderView" customModule="Velance" customModuleProvider="target">
             <connections>
+                <outlet property="commentButton" destination="lM5-hL-isw" id="uxo-vp-4i8"/>
                 <outlet property="contentLabel" destination="hfa-H5-MoS" id="qPy-lA-gwq"/>
                 <outlet property="dateLabel" destination="N6f-Q0-sKd" id="EiQ-51-YTh"/>
                 <outlet property="imageSlideShow" destination="Dxo-6L-xGd" id="aSR-Hy-kEf"/>
+                <outlet property="likeButton" destination="0B7-OQ-R0D" id="ISz-U1-Eim"/>
+                <outlet property="likeImageView" destination="FuT-fF-16W" id="Sk2-Em-Alb"/>
                 <outlet property="userImageView" destination="wPt-ph-Vcq" id="Wtg-CJ-Wvt"/>
                 <outlet property="usernameLabel" destination="Shj-dL-BzW" id="pw4-VX-g14"/>
             </connections>
