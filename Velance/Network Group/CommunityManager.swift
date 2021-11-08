@@ -13,6 +13,7 @@ class CommunityManager {
     let newRecipePostUrl        = "\(API.baseUrl)recipe"
     let fetchRecipeListUrl      = "\(API.baseUrl)recipe"
     let fetchDailyLifeListUrl   = "\(API.baseUrl)daily-life"
+    let fetchUserFeedListUrl    = "\(API.baseUrl)feed/user"
     let feedBaseUrl             = "\(API.baseUrl)feed/"
     
     //MARK: - 일상 글 올리기
@@ -145,7 +146,7 @@ class CommunityManager {
     
     // MARK: - 일상 목록 받아오기
     func fetchDailyLifeList(with model: DailyLifeRequestDTO,
-                         completion: @escaping ((Result<[DailyLifeResponseDTO], NetworkError>) -> Void)) {
+                            completion: @escaping ((Result<[DailyLifeResponseDTO], NetworkError>) -> Void)) {
 
         var parameters: Parameters = [:]
         parameters["cursor"] = model.cursor
@@ -186,6 +187,48 @@ class CommunityManager {
                     }
                     let customError = NetworkError.returnError(statusCode: responseCode)
                     print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
+    
+    // MARK: - 피드 목록 받아오기
+    func fetchUserFeedList(userID: String,
+                           cursor: Int?,
+                           completion: @escaping ((Result<[UserFeedResponseDTO], NetworkError>) -> Void)) {
+        var parameters: Parameters = [:]
+        parameters["cursor"] = cursor
+        parameters["user_id"] = userID
+
+        AF.request(fetchUserFeedListUrl,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decodedData = try JSONDecoder().decode([UserFeedResponseDTO].self, from: dataJSON)
+                        completion(.success(decodedData))
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
+                    } catch {
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - FAILED PROCESS DATA with error: \(error)")
+                    }
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
                     completion(.failure(customError))
                 }
             }

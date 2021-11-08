@@ -14,20 +14,15 @@ final class VelanceInputBar: InputBarAccessoryView {
     }
     
     func configure() {
-        inputTextView.backgroundColor = .white
+        inputTextView.backgroundColor = .systemGray6
         inputTextView.textContainerInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 36)
         inputTextView.placeholderLabelInsets = UIEdgeInsets(top: 8, left: 20, bottom: 8, right: 36)
-        
-        inputTextView.layer.cornerRadius = 16.0
-        
-        inputTextView.clipsToBounds = true
-        inputTextView.layer.masksToBounds = false
-        inputTextView.layer.shadowRadius = 3
-        inputTextView.layer.shadowOpacity = 0.3
-        inputTextView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        inputTextView.layer.shadowColor = UIColor.darkGray.cgColor
-        
+        inputTextView.placeholder = "댓글을 남겨보세요:)"
+        inputTextView.placeholderLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        inputTextView.placeholderTextColor = UIColor(named: "B1B1B1")
+        inputTextView.layer.cornerRadius = 10.0
         inputTextView.scrollIndicatorInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        
         setRightStackViewWidthConstant(to: 38, animated: false)
         setStackViewItems([sendButton, InputBarButtonItem.fixedSpace(2)], forStack: .right, animated: false)
         sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)

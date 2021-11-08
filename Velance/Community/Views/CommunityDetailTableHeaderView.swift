@@ -8,8 +8,6 @@ class CommunityDetailTableHeaderView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var likeButton: VLSocialButton!
-    @IBOutlet weak var commentButton: VLSocialButton!
     
     weak var parentVC: UIViewController?
     
@@ -30,14 +28,11 @@ class CommunityDetailTableHeaderView: UIView {
         addSubview(view)
         
         imageSlideShow.contentScaleMode = .scaleAspectFill
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
         imageSlideShow.addGestureRecognizer(gestureRecognizer)
-        
-        likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
-        commentButton.setLeftImage(image: UIImage(named: "CommentLogo")!)
     }
     
-    @objc private func didTap() {
+    @objc private func didTapImage() {
         guard let parentVC = parentVC else { return }
         imageSlideShow.presentFullScreenController(from: parentVC)
     }

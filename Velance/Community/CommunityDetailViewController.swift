@@ -10,7 +10,6 @@ class CommunityDetailViewController: UIViewController {
     private lazy var tableHeaderView: CommunityDetailTableHeaderView = {
         let headerView = CommunityDetailTableHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 500))
         headerView.parentVC = self
-        headerView.commentButton.isSelected = true
         tableView.tableHeaderView = headerView
         return headerView
     }()
@@ -55,8 +54,6 @@ extension CommunityDetailViewController {
     
     private func setupTableHeaderView() {
         tableHeaderView.contentLabel.text = "오늘 방문한 수성구 비건 식당입니다! 가격도 괜찮고 페스코 여러분께 추천드리는 식당입니다! 한 번 들러보시면 좋을 것 같아요 ㅎㅎ\n오늘 방문한 수성구 비건 식당입니다! 가격도 괜찮고 페스코 여러분께 추"
-        tableHeaderView.likeButton.setRightText(text: "143")
-        tableHeaderView.commentButton.setRightText(text: "5")
     }
     
     @objc private func didTapMoreButton(_ sender: UIButton) {
