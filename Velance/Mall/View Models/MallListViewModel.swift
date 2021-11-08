@@ -46,7 +46,7 @@ extension MallListViewModel {
     }
     
     func fetchMallList(mallPoint: MallPoint) {
-        
+        isFetchingData = true
         let model = MallRequestDTO(x: mallPoint.x,
                                    y: mallPoint.y,
                                    radius: mallPoint.radius,

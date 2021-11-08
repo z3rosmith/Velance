@@ -74,7 +74,13 @@ extension CommunityFeedViewController {
 
 extension CommunityFeedViewController: UICollectionViewDelegate {
 
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.feedAtIndex(indexPath.item)
+        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { fatalError() }
+        nextVC.isRecipe = cellViewModel.isRecipe
+        nextVC.id = cellViewModel.isRecipe ? cellViewModel.recipeID : cellViewModel.dailyLifeID
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension CommunityFeedViewController: UICollectionViewDataSource {

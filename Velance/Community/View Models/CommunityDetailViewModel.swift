@@ -97,7 +97,7 @@ extension CommunityDetailViewModel {
     }
     
     var contents: String {
-        return post?.contents ?? "error"
+        return post?.contents ?? "-"
     }
     
     var feedID: Int? {
@@ -109,7 +109,7 @@ extension CommunityDetailViewModel {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.locale = Locale(identifier:"ko_KR")
         guard let createdAt = post?.feed?.createdAt, let date = dateFormatter.date(from: createdAt) else {
-            return "시간표시오류"
+            return "-"
         }
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.string(from: date)
@@ -141,15 +141,15 @@ extension CommunityDetailViewModel {
     }
     
     var username: String {
-        return post?.feed?.user.displayName ?? "error"
+        return post?.feed?.user.displayName ?? "-"
     }
     
     var likeCount: Int {
-        return post?.feed?.like ?? -1
+        return post?.feed?.like ?? 0
     }
     
     var repliesCount: Int {
-        return post?.feed?.repliesCount ?? -1
+        return post?.feed?.repliesCount ?? 0
     }
 }
 
