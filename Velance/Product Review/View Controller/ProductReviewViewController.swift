@@ -312,7 +312,7 @@ extension ProductReviewViewController {
         productThumbnailImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         productThumbnailImageView.sd_setImage(
             with: productThumbnailUrl,
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "imagePlaceholder"),
             options: .continueInBackground
         )
     }
