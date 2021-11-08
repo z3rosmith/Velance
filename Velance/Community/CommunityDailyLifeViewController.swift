@@ -60,15 +60,16 @@ extension CommunityDailyLifeViewController {
     }
     
     @objc private func didTapCommentButton(_ sender: UIButton) {
-        print("---> tag: \(sender.tag)")
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
+        nextVC.isRecipe = false
+        nextVC.id = sender.tag
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    @objc func textViewTapped(gestureRecognizer: UIGestureRecognizer) {
-        guard let tag = gestureRecognizer.view?.tag else { return }
-        print("---> tag: \(tag)")
+    @objc private func textViewTapped(gestureRecognizer: UIGestureRecognizer) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
+        nextVC.isRecipe = false
+        nextVC.id = gestureRecognizer.view!.tag
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -161,9 +162,9 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
         cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(textViewTapped(gestureRecognizer:)))
-        cell.textView.tag = indexPath.item
+        cell.textView.tag = cellViewModel.dailyLifeID
         cell.textView.addGestureRecognizer(tapGR)
-        cell.commentButton.tag = indexPath.item
+        cell.commentButton.tag = cellViewModel.dailyLifeID
         cell.commentButton.addTarget(self, action: #selector(didTapCommentButton(_:)), for: .touchUpInside)
         
         cell.commentButton.isSelected = true // commentButton은 항상 초록색
@@ -256,7 +257,6 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
         showSimpleBottomAlert(with: "처리가 완료되었습니다. 피드 새로 고침을 해주세요.")
         collectionView.reloadData()
     }
-    
 }
 
 extension CommunityDailyLifeViewController: ChooseRegionDelegate {
@@ -303,6 +303,4 @@ extension CommunityDailyLifeViewController: CommunityFeedCVCDelegate {
     func didChooseToDeleteMyFeed(feedId: Int) {
         viewModel.deleteMyDailyLifeFeed(feedId: feedId)
     }
-    
-
 }

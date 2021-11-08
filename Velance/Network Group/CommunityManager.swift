@@ -15,6 +15,7 @@ class CommunityManager {
     let fetchDailyLifeListUrl   = "\(API.baseUrl)daily-life"
     let fetchUserFeedListUrl    = "\(API.baseUrl)feed/user"
     let feedBaseUrl             = "\(API.baseUrl)feed/"
+    let fetchRepliesURL         = "\(API.baseUrl)reply"
     
     //MARK: - 일상 글 올리기
     
@@ -204,6 +205,7 @@ class CommunityManager {
     func fetchUserFeedList(userID: String,
                            cursor: Int?,
                            completion: @escaping ((Result<[UserFeedResponseDTO], NetworkError>) -> Void)) {
+        
         var parameters: Parameters = [:]
         parameters["cursor"] = cursor
         parameters["user_id"] = userID
@@ -221,6 +223,85 @@ class CommunityManager {
                     do {
                         let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                         let decodedData = try JSONDecoder().decode([UserFeedResponseDTO].self, from: dataJSON)
+                        completion(.success(decodedData))
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
+                    } catch {
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - FAILED PROCESS DATA with error: \(error)")
+                    }
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
+    
+    func fetchPostDetail(isRecipe: Bool,
+                         id: Int,
+                         completion: @escaping ((Result<FeedDetailResponseDTO, NetworkError>) -> Void)) {
+        
+        var url = isRecipe ? fetchRecipeListUrl : fetchDailyLifeListUrl
+        url += "/\(id)"
+        
+        AF.request(url,
+                   method: .get,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decodedData = try JSONDecoder().decode(FeedDetailResponseDTO.self, from: dataJSON)
+                        completion(.success(decodedData))
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
+                    } catch {
+                        print("✏️ \(String(describing: type(of: self))) - \(#function) - FAILED PROCESS DATA with error: \(error)")
+                    }
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
+    
+    func fetchReplies(feedID: Int,
+                      completion: @escaping ((Result<[ReplyResponseDTO], NetworkError>) -> Void)) {
+        
+        let parameters: Parameters = ["feed_id": feedID]
+        
+        AF.request(fetchRepliesURL,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decodedData = try JSONDecoder().decode([ReplyResponseDTO].self, from: dataJSON)
                         completion(.success(decodedData))
                         print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
                     } catch {
