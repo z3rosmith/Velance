@@ -56,6 +56,7 @@
 		7C0367922716C7CC0031DBBE /* PopularProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */; };
 		7C1D2A1627339F8A00E9785C /* NewDailyLifePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */; };
 		7C1D2A182735576000E9785C /* UserInfoUpdateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D2A172735576000E9785C /* UserInfoUpdateDTO.swift */; };
+		7C21FA3B2737C3BB00904863 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21FA3A2737C3BB00904863 /* ChangePasswordViewController.swift */; };
 		7C37DE7A27195F0800B4FBFB /* UploadNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */; };
 		7C37DE7E271AB1C500B4FBFB /* ProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */; };
 		7C37DE81271ABE0A00B4FBFB /* ProductReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */; };
@@ -262,6 +263,7 @@
 		7C0367912716C7CC0031DBBE /* PopularProductCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularProductCVC.xib; sourceTree = "<group>"; };
 		7C1D2A1527339F8A00E9785C /* NewDailyLifePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDailyLifePostViewController.swift; sourceTree = "<group>"; };
 		7C1D2A172735576000E9785C /* UserInfoUpdateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateDTO.swift; sourceTree = "<group>"; };
+		7C21FA3A2737C3BB00904863 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewProductViewController.swift; sourceTree = "<group>"; };
 		7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewViewController.swift; sourceTree = "<group>"; };
 		7C37DE7F271ABE0900B4FBFB /* ProductReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 			children = (
 				7CFF121727215A7900E6A9D3 /* MyPage.storyboard */,
 				7CFF121927215A8900E6A9D3 /* MyPageViewController.swift */,
+				7C21FA3A2737C3BB00904863 /* ChangePasswordViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -1372,6 +1375,7 @@
 				7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */,
 				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */,
+				7C21FA3B2737C3BB00904863 /* ChangePasswordViewController.swift in Sources */,
 				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
 				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
@@ -1606,7 +1610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = SBX5GK4LT4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

@@ -37,6 +37,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="MyPageProfileImageButton"/>
+                                <connections>
+                                    <action selector="pressedProfileImageButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VTN-96-BDV"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="noe-P5-NcI">
                                 <rect key="frame" x="0.0" y="220" width="414" height="642"/>
@@ -71,6 +74,7 @@
                     <connections>
                         <outlet property="myPageTableView" destination="noe-P5-NcI" id="XaW-8l-DMz"/>
                         <outlet property="nicknameLabel" destination="vsv-x4-HXp" id="bGI-v5-U49"/>
+                        <outlet property="profileImageButton" destination="VWf-s3-GLR" id="JRM-FW-MBd"/>
                         <outlet property="vegetarianTypeLabel" destination="a0Q-KF-LH1" id="diE-hG-NE3"/>
                     </connections>
                 </viewController>
@@ -104,12 +108,116 @@
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="93.75"/>
         </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="xhS-gD-W3V">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="AEh-CI-N2f" customClass="ChangePasswordViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U7U-FQ-Eg0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경하실 비밀번호를 입력해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLd-4N-f4c">
+                                <rect key="frame" x="90" y="244" width="234" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dQ-XM-ggT">
+                                <rect key="frame" x="79.5" y="288.5" width="255" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5ky-Bx-IBq"/>
+                                    <constraint firstAttribute="width" constant="255" id="cR3-3d-6SU"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ar-Xc-nx3">
+                                <rect key="frame" x="79.5" y="354.5" width="255" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="S2h-5k-tPy"/>
+                                    <constraint firstAttribute="height" constant="50" id="iEI-Wb-H53"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-LO-w6S" userLabel="Next Step View">
+                                <rect key="frame" x="79.5" y="424.5" width="255" height="58"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextStepButton" translatesAutoresizingMaskIntoConstraints="NO" id="nyl-wZ-u1j">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="58"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWs-PQ-ebx">
+                                        <rect key="frame" x="209" y="12" width="41" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="right button" title=" "/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aZ-QC-7C2">
+                                        <rect key="frame" x="70" y="13" width="115" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="비밀번호 변경하기"/>
+                                        <connections>
+                                            <action selector="pressedChangePWButton:" destination="AEh-CI-N2f" eventType="touchUpInside" id="1WS-av-FQy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nyl-wZ-u1j" secondAttribute="bottom" id="1AF-gf-X5C"/>
+                                    <constraint firstItem="2aZ-QC-7C2" firstAttribute="centerY" secondItem="Gev-LO-w6S" secondAttribute="centerY" id="8oT-5V-j0t"/>
+                                    <constraint firstAttribute="width" constant="255" id="F5g-pi-g2i"/>
+                                    <constraint firstAttribute="trailing" secondItem="nyl-wZ-u1j" secondAttribute="trailing" id="M4R-lV-5zb"/>
+                                    <constraint firstItem="2aZ-QC-7C2" firstAttribute="centerX" secondItem="Gev-LO-w6S" secondAttribute="centerX" id="MGf-aW-QFl"/>
+                                    <constraint firstAttribute="height" constant="58" id="Szj-Qk-SbS"/>
+                                    <constraint firstAttribute="bottom" secondItem="xWs-PQ-ebx" secondAttribute="bottom" constant="12" id="T8Y-rk-T9f"/>
+                                    <constraint firstAttribute="trailing" secondItem="xWs-PQ-ebx" secondAttribute="trailing" constant="5" id="btX-MN-a9i"/>
+                                    <constraint firstItem="nyl-wZ-u1j" firstAttribute="leading" secondItem="Gev-LO-w6S" secondAttribute="leading" id="gc4-hv-hjH"/>
+                                    <constraint firstItem="nyl-wZ-u1j" firstAttribute="top" secondItem="Gev-LO-w6S" secondAttribute="top" id="m57-LC-YTh"/>
+                                    <constraint firstItem="xWs-PQ-ebx" firstAttribute="top" secondItem="Gev-LO-w6S" secondAttribute="top" constant="12" id="x8Z-fM-gG6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LKE-85-AXb"/>
+                        <color key="backgroundColor" name="AppDefaultColor"/>
+                        <constraints>
+                            <constraint firstItem="9dQ-XM-ggT" firstAttribute="top" secondItem="hLd-4N-f4c" secondAttribute="bottom" constant="24" id="5Ap-3F-v3g"/>
+                            <constraint firstItem="9Ar-Xc-nx3" firstAttribute="top" secondItem="9dQ-XM-ggT" secondAttribute="bottom" constant="16" id="I8a-d7-84A"/>
+                            <constraint firstItem="hLd-4N-f4c" firstAttribute="top" secondItem="LKE-85-AXb" secondAttribute="top" constant="200" id="IMf-xz-gP1"/>
+                            <constraint firstItem="9dQ-XM-ggT" firstAttribute="centerX" secondItem="U7U-FQ-Eg0" secondAttribute="centerX" id="LSe-5y-Za4"/>
+                            <constraint firstItem="hLd-4N-f4c" firstAttribute="centerX" secondItem="U7U-FQ-Eg0" secondAttribute="centerX" id="Qck-1V-4Lf"/>
+                            <constraint firstItem="Gev-LO-w6S" firstAttribute="centerX" secondItem="U7U-FQ-Eg0" secondAttribute="centerX" id="YgI-Wc-0lp"/>
+                            <constraint firstItem="9Ar-Xc-nx3" firstAttribute="centerX" secondItem="U7U-FQ-Eg0" secondAttribute="centerX" id="a10-Q1-vus"/>
+                            <constraint firstItem="Gev-LO-w6S" firstAttribute="top" secondItem="9Ar-Xc-nx3" secondAttribute="bottom" constant="20" id="tUH-wL-MhY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9fg-4H-ie6">
+                        <barButtonItem key="backBarButtonItem" title=" " id="U3y-Fc-MTj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkPasswordTextField" destination="9Ar-Xc-nx3" id="RJh-eb-4Lt"/>
+                        <outlet property="passwordTextField" destination="9dQ-XM-ggT" id="8C0-Ra-Nul"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzK-3H-FDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="94"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MyPageProfileImageButton" width="82" height="81"/>
         <image name="MyPageUpperView" width="414" height="226"/>
+        <image name="NextStepButton" width="255" height="58"/>
+        <image name="right button" width="13" height="19"/>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="AppDefaultColor">
+            <color red="0.45098039215686275" green="0.72156862745098038" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

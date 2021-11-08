@@ -10,18 +10,20 @@ class ReportManager {
     //MARK: - End Points
     
     let reportAPIBaseUrl            = "\(API.baseUrl)report"
+    let blockUserUrl                = "\(API.baseUrl)user/ignore"
     
     func report(
         type: ReportType,
         model: ReportDTO,
         completion: @escaping ((Result<Bool, NetworkError>) -> Void)
     ) {
-        var url: String
+        let url: String
         switch type {
         case .feed: url = reportAPIBaseUrl + "/feed"
         case .reply: url = reportAPIBaseUrl + "/reply"
         case .mall: url = reportAPIBaseUrl + "/mall"
-        case .product: url = reportAPIBaseUrl + "/reply"        // 수정 필요
+        case .product: url = reportAPIBaseUrl + "/product"
+        case .review: url = reportAPIBaseUrl + "/review"
         }
 
         AF.request(
@@ -33,6 +35,7 @@ class ReportManager {
         ).responseData { response in
             switch response.result {
             case .success:
+                print("✏️ ReportManager - report SUCCESS")
                 completion(.success(true))
             case .failure:
                 let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
@@ -40,5 +43,35 @@ class ReportManager {
                 completion(.failure(error))
             }
         }
+    }
+    
+    
+    func blockUser(
+        targetUserId: String,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let parameters: Parameters = ["target_user_id": targetUserId]
+        
+        AF.request(
+            blockUserUrl,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            interceptor: interceptor
+        ).responseData { response in
+            switch response.result {
+            case .success:
+                print("✏️ ReportManager - blockUser SUCCESS")
+                completion(.success(true))
+            case .failure:
+                let error = NetworkError.returnError(statusCode: response.response!.statusCode, responseData: response.data ?? Data())
+                print("❗️ ReportManager - blockUser error: \(error.errorDescription)")
+                completion(.failure(error))
+            }
+            
+        }
+        
+        
     }
 }

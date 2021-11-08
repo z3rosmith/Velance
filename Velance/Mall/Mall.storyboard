@@ -34,7 +34,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="500m"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv7-u5-6IG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv7-u5-6IG" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="91" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -44,7 +44,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="1km"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-3m-I2c" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-3m-I2c" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="182" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -54,7 +54,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="3km"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiZ-wl-QDi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiZ-wl-QDi" customClass="VLGradientButton" customModule="Velance" customModuleProvider="target">
                                                 <rect key="frame" x="273" y="17" width="81" height="36"/>
                                                 <color key="backgroundColor" name="OvalButtonGradientLeft"/>
                                                 <constraints>
@@ -88,13 +88,18 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC2-Gc-15C">
-                                <rect key="frame" x="349" y="178" width="45" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="359" y="178" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="Tdf-q5-06G"/>
-                                    <constraint firstAttribute="height" constant="45" id="wqU-sh-wQE"/>
+                                    <constraint firstAttribute="width" constant="40" id="Tdf-q5-06G"/>
+                                    <constraint firstAttribute="height" constant="40" id="wqU-sh-wQE"/>
                                 </constraints>
+                                <color key="tintColor" name="73B818"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="locationImage"/>
+                                <connections>
+                                    <action selector="pressedCurrentLocationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dH4-fh-F5n"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9An-tr-0qE">
                                 <rect key="frame" x="15" y="762" width="384" height="70"/>
@@ -110,7 +115,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="확인"/>
                                         <connections>
-                                            <segue destination="vpx-jx-Jpb" kind="show" id="aqc-AP-XAm"/>
+                                            <segue destination="vpx-jx-Jpb" kind="show" id="Qmo-dR-01X"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구 북구 산격동 039-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-oU-OZd">
@@ -137,7 +142,7 @@
                             <constraint firstItem="IAZ-lN-sX9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0BU-Ho-PwD"/>
                             <constraint firstItem="OC2-Gc-15C" firstAttribute="top" secondItem="4JX-hZ-raP" secondAttribute="bottom" constant="20" id="28S-4Y-N4d"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IAZ-lN-sX9" secondAttribute="bottom" id="2dS-dJ-ndS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OC2-Gc-15C" secondAttribute="trailing" constant="20" id="7Ab-8D-U4D"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OC2-Gc-15C" secondAttribute="trailing" constant="15" id="7Ab-8D-U4D"/>
                             <constraint firstItem="4JX-hZ-raP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7OC-B6-iL2"/>
                             <constraint firstItem="4JX-hZ-raP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RBc-Up-q3I"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4JX-hZ-raP" secondAttribute="trailing" id="SUu-YB-RhP"/>
@@ -166,14 +171,14 @@
         <!--Mall List View Controller-->
         <scene sceneID="d4k-eK-ZRn">
             <objects>
-                <viewController id="vpx-jx-Jpb" customClass="MallListViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MallListViewController" id="vpx-jx-Jpb" customClass="MallListViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVb-nr-ucG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-za-DDF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnt-tG-HWc">
                                 <rect key="frame" x="259" y="791" width="135" height="55"/>
@@ -848,10 +853,14 @@
     </designables>
     <resources>
         <image name="RegisterButton" width="371" height="58"/>
+        <image name="locationImage" width="40" height="40"/>
         <image name="mapMarker" width="35" height="45"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="388203">
             <color red="0.2196078431372549" green="0.50980392156862742" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="73B818">
+            <color red="0.45098039215686275" green="0.72156862745098038" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppBackgroundColor">
             <color white="0.96078431606292725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

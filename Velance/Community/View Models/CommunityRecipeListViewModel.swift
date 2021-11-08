@@ -3,6 +3,10 @@ import Foundation
 protocol CommunityRecipeListViewModelDelegate: AnyObject {
     
     func didFetchPostList()
+    func didDeleteFeed()
+    func didCompleteReport()
+    func didBlockUser()
+    func failedUserRequest(with error: NetworkError)
 }
 
 /// post는 recipe의 일반적인 용어로 사용하였음
@@ -76,6 +80,54 @@ extension CommunityRecipeListViewModel {
             }
         }
     }
+    
+    
+    func deleteMyRecipeFeed(feedId: Int) {
+        
+        CommunityManager.shared.deleteMyFeed(feedId: feedId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_):
+                self.delegate?.didDeleteFeed()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+    func reportRecipeFeed(type: ReportType.Feed, feedId: Int) {
+        
+        let model = ReportDTO(reason: type.rawValue, feedId: feedId)
+        
+        ReportManager.shared.report(
+            type: .feed(type),
+            model: model
+        ) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+    func blockUser(targetUserId: String) {
+        
+        ReportManager.shared.blockUser(targetUserId: targetUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didBlockUser()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        
+        }
+        
+    }
+    
 }
 
 extension CommunityRecipeViewModel {
@@ -141,5 +193,17 @@ extension CommunityRecipeViewModel {
             return true
         }
         return false
+    }
+    
+    var feedId: Int {
+        return post.feed.feedID
+    }
+    
+    var userUid: String {
+        return post.feed.user.userUid
+    }
+    
+    var userProfileImageUrlString: String? {
+        return post.feed.user.fileFolder?.files[0].path
     }
 }

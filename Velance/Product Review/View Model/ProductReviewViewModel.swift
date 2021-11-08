@@ -5,8 +5,8 @@ protocol ProductReviewDelegate: AnyObject {
     func failedFetchingReviewList(with error: NetworkError)
     
     func didDeleteReview()
-    
-    func didReportProduct()
+    func didCompleteReport()
+    func didBlockUser()
     
     func failedUserRequest(with error: NetworkError)
 }
@@ -66,8 +66,7 @@ class ProductReviewViewModel {
     // 제품에 문제가 있음을 신고
     func reportProduct(type: ReportType.Product) {
         
-        #warning("model DTO replyId 말고 별도로 수정")
-        let model = ReportDTO(reason: type.rawValue, mallId: productId ?? 0)
+        let model = ReportDTO(reason: type.rawValue, productId: productId ?? 0)
         
         reportManager?.report(
             type: .product(type),
@@ -76,7 +75,7 @@ class ProductReviewViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.delegate?.didReportProduct()
+                self.delegate?.didCompleteReport()
             case .failure(let error):
                 self.delegate?.failedUserRequest(with: error)
                
@@ -95,6 +94,46 @@ class ProductReviewViewModel {
             }
         }
     }
+    
+    func reportReview(type: ReportType.Review, reviewId: Int) {
+        
+        let model = ReportDTO(reason: type.rawValue, reviewId: reviewId)
+        
+        reportManager?.report(
+            type: .review(type),
+            model: model
+        ) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        }
+    }
+    
+    
+    func blockUser(targetUserId: String) {
+        
+        reportManager?.blockUser(targetUserId: targetUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.delegate?.didCompleteReport()
+            case .failure(let error):
+                self.delegate?.failedUserRequest(with: error)
+            }
+        
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
     
     func refreshTableView() {
         resetValues()

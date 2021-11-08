@@ -1,11 +1,12 @@
 import UIKit
+import SDWebImage
 
 struct MallPoint {
     
     let x, y, radius: Double
 }
 
-class MallListViewController: UIViewController {
+class MallListViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addMallButton: UIButton!
@@ -14,6 +15,10 @@ class MallListViewController: UIViewController {
     private let viewModel = MallListViewModel()
     
     var mallPoint: MallPoint!
+    
+    static var storyboardName: String {
+        StoryboardName.mall
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,7 @@ class MallListViewController: UIViewController {
         viewModel.fetchMallList(mallPoint: mallPoint)
         setNavBarBackButtonItemTitle()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,7 +45,7 @@ class MallListViewController: UIViewController {
 }
 
 extension MallListViewController {
-    
+     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -74,7 +80,8 @@ extension MallListViewController: UITableViewDataSource {
         cell.mallAddressLabel.text = cellViewModel.mallAddress
         cell.semiVeganLabel.isHidden = cellViewModel.onlyVegan
         cell.veganLabel.isHidden = !cellViewModel.onlyVegan
-        cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: UIImage(systemName: "photo.on.rectangle"))
+        cell.mallImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        cell.mallImageView.sd_setImage(with: cellViewModel.imageURL, placeholderImage: UIImage(named: "placeholderImage"))
         
         cell.menuCountLabel.text = "비건 메뉴: \(cellViewModel.menuCount)개"
         let attributtedString = NSMutableAttributedString(string: cell.menuCountLabel.text!)
@@ -85,7 +92,7 @@ extension MallListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
         
         let cellViewModel = viewModel.mallAtIndex(indexPath.row)
         

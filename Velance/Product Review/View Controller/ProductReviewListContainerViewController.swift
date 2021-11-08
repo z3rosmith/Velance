@@ -27,6 +27,11 @@ class ProductReviewListContainerViewController: UIViewController, Storyboarded {
         configure()
         viewModel.fetchProductList()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -119,7 +124,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         cell.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         cell.productImageView.sd_setImage(
             with: URL(string: productData.fileFolder.files[0].path)!,
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "imagePlaceholder"),
             options: .continueInBackground
         )
         return cell
@@ -185,6 +190,7 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (productCollectionView.contentSize.height - 20 - scrollView.frame.size.height) {
+
             if !viewModel.isFetchingData {
                 viewModel.fetchProductList()
             }

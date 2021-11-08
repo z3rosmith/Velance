@@ -46,6 +46,8 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
             for: indexPath
         ) as? ProductForSimilarTasteCVC
         else { return ProductForSimilarTasteCVC() }
+        
+        if viewModel.similarTasteProductList.count == 0 { return cell }
                 
         let productData = viewModel.similarTasteProductList[indexPath.row]
     
@@ -53,8 +55,6 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
         cell.productImageView.sd_setImage(with: URL(string: productData.fileFolder.files[0].path)!, completed: nil)
         cell.productPriceLabel.text = "\(productData.price)원"
         cell.productRatingLabel.text = String(format: "%.1f", productData.rating)
-        
-
         
         return cell
     }

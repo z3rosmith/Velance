@@ -122,11 +122,15 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
         let cellViewModel = viewModel.postAtIndex(indexPath.item)
         
         // MARK: - configure cell(data)
-        cell.userImageView.image = UIImage(named: "userImage_test") // 준수님이 업데이트하면 수정
+        cell.userImageView.sd_setImage(
+            with: URL(string: cellViewModel.userProfileImageUrlString ?? ""),
+            placeholderImage: UIImage(named: "avatarImage"),
+            options: .continueInBackground
+        )
         
         var inputSources: [InputSource] = []
         if let urls = cellViewModel.imageURLs {
-            let placeholderImage = UIImage(systemName: "photo.on.rectangle")
+            let placeholderImage = UIImage(named: "imagePlaceholder")
             urls.forEach {
                 inputSources.append(SDWebImageSource(url: $0, placeholder: placeholderImage))
             }
@@ -144,9 +148,12 @@ extension CommunityDailyLifeViewController: UICollectionViewDataSource {
         } else {
             cell.likeImageView.image = UIImage(named: "ThumbLogoInactive")
         }
+        cell.feedId = cellViewModel.feedId
+        cell.createdUserUid = cellViewModel.userUid
         
         // MARK: - configure cell(no data)
         cell.parentVC = self
+        cell.delegate = self
         cell.likeButton.tag = indexPath.item
         cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
         
@@ -200,7 +207,7 @@ extension CommunityDailyLifeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
-    
+
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)
         collectionView.reloadData()
@@ -219,6 +226,25 @@ extension CommunityDailyLifeViewController: CommunityDailyLifeListViewModelDeleg
         vc.delegate = self
         self.present(vc, animated: true)
     }
+    
+    func didDeleteFeed() {
+        showSimpleBottomAlert(with: "글 삭제 완료 🎉")
+        collectionView.reloadData()
+    }
+    
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func failedUserRequest(with error: NetworkError) {
+        showSimpleBottomAlert(with: error.errorDescription)
+    }
+    
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "처리가 완료되었습니다. 피드 새로 고침을 해주세요.")
+        collectionView.reloadData()
+    }
+    
 }
 
 // 관심사 선택 Delegate
@@ -235,4 +261,21 @@ extension CommunityDailyLifeViewController: ChooseInterestDelegate {
         }
         viewModel.refreshPostList(interestTypeIDs: self.interestOptions, viewOnlyFollowing: viewOnlyFollowing)
     }
+}
+
+extension CommunityDailyLifeViewController: CommunityFeedCVCDelegate {
+    
+    func didChooseToReportUser(type: ReportType.Feed, feedId: Int) {
+        viewModel.reportDailyLifeFeed(type: type, feedId: feedId)
+    }
+    
+    func didChooseToBlockUser(userId: String) {
+        viewModel.blockUser(targetUserId: userId)
+    }
+    
+    func didChooseToDeleteMyFeed(feedId: Int) {
+        viewModel.deleteMyDailyLifeFeed(feedId: feedId)
+    }
+    
+
 }

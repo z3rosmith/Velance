@@ -2,7 +2,9 @@ import UIKit
 import ImageSlideshow
 
 protocol ProductReviewTableViewCellDelegate: AnyObject {
-    func didChooseToReportUser(reviewId: Int)
+    func didChooseToReportUser(type: ReportType.Review, reviewId: Int)
+    func didChooseToBlockUser(userId: String)
+    func didChooseToDeleteMyReview(reviewId: Int)
 }
 
 class ProductReviewTableViewCell: UITableViewCell {
@@ -17,6 +19,7 @@ class ProductReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     var reviewId: Int?
+    var createdBy: String?
     
     weak var currentVC: UIViewController?
     weak var delegate: ProductReviewTableViewCellDelegate?
@@ -49,29 +52,89 @@ class ProductReviewTableViewCell: UITableViewCell {
 
     @objc private func pressedShowMoreButton() {
         
-        let reportAction = UIAlertAction(
-            title: "사용자 신고하기",
+        guard let createdBy = createdBy, let reviewId = reviewId else { return }
+        
+        if createdBy == User.shared.userUid {
+            
+            let deleteAction = UIAlertAction(
+                title: "내 리뷰 삭제하기",
+                style: .destructive
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.currentVC?.presentAlertWithConfirmAction(
+                    title: "리뷰를 삭제하시겠어요?",
+                    message: ""
+                ) { selectedOk in
+                    if selectedOk {
+                        self.delegate?.didChooseToDeleteMyReview(reviewId: reviewId)
+                    }
+                }
+            }
+            let actionSheet = UIHelper.createActionSheet(with: [deleteAction], title: nil)
+            currentVC?.present(actionSheet, animated: true)
+            
+        } else {
+            
+            let reportAction = UIAlertAction(
+                title: "사용자 신고하기",
+                style: .default
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.presentReportReviewActionSheet()
+            }
+            
+            let blockAction = UIAlertAction(
+                title: "해당 사용자의 글 더 이상 보지 않기",
+                style: .default
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.currentVC?.presentAlertWithConfirmAction(
+                    title: "해당 사용자의 글 보지 않기",
+                    message: "해당 사용자의 게시글이 더는 보이지 않도록 설정하시겠습니까? 한 번 설정하면 해제할 수 없습니다."
+                ) { selectedOk in
+                    if selectedOk {
+                        self.delegate?.didChooseToBlockUser(userId: createdBy)
+                    }
+                }
+                
+            }
+            let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
+
+            currentVC?.present(actionSheet, animated: true)
+        }
+      
+    }
+    
+    private func presentReportReviewActionSheet() {
+    
+        let violentReview = UIAlertAction(
+            title: ReportType.Review.violentReview.rawValue,
             style: .default
         ) { [weak self] _ in
-            guard let self = self else { return }
-            guard let reviewId = self.reviewId else { return }
-            self.delegate?.didChooseToReportUser(reviewId: reviewId)
+            self?.reportUser(reportType: ReportType.Review.violentReview)
         }
         
-        let blockAction = UIAlertAction(
-            title: "해당 사용자의 글 더 이상 보지 않기",
+        let sexualReview = UIAlertAction(
+            title: ReportType.Review.sexualReview.rawValue,
             style: .default
         ) { [weak self] _ in
-            guard let self = self else { return }
-            
+            self?.reportUser(reportType: ReportType.Review.sexualReview)
         }
-        let actionSheet = UIHelper.createActionSheet(with: [reportAction, blockAction], title: nil)
-
+        
+        let inappropriateReview = UIAlertAction(
+            title: ReportType.Review.inappropriateReview.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.reportUser(reportType: ReportType.Review.inappropriateReview)
+        }
+        
+        let actionSheet = UIHelper.createActionSheet(with: [violentReview, sexualReview, inappropriateReview], title: "신고 사유 선택")
         currentVC?.present(actionSheet, animated: true)
     }
     
-    func reportUser() {
-        
+    func reportUser(reportType: ReportType.Review) {
+        guard let reviewId = self.reviewId else { return }
+        self.delegate?.didChooseToReportUser(type: reportType, reviewId: reviewId)
     }
     
     func blockUser() {
@@ -113,5 +176,6 @@ class ProductReviewTableViewCell: UITableViewCell {
 
         profileImageView.layer.borderColor = UIColor.darkGray.cgColor
         profileImageView.contentMode = .scaleAspectFit
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
 }

@@ -76,7 +76,45 @@ extension MallViewController {
     
     // 더보기 버튼
     @objc private func pressedOptionsBarButtonItem() {
+        
+        let reportAction = UIAlertAction(
+            title: "신고하기",
+            style: .default
+        ) { [weak self] _ in self?.presentReportProductActionSheet() }
+        let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
+        present(actionSheet, animated: true)
+    }
+    
+    private func presentReportProductActionSheet() {
+        
+        let incorrectMallAddress = UIAlertAction(
+            title: ReportType.Mall.incorrectMallAddress.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.incorrectMallAddress)
+        }
+        
+        let incorrectMallName = UIAlertAction(
+            title: ReportType.Mall.incorrectMallName.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.incorrectMallName)
+        }
+        
+        let inappropriatePicture = UIAlertAction(
+            title: ReportType.Mall.inappropriatePicture.rawValue,
+            style: .default
+        ) { [weak self] _ in
+            self?.report(reportType: ReportType.Mall.inappropriatePicture)
+        }
 
+        
+        let actionSheet = UIHelper.createActionSheet(with: [incorrectMallAddress, incorrectMallName, inappropriatePicture], title: "신고 사유 선택")
+        present(actionSheet, animated: true)
+    }
+    
+    private func report(reportType: ReportType.Mall) {
+        viewModel.reportReview(type: reportType)
     }
 }
 
@@ -113,6 +151,9 @@ extension MallViewController: MallViewModelDelegate {
         showSimpleBottomAlert(with: error.errorDescription)
     }
     
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
 }
 
 
@@ -145,11 +186,11 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.menuImageView.sd_setImage(
             with: URL(string: menuData.fileFolder.files[0].path),
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "placeholderImage"),
             options: .continueInBackground
         )
         cell.menuNameLabel.text = menuData.name
-        cell.menuCautionLabel.text = "\(menuData.caution ?? "없음")"
+        cell.menuCautionLabel.text = "\(menuData.caution ?? "주의사항 별도 등록되지 않음")"
         cell.menuPriceLabel.text = "\(menuData.price)원"
         
         cell.likeButton.setLeftImage(image: UIImage(named: "ThumbLogo")!)
@@ -159,7 +200,6 @@ extension MallViewController: UITableViewDelegate, UITableViewDataSource {
         // 특정 메뉴에 대해 "좋아요"를 했을 때만 "Y"가 날라오고 아니면 속성 자체가 안 날라옴
         if let _ = menuData.isLike {
             cell.likeButton.isSelected = true
-       
         } else {
             cell.likeButton.isSelected = false
         }
@@ -278,7 +318,7 @@ extension MallViewController {
         mallThumbnailImageView.image = UIImage(named: "image_test")
         mallThumbnailImageView.sd_setImage(
             with: mallThumbnailUrl,
-            placeholderImage: nil,
+            placeholderImage: UIImage(named: "placeholderImage"),
             options: .continueInBackground
         )
     }

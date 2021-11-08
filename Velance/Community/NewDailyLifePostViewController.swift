@@ -62,7 +62,8 @@ extension NewDailyLifePostViewController {
             }
         }
         
-        
+        print("✏️ regionOptionId: \(regionOptionId)")
+
         presentAlertWithConfirmAction(
             title: "피드 업로드를 하시겠습니까?",
             message: ""
@@ -73,11 +74,10 @@ extension NewDailyLifePostViewController {
     
     func uploadNewDailyLife() {
         
-        #warning("백엔드 수정되면 위치 정보 넣어서 DTO 생성 및 보내기")
-        
         let model = NewDailyLifeDTO(
             title: "",
             contents: postTextView.text!,
+            regionIds: regionOptionId,
             files: userSelectedImagesInDataFormat!
         )
         
@@ -85,7 +85,7 @@ extension NewDailyLifePostViewController {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.showSimpleBottomAlert(with: "피드 업로드 성공🎉")
+                self.showSimpleBottomAlert(with: "피드 업로드 성공 🎉")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.navigationController?.popViewController(animated: true)
                 }

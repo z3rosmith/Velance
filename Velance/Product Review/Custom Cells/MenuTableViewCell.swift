@@ -40,6 +40,7 @@ class MenuTableViewCell: UITableViewCell {
     
     func configureLikeButton() {
         likeButton.addTarget(self, action: #selector(pressedMenuLikeButton), for: .touchUpInside)
+        likeButton.addBounceAnimation()
     }
     
     @objc private func pressedMenuLikeButton() {

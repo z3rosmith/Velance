@@ -41,6 +41,19 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         bottomView.backgroundColor = .white
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+        viewModel?.fetchReviewList()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    
     func setUpViewModel() {
         viewModel = ProductReviewViewModel(
             productManager: ProductManager(),
@@ -49,16 +62,6 @@ class ProductReviewViewController: UIViewController, Storyboarded {
         )
         viewModel?.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel?.fetchReviewList()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
 }
 
 //MARK: - IBActions & Target Methods
@@ -70,12 +73,12 @@ extension ProductReviewViewController {
         let reportAction = UIAlertAction(
             title: "신고하기",
             style: .default
-        ) { [weak self] _ in self?.presentReportReviewActionSheet() }
+        ) { [weak self] _ in self?.presentReportProductActionSheet() }
         let actionSheet = UIHelper.createActionSheet(with: [reportAction], title: nil)
         present(actionSheet, animated: true)
     }
     
-    private func presentReportReviewActionSheet() {
+    private func presentReportProductActionSheet() {
         
         let incorrectProductPicture = UIAlertAction(
             title: ReportType.Product.incorrectProductPicture.rawValue,
@@ -128,8 +131,13 @@ extension ProductReviewViewController: ProductReviewDelegate {
         reviewTableView.refreshControl?.endRefreshing()
     }
     
-    func didReportProduct() {
-        showSimpleBottomAlert(with: "신고 처리가 완료되었어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    func didCompleteReport() {
+        showSimpleBottomAlert(with: "신고 처리가 완료됐어요! 벨런스 팀이 검토 후 조치할게요.👍")
+    }
+    
+    func didBlockUser() {
+        showSimpleBottomAlert(with: "해당 사용자를 차단했어요.")
+        reviewTableView.reloadData()
     }
     
     func didDeleteReview() {
@@ -142,6 +150,24 @@ extension ProductReviewViewController: ProductReviewDelegate {
     }
     
     
+}
+
+//MARK: - ProductReviewTableViewCellDelegate
+
+extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
+
+    
+    func didChooseToReportUser(type: ReportType.Review, reviewId: Int) {
+        viewModel?.reportReview(type: type, reviewId: reviewId)
+    }
+    
+    func didChooseToBlockUser(userId: String) {
+        viewModel?.blockUser(targetUserId: userId)
+    }
+    
+    func didChooseToDeleteMyReview(reviewId: Int) {
+        viewModel?.deleteMyReview(reviewId: reviewId)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -167,13 +193,14 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
         cell.delegate = self
         
         cell.reviewId = reviewData.reviewId
+        cell.createdBy = reviewData.user.userUid
         cell.reviewLabel.text = reviewData.contents
         cell.ratingView.setStarsRating(rating: reviewData.rating)
         cell.nicknameLabel.text = reviewData.user.displayName
         
         cell.profileImageView.sd_setImage(
             with: URL(string: reviewData.user.fileFolder?.files[0].path ?? ""),
-            placeholderImage: UIImage(systemName: "person"),
+            placeholderImage: UIImage(named: "avatarImage"),
             options: .continueInBackground
         )
 
@@ -218,17 +245,6 @@ extension ProductReviewViewController: UITableViewDelegate, UITableViewDataSourc
     @objc private func refreshReviewTableView() {
         viewModel?.refreshTableView()
     }
-}
-
-//MARK: - ProductReviewTableViewCellDelegate
-
-extension ProductReviewViewController: ProductReviewTableViewCellDelegate {
-    
-    func didChooseToReportUser(reviewId: Int) {
-        viewModel?.deleteMyReview(reviewId: reviewId)
-    }
-
-
 }
 
 

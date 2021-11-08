@@ -202,6 +202,11 @@ extension InputUserInfoForRegisterViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
+    @objc private func pressedSettingsButton() {
+        let vc = ChangePasswordViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 //MARK: - UI Configuration & Initialization
@@ -219,6 +224,18 @@ extension InputUserInfoForRegisterViewController {
         configureAllergyOptionButtons()
         configureDoneButton()
         configureTermsGuideStackView()
+        
+        if isForEditingUser {
+            let settingsBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "gearshape"),
+                style: .plain,
+                target: self,
+                action: #selector(pressedSettingsButton)
+            )
+            
+            navigationItem.rightBarButtonItem = settingsBarButtonItem
+        }
+        
     }
     
     private func configureLabels() {

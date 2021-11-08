@@ -160,6 +160,28 @@ class ProductReviewHeaderView: UIView {
     ]
     
     
+    let blurView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.alpha = 0.8
+        blurView.clipsToBounds = true
+        blurView.layer.cornerRadius = 15
+        return blurView
+    }()
+    
+    let noAllergyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "알러지 유발 성분이 없거나 정보가 아직 업데이트 되지 않았어요.\nVelance 팀이 검토 후 업데이트 하도록 할게요 :)"
+        label.numberOfLines = 3
+        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        label.textColor = .darkGray
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.75
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
     //MARK: - Configuration
     
     func configure(productName: String, rating: Int, price: Int, productAllergyGroup: [ProductAllergyGroups]?) {
@@ -169,12 +191,31 @@ class ProductReviewHeaderView: UIView {
         ratingLabel.text = "\(Double(rating))"
         estimatedPriceLabel.text = "\(price) 원"
         
+        makeConstraints()
+        
         if let productAllergyGroup = productAllergyGroup {
             productAllergyGroup.forEach { productAllergy in
                 self.allergyButtonArray[productAllergy.allergyType.allergyTypeId].isSelected.toggle()
             }
+            if productAllergyGroup.isEmpty {
+                addBlurView()
+            }
         }
-        makeConstraints()
+    }
+    
+    func addBlurView() {
+        
+        allergyStackContainerView.addSubview(blurView)
+        allergyStackContainerView.addSubview(noAllergyLabel)
+
+        blurView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(4)
+        }
+        
+        noAllergyLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+
     }
     
     func makeConstraints() {
@@ -235,10 +276,7 @@ class ProductReviewHeaderView: UIView {
         }
         
 
-
-
-
-
+    
     }
 }
 
