@@ -123,13 +123,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신과 입맛이 비슷한 사용자의 추천!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzd-iQ-1hq">
-                                            <rect key="frame" x="24" y="14" width="376" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="24" y="14" width="376" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-V3-cum" userLabel="Similar Product Collection View">
-                                            <rect key="frame" x="20" y="46.5" width="394" height="93"/>
+                                            <rect key="frame" x="20" y="50" width="394" height="92"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBQ-4T-gIm">
                                                 <size key="itemSize" width="99" height="77"/>
@@ -139,7 +139,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductForSimilarTasteCVC" id="Iyk-8P-xNf" customClass="ProductForSimilarTasteCVC" customModule="Velance" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="8" width="99" height="77"/>
+                                                    <rect key="frame" x="0.0" y="7.5" width="99" height="77"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="by2-Vm-gcF">
                                                         <rect key="frame" x="0.0" y="0.0" width="99" height="77"/>
@@ -150,8 +150,8 @@
                                             </cells>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기있는 제품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6s-2d-AsD">
-                                            <rect key="frame" x="24" y="155.5" width="376" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="24" y="158" width="376" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -166,7 +166,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="w6s-2d-AsD" secondAttribute="trailing" constant="6" id="mhw-aq-IIp"/>
                                         <constraint firstItem="gzd-iQ-1hq" firstAttribute="leading" secondItem="90N-AY-JcT" secondAttribute="leadingMargin" constant="16" id="p56-Kn-swV"/>
                                         <constraint firstItem="ZkL-V3-cum" firstAttribute="leading" secondItem="90N-AY-JcT" secondAttribute="leading" constant="20" id="x6B-3l-lEf"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="w6s-2d-AsD" secondAttribute="bottom" constant="6" id="y1l-xZ-VMe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="w6s-2d-AsD" secondAttribute="bottom" id="y1l-xZ-VMe"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="categoryLabel" destination="gzd-iQ-1hq" id="lvO-Ga-42Y"/>

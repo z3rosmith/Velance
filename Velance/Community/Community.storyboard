@@ -283,16 +283,16 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCW-mJ-eg4" customClass="VelanceInputBar" customModule="Velance" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="5" width="384" height="50"/>
+                                        <rect key="frame" x="10" y="5" width="394" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VCW-mJ-eg4" firstAttribute="top" secondItem="k9M-jn-ZqT" secondAttribute="top" constant="5" id="EJR-Gd-S1K"/>
-                                    <constraint firstItem="VCW-mJ-eg4" firstAttribute="leading" secondItem="k9M-jn-ZqT" secondAttribute="leading" constant="15" id="EiG-UO-k8q"/>
+                                    <constraint firstItem="VCW-mJ-eg4" firstAttribute="leading" secondItem="k9M-jn-ZqT" secondAttribute="leading" constant="10" id="EiG-UO-k8q"/>
                                     <constraint firstAttribute="height" priority="250" constant="60" id="Jrx-Zc-zKn"/>
-                                    <constraint firstAttribute="trailing" secondItem="VCW-mJ-eg4" secondAttribute="trailing" constant="15" id="LCJ-46-Ed8"/>
+                                    <constraint firstAttribute="trailing" secondItem="VCW-mJ-eg4" secondAttribute="trailing" constant="10" id="LCJ-46-Ed8"/>
                                     <constraint firstAttribute="bottom" secondItem="VCW-mJ-eg4" secondAttribute="bottom" constant="5" id="QnJ-pg-nw1"/>
                                 </constraints>
                             </view>

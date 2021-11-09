@@ -42,12 +42,12 @@ class UIHelper {
         let segmentioStates = SegmentioStates(
             defaultState: SegmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont.systemFont(ofSize: 14, weight: .semibold),
+                titleFont: UIFont.systemFont(ofSize: 16, weight: .medium),
                 titleTextColor: .lightGray
             ),
             selectedState: SegmentioState(
                 backgroundColor: .clear,
-                titleFont: UIFont.systemFont(ofSize: 14, weight: .semibold),
+                titleFont: UIFont.systemFont(ofSize: 16, weight: .medium),
                 titleTextColor: .black
             ),
             highlightedState: SegmentioState(
@@ -120,5 +120,12 @@ class UIHelper {
         footerView.addSubview(spinner)
         spinner.startAnimating()
         return footerView
+    }
+    
+    static func decimalWon(value: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))! + "원"
+        return result
     }
 }

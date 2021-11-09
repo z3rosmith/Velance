@@ -118,7 +118,10 @@ extension ProductReviewListContainerViewController: UICollectionViewDelegate, UI
         let productData = viewModel.productList[indexPath.row]
         
         cell.productTitleLabel.text = productData.name
-        cell.productPriceLabel.text = "\(productData.price)원"
+        
+        cell.productPriceLabel.text = "\(UIHelper.decimalWon(value: productData.price))"
+        
+        
         cell.ratingStackView.setStarsRating(rating: Int(productData.rating))
         
         cell.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
@@ -263,4 +266,7 @@ extension ProductReviewListContainerViewController {
             self.viewModel.selectedProductCategory = segmentIndex + 1
         }
     }
+    
+
+    
 }

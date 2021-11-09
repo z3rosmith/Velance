@@ -53,7 +53,7 @@ extension ProductCollectionReusableView: UICollectionViewDataSource {
     
         cell.productTitleLabel.text = productData.name
         cell.productImageView.sd_setImage(with: URL(string: productData.fileFolder.files[0].path)!, completed: nil)
-        cell.productPriceLabel.text = "\(productData.price)원"
+        cell.productPriceLabel.text = UIHelper.decimalWon(value: productData.price)
         cell.productRatingLabel.text = String(format: "%.1f", productData.rating)
         
         return cell
@@ -129,7 +129,7 @@ extension ProductCollectionReusableView {
         [categoryLabel, popularProductLabel].forEach { label in
             label?.textColor = .black
             label?.textAlignment = .left
-            label?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            label?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         }
     }
     

@@ -15,7 +15,6 @@ class ProductForSimilarTasteCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("✏️ awakeFromNib ")
         configure()
     }
     

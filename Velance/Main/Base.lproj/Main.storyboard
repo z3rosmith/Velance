@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,30 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-o3-Mp9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="797"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </containerView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pa-cWO" userLabel="Tab View">
-                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="797" width="414" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Gh-lXJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Ai-9ay" userLabel="Home Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="75"/>
                                                 <state key="normal" image="Tab1comunity_active"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-bL-xyT" userLabel="Shop Button">
-                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="70"/>
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="75"/>
                                                 <state key="normal" image="Tab2mall_active"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-5D-Zsz">
-                                                <rect key="frame" x="207" y="0.0" width="103.5" height="70"/>
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="75"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Tab3product_active"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-Ie-bKF">
-                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="70"/>
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="75"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Tab4mypage_active"/>
                                             </button>
@@ -52,8 +52,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="2tj-Gh-lXJ" firstAttribute="top" secondItem="Hm3-pa-cWO" secondAttribute="top" id="3IL-Ap-xUw"/>
-                                    <constraint firstAttribute="bottom" secondItem="2tj-Gh-lXJ" secondAttribute="bottom" id="EaI-lB-6di"/>
-                                    <constraint firstAttribute="height" constant="70" id="Frl-e1-ht8"/>
+                                    <constraint firstAttribute="bottom" secondItem="2tj-Gh-lXJ" secondAttribute="bottom" constant="-10" id="EaI-lB-6di"/>
+                                    <constraint firstAttribute="height" constant="65" id="Frl-e1-ht8"/>
                                     <constraint firstItem="2tj-Gh-lXJ" firstAttribute="leading" secondItem="Hm3-pa-cWO" secondAttribute="leading" id="WPs-Bh-8Gk"/>
                                     <constraint firstAttribute="trailing" secondItem="2tj-Gh-lXJ" secondAttribute="trailing" id="sKs-EH-4PF"/>
                                 </constraints>

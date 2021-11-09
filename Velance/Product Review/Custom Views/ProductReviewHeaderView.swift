@@ -53,7 +53,7 @@ class ProductReviewHeaderView: UIView {
     
     let estimatedPriceLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .black
         return label
     }()
@@ -71,8 +71,8 @@ class ProductReviewHeaderView: UIView {
     let allergyGuideLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
-        label.font = .systemFont(ofSize: 13, weight: .semibold)
-        label.text = "이 제품에 포함된 알러지 유발성분 정보"
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.text = "제품에 포함된 알러지 유발성분 정보"
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
@@ -165,22 +165,29 @@ class ProductReviewHeaderView: UIView {
     let blurView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .regular)
         let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.alpha = 0.8
+        blurView.alpha = 0.9
         blurView.clipsToBounds = true
         blurView.layer.cornerRadius = 15
         return blurView
     }()
+//
+//    let noAllergyLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "알러지 유발 성분이 없거나 정보가 아직 업데이트 되지 않았어요.\nVelance 팀이 검토 후 업데이트 하도록 할게요 :)"
+//        label.numberOfLines = 3
+//        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+//        label.textColor = .darkGray
+//        label.adjustsFontSizeToFitWidth = true
+//        label.minimumScaleFactor = 0.75
+//        label.textAlignment = .center
+//        return label
+//    }()
     
-    let noAllergyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "알러지 유발 성분이 없거나 정보가 아직 업데이트 되지 않았어요.\nVelance 팀이 검토 후 업데이트 하도록 할게요 :)"
-        label.numberOfLines = 3
-        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        label.textColor = .darkGray
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.75
-        label.textAlignment = .center
-        return label
+    let noAllergyImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "noAllergyInfoImage")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     
@@ -191,7 +198,7 @@ class ProductReviewHeaderView: UIView {
         titleLabel.text = productName
         ratingStackView.setStarsRating(rating: rating)
         ratingLabel.text = "\(Double(rating))"
-        estimatedPriceLabel.text = "\(price) 원"
+        estimatedPriceLabel.text = UIHelper.decimalWon(value: price)
         
         makeConstraints()
         
@@ -208,16 +215,16 @@ class ProductReviewHeaderView: UIView {
     func addBlurView() {
         
         allergyStackContainerView.addSubview(blurView)
-        allergyStackContainerView.addSubview(noAllergyLabel)
+        allergyStackContainerView.addSubview(noAllergyImageView)
 
         blurView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(4)
         }
         
-        noAllergyLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        noAllergyImageView.snp.makeConstraints { make in
+            make.center.equalToSuperview().inset(2)
         }
-
+    
     }
     
     func makeConstraints() {
@@ -254,8 +261,8 @@ class ProductReviewHeaderView: UIView {
         }
 
         allergyGuideLabel.snp.makeConstraints { make in
-            make.top.equalTo(ratingStackView.snp.bottom).offset(12)
-            make.left.right.equalToSuperview().inset(Metrics.labelPadding)
+            make.top.equalTo(ratingStackView.snp.bottom).offset(15)
+            make.left.right.equalToSuperview().inset(Metrics.labelPadding + 3)
         }
         
     
