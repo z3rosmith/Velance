@@ -160,8 +160,8 @@ public struct PagingOptions {
             insets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         )
 
-        font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
-        selectedFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
+        font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)
+        selectedFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)
 
         textColor = UIColor.black
         selectedTextColor = UIColor(red: 3 / 255, green: 125 / 255, blue: 233 / 255, alpha: 1)
