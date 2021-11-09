@@ -17,11 +17,15 @@ class CommunityFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var likeImageView: UIImageView!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var userVegetarianTypeLabel: UILabel!
     @IBOutlet weak var recipeLabledView: UIView!
+    
+    @IBOutlet weak var likeArea: UIView!
+    @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentArea: UIView!
+    @IBOutlet weak var commentButton: UIButton!
+    
     
     weak var parentVC: UIViewController?
     weak var delegate: CommunityFeedCVCDelegate?

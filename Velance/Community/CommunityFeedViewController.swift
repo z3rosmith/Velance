@@ -60,7 +60,7 @@ extension CommunityFeedViewController {
     }
     
     @objc private func didTapFollowButton(_ sender: UIButton) {
-        if !viewModel.isFollowing {
+        if !viewModel.isDoingFollow {
             if sender.isSelected {
                 // 팔로우중이므로 언팔
                 viewModel.unfollowUser(targetUID: userUID)
@@ -98,6 +98,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
             headerView.followerCountLabel.text = "\(viewModel.followers)"
             headerView.followingCountLabel.text = "\(viewModel.followings)"
             headerView.followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+            headerView.followButton.isSelected = viewModel.isFollow
             followButton = headerView.followButton
             
             if userUID == User.shared.userUid {
@@ -172,6 +173,16 @@ extension CommunityFeedViewController: CommunityFeedViewModelDelegate {
     
     func didUnfollow() {
         followButton?.isSelected = false
+        viewModel.fetchProfile(userUID: userUID)
+    }
+    
+    func didFailFollow() {
+        followButton?.isSelected = false
+        viewModel.fetchProfile(userUID: userUID)
+    }
+    
+    func didFailUnfollow() {
+        followButton?.isSelected = true
         viewModel.fetchProfile(userUID: userUID)
     }
 }

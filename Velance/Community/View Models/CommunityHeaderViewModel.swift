@@ -3,6 +3,8 @@ import Foundation
 protocol CommunityHeaderViewModelDelegate: AnyObject {
     
     func didFetchUsers()
+    func didFollow()
+    func didUnfollow()
 }
 
 class CommunityHeaderViewModel {
@@ -10,6 +12,8 @@ class CommunityHeaderViewModel {
     weak var delegate: CommunityHeaderViewModelDelegate?
     
     private var recommendedUsers: [UserDisplayModel] = []
+    
+    var isDoingFollow: Bool = false
     
     var numberOfUsers: Int {
         return recommendedUsers.count
@@ -29,6 +33,10 @@ class CommunityHeaderCellViewModel {
         self.user = user
     }
     
+    var userUID: String {
+        return user.userUid
+    }
+    
     var username: String {
         return user.displayName
     }
@@ -43,6 +51,10 @@ class CommunityHeaderCellViewModel {
         }
         return nil
     }
+    
+    var isFollow: Bool {
+        return user.isFollowing ?? false
+    }
 }
 
 extension CommunityHeaderViewModel {
@@ -52,9 +64,36 @@ extension CommunityHeaderViewModel {
             switch result {
             case .success(let data):
                 self?.recommendedUsers = data
+                self?.delegate?.didFetchUsers()
             case .failure:
                 return
             }
+        }
+    }
+    
+    func followUser(targetUID: String) {
+        isDoingFollow = true
+        CommunityManager.shared.folllowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didFollow()
+            case .failure:
+                return
+            }
+            self?.isDoingFollow = false
+        }
+    }
+    
+    func unfollowUser(targetUID: String) {
+        isDoingFollow = true
+        CommunityManager.shared.unfollowUser(targetUID: targetUID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didUnfollow()
+            case .failure:
+                return
+            }
+            self?.isDoingFollow = false
         }
     }
 }

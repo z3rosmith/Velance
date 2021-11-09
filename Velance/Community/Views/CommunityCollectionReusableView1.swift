@@ -18,7 +18,6 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     @IBOutlet weak var viewFollowingButton: UIButton!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var chooseInterestsButton: VLGradientButton!
-  
     @IBOutlet weak var chooseRegionButton: VLGradientButton!
     @IBOutlet weak var recommandLabel: UILabel!
     @IBOutlet weak var similarUserCollectionView: UICollectionView!
@@ -32,7 +31,7 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     private let categoryReuseIdentifier = "CategoryCollectionViewCell"
     private let similarUserReuseIdentifier = "SimilarUserCollectionViewCell"
     
-    private var selectedIndex: Int = 0
+    var selectedIndex: Int?
     
     weak var delegate: CommunityCollectionHeaderViewDelegate?
     
@@ -82,8 +81,6 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
         }
         
         similarUserCollectionView.register(UINib(nibName: "SimilarUserCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: similarUserReuseIdentifier)
-        let indexPathForFirst = IndexPath(item: 0, section: 0)
-        categoryCollectionView.selectItem(at: indexPathForFirst, animated: false, scrollPosition: .left)
     }
     
     @IBAction func viewFollowingButtonTapped(_ sender: UIButton) {
@@ -98,9 +95,31 @@ class CommunityCollectionReusableView1: UICollectionReusableView {
     @objc private func pressedChooseRegionButton() {
         delegate?.didSelectChooseRegionButton()
     }
+    
+    @objc private func didTapFollowButton(_ sender: UIButton) {
+        let cellViewModel = viewModel.userAtIndex(sender.tag)
+        
+        if !viewModel.isDoingFollow {
+            if sender.isSelected {
+                // 팔로우중이므로 언팔
+                viewModel.unfollowUser(targetUID: cellViewModel.userUID)
+            } else {
+                viewModel.followUser(targetUID: cellViewModel.userUID)
+            }
+        }
+        sender.isSelected.toggle()
+    }
 }
 
 extension CommunityCollectionReusableView1: CommunityHeaderViewModelDelegate {
+    
+    func didFollow() {
+        viewModel.fetchRecommendedUser(byTaste: delegate is CommunityRecipeViewController)
+    }
+    
+    func didUnfollow() {
+        viewModel.fetchRecommendedUser(byTaste: delegate is CommunityRecipeViewController)
+    }
     
     func didFetchUsers() {
         similarUserCollectionView.reloadData()
@@ -125,9 +144,11 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
             cell.layer.cornerRadius = categoryCellHeight/2
             
             if indexPath.item == selectedIndex {
+                print("true indexPath.item: \(indexPath.item)")
                 cell.backgroundColor = UIColor(named: Colors.foodCategorySelectedColor)!
                 cell.categoryLabel.textColor = UIColor(named: Colors.appBackgroundColor)!
             } else {
+                print("false indexPath.item: \(indexPath.item)")
                 cell.backgroundColor = .clear
                 cell.categoryLabel.textColor = .gray
             }
@@ -143,7 +164,11 @@ extension CommunityCollectionReusableView1: UICollectionViewDataSource {
             cell.usernameLabel.text = cellViewModel.username
             cell.userStyleLabel.text = cellViewModel.userType
             
-            return cell // 팔로잉 버튼 아직..
+            cell.followButton.tag = indexPath.item
+            cell.followButton.addTarget(self, action: #selector(didTapFollowButton(_:)), for: .touchUpInside)
+            cell.followButton.isSelected = cellViewModel.isFollow
+            
+            return cell
         }
     }
 }
@@ -152,19 +177,10 @@ extension CommunityCollectionReusableView1: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
-            guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
-            cell.backgroundColor = UIColor(named: Colors.foodCategorySelectedColor)!
-            cell.categoryLabel.textColor = UIColor(named: Colors.appBackgroundColor)!
+            print("didSelectItemAt index: \(indexPath.item)")
             selectedIndex = indexPath.item
+            collectionView.reloadData()
             delegate?.didSelectCategoryItemAt(indexPath.item)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if collectionView == categoryCollectionView {
-            guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
-            cell.backgroundColor = .clear
-            cell.categoryLabel.textColor = .gray
         }
     }
 }

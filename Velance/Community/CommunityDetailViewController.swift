@@ -78,6 +78,16 @@ extension CommunityDetailViewController {
         tableHeaderView.imageSlideShow.setImageInputs(inputSources)
         tableHeaderView.likeButton.setTitle("\(viewModel.likeCount)", for: .normal)
         tableHeaderView.commentButton.setTitle("\(viewModel.repliesCount)", for: .normal)
+        
+        if viewModel.isLike {
+            tableHeaderView.likeImageView.image = UIImage(named: "ThumbLogoActive")
+        } else {
+            tableHeaderView.likeImageView.image = UIImage(named: "ThumbLogoInactive")
+        }
+        print("configure")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(didTapLike(gestureRecognizer:)))
+        tableHeaderView.likeImageView.addGestureRecognizer(tapGR)
+        tableHeaderView.likeImageView.isUserInteractionEnabled = true
     }
     
     private func configureViewModel() {
@@ -91,6 +101,18 @@ extension CommunityDetailViewController {
     
     @objc private func didTapMoreButton(_ sender: UIButton) {
         print("moreButton Tapped.")
+    }
+    
+    @objc private func didTapLike(gestureRecognizer: UIGestureRecognizer) {
+        print("dd")
+        if tableHeaderView.likeImageView.image == UIImage(named: "ThumbLogoActive") {
+            // unlike하기
+            print("unlike하기")
+            viewModel.unlikeFeed()
+        } else {
+            print("like하기")
+            viewModel.likeFeed()
+        }
     }
 }
 
@@ -159,9 +181,16 @@ extension CommunityDetailViewController: InputBarAccessoryViewDelegate {
 }
 
 extension CommunityDetailViewController: CommunityDetailViewModelDelegate {
-
+    
+    func didLike() {
+        viewModel.fetchPostInfo(isRecipe: isRecipe, id: id)
+    }
+    
+    func didUnlike() {
+        viewModel.fetchPostInfo(isRecipe: isRecipe, id: id)
+    }
+    
     func didPostReply() {
-        print(#function)
         viewModel.refreshReplies()
     }
     

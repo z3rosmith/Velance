@@ -7,13 +7,15 @@ struct UserDisplayModel: Decodable {
     let fileFolder: FileFolder?
     let userTasteGroups: [UserTasteGroups]?
     let userInterestGroups: [UserInterestGroups]?
-    let followers: Int?
-    let followings: Int?
+    let followerCount: Int?
+    let followingCount: Int?
+    let isFollowing: Bool?
     
     enum CodingKeys: String, CodingKey {
         case userUid = "user_id"
         case userName = "user_name"
         case displayName = "display_name"
-        case vegetarianType, fileFolder, userTasteGroups, userInterestGroups, followers, followings
+        case vegetarianType, fileFolder, userTasteGroups, userInterestGroups, followerCount, followingCount
+        case isFollowing = "is_following"
     }
 }
