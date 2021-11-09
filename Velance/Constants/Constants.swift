@@ -1,16 +1,6 @@
 import Foundation
 import UIKit
 
-struct MockData {
-    static let userDisplayNameList: [String] = ["김영채", "강지혜", "김진영", "황보준수", "김태민", "김철수", "김영희"]
-    
-    static let mockAvatarImageName: [String] = ["mockAvatar0","mockAvatar1","mockAvatar2","mockAvatar3","mockAvatar4","mockAvatar5","mockAvatar6"]
-    
-    static let mockFoodImageName: [String] = ["image_test", "testImage1","testImage2","testImage3","testImage4","testImage5","testImage6","testImage7","testImage8","testImage9","testImage10","testImage11",]
-    
-    static let mockFoodName: [String] = ["맛있는 비건 완자 100% 콩고기 220g","바게트 연어 빵 240g","건강식 야채 아보카도 샌드위치 220g","즉석 조리 해물감자 볶음 190g","멕시칸식 아보카도 타고 6입","건강식 도시락 샐러드","100% 콩고기로 만들어진 비건전용 햄버거 250g","아보카도 나또 피자 1판","태국식 야채 볶음 130g","100% 야채 샌드위치 비건 통밀빵","아보카도, 토마토, 바나나 모닝 샌드위치","채식 전용 베트남식 라이스페이퍼롤 10개입",]
-}
-
 struct API {
     
     static let baseUrl = "http://222.104.199.114:5100/api/"

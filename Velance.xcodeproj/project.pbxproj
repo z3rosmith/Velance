@@ -15,10 +15,6 @@
 		3C2C0B0F272931E3003A0B69 /* VelanceInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */; };
 		3C51257B271455F4003E572D /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C51257A271455F4003E572D /* Community.storyboard */; };
 		3C51257D2714560C003E572D /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51257C2714560C003E572D /* CommunityViewController.swift */; };
-		3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */; };
-		3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */; };
-		3C6B700D26F32550001FD7BB /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B700C26F32550001FD7BB /* MealView.xib */; };
-		3C6B700F26F32566001FD7BB /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B700E26F32566001FD7BB /* MealView.swift */; };
 		3C86BFBB271C0DC30011EE7A /* CommunityRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */; };
 		3C910FCB272A249200F6CE2F /* RecipeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCA272A249200F6CE2F /* RecipeRequestDTO.swift */; };
 		3C910FCD272A346100F6CE2F /* DailyLifeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */; };
@@ -32,7 +28,6 @@
 		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
 		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
 		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
-		3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE4FE826EF200F00865767 /* SecondViewController.swift */; };
 		3CAEDC012727A6D8001E4783 /* Mall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC002727A6D8001E4783 /* Mall.storyboard */; };
 		3CAEDC052727B19E001E4783 /* MallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */; };
 		3CAEDC062727B19E001E4783 /* MallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */; };
@@ -50,8 +45,6 @@
 		3CD341B02727C0B800ADA745 /* MallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341AF2727C0B800ADA745 /* MallListViewController.swift */; };
 		3CD341B32727D8A300ADA745 /* CommunityCollectionReusableView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */; };
 		3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD341B42727DF4600ADA745 /* CommunityImageCollectionViewCell.swift */; };
-		3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD5012526F22E9B009B450F /* BasicNutrientView.xib */; };
-		3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5012726F22FA8009B450F /* BasicNutrientView.swift */; };
 		3CD77A7D2737E72F00C29275 /* CommunityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD77A7C2737E72F00C29275 /* CommunityDetailViewModel.swift */; };
 		3CD77A7F2737F13200C29275 /* FeedDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD77A7E2737F13200C29275 /* FeedDetailResponseDTO.swift */; };
 		3CDA4E9727218D4400016D3B /* CommunityFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA4E9527218D4400016D3B /* CommunityFeedCollectionViewCell.swift */; };
@@ -106,7 +99,6 @@
 		7C60F2A3272928B1001D96C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A2272928B1001D96C2 /* QuartzCore.framework */; };
 		7C60F2A5272928B9001D96C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A4272928B9001D96C2 /* SystemConfiguration.framework */; };
 		7C60F2AA272928F5001D96C2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A9272928F5001D96C2 /* OpenGLES.framework */; };
-		7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */; };
 		7C60F2AE27293128001D96C2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A6272928CA001D96C2 /* libc++.tbd */; };
 		7C60F2AF27293130001D96C2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A8272928E6001D96C2 /* libxml2.tbd */; };
 		7C60F2B027293137001D96C2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C60F2A7272928D7001D96C2 /* libsqlite3.tbd */; };
@@ -122,7 +114,6 @@
 		7C6145702715675200D659C5 /* PopularProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61456E2715675200D659C5 /* PopularProductCVC.swift */; };
 		7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C61457327156AE900D659C5 /* RatingStackView.swift */; };
 		7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72A56F27211CAE0010A812 /* ProductReviewHeaderView.swift */; };
-		7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */; };
 		7C8E156A26F1B7BA0042A235 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */; };
 		7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */; };
 		7C8EC8C626EF069900893CCD /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */; };
@@ -162,14 +153,10 @@
 		7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A2F26EC5EDB007573DD /* Assets.xcassets */; };
 		7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A3126EC5EDB007573DD /* LaunchScreen.storyboard */; };
 		7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A4026EC63D8007573DD /* UserRegister.storyboard */; };
-		7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A4526EC6437007573DD /* Shopping.storyboard */; };
 		7CC36A4926EC647E007573DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4826EC647E007573DD /* AppDelegate.swift */; };
 		7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4A26EC648D007573DD /* UserManager.swift */; };
 		7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4C26EC65D7007573DD /* Constants.swift */; };
-		7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */; };
 		7CC36A5226EC70C1007573DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */; };
-		7CC36A5426EC7194007573DD /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC36A5326EC7194007573DD /* Record.storyboard */; };
-		7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5526EC7272007573DD /* RecordViewController.swift */; };
 		7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A5726EC8561007573DD /* UIButton+Extension.swift */; };
 		7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */; };
 		7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */; };
@@ -208,7 +195,6 @@
 		7CF3924E2726CF2300E48EFB /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3924D2726CF2300E48EFB /* ReportType.swift */; };
 		7CF529722710513600499709 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF529712710513600499709 /* String+Extension.swift */; };
 		7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */; };
-		7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */; };
 		7CFC946126F2D4C5008042C5 /* PopularProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC946026F2D4C5008042C5 /* PopularProductTableViewCell.swift */; };
 		7CFF120F2721420400E6A9D3 /* NewProductReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */; };
 		7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */; };
@@ -231,10 +217,6 @@
 		3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelanceInputBar.swift; sourceTree = "<group>"; };
 		3C51257A271455F4003E572D /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		3C51257C2714560C003E572D /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalNutrientView.xib; sourceTree = "<group>"; };
-		3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalNutrientView.swift; sourceTree = "<group>"; };
-		3C6B700C26F32550001FD7BB /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
-		3C6B700E26F32566001FD7BB /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		3C86BFBA271C0DC30011EE7A /* CommunityRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecipeViewController.swift; sourceTree = "<group>"; };
 		3C910FCA272A249200F6CE2F /* RecipeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestDTO.swift; sourceTree = "<group>"; };
 		3C910FCC272A346100F6CE2F /* DailyLifeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeResponseDTO.swift; sourceTree = "<group>"; };
@@ -248,7 +230,6 @@
 		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
-		3CAE4FE826EF200F00865767 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3CAEDC002727A6D8001E4783 /* Mall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mall.storyboard; sourceTree = "<group>"; };
 		3CAEDC032727B19E001E4783 /* MallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallTableViewCell.swift; sourceTree = "<group>"; };
 		3CAEDC042727B19E001E4783 /* MallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MallTableViewCell.xib; sourceTree = "<group>"; };
@@ -266,8 +247,6 @@
 		3CD341AF2727C0B800ADA745 /* MallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallListViewController.swift; sourceTree = "<group>"; };
 		3CD341B22727D8A300ADA745 /* CommunityCollectionReusableView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionReusableView2.swift; sourceTree = "<group>"; };
 		3CD341B42727DF4600ADA745 /* CommunityImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		3CD5012526F22E9B009B450F /* BasicNutrientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicNutrientView.xib; sourceTree = "<group>"; };
-		3CD5012726F22FA8009B450F /* BasicNutrientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNutrientView.swift; sourceTree = "<group>"; };
 		3CD77A7C2737E72F00C29275 /* CommunityDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewModel.swift; sourceTree = "<group>"; };
 		3CD77A7E2737F13200C29275 /* FeedDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailResponseDTO.swift; sourceTree = "<group>"; };
 		3CDA4E9527218D4400016D3B /* CommunityFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -333,7 +312,6 @@
 		7C60F2A7272928D7001D96C2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7C60F2A8272928E6001D96C2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7C60F2A9272928F5001D96C2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKakaoMapViewController.swift; sourceTree = "<group>"; };
 		7C60F2AD27292E97001D96C2 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		7C60F2B127296681001D96C2 /* MallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		7C60F2B32729685E001D96C2 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -347,7 +325,6 @@
 		7C61456E2715675200D659C5 /* PopularProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductCVC.swift; sourceTree = "<group>"; };
 		7C61457327156AE900D659C5 /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		7C72A56F27211CAE0010A812 /* ProductReviewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductReviewHeaderView.swift; sourceTree = "<group>"; };
-		7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		7C8E156826F1B7BA0042A235 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C8E156926F1B7BA0042A235 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8EC8C426EF069900893CCD /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -389,14 +366,10 @@
 		7CC36A3226EC5EDB007573DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC36A3426EC5EDB007573DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CC36A4026EC63D8007573DD /* UserRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserRegister.storyboard; sourceTree = "<group>"; };
-		7CC36A4526EC6437007573DD /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		7CC36A4826EC647E007573DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC36A4A26EC648D007573DD /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		7CC36A4C26EC65D7007573DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		7CC36A5126EC70C1007573DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		7CC36A5326EC7194007573DD /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
-		7CC36A5526EC7272007573DD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7CC36A5726EC8561007573DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7CC36A8C26EE3DCD007573DD /* UserRegisterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterValues.swift; sourceTree = "<group>"; };
 		7CC36A8F26EE3F2C007573DD /* VLTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLTitleLabel.swift; sourceTree = "<group>"; };
@@ -435,7 +408,6 @@
 		7CF3924D2726CF2300E48EFB /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
 		7CF529712710513600499709 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CF52973271055E200499709 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
-		7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 		7CFC946026F2D4C5008042C5 /* PopularProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProductTableViewCell.swift; sourceTree = "<group>"; };
 		7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductReviewViewController.swift; sourceTree = "<group>"; };
 		7CFF12102721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -494,24 +466,6 @@
 				3CCFE7DA271E9E13003FA1B7 /* UICollectionView Cells */,
 			);
 			path = Community;
-			sourceTree = "<group>";
-		};
-		3C6B700626F31CC6001FD7BB /* NutrientView2 */ = {
-			isa = PBXGroup;
-			children = (
-				3C6B700726F31CDC001FD7BB /* PersonalNutrientView.xib */,
-				3C6B700926F31CF9001FD7BB /* PersonalNutrientView.swift */,
-			);
-			path = NutrientView2;
-			sourceTree = "<group>";
-		};
-		3C6B700B26F3251A001FD7BB /* MealView */ = {
-			isa = PBXGroup;
-			children = (
-				3C6B700C26F32550001FD7BB /* MealView.xib */,
-				3C6B700E26F32566001FD7BB /* MealView.swift */,
-			);
-			path = MealView;
 			sourceTree = "<group>";
 		};
 		3C910FD0272A3B6600F6CE2F /* View Models */ = {
@@ -634,15 +588,6 @@
 				3C2C0B0E272931E3003A0B69 /* VelanceInputBar.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3CD5012226F22E3D009B450F /* NutrientView */ = {
-			isa = PBXGroup;
-			children = (
-				3CD5012526F22E9B009B450F /* BasicNutrientView.xib */,
-				3CD5012726F22FA8009B450F /* BasicNutrientView.swift */,
-			);
-			path = NutrientView;
 			sourceTree = "<group>";
 		};
 		6C49951D271FBC1000E8DB4B /* UI Helper */ = {
@@ -811,7 +756,6 @@
 				7C37DE7D271AB1C500B4FBFB /* ProductReviewViewController.swift */,
 				7C922A4E2717FA7D00295A3F /* SearchProductViewController.swift */,
 				7C37DE7927195F0800B4FBFB /* UploadNewProductViewController.swift */,
-				7C60F2AB27292D56001D96C2 /* TestKakaoMapViewController.swift */,
 				7CFF120E2721420400E6A9D3 /* NewProductReviewViewController.swift */,
 			);
 			path = "View Controller";
@@ -869,8 +813,6 @@
 				7CC36A3D26EC6378007573DD /* UserRegister */,
 				3C51257927144FE8003E572D /* Community */,
 				3CAEDBFF2727A67E001E4783 /* Mall */,
-				7CC36A3E26EC637D007573DD /* Record(Unused) */,
-				7CC36A3F26EC63B8007573DD /* Shopping */,
 				7C61456127141FD500D659C5 /* Product Review */,
 				7CFF1214272159C600E6A9D3 /* MyPage */,
 				7CC36A3C26EC6366007573DD /* Views */,
@@ -940,30 +882,6 @@
 				7CEED0ED27226F41005CACF5 /* LoadingViewController.swift */,
 			);
 			path = UserRegister;
-			sourceTree = "<group>";
-		};
-		7CC36A3E26EC637D007573DD /* Record(Unused) */ = {
-			isa = PBXGroup;
-			children = (
-				3C6B700B26F3251A001FD7BB /* MealView */,
-				3CD5012226F22E3D009B450F /* NutrientView */,
-				3C6B700626F31CC6001FD7BB /* NutrientView2 */,
-				7CC36A5326EC7194007573DD /* Record.storyboard */,
-				7CC36A5526EC7272007573DD /* RecordViewController.swift */,
-				3CAE4FE826EF200F00865767 /* SecondViewController.swift */,
-			);
-			path = "Record(Unused)";
-			sourceTree = "<group>";
-		};
-		7CC36A3F26EC63B8007573DD /* Shopping */ = {
-			isa = PBXGroup;
-			children = (
-				7CC36A4526EC6437007573DD /* Shopping.storyboard */,
-				7CC36A4E26EC6E40007573DD /* ShoppingViewController.swift */,
-				7CFC945E26F2D027008042C5 /* ShoppingViewModel.swift */,
-				7C8189D126F2F828006AE474 /* RecipeDetailViewController.swift */,
-			);
-			path = Shopping;
 			sourceTree = "<group>";
 		};
 		7CC36A4226EC6416007573DD /* UICollectionView Cells */ = {
@@ -1244,10 +1162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C60F294272927C2001D96C2 /* info_box_tail.png in Resources */,
-				3C6B700826F31CDC001FD7BB /* PersonalNutrientView.xib in Resources */,
 				7C60F297272927C2001D96C2 /* map_pin.png in Resources */,
 				7C60F298272927C2001D96C2 /* map_present.png in Resources */,
-				3C6B700D26F32550001FD7BB /* MealView.xib in Resources */,
 				7C60F29C272927C2001D96C2 /* map_pin_shadow.png in Resources */,
 				7CC36A3326EC5EDB007573DD /* LaunchScreen.storyboard in Resources */,
 				7C60F28A272927C2001D96C2 /* copyright.png in Resources */,
@@ -1258,7 +1174,6 @@
 				7C60F299272927C2001D96C2 /* noimage.png in Resources */,
 				7CC36A3026EC5EDB007573DD /* Assets.xcassets in Resources */,
 				7C60F28E272927C2001D96C2 /* map_pin@3x.png in Resources */,
-				3CD5012626F22E9B009B450F /* BasicNutrientView.xib in Resources */,
 				7C8EC8D526F081AB00893CCD /* VLBottomView.xib in Resources */,
 				7C60F28F272927C2001D96C2 /* map_present_tracking.png in Resources */,
 				7CC36A4126EC63D8007573DD /* UserRegister.storyboard in Resources */,
@@ -1270,7 +1185,6 @@
 				7C8E156B26F1B7BA0042A235 /* RecipeCollectionViewCell.xib in Resources */,
 				7C60F295272927C2001D96C2 /* noimage256.png in Resources */,
 				3CAEDC062727B19E001E4783 /* MallTableViewCell.xib in Resources */,
-				7CC36A5426EC7194007573DD /* Record.storyboard in Resources */,
 				7C60F292272927C2001D96C2 /* point_sprite.png in Resources */,
 				7C60F28D272927C2001D96C2 /* daum_copyright.png in Resources */,
 				7CFF121827215A7900E6A9D3 /* MyPage.storyboard in Resources */,
@@ -1281,7 +1195,6 @@
 				7C61456327141FFB00D659C5 /* ProductReview.storyboard in Resources */,
 				7C60F290272927C2001D96C2 /* map_pin_red.png in Resources */,
 				3CDA4E9827218D4400016D3B /* CommunityFeedCollectionViewCell.xib in Resources */,
-				7CC36A4626EC6437007573DD /* Shopping.storyboard in Resources */,
 				3C2C0B0D272914ED003A0B69 /* CommunityDetailTableHeaderView.xib in Resources */,
 				7C37DE82271ABE0A00B4FBFB /* ProductReviewTableViewCell.xib in Resources */,
 				3CCFE7E2271E9E9A003FA1B7 /* SimilarUserCollectionViewCell.xib in Resources */,
@@ -1362,7 +1275,6 @@
 				7CBF63EE2727C81F000B5F04 /* NewMenuViewController.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
 				7CAB8BA2272A4BD5006B5E08 /* SearchMallDTO.swift in Sources */,
-				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CEED0EC27225FDB005CACF5 /* UIHelper.swift in Sources */,
 				3C910FDA272A89F200F6CE2F /* CommunityRecipeListViewModel.swift in Sources */,
 				7CCBB55A27255D06002EFB58 /* NewProductDTO.swift in Sources */,
@@ -1371,7 +1283,6 @@
 				3CD77A7F2737F13200C29275 /* FeedDetailResponseDTO.swift in Sources */,
 				3CB2AC69272262D70075FA97 /* VLSocialButton.swift in Sources */,
 				7CC36A9526EE3F2D007573DD /* VLBodyLabel.swift in Sources */,
-				3C6B700A26F31CF9001FD7BB /* PersonalNutrientView.swift in Sources */,
 				7CAB8BAC272AB381006B5E08 /* MallViewModel.swift in Sources */,
 				3C2052B8272AAC10009BBD3B /* MallResponseDTO.swift in Sources */,
 				3CC2B347272979AA00D2BBF3 /* RecipeResponseDTO.swift in Sources */,
@@ -1383,7 +1294,6 @@
 				7CC36A4D26EC65D7007573DD /* Constants.swift in Sources */,
 				7CAB8BA4272A4F6A006B5E08 /* SearchListViewController.swift in Sources */,
 				7C60F1D227290D69001D96C2 /* MallManager.swift in Sources */,
-				3CAE4FE926EF200F00865767 /* SecondViewController.swift in Sources */,
 				3C910FCB272A249200F6CE2F /* RecipeRequestDTO.swift in Sources */,
 				3CCFE7DC271E9E33003FA1B7 /* CategoryCollectionViewCell.swift in Sources */,
 				7CAB8BA8272A7120006B5E08 /* SearchMallViewController.swift in Sources */,
@@ -1408,13 +1318,10 @@
 				7C6145652714207500D659C5 /* ProductReviewListContainerViewController.swift in Sources */,
 				7CE885712727BB62008E1DB9 /* NewMallViewController.swift in Sources */,
 				7C922A4F2717FA7D00295A3F /* SearchProductViewController.swift in Sources */,
-				7CFC945F26F2D027008042C5 /* ShoppingViewModel.swift in Sources */,
 				7C922A542718054B00295A3F /* ChooseInterestViewController.swift in Sources */,
 				7C21FA3B2737C3BB00904863 /* ChangePasswordViewController.swift in Sources */,
-				3C6B700F26F32566001FD7BB /* MealView.swift in Sources */,
 				3CC171F52737AF9800EB03A8 /* UserFeedResponseDTO.swift in Sources */,
 				7CC36A9326EE3F2D007573DD /* VLTitleLabel.swift in Sources */,
-				7CC36A5626EC7272007573DD /* RecordViewController.swift in Sources */,
 				7CC36A4B26EC648D007573DD /* UserManager.swift in Sources */,
 				7C60F2B827297BAF001D96C2 /* MallHeaderView.swift in Sources */,
 				7CEED1042724439A005CACF5 /* UserDefaultKeys.swift in Sources */,
@@ -1424,7 +1331,6 @@
 				7C60F2B52729685E001D96C2 /* MenuTableViewCell.swift in Sources */,
 				7CC36A8D26EE3DCD007573DD /* UserRegisterValues.swift in Sources */,
 				7C922A4D2717F19300295A3F /* VLFloatingButton.swift in Sources */,
-				7C60F2AC27292D56001D96C2 /* TestKakaoMapViewController.swift in Sources */,
 				7CFF12112721460500E6A9D3 /* AddImageButtonCollectionViewCell.swift in Sources */,
 				3CC171F327379D6900EB03A8 /* CommunityFeedViewModel.swift in Sources */,
 				7CAB8B9E272A4B29006B5E08 /* SearchMallByKeywordDTO.swift in Sources */,
@@ -1463,7 +1369,6 @@
 				7C91FC0827118D21000D237C /* LoginViewController.swift in Sources */,
 				7CAB8B9C272A4AE1006B5E08 /* SearchNewMallViewModel.swift in Sources */,
 				7CC36A9626EE3F2D007573DD /* VLButton.swift in Sources */,
-				7CC36A4F26EC6E40007573DD /* ShoppingViewController.swift in Sources */,
 				3CC2B34C27297AB800D2BBF3 /* RecipeCategory.swift in Sources */,
 				3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */,
 				3C2052BA272AB03E009BBD3B /* MallListViewModel.swift in Sources */,
@@ -1471,7 +1376,6 @@
 				7CEED0F027227539005CACF5 /* UIImage+Extension.swift in Sources */,
 				7CCBB54C2725382D002EFB58 /* ProductManager.swift in Sources */,
 				7CF52974271055E200499709 /* NSMutableAttributedString+Extension.swift in Sources */,
-				7C8189D226F2F828006AE474 /* RecipeDetailViewController.swift in Sources */,
 				7CCBB55527253DBB002EFB58 /* UserDisplayModel.swift in Sources */,
 				7CEED1002723FBDD005CACF5 /* User.swift in Sources */,
 				7C61457427156AE900D659C5 /* RatingStackView.swift in Sources */,
@@ -1487,7 +1391,6 @@
 				3C2052B6272AAB19009BBD3B /* MallRequestDTO.swift in Sources */,
 				7C1D2A1627339F8A00E9785C /* NewDailyLifePostViewController.swift in Sources */,
 				3CD341B52727DF4600ADA745 /* CommunityImageCollectionViewCell.swift in Sources */,
-				3CD5012826F22FA8009B450F /* BasicNutrientView.swift in Sources */,
 				7CF39245272672EC00E48EFB /* NewReviewDTO.swift in Sources */,
 				7CCBB542272519D7002EFB58 /* UserAllergyGroup.swift in Sources */,
 				7CEED0FB2723F7F5005CACF5 /* Interceptor.swift in Sources */,

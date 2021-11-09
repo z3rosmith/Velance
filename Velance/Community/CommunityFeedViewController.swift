@@ -121,7 +121,7 @@ extension CommunityFeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CommunityImageCollectionViewCell else { fatalError() }
         if viewModel.numberOfFeeds == 0 { return cell }
         let cellViewModel = viewModel.feedAtIndex(indexPath.item)
-        cell.imageView.sd_setImage(with: cellViewModel.feedThumbnailURL, placeholderImage: UIImage(named: MockData.mockFoodImageName[0]))
+        cell.imageView.sd_setImage(with: cellViewModel.feedThumbnailURL, placeholderImage: UIImage(named: "avatarImage"))
         return cell
     }
 }

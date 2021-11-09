@@ -1073,22 +1073,6 @@
             </objects>
             <point key="canvasLocation" x="1851" y="834"/>
         </scene>
-        <!--Test Kakao Map View Controller-->
-        <scene sceneID="BS0-MZ-71m">
-            <objects>
-                <viewController storyboardIdentifier="TestKakaoMapViewController" id="EWB-24-PBS" customClass="TestKakaoMapViewController" customModule="Velance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Uv-Eh-2Tp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Gth-r9-71C"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Q4b-BN-3dX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rgg-mc-oW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2777" y="834"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rNu-6r-cMn">
             <objects>

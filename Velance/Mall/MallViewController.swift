@@ -315,10 +315,10 @@ extension MallViewController {
     
     private func configureMallThumbnailImageView() {
         mallThumbnailImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        mallThumbnailImageView.image = UIImage(named: "image_test")
+        mallThumbnailImageView.image = UIImage(named: "imagePlaceholder")
         mallThumbnailImageView.sd_setImage(
             with: mallThumbnailUrl,
-            placeholderImage: UIImage(named: "placeholderImage"),
+            placeholderImage: UIImage(named: "imagePlaceholder"),
             options: .continueInBackground
         )
     }
