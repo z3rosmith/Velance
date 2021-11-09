@@ -236,7 +236,7 @@ extension CommunityDetailViewModel {
     }
     
     var isLike: Bool {
-        return (post?.isLike ?? "N") == "Y" ? true : false
+        return post?.isLike ?? false
     }
 }
 

@@ -52,17 +52,21 @@ extension CommunityRecipeViewController {
     }
     
     @objc private func didTapLikeArea(gestureRecognizer: CustomTapGR) {
-        guard let tag = gestureRecognizer.view?.tag else {
+        guard let tag = gestureRecognizer.view?.tag, let indexPath = gestureRecognizer.indexPath else {
             return
         }
         
         if !viewModel.isDoingLike {
             if tag == 1 {
                 // 좋아요 한 상태이므로 취소
-                viewModel.unlikeFeed(feedID: gestureRecognizer.feedID)
+                viewModel.unlikeFeed(feedID: gestureRecognizer.feedID, indexPath: indexPath)
+                viewModel.posts[indexPath.item].isLike = false
+                viewModel.posts[indexPath.item].feed?.like -= 1
                 gestureRecognizer.view?.tag = 0
             } else {
-                viewModel.likeFeed(feedID: gestureRecognizer.feedID)
+                viewModel.likeFeed(feedID: gestureRecognizer.feedID, indexPath: indexPath)
+                viewModel.posts[indexPath.item].isLike = true
+                viewModel.posts[indexPath.item].feed?.like += 1
                 gestureRecognizer.view?.tag = 1
             }
         }
@@ -169,6 +173,7 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         
         let tapLikeGR = CustomTapGR(target: self, action: #selector(didTapLikeArea))
         tapLikeGR.feedID = cellViewModel.feedId
+        tapLikeGR.indexPath = indexPath
         cell.likeArea.tag = cellViewModel.isLike ? 1 : 0
         cell.likeArea.addGestureRecognizer(tapLikeGR)
         
@@ -222,12 +227,12 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
     
-    func didLike() {
-        collectionView.reloadData()
+    func didLike(indexPath: IndexPath) {
+        collectionView.reloadItems(at: [indexPath])
     }
     
-    func didUnlike() {
-        collectionView.reloadData()
+    func didUnlike(indexPath: IndexPath) {
+        collectionView.reloadItems(at: [indexPath])
     }
     
     func didFetchPostList() {

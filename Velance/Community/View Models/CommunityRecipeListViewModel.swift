@@ -7,8 +7,8 @@ protocol CommunityRecipeListViewModelDelegate: AnyObject {
     func didCompleteReport()
     func didBlockUser()
     func failedUserRequest(with error: NetworkError)
-    func didLike()
-    func didUnlike()
+    func didLike(indexPath: IndexPath)
+    func didUnlike(indexPath: IndexPath)
 }
 
 /// post는 recipe의 일반적인 용어로 사용하였음
@@ -16,7 +16,7 @@ class CommunityRecipeListViewModel {
     
     weak var delegate: CommunityRecipeListViewModelDelegate?
     
-    private var posts: [RecipeResponseDTO] = []
+    var posts: [RecipeResponseDTO] = []
     var hasMore: Bool = true
     var isFetchingPost: Bool = false
     private var lastPostID: Int?
@@ -82,12 +82,12 @@ extension CommunityRecipeListViewModel {
         }
     }
     
-    func likeFeed(feedID: Int) {
+    func likeFeed(feedID: Int, indexPath: IndexPath) {
         isDoingLike = true
         CommunityManager.shared.likeFeed(feedID: feedID) { [weak self] result in
             switch result {
             case .success:
-                self?.delegate?.didLike()
+                self?.delegate?.didLike(indexPath: indexPath)
             case .failure:
                 return
             }
@@ -95,12 +95,12 @@ extension CommunityRecipeListViewModel {
         }
     }
     
-    func unlikeFeed(feedID: Int) {
+    func unlikeFeed(feedID: Int, indexPath: IndexPath) {
         isDoingLike = true
         CommunityManager.shared.unlikeFeed(feedID: feedID) { [weak self] result in
             switch result {
             case .success:
-                self?.delegate?.didUnlike()
+                self?.delegate?.didUnlike(indexPath: indexPath)
             case .failure:
                 return
             }
@@ -216,10 +216,7 @@ extension CommunityRecipeViewModel {
     }
     
     var isLike: Bool {
-        if let like = post.isLike, like == "Y" {
-            return true
-        }
-        return false
+        return post.isLike ?? false
     }
     
     var feedId: Int {
