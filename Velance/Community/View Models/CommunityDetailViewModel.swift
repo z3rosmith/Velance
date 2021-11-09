@@ -4,6 +4,8 @@ protocol CommunityDetailViewModelDelegate: AnyObject {
     func didFetchDetailInfo()
     func didFetchReplies()
     func didPostReply()
+    func didLike()
+    func didUnlike()
     
     func didDeleteReply()
     func didCompleteReport()
@@ -20,6 +22,7 @@ class CommunityDetailViewModel {
     var hasMore: Bool = true
     var isFetchingReply: Bool = false
     private var lastReplyID: Int?
+    var isDoingLike: Bool = false
     
     func replyAtIndex(_ index: Int) -> CommunityDetailReplyViewModel {
         let reply = replies[index]
@@ -37,6 +40,34 @@ class CommunityDetailReplyViewModel {
 }
 
 extension CommunityDetailViewModel {
+    
+    func likeFeed() {
+        guard let feedID = post?.feed?.feedID else { return }
+        isDoingLike = true
+        CommunityManager.shared.likeFeed(feedID: feedID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didLike()
+            case .failure:
+                return
+            }
+            self?.isDoingLike = false
+        }
+    }
+    
+    func unlikeFeed() {
+        guard let feedID = post?.feed?.feedID else { return }
+        isDoingLike = true
+        CommunityManager.shared.unlikeFeed(feedID: feedID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didUnlike()
+            case .failure:
+                return
+            }
+            self?.isDoingLike = false
+        }
+    }
     
     func fetchPostInfo(isRecipe: Bool, id: Int) {
         CommunityManager.shared.fetchPostDetail(isRecipe: isRecipe, id: id) { [weak self] result in
@@ -96,7 +127,6 @@ extension CommunityDetailViewModel {
             }
         }
     }
-    
 
     func deleteMyDailyLifeFeed(replyId: Int) {
         
@@ -144,12 +174,6 @@ extension CommunityDetailViewModel {
         }
         
     }
-    
-    
-    
-    
-    
-    
     
     var numberOfReplies: Int {
         return replies.count
@@ -210,6 +234,10 @@ extension CommunityDetailViewModel {
     var repliesCount: Int {
         return post?.feed?.repliesCount ?? 0
     }
+    
+    var isLike: Bool {
+        return (post?.isLike ?? "N") == "Y" ? true : false
+    }
 }
 
 extension CommunityDetailReplyViewModel {
@@ -227,7 +255,7 @@ extension CommunityDetailReplyViewModel {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.locale = Locale(identifier:"ko_KR")
         guard let date = dateFormatter.date(from: reply.createdAt) else {
-            return "시간표시오류"
+            return "-"
         }
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.string(from: date)

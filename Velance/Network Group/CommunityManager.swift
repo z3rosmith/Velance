@@ -18,6 +18,7 @@ class CommunityManager {
     let fetchRepliesURL         = "\(API.baseUrl)reply"
     let postReplyURL            = "\(API.baseUrl)reply"
     let followUserURL           = "\(API.baseUrl)follow"
+    let likeFeedURL             = "\(API.baseUrl)feed/like"
     
     //MARK: - 일상 글 올리기
     
@@ -183,7 +184,7 @@ class CommunityManager {
                         completion(.success(decodedData))
                         print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - fetch SUCCESS")
                     } catch {
-                        print("✏️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED PROCESS DATA with error: \(error)")
+                        print("❗️ COMMUNITY MANAGER - fetchDailyLifeList - FAILED PROCESS DATA with error: \(error)")
                     }
                 case .failure(let error):
                     if let jsonData = response.data {
@@ -401,7 +402,40 @@ class CommunityManager {
         
         AF.request(url,
                    method: .delete,
-                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success:
+                    completion(.success(true))
+                    print("✏️ \(String(describing: type(of: self))) - \(#function) - delete SUCCESS")
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
+    
+    func likeFeed(feedID: Int,
+                  completion: @escaping ((Result<Bool, NetworkError>) -> Void)) {
+        
+        let url = likeFeedURL + "/\(feedID)"
+        let parameters: Parameters = ["is_like": "Y"]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
                    interceptor: interceptor)
             .validate()
             .responseJSON { response in
@@ -410,6 +444,39 @@ class CommunityManager {
                 case .success:
                     completion(.success(true))
                     print("✏️ \(String(describing: type(of: self))) - \(#function) - post SUCCESS")
+                case .failure(let error):
+                    if let jsonData = response.data {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")
+                    }
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with alamofire error: \(error.localizedDescription)")
+                    guard let responseCode = error.responseCode else {
+                        print("❗️ \(String(describing: type(of: self))) - \(#function) - Empty responseCode")
+                        return
+                    }
+                    let customError = NetworkError.returnError(statusCode: responseCode)
+                    print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with custom error: \(customError.errorDescription)")
+                    completion(.failure(customError))
+                }
+            }
+    }
+    
+    func unlikeFeed(
+        feedID: Int,
+        completion: @escaping ((Result<Bool, NetworkError>) -> Void)
+    ) {
+        
+        let url = likeFeedURL + "/\(feedID)"
+        
+        AF.request(url,
+                   method: .delete,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+
+                switch response.result {
+                case .success:
+                    completion(.success(true))
+                    print("✏️ \(String(describing: type(of: self))) - \(#function) - delete SUCCESS")
                 case .failure(let error):
                     if let jsonData = response.data {
                         print("❗️ \(String(describing: type(of: self))) - \(#function) - FAILED REQEUST with server error:\(String(data: jsonData, encoding: .utf8) ?? "")")

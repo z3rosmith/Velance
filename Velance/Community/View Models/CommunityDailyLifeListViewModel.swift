@@ -7,6 +7,8 @@ protocol CommunityDailyLifeListViewModelDelegate: AnyObject {
     func didCompleteReport()
     func didBlockUser()
     func failedUserRequest(with error: NetworkError)
+    func didLike()
+    func didUnlike()
 }
 
 /// post는 recipe의 일반적인 용어로 사용하였음
@@ -17,6 +19,7 @@ class CommunityDailyLifeListViewModel {
     var hasMore: Bool = true
     var isFetchingData: Bool = false
     private var lastPostID: Int?
+    var isDoingLike: Bool = false
 }
 
 class CommunityDailyLifeViewModel {
@@ -78,6 +81,32 @@ extension CommunityDailyLifeListViewModel {
             case .failure:
                 return
             }
+        }
+    }
+    
+    func likeFeed(feedID: Int) {
+        isDoingLike = true
+        CommunityManager.shared.likeFeed(feedID: feedID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didLike()
+            case .failure:
+                return
+            }
+            self?.isDoingLike = false
+        }
+    }
+    
+    func unlikeFeed(feedID: Int) {
+        isDoingLike = true
+        CommunityManager.shared.unlikeFeed(feedID: feedID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.didUnlike()
+            case .failure:
+                return
+            }
+            self?.isDoingLike = false
         }
     }
     

@@ -51,14 +51,27 @@ extension CommunityRecipeViewController {
         viewModel.refreshPostList(recipeCategoryID: recipeCategoryID, viewOnlyFollowing: viewOnlyFollowing)
     }
     
-    @objc private func didLikeButtonTapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    @objc private func didTapLikeArea(gestureRecognizer: CustomTapGR) {
+        guard let tag = gestureRecognizer.view?.tag else {
+            return
+        }
+        
+        if !viewModel.isDoingLike {
+            if tag == 1 {
+                // 좋아요 한 상태이므로 취소
+                viewModel.unlikeFeed(feedID: gestureRecognizer.feedID)
+                gestureRecognizer.view?.tag = 0
+            } else {
+                viewModel.likeFeed(feedID: gestureRecognizer.feedID)
+                gestureRecognizer.view?.tag = 1
+            }
+        }
     }
     
-    @objc private func didTapCommentButton(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
+    @objc private func didTapCommentArea(gestureRecognizer: UIGestureRecognizer) {
+        guard let tag = gestureRecognizer.view?.tag, let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "CommunityDetailViewController") as? CommunityDetailViewController else { return }
         nextVC.isRecipe = true
-        nextVC.id = sender.tag
+        nextVC.id = tag
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -153,16 +166,19 @@ extension CommunityRecipeViewController: UICollectionViewDataSource {
         // MARK: - configure cell(no data)
         cell.parentVC = self
         cell.delegate = self
-        cell.likeButton.tag = indexPath.item
-        cell.likeButton.addTarget(self, action: #selector(didLikeButtonTapped(_:)), for: .touchUpInside)
         
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(textViewTapped(gestureRecognizer:)))
+        let tapLikeGR = CustomTapGR(target: self, action: #selector(didTapLikeArea))
+        tapLikeGR.feedID = cellViewModel.feedId
+        cell.likeArea.tag = cellViewModel.isLike ? 1 : 0
+        cell.likeArea.addGestureRecognizer(tapLikeGR)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
         cell.textView.tag = cellViewModel.recipeID
         cell.textView.addGestureRecognizer(tapGR)
-        cell.commentButton.tag = cellViewModel.recipeID
-        cell.commentButton.addTarget(self, action: #selector(didTapCommentButton(_:)), for: .touchUpInside)
         
-        cell.commentButton.isSelected = true // commentButton은 항상 초록색
+        let tapCommentGR = UITapGestureRecognizer(target: self, action: #selector(didTapCommentArea))
+        cell.commentArea.tag = cellViewModel.recipeID
+        cell.commentArea.addGestureRecognizer(tapCommentGR)
         
         let targetSize = CGSize(width: cell.frame.width, height: UIView.layoutFittingCompressedSize.height)
         let estimatedHeight = ceil(cell.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height)
@@ -205,6 +221,14 @@ extension CommunityRecipeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CommunityRecipeViewController: CommunityRecipeListViewModelDelegate, CommunityCollectionHeaderViewDelegate {
+    
+    func didLike() {
+        collectionView.reloadData()
+    }
+    
+    func didUnlike() {
+        collectionView.reloadData()
+    }
     
     func didFetchPostList() {
         setCellHeightsArray(numberOfItems: viewModel.numberOfPosts)

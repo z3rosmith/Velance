@@ -6,7 +6,9 @@ protocol CommunityFeedViewModelDelegate: AnyObject {
     func didFetchProfile()
     func didFetchUserFeedList()
     func didFollow()
+    func didFailFollow()
     func didUnfollow()
+    func didFailUnfollow()
 }
 
 class CommunityFeedViewModel {
@@ -17,7 +19,7 @@ class CommunityFeedViewModel {
     var hasMore: Bool = true
     var isFetchingPost: Bool = false
     private var lastPostID: Int?
-    var isFollowing: Bool = false
+    var isDoingFollow: Bool = false
     
     func feedAtIndex(_ index: Int) -> CommunityFeedCellViewModel {
         let feed = posts[index]
@@ -77,28 +79,28 @@ extension CommunityFeedViewModel {
     }
     
     func followUser(targetUID: String) {
-        isFollowing = true
+        isDoingFollow = true
         CommunityManager.shared.folllowUser(targetUID: targetUID) { [weak self] result in
             switch result {
             case .success:
                 self?.delegate?.didFollow()
             case .failure:
-                return
+                self?.delegate?.didFailFollow()
             }
-            self?.isFollowing = false
+            self?.isDoingFollow = false
         }
     }
     
     func unfollowUser(targetUID: String) {
-        isFollowing = true
+        isDoingFollow = true
         CommunityManager.shared.unfollowUser(targetUID: targetUID) { [weak self] result in
             switch result {
             case .success:
                 self?.delegate?.didUnfollow()
             case .failure:
-                return
+                self?.delegate?.didFailUnfollow()
             }
-            self?.isFollowing = false
+            self?.isDoingFollow = false
         }
     }
     
@@ -117,11 +119,15 @@ extension CommunityFeedViewModel {
     }
     
     var followings: Int {
-        return userProfile?.followings ?? 0
+        return userProfile?.followingCount ?? 0
     }
     
     var followers: Int {
-        return userProfile?.followers ?? 0
+        return userProfile?.followerCount ?? 0
+    }
+    
+    var isFollow: Bool {
+        return userProfile?.isFollowing ?? false
     }
     
     var userImageURL: URL? {

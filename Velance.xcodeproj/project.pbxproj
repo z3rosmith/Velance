@@ -28,6 +28,7 @@
 		3C95571C272B28260037B333 /* CommunityDailyLifeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */; };
 		3C9760162738E47C006E7FCC /* ReplyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9760152738E47C006E7FCC /* ReplyResponseDTO.swift */; };
 		3C97601827393E82006E7FCC /* CommunityHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97601727393E82006E7FCC /* CommunityHeaderViewModel.swift */; };
+		3C97601B273A7548006E7FCC /* CustomTapGR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97601A273A7548006E7FCC /* CustomTapGR.swift */; };
 		3CA411352728FF1F000E39B1 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */; };
 		3CA41139272901BC000E39B1 /* CommunityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */; };
 		3CA4113A272901BC000E39B1 /* CommunityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */; };
@@ -243,6 +244,7 @@
 		3C95571B272B28260037B333 /* CommunityDailyLifeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDailyLifeListViewModel.swift; sourceTree = "<group>"; };
 		3C9760152738E47C006E7FCC /* ReplyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyResponseDTO.swift; sourceTree = "<group>"; };
 		3C97601727393E82006E7FCC /* CommunityHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHeaderViewModel.swift; sourceTree = "<group>"; };
+		3C97601A273A7548006E7FCC /* CustomTapGR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGR.swift; sourceTree = "<group>"; };
 		3CA411342728FF1F000E39B1 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		3CA41137272901BC000E39B1 /* CommunityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CA41138272901BC000E39B1 /* CommunityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -542,6 +544,14 @@
 				3C2052B9272AB03E009BBD3B /* MallListViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		3C976019273A7527006E7FCC /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				3C97601A273A7548006E7FCC /* CustomTapGR.swift */,
+			);
+			path = "Custom Class";
 			sourceTree = "<group>";
 		};
 		3CA4113627290168000E39B1 /* UITableview Cells */ = {
@@ -868,6 +878,7 @@
 				7CEED0FC2723F816005CACF5 /* Error Management */,
 				7CC36A3A26EC6358007573DD /* Model */,
 				7CC36A5026EC70AD007573DD /* Extensions */,
+				3C976019273A7527006E7FCC /* Custom Class */,
 				7C8ED252270EA98A00693521 /* Protocols */,
 				6C49951D271FBC1000E8DB4B /* UI Helper */,
 				7CC36A2826EC5ED8007573DD /* SceneDelegate.swift */,
@@ -1426,6 +1437,7 @@
 				7C03678D2716C1FF0031DBBE /* ProductCollectionReusableView.swift in Sources */,
 				7C72A57027211CAE0010A812 /* ProductReviewHeaderView.swift in Sources */,
 				7CAB8BA6272A601A006B5E08 /* NewMallDTO.swift in Sources */,
+				3C97601B273A7548006E7FCC /* CustomTapGR.swift in Sources */,
 				7C8ED250270EA8ED00693521 /* InputUserInfoForRegisterViewController.swift in Sources */,
 				3CC38425271C274700ED5077 /* CommunityCollectionReusableView1.swift in Sources */,
 				7CC36A5826EC8561007573DD /* UIButton+Extension.swift in Sources */,

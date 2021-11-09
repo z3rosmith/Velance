@@ -10,7 +10,7 @@ class UserManager {
     let userBaseUrl             = "\(API.baseUrl)user"
     let registerUrl             = "\(API.baseUrl)user/signup"
     let loginUrl                = "\(API.baseUrl)auth/login"
-    let fetchProfileUrl         = "\(API.baseUrl)user/"
+    let fetchProfileUrl         = "\(API.baseUrl)user"
     let fetchRMDTasteUrl        = "\(API.baseUrl)user/recommend/taste"
     let fetchRMDInterestUrl     = "\(API.baseUrl)user/recommend/interest"
     
@@ -244,10 +244,14 @@ class UserManager {
     func fetchProfileForCommunity(userUID: String,
                                   completion: @escaping ((Result<UserDisplayModel, NetworkError>) -> Void)) {
         
-        AF.request(
-            fetchProfileUrl + userUID,
-            method: .get
-        ).responseData { response in
+        let parameters: Parameters = ["user_id": userUID]
+        
+        AF.request(fetchProfileUrl,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .responseData { response in
             switch response.result {
             case .success:
                 do {
@@ -284,16 +288,18 @@ class UserManager {
             url = fetchRMDInterestUrl
         }
         
-        AF.request(
-            url,
-            method: .get
-        ).responseData { response in
+        AF.request(url,
+                   method: .get,
+                   encoding: URLEncoding.queryString,
+                   interceptor: interceptor)
+            .validate()
+            .responseJSON { response in
+                
             switch response.result {
             case .success(let value):
                 do {
-                    print(String(data: value, encoding: .utf8))
-//                    let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                    let decodedData = try JSONDecoder().decode([UserDisplayModel].self, from: value)
+                    let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    let decodedData = try JSONDecoder().decode([UserDisplayModel].self, from: dataJSON)
                     completion(.success(decodedData))
                     print("✏️ \(String(describing: type(of: self))) - \(#function) - fetch SUCCESS")
                 } catch {
