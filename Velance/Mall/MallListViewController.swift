@@ -119,6 +119,10 @@ extension MallListViewController: MallListViewModelDelegate {
     func didFetchMallList() {
         tableView.reloadData()
         tableView.refreshControl?.endRefreshing()
+        
+        if viewModel.numberOfMalls == 0 {
+            tableView.setEmptyMessage("검색된 식당이 없습니다.🧐")
+        } else { tableView.restore() }
     }
 }
 

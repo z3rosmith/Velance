@@ -88,9 +88,9 @@ class ProductReviewHeaderView: UIView {
     lazy var allergyStack1: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [allergyButton1, allergyButton2, allergyButton3, allergyButton4, allergyButton5])
         stackView.axis = .horizontal
-        stackView.spacing = 5
-        stackView.distribution = .equalCentering
-        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -98,28 +98,30 @@ class ProductReviewHeaderView: UIView {
     let allergyButton7 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[6])
     let allergyButton8 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[7])
     let allergyButton9 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[8])
+    let allergyButton10 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[9])
     
     lazy var allergyStack2: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [allergyButton6, allergyButton7, allergyButton8, allergyButton9])
+        let stackView = UIStackView(arrangedSubviews: [allergyButton6, allergyButton7, allergyButton8, allergyButton9, allergyButton10])
         stackView.axis = .horizontal
-        stackView.spacing = 3
-        stackView.distribution = .equalCentering
-        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
         return stackView
     }()
     
-    let allergyButton10 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[9])
     let allergyButton11 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[10])
     let allergyButton12 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[11])
     let allergyButton13 = VLAllergyCheckButton(buttonTitle: UserOptions.allergyOptions[12])
-    
-    
+
     lazy var allergyStack3: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [allergyButton10, allergyButton11, allergyButton12, allergyButton13])
+        let stackView = UIStackView(arrangedSubviews: [allergyButton11, allergyButton12, allergyButton13])
+        allergyButton11.widthAnchor.constraint(equalToConstant: 62).isActive = true
+        allergyButton12.widthAnchor.constraint(equalToConstant: 62).isActive = true
+        allergyButton13.widthAnchor.constraint(equalToConstant: 62).isActive = true
         stackView.axis = .horizontal
-        stackView.spacing = 3
-        stackView.distribution = .equalCentering
-        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.distribution = .fill
+        stackView.alignment = .leading
         return stackView
     }()
     
