@@ -31,11 +31,6 @@ class User {
         set { UserDefaults.standard.set(newValue, forKey: UserDefaults.Keys.vegetarianType) }
     }
     
-    
-    
-    
-    
-    
     var accessToken: String {
         get { return UserDefaults.standard.string(forKey: UserDefaults.Keys.accessToken) ?? "토큰 에러" }
         set { UserDefaults.standard.set(newValue, forKey: UserDefaults.Keys.accessToken) }
@@ -72,7 +67,6 @@ extension User {
         UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.refreshToken)
         UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.blockedUsers)
        
-        
         
         
     }

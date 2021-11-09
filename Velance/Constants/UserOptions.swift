@@ -18,9 +18,9 @@ struct UserOptions {
                                             "일상", "퀴어", "그림",
                                             "여행", "IT", "엔터테인먼트"]
     
-    static let allergyOptions: [String] = ["우유", "난류(알)", "밀가루",
+    static let allergyOptions: [String] = ["우유", "난류", "밀가루",
                                            "새우", "메밀", "콩류", "조개류",
-                                           "견과류", "갑각류", "아황산류", "키위", "토마토", "복숭아"]
+                                           "견과류", "갑각류", "아황산", "키위", "토마토", "복숭아"]
     
     static let productCategory: [String] = [ "즉석조리식품", "즉석섭취식품", "반찬/대체육", "초콜릿/과자", "빵류", "음료류", "양념/소스"]
     

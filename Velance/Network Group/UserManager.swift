@@ -187,14 +187,18 @@ class UserManager {
     
     func fetchProfileInfo(completion: @escaping ((Result<UserDisplayModel, NetworkError>) -> Void)) {
         
+        let url =  fetchProfileUrl + "?user_id=\(User.shared.userUid)"
+        
         AF.request(
-            fetchProfileUrl + User.shared.userUid,
-            method: .get
-        ).responseData { response in
+            url,
+            method: .get,
+            interceptor: interceptor
+        ).responseJSON { response in
             switch response.result {
-            case .success:
+            case .success(_):
                 print("✏️ UserManager - fetchProfileInfo SUCCESS")
                 do {
+            
                     let decodedData = try JSONDecoder().decode(UserDisplayModel.self, from: response.data!)
                     
                     User.shared.userUid = decodedData.userUid

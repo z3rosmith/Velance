@@ -24,11 +24,13 @@ class VLAllergyCheckButton: UIButton {
         setTitleColor(.darkGray, for: .selected)
         titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         titleLabel?.adjustsFontSizeToFitWidth = true
-        titleLabel?.minimumScaleFactor = 0.85
+        titleLabel?.minimumScaleFactor = 0.70
         titleLabel?.lineBreakMode = .byTruncatingTail
         setImage(UIImage(systemName: "square"), for: .normal)
         setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
         tintColor = .darkGray
         isUserInteractionEnabled = false
+        contentHorizontalAlignment = .left
     }
 }
+

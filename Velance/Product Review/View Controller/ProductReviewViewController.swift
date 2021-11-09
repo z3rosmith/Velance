@@ -23,7 +23,7 @@ class ProductReviewViewController: UIViewController, Storyboarded {
     
     fileprivate struct Metrics {
         
-        static let topImageViewMaxHeight: CGFloat = 280
+        static let topImageViewMaxHeight: CGFloat = 320
         static let topImageViewMinHeight: CGFloat = 100
         static var startingTopImageViewHeight: CGFloat = topImageViewMaxHeight
     }
