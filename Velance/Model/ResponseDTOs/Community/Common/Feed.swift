@@ -5,7 +5,7 @@ struct Feed: Decodable {
     let feedID: Int
     let createdAt: String
     let user: UserDisplayModel
-    let repliesCount, like, dislike: Int
+    var repliesCount, like, dislike: Int
 
     enum CodingKeys: String, CodingKey {
         case feedID = "feed_id"

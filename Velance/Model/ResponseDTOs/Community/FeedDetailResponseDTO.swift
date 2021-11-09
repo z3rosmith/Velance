@@ -8,7 +8,7 @@ struct FeedDetailResponseDTO: Decodable {
     let fileFolder: FileFolder?
     let recipeCategory: RecipeCategory?
     let feed: Feed?
-    let isLike: String?
+    let isLike: Bool?
 
     enum CodingKeys: String, CodingKey {
         case recipeID = "recipe_id"
