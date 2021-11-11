@@ -3,7 +3,8 @@ import UIKit
 
 struct API {
     
-    static let baseUrl = "http://222.104.199.114:5100/api/"
+//    static let baseUrl = "http://222.104.199.114:5100/api/"
+    static let baseUrl = "http://3.35.58.40:5100/api/"
 }
 
 struct StoryboardName {

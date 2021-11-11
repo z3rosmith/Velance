@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakaomap</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>각종 식당 위치를 가져오기 위해서 사용자의 위치에 대한 접근 권한이 필요합니다.</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>2fc239ca0b3bd6827cd30cb3a899fe96</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>사용자 컨텐츠 등록 시 사진을 함께 업로드하기 위해 사진첩에 대한 접근 권한이 필요합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -25,11 +15,23 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>2fc239ca0b3bd6827cd30cb3a899fe96</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaomap</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>사용자 컨텐츠 등록 시 사진을 함께 업로드하기 위해 사진첩에 대한 접근 권한이 필요합니다.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>각종 식당 위치를 가져오기 위해서 사용자의 위치에 대한 접근 권한이 필요합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사용자 컨텐츠 등록 시 사진을 함께 업로드하기 위해 사진첩에 대한 접근 권한이 필요합니다.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
