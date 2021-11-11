@@ -125,7 +125,6 @@ class ProductReviewHeaderView: UIView {
         return stackView
     }()
     
-
     lazy var allergyStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [allergyStack1, allergyStack2, allergyStack3])
         stackView.axis = .vertical
@@ -161,7 +160,6 @@ class ProductReviewHeaderView: UIView {
         allergyButton9, allergyButton10, allergyButton11, allergyButton12, allergyButton13
     ]
     
-    
     let blurView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .regular)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -170,18 +168,6 @@ class ProductReviewHeaderView: UIView {
         blurView.layer.cornerRadius = 15
         return blurView
     }()
-//
-//    let noAllergyLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "알러지 유발 성분이 없거나 정보가 아직 업데이트 되지 않았어요.\nVelance 팀이 검토 후 업데이트 하도록 할게요 :)"
-//        label.numberOfLines = 3
-//        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-//        label.textColor = .darkGray
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.75
-//        label.textAlignment = .center
-//        return label
-//    }()
     
     let noAllergyImageView: UIImageView = {
         let imageView = UIImageView()

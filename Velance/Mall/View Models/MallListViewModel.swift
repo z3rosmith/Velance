@@ -46,12 +46,14 @@ extension MallListViewModel {
     }
     
     func fetchMallList(mallPoint: MallPoint) {
+        showProgressBar()
         isFetchingData = true
         let model = MallRequestDTO(x: mallPoint.x,
                                    y: mallPoint.y,
                                    radius: mallPoint.radius,
                                    cursor: lastMallID)
         MallManager.shared.fetchMallList(with: model) { [weak self] result in
+            dismissProgressBar()
             switch result {
             case .success(let data):
                 guard let self = self else { return }

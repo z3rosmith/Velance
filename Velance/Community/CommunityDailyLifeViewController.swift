@@ -102,7 +102,7 @@ extension CommunityDailyLifeViewController {
         addReviewButton.snp.makeConstraints { make in
             make.width.height.equalTo(60)
             make.right.equalTo(view.snp.right).offset(-25)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
         }
     }
     

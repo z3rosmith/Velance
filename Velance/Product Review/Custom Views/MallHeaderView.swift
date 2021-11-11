@@ -110,15 +110,15 @@ class MallHeaderView: UIView {
             nonVeganMallLabel.isHidden = true
             addressLabel.snp.makeConstraints { make in
                 make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
-                make.left.equalTo(veganOnlyMallLabel.snp.right).offset(8)
-                make.right.equalTo(goToMapButton.snp.left).offset(6)
+                make.left.equalTo(veganOnlyMallLabel.snp.right).offset(4)
+                make.right.equalTo(goToMapButton.snp.left).offset(-4)
             }
         } else {
             veganOnlyMallLabel.isHidden = true
             addressLabel.snp.makeConstraints { make in
                 make.top.equalTo(titleLabel.snp.bottom).offset(14.5)
-                make.left.equalTo(nonVeganMallLabel.snp.right).offset(8)
-                make.right.equalTo(goToMapButton.snp.left).offset(6)
+                make.left.equalTo(nonVeganMallLabel.snp.right).offset(4)
+                make.right.equalTo(goToMapButton.snp.left).offset(-4)
             }
         }
 

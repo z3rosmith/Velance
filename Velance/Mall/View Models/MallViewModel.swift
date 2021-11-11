@@ -23,7 +23,7 @@ class MallViewModel {
     var page: Int = 0
     
     func fetchMenuList() {
-        
+        showProgressBar()
         isFetchingData = true
         
         MallManager.shared.getMallMenuList(
@@ -31,6 +31,7 @@ class MallViewModel {
             mallId: mallId ?? 1
         ) { [weak self] result in
             guard let self = self else { return }
+            dismissProgressBar()
             switch result {
             case .success(let menuList):
                 if menuList.isEmpty {
