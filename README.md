@@ -49,5 +49,5 @@
 
 **MVVM패턴 첫 사용**
 
-- ViewModel의 역할은 개념으로 배웠었지만 ViewModel과 ViewController 사이 정보 전달을 구현하기 어려웠었음
+- ViewModel의 역할은 개념으로 배웠었지만 ViewModel과 ViewController 사이 역할 분리를 적절히 하기 어려웠음
 - Delegate Pattern과 ViewModel을 직접 ViewController에서 호출하는 방법으로 ViewModel의 output과 input 정보를 전달했음
